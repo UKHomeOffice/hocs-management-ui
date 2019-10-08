@@ -34,7 +34,8 @@ const AddUnit: React.FC<AddUnitProps> = ({ csrfToken, history }) => {
     const [pageError, addFormError, clearErrors, setErrorMessage] = useError('', VALIDATION_ERROR_TITLE);
     const [unit, dispatch] = React.useReducer<Reducer<Unit, InputEventData>>(reducer, {
         displayName: '',
-        shortCode: ''
+        shortCode: '',
+        value: ''
     });
 
     const handleSubmit = (event: React.FormEvent) => {

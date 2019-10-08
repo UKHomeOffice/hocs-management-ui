@@ -47,7 +47,8 @@ beforeEach(() => {
     };
     mockUnit = {
         displayName: '',
-        shortCode: ''
+        shortCode: '',
+        value: ''
     };
     useReducerSpy.mockImplementation(() => [mockUnit, reducerDispatch]);
     useErrorSpy.mockImplementation(() => [{}, addFormErrorSpy, clearErrorsSpy, setMessageSpy]);

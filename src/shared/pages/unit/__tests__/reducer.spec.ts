@@ -7,7 +7,8 @@ describe('when an action is dispatched', () => {
         const eventData: InputEventData = { name: 'displayName', value: '__testValue__' };
         const unit = reducer({
             displayName: '',
-            shortCode: ''
+            shortCode: '',
+            value: ''
         }, eventData);
         expect(unit).toStrictEqual({ displayName: '__testValue__', shortCode: '' });
     });

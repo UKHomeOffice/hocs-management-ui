@@ -13,10 +13,11 @@ describe('when the createUnit method is called', () => {
         it('should make an api call and return a resolved promise', async () => {
             expect.assertions(2);
 
-            await createUnit({ displayName: '__unit1__', shortCode: '__unitId1__' }).then(() => {
-                expect(axios.post).toHaveBeenCalledTimes(1);
-                expect(axios.post).toHaveBeenCalledWith('/api/units', { displayName: '__unit1__', shortCode: '__unitId1__' });
-            });
+            await createUnit({
+                displayName: '__unit1__', shortCode: '__unitId1__', value: '__unitsValue1__'}).then(() => {
+                    expect(axios.post).toHaveBeenCalledTimes(1);
+                    expect(axios.post).toHaveBeenCalledWith('/api/units', { displayName: '__unit1__', shortCode: '__unitId1__', value: '__unitsValue1__' });
+                });
         });
     });
 
@@ -25,7 +26,7 @@ describe('when the createUnit method is called', () => {
             jest.spyOn(axios, 'post').mockReturnValue(Promise.reject(new Error('__error__')));
             expect.assertions(2);
 
-            await createUnit({ displayName: '__unit1__', shortCode: '__unitId1__' }).catch((error: Error) => {
+            await createUnit({ displayName: '__unit1__', shortCode: '__unitId1__', value: '__unitsValue1__' }).catch((error: Error) => {
                 expect(axios.post).toHaveBeenCalledTimes(1);
                 expect(error.message).toEqual('__error__');
             });

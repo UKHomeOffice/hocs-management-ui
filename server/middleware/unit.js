@@ -3,7 +3,6 @@ const getLogger = require('../libs/logger');
 const User = require('../models/user');
 
 async function addUnit(req, res, next) {
-
     const logger = getLogger(req.request);
 
     try {
@@ -15,6 +14,25 @@ async function addUnit(req, res, next) {
     }
 }
 
+async function getUnits(req, res, next) {
+    const logger = getLogger(req.request);
+    try {
+        const response = await req.listService.fetch('UNITS', req.params);
+        res.locals.units = response;
+        next();
+    } catch (error) {
+        logger.error(error);
+        next(error);
+    }
+}
+
+async function returnUnitsAsJson(_, res) {
+    const { locals: { units } } = res;
+    await res.json(units);
+}
+
 module.exports = {
-    addUnit
+    addUnit,
+    getUnits,
+    returnUnitsAsJson
 }
