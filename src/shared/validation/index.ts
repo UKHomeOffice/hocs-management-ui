@@ -16,7 +16,7 @@ export const validate = (schema: ObjectSchema<any>, state: any, addFormError: (v
         return true;
     } catch (error) {
         if (error instanceof ValidationError) {
-            error.inner.map(error => addFormError({ key: error.path, value: error.message }));
+            error.inner.map((error: { path: any; message: any; }) => addFormError({ key: error.path, value: error.message }));
         }
         return false;
     }

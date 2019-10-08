@@ -27,7 +27,6 @@ function createClient({ baseURL, auth }) {
         delete: (endpoint, config) => client.delete(endpoint, config),
         put: (endpoint, body, config) => client.put(endpoint, body, config)
     };
-
 }
 
 module.exports = {
