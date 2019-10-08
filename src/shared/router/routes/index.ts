@@ -4,6 +4,7 @@ import TeamSearch from '../../pages/team/teamSearch/teamSearch';
 import TeamView from '../../pages/team/teamView/teamView';
 import AddUsersToTeam from '../../pages/team/addToTeam/addToTeam';
 import AddUnit from '../../pages/unit/addUnit';
+import UnitSearch from '../../pages/unit/unitSearch/unitSearch';
 
 export interface Route {
     component: React.FunctionComponent | Error;
@@ -42,6 +43,12 @@ const routes = [
         exact: true,
         component: AddUnit,
         title: 'Add Unit'
+    },
+    {
+        path: '/unit-search',
+        exact: true,
+        component: UnitSearch,
+        title: 'UnitSearch'
     },
     {
         component: Error,

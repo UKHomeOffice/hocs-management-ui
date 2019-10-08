@@ -50,7 +50,7 @@ describe('when an action is dispatched', () => {
             const eventData: InputEventData = { name: 'displayName', value: '__testValue__' };
             const { unit: initialUnit, ...initialOtherState } = initialState;
             const { unit, ...otherState } = reducer(initialState, { type: 'SetUnitValues', payload: eventData });
-            expect(unit).toStrictEqual({ displayName: '__testValue__', shortCode: '' });
+            expect(unit).toStrictEqual({ displayName: '__testValue__', shortCode: '', value: '' });
             expect(otherState).toStrictEqual(initialOtherState);
         });
     });

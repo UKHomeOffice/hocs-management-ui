@@ -39,7 +39,8 @@ beforeEach(() => {
         errorTitle: '',
         unit: {
             displayName: '',
-            shortCode: ''
+            shortCode: '',
+            value: ''
         }
     };
     useReducerSpy.mockImplementation(() => [mockState, dispatch]);
@@ -96,7 +97,7 @@ describe('when the submit button is clicked', () => {
     describe('and the data is filled in', () => {
 
         beforeEach(async () => {
-            mockState.unit = { displayName: '__displayName__', shortCode: '__shortCode__' };
+            mockState.unit = { displayName: '__displayName__', shortCode: '__shortCode__', value: '__value__' };
             const submitButton = await waitForElement(async () => {
                 return await wrapper.findByText('Submit');
             });

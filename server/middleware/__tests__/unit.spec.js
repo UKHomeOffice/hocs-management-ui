@@ -2,21 +2,25 @@ jest.mock('../../clients/index');
 jest.mock('../../libs/logger');
 jest.mock('../../models/user');
 const { infoService } = require('../../clients/index');
-const { addUnit } = require('../unit');
+const { addUnit, getUnits } = require('../unit');
 const getLogger = require('../../libs/logger');
 const User = require('../../models/user');
 
-describe('User middleware addToTeam', () => {
+describe('Unit middleware addToTeam', () => {
 
     const headers = '__headers__';
     const unitToCreate = { displayName: '__displayName__', shortCode: '__shortCode__' }
-    const req = { body: unitToCreate, user: '__user__' };
+    let req = {};
     const sendStatus = jest.fn();
-    const res = { sendStatus };
+    let res = {};
     const next = jest.fn();
+    const units = ['unit1', 'unit2'];
+    const fetch = jest.fn(() => units);
 
     beforeEach(() => {
         next.mockReset();
+        req = { body: unitToCreate, user: '__user__' };
+        res = { sendStatus };
         sendStatus.mockReset();
     });
 
@@ -24,6 +28,15 @@ describe('User middleware addToTeam', () => {
         User.createHeaders.mockImplementation(() => headers)
         await addUnit(req, res, next);
         expect(infoService.post).toHaveBeenCalledWith('/unit', unitToCreate, { headers: headers });
+    });
+
+    it('should call the get method on the info service', async () => {
+        req = { listService: { fetch: fetch } };
+        res = { locals: {} };
+        await getUnits(req, res, next);
+        expect(next).toHaveBeenCalled();
+        expect(res.locals.units).toBeDefined();
+        expect(res.locals.units).toEqual(units);
     });
 
     it('should call the user create headers method', async () => {

@@ -3,6 +3,7 @@ const listService = require('../services/list');
 const usersAdapter = require('./adapters/users');
 const teamsAdapter = require('./adapters/teams');
 const membersAdapter = require('./adapters/members');
+const unitsAdapter = require('./adapters/units')
 
 module.exports = {
     lists: {
@@ -28,6 +29,12 @@ module.exports = {
             type: listService.types.DYNAMIC,
             adapter: usersAdapter
         },
+        UNITS: {
+            client: 'INFO',
+            endpoint: '/unit',
+            type: listService.types.DYNAMIC,
+            adapter: unitsAdapter
+        }
     },
     clients: {
         INFO: infoService
