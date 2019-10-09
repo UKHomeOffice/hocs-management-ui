@@ -10,6 +10,6 @@ describe('when an action is dispatched', () => {
             shortCode: '',
             value: ''
         }, eventData);
-        expect(unit).toStrictEqual({ displayName: '__testValue__', shortCode: '' });
+        expect(unit).toStrictEqual({ displayName: '__testValue__', shortCode: '', value: '' });
     });
 });

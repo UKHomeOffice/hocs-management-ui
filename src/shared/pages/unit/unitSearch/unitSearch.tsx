@@ -11,7 +11,7 @@ import { GENERAL_ERROR_TITLE, LOAD_TEAMS_ERROR_DESCRIPTION, EMPTY_SUBMIT_TEAM_ER
 import ErrorMessage from '../../../models/errorMessage';
 import useError from '../../../hooks/useError';
 import { Link } from 'react-router-dom';
-import { getUnits } from 'shared/services/unitsService';
+import { getUnits } from '../../../services/unitsService';
 
 interface UnitSearchProps {
     history: History;
@@ -32,7 +32,7 @@ const UnitSearch: React.FC<UnitSearchProps> = ({ history }) => {
 
         clearErrors();
         if (state.unitUUID.length === 0) {
-            // add error messages
+            // add error messages specific to units
             setErrorMessage(new ErrorMessage(EMPTY_SUBMIT_TEAM_ERROR_DESCRIPTION, EMPTY_SUBMIT_TEAM_ERROR_TITLE));
             return;
         }
@@ -43,6 +43,7 @@ const UnitSearch: React.FC<UnitSearchProps> = ({ history }) => {
     const getUnitsForTypeahead = useCallback(() => new Promise<Item[]>(resolve => getUnits()
         .then((units: Item[]) => resolve(units))
         .catch(() => {
+            // add error messages specific to units
             setErrorMessage(new ErrorMessage(LOAD_TEAMS_ERROR_DESCRIPTION, GENERAL_ERROR_TITLE));
             resolve([]);
         })), []);
@@ -52,7 +53,7 @@ const UnitSearch: React.FC<UnitSearchProps> = ({ history }) => {
             <Link className="govuk-back-link" to="/">Back</Link>
             <ErrorSummary pageError={pageError} />
             <h1 className="govuk-heading-xl">
-                Ueam search
+                Unit search
             </h1>
             <TypeAhead
                 clearable={true}
