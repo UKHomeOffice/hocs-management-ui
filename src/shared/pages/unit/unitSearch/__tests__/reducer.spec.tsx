@@ -21,15 +21,4 @@ describe('when an action is dispatched', () => {
             expect(otherState).toStrictEqual(otherInitialState);
         });
     });
-    describe('and it is a SetUnitName action', () => {
-        it('it will set the unit name in state', () => {
-
-            const { unitUUID: initialUnitName, ...initialOtherState } = initialState;
-            const state = reducer(initialState, { type: 'AddUnitUUID', payload: '__unitName__' });
-            const { unitUUID, ...otherState } = state;
-
-            expect(unitUUID).toBe('__unitName__');
-            expect(otherState).toStrictEqual(initialOtherState);
-        });
-    });
 });

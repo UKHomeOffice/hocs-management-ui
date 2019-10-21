@@ -7,7 +7,7 @@ import { reducer } from './reducer';
 import { initialState } from './initialState';
 import Item from '../../../models/item';
 import ErrorSummary from '../../../common/components/errorSummary';
-import { GENERAL_ERROR_TITLE, LOAD_TEAMS_ERROR_DESCRIPTION, EMPTY_SUBMIT_TEAM_ERROR_DESCRIPTION, EMPTY_SUBMIT_TEAM_ERROR_TITLE, EMPTY_SUBMIT_UNIT_ERROR_DESCRIPTION, EMPTY_SUBMIT_UNIT_ERROR_TITLE, LOAD_UNITS_ERROR_DESCRIPTION } from '../../../models/constants';
+import { GENERAL_ERROR_TITLE, EMPTY_SUBMIT_UNIT_ERROR_DESCRIPTION, EMPTY_SUBMIT_UNIT_ERROR_TITLE, LOAD_UNITS_ERROR_DESCRIPTION } from '../../../models/constants';
 import ErrorMessage from '../../../models/errorMessage';
 import useError from '../../../hooks/useError';
 import { Link } from 'react-router-dom';
