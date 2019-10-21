@@ -7,7 +7,7 @@ import { reducer } from './reducer';
 import { initialState } from './initialState';
 import Item from '../../../models/item';
 import ErrorSummary from '../../../common/components/errorSummary';
-import { GENERAL_ERROR_TITLE, LOAD_TEAMS_ERROR_DESCRIPTION, EMPTY_SUBMIT_TEAM_ERROR_DESCRIPTION, EMPTY_SUBMIT_TEAM_ERROR_TITLE } from '../../../models/constants';
+import { GENERAL_ERROR_TITLE, LOAD_TEAMS_ERROR_DESCRIPTION, EMPTY_SUBMIT_TEAM_ERROR_DESCRIPTION, EMPTY_SUBMIT_TEAM_ERROR_TITLE, EMPTY_SUBMIT_UNIT_ERROR_DESCRIPTION, EMPTY_SUBMIT_UNIT_ERROR_TITLE, LOAD_UNITS_ERROR_DESCRIPTION } from '../../../models/constants';
 import ErrorMessage from '../../../models/errorMessage';
 import useError from '../../../hooks/useError';
 import { Link } from 'react-router-dom';
@@ -32,8 +32,7 @@ const UnitSearch: React.FC<UnitSearchProps> = ({ history }) => {
 
         clearErrors();
         if (state.unitUUID.length === 0) {
-            // add error messages specific to units
-            setErrorMessage(new ErrorMessage(EMPTY_SUBMIT_TEAM_ERROR_DESCRIPTION, EMPTY_SUBMIT_TEAM_ERROR_TITLE));
+            setErrorMessage(new ErrorMessage(EMPTY_SUBMIT_UNIT_ERROR_DESCRIPTION, EMPTY_SUBMIT_UNIT_ERROR_TITLE));
             return;
         }
 
@@ -43,8 +42,7 @@ const UnitSearch: React.FC<UnitSearchProps> = ({ history }) => {
     const getUnitsForTypeahead = useCallback(() => new Promise<Item[]>(resolve => getUnits()
         .then((units: Item[]) => resolve(units))
         .catch(() => {
-            // add error messages specific to units
-            setErrorMessage(new ErrorMessage(LOAD_TEAMS_ERROR_DESCRIPTION, GENERAL_ERROR_TITLE));
+            setErrorMessage(new ErrorMessage(LOAD_UNITS_ERROR_DESCRIPTION, GENERAL_ERROR_TITLE));
             resolve([]);
         })), []);
 
