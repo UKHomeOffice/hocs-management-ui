@@ -41,9 +41,6 @@ const Dashboard: React.FC = () => (
                             <li>
                                 <a className="govuk-link" href="/unit-search">View Units and their teams</a>
                             </li>
-                            <li>
-                                <a className="govuk-link" href="/unit-search">View Units and their teams</a>
-                            </li>
                         </ul>
                     </li>
                 </ul>

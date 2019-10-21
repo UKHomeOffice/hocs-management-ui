@@ -70,7 +70,8 @@ const routes = [
         path: '/add-child-topic',
         exact: true,
         component: AddChildTopic,
-        title: 'Add Unit'},
+        title: 'Add Unit'
+    },
     {
         path: '/unit-search',
         exact: true,
