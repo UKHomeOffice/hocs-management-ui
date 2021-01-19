@@ -1,10 +1,8 @@
-FROM node:14.15.4-alpine
+FROM node:14.15.4-buster
 
 ENV USER_ID 1000
-ENV GROUP node
 
-RUN mkdir -p /app && \
-    chown -R ${USER}:${GROUP} /app
+RUN mkdir -p /app
 
 WORKDIR /app
 COPY . /app
