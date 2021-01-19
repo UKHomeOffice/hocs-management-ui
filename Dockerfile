@@ -1,12 +1,9 @@
-FROM node:14.15.4-buster
+FROM node:14.15.4-alpine
 
-ENV USER user_hocs_frontend
-ENV USER_ID 1001
-ENV GROUP group_hocs_frontend
+ENV USER_ID 1000
+ENV GROUP node
 
-RUN groupadd -r ${GROUP} && \
-    useradd -r -u ${USER_ID} -g ${GROUP} ${USER} -d /app && \
-    mkdir -p /app && \
+RUN mkdir -p /app && \
     chown -R ${USER}:${GROUP} /app
 
 WORKDIR /app
