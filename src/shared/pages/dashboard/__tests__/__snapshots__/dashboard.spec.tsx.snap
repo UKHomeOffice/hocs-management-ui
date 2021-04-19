@@ -29,7 +29,7 @@ exports[`dashboard component should not render dcu creation link if does not rol
               class="govuk-link"
               href="/manage-standard-lines"
             >
-              Manage standard lines 
+              Manage standard lines
             </a>
           </li>
           <li>
@@ -202,7 +202,7 @@ exports[`dashboard component should not render dcu creation link if does not rol
               class="govuk-link"
               href="/manage-mpam-campaigns"
             >
-              Manage MPAM campaigns 
+              Manage MPAM campaigns
             </a>
           </li>
         </ul>
@@ -241,7 +241,7 @@ exports[`dashboard component should render dcu creation link if has role 1`] = `
               class="govuk-link"
               href="/manage-standard-lines"
             >
-              Manage standard lines 
+              Manage standard lines
             </a>
           </li>
           <li>
@@ -422,7 +422,7 @@ exports[`dashboard component should render dcu creation link if has role 1`] = `
               class="govuk-link"
               href="/manage-mpam-campaigns"
             >
-              Manage MPAM campaigns 
+              Manage MPAM campaigns
             </a>
           </li>
         </ul>

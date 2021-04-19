@@ -18,7 +18,7 @@ const Dashboard = ({ hasRole }: ApplicationState) => {
                             </h2>
                             <ul className="govuk-list govuk-list--bullet">
                                 <li>
-                                    <Link className="govuk-link" to="/manage-standard-lines">Manage standard lines </Link>
+                                    <Link className="govuk-link" to="/manage-standard-lines">Manage standard lines</Link>
                                 </li>
                                 <li>
                                     <Link className="govuk-link" to="/add-standard-line">Add a standard line</Link>
@@ -108,7 +108,7 @@ const Dashboard = ({ hasRole }: ApplicationState) => {
                             </h2>
                             <ul className="govuk-list govuk-list--bullet">
                                 <li>
-                                    <Link className="govuk-link" to="/manage-mpam-campaigns">Manage MPAM campaigns </Link>
+                                    <Link className="govuk-link" to="/manage-mpam-campaigns">Manage MPAM campaigns</Link>
                                 </li>
                             </ul>
                         </li>
