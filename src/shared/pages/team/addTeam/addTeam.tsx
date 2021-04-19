@@ -108,7 +108,7 @@ const AddTeam: React.FC<AddTeamProps> = ({ csrfToken,history }) => {
                         pageError={pageError}
                     />
                     <h1 className="govuk-heading-xl">
-                        Add a Team
+                        Create a DCU drafting team
                     </h1>
                 </div>
             </div>

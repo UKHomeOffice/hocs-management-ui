@@ -30,7 +30,7 @@ const Dashboard: React.FC = () => (
                                 <Link className="govuk-link" to="/team-search">Manage a team</Link>
                             </li>
                             <li>
-                                <Link className="govuk-link" to="/add-team">Add a team</Link>
+                                <Link className="govuk-link" to="/add-team">Create a DCU drafting team</Link>
                             </li>
                         </ul>
                     </li>

@@ -17,7 +17,7 @@ exports[`when the AddTeam component is mounted should render with default props 
       <h1
         class="govuk-heading-xl"
       >
-        Add a Team
+        Create a DCU drafting team
       </h1>
     </div>
   </div>
