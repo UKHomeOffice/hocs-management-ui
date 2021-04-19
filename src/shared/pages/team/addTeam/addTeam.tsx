@@ -5,7 +5,7 @@ import Text from '../../../common/components/forms/text';
 import ErrorSummary from '../../../common/components/errorSummary';
 import useError from '../../../hooks/useError';
 import {
-    GENERAL_ERROR_TITLE, LOAD_CASE_TYPE_ERROR_DESCRIPTION, LOAD_UNITS_ERROR_DESCRIPTION,
+    GENERAL_ERROR_TITLE, LOAD_UNITS_ERROR_DESCRIPTION,
     TEAM_CREATION_FAILURE_NAME_ALREADY_EXISTS, TEAM_CREATION_FAILURE_UNKNOWN_ERROR, TEAM_CREATION_SUCCESS,
     VALIDATION_ERROR_TITLE,
 } from '../../../models/constants';
@@ -16,11 +16,9 @@ import Item from '../../../models/item';
 import { reducer } from './reducer';
 import { initialState } from './initialState';
 import { ApplicationConsumer } from '../../../contexts/application';
-import { array, object, string } from 'yup';
+import { object, string } from 'yup';
 import { validate } from '../../../validation';
 import { addTeam } from '../../../services/teamsService';
-import { getCaseTypes } from '../../../services/caseTypesService';
-
 interface AddTeamProps {
     csrfToken?: string;
     history: History;
@@ -33,16 +31,7 @@ const validationSchema = object({
             .label('Team name'),
         unitUUID: string()
             .required()
-            .label('Unit'),
-        permissions: array().of(
-            object(
-                {
-                    caseTypeCode: string()
-                        .required()
-                        .label('Case type')
-                }
-            )
-        )
+            .label('Unit')
     })
 });
 
@@ -84,21 +73,6 @@ const AddTeam: React.FC<AddTeamProps> = ({ csrfToken,history }) => {
         })
     ),[]);
 
-    const getCaseTypesForTypeAhead = useCallback(() => new Promise<Item[]>(resolve => getCaseTypes()
-        .then((caseTypes) => {
-            const items: Item[] = [];
-            caseTypes.forEach(function (caseType){
-                items.push({ label: caseType.displayName, value: caseType.type });
-            });
-            resolve(items);
-        })
-        .catch(() => {
-            //change
-            setErrorMessage(new ErrorMessage(LOAD_CASE_TYPE_ERROR_DESCRIPTION, GENERAL_ERROR_TITLE));
-            resolve([]);
-        })
-    ),[]);
-
     return (
         <>
             <div className="govuk-grid-row">
@@ -135,17 +109,6 @@ const AddTeam: React.FC<AddTeamProps> = ({ csrfToken,history }) => {
                             name={'unit'}
                             onSelectedItemChange={
                                 ({ value  }) => dispatch({ type: 'SetUnit', payload: value as string })
-                            }
-                        />
-
-                        <TypeAhead
-                            clearable={true}
-                            disabled={false}
-                            getOptions={getCaseTypesForTypeAhead}
-                            label={'Case type'}
-                            name={'caseType'}
-                            onSelectedItemChange={
-                                ({ value  }) => dispatch({ type: 'SetCaseType', payload: value as string })
                             }
                         />
 

@@ -6,7 +6,15 @@ export const initialState: State = {
         permissions: [
             {
                 accessLevel: 'OWNER',
-                caseTypeCode: ''
+                caseTypeCode: 'DTEN'
+            },
+            {
+                accessLevel: 'OWNER',
+                caseTypeCode: 'TRO'
+            },
+            {
+                accessLevel: 'OWNER',
+                caseTypeCode: 'MIN'
             }
         ],
         letterName: '',
