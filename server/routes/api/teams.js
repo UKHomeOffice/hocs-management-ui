@@ -4,6 +4,7 @@ const {
     returnTeamJson, returnTeamsJson, returnTeamMembersJson,
     addTeam
 } = require('../../middleware/team');
+const { protect } = require('../../middleware/auth');
 
 router.get('', getTeams, returnTeamsJson);
 
@@ -13,6 +14,8 @@ router.get('/:teamId/members', getTeamMembers, returnTeamMembersJson);
 
 router.get('/:userId/teams', getTeamsForUser, returnTeamsJson);
 
-router.post('/unit/:unitUUID', addTeam);
+router.post('/unit/:unitUUID',
+    protect('DCU'),
+    addTeam);
 
 module.exports = router;
