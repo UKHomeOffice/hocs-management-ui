@@ -24,6 +24,10 @@ export interface PhaseBannerConfig {
     phase: string;
 }
 
+export interface UserConfig {
+    roles: string[];
+}
+
 export interface LayoutConfig {
     body: BodyConfig;
     countDownForSeconds: number;
@@ -31,7 +35,6 @@ export interface LayoutConfig {
     header: HeaderConfig;
     footer: FooterConfig;
 }
-
 export interface AnalyticsConfig {
     tracker: string;
     userId: string;
@@ -41,4 +44,5 @@ export default interface Config {
     analytics?: AnalyticsConfig;
     csrf: string;
     layout: LayoutConfig;
+    user?: UserConfig;
 }

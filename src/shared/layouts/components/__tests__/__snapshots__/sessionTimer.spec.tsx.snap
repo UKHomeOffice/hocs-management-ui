@@ -134,6 +134,7 @@ exports[`Session timer component should render with default props 1`] = `
       "apiStatus": undefined,
       "csrf": "",
       "dispatch": [Function],
+      "hasRole": [Function],
       "layout": Object {
         "body": Object {
           "phaseBanner": Object {
@@ -155,6 +156,9 @@ exports[`Session timer component should render with default props 1`] = `
         },
       },
       "track": [Function],
+      "user": Object {
+        "roles": Array [],
+      },
     }
   }
 >

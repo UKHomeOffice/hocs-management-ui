@@ -17,8 +17,11 @@ describe('Session timer component', () => {
                 header: {
                     isVisible: true,
                     service: 'service name',
-                    serviceLink: ''
-                }
+                    serviceLink: '',
+                },
+            },
+            user: {
+                roles: []
             }
         };
         expect(
