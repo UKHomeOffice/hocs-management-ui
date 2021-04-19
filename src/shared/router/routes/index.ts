@@ -1,5 +1,5 @@
 import Error, { ErrorContent } from '../../layouts/error';
-import Dashboard from '../../pages/dashboard';
+import Dashboard from '../../pages/dashboard/dashboard';
 import TeamSearch from '../../pages/team/teamSearch/teamSearch';
 import TeamView from '../../pages/team/teamView/teamView';
 import AddUsersToTeam from '../../pages/team/addToTeam/addToTeam';
