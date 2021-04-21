@@ -31,3 +31,9 @@ export const addTeam = (team: Team) => new Promise((resolve, reject) => axios
     .then(response => resolve(response.data))
     .catch(reason => reject(reason))
 );
+
+export const updateTeamName = (teamId: string, newDisplayName: string) => new Promise((resolve, reject) => axios
+    .put(`/api/teams/${teamId}`, { displayName: newDisplayName })
+    .then(response => resolve(response.data))
+    .catch(reason => reject(reason))
+);
