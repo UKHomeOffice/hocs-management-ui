@@ -18,6 +18,8 @@ router.post('/unit/:unitUUID',
     protect('DCU'),
     addTeam);
 
-router.put('/:teamId', updateTeamName);
+router.put('/:teamId',
+    protect('RENAME_TEAM'),
+    updateTeamName);
 
 module.exports = router;
