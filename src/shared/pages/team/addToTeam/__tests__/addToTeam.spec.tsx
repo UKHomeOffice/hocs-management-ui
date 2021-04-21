@@ -106,18 +106,6 @@ describe('when the addToTeam component is mounted', () => {
         });
     });
 
-    it('should initially render null before the team name is returned', async () => {
-        getTeamSpy.mockReturnValueOnce(Promise.resolve({
-            active: true,
-            displayName: undefined,
-            letterName: '__letterName__',
-            permissions: [],
-            type: '__type__'
-        }));
-        mockState.teamName = undefined;
-        const wrapper: RenderResult = renderComponent();
-        expect(wrapper.container.outerHTML).toMatchSnapshot();
-    });
     it('should display an error if the call to retrieve the team fails', async () => {
         expect.assertions(1);
         getTeamSpy.mockImplementation(() => Promise.reject('error'));
