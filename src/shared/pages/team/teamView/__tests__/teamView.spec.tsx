@@ -8,6 +8,7 @@ import * as UsersService from '../../../../services/usersService';
 import { State } from '../state';
 import * as useError from '../../../../hooks/useError';
 import { REMOVE_FROM_TEAM_ERROR_DESCRIPTION, GENERAL_ERROR_TITLE, REMOVE_FROM_TEAM_ALLOCATED_ERROR_DESCRIPTION, VALIDATION_ERROR_TITLE } from '../../../../models/constants';
+import { shallow } from 'enzyme';
 
 let match: match<any>;
 let history: History<any>;
@@ -56,12 +57,16 @@ const useReducerSpy = jest.spyOn(React, 'useReducer');
 const useErrorSpy = jest.spyOn(useError, 'default');
 const setMessageSpy = jest.fn();
 const clearErrorsSpy = jest.fn();
+let hasRole = jest.fn();
+let wrapper: RenderResult;
 
-const renderComponent = () => render(
-    <MemoryRouter>
-        <TeamView history={history} location={location} match={match}></TeamView>
-    </MemoryRouter>
-);
+const renderComponent = () => {
+    const OUTER = shallow(<TeamView history={history} location={location} match={match} />);
+    const Page = OUTER.props().children;
+    return render(
+        <MemoryRouter><Page hasRole={hasRole}></Page></MemoryRouter>
+    );
+};
 
 beforeEach(() => {
     history = createBrowserHistory();
@@ -94,36 +99,57 @@ beforeEach(() => {
     useErrorSpy.mockImplementation(() => [{}, jest.fn(), clearErrorsSpy, setMessageSpy]);
     clearErrorsSpy.mockReset();
     setMessageSpy.mockReset();
+    act(() => {
+        wrapper = renderComponent();
+    });
 });
 
-describe('when the teamView component is mounted', () => {
+describe('when the teamView component is mounted with RENAME_TEAM role', () => {
+    beforeAll(() => {
+        hasRole = jest.fn().mockImplementation((role: string) => {
+            if (role === 'RENAME_TEAM') {
+                return true;
+            }
+            return false;
+        });
+    });
+
     it('should render with default props', async () => {
         expect.assertions(3);
-        let wrapper: RenderResult;
-        act(() => {
-            wrapper = renderComponent();
-        });
 
-        await wait(() => {
-            expect(getTeamSpy).toHaveBeenCalled();
-            expect(getTeamMembersSpy).toHaveBeenCalled();
-            expect(wrapper.container).toMatchSnapshot();
+        expect(getTeamSpy).toHaveBeenCalled();
+        expect(getTeamMembersSpy).toHaveBeenCalled();
+        expect(wrapper.container).toMatchSnapshot();
+    });
+});
+
+describe('when the teamView component is mounted without RENAME_TEAM role', () => {
+    beforeAll(() => {
+        hasRole = jest.fn().mockImplementation((role: string) => {
+            if (role === 'RENAME_TEAM') {
+                return false;
+            }
+            return true;
         });
+    });
+
+    it('should render with default props', async () => {
+        expect.assertions(3);
+
+        expect(getTeamSpy).toHaveBeenCalled();
+        expect(getTeamMembersSpy).toHaveBeenCalled();
+        expect(wrapper.container).toMatchSnapshot();
     });
 });
 
 describe('when the Add team members button is clicked', () => {
     it('should push a new page into the history', async () => {
         history.push = jest.fn();
-        let wrapper: RenderResult;
-        act(() => {
-            wrapper = renderComponent();
-        });
 
-        await wait(async () => {
-            const addTeamMembersButton = getByText(wrapper.container, 'Add team members');
-            fireEvent.click(addTeamMembersButton);
-        });
+
+        const addTeamMembersButton = getByText(wrapper.container, 'Add team members');
+        fireEvent.click(addTeamMembersButton);
+
 
         expect(history.push).toHaveBeenCalledWith('/team/__teamId__/add-users');
     });
@@ -131,11 +157,6 @@ describe('when the Add team members button is clicked', () => {
 
 describe('when the remove user button is clicked', () => {
     it('should remove the row from the users table', async () => {
-        let wrapper: RenderResult;
-        act(() => {
-            wrapper = renderComponent();
-        });
-
         await wait(async () => {
             const selectedUser = getByText(wrapper.container, '__user1__');
             const row = (selectedUser.closest('tr'));
@@ -150,11 +171,6 @@ describe('when the remove user button is clicked', () => {
 
     describe('and the service call fails', () => {
         beforeEach(() => {
-            let wrapper: RenderResult;
-            act(() => {
-                wrapper = renderComponent();
-            });
-
             wait(async () => {
                 const selectedUser = getByText(wrapper.container, '__user1__');
                 const row = (selectedUser.closest('tr'));

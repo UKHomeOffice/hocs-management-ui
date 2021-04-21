@@ -1,6 +1,6 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
-exports[`when the teamView component is mounted should render with default props 1`] = `
+exports[`when the teamView component is mounted with RENAME_TEAM role should render with default props 1`] = `
 <div>
   <div
     class="govuk-form-group"
@@ -96,7 +96,121 @@ exports[`when the teamView component is mounted should render with default props
         Add team members
       </button>
       <button
-        class="govuk-button govuk-button--secondary  manage-nominated-contacts-button"
+        class="govuk-button govuk-!-margin-right-1 govuk-button--secondary manage-nominated-contacts-button"
+        data-module="govuk-button"
+        type="submit"
+      >
+        Manage nominated contacts
+      </button>
+      <button
+        class="govuk-button govuk-button--secondary"
+        data-module="govuk-button"
+        type="submit"
+      >
+        Edit Team
+      </button>
+    </div>
+  </div>
+</div>
+`;
+
+exports[`when the teamView component is mounted without RENAME_TEAM role should render with default props 1`] = `
+<div>
+  <div
+    class="govuk-form-group"
+  >
+    <a
+      class="govuk-back-link"
+      href="/team-search"
+    >
+      Back
+    </a>
+    <div>
+      <h1
+        class="govuk-heading-xl"
+      >
+        View and remove team members
+      </h1>
+      <h2
+        class="govuk-heading-l"
+      >
+        Team: __teamName__
+      </h2>
+      <div>
+        <table
+          class="govuk-table"
+        >
+          <thead
+            class="govuk-table__head"
+          >
+            <tr
+              class="govuk-table__row"
+            >
+              <th
+                class="govuk-table__header"
+                scope="col"
+              >
+                Team members
+              </th>
+              <th
+                class="govuk-table__header"
+                scope="col"
+              >
+                Action
+              </th>
+            </tr>
+          </thead>
+          <tbody
+            class="govuk-table__body"
+          >
+            <tr
+              class="govuk-table__row"
+            >
+              <td
+                class="govuk-table__cell"
+              >
+                __user1__
+              </td>
+              <td
+                class="govuk-table__cell"
+              >
+                <a
+                  href="#"
+                >
+                  Remove
+                </a>
+              </td>
+            </tr>
+            <tr
+              class="govuk-table__row"
+            >
+              <td
+                class="govuk-table__cell"
+              >
+                __user2__
+              </td>
+              <td
+                class="govuk-table__cell"
+              >
+                <a
+                  href="#"
+                >
+                  Remove
+                </a>
+              </td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+      <button
+        class="govuk-button govuk-!-margin-right-1 add-team-members-button"
+        data-module="govuk-button"
+        type="submit"
+      >
+        Add team members
+      </button>
+      <button
+        class="govuk-button govuk-!-margin-right-1 govuk-button--secondary manage-nominated-contacts-button"
         data-module="govuk-button"
         type="submit"
       >

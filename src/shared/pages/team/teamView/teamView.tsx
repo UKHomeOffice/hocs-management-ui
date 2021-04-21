@@ -13,12 +13,15 @@ import ErrorSummary from '../../../common/components/errorSummary';
 import ErrorMessage from '../../../models/errorMessage';
 import useError from '../../../hooks/useError';
 import { Link } from 'react-router-dom';
+import { ApplicationConsumer, ApplicationState } from '../../../contexts/application';
 
 interface MatchParams {
     teamId: string;
 }
 
-type TeamMembersProps = RouteComponentProps<MatchParams>;
+interface TeamMembersProps extends RouteComponentProps<MatchParams> {
+    hasRole: (role: string) => boolean;
+}
 
 const onAddTeamMembersAddClick = (history: History, teamId: string) => {
     history.push(`/team/${teamId}/add-users`);
@@ -28,8 +31,11 @@ const onAddNominatedContactClick = (history: History, teamId: string) => {
     history.push(`/team/${teamId}/manage-nominated-contacts`);
 };
 
-const TeamView: React.FC<TeamMembersProps> = ({ history, match }) => {
+const onEditTeamAddClick = (history: History, teamId: string) => {
+    history.push(`/team/${teamId}/edit`);
+};
 
+const TeamView: React.FC<TeamMembersProps> = ({ history, match, hasRole }) => {
     const [pageError, , clearErrors, setErrorMessage] = useError();
     const [state, dispatch] = React.useReducer<Reducer<State, Action>>(reducer, initialState);
 
@@ -118,10 +124,22 @@ const TeamView: React.FC<TeamMembersProps> = ({ history, match }) => {
                         </div>
                 }
                 <button type="submit" className="govuk-button govuk-!-margin-right-1 add-team-members-button" data-module="govuk-button" onClick={() => onAddTeamMembersAddClick(history, teamId as string)}>Add team members</button>
-                <button type="submit" className="govuk-button govuk-button--secondary  manage-nominated-contacts-button" data-module="govuk-button" onClick={() => onAddNominatedContactClick(history, teamId as string)}>Manage nominated contacts</button>
+                <button type="submit" className="govuk-button govuk-!-margin-right-1 govuk-button--secondary manage-nominated-contacts-button" data-module="govuk-button" onClick={() => onAddNominatedContactClick(history, teamId as string)}>Manage nominated contacts</button>
+                {hasRole('RENAME_TEAM') &&
+                    <button type="submit" className="govuk-button govuk-button--secondary" data-module="govuk-button" onClick={() => onEditTeamAddClick(history, teamId)}>Edit Team</button>}
             </div>
         </div>
     );
 };
 
-export default TeamView;
+const WrappedTeamView = (routeProps: RouteComponentProps<MatchParams>) => (
+    <ApplicationConsumer>
+        {
+            ({ hasRole }: ApplicationState) => {
+                return <TeamView {...routeProps} hasRole={hasRole} />;
+            }
+        }
+    </ApplicationConsumer>
+);
+
+export default WrappedTeamView;
