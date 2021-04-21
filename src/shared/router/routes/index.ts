@@ -27,6 +27,7 @@ import CampaignsView from '../../pages/list/mpamCampaign/campaignsView';
 import AddCampaign from '../../pages/list/mpamCampaign/addCampaign';
 import AmendCampaign from '../../pages/list/mpamCampaign/amendCampaign';
 import AddTeam from '../../pages/team/addTeam/addTeam';
+import EditTeam from '../../pages/team/editTeam/editTeam';
 
 export interface Route {
     component: React.FunctionComponent | Error;
@@ -95,6 +96,12 @@ const routes = [
         exact: true,
         component: AddUsersToTeam,
         title: 'AddUsersToTeam'
+    },
+    {
+        path: '/team/:teamId/edit',
+        exact: true,
+        component: EditTeam,
+        title: 'EditTeam'
     },
     {
         path: '/add-unit',

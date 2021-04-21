@@ -80,3 +80,5 @@ export const TEAM_CREATION_FAILURE_NAME_ALREADY_EXISTS = 'The team name already 
 export const TEAM_CREATION_FAILURE_UNKNOWN_ERROR = 'Something went wrong when adding the team';
 export const LOAD_NOMINATED_CONTACTS_ERROR_DESCRIPTION = 'There was an error retrieving the list of nominated contacts.  Please try refreshing the page.';
 export const DELETE_NOMINATED_CONTACTS_ERROR_DESCRIPTION = 'There was an error deleting the nominated contact. Please try refreshing the page.';
+export const TEAM_RENAME_FAILED_NAME_ALREADY_EXISTS = 'A team with that name already exists. Please try a different name.';
+export const TEAM_RENAME_FAILED_UNKNOWN_ERROR = 'There was a problem renaming the team. Contact the service desk.';
