@@ -64,6 +64,24 @@ async function addTeam(req, res, next) {
     }
 }
 
+
+async function updateTeamName(req, res, next) {
+    const logger = getLogger(req.request);
+    const { teamId } = req.params;
+    try {
+        await infoService.put(
+            `/team/${teamId}`,
+            req.body,
+            { headers: User.createHeaders(req.user) }
+        );
+        req.listService.flush('TEAMS');
+        res.sendStatus(200);
+    } catch (error) {
+        logger.error(error);
+        next(error);
+    }
+}
+
 async function returnTeamJson(_, res) {
     const { locals: { team } } = res;
     await res.json(team);
@@ -86,5 +104,6 @@ module.exports = {
     returnTeamJson,
     returnTeamsJson,
     returnTeamMembersJson,
-    addTeam
+    addTeam,
+    updateTeamName
 };

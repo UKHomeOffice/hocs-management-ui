@@ -1,5 +1,5 @@
 import {
-    getTeams, getTeamMembers, returnTeamMembersJson, returnTeamsJson, addTeam
+    getTeams, getTeamMembers, returnTeamMembersJson, returnTeamsJson, addTeam, updateTeamName
 } from '../team';
 import { infoService } from '../../clients/index';
 
@@ -43,10 +43,10 @@ describe('getTeamsForUser', () => {
         {
             label: 'team1',
             value: 'teamId1'
-        },{
+        }, {
             label: 'team2',
             value: 'teamId2'
-        },{
+        }, {
             label: 'team3',
             value: 'teamId3'
         }
@@ -162,6 +162,39 @@ describe('addTeam', () => {
     it('should catch and log error if post request fails', async () => {
         infoService.post.mockImplementation(() => Promise.reject());
         await addTeam(req, res, next);
+        expect(logError).toHaveBeenCalled();
+        expect(next).toHaveBeenCalled();
+    });
+});
+
+
+describe('updateTeamName', () => {
+    const mockFlush = jest.fn();
+    const req = {
+        params: { teamId: '__someTeamUUID__' },
+        body: '__someUpdateTeamNameRequest__',
+        listService: { flush: mockFlush }
+    };
+    let res = { sendStatus: jest.fn() };
+    const next = jest.fn();
+    const headers = '__headers__';
+
+    it('should successfully perform put with data', async () => {
+        User.createHeaders.mockImplementation(() => headers);
+        await updateTeamName(req, res, next);
+
+        expect(infoService.put).toHaveBeenCalledWith(
+            '/team/__someTeamUUID__',
+            '__someUpdateTeamNameRequest__',
+            { headers: headers }
+        );
+        expect(req.listService.flush).toHaveBeenCalledWith('TEAMS');
+        expect(res.sendStatus).toHaveBeenCalledWith(200);
+    });
+
+    it('should catch and log error if put request fails', async () => {
+        infoService.put.mockImplementation(() => Promise.reject());
+        await updateTeamName(req, res, next);
         expect(logError).toHaveBeenCalled();
         expect(next).toHaveBeenCalled();
     });
