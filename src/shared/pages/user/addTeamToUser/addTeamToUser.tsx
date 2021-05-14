@@ -1,6 +1,6 @@
 import React, { useCallback, useEffect } from 'react';
 import { RouteComponentProps } from 'react-router';
-import { addUserToTeam, getUser } from '../../../services/usersService';
+import { addUsersToTeam, getUser } from '../../../services/usersService';
 import Item from '../../../models/item';
 import { ADD_USER_ERROR_DESCRIPTION, ADD_USER_ERROR_TITLE, ADD_USER_TO_TEAM_SUCCESS, EMPTY_TEAMS_SUBMIT_ERROR_DESCRIPTION, EMPTY_TEAMS_SUBMIT_ERROR_TITLE, GENERAL_ERROR_TITLE, LOAD_TEAMS_ERROR_DESCRIPTION, LOAD_USER_ERROR_DESCRIPTION } from '../../../models/constants';
 import useError from '../../../hooks/useError';
@@ -51,7 +51,7 @@ const AddTeamToUser: React.FC<AddToTeamProps> = ({ history, match }) => {
             selectedTeams.forEach((team) => {
                 const user = state.user;
                 if (user !== undefined) {
-                    addUserToTeam({ label: user.username, value: user.id }, team.value)
+                    addUsersToTeam([{ label: user.username, value: user.id }], team.value)
                         .then(() => dispatch({ type: 'RemoveFromSelectedTeams', payload: team }))
                         .catch(() => {
                             setErrorMessage(new ErrorMessage(ADD_USER_ERROR_TITLE, ADD_USER_ERROR_DESCRIPTION));

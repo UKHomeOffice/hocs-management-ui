@@ -15,9 +15,13 @@ export type SetTeamName = {
     type: 'SetTeamName';
     payload?: string;
 };
+export type RemoveAllFromSelection = {
+    type: 'RemoveAllFromSelection';
+};
 
 export type Action =
     AddToSelection |
     ClearSelectedUser |
     RemoveContact |
-    SetTeamName;
+    SetTeamName |
+    RemoveAllFromSelection;

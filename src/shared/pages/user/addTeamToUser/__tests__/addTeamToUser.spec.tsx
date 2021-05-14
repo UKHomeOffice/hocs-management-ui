@@ -38,7 +38,7 @@ jest.mock('../../../../services/teamsService', () => ({
 }));
 jest.mock('../../../../services/usersService', () => ({
     __esModule: true,
-    addUserToTeam: jest.fn().mockReturnValue(Promise.resolve()),
+    addUsersToTeam: jest.fn().mockReturnValue(Promise.resolve()),
     getUser: jest.fn().mockReturnValue(Promise.resolve({
         label: '__user__',
         value: '__userId__'
@@ -46,7 +46,7 @@ jest.mock('../../../../services/usersService', () => ({
 }));
 
 const getTeamsSpy = jest.spyOn(TeamsService, 'getTeams');
-const addUserToTeamSpy = jest.spyOn(UsersService, 'addUserToTeam');
+const addUserToTeamSpy = jest.spyOn(UsersService, 'addUsersToTeam');
 const getUserSpy = jest.spyOn(UsersService, 'getUser');
 const useReducerSpy = jest.spyOn(React, 'useReducer');
 const reducerDispatch = jest.fn();
@@ -187,14 +187,14 @@ describe('when the submit button is clicked', () => {
         });
 
         await wait(async () => {
-            expect(addUserToTeamSpy).nthCalledWith(1, {
+            expect(addUserToTeamSpy).nthCalledWith(1, [{
                 label: 'd',
                 value: '__user__'
-            }, '__teamId1__');
-            expect(addUserToTeamSpy).nthCalledWith(2, {
+            }], '__teamId1__');
+            expect(addUserToTeamSpy).nthCalledWith(2, [{
                 label: 'd',
                 value: '__user__'
-            }, '__teamId2__');
+            }], '__teamId2__');
             expect(clearErrorsSpy).toBeCalled();
         });
     });

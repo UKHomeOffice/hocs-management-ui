@@ -22,8 +22,9 @@ describe('User middleware addToTeam', () => {
 
     it('should call the post method on the info service', async () => {
         User.createHeaders.mockImplementation(() => headers);
+        req.body = ['__user1__', '__user2__'];
         await addToTeam(req, res, next);
-        expect(infoService.post).toHaveBeenCalledWith(`/users/${userId}/team/${teamId}`, {}, { headers: headers });
+        expect(infoService.post).toHaveBeenCalledWith(`/users/team/${teamId}`, ['__user1__', '__user2__'], { headers: headers });
     });
 
     it('should call the user create headers method', async () => {

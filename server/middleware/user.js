@@ -3,13 +3,13 @@ const getLogger = require('../libs/logger');
 const User = require('../models/user');
 const { FormSubmissionError } = require('../models/error');
 
-async function addToTeam(req, _, next) {
+async function addUsersToTeam(req, _, next) {
 
     const logger = getLogger(req.request);
-    const { userId, teamId } = req.params;
+    const { teamId } = req.params;
 
     try {
-        await infoService.post(`/users/${userId}/team/${teamId}`, {}, { headers: User.createHeaders(req.user) });
+        await infoService.post(`/users/team/${teamId}`, req.body, { headers: User.createHeaders(req.user) });
         next();
     } catch (error) {
         logger.error(error);
@@ -101,7 +101,7 @@ async function returnUserJson(_, res) {
 }
 
 module.exports = {
-    addToTeam,
+    addToTeam: addUsersToTeam,
     getAllUsers,
     getUser,
     addUser,

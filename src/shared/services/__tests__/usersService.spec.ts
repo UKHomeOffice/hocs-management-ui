@@ -1,5 +1,5 @@
 import axios from 'axios';
-import { getUsers, addUserToTeam, AddUserError, deleteUserFromTeam, addUser, updateUser } from '../usersService';
+import { getUsers, addUsersToTeam, AddUserError, deleteUserFromTeam, addUser, updateUser } from '../usersService';
 import { User } from '../../models/user';
 
 jest.mock('axios');
@@ -87,7 +87,7 @@ describe('when the addUserToTeam method is called', () => {
         it('should return a resolved promise with the users collection', async () => {
             expect.assertions(2);
 
-            await addUserToTeam({ label: '__user1__', value: '__userId1__' }, '__teamId__').then((payload: User[]) => {
+            await addUsersToTeam([{ label: '__user1__', value: '__userId1__' }], '__teamId__').then((payload: User[]) => {
                 expect(axios.post).toHaveBeenCalledTimes(1);
                 expect(payload).toStrictEqual({ label: '__user1__', value: '__userId1__' });
             });
@@ -99,10 +99,16 @@ describe('when the addUserToTeam method is called', () => {
             jest.spyOn(axios, 'post').mockReturnValue(Promise.reject(new Error('__error__')));
             expect.assertions(3);
 
-            await addUserToTeam({ label: '__user1__', value: '__userId1__' }, '__teamId__').catch((error: AddUserError) => {
+            await addUsersToTeam([
+                { label: '__user1__', value: '__userId1__' },
+                { label: '__user2__', value: '__userId2__' }
+            ], '__teamId__').catch((error: AddUserError) => {
                 expect(axios.post).toHaveBeenCalledTimes(1);
                 expect(error.message).toEqual('__error__');
-                expect(error.userToAdd).toStrictEqual({ label: '__user1__', value: '__userId1__' });
+                expect(error.usersToAdd).toStrictEqual([
+                    { label: '__user1__', value: '__userId1__' },
+                    { label: '__user2__', value: '__userId2__' }
+                ]);
             });
         });
     });

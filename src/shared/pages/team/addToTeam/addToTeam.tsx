@@ -1,7 +1,7 @@
 import React, { useEffect, useCallback, Reducer } from 'react';
 import { RouteComponentProps } from 'react-router';
 import { getTeam } from '../../../services/teamsService';
-import { addUserToTeam, getUsers, AddUserError } from '../../../services/usersService';
+import { addUsersToTeam, getUsers, AddUserError } from '../../../services/usersService';
 import TypeAhead from '../../../common/components/typeAhead';
 import ErrorSummary from '../../../common/components/errorSummary';
 import Item from '../../../models/item';
@@ -34,17 +34,15 @@ const AddToTeam: React.FC<AddToTeamProps> = ({ history, match }) => {
             return;
         }
 
-        Promise.all(state.selectedUsers.map(user =>
-            addUserToTeam(user, teamId)
-                .then(() => dispatch({ type: 'RemoveFromSelection', payload: user }))
-                .catch((error: AddUserError) => {
-                    const { userToAdd: { label, value } } = error;
-                    addFormError({ key: value, value: label });
-                    throw error;
-                })
-        )).then(() => {
-            history.push(`/team-view/${teamId}`, { successMessage: ADD_USER_SUCCESS });
-        }).catch(() => { });
+        addUsersToTeam(state.selectedUsers, teamId)
+            .then(() => dispatch({ type: 'RemoveAllFromSelection' }))
+            .catch((error: AddUserError) => {
+                error.usersToAdd.map(({ label, value }) => addFormError({ key: value, value: label }));
+                throw error;
+            })
+            .then(() => {
+                history.push(`/team-view/${teamId}`, { successMessage: ADD_USER_SUCCESS });
+            }).catch(() => { });
     };
 
     const onSelectedUserChange = useCallback((selectedUser: Item) => {

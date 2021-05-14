@@ -3,7 +3,7 @@ const { addToTeam, getAllUsers, getUser, addUser, amendUser, removeFromTeam, ret
 const { getTeams, returnTeamsJson } = require('../../middleware/team');
 const { fileMiddleware } = require('../../middleware/file');
 
-router.post('/:userId/team/:teamId', addToTeam, getTeams, returnTeamsJson);
+router.post('/team/:teamId', addToTeam, getTeams, returnTeamsJson);
 
 router.delete('/:userId/team/:teamId', removeFromTeam, getTeams, returnTeamsJson);
 

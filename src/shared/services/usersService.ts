@@ -4,10 +4,10 @@ import Item from '../models/item';
 import UpdateRequest from '../pages/user/userAmend/updateRequest';
 
 export class AddUserError extends Error {
-    userToAdd: Item;
-    constructor(message: string, userToAdd: Item) {
+    usersToAdd: Array<Item>;
+    constructor(message: string, usersToAdd: Array<Item>) {
         super(message);
-        this.userToAdd = userToAdd;
+        this.usersToAdd = usersToAdd;
     }
 }
 
@@ -27,11 +27,14 @@ export const getUsers = () => new Promise((resolve, reject) => axios
     .catch(reason => reject(reason))
 );
 
-export const addUserToTeam = (user: Item, teamId: string) => new Promise((resolve, reject) => axios
-    .post(`/api/users/${user.value}/team/${teamId}`)
-    .then(response => resolve(response.data))
-    .catch(reason => reject(new AddUserError(reason.message, user)))
-);
+export const addUsersToTeam = (users: Array<Item>, teamId: string) => new Promise((resolve, reject) => {
+    const usersUuids = users.map(user => user.value);
+    console.log(`userUuids ${usersUuids}`);
+    axios
+        .post(`/api/users/team/${teamId}`, usersUuids)
+        .then(response => resolve(response.data))
+        .catch(reason => reject(new AddUserError(reason.message, users)));
+});
 
 export const deleteUserFromTeam = (userId: string, teamId: string) => new Promise((resolve, reject) => axios
     .delete(`/api/users/${userId}/team/${teamId}`)

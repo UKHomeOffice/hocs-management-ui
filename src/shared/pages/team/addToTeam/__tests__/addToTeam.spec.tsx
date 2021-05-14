@@ -27,7 +27,7 @@ jest.mock('../../../../services/teamsService', () => ({
 
 jest.mock('../../../../services/usersService', () => ({
     __esModule: true,
-    addUserToTeam: jest.fn().mockReturnValue(Promise.resolve()),
+    addUsersToTeam: jest.fn().mockReturnValue(Promise.resolve()),
     getUsers: jest.fn().mockReturnValue(Promise.resolve(
         [{
             label: '__user1__',
@@ -40,7 +40,7 @@ jest.mock('../../../../services/usersService', () => ({
 }));
 
 const getTeamSpy = jest.spyOn(TeamsService, 'getTeam');
-const addUsersToTeamSpy = jest.spyOn(UsersService, 'addUserToTeam');
+const addUsersToTeamSpy = jest.spyOn(UsersService, 'addUsersToTeam');
 const getUsersSpy = jest.spyOn(UsersService, 'getUsers');
 const useReducerSpy = jest.spyOn(React, 'useReducer');
 const reducerDispatch = jest.fn();
@@ -139,44 +139,31 @@ describe('when the submit button is clicked', () => {
         });
     });
 
-    it('should call the service and dispach actions for the selected options', async () => {
+    it('should call the service and dispatch actions for the selected options', async () => {
         await wait(async () => {
             const submitButton = getByText(wrapper.container, 'Add selected users');
             fireEvent.click(submitButton);
         });
 
         await wait(async () => {
-            expect(addUsersToTeamSpy).nthCalledWith(1, {
-                label: '__user1__',
-                value: '__userId1__'
-            }, '__teamId__');
-            expect(addUsersToTeamSpy).nthCalledWith(2, {
-                label: '__user2__',
-                value: '__userId2__'
-            }, '__teamId__');
+            expect(addUsersToTeamSpy).nthCalledWith(1, [
+                { 'label': '__user1__', 'value': '__userId1__' },
+                { 'label': '__user2__', 'value': '__userId2__' }],
+            '__teamId__');
             expect(clearErrorsSpy).toBeCalled();
             expect(reducerDispatch).nthCalledWith(1, {
-                type: 'RemoveFromSelection', payload: {
-                    label: '__user1__',
-                    value: '__userId1__'
-                }
-            });
-            expect(reducerDispatch).nthCalledWith(2, {
-                type: 'RemoveFromSelection', payload: {
-                    label: '__user2__',
-                    value: '__userId2__'
-                }
+                type: 'RemoveAllFromSelection'
             });
         });
     });
 
     it('should display errors for each erroring team member add request', async () => {
-        expect.assertions(2);
+        expect.assertions(1);
         addUsersToTeamSpy.mockImplementation(() => Promise.reject({
-            userToAdd: {
+            usersToAdd: [{
                 label: '__label__',
                 value: '__value__'
-            }
+            }]
         }));
 
         await wait(() => {
@@ -185,7 +172,6 @@ describe('when the submit button is clicked', () => {
         });
 
         expect(addFormErrorSpy).nthCalledWith(1, { key: '__value__', value: '__label__' });
-        expect(addFormErrorSpy).nthCalledWith(2, { key: '__value__', value: '__label__' });
     });
 
     it('should set an error when no users are selected', async () => {

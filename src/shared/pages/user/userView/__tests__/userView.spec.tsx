@@ -28,7 +28,7 @@ jest.mock('../../../../services/teamsService', () => ({
 
 jest.mock('../../../../services/usersService', () => ({
     __esModule: true,
-    addUserToTeam: jest.fn().mockReturnValue(Promise.resolve()),
+    addUsersToTeam: jest.fn().mockReturnValue(Promise.resolve()),
     deleteUserFromTeam: jest.fn().mockReturnValue(Promise.resolve()),
     getUser: jest.fn().mockReturnValue(Promise.resolve(
         {

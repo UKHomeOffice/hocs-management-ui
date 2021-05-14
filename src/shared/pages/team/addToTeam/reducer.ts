@@ -9,6 +9,8 @@ export const reducer = (state: State, action: Action): State => {
             return { ...state, selectedUser: '' };
         case 'RemoveFromSelection':
             return { ...state, selectedUsers: [...state.selectedUsers.filter(user => user.value !== action.payload.value)] };
+        case 'RemoveAllFromSelection':
+            return { ...state, selectedUsers: [...state.selectedUsers = []] };
         case 'SetTeamName':
             return { ...state, teamName: action.payload };
     }
