@@ -13,4 +13,9 @@ describe('Layout header component', () => {
             shallow(<Header service="Test Service" />)
         ).toMatchSnapshot();
     });
+    it('should render with custom logout URL', () => {
+        expect(
+            shallow(<Header logoutRedirectUrl="/foo" />)
+        ).toMatchSnapshot();
+    });
 });

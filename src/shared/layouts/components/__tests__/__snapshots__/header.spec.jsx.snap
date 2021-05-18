@@ -1,5 +1,58 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
+exports[`Layout header component should render with custom logout URL 1`] = `
+<header
+  className="govuk-header "
+  data-module="header"
+  role="banner"
+>
+  <div
+    className="govuk-header__container govuk-width-container"
+  >
+    <div
+      className="govuk-header__container govuk-width-container"
+    >
+      <div
+        className="govuk-header__logo"
+      >
+        <span
+          className="govuk-header__logotype"
+        >
+          <Link
+            className="govuk-header__link govuk-header__link--homepage govuk-header__logotype-text"
+            to="/"
+          >
+            Correspondence Service
+          </Link>
+        </span>
+      </div>
+      <div
+        className="govuk-header__content"
+      >
+        <nav>
+          <ul
+            aria-label="Top Level Navigation"
+            className="govuk-header__navigation "
+            id="navigation"
+          >
+            <li
+              className="govuk-header__navigation--end"
+            >
+              <a
+                className="govuk-header__link"
+                href="/oauth/logout?redirect=/foo"
+              >
+                Log out
+              </a>
+            </li>
+          </ul>
+        </nav>
+      </div>
+    </div>
+  </div>
+</header>
+`;
+
 exports[`Layout header component should render with default props 1`] = `
 <header
   className="govuk-header "
@@ -42,7 +95,7 @@ exports[`Layout header component should render with default props 1`] = `
                 className="govuk-header__link"
                 href="/oauth/logout?redirect=/"
               >
-                Logout
+                Log out
               </a>
             </li>
           </ul>
@@ -95,7 +148,7 @@ exports[`Layout header component should render without crest when service is not
                 className="govuk-header__link"
                 href="/oauth/logout?redirect=/"
               >
-                Logout
+                Log out
               </a>
             </li>
           </ul>

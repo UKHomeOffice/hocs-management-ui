@@ -18,7 +18,8 @@ const config = {
                 serviceLink: '/',
                 logoLinkTitle: '',
                 propositionHeader: '',
-                propositionHeaderLink: '/'
+                propositionHeaderLink: '/',
+                logoutRedirectUrl: process.env.LOGOUT_REDIRECT_URL || '/'
             },
             body: {
                 phaseBanner: {

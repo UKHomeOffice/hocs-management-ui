@@ -4,7 +4,7 @@ import { HeaderConfig } from 'shared/models/config';
 
 class Header extends Component<HeaderConfig> {
 
-    createLogotype(service: string, serviceLink: string) {
+    createLogotype(service: string, serviceLink: string, logoutRedirectUrl: string) {
         return (
             <div className="govuk-header__container govuk-width-container">
                 <div className="govuk-header__logo">
@@ -16,7 +16,7 @@ class Header extends Component<HeaderConfig> {
                     <nav>
                         <ul id="navigation" className="govuk-header__navigation " aria-label="Top Level Navigation">
                             <li className="govuk-header__navigation--end">
-                                <a href="/oauth/logout?redirect=/" className="govuk-header__link">Logout</a>
+                                <a href={`/oauth/logout?redirect=${logoutRedirectUrl}`} className="govuk-header__link">Log out</a>
                             </li>
                         </ul>
                     </nav>
@@ -26,11 +26,15 @@ class Header extends Component<HeaderConfig> {
     }
 
     render() {
-        const { service = 'Correspondence Service', serviceLink = '/' } = this.props;
+        const {
+            service = 'Correspondence Service',
+            serviceLink = '/',
+            logoutRedirectUrl = '/'
+        } = this.props;
         return (
             <header className="govuk-header " role="banner" data-module="header">
                 <div className="govuk-header__container govuk-width-container">
-                    {this.createLogotype(service, serviceLink)}
+                    {this.createLogotype(service, serviceLink, logoutRedirectUrl)}
                 </div>
             </header>
         );

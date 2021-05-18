@@ -151,6 +151,7 @@ exports[`Session timer component should render with default props 1`] = `
         },
         "header": Object {
           "isVisible": true,
+          "logoutRedirectUrl": "/",
           "service": "service name",
           "serviceLink": "",
         },

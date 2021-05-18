@@ -2,6 +2,7 @@ export interface HeaderConfig {
     isVisible: boolean;
     service: string;
     serviceLink: string;
+    logoutRedirectUrl: string;
 }
 
 export interface BodyConfig {

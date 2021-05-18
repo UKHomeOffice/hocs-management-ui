@@ -18,6 +18,7 @@ describe('Session timer component', () => {
                     isVisible: true,
                     service: 'service name',
                     serviceLink: '',
+                    logoutRedirectUrl: '/'
                 },
             },
             user: {
