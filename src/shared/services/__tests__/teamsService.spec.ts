@@ -1,6 +1,6 @@
 import axios from 'axios';
 import {
-    getTeam, getTeams, getTeamMembers, getTeamsForUser, addTeam, updateTeamName
+    getTeam, getTeams, getTeamMembers, getTeamsForUser, addTeam, updateTeam
 } from '../teamsService';
 import Team from '../../models/team';
 import { User } from '../../models/user';
@@ -10,7 +10,7 @@ jest.mock('axios');
 
 let axiosGetSpy: jest.SpyInstance;
 const axiosPostSpy: jest.SpyInstance = jest.spyOn(axios, 'post');
-const axiosPutSpy: jest.SpyInstance = jest.spyOn(axios, 'put');
+const axiosPatchSpy: jest.SpyInstance = jest.spyOn(axios, 'patch');
 
 beforeEach(() => {
     jest.resetAllMocks();
@@ -226,17 +226,17 @@ describe('when the addTeam function is called', () => {
     });
 });
 
-describe('when the updateTeamName function is called', () => {
+describe('when the updateTeam function is called', () => {
     const teamId = '__teamId__';
     const newTeamName = '__newTeamName__';
 
     describe('and the put request is successful', () => {
         it('should return a resolved promise', async () => {
             expect.assertions(1);
-            axiosPutSpy.mockReturnValue(Promise.resolve({ data: {} }));
+            axiosPatchSpy.mockReturnValue(Promise.resolve({ data: {} }));
 
-            await updateTeamName(teamId, newTeamName).then(() => {
-                expect(axiosPutSpy).toHaveBeenCalledWith(
+            await updateTeam(teamId, { displayName: newTeamName }).then(() => {
+                expect(axiosPatchSpy).toHaveBeenCalledWith(
                     '/api/teams/__teamId__',
                     { displayName: newTeamName }
                 );
@@ -246,10 +246,10 @@ describe('when the updateTeamName function is called', () => {
 
     describe('and the request fails', () => {
         it('should return a rejected promise with the error', async () => {
-            axiosPutSpy.mockReturnValue(Promise.reject(new Error('__someError__')));
+            axiosPatchSpy.mockReturnValue(Promise.reject(new Error('__someError__')));
             expect.assertions(1);
 
-            await updateTeamName(teamId, newTeamName).catch((error: Error) => {
+            await updateTeam(teamId, { displayName: newTeamName }).catch((error: Error) => {
                 expect(error.message).toEqual('__someError__');
             });
         });

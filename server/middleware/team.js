@@ -1,6 +1,7 @@
 const { infoService } = require('../clients/index');
 const getLogger = require('../libs/logger');
 const User = require('../models/user');
+const { AuthenticationError } = require('../models/error');
 
 async function getTeam(req, res, next) {
 
@@ -16,6 +17,23 @@ async function getTeam(req, res, next) {
         next(error);
     }
 }
+
+async function getUnitForTeam(req, res, next) {
+
+    const logger = getLogger(req.request);
+    const { teamId } = req.params;
+
+    try {
+        const response =
+            await infoService.get(`/team/${teamId}/unit`, {}, { headers: User.createHeaders(req.user) });
+        res.locals.unit = response.data;
+        next();
+    } catch (error) {
+        logger.error(error);
+        next(error);
+    }
+}
+
 
 async function getTeams(req, res, next) {
     try {
@@ -64,12 +82,23 @@ async function addTeam(req, res, next) {
     }
 }
 
-
-async function updateTeamName(req, res, next) {
+async function patchTeam(req, res, next) {
     const logger = getLogger(req.request);
     const { teamId } = req.params;
+
+    // check the user has the correct permissions for their patch request
+    if (req.body.displayName && !User.hasRole(req.user, 'RENAME_TEAM')) {
+        next(new AuthenticationError('Unauthorised'));
+        return;
+    }
+
+    if (req.body.unitUUID && !User.hasRole(req.user, 'REASSIGN_TEAM_UNIT')) {
+        next(new AuthenticationError('Unauthorised'));
+        return;
+    }
+
     try {
-        await infoService.put(
+        await infoService.patch(
             `/team/${teamId}`,
             req.body,
             { headers: User.createHeaders(req.user) }
@@ -86,6 +115,7 @@ async function returnTeamJson(_, res) {
     const { locals: { team } } = res;
     await res.json(team);
 }
+
 async function returnTeamsJson(_, res) {
     const { locals: { teams } } = res;
     await res.json(teams);
@@ -98,6 +128,7 @@ async function returnTeamMembersJson(_, res) {
 
 module.exports = {
     getTeam,
+    getUnitForTeam,
     getTeams,
     getTeamMembers,
     getTeamsForUser,
@@ -105,5 +136,5 @@ module.exports = {
     returnTeamsJson,
     returnTeamMembersJson,
     addTeam,
-    updateTeamName
+    patchTeam
 };

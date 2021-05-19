@@ -26,6 +26,12 @@ jest.mock('../../../../services/teamsService', () => ({
             value: '__userId2__'
         }]
     })),
+    getUnitForTeam: jest.fn().mockReturnValue(Promise.resolve({
+        displayName: '__unit1__',
+        shortCode: '__u1__',
+        value: '__unit1_uuid__',
+        type: '__unit1_type__'
+    })),
     getTeam: jest.fn().mockReturnValue(Promise.resolve({
         active: true,
         displayName: '__displayName__',
@@ -52,19 +58,20 @@ jest.mock('../../../../services/usersService', () => ({
 
 const getTeamSpy = jest.spyOn(TeamsService, 'getTeam');
 const getTeamMembersSpy = jest.spyOn(TeamsService, 'getTeamMembers');
+const getUnitForTeamSpy = jest.spyOn(TeamsService, 'getUnitForTeam');
 const deleteUserFromTeamSpy = jest.spyOn(UsersService, 'deleteUserFromTeam');
 const useReducerSpy = jest.spyOn(React, 'useReducer');
 const useErrorSpy = jest.spyOn(useError, 'default');
 const setMessageSpy = jest.fn();
 const clearErrorsSpy = jest.fn();
-let hasRole = jest.fn();
+let hasOneOfRoles = jest.fn();
 let wrapper: RenderResult;
 
 const renderComponent = () => {
     const OUTER = shallow(<TeamView history={history} location={location} match={match} />);
     const Page = OUTER.props().children;
     return render(
-        <MemoryRouter><Page hasRole={hasRole}></Page></MemoryRouter>
+        <MemoryRouter><Page hasOneOfRoles={hasOneOfRoles}></Page></MemoryRouter>
     );
 };
 
@@ -93,7 +100,8 @@ beforeEach(() => {
             label: '__user2__',
             value: '__userId2__'
         }],
-        teamName: '__teamName__'
+        teamName: '__teamName__',
+        unitName: '__unit1__'
     };
     useReducerSpy.mockImplementationOnce(() => [mockState, jest.fn()]);
     useErrorSpy.mockImplementation(() => [{}, jest.fn(), clearErrorsSpy, setMessageSpy]);
@@ -106,38 +114,34 @@ beforeEach(() => {
 
 describe('when the teamView component is mounted with RENAME_TEAM role', () => {
     beforeAll(() => {
-        hasRole = jest.fn().mockImplementation((role: string) => {
-            if (role === 'RENAME_TEAM') {
-                return true;
-            }
-            return false;
+        hasOneOfRoles = jest.fn().mockImplementation((roles: string[]) => {
+            return true;
         });
     });
 
     it('should render with default props', async () => {
-        expect.assertions(3);
+        expect.assertions(4);
 
         expect(getTeamSpy).toHaveBeenCalled();
         expect(getTeamMembersSpy).toHaveBeenCalled();
+        expect(getUnitForTeamSpy).toHaveBeenCalled();
         expect(wrapper.container).toMatchSnapshot();
     });
 });
 
 describe('when the teamView component is mounted without RENAME_TEAM role', () => {
     beforeAll(() => {
-        hasRole = jest.fn().mockImplementation((role: string) => {
-            if (role === 'RENAME_TEAM') {
-                return false;
-            }
+        hasOneOfRoles = jest.fn().mockImplementation((roles: string[]) => {
             return true;
         });
     });
 
     it('should render with default props', async () => {
-        expect.assertions(3);
+        expect.assertions(4);
 
         expect(getTeamSpy).toHaveBeenCalled();
         expect(getTeamMembersSpy).toHaveBeenCalled();
+        expect(getUnitForTeamSpy).toHaveBeenCalled();
         expect(wrapper.container).toMatchSnapshot();
     });
 });

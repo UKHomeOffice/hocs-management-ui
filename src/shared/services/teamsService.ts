@@ -1,9 +1,18 @@
 import axios from 'axios';
 import Item from '../models/item';
 import Team from '../models/team';
+import Unit from '../models/unit';
+import { TeamPatch } from '../pages/team/editTeam/TeamPatch';
 
 export const getTeam = (teamId: string) => new Promise<Team>((resolve, reject) =>
     axios.get(`/api/teams/${teamId}`)
+        .then(response => resolve(response.data))
+        .catch(error => reject(error))
+);
+
+
+export const getUnitForTeam = (teamId: string) => new Promise<Unit>((resolve, reject) =>
+    axios.get(`/api/teams/${teamId}/unit`)
         .then(response => resolve(response.data))
         .catch(error => reject(error))
 );
@@ -32,8 +41,8 @@ export const addTeam = (team: Team) => new Promise((resolve, reject) => axios
     .catch(reason => reject(reason))
 );
 
-export const updateTeamName = (teamId: string, newDisplayName: string) => new Promise((resolve, reject) => axios
-    .put(`/api/teams/${teamId}`, { displayName: newDisplayName })
+export const updateTeam = (teamId: string, patch: TeamPatch) => new Promise((resolve, reject) => axios
+    .patch(`/api/teams/${teamId}`, patch)
     .then(response => resolve(response.data))
     .catch(reason => reject(reason))
 );

@@ -7,7 +7,7 @@ describe('Given the SetCurrentTeamName action is dispatched', () => {
 
         const expectedState = {
             currentDisplayName: '__someTeamName__',
-            newDisplayName: ''
+            newDisplayName: '__someTeamName__'
         };
         expect(state).toStrictEqual(expectedState);
     });

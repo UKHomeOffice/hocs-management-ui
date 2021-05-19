@@ -5,12 +5,20 @@ import ErrorSummary from '../../../common/components/errorSummary';
 import useError from '../../../hooks/useError';
 import { reducer } from './reducer';
 import { initialState } from './initialState';
-import { ApplicationConsumer } from '../../../contexts/application';
+import { ApplicationConsumer, ApplicationState } from '../../../contexts/application';
 import { object, string } from 'yup';
 import { validate } from '../../../validation';
-import { getTeam, updateTeamName } from '../../../services/teamsService';
+import { getTeam, getUnitForTeam, updateTeam } from '../../../services/teamsService';
 import ErrorMessage from '../../..//models/errorMessage';
-import { GENERAL_ERROR_TITLE, LOAD_TEAM_ERROR_DESCRIPTION, TEAM_RENAME_FAILED_NAME_ALREADY_EXISTS, TEAM_RENAME_FAILED_UNKNOWN_ERROR, VALIDATION_ERROR_TITLE } from '../../../models/constants';
+import {
+    GENERAL_ERROR_TITLE,
+    LOAD_TEAM_ERROR_DESCRIPTION,
+    TEAM_UPDATE_FAILED_UNKNOWN_ERROR,
+    VALIDATION_ERROR_TITLE
+} from '../../../models/constants';
+import { getUnitsForTypeAhead } from '../../../services/unitsService';
+import TypeAhead from '../../../common/components/typeAhead';
+import { TeamPatch } from './TeamPatch';
 
 interface MatchParams {
     teamId: string;
@@ -18,6 +26,7 @@ interface MatchParams {
 
 interface EditTeamProps extends RouteComponentProps<MatchParams> {
     csrfToken?: string;
+    hasRole: (role: string) => boolean;
 }
 
 const validationSchema = object({
@@ -26,7 +35,8 @@ const validationSchema = object({
         .label('new team name')
 });
 
-const EditTeam: React.FC<EditTeamProps> = ({ csrfToken, history, match }) => {
+
+const EditTeam: React.FC<EditTeamProps> = ({ csrfToken, history, match, hasRole }) => {
 
     const [pageError, addFormError, clearErrors, setErrorMessage] = useError('', VALIDATION_ERROR_TITLE);
     const [state, dispatch] = useReducer(reducer, initialState);
@@ -41,25 +51,47 @@ const EditTeam: React.FC<EditTeamProps> = ({ csrfToken, history, match }) => {
             .catch(() => {
                 setErrorMessage(new ErrorMessage(LOAD_TEAM_ERROR_DESCRIPTION, GENERAL_ERROR_TITLE));
             });
+        getUnitForTeam(teamId)
+            .then(unit => dispatch({ type: 'SetUnitInitial', payload: { label: unit.displayName, value: unit.type } }))
+            .catch(() => {
+                setErrorMessage(new ErrorMessage(LOAD_TEAM_ERROR_DESCRIPTION, GENERAL_ERROR_TITLE));
+            });
     }, []);
 
-    const handleSubmit = (event: React.FormEvent) => {
+    const handleSubmit = async (event: React.FormEvent) => {
         event.preventDefault();
         clearErrors();
 
+        const changesInPatch: Array<string> = [];
+        const teamPatch:TeamPatch = {};
+
         if (validate(validationSchema, state, addFormError)) {
-            updateTeamName(teamId, state.newDisplayName).then(() => {
-                history.push(`/team-view/${teamId}`, { successMessage: `Team name changed from ${state.currentDisplayName} to ${state.newDisplayName}.` });
-            }).catch((error) => {
-                if (error && error.response && error.response.status === 409) {
+            if (state.newDisplayName !== state.currentDisplayName) {
+                teamPatch.displayName = state.newDisplayName;
+                changesInPatch.push(`Team name changed from ${state.currentDisplayName} to ${state.newDisplayName}.`);
+            }
+
+            if (state.unit?.value !== state.initialUnit?.value) {
+                teamPatch.unitUUID = state.unit?.value;
+                changesInPatch.push(`Team unit changed from ${state.initialUnit?.label} to ${state.unit?.label}.`);
+            }
+
+            if (Object.keys(teamPatch).length > 0) {
+
+                await updateTeam(teamId, teamPatch).then(() => {
+                    history.push(`/team-view/${teamId}`, { successMessage: changesInPatch.join(' ') });
+                }).catch((error) => {
                     setErrorMessage(
-                        new ErrorMessage(TEAM_RENAME_FAILED_NAME_ALREADY_EXISTS, GENERAL_ERROR_TITLE)
+                        new ErrorMessage(error.response.data.body || TEAM_UPDATE_FAILED_UNKNOWN_ERROR, GENERAL_ERROR_TITLE)
                     );
-                } else {
-                    setErrorMessage(new ErrorMessage(TEAM_RENAME_FAILED_UNKNOWN_ERROR, GENERAL_ERROR_TITLE));
-                }
-            });
+
+                });
+            } else {
+                history.push(`/team-view/${teamId}`);
+            }
         }
+
+
     };
 
     return (
@@ -80,7 +112,7 @@ const EditTeam: React.FC<EditTeamProps> = ({ csrfToken, history, match }) => {
                 <div className="govuk-grid-column-two-thirds-from-desktop">
                     <form method="POST" onSubmit={handleSubmit}>
                         <input type="hidden" name="_csrf" value={csrfToken} />
-                        <Text
+                        {(hasRole('RENAME_TEAM')) && <Text
                             label="New team name"
                             name="newTeamName"
                             type="text"
@@ -88,12 +120,22 @@ const EditTeam: React.FC<EditTeamProps> = ({ csrfToken, history, match }) => {
                                 ({ value }) => dispatch({ type: 'SetNewTeamName', payload: value as string })
                             }
                             value={state.newDisplayName}
-                        />
+                        />}
+                        {(hasRole('REASSIGN_TEAM_UNIT')) && <TypeAhead
+                            clearable={true}
+                            disabled={false}
+                            getOptions={getUnitsForTypeAhead(setErrorMessage)}
+                            label={'Unit'}
+                            name={'unit'}
+                            value={{ label: state.unit?.label || '', value: '' }}
 
+                            onSelectedItemChange={
+                                (item ) => dispatch({ type: 'SetUnit', payload: item })
+                            }
+                        />}
                         <div className="govuk-form-group">
                             <button type="submit" className="govuk-button">Update</button>
                         </div>
-
                     </form>
                 </div>
             </div>
@@ -103,8 +145,8 @@ const EditTeam: React.FC<EditTeamProps> = ({ csrfToken, history, match }) => {
 
 const WrappedEditTeam = (routeProps: RouteComponentProps<MatchParams>) => (
     <ApplicationConsumer>
-        {({ csrf }) => (
-            <EditTeam csrfToken={csrf} {...routeProps} />
+        {({ csrf, hasRole }: ApplicationState) => (
+            <EditTeam csrfToken={csrf} {...routeProps} hasRole={hasRole}/>
         )}
     </ApplicationConsumer>
 );

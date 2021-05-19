@@ -4,4 +4,5 @@ export interface State {
     teamMembers: Item[];
     teamMembersLoaded: boolean;
     teamName?: string;
+    unitName?: string;
 }

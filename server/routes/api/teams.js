@@ -1,14 +1,18 @@
 const router = require('express').Router();
 const {
-    getTeam, getTeams, getTeamMembers, getTeamsForUser,
+    getTeam, getTeams, getUnitForTeam, getTeamMembers, getTeamsForUser,
     returnTeamJson, returnTeamsJson, returnTeamMembersJson,
-    addTeam, updateTeamName
+    addTeam, patchTeam
 } = require('../../middleware/team');
+const { returnUnitAsJson } = require('../../middleware/unit');
+
 const { protect } = require('../../middleware/auth');
 
 router.get('', getTeams, returnTeamsJson);
 
 router.get('/:teamId', getTeam, returnTeamJson);
+
+router.get('/:teamId/unit', getUnitForTeam, returnUnitAsJson);
 
 router.get('/:teamId/members', getTeamMembers, returnTeamMembersJson);
 
@@ -18,8 +22,7 @@ router.post('/unit/:unitUUID',
     protect('DCU'),
     addTeam);
 
-router.put('/:teamId',
-    protect('RENAME_TEAM'),
-    updateTeamName);
+router.patch('/:teamId',
+    patchTeam);
 
 module.exports = router;

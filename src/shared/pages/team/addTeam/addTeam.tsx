@@ -1,18 +1,17 @@
-import React, { useReducer, useCallback } from 'react';
+import React, { useReducer } from 'react';
 import { History } from 'history';
 import { Link, RouteComponentProps } from 'react-router-dom';
 import Text from '../../../common/components/forms/text';
 import ErrorSummary from '../../../common/components/errorSummary';
 import useError from '../../../hooks/useError';
 import {
-    GENERAL_ERROR_TITLE, LOAD_UNITS_ERROR_DESCRIPTION,
+    GENERAL_ERROR_TITLE,
     TEAM_CREATION_FAILURE_NAME_ALREADY_EXISTS, TEAM_CREATION_FAILURE_UNKNOWN_ERROR, TEAM_CREATION_SUCCESS,
     VALIDATION_ERROR_TITLE,
 } from '../../../models/constants';
 import TypeAhead from '../../../common/components/typeAhead';
-import { getUnits } from '../../../services/unitsService';
+import { getUnitsForTypeAhead } from '../../../services/unitsService';
 import ErrorMessage from '../../../models/errorMessage';
-import Item from '../../../models/item';
 import { reducer } from './reducer';
 import { initialState } from './initialState';
 import { ApplicationConsumer } from '../../../contexts/application';
@@ -58,21 +57,6 @@ const AddTeam: React.FC<AddTeamProps> = ({ csrfToken,history }) => {
         }
     };
 
-    const getUnitsForTypeAhead = useCallback(() => new Promise<Item[]>(resolve => getUnits()
-        .then((units) => {
-            const items: Item[] = [];
-            units.forEach(function (unit){
-                items.push({ label: unit.displayName, value: unit.type });
-            });
-            resolve(items);
-        })
-        .catch(() => {
-            //change
-            setErrorMessage(new ErrorMessage(LOAD_UNITS_ERROR_DESCRIPTION, GENERAL_ERROR_TITLE));
-            resolve([]);
-        })
-    ),[]);
-
     return (
         <>
             <div className="govuk-grid-row">
@@ -104,7 +88,7 @@ const AddTeam: React.FC<AddTeamProps> = ({ csrfToken,history }) => {
                         <TypeAhead
                             clearable={true}
                             disabled={false}
-                            getOptions={getUnitsForTypeAhead}
+                            getOptions={getUnitsForTypeAhead(setErrorMessage)}
                             label={'Unit'}
                             name={'unit'}
                             onSelectedItemChange={

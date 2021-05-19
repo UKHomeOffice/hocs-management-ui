@@ -15,6 +15,7 @@ export interface ApplicationState {
     layout?: LayoutConfig;
     track?(event: string, payload: any): void;
     hasRole(role: string): boolean;
+    hasOneOfRoles(roles: string[]): boolean;
 }
 
 interface ApplicationProps {
@@ -24,7 +25,8 @@ interface ApplicationProps {
 
 const defaultState: ApplicationState = {
     dispatch: () => Promise.resolve(),
-    hasRole: (_: string) => { return false; }
+    hasRole: (_: string) => { return false; },
+    hasOneOfRoles: (_: string[]) => { return false; }
 };
 
 export const Context = React.createContext<ApplicationState>(defaultState);
@@ -76,6 +78,9 @@ export class ApplicationProvider extends Component<ApplicationProps, Application
             track: this.track.bind(this),
             hasRole: (role) => {
                 return config.user?.roles.includes(role) || false;
+            },
+            hasOneOfRoles: (roles: string[]) => {
+                return roles.some(role => config.user?.roles.includes(role)) || false;
             }
         };
     }

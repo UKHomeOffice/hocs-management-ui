@@ -6,8 +6,13 @@ export const reducer = (state: State, action: Action): State => {
         case 'SetCurrentTeamName':
             return {
                 ...state,
-                currentDisplayName: action.payload
+                currentDisplayName: action.payload,
+                newDisplayName: action.payload
             };
+        case 'SetUnit':
+            return { ...state, unit: action.payload };
+        case 'SetUnitInitial':
+            return { ...state, unit: action.payload, initialUnit: action.payload };
         case 'SetNewTeamName':
             return {
                 ...state,

@@ -2,13 +2,20 @@ import React, { Reducer, useEffect, Fragment } from 'react';
 import { RouteComponentProps } from 'react-router';
 import { History } from 'history';
 import { deleteUserFromTeam } from '../../../services/usersService';
-import { getTeam, getTeamMembers } from '../../../services/teamsService';
+import { getTeam, getTeamMembers, getUnitForTeam } from '../../../services/teamsService';
 import { State } from './state';
 import { Action } from './actions';
 import { reducer } from './reducer';
 import { initialState } from './initialState';
 import { ListUser } from '../../../models/listUser';
-import { GENERAL_ERROR_TITLE, LOAD_TEAM_ERROR_DESCRIPTION, LOAD_TEAM_MEMBERS_ERROR_DESCRIPTION, REMOVE_FROM_TEAM_ERROR_DESCRIPTION, VALIDATION_ERROR_TITLE, REMOVE_FROM_TEAM_ALLOCATED_ERROR_DESCRIPTION } from '../../../models/constants';
+import {
+    GENERAL_ERROR_TITLE,
+    LOAD_TEAM_ERROR_DESCRIPTION,
+    LOAD_TEAM_MEMBERS_ERROR_DESCRIPTION,
+    REMOVE_FROM_TEAM_ERROR_DESCRIPTION,
+    VALIDATION_ERROR_TITLE,
+    REMOVE_FROM_TEAM_ALLOCATED_ERROR_DESCRIPTION,
+} from '../../../models/constants';
 import ErrorSummary from '../../../common/components/errorSummary';
 import ErrorMessage from '../../../models/errorMessage';
 import useError from '../../../hooks/useError';
@@ -20,7 +27,7 @@ interface MatchParams {
 }
 
 interface TeamMembersProps extends RouteComponentProps<MatchParams> {
-    hasRole: (role: string) => boolean;
+    hasOneOfRoles(roles: string[]): boolean;
 }
 
 const onAddTeamMembersAddClick = (history: History, teamId: string) => {
@@ -35,7 +42,7 @@ const onEditTeamAddClick = (history: History, teamId: string) => {
     history.push(`/team/${teamId}/edit`);
 };
 
-const TeamView: React.FC<TeamMembersProps> = ({ history, match, hasRole }) => {
+const TeamView: React.FC<TeamMembersProps> = ({ history, match, hasOneOfRoles }) => {
     const [pageError, , clearErrors, setErrorMessage] = useError();
     const [state, dispatch] = React.useReducer<Reducer<State, Action>>(reducer, initialState);
 
@@ -44,6 +51,13 @@ const TeamView: React.FC<TeamMembersProps> = ({ history, match, hasRole }) => {
     useEffect(() => {
         getTeam(teamId)
             .then(team => dispatch({ type: 'SetTeamName', payload: team.displayName }))
+            .catch(() => {
+                setErrorMessage(new ErrorMessage(LOAD_TEAM_ERROR_DESCRIPTION, GENERAL_ERROR_TITLE));
+            });
+        getUnitForTeam(teamId)
+            .then(unit => {
+                dispatch({ type: 'SetTeamUnitName', payload: unit.displayName });
+            })
             .catch(() => {
                 setErrorMessage(new ErrorMessage(LOAD_TEAM_ERROR_DESCRIPTION, GENERAL_ERROR_TITLE));
             });
@@ -110,10 +124,16 @@ const TeamView: React.FC<TeamMembersProps> = ({ history, match, hasRole }) => {
                 pageError={pageError}
             />
             <div>
-                <h1 className="govuk-heading-xl">View and remove team members</h1>
+                <h1 className="govuk-heading-xl">Manage Team</h1>
                 <h2 className="govuk-heading-l">
                     {`Team: ${state.teamName}`}
                 </h2>
+                <h2 className="govuk-heading-m">
+                    <div>{`Unit: ${state.unitName}`}</div>
+                    <div></div>
+                </h2>
+                <h3 className="govuk-heading-l">View and remove team members</h3>
+
                 {
                     state.teamMembersLoaded ?
                         <div>
@@ -125,7 +145,7 @@ const TeamView: React.FC<TeamMembersProps> = ({ history, match, hasRole }) => {
                 }
                 <button type="submit" className="govuk-button govuk-!-margin-right-1 add-team-members-button" data-module="govuk-button" onClick={() => onAddTeamMembersAddClick(history, teamId as string)}>Add team members</button>
                 <button type="submit" className="govuk-button govuk-!-margin-right-1 govuk-button--secondary manage-nominated-contacts-button" data-module="govuk-button" onClick={() => onAddNominatedContactClick(history, teamId as string)}>Manage nominated contacts</button>
-                {hasRole('RENAME_TEAM') &&
+                {hasOneOfRoles(['RENAME_TEAM', 'REASSIGN_TEAM_UNIT']) &&
                     <button type="submit" className="govuk-button govuk-button--secondary" data-module="govuk-button" onClick={() => onEditTeamAddClick(history, teamId)}>Edit Team</button>}
             </div>
         </div>
@@ -135,8 +155,8 @@ const TeamView: React.FC<TeamMembersProps> = ({ history, match, hasRole }) => {
 const WrappedTeamView = (routeProps: RouteComponentProps<MatchParams>) => (
     <ApplicationConsumer>
         {
-            ({ hasRole }: ApplicationState) => {
-                return <TeamView {...routeProps} hasRole={hasRole} />;
+            ({ hasOneOfRoles }: ApplicationState) => {
+                return <TeamView {...routeProps} hasOneOfRoles={hasOneOfRoles}/>;
             }
         }
     </ApplicationConsumer>

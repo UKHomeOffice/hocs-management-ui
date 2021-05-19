@@ -17,7 +17,8 @@ function apiErrorMiddleware(err, req, res, _) {
             message: err.message,
             status: status,
             stack: isProduction ? null : err.stack,
-            title: err.title
+            title: err.title,
+            body: err.response ? err.response.data : undefined
         });
     }
 }

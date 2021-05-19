@@ -25,7 +25,8 @@ function createClient({ baseURL, auth }) {
         get: (endpoint, config) => client.get(endpoint, config),
         post: (endpoint, body, config) => client.post(endpoint, body, config),
         delete: (endpoint, config) => client.delete(endpoint, config),
-        put: (endpoint, body, config) => client.put(endpoint, body, config)
+        put: (endpoint, body, config) => client.put(endpoint, body, config),
+        patch: (endpoint, body, config) => client.patch(endpoint, body, config)
     };
 
 }

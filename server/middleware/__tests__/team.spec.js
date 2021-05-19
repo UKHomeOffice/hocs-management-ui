@@ -1,5 +1,5 @@
 import {
-    getTeams, getTeamMembers, returnTeamMembersJson, returnTeamsJson, addTeam, updateTeamName
+    getTeams, getTeamMembers, returnTeamMembersJson, returnTeamsJson, addTeam, patchTeam
 } from '../team';
 import { infoService } from '../../clients/index';
 
@@ -168,7 +168,7 @@ describe('addTeam', () => {
 });
 
 
-describe('updateTeamName', () => {
+describe('patchTeam', () => {
     const mockFlush = jest.fn();
     const req = {
         params: { teamId: '__someTeamUUID__' },
@@ -181,9 +181,9 @@ describe('updateTeamName', () => {
 
     it('should successfully perform put with data', async () => {
         User.createHeaders.mockImplementation(() => headers);
-        await updateTeamName(req, res, next);
+        await patchTeam(req, res, next);
 
-        expect(infoService.put).toHaveBeenCalledWith(
+        expect(infoService.patch).toHaveBeenCalledWith(
             '/team/__someTeamUUID__',
             '__someUpdateTeamNameRequest__',
             { headers: headers }
@@ -193,8 +193,8 @@ describe('updateTeamName', () => {
     });
 
     it('should catch and log error if put request fails', async () => {
-        infoService.put.mockImplementation(() => Promise.reject());
-        await updateTeamName(req, res, next);
+        infoService.patch.mockImplementation(() => Promise.reject());
+        await patchTeam(req, res, next);
         expect(logError).toHaveBeenCalled();
         expect(next).toHaveBeenCalled();
     });

@@ -15,13 +15,26 @@ exports[`when the teamView component is mounted with RENAME_TEAM role should ren
       <h1
         class="govuk-heading-xl"
       >
-        View and remove team members
+        Manage Team
       </h1>
       <h2
         class="govuk-heading-l"
       >
         Team: __teamName__
       </h2>
+      <h2
+        class="govuk-heading-m"
+      >
+        <div>
+          Unit: __unit1__
+        </div>
+        <div />
+      </h2>
+      <h3
+        class="govuk-heading-l"
+      >
+        View and remove team members
+      </h3>
       <div>
         <table
           class="govuk-table"
@@ -129,13 +142,26 @@ exports[`when the teamView component is mounted without RENAME_TEAM role should 
       <h1
         class="govuk-heading-xl"
       >
-        View and remove team members
+        Manage Team
       </h1>
       <h2
         class="govuk-heading-l"
       >
         Team: __teamName__
       </h2>
+      <h2
+        class="govuk-heading-m"
+      >
+        <div>
+          Unit: __unit1__
+        </div>
+        <div />
+      </h2>
+      <h3
+        class="govuk-heading-l"
+      >
+        View and remove team members
+      </h3>
       <div>
         <table
           class="govuk-table"
@@ -215,6 +241,13 @@ exports[`when the teamView component is mounted without RENAME_TEAM role should 
         type="submit"
       >
         Manage nominated contacts
+      </button>
+      <button
+        class="govuk-button govuk-button--secondary"
+        data-module="govuk-button"
+        type="submit"
+      >
+        Edit Team
       </button>
     </div>
   </div>

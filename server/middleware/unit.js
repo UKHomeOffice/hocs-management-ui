@@ -26,6 +26,11 @@ async function getUnits(req, res, next) {
     }
 }
 
+async function returnUnitAsJson(_, res) {
+    const { locals: { unit } } = res;
+    await res.json(unit);
+}
+
 async function returnUnitsAsJson(_, res) {
     const { locals: { units } } = res;
     await res.json(units);
@@ -34,5 +39,6 @@ async function returnUnitsAsJson(_, res) {
 module.exports = {
     addUnit,
     getUnits,
+    returnUnitAsJson,
     returnUnitsAsJson
 };
