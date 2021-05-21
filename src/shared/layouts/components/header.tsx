@@ -16,7 +16,7 @@ class Header extends Component<HeaderConfig> {
                     <nav>
                         <ul id="navigation" className="govuk-header__navigation " aria-label="Top Level Navigation">
                             <li className="govuk-header__navigation--end">
-                                <a href="/oauth/logout" className="govuk-header__link">Logout</a>
+                                <a href="/oauth/logout" className="govuk-header__link">Log out</a>
                             </li>
                         </ul>
                     </nav>
