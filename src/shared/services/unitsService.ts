@@ -27,7 +27,6 @@ export const getUnitsForTypeAhead = (setErrorMessage: (arg0: ErrorMessage) => vo
             resolve(items);
         })
         .catch(() => {
-            //change
             setErrorMessage(new ErrorMessage(LOAD_UNITS_ERROR_DESCRIPTION, GENERAL_ERROR_TITLE));
             resolve([]);
         })
