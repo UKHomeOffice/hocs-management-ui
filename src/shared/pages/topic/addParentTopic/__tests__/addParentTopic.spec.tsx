@@ -188,7 +188,7 @@ describe('when the submit button is clicked', () => {
             expect.assertions(1);
 
             await wait(() => {
-                expect(addFormErrorSpy).toHaveBeenCalledWith({ key: undefined, value: 'The Parent Topic is required' });
+                expect(addFormErrorSpy).toHaveBeenCalledWith({ key: '', value: 'The Parent Topic is required' });
             });
         });
     });
@@ -214,7 +214,7 @@ describe('when the submit button is clicked', () => {
             expect.assertions(1);
 
             await wait(() => {
-                expect(addFormErrorSpy).toHaveBeenCalledWith({ key: undefined, value: 'The Parent Topic contains invalid characters' });
+                expect(addFormErrorSpy).toHaveBeenCalledWith({ key: '', value: 'The Parent Topic contains invalid characters' });
             });
         });
     });

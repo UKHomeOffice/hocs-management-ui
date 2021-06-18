@@ -1,4 +1,4 @@
 export interface FormError {
-    key: string;
+    key?: string;
     value: string;
 }
