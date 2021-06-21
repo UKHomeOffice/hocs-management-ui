@@ -1,5 +1,30 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
+exports[`User Adapter should correctly transform null values 1`] = `
+Array [
+  Object {
+    "label": "A (user.a@example.com)",
+    "value": 1,
+  },
+  Object {
+    "label": "User (user.b@example.com)",
+    "value": 2,
+  },
+  Object {
+    "label": "User C (userC)",
+    "value": 3,
+  },
+  Object {
+    "label": "user.D@example.com",
+    "value": 4,
+  },
+  Object {
+    "label": "userE",
+    "value": 5,
+  },
+]
+`;
+
 exports[`User Adapter should transform and sort user data 1`] = `
 Array [
   Object {
