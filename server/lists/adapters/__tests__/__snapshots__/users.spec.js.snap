@@ -15,12 +15,24 @@ Array [
     "value": 3,
   },
   Object {
-    "label": "user.D@example.com",
+    "label": "D (userD)",
     "value": 4,
   },
   Object {
-    "label": "userE",
+    "label": "User (userE)",
     "value": 5,
+  },
+  Object {
+    "label": "user.F@example.com",
+    "value": 6,
+  },
+  Object {
+    "label": "userG",
+    "value": 7,
+  },
+  Object {
+    "label": "null Null (null.Null@example.com)",
+    "value": 8,
   },
 ]
 `;
