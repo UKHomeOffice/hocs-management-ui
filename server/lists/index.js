@@ -31,6 +31,12 @@ module.exports = {
             type: listService.types.DYNAMIC,
             adapter: teamsAdapter
         },
+        ALL_TEAMS: {
+            client: 'INFO',
+            endpoint: '/team/all',
+            type: listService.types.DYNAMIC,
+            adapter: teamsAdapter
+        },
         USER: {
             client: 'INFO',
             endpoint: '/user/${userId}',

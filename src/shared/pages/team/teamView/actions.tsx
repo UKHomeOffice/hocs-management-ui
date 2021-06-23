@@ -15,7 +15,13 @@ export type PopulateTeamMembers = {
     type: 'PopulateTeamMembers';
 };
 
+export type SetTeamActive = {
+    payload: boolean;
+    type: 'SetTeamActive';
+};
+
 export type Action =
     SetTeamName |
     SetTeamUnitName |
-    PopulateTeamMembers;
+    PopulateTeamMembers |
+    SetTeamActive;

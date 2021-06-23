@@ -28,14 +28,18 @@ import AddCampaign from '../../pages/list/mpamCampaign/addCampaign';
 import AmendCampaign from '../../pages/list/mpamCampaign/amendCampaign';
 import AddTeam from '../../pages/team/addTeam/addTeam';
 import EditTeam from '../../pages/team/editTeam/editTeam';
+import ReactivateTeam from '../../pages/team/reactivateTeam/reactivateTeam';
+import DeactivateTeam from '../../pages/team/deactivateTeam/deactivateTeam';
 
 export interface Route {
+    requiredRole: string,
     component: React.FunctionComponent | Error;
     error?: ErrorContent;
     exact: boolean;
     path: string;
     title: string;
 }
+
 const routes = [
     {
         path: '/',
@@ -102,6 +106,20 @@ const routes = [
         exact: true,
         component: EditTeam,
         title: 'EditTeam'
+    },
+    {
+        path: '/team/:teamId/reactivate',
+        exact: true,
+        component: ReactivateTeam,
+        title: 'Reactivate Team',
+        requiredRole: 'ACTIVATE_TEAM'
+    },
+    {
+        path: '/team/:teamId/deactivate',
+        exact: true,
+        component: DeactivateTeam,
+        title: 'Deactivate Team',
+        requiredRole: 'DEACTIVATE_TEAM'
     },
     {
         path: '/add-unit',

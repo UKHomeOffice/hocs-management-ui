@@ -36,7 +36,6 @@ const NominatedContactList: React.FC<MatchParams> = ({ teamId, errorFuncs }) => 
         removeNominatedContactFromTeam(teamId, contact.value).then(() =>
         {
             dispatch({ type: 'RemoveContact', payload: contact });
-            console.log('remove contact: ' + JSON.stringify({ type: 'RemoveContact', payload: contact }));
         }
 
         ).catch(() => {

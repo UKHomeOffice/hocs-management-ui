@@ -5,4 +5,5 @@ export interface State {
     teamMembersLoaded: boolean;
     teamName?: string;
     unitName?: string;
+    active?: boolean;
 }

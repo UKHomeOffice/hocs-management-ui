@@ -169,31 +169,140 @@ describe('addTeam', () => {
 
 
 describe('patchTeam', () => {
+    beforeEach(() => {
+        infoService.patch.mockRestore();
+        User.hasRole.mockRestore();
+    });
     const mockFlush = jest.fn();
     const req = {
         params: { teamId: '__someTeamUUID__' },
-        body: '__someUpdateTeamNameRequest__',
+        body: {
+            displayName: '__newDisplayName__',
+            unitUUID: '__newUnitUUID__',
+            active: false
+        },
         listService: { flush: mockFlush }
     };
     let res = { sendStatus: jest.fn() };
     const next = jest.fn();
     const headers = '__headers__';
 
-    it('should successfully perform put with data', async () => {
+    it('should successfully perform patch with data', async () => {
         User.createHeaders.mockImplementation(() => headers);
+        User.hasRole.mockReturnValue(true);
         await patchTeam(req, res, next);
 
         expect(infoService.patch).toHaveBeenCalledWith(
             '/team/__someTeamUUID__',
-            '__someUpdateTeamNameRequest__',
+            req.body,
             { headers: headers }
         );
         expect(req.listService.flush).toHaveBeenCalledWith('TEAMS');
         expect(res.sendStatus).toHaveBeenCalledWith(200);
     });
 
-    it('should catch and log error if put request fails', async () => {
+    it('should not call patch if user tries to change the team name without the RENAME_TEAM role',
+        async () => {
+            User.createHeaders.mockImplementation(() => headers);
+            User.hasRole.mockImplementation((_, role) => {
+                if (role === 'RENAME_TEAM') {
+                    return false;
+                }
+                return true;
+            });
+            await patchTeam(req, res, next);
+
+            expect(infoService.patch).toHaveBeenCalledTimes(0);
+            expect(next).toHaveBeenCalled();
+        });
+
+    it('should not call patch if user tries to reassign the team unit without the REASSIGN_TEAM_UNIT role',
+        async () => {
+            User.createHeaders.mockImplementation(() => headers);
+            User.hasRole.mockImplementation((_, role) => {
+                if (role === 'REASSIGN_TEAM_UNIT') {
+                    return false;
+                }
+                return true;
+            });
+            await patchTeam(req, res, next);
+
+            expect(infoService.patch).toHaveBeenCalledTimes(0);
+            expect(next).toHaveBeenCalled();
+        });
+
+    it('should not call patch if user tries to reactivate team without ACTIVATE_TEAM role',
+        async () => {
+            User.createHeaders.mockImplementation(() => headers);
+            User.hasRole.mockImplementation((_, role) => {
+                if (role === 'ACTIVATE_TEAM') {
+                    return false;
+                }
+                return true;
+            });
+
+            const reactiveRequest = { ...req };
+            reactiveRequest.body.active = true;
+
+            await patchTeam(reactiveRequest, res, next);
+
+            expect(infoService.patch).toHaveBeenCalledTimes(0);
+            expect(next).toHaveBeenCalled();
+        });
+
+    it('should call patch if user tries to reactivate team with ACTIVATE_TEAM role',
+        async () => {
+            User.createHeaders.mockImplementation(() => headers);
+            User.hasRole.mockImplementation(() => {
+                return true;
+            });
+
+            const reactiveRequest = { ...req };
+            reactiveRequest.body.active = true;
+
+            await patchTeam(reactiveRequest, res, next);
+
+            expect(infoService.patch).toHaveBeenCalledTimes(1);
+        });
+
+    it('should not call patch if user tries to deactivate team without DEACTIVATE_TEAM role',
+        async () => {
+            User.createHeaders.mockImplementation(() => headers);
+            User.hasRole.mockImplementation((_, role) => {
+                if (role === 'DEACTIVATE_TEAM') {
+                    return false;
+                }
+                return true;
+            });
+
+            const reactiveRequest = { ...req };
+            reactiveRequest.body.active = false;
+
+            await patchTeam(reactiveRequest, res, next);
+
+            expect(infoService.patch).toHaveBeenCalledTimes(0);
+            expect(next).toHaveBeenCalled();
+        });
+
+    it('should call patch if user tries to deactivate team with DEACTIVATE_TEAM role',
+        async () => {
+            User.createHeaders.mockImplementation(() => headers);
+            User.hasRole.mockImplementation(() => {
+                return true;
+            });
+
+            const reactiveRequest = { ...req };
+            reactiveRequest.body.active = false;
+
+            await patchTeam(reactiveRequest, res, next);
+
+            expect(infoService.patch).toHaveBeenCalledTimes(1);
+        });
+
+    it('should catch and log error if patch request fails', async () => {
         infoService.patch.mockImplementation(() => Promise.reject());
+        User.hasRole.mockReturnValue(true);
+
         await patchTeam(req, res, next);
         expect(logError).toHaveBeenCalled();
         expect(next).toHaveBeenCalled();

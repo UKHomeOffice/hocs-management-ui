@@ -1,0 +1,87 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`when the deactivateTeam component is mounted should render with default props 1`] = `
+<div>
+  <div
+    class="govuk-grid-row"
+  >
+    <div
+      class="govuk-grid-column-two-thirds-from-desktop"
+    >
+      <a
+        class="govuk-back-link"
+        href="/team-view/__teamId__"
+      >
+        Back
+      </a>
+      <h1
+        class="govuk-heading-xl"
+      >
+        Deactivating team
+      </h1>
+      <div
+        class="govuk-body"
+      >
+        <p>
+          You are deactivating the 
+          <strong>
+            __TeamId__
+          </strong>
+           team.
+        </p>
+        <p>
+          New cases won’t be assigned to it, but existing cases are unaffected
+        </p>
+        <p>
+          This means:
+        </p>
+        <ul>
+          <li>
+            cases already with this team will stay with the team
+          </li>
+          <li>
+            existing cases with this team can still be worked
+          </li>
+          <li>
+            this team's topics will remain active but without a recommended team
+          </li>
+          <li>
+            the team will no longer appear in drop-downs
+          </li>
+          <li>
+            caseworkers will be prevented from giving new cases to the team
+          </li>
+          <li>
+            in-flight cases that passed through this team can still be returned to it
+          </li>
+          <li>
+            caseworkers will remain part of the team
+          </li>
+        </ul>
+        <p>
+          In an emergency, cases might be routed to the DCU central team.
+        </p>
+        <p>
+          You can reactivate at any time.
+        </p>
+      </div>
+      <div
+        class="govuk-form-group"
+      >
+        <button
+          class="govuk-button govuk-!-margin-right-1"
+          type="submit"
+        >
+          Deactivate Team
+        </button>
+        <a
+          class="govuk-button govuk-button--secondary"
+          href="/team-view/__teamId__"
+        >
+          Cancel
+        </a>
+      </div>
+    </div>
+  </div>
+</div>
+`;

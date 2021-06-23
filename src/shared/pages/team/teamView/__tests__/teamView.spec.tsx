@@ -65,13 +65,14 @@ const useErrorSpy = jest.spyOn(useError, 'default');
 const setMessageSpy = jest.fn();
 const clearErrorsSpy = jest.fn();
 let hasOneOfRoles = jest.fn();
+let hasRole = jest.fn();
 let wrapper: RenderResult;
 
 const renderComponent = () => {
     const OUTER = shallow(<TeamView history={history} location={location} match={match} />);
     const Page = OUTER.props().children;
     return render(
-        <MemoryRouter><Page hasOneOfRoles={hasOneOfRoles}></Page></MemoryRouter>
+        <MemoryRouter><Page hasOneOfRoles={hasOneOfRoles} hasRole={hasRole}></Page></MemoryRouter>
     );
 };
 
@@ -101,7 +102,8 @@ beforeEach(() => {
             value: '__userId2__'
         }],
         teamName: '__teamName__',
-        unitName: '__unit1__'
+        unitName: '__unit1__',
+        active: true
     };
     useReducerSpy.mockImplementationOnce(() => [mockState, jest.fn()]);
     useErrorSpy.mockImplementation(() => [{}, jest.fn(), clearErrorsSpy, setMessageSpy]);
@@ -125,6 +127,82 @@ describe('when the teamView component is mounted with RENAME_TEAM role', () => {
         expect(getTeamSpy).toHaveBeenCalled();
         expect(getTeamMembersSpy).toHaveBeenCalled();
         expect(getUnitForTeamSpy).toHaveBeenCalled();
+        expect(wrapper.container).toMatchSnapshot();
+    });
+});
+
+describe('when the teamView component has an inactive Team', () => {
+    beforeEach(() => {
+        useErrorSpy.mockImplementation(() => [{}, jest.fn(), clearErrorsSpy, setMessageSpy]);
+        useReducerSpy.mockImplementationOnce(() => [{ ...mockState, active: false }, jest.fn()]);
+
+        hasOneOfRoles = jest.fn().mockImplementation((roles: string[]) => {
+            return true;
+        });
+    });
+
+    it('should show options to reactivate if the user has ACTIVATE_TEAM role', async () => {
+        hasRole = jest.fn().mockImplementation(() => {
+            return true;
+        });
+
+        act(() => {
+            wrapper = renderComponent();
+        });
+
+        expect(wrapper.container).toMatchSnapshot();
+    });
+
+    it('should not show options to reactivate if the user does not have ACTIVATE_TEAM role', async () => {
+        hasRole = jest.fn().mockImplementation((role) => {
+            if (role === 'ACTIVATE_TEAM') {
+                return false;
+            }
+            return true;
+        });
+
+        act(() => {
+            wrapper = renderComponent();
+        });
+
+        expect(wrapper.container).toMatchSnapshot();
+    });
+});
+
+describe('when the teamView component has an active Team', () => {
+    beforeEach(() => {
+        useReducerSpy.mockImplementationOnce(() => [mockState, jest.fn()]);
+        useErrorSpy.mockImplementation(() => [{}, jest.fn(), clearErrorsSpy, setMessageSpy]);
+
+        hasOneOfRoles = jest.fn().mockImplementation((roles: string[]) => {
+            return true;
+        });
+    });
+
+    it('should show options to deactivate if the user has DEACTIVATE_TEAM role', async () => {
+        hasRole = jest.fn().mockImplementation(() => {
+            return true;
+        });
+
+        act(() => {
+            wrapper = renderComponent();
+        });
+
+        expect(wrapper.container).toMatchSnapshot();
+    });
+
+    it('should not show options to deactivate if the user does not have DEACTIVATE_TEAM role', async () => {
+        hasRole = jest.fn().mockImplementation((role: string) => {
+            if (role === 'DEACTIVATE_TEAM') {
+                return false;
+            }
+            return true;
+        });
+
+        act(() => {
+            wrapper = renderComponent();
+        });
+
         expect(wrapper.container).toMatchSnapshot();
     });
 });

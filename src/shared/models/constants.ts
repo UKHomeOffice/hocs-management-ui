@@ -81,4 +81,3 @@ export const TEAM_CREATION_FAILURE_UNKNOWN_ERROR = 'Something went wrong when ad
 export const LOAD_NOMINATED_CONTACTS_ERROR_DESCRIPTION = 'There was an error retrieving the list of nominated contacts.  Please try refreshing the page.';
 export const DELETE_NOMINATED_CONTACTS_ERROR_DESCRIPTION = 'There was an error deleting the nominated contact. Please try refreshing the page.';
 export const TEAM_UPDATE_FAILED_UNKNOWN_ERROR = 'There was a problem updating the team. Contact the service desk.';
-

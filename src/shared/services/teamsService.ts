@@ -23,6 +23,12 @@ export const getTeams = () => new Promise<[Item]>((resolve, reject) =>
         .catch(error => reject(error))
 );
 
+export const getAllTeams = () => new Promise<[Item]>((resolve, reject) =>
+    axios.get('/api/teams/all')
+        .then(response => resolve(response.data))
+        .catch(error => reject(error))
+);
+
 export const getTeamMembers = (teamId: string) => new Promise((resolve, reject) => axios
     .get(`/api/teams/${teamId}/members`)
     .then(response => resolve(response.data))

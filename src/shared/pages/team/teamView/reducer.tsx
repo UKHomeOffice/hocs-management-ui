@@ -9,6 +9,8 @@ export const reducer = (state: State, action: Action): State => {
             return { ...state, unitName: action.payload };
         case 'PopulateTeamMembers':
             return { ...state, teamMembers: action.payload, teamMembersLoaded: true };
+        case 'SetTeamActive':
+            return { ...state, active: action.payload };
     }
     return state;
 };

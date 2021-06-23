@@ -29,7 +29,6 @@ export const getUsers = () => new Promise((resolve, reject) => axios
 
 export const addUsersToTeam = (users: Array<Item>, teamId: string) => new Promise((resolve, reject) => {
     const usersUuids = users.map(user => user.value);
-    console.log(`userUuids ${usersUuids}`);
     axios
         .post(`/api/users/team/${teamId}`, usersUuids)
         .then(response => resolve(response.data))

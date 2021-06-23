@@ -140,6 +140,25 @@ describe('when the editTeam component is mounted', () => {
         });
     });
 
+    it('should hide the change unit area if the user does not have the SET_UNIT_ACTIVE_FLAG role', async () => {
+        setDefaults();
+
+        hasRole.mockImplementation((role: string) => {
+            if (role === 'SET_UNIT_ACTIVE_FLAG') {
+                return false;
+            }
+            return true;
+        });
+
+        act(() => {
+            wrapper = renderComponent();
+        });
+
+        await wait(() => {
+            expect(wrapper.container).toMatchSnapshot();
+        });
+    });
+
     describe('and the getTeam service fails', () => {
         beforeAll(() => {
             jest.spyOn(TeamsService, 'getTeam').mockImplementationOnce(() => Promise.reject());

@@ -46,7 +46,7 @@ const EditTeam: React.FC<EditTeamProps> = ({ csrfToken, history, match, hasRole 
     useEffect(() => {
         getTeam(teamId)
             .then(team => {
-                return dispatch({ type: 'SetCurrentTeamName', payload: team.displayName });
+                dispatch({ type: 'SetCurrentTeamName', payload: team.displayName });
             })
             .catch(() => {
                 setErrorMessage(new ErrorMessage(LOAD_TEAM_ERROR_DESCRIPTION, GENERAL_ERROR_TITLE));
@@ -133,6 +133,7 @@ const EditTeam: React.FC<EditTeamProps> = ({ csrfToken, history, match, hasRole 
                                 (item ) => dispatch({ type: 'SetUnit', payload: item })
                             }
                         />}
+
                         <div className="govuk-form-group">
                             <button type="submit" className="govuk-button">Update</button>
                         </div>

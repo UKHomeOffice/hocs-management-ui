@@ -45,6 +45,16 @@ async function getTeams(req, res, next) {
     }
 }
 
+async function getAllTeams(req, res, next) {
+    try {
+        const response = await req.listService.fetch('ALL_TEAMS', req.params);
+        res.locals.teams = response;
+        next();
+    } catch (error) {
+        next(error);
+    }
+}
+
 async function getTeamMembers(req, res, next) {
     try {
         const response = await req.listService.fetch('USERS_IN_TEAM', req.params);
@@ -97,6 +107,16 @@ async function patchTeam(req, res, next) {
         return;
     }
 
+    if (req.body.hasOwnProperty('active')) {
+        if (req.body.active && !User.hasRole(req.user, 'ACTIVATE_TEAM')) {
+            next(new AuthenticationError('Unauthorised'));
+            return;
+        } else if (!req.body.active && !User.hasRole(req.user, 'DEACTIVATE_TEAM')) {
+            next(new AuthenticationError('Unauthorised'));
+            return;
+        }
+    }
+
     try {
         await infoService.patch(
             `/team/${teamId}`,
@@ -130,6 +150,7 @@ module.exports = {
     getTeam,
     getUnitForTeam,
     getTeams,
+    getAllTeams,
     getTeamMembers,
     getTeamsForUser,
     returnTeamJson,

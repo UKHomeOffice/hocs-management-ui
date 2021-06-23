@@ -1,13 +1,25 @@
 import React from 'react';
-import { Route, Switch } from 'react-router-dom';
+import { Redirect, Route, Switch } from 'react-router-dom';
 import Layout from '../layouts/layout';
 import routes from './routes/index';
 import PageWrapper from '../layouts/page-enabled';
+import { ApplicationConsumer, ApplicationState } from '../contexts/application';
 
-const Router : React.FC = () => (
+
+interface RouterParams {
+    hasRole: (role: string) => boolean;
+}
+
+const Router : React.FC<RouterParams> = ({ hasRole }) => (
     <Layout>
         <Switch>
-            {routes.map(({ path, exact, component: Page, ...rest }, i) => {
+            {routes.map(({ path, exact, component: Page, requiredRole, ...rest }, i) => {
+                if (requiredRole && !hasRole(requiredRole)) {
+                    return (<Route key={i} path={path} exact={exact} render={() => (
+                        <Redirect push to='/' />
+                    )} />);
+                }
+
                 return (
                     <Route
                         key={i}
@@ -25,4 +37,13 @@ const Router : React.FC = () => (
     </Layout>
 );
 
-export default Router;
+const WrappedRouter = () => (
+    <ApplicationConsumer>
+        {({ hasRole }: ApplicationState) => (
+            <Router hasRole={hasRole}/>
+        )}
+    </ApplicationConsumer>
+);
+
+
+export default WrappedRouter;

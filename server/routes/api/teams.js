@@ -1,7 +1,7 @@
 const router = require('express').Router();
 const {
-    getTeam, getTeams, getUnitForTeam, getTeamMembers, getTeamsForUser,
-    returnTeamJson, returnTeamsJson, returnTeamMembersJson,
+    getTeam, getTeams, getAllTeams, getTeamMembers, getTeamsForUser,
+    getUnitForTeam, returnTeamJson, returnTeamsJson, returnTeamMembersJson,
     addTeam, patchTeam
 } = require('../../middleware/team');
 const { returnUnitAsJson } = require('../../middleware/unit');
@@ -9,6 +9,8 @@ const { returnUnitAsJson } = require('../../middleware/unit');
 const { protect } = require('../../middleware/auth');
 
 router.get('', getTeams, returnTeamsJson);
+
+router.get('/all', getAllTeams, returnTeamsJson);
 
 router.get('/:teamId', getTeam, returnTeamJson);
 
