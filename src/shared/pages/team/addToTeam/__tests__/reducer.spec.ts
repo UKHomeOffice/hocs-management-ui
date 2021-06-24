@@ -28,7 +28,7 @@ describe('when an action is dispatched', () => {
             const state = reducer(initialState, { type: 'ClearSelectedUser' });
             const { selectedUser, ...otherState } = state;
 
-            expect(selectedUser).toBe('');
+            expect(selectedUser).toBe(undefined);
             expect(otherState).toStrictEqual(initialOtherState);
         });
     });
