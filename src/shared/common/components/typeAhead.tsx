@@ -12,7 +12,7 @@ interface TypeAheadProps {
     label?: string;
     name: string;
     onSelectedItemChange: (newItem: Item) => void;
-    value?: Item | string;
+    value?: Item;
 }
 
 interface TypeAheadState {
@@ -71,7 +71,7 @@ class TypeAhead extends Component<TypeAheadProps, TypeAheadState> {
                 <label htmlFor={`${name}-input`} id={`${name}-label`} className="govuk-label govuk-label--s">{label}</label>
                 {hint && <span className="govuk-hint">{hint}</span>}
                 {error && <span id={`${name}-error`} className="govuk-error-message">{error}</span>}
-                <AsyncSelect<Item | string>
+                <AsyncSelect<Item>
                     cacheOptions
                     classNamePrefix="govuk-typeahead"
                     components={{

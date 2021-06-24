@@ -9,7 +9,7 @@ export const initialState: State = {
 };
 export interface State {
     user?: User;
-    selectedTeam?: Item | '';
+    selectedTeam?: Item | undefined;
     selectedTeams: Item[];
 }
 
@@ -44,7 +44,7 @@ export const reducer = (state: State, action: Action) => {
         case 'SetUser':
             return { ...state, user: action.payload  };
         case 'ClearSelectedTeam':
-            return { ...state, selectedTeam: '' };
+            return { ...state, selectedTeam: undefined };
         case 'RemoveFromSelectedTeams':
             return { ...state, selectedTeams: [...state.selectedTeams.filter(team => team.value !== action.payload.value)] };
     }

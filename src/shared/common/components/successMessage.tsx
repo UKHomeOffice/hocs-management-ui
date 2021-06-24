@@ -2,7 +2,7 @@ import React from 'react';
 import { Location } from 'history';
 
 interface SuccessMessageProps {
-    location: Location;
+    location: Location<any>;
 }
 const successMessage: React.FC<SuccessMessageProps> = ({ location: { state: { successMessage } = {} } }) => successMessage ? (
     <div className="panel panel-border-wide alert-success">

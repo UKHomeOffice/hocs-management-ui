@@ -73,7 +73,7 @@ beforeEach(() => {
     };
     mockState = {
         inputValue: '',
-        selectedUser: '',
+        selectedUser: undefined,
         selectedUsers: [{
             label: '__user1__',
             value: '__userId1__'

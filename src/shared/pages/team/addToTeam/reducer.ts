@@ -6,7 +6,7 @@ export const reducer = (state: State, action: Action): State => {
         case 'AddToSelection':
             return { ...state, selectedUsers: [...[], ...state.selectedUsers, action.payload] };
         case 'ClearSelectedUser':
-            return { ...state, selectedUser: '' };
+            return { ...state, selectedUser: undefined };
         case 'RemoveFromSelection':
             return { ...state, selectedUsers: [...state.selectedUsers.filter(user => user.value !== action.payload.value)] };
         case 'RemoveAllFromSelection':
