@@ -13,7 +13,7 @@
                 "debug": false,
                 "forceAllTransforms": true,
                 "corejs": {
-                    "version": 3,
+                    "version": "3.15.2",
                     "proposals": true
                 }
             }
