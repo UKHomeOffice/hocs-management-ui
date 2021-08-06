@@ -1,6 +1,6 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
-exports[`when the AddBusinessRep component is mounted should render with default props 1`] = `
+exports[`when the addRepresentative component is mounted should render with default props 1`] = `
 <div>
   <div
     class="govuk-grid-row"
