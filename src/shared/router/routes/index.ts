@@ -24,7 +24,9 @@ import AmendUser from '../../pages/user/userAmend/amendUser';
 import AddTeamToUser from '../../pages/user/addTeamToUser/addTeamToUser';
 import WithdrawCase from '../../pages/case/withdrawCase';
 import CampaignsView from '../../pages/list/mpamCampaign/campaignsView';
+import ExGratiaView from '../../pages/list/exGratiaBusinessReps/exgratiaBusRepsView';
 import AddCampaign from '../../pages/list/mpamCampaign/addCampaign';
+import AddBusinessRep from '../../pages/list/exGratiaBusinessReps/addBusinessRep';
 import AmendCampaign from '../../pages/list/mpamCampaign/amendCampaign';
 import AddTeam from '../../pages/team/addTeam/addTeam';
 import EditTeam from '../../pages/team/editTeam/editTeam';
@@ -222,6 +224,18 @@ const routes = [
         exact: true,
         component: AddCampaign,
         title: 'Add Campaign'
+    },
+    {
+        path: '/manage-exgratia-reps',
+        exact: true,
+        component: ExGratiaView,
+        title: 'Manage Ex-Gratia Business Representatives'
+    },
+    {
+        path: '/manage-exgratia-reps/add',
+        exact: true,
+        component: AddBusinessRep,
+        title: 'Manage Ex-Gratia Business Representatives'
     },
     {
         path: '/manage-mpam-campaigns/:itemUUID/amend',

@@ -68,11 +68,24 @@ async function updateEntityListItem(req, res, next) {
     }
 }
 
+async function deleteEntityListItem(req, res, next) {
+    const logger = getLogger(req.request);
+    const { listName } = req.params;
+    try {
+        await infoService.delete(`/entity/list/${listName}`, { ...req.body, data: req.body.entityUUID }, { headers: User.createHeaders(req.user) });
+        res.sendStatus(200);
+    } catch (error) {
+        logger.error(error);
+        next(error);
+    }
+}
+
 module.exports = {
     getEntityList,
     returnEntityListJson,
     addEntityListItem,
     getEntity,
     returnEntityJson,
-    updateEntityListItem
+    updateEntityListItem,
+    deleteEntityListItem
 };

@@ -110,6 +110,9 @@ const Dashboard = ({ hasRole }: ApplicationState) => {
                                 <li>
                                     <Link className="govuk-link" to="/manage-mpam-campaigns">Manage MPAM campaigns</Link>
                                 </li>
+                                <li>
+                                    <Link className="govuk-link" to="/manage-exgratia-reps">Manage Ex-Gratia Business Area Representatives</Link>
+                                </li>
                             </ul>
                         </li>
                     </ul>

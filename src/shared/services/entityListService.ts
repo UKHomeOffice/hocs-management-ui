@@ -24,3 +24,9 @@ export const updateListItem = (item: EntityListItem, listName: string) => new Pr
     .then(() => resolve())
     .catch(reason => reject(reason))
 );
+
+export const deleteListItem = (uuid: string, listName: string) => new Promise((resolve, reject) => axios
+    .delete(`/api/entity/list/${listName}`, { data: { entityUUID: uuid } })
+    .then(() => resolve())
+    .catch(reason => reject(reason))
+);
