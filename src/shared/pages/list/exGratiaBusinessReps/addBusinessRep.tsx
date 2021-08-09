@@ -72,8 +72,8 @@ const AddBusinessRep: React.FC<AddRepresentativeProps> = ({ csrfToken, history }
                             label="Representative name"
                             name="title"
                             type="text"
-                            updateState={({ name, value }) => dispatch({ name, value })}
                             value={representative.title}
+                            updateState={({ name, value }) => dispatch({ name, value })}
                         />
                         <Submit />
                     </form>
