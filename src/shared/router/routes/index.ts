@@ -25,6 +25,7 @@ import AddTeamToUser from '../../pages/user/addTeamToUser/addTeamToUser';
 import WithdrawCase from '../../pages/case/withdrawCase';
 import CampaignsView from '../../pages/list/mpamCampaign/campaignsView';
 import ExGratiaView from '../../pages/list/exGratiaBusinessReps/exgratiaBusRepsView';
+import ChooseBusinessArea from '../../pages/list/mpamBusinessUnits/selectBusinessArea';
 import AddCampaign from '../../pages/list/mpamCampaign/addCampaign';
 import AddBusinessRep from '../../pages/list/exGratiaBusinessReps/addBusinessRep';
 import AmendCampaign from '../../pages/list/mpamCampaign/amendCampaign';
@@ -32,6 +33,10 @@ import AddTeam from '../../pages/team/addTeam/addTeam';
 import EditTeam from '../../pages/team/editTeam/editTeam';
 import ReactivateTeam from '../../pages/team/reactivateTeam/reactivateTeam';
 import DeactivateTeam from '../../pages/team/deactivateTeam/deactivateTeam';
+import BusinesssAreaView from '../../pages/list/mpamBusinessUnits/businessAreaView';
+import AddBusinessUnit from '../../pages/list/mpamBusinessUnits/addBusinessUnit';
+import SelectBusinessArea from '../../pages/list/mpamBusinessUnits/selectBusinessArea';
+import AmendBusinessUnit from '../../pages/list/mpamBusinessUnits/amendBusinessUnit';
 
 export interface Route {
     requiredRole: string,
@@ -242,6 +247,36 @@ const routes = [
         exact: true,
         component: AmendCampaign,
         title: 'Amend Campaign'
+    },
+    {
+        path: '/manage-mpam-business-units',
+        exact: true,
+        component: ChooseBusinessArea,
+        title: 'Manage MPAM Business Units'
+    },
+    {
+        path: '/business-area/:type',
+        exact: true,
+        component: BusinesssAreaView,
+        title: 'View Business Area'
+    },
+    {
+        path: '/add-business-unit/:type',
+        exact: true,
+        component: AddBusinessUnit,
+        title: 'Add Business Unit'
+    },
+    {
+        path: '/select-business-area',
+        exact: true,
+        component: SelectBusinessArea,
+        title: 'Select Business Area'
+    },
+    {
+        path: '/amend-business-unit/:type/:itemUUID/',
+        exact: true,
+        component: AmendBusinessUnit,
+        title: 'Amend Business Unit'
     },
     {
         component: Error,
