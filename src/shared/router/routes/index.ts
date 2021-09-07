@@ -33,7 +33,7 @@ import AddTeam from '../../pages/team/addTeam/addTeam';
 import EditTeam from '../../pages/team/editTeam/editTeam';
 import ReactivateTeam from '../../pages/team/reactivateTeam/reactivateTeam';
 import DeactivateTeam from '../../pages/team/deactivateTeam/deactivateTeam';
-import BusinesssAreaView from '../../pages/list/mpamBusinessUnits/businessAreaView';
+import BusinessAreaView from '../../pages/list/mpamBusinessUnits/businessAreaView';
 import AddBusinessUnit from '../../pages/list/mpamBusinessUnits/addBusinessUnit';
 import SelectBusinessArea from '../../pages/list/mpamBusinessUnits/selectBusinessArea';
 import AmendBusinessUnit from '../../pages/list/mpamBusinessUnits/amendBusinessUnit';
@@ -257,7 +257,7 @@ const routes = [
     {
         path: '/business-area/:type',
         exact: true,
-        component: BusinesssAreaView,
+        component: BusinessAreaView,
         title: 'View Business Area'
     },
     {

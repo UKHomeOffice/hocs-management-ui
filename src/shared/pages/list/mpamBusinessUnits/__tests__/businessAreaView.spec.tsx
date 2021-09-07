@@ -44,7 +44,6 @@ beforeEach(() => {
         path: '',
         url: ''
     };
-
     location = {
         hash: '',
         key: '',

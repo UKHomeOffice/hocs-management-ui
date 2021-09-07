@@ -19,7 +19,9 @@ interface MatchParams {
     type: string;
 }
 
-type CasesProps = RouteComponentProps<MatchParams>;
+interface addBusinessUnitProps extends RouteComponentProps<MatchParams> {
+    csrfToken?: string;
+}
 
 const validationSchema = object({
     title: string()
@@ -28,7 +30,7 @@ const validationSchema = object({
         .matches(/^[a-zA-Z0-9_,.!? ()&]*$/)
 });
 
-const AddBusinessUnit: React.FC<CasesProps> = ({ history, match }) => {
+const AddBusinessUnit: React.FC<addBusinessUnitProps> = ({ csrfToken, history, match }) => {
 
     const [pageError, addFormError, clearErrors, setErrorMessage] = useError('', VALIDATION_ERROR_TITLE);
     const [representative, dispatch] = React.useReducer<Reducer<EntityListItem, InputEventData>>(reducer, {
@@ -72,6 +74,7 @@ const AddBusinessUnit: React.FC<CasesProps> = ({ history, match }) => {
             <div className="govuk-grid-row">
                 <div className="govuk-grid-column-one-half-from-desktop">
                     <form action={`/api/entity/list/${type}`} method="POST" onSubmit={handleSubmit}>
+                        <input type="hidden" name="_csrf" value={csrfToken} />
                         <Text
                             label="Business Unit name"
                             name="title"

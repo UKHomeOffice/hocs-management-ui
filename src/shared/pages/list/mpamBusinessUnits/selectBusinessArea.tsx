@@ -10,6 +10,7 @@ import * as constants from '../../../models/constants';
 import { validate } from '../../../validation';
 import TypeAhead from '../../../common/components/typeAhead';
 import Item from '../../../models/item';
+import { listNames } from './listNames';
 
 interface ChooseBusinessAreaProps extends RouteComponentProps {
     csrfToken?: string;
@@ -27,15 +28,10 @@ const ChooseBusinessArea: React.FC<ChooseBusinessAreaProps> = ({ csrfToken, hist
 
     const [selectedCaseType, setSelectedCaseType] = React.useState<Item>();
 
-    const items: Item[] = [
-        { label: 'UKVI', value: 'MPAM_BUS_UNITS_1' },
-        { label: 'BF', value: 'MPAM_BUS_UNITS_2' },
-        { label: 'IE', value: 'MPAM_BUS_UNITS_3' },
-        { label: 'EUSS', value: 'MPAM_BUS_UNITS_4' },
-        { label: 'HMPO', value: 'MPAM_BUS_UNITS_5' },
-        { label: 'Windrush', value: 'MPAM_BUS_UNITS_6' },
-        { label: 'Corona Virus', value: 'MPAM_BUS_UNITS_7' },
-    ];
+    const items: Item[] = [];
+    for(const key in listNames){
+        items.push({ label: listNames[key], value: key });
+    }
 
     const getBusinessAreas = () => Promise.resolve(items);
 

@@ -25,11 +25,11 @@ interface AmendCampaignProps extends RouteComponentProps<MatchParams> {
 const validationSchema = object({
     title: string()
         .required()
-        .label('New Business Area name')
+        .label('New Business Unit name')
         .matches(/^[a-zA-Z0-9_,.!? ()&]*$/)
 });
 
-const AmendBusinessArea: React.FC<AmendCampaignProps> = ({ csrfToken, history, match }) => {
+const AmendBusinessUnit: React.FC<AmendCampaignProps> = ({ csrfToken, history, match }) => {
     const initialState: State = {
         uuid: '',
         title: '',
@@ -71,19 +71,19 @@ const AmendBusinessArea: React.FC<AmendCampaignProps> = ({ csrfToken, history, m
                         pageError={pageError}
                     />
                     <h1 className="govuk-heading-xl">
-                        Amend Business Area
+                        Amend Business Unit
                     </h1>
                 </div>
             </div>
             <div className="govuk-grid-row">
                 <div className="govuk-grid-column-one-half-from-desktop">
                     <h3 className="govuk-heading-l">
-                        {`Business Area Name: ${state.originalTitle}`}
+                        {`Business Unit Name: ${state.originalTitle}`}
                     </h3>
                     <form action="/api/entity/list/update/MPAM_CAMPAIGNS" method="POST" onSubmit={handleSubmit}>
                         <input type="hidden" name="_csrf" value={csrfToken} />
                         <Text
-                            label="New Business Area Name"
+                            label="New Business Unit Name"
                             name="title"
                             type="text"
                             updateState={({ value }) => dispatch({ type: 'SetTitle', payload: value as string })}
@@ -97,4 +97,4 @@ const AmendBusinessArea: React.FC<AmendCampaignProps> = ({ csrfToken, history, m
     );
 };
 
-export default AmendBusinessArea;
+export default AmendBusinessUnit;

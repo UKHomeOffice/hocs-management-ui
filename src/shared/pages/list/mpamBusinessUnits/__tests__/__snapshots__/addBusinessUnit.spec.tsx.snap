@@ -31,6 +31,11 @@ exports[`when the add business unit component is mounted should render with defa
         action="/api/entity/list/undefined"
         method="POST"
       >
+        <input
+          name="_csrf"
+          type="hidden"
+          value=""
+        />
         <div
           class="govuk-form-group"
         >

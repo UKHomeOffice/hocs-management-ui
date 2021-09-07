@@ -25,7 +25,7 @@ const onAmendBusinessUnitClick = (history: History, uuid: string, type: string) 
     history.push(`/amend-business-unit/${type}/${uuid}`);
 };
 
-const BusinesssAreaView: React.FC<CasesProps> = ({ history, match }) => {
+const BusinessAreaView: React.FC<CasesProps> = ({ history, match }) => {
 
 
     const [pageError, , , setErrorMessage] = useError();
@@ -98,4 +98,4 @@ const BusinesssAreaView: React.FC<CasesProps> = ({ history, match }) => {
     );
 };
 
-export default BusinesssAreaView;
+export default BusinessAreaView;
