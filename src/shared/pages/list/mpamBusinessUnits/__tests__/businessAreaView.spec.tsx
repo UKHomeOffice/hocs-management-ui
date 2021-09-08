@@ -77,7 +77,6 @@ describe('when the Add Business Unit button is clicked', () => {
         let wrapper: RenderResult;
         act(() => {
             wrapper = renderComponent();
-            console.log(wrapper);
         });
 
         await wait(async () => {
