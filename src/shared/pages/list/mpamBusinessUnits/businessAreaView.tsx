@@ -56,7 +56,7 @@ const BusinessAreaView: React.FC<CasesProps> = ({ history, match }) => {
                     {caseType && `Business Area: ${caseType.displayName}`}
                 </h2>
                 {
-                    businessAreas ?
+                    businessAreas && businessAreas.length > 0 ?
                         <div>
                             <table className="govuk-table">
                                 <thead className="govuk-table__head">
