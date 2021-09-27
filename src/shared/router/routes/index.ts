@@ -37,6 +37,7 @@ import BusinessAreaView from '../../pages/list/mpamBusinessUnits/businessAreaVie
 import AddBusinessUnit from '../../pages/list/mpamBusinessUnits/addBusinessUnit';
 import SelectBusinessArea from '../../pages/list/mpamBusinessUnits/selectBusinessArea';
 import AmendBusinessUnit from '../../pages/list/mpamBusinessUnits/amendBusinessUnit';
+import SelectEnquirySubject from '../../pages/list/mpamEnquiryReasons/selectEnquirySubject'
 
 export interface Route {
     requiredRole: string,
@@ -277,6 +278,12 @@ const routes = [
         exact: true,
         component: AmendBusinessUnit,
         title: 'Amend Business Unit'
+    },
+    {
+        path: '/manage-mpam-enquiry-reasons',
+        exact: true,
+        component: SelectEnquirySubject,
+        title: 'Select Enquiry Subject'
     },
     {
         component: Error,
