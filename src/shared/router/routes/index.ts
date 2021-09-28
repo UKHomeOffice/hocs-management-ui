@@ -38,6 +38,7 @@ import AddBusinessUnit from '../../pages/list/mpamBusinessUnits/addBusinessUnit'
 import SelectBusinessArea from '../../pages/list/mpamBusinessUnits/selectBusinessArea';
 import AmendBusinessUnit from '../../pages/list/mpamBusinessUnits/amendBusinessUnit';
 import SelectEnquirySubject from '../../pages/list/mpamEnquiryReasons/selectEnquirySubject'
+import EnquirySubjectView from "../../pages/list/mpamEnquiryReasons/enquirySubjectView";
 
 export interface Route {
     requiredRole: string,
@@ -284,6 +285,12 @@ const routes = [
         exact: true,
         component: SelectEnquirySubject,
         title: 'Select Enquiry Subject'
+    },
+    {
+        path: '/enquiry-subject/:subject',
+        exact: true,
+        component: EnquirySubjectView,
+        title: 'View Enquiry Subject'
     },
     {
         component: Error,

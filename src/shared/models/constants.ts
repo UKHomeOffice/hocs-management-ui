@@ -95,3 +95,4 @@ export const DUPLICATE_BUS_UNIT_DESCRIPTION = 'A business unit with those detail
 export const LOAD_BUS_AREA_ERROR_DESCRIPTION = 'There was an error retrieving the business areas.  Please try refreshing the page.';
 export const AMEND_BUS_UNIT_SUCCESS = 'The business unit was amended successfully';
 export const AMEND_BUS_UNIT_ERROR_DESCRIPTION = 'Something went wrong while amending the business unit. Please try again.';
+export const LOAD_ENQ_SUB_ERROR_DESCRIPTION = 'There was an error retrieving the enquiry subjects.  Please try refreshing the page.';

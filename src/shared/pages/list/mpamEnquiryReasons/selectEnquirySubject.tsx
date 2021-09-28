@@ -62,8 +62,8 @@ const ChooseEnquirySubject: React.FC<ChooseEnquirySubjectProps> = ({ csrfToken, 
                             clearable={true}
                             disabled={false}
                             getOptions={getEnquirySubjects}
-                            label={'Business Areas'}
-                            name={'business-areas'}
+                            label={'Enquiry Subjects'}
+                            name={'enquiry-subject'}
                             onSelectedItemChange={setSelectedEnquirySubject}
                             value={selectedEnquirySubject}
                         />
