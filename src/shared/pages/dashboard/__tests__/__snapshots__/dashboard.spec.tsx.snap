@@ -221,6 +221,14 @@ exports[`dashboard component should not render dcu creation link if does not rol
               Manage MPAM Business Units
             </a>
           </li>
+          <li>
+            <a
+              class="govuk-link"
+              href="/manage-mpam-enquiry-reasons"
+            >
+              Manage MPAM Enquiry Reasons
+            </a>
+          </li>
         </ul>
       </li>
     </ul>
@@ -455,6 +463,14 @@ exports[`dashboard component should render dcu creation link if has role 1`] = `
               href="/manage-mpam-business-units"
             >
               Manage MPAM Business Units
+            </a>
+          </li>
+          <li>
+            <a
+              class="govuk-link"
+              href="/manage-mpam-enquiry-reasons"
+            >
+              Manage MPAM Enquiry Reasons
             </a>
           </li>
         </ul>

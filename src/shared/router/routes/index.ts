@@ -37,9 +37,9 @@ import BusinessAreaView from '../../pages/list/mpamBusinessUnits/businessAreaVie
 import AddBusinessUnit from '../../pages/list/mpamBusinessUnits/addBusinessUnit';
 import SelectBusinessArea from '../../pages/list/mpamBusinessUnits/selectBusinessArea';
 import AmendBusinessUnit from '../../pages/list/mpamBusinessUnits/amendBusinessUnit';
-import SelectEnquirySubject from '../../pages/list/mpamEnquiryReasons/selectEnquirySubject'
-import EnquirySubjectView from "../../pages/list/mpamEnquiryReasons/enquirySubjectView";
-import AddEnquiryReason from "../../pages/list/mpamEnquiryReasons/addEnquiryReason";
+import SelectEnquirySubject from '../../pages/list/mpamEnquiryReasons/selectEnquirySubject';
+import EnquirySubjectView from '../../pages/list/mpamEnquiryReasons/enquirySubjectView';
+import AddEnquiryReason from '../../pages/list/mpamEnquiryReasons/addEnquiryReason';
 
 export interface Route {
     requiredRole: string,

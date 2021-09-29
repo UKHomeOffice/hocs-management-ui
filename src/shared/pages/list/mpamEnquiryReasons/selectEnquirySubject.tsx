@@ -1,16 +1,16 @@
-import React from "react";
-import useError from "../../../hooks/useError";
-import * as constants from "../../../models/constants";
-import Item from "../../../models/item";
-import {subjects} from "./subjects";
-import {validate} from "../../../validation";
-import {Link} from "react-router-dom";
-import ErrorSummary from "../../../common/components/errorSummary";
-import TypeAhead from "../../../common/components/typeAhead";
-import Submit from "../../../common/components/forms/submit";
-import {RouteComponentProps} from "react-router";
-import {object, string} from "yup";
-import {ApplicationConsumer} from "../../../contexts/application";
+import React from 'react';
+import useError from '../../../hooks/useError';
+import * as constants from '../../../models/constants';
+import Item from '../../../models/item';
+import { subjects } from './subjects';
+import { validate } from '../../../validation';
+import { Link } from 'react-router-dom';
+import ErrorSummary from '../../../common/components/errorSummary';
+import TypeAhead from '../../../common/components/typeAhead';
+import Submit from '../../../common/components/forms/submit';
+import { RouteComponentProps } from 'react-router';
+import { object, string } from 'yup';
+import { ApplicationConsumer } from '../../../contexts/application';
 
 interface ChooseEnquirySubjectProps extends RouteComponentProps {
     csrfToken?: string;
@@ -22,7 +22,7 @@ const validationSchema = object({
         .label('Enquiry Subject')
 });
 
-const ChooseEnquirySubject: React.FC<ChooseEnquirySubjectProps> = ({ csrfToken, history }) => {
+const SelectEnquirySubject: React.FC<ChooseEnquirySubjectProps> = ({ csrfToken, history }) => {
 
     const [pageError, addFormError, clearErrors] = useError('', constants.VALIDATION_ERROR_TITLE);
 
@@ -45,19 +45,19 @@ const ChooseEnquirySubject: React.FC<ChooseEnquirySubjectProps> = ({ csrfToken, 
 
     return (
         <>
-            <div className="govuk-grid-row">
-                <div className="govuk-grid-column-two-thirds-from-desktop">
-                    <Link to="/" className="govuk-back-link">Back</Link>
+            <div className='govuk-grid-row'>
+                <div className='govuk-grid-column-two-thirds-from-desktop'>
+                    <Link to='/' className='govuk-back-link'>Back</Link>
                     <ErrorSummary pageError={pageError} />
-                    <h1 className="govuk-heading-xl">
+                    <h1 className='govuk-heading-xl'>
                         Select an Enquiry Subject
                     </h1>
                 </div>
             </div>
-            <div className="govuk-grid-row">
-                <div className="govuk-grid-column-one-half-from-desktop">
-                    <form action="/api/template" method="POST" onSubmit={handleSubmit}>
-                        <input type="hidden" name="_csrf" value={csrfToken} />
+            <div className='govuk-grid-row'>
+                <div className='govuk-grid-column-one-half-from-desktop'>
+                    <form action='/api/template' method='POST' onSubmit={handleSubmit}>
+                        <input type='hidden' name='_csrf' value={csrfToken} />
                         <TypeAhead
                             clearable={true}
                             disabled={false}
@@ -75,12 +75,12 @@ const ChooseEnquirySubject: React.FC<ChooseEnquirySubjectProps> = ({ csrfToken, 
     );
 };
 
-const WrappedChooseEnquirySubject = ({ history, location, match }: RouteComponentProps) => (
+const WrappedSelectEnquirySubject = ({ history, location, match }: RouteComponentProps) => (
     <ApplicationConsumer>
         {({ csrf }) => (
-            <ChooseEnquirySubject csrfToken={csrf} history={history} location={location} match={match} />
+            <SelectEnquirySubject csrfToken={csrf} history={history} location={location} match={match} />
         )}
     </ApplicationConsumer>
 );
 
-export default WrappedChooseEnquirySubject;
+export default WrappedSelectEnquirySubject;

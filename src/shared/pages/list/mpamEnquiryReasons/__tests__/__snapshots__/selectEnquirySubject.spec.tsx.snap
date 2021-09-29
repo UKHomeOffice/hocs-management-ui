@@ -1,0 +1,125 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`when the selectEnquirySubject component is mounted should render with default props 1`] = `
+<div>
+  <div
+    class="govuk-grid-row"
+  >
+    <div
+      class="govuk-grid-column-two-thirds-from-desktop"
+    >
+      <a
+        class="govuk-back-link"
+        href="/"
+      >
+        Back
+      </a>
+      <h1
+        class="govuk-heading-xl"
+      >
+        Select an Enquiry Subject
+      </h1>
+    </div>
+  </div>
+  <div
+    class="govuk-grid-row"
+  >
+    <div
+      class="govuk-grid-column-one-half-from-desktop"
+    >
+      <form
+        action="/api/template"
+        method="POST"
+      >
+        <input
+          name="_csrf"
+          type="hidden"
+          value=""
+        />
+        <div
+          class="govuk-form-group"
+        >
+          <label
+            class="govuk-label govuk-label--s"
+            for="enquiry-subject-input"
+            id="enquiry-subject-label"
+          >
+            Enquiry Subjects
+          </label>
+          <div
+            class=" css-2b097c-container"
+            id="enquiry-subject"
+          >
+            <div
+              class="govuk-typeahead__control css-1g8ily9-Control"
+            >
+              <div
+                class="govuk-typeahead__value-container css-pilx6v-ValueContainer"
+              >
+                <div
+                  class="govuk-typeahead__placeholder css-ovmm9z-Placeholder"
+                >
+                  Search
+                </div>
+                <div
+                  class="css-b8ldur-Input"
+                >
+                  <div
+                    class="govuk-typeahead__input"
+                    style="display: inline-block;"
+                  >
+                    <input
+                      aria-autocomplete="list"
+                      autocapitalize="none"
+                      autocomplete="off"
+                      autocorrect="off"
+                      id="enquiry-subject-input"
+                      spellcheck="false"
+                      style="box-sizing: content-box; width: 2px; border: 0px; opacity: 1; outline: 0; padding: 0px;"
+                      tabindex="0"
+                      type="text"
+                      value=""
+                    />
+                    <div
+                      style="position: absolute; top: 0px; left: 0px; visibility: hidden; height: 0px; overflow: scroll; white-space: pre; font-family: -webkit-small-control; letter-spacing: normal; text-transform: none;"
+                    />
+                  </div>
+                </div>
+              </div>
+              <div
+                class="govuk-typeahead__indicators css-1hb7zxy-IndicatorsContainer"
+              >
+                <span
+                  class="govuk-typeahead__indicator-separator css-62wm9a-IndicatorSeparator"
+                />
+                <div
+                  aria-hidden="true"
+                  class="govuk-typeahead__indicator govuk-typeahead__dropdown-indicator css-hbt8bd-DropdownIndicator"
+                >
+                  <svg
+                    aria-hidden="true"
+                    class="css-6q0nyr-Svg"
+                    focusable="false"
+                    height="20"
+                    viewBox="0 0 20 20"
+                    width="20"
+                  >
+                    <path
+                      d="M4.516 7.548c0.436-0.446 1.043-0.481 1.576 0l3.908 3.747 3.908-3.747c0.533-0.481 1.141-0.446 1.574 0 0.436 0.445 0.408 1.197 0 1.615-0.406 0.418-4.695 4.502-4.695 4.502-0.217 0.223-0.502 0.335-0.787 0.335s-0.57-0.112-0.789-0.335c0 0-4.287-4.084-4.695-4.502s-0.436-1.17 0-1.615z"
+                    />
+                  </svg>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+        <input
+          class="govuk-button"
+          type="submit"
+          value="Submit"
+        />
+      </form>
+    </div>
+  </div>
+</div>
+`;

@@ -1,15 +1,15 @@
-import React, {useEffect} from "react";
-import useError from "../../../hooks/useError";
-import CaseType from "../../../models/caseType";
-import EntityListItem from "../../../models/entityListItem";
-import {subjects} from "../mpamEnquiryReasons/subjects";
-import {getListItems} from "../../../services/entityListService";
-import ErrorMessage from "../../../models/errorMessage";
-import * as constants from "../../../models/constants";
-import {Link} from "react-router-dom";
-import ErrorSummary from "../../../common/components/errorSummary";
-import {RouteComponentProps} from "react-router";
-import {History} from "history";
+import React, { useEffect } from 'react';
+import useError from '../../../hooks/useError';
+import CaseType from '../../../models/caseType';
+import EntityListItem from '../../../models/entityListItem';
+import { subjects } from '../mpamEnquiryReasons/subjects';
+import { getListItems } from '../../../services/entityListService';
+import ErrorMessage from '../../../models/errorMessage';
+import * as constants from '../../../models/constants';
+import { Link } from 'react-router-dom';
+import ErrorSummary from '../../../common/components/errorSummary';
+import { RouteComponentProps } from 'react-router';
+import { History } from 'history';
 
 interface MatchParams {
     subject: string;
@@ -40,46 +40,46 @@ const EnquirySubjectView: React.FC<CasesProps> = ({ history, match }) => {
     }, []);
 
     return (
-        <div className="govuk-form-group">
-            <Link to="/manage-mpam-enquiry-reasons" className="govuk-back-link">Back</Link>
+        <div className='govuk-form-group'>
+            <Link to='/manage-mpam-enquiry-reasons' className='govuk-back-link'>Back</Link>
             <ErrorSummary
                 pageError={pageError}
             />
             <div>
-                <h1 className="govuk-heading-xl">View and Edit Enquiry Reasons for {readableSubject}</h1>
-                <h2 className="govuk-heading-l">
+                <h1 className='govuk-heading-xl'>View and Edit Enquiry Reasons for {readableSubject}</h1>
+                <h2 className='govuk-heading-l'>
                     {enquirySubject && `Business Area: ${enquirySubject.displayName}`}
                 </h2>
                 {
                     enquirySubjects && enquirySubjects.length > 0 ?
                         <div>
-                            <table className="govuk-table">
-                                <thead className="govuk-table__head">
-                                <tr className="govuk-table__row">
-                                    <th className="govuk-table__header" scope="col">Enquiry Reason</th>
-                                </tr>
+                            <table className='govuk-table'>
+                                <thead className='govuk-table__head'>
+                                    <tr className='govuk-table__row'>
+                                        <th className='govuk-table__header' scope='col'>Enquiry Reason</th>
+                                    </tr>
                                 </thead>
-                                <tbody className="govuk-table__body">
-                                {
-                                    enquirySubjects.map((enquirySubject) => {
-                                        return (
-                                            <tr className="govuk-table__row" key={enquirySubject.simpleName}>
-                                                <td className="govuk-table__cell">{enquirySubject.title}</td>
-                                            </tr>
-                                        );
-                                    })
-                                }
+                                <tbody className='govuk-table__body'>
+                                    {
+                                        enquirySubjects.map((enquirySubject) => {
+                                            return (
+                                                <tr className='govuk-table__row' key={enquirySubject.simpleName}>
+                                                    <td className='govuk-table__cell'>{enquirySubject.title}</td>
+                                                </tr>
+                                            );
+                                        })
+                                    }
                                 </tbody>
                             </table>
                         </div> :
                         <div>
-                            <p className="govuk-body">Loading...</p>
+                            <p className='govuk-body'>Loading...</p>
                         </div>
                 }
                 <button
-                    type="submit"
-                    className="govuk-button govuk-!-margin-right-1 add-team-members-button"
-                    data-module="govuk-button"
+                    type='submit'
+                    className='govuk-button govuk-!-margin-right-1 add-team-members-button'
+                    data-module='govuk-button'
                     onClick={() => onAddEnquiryReasonClick(history, subject)}
                 >
                     Add Enquiry Reason
