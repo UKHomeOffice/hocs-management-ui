@@ -9,11 +9,11 @@ import SelectEnquirySubject from '../selectEnquirySubject';
 jest.mock('../../../../services/entityListService', () => ({
     __esModule: true,
     getListItems: () => Promise.resolve([{
-        label: '__businessArea1__',
-        value: '__businessAreaId1__'
+        label: '__enquirySubject1__',
+        value: '__enquirySubjectId1__'
     }, {
-        label: '__businessArea2__',
-        value: '__businessAreaId2__'
+        label: '__enquirySubject2__',
+        value: '__enquirySubjectId2__'
     }])
 }));
 
@@ -21,7 +21,7 @@ let match: match<any>;
 let history: History<any>;
 let location: Location;
 let wrapper: RenderResult;
-let mockSelectedBusinessArea: Item | undefined;
+let mockSelectedEnquirySubject: Item | undefined;
 
 const useStateSpy = jest.spyOn(React, 'useState');
 const setSelectedCaseTypeMock = jest.fn();
@@ -29,11 +29,11 @@ const useErrorSpy = jest.spyOn(useError, 'default');
 const addFormErrorMock = jest.fn();
 const clearErrorsMock = jest.fn();
 const setMessageMock = jest.fn();
-mockSelectedBusinessArea = undefined;
+mockSelectedEnquirySubject = undefined;
 
 const renderComponent = () => render(
     <MemoryRouter>
-        <SelectEnquirySubject history={history} location={location} match={match}></SelectEnquirySubject>
+        <SelectEnquirySubject history={history} location={location} match={match}/>
     </MemoryRouter>
 );
 
@@ -54,7 +54,7 @@ beforeEach(() => {
         state: {}
     };
 
-    useStateSpy.mockImplementation(() => [mockSelectedBusinessArea, setSelectedCaseTypeMock]);
+    useStateSpy.mockImplementation(() => [mockSelectedEnquirySubject, setSelectedCaseTypeMock]);
     useErrorSpy.mockImplementation(() => [{}, addFormErrorMock, clearErrorsMock, setMessageMock]);
     history.push = jest.fn();
     addFormErrorMock.mockReset();
@@ -80,7 +80,7 @@ describe('when the submit button is clicked', () => {
     describe('and the data is filled in', () => {
 
         beforeAll(async () => {
-            mockSelectedBusinessArea = {
+            mockSelectedEnquirySubject = {
                 label: '__enquirySubjectLabel__',
                 value: '__enquirySubjectValue__'
             };
@@ -113,7 +113,7 @@ describe('when the submit button is clicked', () => {
     describe('and the data is not filled in', () => {
 
         beforeAll(async () => {
-            mockSelectedBusinessArea = undefined;
+            mockSelectedEnquirySubject = undefined;
         });
         beforeEach(async () => {
             const submitButton = await waitForElement(async () => {
