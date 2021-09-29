@@ -29,7 +29,7 @@ const EnquirySubjectView: React.FC<CasesProps> = ({ history, match }) => {
     const [enquirySubjects, setEnquirySubjects] = React.useState<EntityListItem[]>();
 
     const { params: { subject } } = match;
-    const readableType = subjects[subject];
+    const readableSubject = subjects[subject];
 
     useEffect(() => {
         getListItems(subject)
@@ -46,7 +46,7 @@ const EnquirySubjectView: React.FC<CasesProps> = ({ history, match }) => {
                 pageError={pageError}
             />
             <div>
-                <h1 className="govuk-heading-xl">View and Edit Enquiry Reasons for {readableType}</h1>
+                <h1 className="govuk-heading-xl">View and Edit Enquiry Reasons for {readableSubject}</h1>
                 <h2 className="govuk-heading-l">
                     {enquirySubject && `Business Area: ${enquirySubject.displayName}`}
                 </h2>
