@@ -116,6 +116,9 @@ const Dashboard = ({ hasRole }: ApplicationState) => {
                                 <li>
                                     <Link className="govuk-link" to="/manage-mpam-business-units">Manage MPAM Business Units</Link>
                                 </li>
+                                <li>
+                                    <Link className="govuk-link" to="/manage-mpam-enquiry-reasons">Manage MPAM Enquiry Reasons</Link>
+                                </li>
                             </ul>
                         </li>
                     </ul>
