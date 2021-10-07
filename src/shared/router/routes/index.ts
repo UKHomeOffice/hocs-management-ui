@@ -40,6 +40,7 @@ import AmendBusinessUnit from '../../pages/list/mpamBusinessUnits/amendBusinessU
 import SelectEnquirySubject from '../../pages/list/mpamEnquiryReasons/selectEnquirySubject';
 import EnquirySubjectView from '../../pages/list/mpamEnquiryReasons/enquirySubjectView';
 import AddEnquiryReason from '../../pages/list/mpamEnquiryReasons/addEnquiryReason';
+import AmendEnquiryReason from '../../pages/list/mpamEnquiryReasons/amendEnquiryReason';
 
 export interface Route {
     requiredRole: string,
@@ -298,6 +299,12 @@ const routes = [
         exact: true,
         component: AddEnquiryReason,
         title: 'Add Enquiry Reason'
+    },
+    {
+        path: '/amend-enquiry-reason/:subject/:itemUUID/',
+        exact: true,
+        component: AmendEnquiryReason,
+        title: 'Amend Enquiry Reason'
     },
     {
         component: Error,

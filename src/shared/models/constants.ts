@@ -99,3 +99,5 @@ export const ADD_ENQ_REASON_ERROR_DESCRIPTION = 'Something went wrong while addi
 export const ADD_ENQ_REASON_SUCCESS = 'The enquiry reason was added successfully';
 export const DUPLICATE_ENQ_REASON_DESCRIPTION = 'An enquiry reason with those details already exists';
 export const LOAD_ENQ_SUB_ERROR_DESCRIPTION = 'There was an error retrieving the enquiry subjects.  Please try refreshing the page.';
+export const AMEND_ENQ_REASON_SUCCESS = 'The enquiry reason was amended successfully';
+export const AMEND_ENQ_REASON_ERROR_DESCRIPTION = 'Something went wrong while amending the enquiry reason. Please try again.';
