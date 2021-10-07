@@ -1,6 +1,6 @@
 export interface State {
     simpleName: string;
-    enquiryReasonName: string;
-    originalEnquiryReasonName: string;
+    title: string;
+    originalTitle: string;
     uuid: string;
 }

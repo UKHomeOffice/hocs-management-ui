@@ -9,8 +9,8 @@ import {
 } from '../../../models/constants';
 import EntityListItem from '../../../models/entityListItem';
 import InputEventData from '../../../models/inputEventData';
-import { reducer } from '../exGratiaBusinessReps/addBusinessRepReducer';
-import { subjects } from '../mpamEnquiryReasons/subjects';
+import { reducer } from './addEnquiryReasonReducer';
+import { subjects } from './subjects';
 import { validate } from '../../../validation';
 import { createListItem } from '../../../services/entityListService';
 import ErrorMessage from '../../../models/errorMessage';
@@ -88,7 +88,9 @@ const AddEnquiryReason: React.FC<addEnquiryReasonProps> = ({ csrfToken, history,
                             value={representative.title}
                             updateState={({ name, value }) => dispatch({ name, value })}
                         />
-                        <Submit />
+                        <Submit
+                            label={'Add'}
+                        />
                     </form>
                 </div>
             </div>

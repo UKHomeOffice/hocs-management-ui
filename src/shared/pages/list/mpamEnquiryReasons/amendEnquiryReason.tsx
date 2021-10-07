@@ -5,7 +5,7 @@ import { object, string } from 'yup';
 import Submit from '../../../common/components/forms/submit';
 import Text from '../../../common/components/forms/text';
 import { updateListItem, getItemDetails } from '../../../services/entityListService';
-import { reducer } from '../mpamCampaign/amendCampaignReducer';
+import { reducer } from './amendEnquiryReasonReducer';
 import ErrorSummary from '../../../common/components/errorSummary';
 import {
     GENERAL_ERROR_TITLE,
@@ -15,8 +15,8 @@ import {
 import useError from '../../../hooks/useError';
 import ErrorMessage from '../../../models/errorMessage';
 import { validate } from '../../../validation';
-import { Action } from '../mpamCampaign/actions';
-import { State } from '../mpamCampaign/amendCampaignState';
+import { Action } from './actions';
+import { State } from './amendEnquiryReasonState';
 
 interface MatchParams {
     subject: string,
@@ -93,7 +93,9 @@ const AmendEnquiryReason: React.FC<AmendCampaignProps> = ({ csrfToken, history, 
                             updateState={({ value }) => dispatch({ type: 'SetTitle', payload: value as string })}
                             value={state.title}
                         />
-                        <Submit />
+                        <Submit
+                            label={'Amend'}
+                        />
                     </form>
                 </div>
             </div>

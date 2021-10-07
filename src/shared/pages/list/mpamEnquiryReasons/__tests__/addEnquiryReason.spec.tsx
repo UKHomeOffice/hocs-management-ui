@@ -99,7 +99,7 @@ describe('when the submit button is clicked', () => {
             mockEntityListItem.title = '__displayName__';
             mockEntityListItem.simpleName = '__shortCode__';
             const submitButton = await waitForElement(async () => {
-                return await wrapper.findByText('Submit');
+                return await wrapper.findByText('Add');
             });
 
             fireEvent.click(submitButton);
@@ -147,7 +147,7 @@ describe('when the submit button is clicked', () => {
     describe('and the data is not filled in', () => {
         beforeEach(async () => {
             const submitButton = await waitForElement(async () => {
-                return await wrapper.findByText('Submit');
+                return await wrapper.findByText('Add');
             });
 
             fireEvent.click(submitButton);

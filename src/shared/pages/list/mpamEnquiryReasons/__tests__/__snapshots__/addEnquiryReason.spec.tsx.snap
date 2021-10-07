@@ -57,7 +57,7 @@ exports[`when the add enquiry reason component is mounted should render with def
         <input
           class="govuk-button"
           type="submit"
-          value="Submit"
+          value="Add"
         />
       </form>
     </div>
