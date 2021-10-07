@@ -5,6 +5,7 @@ import { ApplicationConsumer, ApplicationState } from '../../contexts/applicatio
 
 const Dashboard = ({ hasRole }: ApplicationState) => {
     const hasDcuRole = hasRole('DCU');
+    const hasFOIRole = hasRole('FOI');
 
     return (
         <Fragment>
@@ -118,6 +119,12 @@ const Dashboard = ({ hasRole }: ApplicationState) => {
                                 </li>
                                 <li>
                                     <Link className="govuk-link" to="/manage-mpam-enquiry-reasons">Manage MPAM Enquiry Reasons</Link>
+                                </li>
+                                {hasFOIRole && /** This will only hide the link to the page for non-FOI users
+                                 it will not block the page or guard the API endpoints. **/
+                                <li>
+                                    <Link className="govuk-link" to="/manage-foi-account-managers">Manage FOI
+                                        Account Managers</Link>
                                 </li>
                             </ul>
                         </li>

@@ -23,6 +23,9 @@ import AddUser from '../../pages/user/userAdd/addUser';
 import AmendUser from '../../pages/user/userAmend/amendUser';
 import AddTeamToUser from '../../pages/user/addTeamToUser/addTeamToUser';
 import WithdrawCase from '../../pages/case/withdrawCase';
+import InterestedPartiesView from '../../pages/list/foiInterestedParties/interestedPartyView';
+import AddInterestedParty from '../../pages/list/foiInterestedParties/addInterestedParty';
+import AmendInterestedParty from '../../pages/list/foiInterestedParties/amendInterestedParty';
 import CampaignsView from '../../pages/list/mpamCampaign/campaignsView';
 import ExGratiaView from '../../pages/list/exGratiaBusinessReps/exgratiaBusRepsView';
 import ChooseBusinessArea from '../../pages/list/mpamBusinessUnits/selectBusinessArea';
@@ -41,6 +44,7 @@ import SelectEnquirySubject from '../../pages/list/mpamEnquiryReasons/selectEnqu
 import EnquirySubjectView from '../../pages/list/mpamEnquiryReasons/enquirySubjectView';
 import AddEnquiryReason from '../../pages/list/mpamEnquiryReasons/addEnquiryReason';
 import AmendEnquiryReason from '../../pages/list/mpamEnquiryReasons/amendEnquiryReason';
+import FoiAccountManagersView from '../../pages/list/foiAccountManagers/accountManagersView';
 
 export interface Route {
     requiredRole: string,
@@ -221,6 +225,30 @@ const routes = [
         exact: true,
         component: WithdrawCase,
         title: 'Withdraw a case'
+    },
+    {
+        path: '/manage-foi-interested-parties',
+        exact: true,
+        component: InterestedPartiesView,
+        title: 'Manage FOI Interested parties'
+    },
+    {
+        path: '/manage-foi-account-managers',
+        exact: true,
+        component: FoiAccountManagersView,
+        title: 'Manage FOI Account managers'
+    },
+    {
+        path: '/manage-foi-interested-parties/add',
+        exact: true,
+        component: AddInterestedParty,
+        title: 'Add Interested Party'
+    },
+    {
+        path: '/manage-foi-interested-parties/:itemUUID/amend',
+        exact: true,
+        component: AmendInterestedParty,
+        title: 'Add Interested Party'
     },
     {
         path: '/manage-mpam-campaigns',
