@@ -21,10 +21,6 @@ const onAddEnquiryReasonClick = (history: History, subject: string) => {
     history.push(`/add-enquiry-reason/${subject}`);
 };
 
-const onAmendEnquiryReasonClick = (history: History, uuid: string, subject: string) => {
-    history.push(`/amend-enquiry-reason/${subject}/${uuid}`);
-};
-
 const EnquirySubjectView: React.FC<CasesProps> = ({ history, match }) => {
 
     const [pageError, , , setErrorMessage] = useError();
@@ -71,7 +67,7 @@ const EnquirySubjectView: React.FC<CasesProps> = ({ history, match }) => {
                                                 <tr className='govuk-table__row' key={enquirySubject.simpleName}>
                                                     <td className='govuk-table__cell'>{enquirySubject.title}</td>
                                                     <td className="govuk-table__cell">
-                                                        <a href="#" onClick={event => onAmendEnquiryReasonClick(history, enquirySubject.uuid, subject)}>Amend</a>
+                                                        <Link to={`/amend-enquiry-reason/${subject}/${enquirySubject.uuid}`}>Amend</Link>
                                                     </td>
                                                 </tr>
                                             );
