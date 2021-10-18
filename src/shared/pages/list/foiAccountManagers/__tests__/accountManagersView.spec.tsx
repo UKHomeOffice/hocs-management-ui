@@ -60,13 +60,11 @@ beforeEach(() => {
         accountManagers: [{
             simpleName: 'testSimpleName1',
             uuid: 'testId1',
-            name: 'testTitle1',
-            email: 'test1@example.org'
+            title: 'testTitle1'
         }, {
             simpleName: 'testSimpleName2',
             uuid: 'testId2',
-            name: 'testTitle2',
-            email: 'test1@example.org'
+            title: 'testTitle2'
         }]
     };
     useReducerSpy.mockImplementationOnce(() => [mockState, jest.fn()]);
@@ -75,7 +73,7 @@ beforeEach(() => {
     setMessageSpy.mockReset();
 });
 
-describe('when the interestedPartyView component is mounted', () => {
+describe('when the account manager component is mounted', () => {
     it('should render with default props', async () => {
         expect.assertions(2);
         let wrapper: RenderResult;

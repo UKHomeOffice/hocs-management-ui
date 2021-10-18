@@ -1,5 +1,5 @@
-import { State } from '../amendInterestedPartyState';
-import { reducer } from '../amendInterestedPartyReducer';
+import { State } from '../amendAccountManagerState';
+import { reducer } from '../amendAccountManagerReducer';
 
 describe('when an action is dispatched', () => {
     describe('and it is a SetItemDetails action', () => {

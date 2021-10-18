@@ -8,7 +8,7 @@ import { reducer } from './reducer';
 import { initialState } from './initialState';
 import {
     GENERAL_ERROR_TITLE,
-    LOAD_FOI_INTERESTED_PARTIES_ERROR_DESCRIPTION
+    LOAD_FOI_ACCOUNT_MANAGERS_ERROR_DESCRIPTION
 } from '../../../models/constants';
 import ErrorSummary from '../../../common/components/errorSummary';
 import ErrorMessage from '../../../models/errorMessage';
@@ -23,10 +23,10 @@ interface MatchParams {
 type TeamMembersProps = RouteComponentProps<MatchParams>;
 
 const onAddClick = (history: History) => {
-    history.push('/manage-foi-interested-parties/add');
+    history.push('/manage-foi-account-managers/add');
 };
 
-const FoiInterestedPartiesView: React.FC<TeamMembersProps> = ({ history, match }) => {
+const FoiAccountManagersView: React.FC<TeamMembersProps> = ({ history, match }) => {
 
     const [pageError, , clearErrors, setErrorMessage] = useError();
     const [state, dispatch] = React.useReducer<Reducer<State, Action>>(reducer, initialState);
@@ -35,14 +35,14 @@ const FoiInterestedPartiesView: React.FC<TeamMembersProps> = ({ history, match }
         getListItems('FOI_ACCOUNT_MANAGERS')
             .then((accountManagers: EntityListItem[]) => dispatch({ type: 'PopulateAccountManagers', payload: accountManagers }))
             .catch(() => {
-                setErrorMessage(new ErrorMessage(LOAD_FOI_INTERESTED_PARTIES_ERROR_DESCRIPTION, GENERAL_ERROR_TITLE));
+                setErrorMessage(new ErrorMessage(LOAD_FOI_ACCOUNT_MANAGERS_ERROR_DESCRIPTION, GENERAL_ERROR_TITLE));
             });
     }, []);
 
-    const amendParty = (partyUuid: string, event: React.FormEvent) => {
+    const amendAccountManager = (managerUuid: string, event: React.FormEvent) => {
         event.preventDefault();
         clearErrors();
-        history.push(`/manage-foi-interested-parties/${partyUuid}/amend`);
+        history.push(`/manage-foi-account-managers/${managerUuid}/amend`);
 
     };
 
@@ -65,7 +65,7 @@ const FoiInterestedPartiesView: React.FC<TeamMembersProps> = ({ history, match }
                                         <td className="govuk-table__cell">{accountManager.title}</td>
                                         <td className="govuk-table__cell">{accountManager.simpleName}</td>
                                         <td className="govuk-table__cell">
-                                            <a href="#" onClick={event => amendParty(accountManager.uuid, event)}>Amend</a>
+                                            <a href="#" onClick={event => amendAccountManager(accountManager.uuid, event)}>Amend</a>
                                         </td>
                                     </tr>
                                 );
@@ -84,7 +84,7 @@ const FoiInterestedPartiesView: React.FC<TeamMembersProps> = ({ history, match }
                 pageError={pageError}
             />
             <div>
-                <h1 className="govuk-heading-xl">View and edit managers</h1>
+                <h1 className="govuk-heading-xl">View and edit account managers</h1>
                 {
                     state.accountManagersLoaded ?
                         <div>
@@ -100,4 +100,4 @@ const FoiInterestedPartiesView: React.FC<TeamMembersProps> = ({ history, match }
     );
 };
 
-export default FoiInterestedPartiesView;
+export default FoiAccountManagersView;

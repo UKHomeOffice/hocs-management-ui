@@ -1,6 +1,6 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
-exports[`when the interestedPartyView component is mounted should render with default props 1`] = `
+exports[`when the account manager component is mounted should render with default props 1`] = `
 <div>
   <div
     class="govuk-form-group"
@@ -15,7 +15,7 @@ exports[`when the interestedPartyView component is mounted should render with de
       <h1
         class="govuk-heading-xl"
       >
-        View and edit interested parties
+        View and edit account managers
       </h1>
       <div>
         <table
@@ -32,12 +32,6 @@ exports[`when the interestedPartyView component is mounted should render with de
                 scope="col"
               >
                 Account manager name
-              </th>
-              <th
-                class="govuk-table__header"
-                scope="col"
-              >
-                Account manager email
               </th>
               <th
                 class="govuk-table__header"
@@ -67,11 +61,6 @@ exports[`when the interestedPartyView component is mounted should render with de
               <td
                 class="govuk-table__cell"
               >
-                test1@example.org
-              </td>
-              <td
-                class="govuk-table__cell"
-              >
                 testSimpleName1
               </td>
               <td
@@ -91,11 +80,6 @@ exports[`when the interestedPartyView component is mounted should render with de
                 class="govuk-table__cell"
               >
                 testTitle2
-              </td>
-              <td
-                class="govuk-table__cell"
-              >
-                test1@example.org
               </td>
               <td
                 class="govuk-table__cell"
@@ -120,7 +104,7 @@ exports[`when the interestedPartyView component is mounted should render with de
         data-module="govuk-button"
         type="submit"
       >
-        Add new party
+        Add new account manager
       </button>
     </div>
   </div>

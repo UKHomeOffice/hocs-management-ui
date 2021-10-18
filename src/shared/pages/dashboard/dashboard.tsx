@@ -125,7 +125,7 @@ const Dashboard = ({ hasRole }: ApplicationState) => {
                                 <li>
                                     <Link className="govuk-link" to="/manage-foi-account-managers">Manage FOI
                                         Account Managers</Link>
-                                </li>
+                                </li>}
                             </ul>
                         </li>
                     </ul>

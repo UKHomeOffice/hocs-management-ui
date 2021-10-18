@@ -10,14 +10,14 @@ exports[`when the addCampaign component is mounted should render with default pr
     >
       <a
         class="govuk-back-link"
-        href="/manage-foi-interested-parties"
+        href="/manage-foi-account-managers"
       >
         Back
       </a>
       <h1
         class="govuk-heading-xl"
       >
-        Add interested party
+        Add account manager
       </h1>
     </div>
   </div>
@@ -28,7 +28,7 @@ exports[`when the addCampaign component is mounted should render with default pr
       class="govuk-grid-column-one-half-from-desktop"
     >
       <form
-        action="/api/entity/list/FOI_INTERESTED_PARTIES"
+        action="/api/entity/list/FOI_ACCOUNT_MANAGERS"
         method="POST"
       >
         <input
@@ -44,7 +44,7 @@ exports[`when the addCampaign component is mounted should render with default pr
             for="title"
             id="title-label"
           >
-            Interested party name
+            New account manager name
           </label>
           <input
             class="govuk-input"
@@ -62,7 +62,7 @@ exports[`when the addCampaign component is mounted should render with default pr
             for="simpleName"
             id="simpleName-label"
           >
-            Interested party code
+            Account manager code
           </label>
           <input
             class="govuk-input"

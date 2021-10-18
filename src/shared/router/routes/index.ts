@@ -23,9 +23,6 @@ import AddUser from '../../pages/user/userAdd/addUser';
 import AmendUser from '../../pages/user/userAmend/amendUser';
 import AddTeamToUser from '../../pages/user/addTeamToUser/addTeamToUser';
 import WithdrawCase from '../../pages/case/withdrawCase';
-import InterestedPartiesView from '../../pages/list/foiInterestedParties/interestedPartyView';
-import AddInterestedParty from '../../pages/list/foiInterestedParties/addInterestedParty';
-import AmendInterestedParty from '../../pages/list/foiInterestedParties/amendInterestedParty';
 import CampaignsView from '../../pages/list/mpamCampaign/campaignsView';
 import ExGratiaView from '../../pages/list/exGratiaBusinessReps/exgratiaBusRepsView';
 import ChooseBusinessArea from '../../pages/list/mpamBusinessUnits/selectBusinessArea';
@@ -45,6 +42,8 @@ import EnquirySubjectView from '../../pages/list/mpamEnquiryReasons/enquirySubje
 import AddEnquiryReason from '../../pages/list/mpamEnquiryReasons/addEnquiryReason';
 import AmendEnquiryReason from '../../pages/list/mpamEnquiryReasons/amendEnquiryReason';
 import FoiAccountManagersView from '../../pages/list/foiAccountManagers/accountManagersView';
+import AddAccountManager from '../../pages/list/foiAccountManagers/addAccountManager';
+import AmendAccountManager from '../../pages/list/foiAccountManagers/amendAccountManager';
 
 export interface Route {
     requiredRole: string,
@@ -227,28 +226,22 @@ const routes = [
         title: 'Withdraw a case'
     },
     {
-        path: '/manage-foi-interested-parties',
-        exact: true,
-        component: InterestedPartiesView,
-        title: 'Manage FOI Interested parties'
-    },
-    {
         path: '/manage-foi-account-managers',
         exact: true,
         component: FoiAccountManagersView,
         title: 'Manage FOI Account managers'
     },
     {
-        path: '/manage-foi-interested-parties/add',
+        path: '/manage-foi-account-managers/add',
         exact: true,
-        component: AddInterestedParty,
-        title: 'Add Interested Party'
+        component: AddAccountManager,
+        title: 'Add Account Manager'
     },
     {
-        path: '/manage-foi-interested-parties/:itemUUID/amend',
+        path: '/manage-foi-account-managers/:itemUUID/amend',
         exact: true,
-        component: AmendInterestedParty,
-        title: 'Add Interested Party'
+        component: AmendAccountManager,
+        title: 'Add Account Manager'
     },
     {
         path: '/manage-mpam-campaigns',

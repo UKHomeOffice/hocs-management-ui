@@ -1,4 +1,4 @@
-import { reducer } from '../addInterestedPartyReducer';
+import { reducer } from '../addAccountManagerReducer';
 import InputEventData from '../../../../models/inputEventData';
 
 describe('when an action is dispatched', () => {

@@ -1,17 +1,16 @@
-
 import React from 'react';
 import { match, MemoryRouter } from 'react-router-dom';
 import { createBrowserHistory, History, Location } from 'history';
 import { act, render, RenderResult, wait, fireEvent, waitForElement } from '@testing-library/react';
 import {
     GENERAL_ERROR_TITLE,
-    LOAD_FOI_INTERESTED_PARTIES_ERROR_DESCRIPTION,
-    AMEND_FOI_INTERESTED_PARTY_ERROR_DESCRIPTION
+    LOAD_FOI_ACCOUNT_MANAGERS_ERROR_DESCRIPTION,
+    AMEND_FOI_ACCOUNT_MANAGER_ERROR_DESCRIPTION
 } from '../../../../models/constants';
-import AmendInterestedParty from '../amendInterestedParty';
+import AmendAccountManager from '../amendAccountManager';
 import * as EntityListService from '../../../../services/entityListService';
 import * as useError from '../../../../hooks/useError';
-import { State } from '../amendInterestedPartyState';
+import { State } from '../amendAccountManagerState';
 
 let match: match<any>;
 let history: History<any>;
@@ -28,7 +27,7 @@ const setMessageSpy = jest.fn();
 
 const renderComponent = () => render(
     <MemoryRouter>
-        <AmendInterestedParty history={history} location={location} match={match}></AmendInterestedParty>
+        <AmendAccountManager history={history} location={location} match={match}></AmendAccountManager>
     </MemoryRouter>
 );
 const getItemDetailsSpy = jest.spyOn(EntityListService, 'getItemDetails');
@@ -70,7 +69,7 @@ beforeEach(() => {
     });
 });
 
-describe('when the AmendInterestedParty component is mounted', () => {
+describe('when the AmendAccountManager component is mounted', () => {
     it('should render with default props', async () => {
         expect.assertions(2);
         wrapper = renderComponent();
@@ -96,7 +95,7 @@ describe('when the AmendInterestedParty component is mounted', () => {
         wrapper = renderComponent();
 
         await wait(() => {
-            expect(setMessageSpy).toBeCalledWith({ title: GENERAL_ERROR_TITLE, description: LOAD_FOI_INTERESTED_PARTIES_ERROR_DESCRIPTION });
+            expect(setMessageSpy).toBeCalledWith({ title: GENERAL_ERROR_TITLE, description: LOAD_FOI_ACCOUNT_MANAGERS_ERROR_DESCRIPTION });
         });
 
     });
@@ -109,14 +108,14 @@ describe('when the new name is entered', () => {
             { simpleName: 'testSimpleName', title: 'testTitle', uuid: 'testUUID' }
         ));
         const nameElement = await waitForElement(async () => {
-            return await wrapper.findByLabelText('New interested party name');
+            return await wrapper.findByLabelText('New account manager name');
         });
 
-        fireEvent.change(nameElement, { target: { name: 'title', value: 'newTestInterestedPartyTitle' } });
+        fireEvent.change(nameElement, { target: { name: 'title', value: 'newTestAccountManagerTitle' } });
 
         await wait(() => {
 
-            expect(reducerDispatch).toHaveBeenCalledWith({ type: 'SetTitle', payload: 'newTestInterestedPartyTitle' });
+            expect(reducerDispatch).toHaveBeenCalledWith({ type: 'SetTitle', payload: 'newTestAccountManagerTitle' });
         });
     });
 });
@@ -143,7 +142,7 @@ describe('when the submit button is clicked', () => {
                 await wait(() => {
                     expect(getItemDetailsSpy).toHaveBeenCalled();
                     expect(updateListItemSpy).toHaveBeenCalled();
-                    expect(history.push).toHaveBeenCalledWith('/', { successMessage: 'The FOI interested party was amended successfully' });
+                    expect(history.push).toHaveBeenCalledWith('/', { successMessage: 'The FOI account manager was amended successfully' });
                 });
             });
             it('should call the begin submit action', async () => {
@@ -171,7 +170,7 @@ describe('when the submit button is clicked', () => {
         });
 
         it('should set the error state', () => {
-            expect(addFormErrorSpy).toHaveBeenNthCalledWith(1, { key: 'title', value: 'The New interested party name is required' });
+            expect(addFormErrorSpy).toHaveBeenNthCalledWith(1, { key: 'title', value: 'The New account manager name is required' });
         });
     });
 });
@@ -193,7 +192,7 @@ describe('when the submit button is clicked', () => {
 
         describe('and the service call fails', () => {
             it('should set the error state', () => {
-                expect(setMessageSpy).toHaveBeenCalledWith({ description: AMEND_FOI_INTERESTED_PARTY_ERROR_DESCRIPTION, title: GENERAL_ERROR_TITLE });
+                expect(setMessageSpy).toHaveBeenCalledWith({ description: AMEND_FOI_ACCOUNT_MANAGER_ERROR_DESCRIPTION, title: GENERAL_ERROR_TITLE });
             });
 
             it('should call the begin submit action', () => {

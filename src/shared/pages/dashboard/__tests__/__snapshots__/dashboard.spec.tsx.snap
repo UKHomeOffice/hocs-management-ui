@@ -704,9 +704,17 @@ exports[`dashboard component should render FOI interested parties link if user h
           <li>
             <a
               class="govuk-link"
-              href="/manage-foi-interested-parties"
+              href="/manage-mpam-enquiry-reasons"
             >
-              Manage FOI Interested Parties
+              Manage MPAM Enquiry Reasons
+            </a>
+          </li>
+          <li>
+            <a
+              class="govuk-link"
+              href="/manage-foi-account-managers"
+            >
+              Manage FOI Account Managers
             </a>
           </li>
         </ul>

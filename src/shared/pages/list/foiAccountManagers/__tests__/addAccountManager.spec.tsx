@@ -1,15 +1,14 @@
-
 import React from 'react';
 import { match, MemoryRouter } from 'react-router-dom';
 import { createBrowserHistory, History, Location } from 'history';
 import { act, render, RenderResult, wait, fireEvent, waitForElement } from '@testing-library/react';
-import AddCampaign from '../addInterestedParty';
+import AddAccountManager from '../addAccountManager';
 import * as EntityListService from '../../../../services/entityListService';
 import {
     GENERAL_ERROR_TITLE,
     VALIDATION_ERROR_TITLE,
-    DUPLICATE_FOI_INTERESTED_PARTY_DESCRIPTION,
-    ADD_FOI_INTERESTED_PARTY_ERROR_DESCRIPTION
+    DUPLICATE_FOI_ACCOUNT_MANAGER_DESCRIPTION,
+    ADD_FOI_ACCOUNT_MANAGER_ERROR_DESCRIPTION
 } from '../../../../models/constants';
 import EntityListItem from '../../../../models/entityListItem';
 import * as useError from '../../../../hooks/useError';
@@ -29,7 +28,7 @@ const setMessageSpy = jest.fn();
 
 const renderComponent = () => render(
     <MemoryRouter>
-        <AddCampaign history={history} location={location} match={match}></AddCampaign>
+        <AddAccountManager history={history} location={location} match={match}></AddAccountManager>
     </MemoryRouter>
 );
 
@@ -83,7 +82,7 @@ describe('when the name is entered', () => {
         expect.assertions(1);
 
         const nameElement = await waitForElement(async () => {
-            return await wrapper.findByLabelText('Interested party name');
+            return await wrapper.findByLabelText('New account manager name');
         });
 
         fireEvent.change(nameElement, { target: { name: 'title', value: '__displayTitle__' } });
@@ -99,7 +98,7 @@ describe('when the code is entered', () => {
         expect.assertions(1);
 
         const codeElement = await waitForElement(async () => {
-            return await wrapper.findByLabelText('Interested party code');
+            return await wrapper.findByLabelText('Account manager code');
         });
 
         fireEvent.change(codeElement, { target: { name: 'simpleName', value: '__Code__' } });
@@ -128,7 +127,7 @@ describe('when the submit button is clicked', () => {
                 expect.assertions(1);
 
                 await wait(() => {
-                    expect(history.push).toHaveBeenCalledWith('/', { successMessage: 'The interested party was added successfully' });
+                    expect(history.push).toHaveBeenCalledWith('/', { successMessage: 'The account manager was added successfully' });
                 });
             });
             it('should call the begin submit action', async () => {
@@ -146,7 +145,7 @@ describe('when the submit button is clicked', () => {
             });
 
             it('should set the error state', () => {
-                expect(setMessageSpy).toHaveBeenCalledWith({ description: ADD_FOI_INTERESTED_PARTY_ERROR_DESCRIPTION, title: GENERAL_ERROR_TITLE });
+                expect(setMessageSpy).toHaveBeenCalledWith({ description: ADD_FOI_ACCOUNT_MANAGER_ERROR_DESCRIPTION, title: GENERAL_ERROR_TITLE });
             });
             it('should call the begin submit action', () => {
                 expect(clearErrorsSpy).toHaveBeenCalled();
@@ -159,7 +158,7 @@ describe('when the submit button is clicked', () => {
 
             it('should set the error state', () => {
                 expect(setMessageSpy).toHaveBeenCalledWith(
-                    { description: DUPLICATE_FOI_INTERESTED_PARTY_DESCRIPTION, title: VALIDATION_ERROR_TITLE });
+                    { description: DUPLICATE_FOI_ACCOUNT_MANAGER_DESCRIPTION, title: VALIDATION_ERROR_TITLE });
             });
         });
     });
@@ -177,8 +176,8 @@ describe('when the submit button is clicked', () => {
         });
 
         it('should set the error state', () => {
-            expect(addFormErrorSpy).toHaveBeenNthCalledWith(1, { key: 'title', value: 'The Interested party name is required' });
-            expect(addFormErrorSpy).toHaveBeenNthCalledWith(2, { key: 'simpleName', value: 'The Interested party code is required' });
+            expect(addFormErrorSpy).toHaveBeenNthCalledWith(1, { key: 'title', value: 'The Account manager name is required' });
+            expect(addFormErrorSpy).toHaveBeenNthCalledWith(2, { key: 'simpleName', value: 'The Account manager code is required' });
         });
     });
 });

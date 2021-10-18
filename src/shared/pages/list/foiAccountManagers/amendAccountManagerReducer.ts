@@ -1,5 +1,5 @@
 import { Action } from './actions';
-import { State } from './amendInterestedPartyState';
+import { State } from './amendAccountManagerState';
 
 export const reducer = (state: State, action: Action) => {
     switch (action.type) {
