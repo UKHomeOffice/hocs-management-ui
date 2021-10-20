@@ -41,9 +41,10 @@ import SelectEnquirySubject from '../../pages/list/mpamEnquiryReasons/selectEnqu
 import EnquirySubjectView from '../../pages/list/mpamEnquiryReasons/enquirySubjectView';
 import AddEnquiryReason from '../../pages/list/mpamEnquiryReasons/addEnquiryReason';
 import AmendEnquiryReason from '../../pages/list/mpamEnquiryReasons/amendEnquiryReason';
-import FoiAccountManagersView from '../../pages/list/foiAccountManagers/accountManagersView';
-import AddAccountManager from '../../pages/list/foiAccountManagers/addAccountManager';
-import AmendAccountManager from '../../pages/list/foiAccountManagers/amendAccountManager';
+import EntityListView from '../../pages/list/entityList/entityListView';
+import AmendEntity from '../../pages/list/entityList/amendEntity';
+import AddEntity from '../../pages/list/entityList/addEntity';
+import foiAccountManagersList from '../../pages/list/entityList/entityDefinitions/foiAccountManagersList';
 
 export interface Route {
     requiredRole: string,
@@ -228,19 +229,19 @@ const routes = [
     {
         path: '/manage-foi-account-managers',
         exact: true,
-        component: FoiAccountManagersView,
+        component: EntityListView(foiAccountManagersList),
         title: 'Manage FOI Account managers'
     },
     {
         path: '/manage-foi-account-managers/add',
         exact: true,
-        component: AddAccountManager,
+        component: AddEntity(foiAccountManagersList),
         title: 'Add Account Manager'
     },
     {
         path: '/manage-foi-account-managers/:itemUUID/amend',
         exact: true,
-        component: AmendAccountManager,
+        component: AmendEntity(foiAccountManagersList),
         title: 'Add Account Manager'
     },
     {

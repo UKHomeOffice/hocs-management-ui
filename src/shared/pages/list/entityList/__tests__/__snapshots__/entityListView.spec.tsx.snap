@@ -1,6 +1,6 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
-exports[`when the account manager component is mounted should render with default props 1`] = `
+exports[`when the entity list view is mounted should render with default props 1`] = `
 <div>
   <div
     class="govuk-form-group"
@@ -15,7 +15,7 @@ exports[`when the account manager component is mounted should render with defaul
       <h1
         class="govuk-heading-xl"
       >
-        View and edit account managers
+        View and edit entities
       </h1>
       <div>
         <table
@@ -31,13 +31,13 @@ exports[`when the account manager component is mounted should render with defaul
                 class="govuk-table__header"
                 scope="col"
               >
-                Account manager name
+                Entity name
               </th>
               <th
                 class="govuk-table__header"
                 scope="col"
               >
-                Account manager code
+                Entity code
               </th>
               <th
                 class="govuk-table__header"
@@ -104,7 +104,7 @@ exports[`when the account manager component is mounted should render with defaul
         data-module="govuk-button"
         type="submit"
       >
-        Add new account manager
+        Add new entity
       </button>
     </div>
   </div>

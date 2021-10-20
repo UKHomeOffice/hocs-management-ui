@@ -2,10 +2,10 @@ import React from 'react';
 import { match, MemoryRouter } from 'react-router-dom';
 import { createBrowserHistory, History, Location } from 'history';
 import { act, wait, render, RenderResult } from '@testing-library/react';
-import AccountManagersView from '../accountManagersView';
+import EntityListView from '../entityListView';
 import * as ListService from '../../../../services/entityListService';
-import { State } from '../state';
 import * as useError from '../../../../hooks/useError';
+import { State } from '../state';
 
 let match: match<any>;
 let history: History<any>;
@@ -33,9 +33,27 @@ const useErrorSpy = jest.spyOn(useError, 'default');
 const setMessageSpy = jest.fn();
 const clearErrorsSpy = jest.fn();
 
+const listDefinition: EntityDefinition = {
+    entityListName: 'ENTITIES',
+    entityNamePlural: 'entities',
+    entityName: 'entity',
+    entityNameCapitalised: 'Entity',
+    entityRoute: '/add-new-entity',
+    messages: {
+        LOAD_ENTITIES_ERROR: 'There was an error retrieving the entities. Please try refreshing the page.',
+        AMEND_ENTITY_ERROR_DESCRIPTION: 'Something went wrong while amending the entity. Please try again.',
+        AMEND_ENTITY_SUCCESS: 'The entity was amended successfully',
+        ADD_ENTITY_SUCCESS: 'The entity was added successfully',
+        DUPLICATE_ENTITY_ERROR_DESCRIPTION: 'An entity with those details already exists',
+        ADD_ENTITY_ERROR_DESCRIPTION: 'Something went wrong while adding the entity. Please try again.'
+    }
+};
+
+const Component = EntityListView(listDefinition);
+
 const renderComponent = () => render(
     <MemoryRouter>
-        <AccountManagersView history={history} location={location} match={match}></AccountManagersView>
+        <Component history={history} location={location} match={match}></Component>
     </MemoryRouter>
 );
 
@@ -56,8 +74,8 @@ beforeEach(() => {
         state: {}
     };
     mockState = {
-        accountManagersLoaded: true,
-        accountManagers: [{
+        entitiesLoaded: true,
+        entities: [{
             simpleName: 'testSimpleName1',
             uuid: 'testId1',
             title: 'testTitle1'
@@ -73,7 +91,7 @@ beforeEach(() => {
     setMessageSpy.mockReset();
 });
 
-describe('when the account manager component is mounted', () => {
+describe('when the entity list view is mounted', () => {
     it('should render with default props', async () => {
         expect.assertions(2);
         let wrapper: RenderResult;

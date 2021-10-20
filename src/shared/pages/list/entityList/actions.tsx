@@ -1,6 +1,6 @@
 import EntityListItem from 'shared/models/entityListItem';
 
-export type SetItemDetails = {
+export type SetEntityDetails = {
     type: 'SetItemDetails';
     payload: EntityListItem;
 };
@@ -15,13 +15,13 @@ export type SetTitle = {
     payload: string;
 };
 
-export type PopulateAccountManagers = {
+export type PopulateEntities = {
     payload: EntityListItem[];
-    type: 'PopulateAccountManagers';
+    type: 'PopulateEntities';
 };
 
 export type Action =
-    SetItemDetails |
-    PopulateAccountManagers |
+    SetEntityDetails |
+    PopulateEntities |
     SetTitle |
     SetSimpleName;

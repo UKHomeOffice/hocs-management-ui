@@ -6,12 +6,11 @@ import Submit from '../../../common/components/forms/submit';
 import Text from '../../../common/components/forms/text';
 import { ApplicationConsumer } from '../../../contexts/application';
 import { createListItem } from '../../../services/entityListService';
-import { reducer } from './addAccountManagerReducer';
+import { reducer } from './addEntityReducer';
 import ErrorSummary from '../../../common/components/errorSummary';
 import {
     GENERAL_ERROR_TITLE,
-    VALIDATION_ERROR_TITLE,
-    ADD_FOI_ACCOUNT_MANAGER_SUCCESS, DUPLICATE_FOI_ACCOUNT_MANAGER_DESCRIPTION, ADD_FOI_ACCOUNT_MANAGER_ERROR_DESCRIPTION
+    VALIDATION_ERROR_TITLE
 } from '../../../models/constants';
 import useError from '../../../hooks/useError';
 import ErrorMessage from '../../../models/errorMessage';
@@ -21,39 +20,40 @@ import InputEventData from '../../../models/inputEventData';
 
 interface AddCampaignProps extends RouteComponentProps {
     csrfToken?: string;
+    entityDefinition: EntityDefinition;
 }
 
-const validationSchema = object({
-    title: string()
-        .required()
-        .label('Account manager name')
-        .matches(/^[a-zA-Z0-9_,.!? ()&]*$/),
-    simpleName: string()
-        .required()
-        .label('Account manager code')
-        .matches(/^[a-zA-Z0-9_,.!? ()&]*$/)
-});
-
-const AddAccountManager: React.FC<AddCampaignProps> = ({ csrfToken, history }) => {
+const AddEntity: React.FC<AddCampaignProps> = ({ csrfToken, history, entityDefinition }) => {
 
     const [pageError, addFormError, clearErrors, setErrorMessage] = useError('', VALIDATION_ERROR_TITLE);
-    const [accountManager, dispatch] = React.useReducer<Reducer<EntityListItem, InputEventData>>(reducer, {
+    const [entity, dispatch] = React.useReducer<Reducer<EntityListItem, InputEventData>>(reducer, {
         uuid: '',
         title: '',
         simpleName: ''
     });
 
+    const validationSchema = object({
+        title: string()
+            .required()
+            .label(`New ${entityDefinition.entityName} name`)
+            .matches(/^[a-zA-Z0-9_,.!? ()&]*$/),
+        simpleName: string()
+            .required()
+            .label(`New ${entityDefinition.entityName} code`)
+            .matches(/^[a-zA-Z0-9_,.!? ()&]*$/)
+    });
+
     const handleSubmit = (event: React.FormEvent) => {
         event.preventDefault();
         clearErrors();
-        if (validate(validationSchema, accountManager, addFormError)) {
-            createListItem(accountManager, 'FOI_ACCOUNT_MANAGERS').then(() => {
-                history.push('/', { successMessage: ADD_FOI_ACCOUNT_MANAGER_SUCCESS });
+        if (validate(validationSchema, entity, addFormError)) {
+            createListItem(entity, entityDefinition.entityListName).then(() => {
+                history.push('/', { successMessage: entityDefinition.messages.ADD_ENTITY_SUCCESS });
             }).catch((error) => {
                 if (error && error.response && error.response.status === 409) {
-                    setErrorMessage(new ErrorMessage(DUPLICATE_FOI_ACCOUNT_MANAGER_DESCRIPTION, VALIDATION_ERROR_TITLE));
+                    setErrorMessage(new ErrorMessage(entityDefinition.messages.DUPLICATE_ENTITY_ERROR_DESCRIPTION, VALIDATION_ERROR_TITLE));
                 } else {
-                    setErrorMessage(new ErrorMessage(ADD_FOI_ACCOUNT_MANAGER_ERROR_DESCRIPTION, GENERAL_ERROR_TITLE));
+                    setErrorMessage(new ErrorMessage(entityDefinition.messages.ADD_ENTITY_ERROR_DESCRIPTION, GENERAL_ERROR_TITLE));
                 }
             });
         }
@@ -63,32 +63,32 @@ const AddAccountManager: React.FC<AddCampaignProps> = ({ csrfToken, history }) =
         <>
             <div className="govuk-grid-row">
                 <div className="govuk-grid-column-two-thirds-from-desktop">
-                    <Link to="/manage-foi-account-managers" className="govuk-back-link">Back</Link>
+                    <Link to={entityDefinition.entityRoute} className="govuk-back-link">Back</Link>
                     <ErrorSummary
                         pageError={pageError}
                     />
                     <h1 className="govuk-heading-xl">
-                        Add account manager
+                        {`Add ${entityDefinition.entityName}`}
                     </h1>
                 </div>
             </div>
             <div className="govuk-grid-row">
                 <div className="govuk-grid-column-one-half-from-desktop">
-                    <form action="/api/entity/list/FOI_ACCOUNT_MANAGERS" method="POST" onSubmit={handleSubmit}>
+                    <form action={`/api/entity/list/${entityDefinition.entityListName}`} method="POST" onSubmit={handleSubmit}>
                         <input type="hidden" name="_csrf" value={csrfToken} />
                         <Text
-                            label="New account manager name"
+                            label={`New ${entityDefinition.entityName} name`}
                             name="title"
                             type="text"
                             updateState={({ name, value }) => dispatch({ name, value })}
-                            value={accountManager.title}
+                            value={entity.title}
                         />
                         <Text
-                            label="Account manager code"
+                            label={`New ${entityDefinition.entityName} code`}
                             name="simpleName"
                             type="text"
                             updateState={({ name, value }) => dispatch({ name, value })}
-                            value={accountManager.simpleName}
+                            value={entity.simpleName}
                         />
                         <Submit />
                     </form>
@@ -98,12 +98,19 @@ const AddAccountManager: React.FC<AddCampaignProps> = ({ csrfToken, history }) =
     );
 };
 
-const WrappedAddUnit = ({ history, location, match }: RouteComponentProps) => (
-    <ApplicationConsumer>
-        {({ csrf }) => (
-            <AddAccountManager csrfToken={csrf} history={history} location={location} match={match} />
-        )}
-    </ApplicationConsumer>
-);
+// @ts-ignore
+const WrappedAddEntity = (entityDefinition: EntityDefinition) => {
+    const WrappedAddEntity = ({ history, location, match }: RouteComponentProps) => (
+        <ApplicationConsumer>
+            {({ csrf }) => (
+                <AddEntity
+                    csrfToken={csrf} history={history} location={location} match={match}
+                    entityDefinition={entityDefinition}/>
+            )}
+        </ApplicationConsumer>
+    );
 
-export default WrappedAddUnit;
+    return WrappedAddEntity;
+};
+
+export default WrappedAddEntity;

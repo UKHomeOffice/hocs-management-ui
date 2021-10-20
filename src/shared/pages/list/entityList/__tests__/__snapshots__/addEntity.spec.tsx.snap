@@ -1,6 +1,6 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
-exports[`when the addCampaign component is mounted should render with default props 1`] = `
+exports[`when the addEntity component is mounted should render with default props 1`] = `
 <div>
   <div
     class="govuk-grid-row"
@@ -10,14 +10,14 @@ exports[`when the addCampaign component is mounted should render with default pr
     >
       <a
         class="govuk-back-link"
-        href="/manage-foi-account-managers"
+        href="/manage-entities"
       >
         Back
       </a>
       <h1
         class="govuk-heading-xl"
       >
-        Add account manager
+        Add entity
       </h1>
     </div>
   </div>
@@ -28,7 +28,7 @@ exports[`when the addCampaign component is mounted should render with default pr
       class="govuk-grid-column-one-half-from-desktop"
     >
       <form
-        action="/api/entity/list/FOI_ACCOUNT_MANAGERS"
+        action="/api/entity/list/ENTITIES"
         method="POST"
       >
         <input
@@ -44,7 +44,7 @@ exports[`when the addCampaign component is mounted should render with default pr
             for="title"
             id="title-label"
           >
-            New account manager name
+            New entity name
           </label>
           <input
             class="govuk-input"
@@ -62,7 +62,7 @@ exports[`when the addCampaign component is mounted should render with default pr
             for="simpleName"
             id="simpleName-label"
           >
-            Account manager code
+            New entity code
           </label>
           <input
             class="govuk-input"
