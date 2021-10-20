@@ -2,17 +2,20 @@ import React from 'react';
 import { match, MemoryRouter } from 'react-router-dom';
 import { createBrowserHistory, History, Location } from 'history';
 import { act, wait, render, RenderResult } from '@testing-library/react';
-import CampaignsView from '../campaignsView';
-import * as ListService from '../../../../services/entityListService';
-import { State } from '../state';
-import * as useError from '../../../../hooks/useError';
+import EntityListView from '../../../entityListView';
+import * as ListService from '../../../../../../services/entityListService';
+import { State } from '../../../state';
+import * as useError from '../../../../../../hooks/useError';
+import foiAccountManager from '../foiAccountManager';
 
 let match: match<any>;
 let history: History<any>;
 let location: Location;
 let mockState: State;
 
-jest.mock('../../../../services/entityListService', () => ({
+const FoiAccountManager = EntityListView(foiAccountManager);
+
+jest.mock('../../../../../../services/entityListService', () => ({
     __esModule: true,
     getListItems: jest.fn().mockReturnValue(Promise.resolve({
         data: [{
@@ -35,7 +38,7 @@ const clearErrorsSpy = jest.fn();
 
 const renderComponent = () => render(
     <MemoryRouter>
-        <CampaignsView history={history} location={location} match={match}></CampaignsView>
+        <FoiAccountManager history={history} location={location} match={match}></FoiAccountManager>
     </MemoryRouter>
 );
 
@@ -56,8 +59,8 @@ beforeEach(() => {
         state: {}
     };
     mockState = {
-        campaignsLoaded: true,
-        campaigns: [{
+        entitiesLoaded: true,
+        entities: [{
             simpleName: 'testSimpleName1',
             uuid: 'testId1',
             title: 'testTitle1'
@@ -73,7 +76,7 @@ beforeEach(() => {
     setMessageSpy.mockReset();
 });
 
-describe('when the campaignView component is mounted', () => {
+describe('when the foiAccountManager EntityListView component is mounted', () => {
     it('should render with default props', async () => {
         expect.assertions(2);
         let wrapper: RenderResult;

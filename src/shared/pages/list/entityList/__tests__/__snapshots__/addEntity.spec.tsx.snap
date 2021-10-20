@@ -17,7 +17,9 @@ exports[`when the addEntity component is mounted should render with default prop
       <h1
         class="govuk-heading-xl"
       >
-        Add entity
+        Add \`$
+        entity
+        \`
       </h1>
     </div>
   </div>

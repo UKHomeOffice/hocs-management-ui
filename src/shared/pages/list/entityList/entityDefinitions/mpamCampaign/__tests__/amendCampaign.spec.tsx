@@ -1,13 +1,14 @@
-
 import React from 'react';
 import { match, MemoryRouter } from 'react-router-dom';
 import { createBrowserHistory, History, Location } from 'history';
 import { act, render, RenderResult, wait, fireEvent, waitForElement } from '@testing-library/react';
-import { GENERAL_ERROR_TITLE, LOAD_CAMPAIGN_ERROR_DESCRIPTION, AMEND_CAMPAIGN_ERROR_DESCRIPTION } from '../../../../models/constants';
-import AmendCampaign from '../amendCampaign';
-import * as EntityListService from '../../../../services/entityListService';
-import * as useError from '../../../../hooks/useError';
-import { State } from '../amendCampaignState';
+import { GENERAL_ERROR_TITLE }
+    from '../../../../../../models/constants';
+import AmendEntity from '../../../amendEntity';
+import * as EntityListService from '../../../../../../services/entityListService';
+import * as useError from '../../../../../../hooks/useError';
+import { State } from '../../../amendEntityState';
+import mpamCampaign from '../mpamCampaign';
 
 let match: match<any>;
 let history: History<any>;
@@ -21,6 +22,8 @@ const useErrorSpy = jest.spyOn(useError, 'default');
 const addFormErrorSpy = jest.fn();
 const clearErrorsSpy = jest.fn();
 const setMessageSpy = jest.fn();
+
+const AmendCampaign = AmendEntity(mpamCampaign);
 
 const renderComponent = () => render(
     <MemoryRouter>
@@ -66,7 +69,7 @@ beforeEach(() => {
     });
 });
 
-describe('when the amendCampaign component is mounted', () => {
+describe('when the mpamCampaign amendEntity component is mounted', () => {
     it('should render with default props', async () => {
         expect.assertions(2);
         wrapper = renderComponent();
@@ -92,7 +95,8 @@ describe('when the amendCampaign component is mounted', () => {
         wrapper = renderComponent();
 
         await wait(() => {
-            expect(setMessageSpy).toBeCalledWith({ title: GENERAL_ERROR_TITLE, description: LOAD_CAMPAIGN_ERROR_DESCRIPTION });
+            expect(setMessageSpy).toBeCalledWith({ title: GENERAL_ERROR_TITLE,
+                description: 'There was an error retrieving campaigns. Please try refreshing the page.' });
         });
 
     });
@@ -189,7 +193,7 @@ describe('when the submit button is clicked', () => {
 
         describe('and the service call fails', () => {
             it('should set the error state', () => {
-                expect(setMessageSpy).toHaveBeenCalledWith({ description: AMEND_CAMPAIGN_ERROR_DESCRIPTION, title: GENERAL_ERROR_TITLE });
+                expect(setMessageSpy).toHaveBeenCalledWith({ description: 'Something went wrong while amending the campaign. Please try again.', title: GENERAL_ERROR_TITLE });
             });
 
             it('should call the begin submit action', () => {

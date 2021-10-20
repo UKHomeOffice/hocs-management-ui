@@ -23,12 +23,9 @@ import AddUser from '../../pages/user/userAdd/addUser';
 import AmendUser from '../../pages/user/userAmend/amendUser';
 import AddTeamToUser from '../../pages/user/addTeamToUser/addTeamToUser';
 import WithdrawCase from '../../pages/case/withdrawCase';
-import CampaignsView from '../../pages/list/mpamCampaign/campaignsView';
 import ExGratiaView from '../../pages/list/exGratiaBusinessReps/exgratiaBusRepsView';
 import ChooseBusinessArea from '../../pages/list/mpamBusinessUnits/selectBusinessArea';
-import AddCampaign from '../../pages/list/mpamCampaign/addCampaign';
 import AddBusinessRep from '../../pages/list/exGratiaBusinessReps/addBusinessRep';
-import AmendCampaign from '../../pages/list/mpamCampaign/amendCampaign';
 import AddTeam from '../../pages/team/addTeam/addTeam';
 import EditTeam from '../../pages/team/editTeam/editTeam';
 import ReactivateTeam from '../../pages/team/reactivateTeam/reactivateTeam';
@@ -44,7 +41,8 @@ import AmendEnquiryReason from '../../pages/list/mpamEnquiryReasons/amendEnquiry
 import EntityListView from '../../pages/list/entityList/entityListView';
 import AmendEntity from '../../pages/list/entityList/amendEntity';
 import AddEntity from '../../pages/list/entityList/addEntity';
-import foiAccountManagersList from '../../pages/list/entityList/entityDefinitions/foiAccountManagersList';
+import foiAccountManager from '../../pages/list/entityList/entityDefinitions/foiAccountManager/foiAccountManager';
+import mpamCampaign from '../../pages/list/entityList/entityDefinitions/mpamCampaign/mpamCampaign';
 
 export interface Route {
     requiredRole: string,
@@ -229,31 +227,31 @@ const routes = [
     {
         path: '/manage-foi-account-managers',
         exact: true,
-        component: EntityListView(foiAccountManagersList),
+        component: EntityListView(foiAccountManager),
         title: 'Manage FOI Account managers'
     },
     {
         path: '/manage-foi-account-managers/add',
         exact: true,
-        component: AddEntity(foiAccountManagersList),
+        component: AddEntity(foiAccountManager),
         title: 'Add Account Manager'
     },
     {
         path: '/manage-foi-account-managers/:itemUUID/amend',
         exact: true,
-        component: AmendEntity(foiAccountManagersList),
+        component: AmendEntity(foiAccountManager),
         title: 'Add Account Manager'
     },
     {
         path: '/manage-mpam-campaigns',
         exact: true,
-        component: CampaignsView,
+        component: EntityListView(mpamCampaign),
         title: 'Manage MPAM campaigns'
     },
     {
         path: '/manage-mpam-campaigns/add',
         exact: true,
-        component: AddCampaign,
+        component: AddEntity(mpamCampaign),
         title: 'Add Campaign'
     },
     {
@@ -271,7 +269,7 @@ const routes = [
     {
         path: '/manage-mpam-campaigns/:itemUUID/amend',
         exact: true,
-        component: AmendCampaign,
+        component: AmendEntity(mpamCampaign),
         title: 'Amend Campaign'
     },
     {

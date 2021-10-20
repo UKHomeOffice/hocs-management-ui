@@ -6,7 +6,7 @@ import { AMEND_BUS_UNIT_ERROR_DESCRIPTION, GENERAL_ERROR_TITLE, LOAD_BUS_AREA_ER
 import AmendBusinessUnit from '../amendBusinessUnit';
 import * as EntityListService from '../../../../services/entityListService';
 import * as useError from '../../../../hooks/useError';
-import { State } from '../../mpamCampaign/amendCampaignState';
+import { State } from '../../entityList/amendEntityState';
 
 let match: match<any>;
 let history: History<any>;

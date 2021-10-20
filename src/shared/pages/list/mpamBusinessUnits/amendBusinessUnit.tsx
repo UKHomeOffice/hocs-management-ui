@@ -5,14 +5,14 @@ import { object, string } from 'yup';
 import Submit from '../../../common/components/forms/submit';
 import Text from '../../../common/components/forms/text';
 import { updateListItem, getItemDetails } from '../../../services/entityListService';
-import { reducer } from '../mpamCampaign/amendCampaignReducer';
+import { reducer } from '../entityList/amendEntityReducer';
 import ErrorSummary from '../../../common/components/errorSummary';
 import { GENERAL_ERROR_TITLE, AMEND_BUS_UNIT_ERROR_DESCRIPTION, AMEND_BUS_UNIT_SUCCESS, VALIDATION_ERROR_TITLE, LOAD_BUS_AREA_ERROR_DESCRIPTION } from '../../../models/constants';
 import useError from '../../../hooks/useError';
 import ErrorMessage from '../../../models/errorMessage';
 import { validate } from '../../../validation';
-import { Action } from '../mpamCampaign/actions';
-import { State } from '../mpamCampaign/amendCampaignState';
+import { Action } from '../entityList/actions';
+import { State } from '../entityList/amendEntityState';
 
 interface MatchParams {
     type: string,

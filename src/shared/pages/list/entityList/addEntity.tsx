@@ -35,11 +35,11 @@ const AddEntity: React.FC<AddCampaignProps> = ({ csrfToken, history, entityDefin
     const validationSchema = object({
         title: string()
             .required()
-            .label(`New ${entityDefinition.entityName} name`)
+            .label(`${entityDefinition.entityNameCapitalised} name`)
             .matches(/^[a-zA-Z0-9_,.!? ()&]*$/),
         simpleName: string()
             .required()
-            .label(`New ${entityDefinition.entityName} code`)
+            .label(`${entityDefinition.entityNameCapitalised} code`)
             .matches(/^[a-zA-Z0-9_,.!? ()&]*$/)
     });
 
@@ -68,7 +68,7 @@ const AddEntity: React.FC<AddCampaignProps> = ({ csrfToken, history, entityDefin
                         pageError={pageError}
                     />
                     <h1 className="govuk-heading-xl">
-                        {`Add ${entityDefinition.entityName}`}
+                        {`Add ${entityDefinition.entityNameCapitalised}`}
                     </h1>
                 </div>
             </div>
@@ -77,14 +77,14 @@ const AddEntity: React.FC<AddCampaignProps> = ({ csrfToken, history, entityDefin
                     <form action={`/api/entity/list/${entityDefinition.entityListName}`} method="POST" onSubmit={handleSubmit}>
                         <input type="hidden" name="_csrf" value={csrfToken} />
                         <Text
-                            label={`New ${entityDefinition.entityName} name`}
+                            label={`${entityDefinition.entityNameCapitalised} name`}
                             name="title"
                             type="text"
                             updateState={({ name, value }) => dispatch({ name, value })}
                             value={entity.title}
                         />
                         <Text
-                            label={`New ${entityDefinition.entityName} code`}
+                            label={`${entityDefinition.entityNameCapitalised} code`}
                             name="simpleName"
                             type="text"
                             updateState={({ name, value }) => dispatch({ name, value })}
@@ -98,7 +98,6 @@ const AddEntity: React.FC<AddCampaignProps> = ({ csrfToken, history, entityDefin
     );
 };
 
-// @ts-ignore
 const WrappedAddEntity = (entityDefinition: EntityDefinition) => {
     const WrappedAddEntity = ({ history, location, match }: RouteComponentProps) => (
         <ApplicationConsumer>

@@ -1,13 +1,14 @@
-
 import React from 'react';
 import { match, MemoryRouter } from 'react-router-dom';
 import { createBrowserHistory, History, Location } from 'history';
 import { act, render, RenderResult, wait, fireEvent, waitForElement } from '@testing-library/react';
-import AddCampaign from '../addCampaign';
-import * as EntityListService from '../../../../services/entityListService';
-import { ADD_CAMPAIGN_ERROR_DESCRIPTION, GENERAL_ERROR_TITLE, DUPLICATE_CAMPAIGN_DESCRIPTION, VALIDATION_ERROR_TITLE } from '../../../../models/constants';
-import EntityListItem from '../../../../models/entityListItem';
-import * as useError from '../../../../hooks/useError';
+import AddEntity from '../../../addEntity';
+import * as EntityListService from '../../../../../../services/entityListService';
+import { GENERAL_ERROR_TITLE, VALIDATION_ERROR_TITLE }
+    from '../../../../../../models/constants';
+import EntityListItem from '../../../../../../models/entityListItem';
+import * as useError from '../../../../../../hooks/useError';
+import foiAccountManager from '../foiAccountManager';
 
 let match: match<any>;
 let history: History<any>;
@@ -21,6 +22,8 @@ const useErrorSpy = jest.spyOn(useError, 'default');
 const addFormErrorSpy = jest.fn();
 const clearErrorsSpy = jest.fn();
 const setMessageSpy = jest.fn();
+
+const AddCampaign = AddEntity(foiAccountManager);
 
 const renderComponent = () => render(
     <MemoryRouter>
@@ -63,7 +66,7 @@ beforeEach(() => {
     });
 });
 
-describe('when the addCampaign component is mounted', () => {
+describe('when the foiAccountManager addEntity component is mounted', () => {
     it('should render with default props', async () => {
         expect.assertions(1);
 
@@ -141,7 +144,7 @@ describe('when the submit button is clicked', () => {
             });
 
             it('should set the error state', () => {
-                expect(setMessageSpy).toHaveBeenCalledWith({ description: ADD_CAMPAIGN_ERROR_DESCRIPTION, title: GENERAL_ERROR_TITLE });
+                expect(setMessageSpy).toHaveBeenCalledWith({ description: 'Something went wrong while adding the campaign. Please try again.', title: GENERAL_ERROR_TITLE });
             });
             it('should call the begin submit action', () => {
                 expect(clearErrorsSpy).toHaveBeenCalled();
@@ -153,7 +156,7 @@ describe('when the submit button is clicked', () => {
             });
 
             it('should set the error state', () => {
-                expect(setMessageSpy).toHaveBeenCalledWith({ description: DUPLICATE_CAMPAIGN_DESCRIPTION, title: VALIDATION_ERROR_TITLE });
+                expect(setMessageSpy).toHaveBeenCalledWith({ description: 'A campaign with those details already exists', title: VALIDATION_ERROR_TITLE });
             });
         });
     });
