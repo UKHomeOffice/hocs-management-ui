@@ -95,8 +95,10 @@ describe('when the foiAccountManager amendEntity component is mounted', () => {
         wrapper = renderComponent();
 
         await wait(() => {
-            expect(setMessageSpy).toBeCalledWith({ title: GENERAL_ERROR_TITLE,
-                description: 'There was an error retrieving campaigns. Please try refreshing the page.' });
+            expect(setMessageSpy).toBeCalledWith({
+                description: 'There was an error retrieving account managers. Please try refreshing the page.',
+                title: GENERAL_ERROR_TITLE,
+            });
         });
 
     });
@@ -109,7 +111,7 @@ describe('when the new name is entered', () => {
             { simpleName: 'testSimpleName', title: 'testTitle', uuid: 'testUUID' }
         ));
         const nameElement = await waitForElement(async () => {
-            return await wrapper.findByLabelText('New campaign name');
+            return await wrapper.findByLabelText('New account manager name');
         });
 
         fireEvent.change(nameElement, { target: { name: 'title', value: 'newTestCampaignTitle' } });
@@ -143,7 +145,7 @@ describe('when the submit button is clicked', () => {
                 await wait(() => {
                     expect(getItemDetailsSpy).toHaveBeenCalled();
                     expect(updateListItemSpy).toHaveBeenCalled();
-                    expect(history.push).toHaveBeenCalledWith('/', { successMessage: 'The campaign was amended successfully' });
+                    expect(history.push).toHaveBeenCalledWith('/', { successMessage: 'The account manager was amended successfully' });
                 });
             });
             it('should call the begin submit action', async () => {
@@ -171,7 +173,7 @@ describe('when the submit button is clicked', () => {
         });
 
         it('should set the error state', () => {
-            expect(addFormErrorSpy).toHaveBeenNthCalledWith(1, { key: 'title', value: 'The New campaign name is required' });
+            expect(addFormErrorSpy).toHaveBeenNthCalledWith(1, { key: 'title', value: 'The New account manager name is required' });
         });
     });
 });

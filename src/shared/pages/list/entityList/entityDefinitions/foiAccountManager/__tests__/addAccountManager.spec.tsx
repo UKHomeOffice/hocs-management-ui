@@ -23,11 +23,11 @@ const addFormErrorSpy = jest.fn();
 const clearErrorsSpy = jest.fn();
 const setMessageSpy = jest.fn();
 
-const AddCampaign = AddEntity(foiAccountManager);
+const AddAccountManager = AddEntity(foiAccountManager);
 
 const renderComponent = () => render(
     <MemoryRouter>
-        <AddCampaign history={history} location={location} match={match}></AddCampaign>
+        <AddAccountManager history={history} location={location} match={match}></AddAccountManager>
     </MemoryRouter>
 );
 
@@ -81,7 +81,7 @@ describe('when the name is entered', () => {
         expect.assertions(1);
 
         const nameElement = await waitForElement(async () => {
-            return await wrapper.findByLabelText('Campaign name');
+            return await wrapper.findByLabelText('Account manager name');
         });
 
         fireEvent.change(nameElement, { target: { name: 'title', value: '__displayTitle__' } });
@@ -97,7 +97,7 @@ describe('when the code is entered', () => {
         expect.assertions(1);
 
         const codeElement = await waitForElement(async () => {
-            return await wrapper.findByLabelText('Campaign code');
+            return await wrapper.findByLabelText('Account manager code');
         });
 
         fireEvent.change(codeElement, { target: { name: 'simpleName', value: '__Code__' } });
@@ -126,7 +126,7 @@ describe('when the submit button is clicked', () => {
                 expect.assertions(1);
 
                 await wait(() => {
-                    expect(history.push).toHaveBeenCalledWith('/', { successMessage: 'The campaign was added successfully' });
+                    expect(history.push).toHaveBeenCalledWith('/', { successMessage: 'The account manager was added successfully' });
                 });
             });
             it('should call the begin submit action', async () => {
@@ -144,7 +144,7 @@ describe('when the submit button is clicked', () => {
             });
 
             it('should set the error state', () => {
-                expect(setMessageSpy).toHaveBeenCalledWith({ description: 'Something went wrong while adding the campaign. Please try again.', title: GENERAL_ERROR_TITLE });
+                expect(setMessageSpy).toHaveBeenCalledWith({ description: 'Something went wrong while adding the account manager. Please try again.', title: GENERAL_ERROR_TITLE });
             });
             it('should call the begin submit action', () => {
                 expect(clearErrorsSpy).toHaveBeenCalled();
@@ -156,7 +156,7 @@ describe('when the submit button is clicked', () => {
             });
 
             it('should set the error state', () => {
-                expect(setMessageSpy).toHaveBeenCalledWith({ description: 'A campaign with those details already exists', title: VALIDATION_ERROR_TITLE });
+                expect(setMessageSpy).toHaveBeenCalledWith({ description: 'An account manager with those details already exists', title: VALIDATION_ERROR_TITLE });
             });
         });
     });
@@ -174,8 +174,8 @@ describe('when the submit button is clicked', () => {
         });
 
         it('should set the error state', () => {
-            expect(addFormErrorSpy).toHaveBeenNthCalledWith(1, { key: 'title', value: 'The Campaign name is required' });
-            expect(addFormErrorSpy).toHaveBeenNthCalledWith(2, { key: 'simpleName', value: 'The Campaign code is required' });
+            expect(addFormErrorSpy).toHaveBeenNthCalledWith(1, { key: 'title', value: 'The Account manager name is required' });
+            expect(addFormErrorSpy).toHaveBeenNthCalledWith(2, { key: 'simpleName', value: 'The Account manager code is required' });
         });
     });
 });

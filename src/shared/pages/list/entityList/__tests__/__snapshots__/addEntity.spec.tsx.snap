@@ -17,9 +17,7 @@ exports[`when the addEntity component is mounted should render with default prop
       <h1
         class="govuk-heading-xl"
       >
-        Add \`$
-        entity
-        \`
+        Add Entity
       </h1>
     </div>
   </div>
@@ -46,7 +44,7 @@ exports[`when the addEntity component is mounted should render with default prop
             for="title"
             id="title-label"
           >
-            New entity name
+            Entity name
           </label>
           <input
             class="govuk-input"
@@ -64,7 +62,7 @@ exports[`when the addEntity component is mounted should render with default prop
             for="simpleName"
             id="simpleName-label"
           >
-            New entity code
+            Entity code
           </label>
           <input
             class="govuk-input"
