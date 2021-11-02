@@ -35,7 +35,7 @@ describe('dashboard component', () => {
         expect(WRAPPER).toMatchSnapshot();
     });
 
-    it('should render FOI interested parties link if user has FOI role', () => {
+    it('should render FOI links if the user has the FOI role', () => {
         const config = {
             hasRole: jest.fn().mockImplementation((role) => {
                 if(role === 'FOI') {

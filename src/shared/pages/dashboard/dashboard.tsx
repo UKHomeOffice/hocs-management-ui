@@ -122,10 +122,16 @@ const Dashboard = ({ hasRole }: ApplicationState) => {
                                 </li>
                                 {hasFOIRole && /** This will only hide the link to the page for non-FOI users
                                  it will not block the page or guard the API endpoints. **/
-                                <li>
-                                    <Link className="govuk-link" to="/manage-foi-account-managers">Manage FOI
-                                        Account Managers</Link>
-                                </li>}
+                                <>
+                                    <li>
+                                        <Link className="govuk-link" to="/manage-foi-account-managers">Manage FOI
+                                            Account Managers</Link>
+                                    </li>
+                                    <li>
+                                        <Link className="govuk-link" to="/manage-foi-interested-parties">Manage FOI
+                                            Interested Parties</Link>
+                                    </li>
+                                </>}
                             </ul>
                         </li>
                     </ul>
