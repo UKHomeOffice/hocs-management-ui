@@ -716,6 +716,8 @@ exports[`dashboard component should render FOI links if the user has the FOI rol
             >
               Manage FOI Account Managers
             </a>
+          </li>
+          <li>
             <a
               class="govuk-link"
               href="/manage-foi-interested-parties"
