@@ -4,8 +4,10 @@ import { createBrowserHistory, History, Location } from 'history';
 import { act, render, RenderResult, wait, fireEvent, waitForElement } from '@testing-library/react';
 import {
     AMEND_ENQ_REASON_ERROR_DESCRIPTION,
+    DUPLICATE_ENQ_REASON_DESCRIPTION,
     GENERAL_ERROR_TITLE,
-    LOAD_ENQ_SUB_ERROR_DESCRIPTION
+    LOAD_ENQ_SUB_ERROR_DESCRIPTION,
+    VALIDATION_ERROR_TITLE
 } from '../../../../models/constants';
 import * as EntityListService from '../../../../services/entityListService';
 import * as useError from '../../../../hooks/useError';
@@ -170,6 +172,28 @@ describe('when the submit button is clicked', () => {
             it('should call the begin submit action', () => {
                 expect(clearErrorsSpy).toHaveBeenCalled();
             });
+        });
+    });
+
+    describe('and the data already exists', () => {
+        beforeEach(async () => {
+            updateListItemSpy.mockReset();
+            updateListItemSpy.mockImplementationOnce(() => Promise.reject({ response: { status: 409 } }));
+            mockState.title = '__displayName__';
+            mockState.simpleName = '__shortCode__';
+            const submitButton = await waitForElement(async () => {
+                return await wrapper.findByText('Amend');
+            });
+
+            fireEvent.click(submitButton);
+        });
+
+        it('should set the error state', () => {
+            expect(setMessageSpy).toHaveBeenCalledWith({ description: DUPLICATE_ENQ_REASON_DESCRIPTION, title: VALIDATION_ERROR_TITLE });
+        });
+
+        it('should call the begin submit action', () => {
+            expect(clearErrorsSpy).toHaveBeenCalled();
         });
     });
 });
