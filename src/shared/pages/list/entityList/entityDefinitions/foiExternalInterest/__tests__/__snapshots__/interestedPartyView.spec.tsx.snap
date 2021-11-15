@@ -1,0 +1,112 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`when the foiInterestedParty EntityListView component is mounted should render with default props 1`] = `
+<div>
+  <div
+    class="govuk-form-group"
+  >
+    <a
+      class="govuk-back-link"
+      href="/"
+    >
+      Back
+    </a>
+    <div>
+      <h1
+        class="govuk-heading-xl"
+      >
+        View and edit interested parties
+      </h1>
+      <div>
+        <table
+          class="govuk-table"
+        >
+          <thead
+            class="govuk-table__head"
+          >
+            <tr
+              class="govuk-table__row"
+            >
+              <th
+                class="govuk-table__header"
+                scope="col"
+              >
+                Interested party name
+              </th>
+              <th
+                class="govuk-table__header"
+                scope="col"
+              >
+                Interested party code
+              </th>
+              <th
+                class="govuk-table__header"
+                scope="col"
+              >
+                Action
+              </th>
+            </tr>
+          </thead>
+          <tbody
+            class="govuk-table__body"
+          >
+            <tr
+              class="govuk-table__row"
+            >
+              <td
+                class="govuk-table__cell"
+              >
+                testTitle1
+              </td>
+              <td
+                class="govuk-table__cell"
+              >
+                testSimpleName1
+              </td>
+              <td
+                class="govuk-table__cell"
+              >
+                <a
+                  href="#"
+                >
+                  Amend
+                </a>
+              </td>
+            </tr>
+            <tr
+              class="govuk-table__row"
+            >
+              <td
+                class="govuk-table__cell"
+              >
+                testTitle2
+              </td>
+              <td
+                class="govuk-table__cell"
+              >
+                testSimpleName2
+              </td>
+              <td
+                class="govuk-table__cell"
+              >
+                <a
+                  href="#"
+                >
+                  Amend
+                </a>
+              </td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+      <button
+        class="govuk-button govuk-!-margin-right-1 add-team-members-button"
+        data-module="govuk-button"
+        type="submit"
+      >
+        Add new interested party
+      </button>
+    </div>
+  </div>
+</div>
+`;

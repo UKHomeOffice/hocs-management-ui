@@ -43,6 +43,7 @@ import AmendEntity from '../../pages/list/entityList/amendEntity';
 import AddEntity from '../../pages/list/entityList/addEntity';
 import foiAccountManager from '../../pages/list/entityList/entityDefinitions/foiAccountManager/foiAccountManager';
 import mpamCampaign from '../../pages/list/entityList/entityDefinitions/mpamCampaign/mpamCampaign';
+import foiInterestedParty from '../../pages/list/entityList/entityDefinitions/foiExternalInterest/foiInterestedParty';
 
 export interface Route {
     requiredRole: string,
@@ -240,6 +241,24 @@ const routes = [
         path: '/manage-foi-account-managers/:itemUUID/amend',
         exact: true,
         component: AmendEntity(foiAccountManager),
+        title: 'Add Account Manager'
+    },
+    {
+        path: '/manage-foi-interested-parties',
+        exact: true,
+        component: EntityListView(foiInterestedParty),
+        title: 'Manage FOI Account managers'
+    },
+    {
+        path: '/manage-foi-interested-parties/add',
+        exact: true,
+        component: AddEntity(foiInterestedParty),
+        title: 'Add Account Manager'
+    },
+    {
+        path: '/manage-foi-interested-parties/:itemUUID/amend',
+        exact: true,
+        component: AmendEntity(foiInterestedParty),
         title: 'Add Account Manager'
     },
     {

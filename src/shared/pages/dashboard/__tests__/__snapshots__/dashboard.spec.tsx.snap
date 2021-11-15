@@ -480,7 +480,7 @@ exports[`dashboard component should render DCU creation link if user has DCU rol
 </div>
 `;
 
-exports[`dashboard component should render FOI interested parties link if user has FOI role 1`] = `
+exports[`dashboard component should render FOI links if the user has the FOI role 1`] = `
 <div
   class="govuk-grid-row"
 >
@@ -715,6 +715,14 @@ exports[`dashboard component should render FOI interested parties link if user h
               href="/manage-foi-account-managers"
             >
               Manage FOI Account Managers
+            </a>
+          </li>
+          <li>
+            <a
+              class="govuk-link"
+              href="/manage-foi-interested-parties"
+            >
+              Manage FOI Interested Parties
             </a>
           </li>
         </ul>
