@@ -39,7 +39,6 @@ const NominatedContactList: React.FC<MatchParams> = ({ teamId, errorFuncs }) => 
             {
                 dispatch({ type: 'RemoveContact', payload: contact });
             }
-
             ).catch(() => {
                 setErrorMessage(new ErrorMessage(DELETE_NOMINATED_CONTACTS_ERROR_DESCRIPTION, GENERAL_ERROR_TITLE));
             });
