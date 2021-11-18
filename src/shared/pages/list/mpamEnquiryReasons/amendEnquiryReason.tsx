@@ -10,7 +10,10 @@ import ErrorSummary from '../../../common/components/errorSummary';
 import {
     GENERAL_ERROR_TITLE,
     VALIDATION_ERROR_TITLE,
-    LOAD_ENQ_SUB_ERROR_DESCRIPTION, AMEND_ENQ_REASON_SUCCESS, AMEND_ENQ_REASON_ERROR_DESCRIPTION
+    LOAD_ENQ_SUB_ERROR_DESCRIPTION,
+    AMEND_ENQ_REASON_SUCCESS,
+    AMEND_ENQ_REASON_ERROR_DESCRIPTION,
+    DUPLICATE_ENQ_REASON_DESCRIPTION
 } from '../../../models/constants';
 import useError from '../../../hooks/useError';
 import ErrorMessage from '../../../models/errorMessage';
@@ -61,7 +64,11 @@ const AmendEnquiryReason: React.FC<AmendCampaignProps> = ({ csrfToken, history, 
             updateListItem(state, subject).then(() => {
                 history.push('/', { successMessage: AMEND_ENQ_REASON_SUCCESS });
             }).catch((error) => {
-                setErrorMessage(new ErrorMessage(AMEND_ENQ_REASON_ERROR_DESCRIPTION, GENERAL_ERROR_TITLE));
+                if (error && error.response && error.response.status === 409) {
+                    setErrorMessage(new ErrorMessage(DUPLICATE_ENQ_REASON_DESCRIPTION, VALIDATION_ERROR_TITLE));
+                } else {
+                    setErrorMessage(new ErrorMessage(AMEND_ENQ_REASON_ERROR_DESCRIPTION, GENERAL_ERROR_TITLE));
+                }
             });
         }
     };
