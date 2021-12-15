@@ -5,6 +5,7 @@ import { ContactsContext } from './contactsContext';
 import ErrorMessage from '../../../models/errorMessage';
 import {
     DELETE_NOMINATED_CONTACTS_ERROR_DESCRIPTION,
+    DELETE_NOMINATED_CONTACTS_MINIMUM_CONTACT_NUMBER_ERROR_DESCRIPTION,
     GENERAL_ERROR_TITLE,
     LOAD_NOMINATED_CONTACTS_ERROR_DESCRIPTION
 } from '../../../models/constants';
@@ -33,15 +34,17 @@ const NominatedContactList: React.FC<MatchParams> = ({ teamId, errorFuncs }) => 
     const onRemoveContact = (e: any, contact: Item) => {
         e.preventDefault();
         clearErrors();
-        removeNominatedContactFromTeam(teamId, contact.value).then(() =>
-        {
-            dispatch({ type: 'RemoveContact', payload: contact });
+        if (contacts.length > 1) {
+            removeNominatedContactFromTeam(teamId, contact.value).then(() =>
+            {
+                dispatch({ type: 'RemoveContact', payload: contact });
+            }
+            ).catch(() => {
+                setErrorMessage(new ErrorMessage(DELETE_NOMINATED_CONTACTS_ERROR_DESCRIPTION, GENERAL_ERROR_TITLE));
+            });
+        } else {
+            setErrorMessage(new ErrorMessage(DELETE_NOMINATED_CONTACTS_MINIMUM_CONTACT_NUMBER_ERROR_DESCRIPTION, GENERAL_ERROR_TITLE));
         }
-
-        ).catch(() => {
-            setErrorMessage(new ErrorMessage(DELETE_NOMINATED_CONTACTS_ERROR_DESCRIPTION, GENERAL_ERROR_TITLE));
-
-        });
     };
 
     return (<div className="govuk-grid-row">

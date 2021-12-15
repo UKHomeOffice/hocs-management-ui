@@ -73,6 +73,7 @@ export const TEAM_CREATION_FAILURE_NAME_ALREADY_EXISTS = 'The team name already 
 export const TEAM_CREATION_FAILURE_UNKNOWN_ERROR = 'Something went wrong when adding the team';
 export const LOAD_NOMINATED_CONTACTS_ERROR_DESCRIPTION = 'There was an error retrieving the list of nominated contacts.  Please try refreshing the page.';
 export const DELETE_NOMINATED_CONTACTS_ERROR_DESCRIPTION = 'There was an error deleting the nominated contact. Please try refreshing the page.';
+export const DELETE_NOMINATED_CONTACTS_MINIMUM_CONTACT_NUMBER_ERROR_DESCRIPTION = 'Unable to delete nominated contact - teams must have at least one contact.';
 export const TEAM_UPDATE_FAILED_UNKNOWN_ERROR = 'There was a problem updating the team. Contact the service desk.';
 export const ADD_EXGRATIA_BUS_REP_SUCCESS = 'The representative was added successfully';
 export const ADD_EXGRATIA_BUS_REP_ERROR_DESCRIPTION = 'Something went wrong while adding the representative. Please try again.';
