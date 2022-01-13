@@ -5,7 +5,8 @@ import { ApplicationConsumer, ApplicationState } from '../../contexts/applicatio
 
 const Dashboard = ({ hasRole }: ApplicationState) => {
     const hasDcuRole = hasRole('DCU');
-    const hasFOIRole = hasRole('FOI');
+    const hasFoiRole = hasRole('FOI');
+    const hasTrofRole = hasRole('TROF');
 
     return (
         <Fragment>
@@ -120,7 +121,7 @@ const Dashboard = ({ hasRole }: ApplicationState) => {
                                 <li>
                                     <Link className="govuk-link" to="/manage-mpam-enquiry-reasons">Manage MPAM Enquiry Reasons</Link>
                                 </li>
-                                {hasFOIRole && /** This will only hide the link to the page for non-FOI users
+                                {hasFoiRole && /** This will only hide the link to the page for non-FOI users
                                  it will not block the page or guard the API endpoints. **/
                                 <>
                                     <li>
@@ -131,7 +132,17 @@ const Dashboard = ({ hasRole }: ApplicationState) => {
                                         <Link className="govuk-link" to="/manage-foi-interested-parties">Manage FOI
                                             Interested Parties</Link>
                                     </li>
-                                </>}
+                                </>
+                                }
+                                {hasTrofRole && /** This will only hide the link to the page for non-FOI users
+                                 it will not block the page or guard the API endpoints. **/
+                                <>
+                                    <li>
+                                        <Link className="govuk-link" to="/manage-trof-campaigns">Manage Treat Official
+                                            campaigns</Link>
+                                    </li>
+                                </>
+                                }
                             </ul>
                         </li>
                     </ul>

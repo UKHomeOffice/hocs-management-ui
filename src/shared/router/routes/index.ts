@@ -44,6 +44,7 @@ import AddEntity from '../../pages/list/entityList/addEntity';
 import foiAccountManager from '../../pages/list/entityList/entityDefinitions/foiAccountManager/foiAccountManager';
 import mpamCampaign from '../../pages/list/entityList/entityDefinitions/mpamCampaign/mpamCampaign';
 import foiInterestedParty from '../../pages/list/entityList/entityDefinitions/foiExternalInterest/foiInterestedParty';
+import trofCampaign from '../../pages/list/entityList/entityDefinitions/trofCampaign/trofCampaign';
 
 export interface Route {
     requiredRole: string,
@@ -271,6 +272,18 @@ const routes = [
         path: '/manage-mpam-campaigns/add',
         exact: true,
         component: AddEntity(mpamCampaign),
+        title: 'Add Campaign'
+    },
+    {
+        path: '/manage-trof-campaigns',
+        exact: true,
+        component: EntityListView(trofCampaign),
+        title: 'Manage Treat Official campaigns'
+    },
+    {
+        path: '/manage-trof-campaigns/add',
+        exact: true,
+        component: AddEntity(trofCampaign),
         title: 'Add Campaign'
     },
     {
