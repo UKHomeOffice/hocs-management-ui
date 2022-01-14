@@ -64,7 +64,6 @@ steps:
       tags:
         - build_${DRONE_BUILD_NUMBER}
         - ${DRONE_COMMIT_SHA}
-        - branch-${DRONE_COMMIT_BRANCH/\//_}
         - latest
     environment:
       DOCKER_PASSWORD:
@@ -72,7 +71,8 @@ steps:
       DOCKER_USERNAME: ukhomeofficedigital+hocs_quay_robot
     when:
       branch:
-        - main
+        include:
+          - main
     depends_on:
       - build project
       - test project
@@ -98,10 +98,6 @@ environment:
   DOCKER_HOST: tcp://docker:2375
 
 steps:
-  - name: clone kube repo
-    image: plugins/git
-    commands:
-      - git clone https://github.com/UKHomeOffice/kube-hocs-management-ui.git
 
   - name: deploy to cs-dev
     image: quay.io/ukhomeofficedigital/kd:v1.16.0
@@ -111,15 +107,13 @@ steps:
       KUBE_TOKEN:
         from_secret: hocs_management_ui_cs_dev
     commands:
-      - cd kube-hocs-management-ui
+      - cd kube
       - ./deploy.sh
     when:
       branch:
         - main
       event:
         - push
-    depends_on:
-      - clone kube repo
 
   - name: deploy to wcs-dev
     image: quay.io/ukhomeofficedigital/kd:v1.16.0
@@ -129,15 +123,13 @@ steps:
       KUBE_TOKEN:
         from_secret: hocs_management_ui_wcs_dev
     commands:
-      - cd kube-hocs-management-ui
+      - cd kube
       - ./deploy.sh
     when:
       branch:
         - main
       event:
         - push
-    depends_on:
-      - clone kube repo
 
   - name: wait for docker
     image: docker
@@ -185,7 +177,7 @@ steps:
     commands:
       - source version.txt
       - echo $VERSION
-      - cd kube-hocs-management-ui
+      - cd kube
       - ./deploy.sh
     environment:
       ENVIRONMENT: cs-qa
@@ -197,7 +189,6 @@ steps:
       target:
         - release
     depends_on:
-      - clone kube repo
       - generate & tag build
 
   - name: deploy to wcs-qa
@@ -205,7 +196,7 @@ steps:
     commands:
       - source version.txt
       - echo $VERSION
-      - cd kube-hocs-management-ui
+      - cd kube
       - ./deploy.sh
     environment:
       ENVIRONMENT: wcs-qa
@@ -217,13 +208,12 @@ steps:
       target:
         - release
     depends_on:
-      - clone kube repo
       - generate & tag build
 
   - name: deploy to not prod
     image: quay.io/ukhomeofficedigital/kd:v1.16.0
     commands:
-      - cd kube-hocs-management-ui
+      - cd kube
       - ./deploy.sh
     environment:
       ENVIRONMENT: ${DRONE_DEPLOY_TO}
@@ -236,13 +226,11 @@ steps:
         exclude:
           - release
           - "*-prod"
-    depends_on:
-      - clone kube repo
 
   - name: deploy to prod
     image: quay.io/ukhomeofficedigital/kd:v1.16.0
     commands:
-      - cd kube-hocs-management-ui
+      - cd kube
       - ./deploy.sh
     environment:
       ENVIRONMENT: ${DRONE_DEPLOY_TO}
@@ -254,5 +242,3 @@ steps:
       target:
         include:
           - "*-prod"
-    depends_on:
-      - clone kube repo
