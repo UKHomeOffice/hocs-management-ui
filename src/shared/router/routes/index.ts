@@ -305,6 +305,12 @@ const routes = [
         title: 'Amend Campaign'
     },
     {
+        path: '/manage-trof-campaigns/:itemUUID/amend',
+        exact: true,
+        component: AmendEntity(trofCampaign),
+        title: 'Amend Campaign'
+    },
+    {
         path: '/manage-mpam-business-units',
         exact: true,
         component: ChooseBusinessArea,
