@@ -1,0 +1,1116 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Test router routes should render the amend campaign route 1`] = `
+Array [
+  <header
+    class="govuk-header "
+    data-module="header"
+    role="banner"
+  >
+    <div
+      class="govuk-header__container govuk-width-container"
+    >
+      <div
+        class="govuk-header__container govuk-width-container"
+      >
+        <div
+          class="govuk-header__logo"
+        >
+          <span
+            class="govuk-header__logotype"
+          >
+            <a
+              class="govuk-header__link govuk-header__link--homepage govuk-header__logotype-text"
+              href="/"
+            />
+          </span>
+        </div>
+        <div
+          class="govuk-header__content"
+        >
+          <nav>
+            <ul
+              aria-label="Top Level Navigation"
+              class="govuk-header__navigation "
+              id="navigation"
+            >
+              <li
+                class="govuk-header__navigation--end"
+              >
+                <a
+                  class="govuk-header__link"
+                  href="/oauth/logout"
+                >
+                  Log out
+                </a>
+              </li>
+            </ul>
+          </nav>
+        </div>
+      </div>
+    </div>
+  </header>,
+  <div
+    class="govuk-width-container"
+  >
+    <div
+      class="govuk-phase-banner"
+    >
+      <p
+        class="govuk-phase-banner__content"
+      >
+        <strong
+          class="govuk-tag govuk-phase-banner__content__tag"
+        />
+        <span>
+          This is a new service – your 
+          <a
+            href=""
+          >
+            feedback
+          </a>
+           will help us to improve it.
+        </span>
+      </p>
+    </div>
+    <main
+      class="govuk-main-wrapper "
+      id="main-content"
+      role="main"
+    >
+      <div
+        class="govuk-grid-row"
+      >
+        <div
+          class="govuk-grid-column-two-thirds-from-desktop"
+        >
+          <a
+            class="govuk-back-link"
+            href="/manage-trof-campaigns"
+          >
+            Back
+          </a>
+          <h1
+            class="govuk-heading-xl"
+          >
+            Amend campaign
+          </h1>
+        </div>
+      </div>
+      <div
+        class="govuk-grid-row"
+      >
+        <div
+          class="govuk-grid-column-one-half-from-desktop"
+        >
+          <h3
+            class="govuk-heading-l"
+          >
+            New campaign: 
+          </h3>
+          <form
+            action="/api/entity/list/update/TROF_CAMPAIGNS"
+            method="POST"
+          >
+            <input
+              name="_csrf"
+              type="hidden"
+              value=""
+            />
+            <div
+              class="govuk-form-group"
+            >
+              <label
+                class="govuk-label govuk-label--s"
+                for="title"
+                id="title-label"
+              >
+                New campaign name
+              </label>
+              <input
+                class="govuk-input"
+                id="title"
+                name="title"
+                type="text"
+                value=""
+              />
+            </div>
+            <div
+              class="govuk-form-group"
+            >
+              <label
+                class="govuk-label govuk-label--s"
+                for="simpleName"
+                id="simpleName-label"
+              >
+                campaign code
+              </label>
+              <input
+                class="govuk-input"
+                disabled=""
+                id="simpleName"
+                name="simpleName"
+                type="text"
+                value=""
+              />
+            </div>
+            <input
+              class="govuk-button"
+              type="submit"
+              value="Submit"
+            />
+          </form>
+        </div>
+      </div>
+    </main>
+  </div>,
+  <footer
+    class="govuk-footer "
+    role="contentinfo"
+  >
+    <div
+      class="govuk-width-container "
+    >
+      <div
+        class="govuk-footer__meta"
+      >
+        <div
+          class="govuk-footer__meta-item govuk-footer__meta-item--grow"
+        >
+          <ul
+            class="govuk-footer__inline-list"
+          >
+            <li
+              class="govuk-footer__inline-list-item"
+            >
+              Built by the 
+              <a
+                class="govuk-footer__link"
+                href="https://www.gov.uk/government/organisations/home-office"
+              >
+                Home Office
+              </a>
+               in Sheffield
+            </li>
+          </ul>
+          <svg
+            class="govuk-footer__licence-logo"
+            focusable="false"
+            height="17"
+            role="presentation"
+            viewBox="0 0 483.2 195.7"
+            width="41"
+            xmlns="http://www.w3.org/2000/svg"
+          >
+            <path
+              d="M421.5 142.8V.1l-50.7 32.3v161.1h112.4v-50.7zm-122.3-9.6A47.12 47.12 0 0 1 221 97.8c0-26 21.1-47.1 47.1-47.1 16.7 0 31.4 8.7 39.7 21.8l42.7-27.2A97.63 97.63 0 0 0 268.1 0c-36.5 0-68.3 20.1-85.1 49.7A98 98 0 0 0 97.8 0C43.9 0 0 43.9 0 97.8s43.9 97.8 97.8 97.8c36.5 0 68.3-20.1 85.1-49.7a97.76 97.76 0 0 0 149.6 25.4l19.4 22.2h3v-87.8h-80l24.3 27.5zM97.8 145c-26 0-47.1-21.1-47.1-47.1s21.1-47.1 47.1-47.1 47.2 21 47.2 47S123.8 145 97.8 145"
+              fill="currentColor"
+            />
+          </svg>
+          <span
+            class="govuk-footer__licence-description"
+          >
+            All content is available under the 
+            <a
+              class="govuk-footer__link"
+              href="https://www.nationalarchives.gov.uk/doc/open-government-licence/version/3/"
+              rel="license"
+            >
+              Open Government Licence v3.0
+            </a>
+            , except where otherwise stated
+          </span>
+        </div>
+        <div
+          class="govuk-footer__meta-item"
+        >
+          <a
+            class="govuk-footer__link govuk-footer__copyright-logo"
+            href="https://www.nationalarchives.gov.uk/information-management/re-using-public-sector-information/uk-government-licensing-framework/crown-copyright/"
+          >
+            © Crown copyright
+          </a>
+        </div>
+      </div>
+    </div>
+  </footer>,
+]
+`;
+
+exports[`Test router routes should render with default props 1`] = `
+<MemoryRouter>
+  <Router
+    history={
+      Object {
+        "action": "POP",
+        "block": [Function],
+        "canGo": [Function],
+        "createHref": [Function],
+        "entries": Array [
+          Object {
+            "hash": "",
+            "key": "c0m9bu",
+            "pathname": "/",
+            "search": "",
+            "state": undefined,
+          },
+        ],
+        "go": [Function],
+        "goBack": [Function],
+        "goForward": [Function],
+        "index": 0,
+        "length": 1,
+        "listen": [Function],
+        "location": Object {
+          "hash": "",
+          "key": "c0m9bu",
+          "pathname": "/",
+          "search": "",
+          "state": undefined,
+        },
+        "push": [Function],
+        "replace": [Function],
+      }
+    }
+  >
+    <ApplicationProvider
+      config={
+        Object {
+          "csrf": "",
+          "layout": Object {
+            "body": Object {
+              "phaseBanner": Object {
+                "feedback": "",
+                "isVisible": true,
+                "phase": "",
+              },
+            },
+            "countDownForSeconds": 0,
+            "defaultTimeoutSeconds": 0,
+            "footer": Object {
+              "isVisible": true,
+              "links": Array [],
+            },
+            "header": Object {
+              "isVisible": true,
+              "service": "",
+              "serviceLink": "",
+            },
+          },
+        }
+      }
+    >
+      <WrappedRouter>
+        <Router
+          hasRole={[Function]}
+        >
+          <WrappedLayout>
+            <Layout
+              layout={
+                Object {
+                  "body": Object {
+                    "phaseBanner": Object {
+                      "feedback": "",
+                      "isVisible": true,
+                      "phase": "",
+                    },
+                  },
+                  "countDownForSeconds": 0,
+                  "defaultTimeoutSeconds": 0,
+                  "footer": Object {
+                    "isVisible": true,
+                    "links": Array [],
+                  },
+                  "header": Object {
+                    "isVisible": true,
+                    "service": "",
+                    "serviceLink": "",
+                  },
+                }
+              }
+            >
+              <Header
+                isVisible={true}
+                service=""
+                serviceLink=""
+              >
+                <header
+                  className="govuk-header "
+                  data-module="header"
+                  role="banner"
+                >
+                  <div
+                    className="govuk-header__container govuk-width-container"
+                  >
+                    <div
+                      className="govuk-header__container govuk-width-container"
+                    >
+                      <div
+                        className="govuk-header__logo"
+                      >
+                        <span
+                          className="govuk-header__logotype"
+                        >
+                          <Link
+                            className="govuk-header__link govuk-header__link--homepage govuk-header__logotype-text"
+                            to=""
+                          >
+                            <LinkAnchor
+                              className="govuk-header__link govuk-header__link--homepage govuk-header__logotype-text"
+                              href="/"
+                              navigate={[Function]}
+                            >
+                              <a
+                                className="govuk-header__link govuk-header__link--homepage govuk-header__logotype-text"
+                                href="/"
+                                onClick={[Function]}
+                              />
+                            </LinkAnchor>
+                          </Link>
+                        </span>
+                      </div>
+                      <div
+                        className="govuk-header__content"
+                      >
+                        <nav>
+                          <ul
+                            aria-label="Top Level Navigation"
+                            className="govuk-header__navigation "
+                            id="navigation"
+                          >
+                            <li
+                              className="govuk-header__navigation--end"
+                            >
+                              <a
+                                className="govuk-header__link"
+                                href="/oauth/logout"
+                              >
+                                Log out
+                              </a>
+                            </li>
+                          </ul>
+                        </nav>
+                      </div>
+                    </div>
+                  </div>
+                </header>
+              </Header>
+              <Body
+                phaseBanner={
+                  Object {
+                    "feedback": "",
+                    "isVisible": true,
+                    "phase": "",
+                  }
+                }
+              >
+                <div
+                  className="govuk-width-container"
+                >
+                  <PhaseBannerComponent
+                    feedback=""
+                    phase=""
+                  >
+                    <div
+                      className="govuk-phase-banner"
+                    >
+                      <p
+                        className="govuk-phase-banner__content"
+                      >
+                        <strong
+                          className="govuk-tag govuk-phase-banner__content__tag"
+                        />
+                        <span>
+                          This is a new service – your 
+                          <a
+                            href=""
+                          >
+                            feedback
+                          </a>
+                           
+                          will help us to improve it.
+                        </span>
+                      </p>
+                    </div>
+                  </PhaseBannerComponent>
+                  <main
+                    className="govuk-main-wrapper "
+                    id="main-content"
+                    role="main"
+                  >
+                    <Switch>
+                      <Route
+                        computedMatch={
+                          Object {
+                            "isExact": true,
+                            "params": Object {},
+                            "path": "/",
+                            "url": "/",
+                          }
+                        }
+                        exact={true}
+                        key="0"
+                        location={
+                          Object {
+                            "hash": "",
+                            "key": "c0m9bu",
+                            "pathname": "/",
+                            "search": "",
+                            "state": undefined,
+                          }
+                        }
+                        path="/"
+                        render={[Function]}
+                      >
+                        <PageEnabledWrapper
+                          location={
+                            Object {
+                              "hash": "",
+                              "key": "c0m9bu",
+                              "pathname": "/",
+                              "search": "",
+                              "state": undefined,
+                            }
+                          }
+                          match={
+                            Object {
+                              "isExact": true,
+                              "params": Object {},
+                              "path": "/",
+                              "url": "/",
+                            }
+                          }
+                        >
+                          <PageWrapper
+                            dispatch={[Function]}
+                            location={
+                              Object {
+                                "hash": "",
+                                "key": "c0m9bu",
+                                "pathname": "/",
+                                "search": "",
+                                "state": undefined,
+                              }
+                            }
+                            match={
+                              Object {
+                                "isExact": true,
+                                "params": Object {},
+                                "path": "/",
+                                "url": "/",
+                              }
+                            }
+                            track={[Function]}
+                          >
+                            <successMessage
+                              location={
+                                Object {
+                                  "hash": "",
+                                  "key": "c0m9bu",
+                                  "pathname": "/",
+                                  "search": "",
+                                  "state": undefined,
+                                }
+                              }
+                            />
+                            <WrappedDashboard
+                              history={
+                                Object {
+                                  "action": "POP",
+                                  "block": [Function],
+                                  "canGo": [Function],
+                                  "createHref": [Function],
+                                  "entries": Array [
+                                    Object {
+                                      "hash": "",
+                                      "key": "c0m9bu",
+                                      "pathname": "/",
+                                      "search": "",
+                                      "state": undefined,
+                                    },
+                                  ],
+                                  "go": [Function],
+                                  "goBack": [Function],
+                                  "goForward": [Function],
+                                  "index": 0,
+                                  "length": 1,
+                                  "listen": [Function],
+                                  "location": Object {
+                                    "hash": "",
+                                    "key": "c0m9bu",
+                                    "pathname": "/",
+                                    "search": "",
+                                    "state": undefined,
+                                  },
+                                  "push": [Function],
+                                  "replace": [Function],
+                                }
+                              }
+                              location={
+                                Object {
+                                  "hash": "",
+                                  "key": "c0m9bu",
+                                  "pathname": "/",
+                                  "search": "",
+                                  "state": undefined,
+                                }
+                              }
+                              match={
+                                Object {
+                                  "isExact": true,
+                                  "params": Object {},
+                                  "path": "/",
+                                  "url": "/",
+                                }
+                              }
+                              title="Dashboard"
+                            >
+                              <Dashboard
+                                csrf=""
+                                dispatch={[Function]}
+                                hasOneOfRoles={[Function]}
+                                hasRole={[Function]}
+                                layout={
+                                  Object {
+                                    "body": Object {
+                                      "phaseBanner": Object {
+                                        "feedback": "",
+                                        "isVisible": true,
+                                        "phase": "",
+                                      },
+                                    },
+                                    "countDownForSeconds": 0,
+                                    "defaultTimeoutSeconds": 0,
+                                    "footer": Object {
+                                      "isVisible": true,
+                                      "links": Array [],
+                                    },
+                                    "header": Object {
+                                      "isVisible": true,
+                                      "service": "",
+                                      "serviceLink": "",
+                                    },
+                                  }
+                                }
+                                track={[Function]}
+                              >
+                                <div
+                                  className="govuk-grid-row"
+                                >
+                                  <div
+                                    className="govuk-grid-column-two-thirds"
+                                  >
+                                    <h1
+                                      className="govuk-heading-xl"
+                                    >
+                                      Choose an area to manage
+                                    </h1>
+                                    <ul
+                                      className="govuk-list"
+                                    >
+                                      <li>
+                                        <h2
+                                          className="govuk-heading-l"
+                                        >
+                                          Standard lines
+                                        </h2>
+                                        <ul
+                                          className="govuk-list govuk-list--bullet"
+                                        >
+                                          <li>
+                                            <Link
+                                              className="govuk-link"
+                                              to="/manage-standard-lines"
+                                            >
+                                              <LinkAnchor
+                                                className="govuk-link"
+                                                href="/manage-standard-lines"
+                                                navigate={[Function]}
+                                              >
+                                                <a
+                                                  className="govuk-link"
+                                                  href="/manage-standard-lines"
+                                                  onClick={[Function]}
+                                                >
+                                                  Manage standard lines
+                                                </a>
+                                              </LinkAnchor>
+                                            </Link>
+                                          </li>
+                                          <li>
+                                            <Link
+                                              className="govuk-link"
+                                              to="/add-standard-line"
+                                            >
+                                              <LinkAnchor
+                                                className="govuk-link"
+                                                href="/add-standard-line"
+                                                navigate={[Function]}
+                                              >
+                                                <a
+                                                  className="govuk-link"
+                                                  href="/add-standard-line"
+                                                  onClick={[Function]}
+                                                >
+                                                  Add a standard line
+                                                </a>
+                                              </LinkAnchor>
+                                            </Link>
+                                          </li>
+                                        </ul>
+                                      </li>
+                                      <li>
+                                        <h2
+                                          className="govuk-heading-l"
+                                        >
+                                          Team management
+                                        </h2>
+                                        <ul
+                                          className="govuk-list govuk-list--bullet"
+                                        >
+                                          <li>
+                                            <Link
+                                              className="govuk-link"
+                                              to="/team-search"
+                                            >
+                                              <LinkAnchor
+                                                className="govuk-link"
+                                                href="/team-search"
+                                                navigate={[Function]}
+                                              >
+                                                <a
+                                                  className="govuk-link"
+                                                  href="/team-search"
+                                                  onClick={[Function]}
+                                                >
+                                                  Manage a team
+                                                </a>
+                                              </LinkAnchor>
+                                            </Link>
+                                          </li>
+                                        </ul>
+                                      </li>
+                                      <li>
+                                        <h2
+                                          className="govuk-heading-l"
+                                        >
+                                          User management
+                                        </h2>
+                                        <ul
+                                          className="govuk-list govuk-list--bullet"
+                                        >
+                                          <li>
+                                            <Link
+                                              className="govuk-link"
+                                              to="/user-search"
+                                            >
+                                              <LinkAnchor
+                                                className="govuk-link"
+                                                href="/user-search"
+                                                navigate={[Function]}
+                                              >
+                                                <a
+                                                  className="govuk-link"
+                                                  href="/user-search"
+                                                  onClick={[Function]}
+                                                >
+                                                  Manage a user
+                                                </a>
+                                              </LinkAnchor>
+                                            </Link>
+                                          </li>
+                                          <li>
+                                            <Link
+                                              className="govuk-link"
+                                              to="/add-user"
+                                            >
+                                              <LinkAnchor
+                                                className="govuk-link"
+                                                href="/add-user"
+                                                navigate={[Function]}
+                                              >
+                                                <a
+                                                  className="govuk-link"
+                                                  href="/add-user"
+                                                  onClick={[Function]}
+                                                >
+                                                  Add a user
+                                                </a>
+                                              </LinkAnchor>
+                                            </Link>
+                                          </li>
+                                        </ul>
+                                      </li>
+                                      <li>
+                                        <h2
+                                          className="govuk-heading-l"
+                                        >
+                                          Template management
+                                        </h2>
+                                        <ul
+                                          className="govuk-list govuk-list--bullet"
+                                        >
+                                          <li>
+                                            <Link
+                                              className="govuk-link"
+                                              to="/case-types"
+                                            >
+                                              <LinkAnchor
+                                                className="govuk-link"
+                                                href="/case-types"
+                                                navigate={[Function]}
+                                              >
+                                                <a
+                                                  className="govuk-link"
+                                                  href="/case-types"
+                                                  onClick={[Function]}
+                                                >
+                                                  Manage templates
+                                                </a>
+                                              </LinkAnchor>
+                                            </Link>
+                                          </li>
+                                        </ul>
+                                      </li>
+                                      <li>
+                                        <h2
+                                          className="govuk-heading-l"
+                                        >
+                                          Topic management
+                                        </h2>
+                                        <ul
+                                          className="govuk-list govuk-list--bullet"
+                                        >
+                                          <li>
+                                            <Link
+                                              className="govuk-link"
+                                              to="/add-parent-topic"
+                                            >
+                                              <LinkAnchor
+                                                className="govuk-link"
+                                                href="/add-parent-topic"
+                                                navigate={[Function]}
+                                              >
+                                                <a
+                                                  className="govuk-link"
+                                                  href="/add-parent-topic"
+                                                  onClick={[Function]}
+                                                >
+                                                  Add parent topic
+                                                </a>
+                                              </LinkAnchor>
+                                            </Link>
+                                          </li>
+                                          <li>
+                                            <Link
+                                              className="govuk-link"
+                                              to="/add-child-topic"
+                                            >
+                                              <LinkAnchor
+                                                className="govuk-link"
+                                                href="/add-child-topic"
+                                                navigate={[Function]}
+                                              >
+                                                <a
+                                                  className="govuk-link"
+                                                  href="/add-child-topic"
+                                                  onClick={[Function]}
+                                                >
+                                                  Add child topic
+                                                </a>
+                                              </LinkAnchor>
+                                            </Link>
+                                          </li>
+                                          <li>
+                                            <Link
+                                              className="govuk-link"
+                                              to="/topic-to-team"
+                                            >
+                                              <LinkAnchor
+                                                className="govuk-link"
+                                                href="/topic-to-team"
+                                                navigate={[Function]}
+                                              >
+                                                <a
+                                                  className="govuk-link"
+                                                  href="/topic-to-team"
+                                                  onClick={[Function]}
+                                                >
+                                                  Link topic to team
+                                                </a>
+                                              </LinkAnchor>
+                                            </Link>
+                                          </li>
+                                        </ul>
+                                      </li>
+                                      <li>
+                                        <h2
+                                          className="govuk-heading-l"
+                                        >
+                                          Unit management
+                                        </h2>
+                                        <ul
+                                          className="govuk-list govuk-list--bullet"
+                                        >
+                                          <li>
+                                            <Link
+                                              className="govuk-link"
+                                              to="/add-unit"
+                                            >
+                                              <LinkAnchor
+                                                className="govuk-link"
+                                                href="/add-unit"
+                                                navigate={[Function]}
+                                              >
+                                                <a
+                                                  className="govuk-link"
+                                                  href="/add-unit"
+                                                  onClick={[Function]}
+                                                >
+                                                  Add a unit
+                                                </a>
+                                              </LinkAnchor>
+                                            </Link>
+                                          </li>
+                                          <li>
+                                            <Link
+                                              className="govuk-link"
+                                              to="/unit-search"
+                                            >
+                                              <LinkAnchor
+                                                className="govuk-link"
+                                                href="/unit-search"
+                                                navigate={[Function]}
+                                              >
+                                                <a
+                                                  className="govuk-link"
+                                                  href="/unit-search"
+                                                  onClick={[Function]}
+                                                >
+                                                  View units and their teams
+                                                </a>
+                                              </LinkAnchor>
+                                            </Link>
+                                          </li>
+                                        </ul>
+                                      </li>
+                                      <li>
+                                        <h2
+                                          className="govuk-heading-l"
+                                        >
+                                          Case management
+                                        </h2>
+                                        <ul
+                                          className="govuk-list govuk-list--bullet"
+                                        >
+                                          <li>
+                                            <Link
+                                              className="govuk-link"
+                                              to="/case-withdraw"
+                                            >
+                                              <LinkAnchor
+                                                className="govuk-link"
+                                                href="/case-withdraw"
+                                                navigate={[Function]}
+                                              >
+                                                <a
+                                                  className="govuk-link"
+                                                  href="/case-withdraw"
+                                                  onClick={[Function]}
+                                                >
+                                                  Withdraw a case
+                                                </a>
+                                              </LinkAnchor>
+                                            </Link>
+                                          </li>
+                                        </ul>
+                                      </li>
+                                      <li>
+                                        <h2
+                                          className="govuk-heading-l"
+                                        >
+                                          Lists management
+                                        </h2>
+                                        <ul
+                                          className="govuk-list govuk-list--bullet"
+                                        >
+                                          <li>
+                                            <Link
+                                              className="govuk-link"
+                                              to="/manage-mpam-campaigns"
+                                            >
+                                              <LinkAnchor
+                                                className="govuk-link"
+                                                href="/manage-mpam-campaigns"
+                                                navigate={[Function]}
+                                              >
+                                                <a
+                                                  className="govuk-link"
+                                                  href="/manage-mpam-campaigns"
+                                                  onClick={[Function]}
+                                                >
+                                                  Manage MPAM campaigns
+                                                </a>
+                                              </LinkAnchor>
+                                            </Link>
+                                          </li>
+                                          <li>
+                                            <Link
+                                              className="govuk-link"
+                                              to="/manage-exgratia-reps"
+                                            >
+                                              <LinkAnchor
+                                                className="govuk-link"
+                                                href="/manage-exgratia-reps"
+                                                navigate={[Function]}
+                                              >
+                                                <a
+                                                  className="govuk-link"
+                                                  href="/manage-exgratia-reps"
+                                                  onClick={[Function]}
+                                                >
+                                                  Manage Ex-Gratia Business Area Representatives
+                                                </a>
+                                              </LinkAnchor>
+                                            </Link>
+                                          </li>
+                                          <li>
+                                            <Link
+                                              className="govuk-link"
+                                              to="/manage-mpam-business-units"
+                                            >
+                                              <LinkAnchor
+                                                className="govuk-link"
+                                                href="/manage-mpam-business-units"
+                                                navigate={[Function]}
+                                              >
+                                                <a
+                                                  className="govuk-link"
+                                                  href="/manage-mpam-business-units"
+                                                  onClick={[Function]}
+                                                >
+                                                  Manage MPAM Business Units
+                                                </a>
+                                              </LinkAnchor>
+                                            </Link>
+                                          </li>
+                                          <li>
+                                            <Link
+                                              className="govuk-link"
+                                              to="/manage-mpam-enquiry-reasons"
+                                            >
+                                              <LinkAnchor
+                                                className="govuk-link"
+                                                href="/manage-mpam-enquiry-reasons"
+                                                navigate={[Function]}
+                                              >
+                                                <a
+                                                  className="govuk-link"
+                                                  href="/manage-mpam-enquiry-reasons"
+                                                  onClick={[Function]}
+                                                >
+                                                  Manage MPAM Enquiry Reasons
+                                                </a>
+                                              </LinkAnchor>
+                                            </Link>
+                                          </li>
+                                        </ul>
+                                      </li>
+                                    </ul>
+                                  </div>
+                                </div>
+                              </Dashboard>
+                            </WrappedDashboard>
+                          </PageWrapper>
+                        </PageEnabledWrapper>
+                      </Route>
+                    </Switch>
+                  </main>
+                </div>
+              </Body>
+              <Footer
+                isVisible={true}
+                links={Array []}
+              >
+                <footer
+                  className="govuk-footer "
+                  role="contentinfo"
+                >
+                  <div
+                    className="govuk-width-container "
+                  >
+                    <div
+                      className="govuk-footer__meta"
+                    >
+                      <div
+                        className="govuk-footer__meta-item govuk-footer__meta-item--grow"
+                      >
+                        <ul
+                          className="govuk-footer__inline-list"
+                        >
+                          <li
+                            className="govuk-footer__inline-list-item"
+                          >
+                            Built by the
+                             
+                            <a
+                              className="govuk-footer__link"
+                              href="https://www.gov.uk/government/organisations/home-office"
+                            >
+                              Home Office
+                            </a>
+                             
+                            in Sheffield
+                          </li>
+                        </ul>
+                        <svg
+                          className="govuk-footer__licence-logo"
+                          focusable="false"
+                          height="17"
+                          role="presentation"
+                          viewBox="0 0 483.2 195.7"
+                          width="41"
+                          xmlns="http://www.w3.org/2000/svg"
+                        >
+                          <path
+                            d="M421.5 142.8V.1l-50.7 32.3v161.1h112.4v-50.7zm-122.3-9.6A47.12 47.12 0 0 1 221 97.8c0-26 21.1-47.1 47.1-47.1 16.7 0 31.4 8.7 39.7 21.8l42.7-27.2A97.63 97.63 0 0 0 268.1 0c-36.5 0-68.3 20.1-85.1 49.7A98 98 0 0 0 97.8 0C43.9 0 0 43.9 0 97.8s43.9 97.8 97.8 97.8c36.5 0 68.3-20.1 85.1-49.7a97.76 97.76 0 0 0 149.6 25.4l19.4 22.2h3v-87.8h-80l24.3 27.5zM97.8 145c-26 0-47.1-21.1-47.1-47.1s21.1-47.1 47.1-47.1 47.2 21 47.2 47S123.8 145 97.8 145"
+                            fill="currentColor"
+                          />
+                        </svg>
+                        <span
+                          className="govuk-footer__licence-description"
+                        >
+                          All content is available under the
+                           
+                          <a
+                            className="govuk-footer__link"
+                            href="https://www.nationalarchives.gov.uk/doc/open-government-licence/version/3/"
+                            rel="license"
+                          >
+                            Open Government Licence v3.0
+                          </a>
+                          , except where otherwise stated
+                        </span>
+                      </div>
+                      <div
+                        className="govuk-footer__meta-item"
+                      >
+                        <a
+                          className="govuk-footer__link govuk-footer__copyright-logo"
+                          href="https://www.nationalarchives.gov.uk/information-management/re-using-public-sector-information/uk-government-licensing-framework/crown-copyright/"
+                        >
+                          © Crown copyright
+                        </a>
+                      </div>
+                    </div>
+                  </div>
+                </footer>
+              </Footer>
+            </Layout>
+          </WrappedLayout>
+        </Router>
+      </WrappedRouter>
+    </ApplicationProvider>
+  </Router>
+</MemoryRouter>
+`;
