@@ -40,7 +40,6 @@ steps:
       registry: quay.io
       repo: quay.io/ukhomeofficedigital/hocs-management-ui
       tags:
-        - build_${DRONE_BUILD_NUMBER}
         - ${DRONE_COMMIT_SHA}
         - branch-${DRONE_COMMIT_BRANCH/\//_}
     environment:
@@ -62,7 +61,6 @@ steps:
       registry: quay.io
       repo: quay.io/ukhomeofficedigital/hocs-management-ui
       tags:
-        - build_${DRONE_BUILD_NUMBER}
         - ${DRONE_COMMIT_SHA}
         - latest
     environment:
@@ -98,17 +96,24 @@ environment:
   DOCKER_HOST: tcp://docker:2375
 
 steps:
+  - name: fetch and checkout
+    image: alpine/git
+    commands:
+      - git fetch --tags
+      - git checkout $${VERSION}
 
   - name: deploy to cs-dev
     image: quay.io/ukhomeofficedigital/kd:v1.16.0
     environment:
       ENVIRONMENT: cs-dev
-      VERSION: build_${DRONE_BUILD_NUMBER}
+      VERSION: "${DRONE_COMMIT_SHA}"
       KUBE_TOKEN:
         from_secret: hocs_management_ui_cs_dev
     commands:
       - cd kube
       - ./deploy.sh
+    depends_on:
+      - fetch and checkout
     when:
       branch:
         - main
@@ -119,12 +124,14 @@ steps:
     image: quay.io/ukhomeofficedigital/kd:v1.16.0
     environment:
       ENVIRONMENT: wcs-dev
-      VERSION: build_${DRONE_BUILD_NUMBER}
+      VERSION: "${DRONE_COMMIT_SHA}"
       KUBE_TOKEN:
         from_secret: hocs_management_ui_wcs_dev
     commands:
       - cd kube
       - ./deploy.sh
+    depends_on:
+      - fetch and checkout
     when:
       branch:
         - main
@@ -166,6 +173,7 @@ steps:
         from_secret: GITHUB_TOKEN
     depends_on:
       - wait for docker
+      - fetch and checkout
     when:
       event:
         - promote
@@ -219,6 +227,8 @@ steps:
       ENVIRONMENT: ${DRONE_DEPLOY_TO}
       KUBE_TOKEN:
         from_secret: hocs_management_ui_${DRONE_DEPLOY_TO/-/_}
+    depends_on:
+      - fetch and checkout
     when:
       event:
         - promote
@@ -236,6 +246,8 @@ steps:
       ENVIRONMENT: ${DRONE_DEPLOY_TO}
       KUBE_TOKEN:
         from_secret: hocs_management_ui_${DRONE_DEPLOY_TO/-/_}
+    depends_on:
+      - fetch and checkout
     when:
       event:
         - promote
