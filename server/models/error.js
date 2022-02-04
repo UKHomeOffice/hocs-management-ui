@@ -57,6 +57,13 @@ class ValidationError extends ErrorModel {
     }
 }
 
+class UserAlreadyExistsError extends ErrorModel {
+    constructor(message, fields) {
+        super(message, 409, 'User creation failed');
+        this.fields = fields;
+    }
+}
+
 class DocumentError extends ErrorModel {
     constructor(message, status = 500) {
         super(message, status, 'Request failed');
@@ -84,5 +91,6 @@ module.exports = {
     FormSubmissionError,
     FormServiceError,
     ValidationError,
-    PermissionError
+    PermissionError,
+    UserAlreadyExistsError,
 };

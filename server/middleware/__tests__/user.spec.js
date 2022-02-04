@@ -158,6 +158,42 @@ describe('addUser', () => {
     });
 });
 
+describe('addDuplicateUser', () => {
+    it('should invoke info service and put uuid in response', async () => {
+        const headers = '__headers__';
+        User.createHeaders.mockImplementation(() => headers);
+        const userId = 'x-x-x-x';
+
+        const logWarn = jest.fn();
+        getLogger.mockImplementation(() => ({ warn: logWarn }) );
+        const reqBody = {
+            email: 'email',
+            firstName: 'firstName',
+            lastName: 'lastName'
+        };
+        const req = { body: reqBody };
+        infoService.post.mockImplementation(() => Promise.resolve({ data: { userUUID: userId } }));
+
+        const res = {
+            send: () => {
+                const error = new Error();
+
+                error.isAxiosError = true;
+                error.response = { status: 409, data: {} };
+
+                throw error;
+            },
+        };
+
+        const next = jest.fn();
+
+        await addUser(req, res, next);
+
+        expect(logWarn).toHaveBeenCalled();
+        expect(next).toHaveBeenCalled();
+    });
+});
+
 describe('amendUser', () => {
     it('should invoke info service', async () => {
         const headers = '__headers__';
