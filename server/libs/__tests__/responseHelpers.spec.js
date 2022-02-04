@@ -1,4 +1,3 @@
-const encodeCaseReference = require('../encodingHelpers');
 const { isAxiosErrorWithCode } = require('../responseHelpers');
 
 describe('Response helper', () => {
