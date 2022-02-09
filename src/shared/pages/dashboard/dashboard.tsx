@@ -141,6 +141,10 @@ const Dashboard = ({ hasRole }: ApplicationState) => {
                                         <Link className="govuk-link" to="/manage-trof-campaigns">Manage Treat Official
                                             campaigns</Link>
                                     </li>
+                                    <li>
+                                        <Link className="govuk-link" to="/manage-trof-recipient">Manage Treat Official
+                                            Recipients</Link>
+                                    </li>
                                 </>
                                 }
                             </ul>
