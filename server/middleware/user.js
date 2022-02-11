@@ -56,13 +56,7 @@ async function addUser(req, res, next) {
         const response = await infoService.post('/user', body, config);
         res.send({ userUUID: response.data.userUUID });
     } catch (error) {
-        if (isAxiosErrorWithCode(error, 409)) { // 409 errors are thrown when the user already exists and are logged in info service
-            logger.warn(error);
-            next(new UserAlreadyExistsError(error.response.data, error.response.status));
-        } else {
-            logger.error(error);
-            next(new FormSubmissionError(error.response.data, error.response.status));
-        }
+        next(new FormSubmissionError(error.response.data, error.response.status));
     }
 }
 

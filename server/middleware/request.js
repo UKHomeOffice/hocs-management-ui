@@ -11,7 +11,7 @@ function apiErrorMiddleware(err, req, res, _) {
         logger(req.requestId).info('VALIDATION_FAILED', { errors: Object.keys(err.fields) });
         return res.status(err.status).json({ errors: err.fields });
     } else if (err instanceof UserAlreadyExistsError) {
-        logger(req.requestId).warn('USER_ALREADY_EXISTS', { errors: Object.keys(err.fields) });
+        logger(req.requestId).warn('USER_ALREADY_EXISTS', { message: err.message });
         res.status(409);
     }  else {
         logger(req.requestId).error('ERROR', { message: err.message, stack: err.stack });
