@@ -1,7 +1,7 @@
 const { infoService } = require('../clients/index');
 const getLogger = require('../libs/logger');
 const User = require('../models/user');
-const { FormSubmissionError, UserAlreadyExistsError } = require('../models/error');
+const { FormSubmissionError } = require('../models/error');
 const { isAxiosErrorWithCode } = require('../libs/responseHelpers');
 
 async function addUsersToTeam(req, _, next) {
@@ -45,7 +45,6 @@ async function getUser(req, res, next) {
 }
 
 async function addUser(req, res, next) {
-    const logger = getLogger(req.request);
     try {
         const body = {
             email: req.body.email,

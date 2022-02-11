@@ -188,8 +188,6 @@ describe('addDuplicateUser', () => {
         const next = jest.fn();
 
         await addUser(req, res, next);
-
-        expect(logWarn).toHaveBeenCalled();
         expect(next).toHaveBeenCalled();
     });
 });
