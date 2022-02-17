@@ -5,6 +5,8 @@ import { ApplicationConsumer, ApplicationState } from '../../contexts/applicatio
 
 const Dashboard = ({ hasRole }: ApplicationState) => {
     const hasDcuRole = hasRole('DCU');
+    const hasFoiRole = hasRole('FOI');
+    const hasTrofRole = hasRole('TROF');
 
     return (
         <Fragment>
@@ -116,6 +118,35 @@ const Dashboard = ({ hasRole }: ApplicationState) => {
                                 <li>
                                     <Link className="govuk-link" to="/manage-mpam-business-units">Manage MPAM Business Units</Link>
                                 </li>
+                                <li>
+                                    <Link className="govuk-link" to="/manage-mpam-enquiry-reasons">Manage MPAM Enquiry Reasons</Link>
+                                </li>
+                                {hasFoiRole && /** This will only hide the link to the page for non-FOI users
+                                 it will not block the page or guard the API endpoints. **/
+                                <>
+                                    <li>
+                                        <Link className="govuk-link" to="/manage-foi-account-managers">Manage FOI
+                                            Account Managers</Link>
+                                    </li>
+                                    <li>
+                                        <Link className="govuk-link" to="/manage-foi-interested-parties">Manage FOI
+                                            Interested Parties</Link>
+                                    </li>
+                                </>
+                                }
+                                {hasTrofRole && /** This will only hide the link to the page for non-FOI users
+                                 it will not block the page or guard the API endpoints. **/
+                                <>
+                                    <li>
+                                        <Link className="govuk-link" to="/manage-trof-campaigns">Manage Treat Official
+                                            campaigns</Link>
+                                    </li>
+                                    <li>
+                                        <Link className="govuk-link" to="/manage-trof-recipient">Manage Treat Official
+                                            Recipients</Link>
+                                    </li>
+                                </>
+                                }
                             </ul>
                         </li>
                     </ul>

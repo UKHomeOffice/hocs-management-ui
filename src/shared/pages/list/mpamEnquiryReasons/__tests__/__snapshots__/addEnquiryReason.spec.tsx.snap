@@ -1,0 +1,66 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`when the add enquiry reason component is mounted should render with default props 1`] = `
+<div>
+  <div
+    class="govuk-grid-row"
+  >
+    <div
+      class="govuk-grid-column-two-thirds-from-desktop"
+    >
+      <a
+        class="govuk-back-link"
+        href="/enquiry-subject/undefined"
+      >
+        Back
+      </a>
+      <h1
+        class="govuk-heading-xl"
+      >
+        Add Enquiry Reason to 
+      </h1>
+    </div>
+  </div>
+  <div
+    class="govuk-grid-row"
+  >
+    <div
+      class="govuk-grid-column-one-half-from-desktop"
+    >
+      <form
+        action="/api/entity/list/undefined"
+        method="POST"
+      >
+        <input
+          name="_csrf"
+          type="hidden"
+          value=""
+        />
+        <div
+          class="govuk-form-group"
+        >
+          <label
+            class="govuk-label govuk-label--s"
+            for="title"
+            id="title-label"
+          >
+            Enquiry Reason
+          </label>
+          <input
+            class="govuk-input"
+            id="title"
+            name="title"
+            type="text"
+            value=""
+          />
+        </div>
+        <input
+          class="govuk-button"
+          type="submit"
+          value="Add"
+        />
+      </form>
+    </div>
+  </div>
+</div>
+`;

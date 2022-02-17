@@ -215,7 +215,7 @@ exports[`when the addStandardLine component is mounted should render with defaul
                   <input
                     class="govuk-input govuk-date-input__input govuk-input--width-4  "
                     id="expiryDate-year"
-                    max="2121"
+                    max="2122"
                     min="1900"
                     name="expiryDate-year"
                     pattern="[0-9]*"
