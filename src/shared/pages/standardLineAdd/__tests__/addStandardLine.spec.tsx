@@ -9,6 +9,7 @@ import StandardLine from '../../../models/standardLine';
 import * as useError from '../../../hooks/useError';
 import * as TopicsService from '../../../services/topicsService';
 import { createMockFile } from '../../../../../test/createMockFile';
+import { advanceTo } from 'jest-date-mock';
 
 jest.mock('../../../services/topicsService', () => ({
     __esModule: true,
@@ -72,6 +73,7 @@ beforeEach(() => {
     addFormErrorSpy.mockReset();
     clearErrorsSpy.mockReset();
     setMessageSpy.mockReset();
+    advanceTo(new Date(1640995200000)); // reset to date time.
     act(() => {
         wrapper = renderComponent();
     });

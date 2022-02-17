@@ -11,10 +11,18 @@ const mockContacts: Array<Contact> = [
     { id: 2, uuid: 'uuid3', teamUUID: 'teamUUID3', emailAddress: 'three@example.org' }
 ];
 
+const mockContactShortList: Array<Contact> = [
+    { id: 0, uuid: 'uuid1', teamUUID: 'teamUUID1', emailAddress: 'one@example.org' }
+];
+
 const mockContactItems: Array<Item> = [
     { value: 'uuid1', label: 'one@example.org' },
     { value: 'uuid2', label: 'two@example.org' },
     { value: 'uuid3', label: 'three@example.org' }
+];
+
+const mockContactItemsShortList: Array<Item> = [
+    { value: 'uuid1', label: 'one@example.org' }
 ];
 
 const getNominatedContactsForTeamSpy =
@@ -27,19 +35,19 @@ const mockClearErrors = jest.fn();
 const mockSetErrorMessage = jest.fn();
 const mockDispatch = jest.fn();
 
-jest.spyOn(React, 'useContext').mockImplementation(() => ({
-    dispatch: mockDispatch,
-    state: {
-        contacts: mockContactItems
-    }
-}));
-
 const renderComponent = () => render(
     <NominatedContactList teamId="testTeam" errorFuncs={[null, null, mockClearErrors, mockSetErrorMessage]}/>
 );
 
 describe('NominatedContactList', () => {
     beforeEach(() => {
+        jest.spyOn(React, 'useContext').mockImplementation(() => ({
+            dispatch: mockDispatch,
+            state: {
+                contacts: mockContactItems
+            }
+        }));
+
         mockClearErrors.mockReset();
         mockSetErrorMessage.mockReset();
         mockDispatch.mockReset();
@@ -90,6 +98,12 @@ describe('NominatedContactList', () => {
         let wrapper: RenderResult;
         beforeEach(() => {
             getNominatedContactsForTeamSpy.mockImplementationOnce(() => Promise.resolve(mockContacts));
+            jest.spyOn(React, 'useContext').mockImplementation(() => ({
+                dispatch: mockDispatch,
+                state: {
+                    contacts: mockContactItems
+                }
+            }));
 
             act(() => {
                 wrapper = renderComponent();
@@ -133,6 +147,42 @@ describe('NominatedContactList', () => {
                 expect(mockDispatch).toBeCalledTimes(1);
                 expect(mockSetErrorMessage).toBeCalledWith({
                     'description': 'There was an error deleting the nominated contact. Please try refreshing the page.',
+                    'title': 'Something went wrong',
+                });
+            });
+        });
+    });
+
+    describe('Remove contact messaging', () => {
+        beforeEach(() => {
+            jest.spyOn(React, 'useContext').mockImplementation(() => ({
+                dispatch: mockDispatch,
+                state: {
+                    contacts: mockContactItemsShortList
+                }
+            }));
+
+            mockClearErrors.mockReset();
+            mockSetErrorMessage.mockReset();
+            mockDispatch.mockReset();
+        });
+
+        it('should set an error if there is only one contact', async () => {
+            getNominatedContactsForTeamSpy.mockImplementationOnce(() => Promise.resolve(mockContactShortList));
+
+            let wrapper: RenderResult;
+            act(() => {
+                wrapper = renderComponent();
+                const selectedContact = getByText(wrapper.container, 'one@example.org');
+                const row = (selectedContact.closest('tr'));
+                const removeButton = getByText(row as HTMLElement, 'Remove');
+                fireEvent.click(removeButton);
+            });
+
+            await wait(() => {
+                expect(mockDispatch).toBeCalledTimes(1);
+                expect(mockSetErrorMessage).toBeCalledWith({
+                    'description': 'Unable to delete nominated contact - teams must have at least one contact.',
                     'title': 'Something went wrong',
                 });
             });
