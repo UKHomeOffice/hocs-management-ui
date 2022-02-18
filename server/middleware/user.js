@@ -1,7 +1,8 @@
 const { infoService } = require('../clients/index');
 const getLogger = require('../libs/logger');
 const User = require('../models/user');
-const { FormSubmissionError } = require('../models/error');
+const { FormSubmissionError, UserAlreadyExistsError } = require('../models/error');
+const { isAxiosErrorWithCode } = require('../libs/responseHelpers');
 
 async function addUsersToTeam(req, _, next) {
 
@@ -55,8 +56,13 @@ async function addUser(req, res, next) {
         const response = await infoService.post('/user', body, config);
         res.send({ userUUID: response.data.userUUID });
     } catch (error) {
-        logger.error(error);
-        next(new FormSubmissionError(error.response.data, error.response.status));
+        if (isAxiosErrorWithCode(error, 409)) { // 409 errors are thrown when the user already exists and are logged in info service
+            logger.warn(error);
+            next(new UserAlreadyExistsError(error.response.data, error.response.status));
+        } else {
+            logger.error(error);
+            next(new FormSubmissionError(error.response.data, error.response.status));
+        }
     }
 }
 

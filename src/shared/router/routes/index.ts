@@ -44,6 +44,8 @@ import AddEntity from '../../pages/list/entityList/addEntity';
 import foiAccountManager from '../../pages/list/entityList/entityDefinitions/foiAccountManager/foiAccountManager';
 import mpamCampaign from '../../pages/list/entityList/entityDefinitions/mpamCampaign/mpamCampaign';
 import foiInterestedParty from '../../pages/list/entityList/entityDefinitions/foiExternalInterest/foiInterestedParty';
+import trofCampaign from '../../pages/list/entityList/entityDefinitions/trofCampaign/trofCampaign';
+import trofRecipient from '../../pages/list/entityList/entityDefinitions/trofRecipient/trofRecipient';
 
 export interface Route {
     requiredRole: string,
@@ -274,6 +276,18 @@ const routes = [
         title: 'Add Campaign'
     },
     {
+        path: '/manage-trof-campaigns',
+        exact: true,
+        component: EntityListView(trofCampaign),
+        title: 'Manage Treat Official campaigns'
+    },
+    {
+        path: '/manage-trof-campaigns/add',
+        exact: true,
+        component: AddEntity(trofCampaign),
+        title: 'Add Campaign'
+    },
+    {
         path: '/manage-exgratia-reps',
         exact: true,
         component: ExGratiaView,
@@ -290,6 +304,30 @@ const routes = [
         exact: true,
         component: AmendEntity(mpamCampaign),
         title: 'Amend Campaign'
+    },
+    {
+        path: '/manage-trof-campaigns/:itemUUID/amend',
+        exact: true,
+        component: AmendEntity(trofCampaign),
+        title: 'Amend Campaign'
+    },
+    {
+        path: '/manage-trof-recipient',
+        exact: true,
+        component: EntityListView(trofRecipient),
+        title: 'Manage Treat Official Receipients'
+    },
+    {
+        path: '/manage-trof-recipient/add',
+        exact: true,
+        component: AddEntity(trofRecipient),
+        title: 'Add Recipient'
+    },
+    {
+        path: '/manage-trof-recipient/:itemUUID/amend',
+        exact: true,
+        component: AmendEntity(trofRecipient),
+        title: 'Amend Recipient'
     },
     {
         path: '/manage-mpam-business-units',
