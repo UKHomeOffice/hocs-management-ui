@@ -1,6 +1,6 @@
 const uuid = require('uuid/v4');
 const logger = require('../libs/logger');
-const { ValidationError } = require('../models/error');
+const { ValidationError, UserAlreadyExistsError } = require('../models/error');
 const { isProduction } = require('../config');
 const listService = require('../services/list/');
 
@@ -10,7 +10,10 @@ function apiErrorMiddleware(err, req, res, _) {
     if (err instanceof ValidationError) {
         logger(req.requestId).info('VALIDATION_FAILED', { errors: Object.keys(err.fields) });
         return res.status(err.status).json({ errors: err.fields });
-    } else {
+    } else if (err instanceof UserAlreadyExistsError) {
+        logger(req.requestId).warn('USER_ALREADY_EXISTS', { errors: Object.keys(err.fields) });
+        res.status(409);
+    }  else {
         logger(req.requestId).error('ERROR', { message: err.message, stack: err.stack });
         const status = err.status || (err.response && err.response.status) || 500;
         return res.status(status).json({
