@@ -45,6 +45,7 @@ import foiAccountManager from '../../pages/list/entityList/entityDefinitions/foi
 import mpamCampaign from '../../pages/list/entityList/entityDefinitions/mpamCampaign/mpamCampaign';
 import foiInterestedParty from '../../pages/list/entityList/entityDefinitions/foiExternalInterest/foiInterestedParty';
 import trofCampaign from '../../pages/list/entityList/entityDefinitions/trofCampaign/trofCampaign';
+import trofRecipient from '../../pages/list/entityList/entityDefinitions/trofRecipient/trofRecipient';
 
 export interface Route {
     requiredRole: string,
@@ -309,6 +310,24 @@ const routes = [
         exact: true,
         component: AmendEntity(trofCampaign),
         title: 'Amend Campaign'
+    },
+    {
+        path: '/manage-trof-recipient',
+        exact: true,
+        component: EntityListView(trofRecipient),
+        title: 'Manage Treat Official Receipients'
+    },
+    {
+        path: '/manage-trof-recipient/add',
+        exact: true,
+        component: AddEntity(trofRecipient),
+        title: 'Add Recipient'
+    },
+    {
+        path: '/manage-trof-recipient/:itemUUID/amend',
+        exact: true,
+        component: AmendEntity(trofRecipient),
+        title: 'Amend Recipient'
     },
     {
         path: '/manage-mpam-business-units',
