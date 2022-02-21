@@ -60,7 +60,7 @@
         "autoprefixer": "^8.3.0",
         "babel-core": "7.0.0-bridge.0",
         "babel-eslint": "^10.0.2",
-        "babel-jest": "^25.2.4",
+        "babel-jest": "^27.5.1",
         "babel-loader": "^8.0.4",
         "core-js": "^3.15.2",
         "css-loader": "^3.2.0",
