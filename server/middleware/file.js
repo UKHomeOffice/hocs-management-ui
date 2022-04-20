@@ -1,6 +1,6 @@
 const multer = require('multer');
 const multerS3 = require('multer-s3');
-const uuid = require('uuid/v4');
+const { v4: uuid } = require('uuid');
 const querystring = require('querystring'); // node core module
 const { s3 } = require('../libs/aws');
 const isProduction = require('../config').isProduction;
