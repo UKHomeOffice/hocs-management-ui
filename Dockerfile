@@ -8,7 +8,7 @@ RUN mkdir -p /app && \
 
 WORKDIR /app
 COPY . /app
-RUN npm install
+RUN npm --loglevel warn ci
 RUN npm run build-prod
 
 USER ${USER_ID}

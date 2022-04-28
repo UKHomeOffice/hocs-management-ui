@@ -13,7 +13,7 @@ steps:
   - name: install dependencies
     image: node:14.15.4-alpine
     commands:
-      - npm --loglevel warn install --production=false --no-optional
+      - npm --loglevel warn ci --production=false --no-optional
 
   - name: build project
     image: node:14.15.4-alpine
@@ -145,7 +145,7 @@ steps:
   - name: install dependencies
     image: node:14.15.4-alpine
     commands:
-      - npm --loglevel warn install --production=false --no-optional
+      - npm --loglevel warn ci --production=false --no-optional
 
   - name: build project
     image: node:14.15.4-alpine
