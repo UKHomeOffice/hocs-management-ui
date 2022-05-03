@@ -46,6 +46,7 @@ import mpamCampaign from '../../pages/list/entityList/entityDefinitions/mpamCamp
 import foiInterestedParty from '../../pages/list/entityList/entityDefinitions/foiExternalInterest/foiInterestedParty';
 import trofCampaign from '../../pages/list/entityList/entityDefinitions/trofCampaign/trofCampaign';
 import trofRecipient from '../../pages/list/entityList/entityDefinitions/trofRecipient/trofRecipient';
+import ukviEnquiryReason from '../../pages/list/entityList/entityDefinitions/ukviEnquiryReason/ukviEnquiryReason';
 
 export interface Route {
     requiredRole: string,
@@ -274,6 +275,27 @@ const routes = [
         exact: true,
         component: AddEntity(mpamCampaign),
         title: 'Add Campaign'
+    },
+    {
+        path: '/manage-ukvi-enquiry-reasons',
+        exact: true,
+        component: EntityListView(ukviEnquiryReason),
+        title: 'Manage UKVI Enquiry Reasons',
+        requiredRole: 'UKVI'
+    },
+    {
+        path: '/manage-ukvi-enquiry-reasons/add',
+        exact: true,
+        component: AddEntity(ukviEnquiryReason),
+        title: 'Add UKVI Enquiry Reason',
+        requiredRole: 'UKVI'
+    },
+    {
+        path: '/manage-ukvi-enquiry-reasons/:itemUUID/amend',
+        exact: true,
+        component: AmendEntity(ukviEnquiryReason),
+        title: 'Amend UKVI Enquiry Reason',
+        requiredRole: 'UKVI'
     },
     {
         path: '/manage-trof-campaigns',

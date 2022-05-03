@@ -7,6 +7,7 @@ const Dashboard = ({ hasRole }: ApplicationState) => {
     const hasDcuRole = hasRole('DCU');
     const hasFoiRole = hasRole('FOI');
     const hasTrofRole = hasRole('TROF');
+    const hasUkviRole = hasRole('UKVI');
 
     return (
         <Fragment>
@@ -121,6 +122,9 @@ const Dashboard = ({ hasRole }: ApplicationState) => {
                                 <li>
                                     <Link className="govuk-link" to="/manage-mpam-enquiry-reasons">Manage MPAM Enquiry Reasons</Link>
                                 </li>
+                                {hasUkviRole && <li>
+                                    <Link className="govuk-link" to="/manage-ukvi-enquiry-reasons">Manage UKVI Complaint Enquiry Reasons</Link>
+                                </li>}
                                 {hasFoiRole && /** This will only hide the link to the page for non-FOI users
                                  it will not block the page or guard the API endpoints. **/
                                 <>
