@@ -35,13 +35,8 @@ export interface LayoutConfig {
     header: HeaderConfig;
     footer: FooterConfig;
 }
-export interface AnalyticsConfig {
-    tracker: string;
-    userId: string;
-}
 
 export default interface Config {
-    analytics?: AnalyticsConfig;
     csrf: string;
     layout: LayoutConfig;
     user?: UserConfig;

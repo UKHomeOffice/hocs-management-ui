@@ -164,7 +164,6 @@ exports[`Session timer component should render with default props 1`] = `
           "serviceLink": "",
         },
       },
-      "track": [Function],
       "user": Object {
         "roles": Array [],
       },
