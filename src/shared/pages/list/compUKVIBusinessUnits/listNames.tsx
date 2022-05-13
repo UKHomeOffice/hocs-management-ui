@@ -1,0 +1,7 @@
+export const listNames = {
+    COMP_IANDP_BUS_AREA: 'IandP',
+    COMP_RASI_BUS_AREA: 'RASI',
+    COMP_VCIC_BUS_AREA: 'VCIC',
+    COMP_VCOS_BUS_AREA: 'VCOS',
+    COMP_OTHER_BUS_AREA: 'Other',
+    COMP_EUSS_FP_BUS_AREA: 'EUSS FP' };

@@ -151,6 +151,9 @@ const Dashboard = ({ hasRole }: ApplicationState) => {
                                     </li>
                                 </>
                                 }
+                                <li>
+                                    <Link className="govuk-link" to="/manage-comp-ukvi-bus-area">Manage UKVI Complaints Business Areas</Link>
+                                </li>
                             </ul>
                         </li>
                     </ul>

@@ -1,0 +1,40 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`when the businessAreaView component is mounted should render with default props 1`] = `
+<div>
+  <div
+    class="govuk-form-group"
+  >
+    <a
+      class="govuk-back-link"
+      href="/select-business-area"
+    >
+      Back
+    </a>
+    <div>
+      <h1
+        class="govuk-heading-xl"
+      >
+        View and Edit Business Units for 
+      </h1>
+      <h2
+        class="govuk-heading-l"
+      />
+      <div>
+        <p
+          class="govuk-body"
+        >
+          Loading...
+        </p>
+      </div>
+      <button
+        class="govuk-button govuk-!-margin-right-1 add-team-members-button"
+        data-module="govuk-button"
+        type="submit"
+      >
+        Add Business Unit
+      </button>
+    </div>
+  </div>
+</div>
+`;

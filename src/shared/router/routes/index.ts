@@ -25,6 +25,10 @@ import AddTeamToUser from '../../pages/user/addTeamToUser/addTeamToUser';
 import WithdrawCase from '../../pages/case/withdrawCase';
 import ExGratiaView from '../../pages/list/exGratiaBusinessReps/exgratiaBusRepsView';
 import ChooseBusinessArea from '../../pages/list/mpamBusinessUnits/selectBusinessArea';
+import ChooseCompUKVIBusinessArea from '../../pages/list/compUKVIBusinessUnits/selectCompUKVIBusinessArea';
+import ComplaintsBusinessAreaView from '../../pages/list/compUKVIBusinessUnits/compBusinessAreaView';
+import AddCompBusinessArea from '../../pages/list/compUKVIBusinessUnits/addCompBusinessArea';
+import AmendCompBusinessArea from '../../pages/list/compUKVIBusinessUnits/amendCompBusinessArea';
 import AddBusinessRep from '../../pages/list/exGratiaBusinessReps/addBusinessRep';
 import AddTeam from '../../pages/team/addTeam/addTeam';
 import EditTeam from '../../pages/team/editTeam/editTeam';
@@ -356,6 +360,30 @@ const routes = [
         exact: true,
         component: ChooseBusinessArea,
         title: 'Manage MPAM Business Units'
+    },
+    {
+        path: '/manage-comp-ukvi-bus-area',
+        exact: true,
+        component: ChooseCompUKVIBusinessArea,
+        title: 'Manage Compaints UKVI Business Areas'
+    },
+    {
+        path: '/comp-business-area/:type',
+        exact: true,
+        component: ComplaintsBusinessAreaView,
+        title: 'View Complaints Business Area'
+    },
+    {
+        path: '/add-comp-business-area/:type',
+        exact: true,
+        component: AddCompBusinessArea,
+        title: 'Add Complaint Business Area'
+    },
+    {
+        path: '/amend-comp-business-area/:type/:itemUUID/',
+        exact: true,
+        component: AmendCompBusinessArea,
+        title: 'Amend Complaint Business Area'
     },
     {
         path: '/business-area/:type',
