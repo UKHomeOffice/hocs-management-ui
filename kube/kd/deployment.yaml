@@ -221,11 +221,6 @@ spec:
             value: 'https://hocs-info-service.{{.KUBE_NAMESPACE}}.svc.cluster.local'
           - name: NODE_ENV
             value: 'production'
-          - name: GA_TRACKER
-            valueFrom:
-              secretKeyRef:
-                name: hocs-frontend
-                key: ga_tracker
           - name: USE_CLIENTSIDE
             valueFrom:
               configMapKeyRef:
