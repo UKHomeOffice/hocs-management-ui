@@ -1,6 +1,6 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
-exports[`when the add business unit component is mounted should render with default props 1`] = `
+exports[`when the add comp business area component is mounted should render with default props 1`] = `
 <div>
   <div
     class="govuk-grid-row"
@@ -10,14 +10,14 @@ exports[`when the add business unit component is mounted should render with defa
     >
       <a
         class="govuk-back-link"
-        href="/business-area/undefined"
+        href="/comp-business-area/undefined"
       >
         Back
       </a>
       <h1
         class="govuk-heading-xl"
       >
-        Add Business Unit to 
+        Add Business Area to 
       </h1>
     </div>
   </div>
@@ -44,7 +44,7 @@ exports[`when the add business unit component is mounted should render with defa
             for="title"
             id="title-label"
           >
-            Business Unit name
+            Business Area name
           </label>
           <input
             class="govuk-input"

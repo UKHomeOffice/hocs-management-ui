@@ -3,7 +3,7 @@ import { match, MemoryRouter } from 'react-router-dom';
 import { createBrowserHistory, History, Location } from 'history';
 import { act, render, RenderResult, wait, fireEvent, waitForElement } from '@testing-library/react';
 import { AMEND_BUS_UNIT_ERROR_DESCRIPTION, GENERAL_ERROR_TITLE, LOAD_BUS_AREA_ERROR_DESCRIPTION } from '../../../../models/constants';
-import AmendCompBusinessArea from '../amendBusinessUnit';
+import AmendCompBusinessArea from '../amendCompBusinessArea';
 import * as EntityListService from '../../../../services/entityListService';
 import * as useError from '../../../../hooks/useError';
 import { State } from '../../entityList/amendEntityState';
@@ -57,7 +57,7 @@ beforeEach(() => {
     });
 });
 
-describe('when the amendBusinessUnit component is mounted', () => {
+describe('when the amendCompBusinessArea component is mounted', () => {
     it('should render with default props', async () => {
         expect.assertions(2);
         wrapper = renderComponent();

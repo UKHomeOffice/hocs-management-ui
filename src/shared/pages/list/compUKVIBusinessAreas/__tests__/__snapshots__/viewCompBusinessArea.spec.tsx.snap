@@ -7,7 +7,7 @@ exports[`when the businessAreaView component is mounted should render with defau
   >
     <a
       class="govuk-back-link"
-      href="/select-business-area"
+      href="/manage-comp-ukvi-bus-area"
     >
       Back
     </a>
@@ -15,7 +15,7 @@ exports[`when the businessAreaView component is mounted should render with defau
       <h1
         class="govuk-heading-xl"
       >
-        View and Edit Business Units for 
+        View and Edit Business Areas for 
       </h1>
       <h2
         class="govuk-heading-l"
@@ -32,7 +32,7 @@ exports[`when the businessAreaView component is mounted should render with defau
         data-module="govuk-button"
         type="submit"
       >
-        Add Business Unit
+        Add Business Area
       </button>
     </div>
   </div>

@@ -1,0 +1,73 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`when the amendCompBusinessArea component is mounted should initially render blank before item title is returned 1`] = `"<div><div class=\\"govuk-grid-row\\"><div class=\\"govuk-grid-column-two-thirds-from-desktop\\"><a class=\\"govuk-back-link\\" href=\\"/comp-business-area/undefined\\">Back</a><h1 class=\\"govuk-heading-xl\\">Amend Business Area</h1></div></div><div class=\\"govuk-grid-row\\"><div class=\\"govuk-grid-column-one-half-from-desktop\\"><h3 class=\\"govuk-heading-l\\">Business Area Name: </h3><form action=\\"/api/entity/list/update/MPAM_CAMPAIGNS\\" method=\\"POST\\"><input type=\\"hidden\\" name=\\"_csrf\\" value=\\"\\"><div class=\\"govuk-form-group\\"><label for=\\"title\\" id=\\"title-label\\" class=\\"govuk-label govuk-label--s\\">New Business Area Name</label><input class=\\"govuk-input\\" id=\\"title\\" type=\\"text\\" name=\\"title\\" value=\\"\\"></div><input class=\\"govuk-button\\" type=\\"submit\\" value=\\"Submit\\"></form></div></div></div>"`;
+
+exports[`when the amendCompBusinessArea component is mounted should render with default props 1`] = `
+<div>
+  <div
+    class="govuk-grid-row"
+  >
+    <div
+      class="govuk-grid-column-two-thirds-from-desktop"
+    >
+      <a
+        class="govuk-back-link"
+        href="/comp-business-area/undefined"
+      >
+        Back
+      </a>
+      <h1
+        class="govuk-heading-xl"
+      >
+        Amend Business Area
+      </h1>
+    </div>
+  </div>
+  <div
+    class="govuk-grid-row"
+  >
+    <div
+      class="govuk-grid-column-one-half-from-desktop"
+    >
+      <h3
+        class="govuk-heading-l"
+      >
+        Business Area Name: 
+      </h3>
+      <form
+        action="/api/entity/list/update/MPAM_CAMPAIGNS"
+        method="POST"
+      >
+        <input
+          name="_csrf"
+          type="hidden"
+          value=""
+        />
+        <div
+          class="govuk-form-group"
+        >
+          <label
+            class="govuk-label govuk-label--s"
+            for="title"
+            id="title-label"
+          >
+            New Business Area Name
+          </label>
+          <input
+            class="govuk-input"
+            id="title"
+            name="title"
+            type="text"
+            value=""
+          />
+        </div>
+        <input
+          class="govuk-button"
+          type="submit"
+          value="Submit"
+        />
+      </form>
+    </div>
+  </div>
+</div>
+`;

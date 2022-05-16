@@ -2,7 +2,7 @@ import React from 'react';
 import { match, MemoryRouter } from 'react-router-dom';
 import { createBrowserHistory, History, Location } from 'history';
 import { act, wait, render, RenderResult, getByText, fireEvent } from '@testing-library/react';
-import CompBusinessAreaView from '../businessAreaView';
+import CompBusinessAreaView from '../compBusinessAreaView';
 import * as ListService from '../../../../services/entityListService';
 import * as useError from '../../../../hooks/useError';
 
@@ -71,7 +71,7 @@ describe('when the businessAreaView component is mounted', () => {
     });
 });
 
-describe('when the Add Business Unit button is clicked', () => {
+describe('when the Add Business Area button is clicked', () => {
     it('should push a new page into the history', async () => {
         history.push = jest.fn();
         let wrapper: RenderResult;
@@ -80,11 +80,11 @@ describe('when the Add Business Unit button is clicked', () => {
         });
 
         await wait(async () => {
-            const addBusinessUnitButton = getByText(wrapper.container, 'Add Business Unit');
+            const addBusinessAreaButton = getByText(wrapper.container, 'Add Business Area');
 
-            fireEvent.click(addBusinessUnitButton);
+            fireEvent.click(addBusinessAreaButton);
         });
 
-        expect(history.push).toHaveBeenCalledWith('/add-business-unit/undefined');
+        expect(history.push).toHaveBeenCalledWith('/add-comp-business-area/undefined');
     });
 });

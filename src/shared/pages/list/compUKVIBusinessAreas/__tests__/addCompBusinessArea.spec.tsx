@@ -2,7 +2,7 @@ import React from 'react';
 import { match, MemoryRouter } from 'react-router-dom';
 import { createBrowserHistory, History, Location } from 'history';
 import { act, render, RenderResult, wait, fireEvent, waitForElement } from '@testing-library/react';
-import AddCompBusinessArea from '../addBusinessUnit';
+import AddCompBusinessArea from '../addCompBusinessArea';
 import * as EntityListService from '../../../../services/entityListService';
 import { ADD_BUS_UNIT_ERROR_DESCRIPTION, GENERAL_ERROR_TITLE, DUPLICATE_BUS_UNIT_DESCRIPTION, VALIDATION_ERROR_TITLE } from '../../../../models/constants';
 import EntityListItem from '../../../../models/entityListItem';
@@ -62,7 +62,7 @@ beforeEach(() => {
     });
 });
 
-describe('when the add business unit component is mounted', () => {
+describe('when the add comp business area component is mounted', () => {
     it('should render with default props', async () => {
         expect.assertions(1);
 
@@ -72,12 +72,12 @@ describe('when the add business unit component is mounted', () => {
     });
 });
 
-describe('when the unit name is entered', () => {
+describe('when the area name is entered', () => {
     it('should be persisted in the page state', async () => {
         expect.assertions(1);
 
         const nameElement = await waitForElement(async () => {
-            return await wrapper.findByLabelText('Business Unit name');
+            return await wrapper.findByLabelText('Business Area name');
         });
 
         fireEvent.change(nameElement, { target: { name: 'title', value: '__displayTitle__' } });

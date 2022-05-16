@@ -2,7 +2,7 @@ import React from 'react';
 import { match, MemoryRouter } from 'react-router-dom';
 import { createBrowserHistory, History, Location } from 'history';
 import { act, render, RenderResult, wait, fireEvent, waitForElement } from '@testing-library/react';
-import SelectBusinessArea from '../selectBusinessArea';
+import SelectCompBusinessArea from '../selectCompUKVIBusinessArea';
 import Item from '../../../../models/item';
 import * as useError from '../../../../hooks/useError';
 
@@ -33,7 +33,7 @@ mockSelectedBusinessArea = undefined;
 
 const renderComponent = () => render(
     <MemoryRouter>
-        <SelectBusinessArea history={history} location={location} match={match}></SelectBusinessArea>
+        <SelectCompBusinessArea history={history} location={location} match={match}></SelectCompBusinessArea>
     </MemoryRouter>
 );
 
@@ -98,7 +98,7 @@ describe('when the submit button is clicked', () => {
             expect.assertions(1);
 
             await wait(() => {
-                expect(history.push).toHaveBeenCalledWith('/business-area/__businessAreaValue__');
+                expect(history.push).toHaveBeenCalledWith('/comp-business-area/__businessAreaValue__');
             });
         });
         it('should clear any previous errors', async () => {
