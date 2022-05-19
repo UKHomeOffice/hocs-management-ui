@@ -365,25 +365,29 @@ const routes = [
         path: '/manage-comp-ukvi-bus-area',
         exact: true,
         component: ChooseCompUKVIBusinessArea,
-        title: 'Manage Compaints UKVI Business Areas'
+        title: 'Manage Compaints UKVI Business Areas',
+        requiredRole: 'UKVI'
     },
     {
         path: '/comp-business-area/:type',
         exact: true,
         component: ComplaintsBusinessAreaView,
-        title: 'View Complaints Business Area'
+        title: 'View Complaints Business Area',
+        requiredRole: 'UKVI'
     },
     {
         path: '/add-comp-business-area/:type',
         exact: true,
         component: AddCompBusinessArea,
-        title: 'Add Complaint Business Area'
+        title: 'Add Complaint Business Area',
+        requiredRole: 'UKVI'
     },
     {
         path: '/amend-comp-business-area/:type/:itemUUID/',
         exact: true,
         component: AmendCompBusinessArea,
-        title: 'Amend Complaint Business Area'
+        title: 'Amend Complaint Business Area',
+        requiredRole: 'UKVI'
     },
     {
         path: '/business-area/:type',

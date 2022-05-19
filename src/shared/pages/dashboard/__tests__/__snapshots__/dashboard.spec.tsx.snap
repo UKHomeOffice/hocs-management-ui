@@ -229,14 +229,6 @@ exports[`dashboard component should not render dcu creation or FOI interested pa
               Manage MPAM Enquiry Reasons
             </a>
           </li>
-          <li>
-            <a
-              class="govuk-link"
-              href="/manage-comp-ukvi-bus-area"
-            >
-              Manage UKVI Complaints Business Areas
-            </a>
-          </li>
         </ul>
       </li>
     </ul>
@@ -479,14 +471,6 @@ exports[`dashboard component should render DCU creation link if user has DCU rol
               href="/manage-mpam-enquiry-reasons"
             >
               Manage MPAM Enquiry Reasons
-            </a>
-          </li>
-          <li>
-            <a
-              class="govuk-link"
-              href="/manage-comp-ukvi-bus-area"
-            >
-              Manage UKVI Complaints Business Areas
             </a>
           </li>
         </ul>
@@ -739,14 +723,6 @@ exports[`dashboard component should render FOI links if the user has the FOI rol
               href="/manage-foi-interested-parties"
             >
               Manage FOI Interested Parties
-            </a>
-          </li>
-          <li>
-            <a
-              class="govuk-link"
-              href="/manage-comp-ukvi-bus-area"
-            >
-              Manage UKVI Complaints Business Areas
             </a>
           </li>
         </ul>
