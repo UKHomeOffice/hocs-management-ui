@@ -121,7 +121,7 @@
         "aws-sdk": "^2.1033.0",
         "axios": "^0.26.1",
         "babel-plugin-emotion": "^11.0.0",
-        "body-parser": "^1.19.0",
+        "body-parser": "^1.20.0",
         "classnames": "^2.2.6",
         "cookie-parser": "^1.4.6",
         "csurf": "^1.10.0",
