@@ -1,4 +1,6 @@
 const winston = require('winston');
+const { MESSAGE } = require('triple-beam');
+const jsonStringify = require('safe-stable-stringify');
 const { isProduction } = require('../config');
 
 const loggingTransports = [];
@@ -11,44 +13,74 @@ const colors = {
     error: 'red'
 };
 
-const logstashFormat = statement => {
-    const logstashStatement = Object.assign({}, statement);
+const customLogstash = winston.format((info) => {
+    let logstash = info || {};
 
-    if (logstashStatement.timestamp !== undefined) {
-        logstashStatement['@timestamp'] = logstashStatement.timestamp;
-        delete logstashStatement.timestamp;
+    if (info.message && info.message instanceof Object) {
+        logstash = Object.assign(info.message);
+        logstash['level'] = info.level;
     }
-    logstashStatement.appName = 'hocs-management-ui';
-    return JSON.stringify(logstashStatement);
+
+    if (info.timestamp) {
+        logstash['@timestamp'] = info.timestamp;
+    }
+
+    info[MESSAGE] = jsonStringify(logstash);
+    return info;
+});
+
+const customDeveloperFormat = winston.format((info) => {
+    let logstash = {};
+
+    if (info.message) {
+        if (info.message instanceof Object) {
+            logstash = Object.assign(info.message);
+        } else {
+            logstash['message'] = info.message;
+        }
+    }
+
+    if (info.stack) {
+        logstash['stack'] = info.stack;
+    }
+
+    info[MESSAGE] = `${info.timestamp} - ${info.level}: ${jsonStringify(logstash)}`;
+    return info;
+});
+
+
+const productionFormat = {
+    format: winston.format.combine(
+        winston.format.timestamp(),
+        customLogstash()
+    )
+};
+
+const devFormat = {
+    format: winston.format.combine(
+        winston.format.colorize({ colors:  colors }),
+        winston.format.timestamp(),
+        customDeveloperFormat()
+    )
 };
 
 loggingTransports.push(
     new (winston.transports.Console)({
-        json: isProduction,
-        timestamp: true,
-        colorize: true,
-        stringify: logstashFormat
+        ...(isProduction ? productionFormat : devFormat)
     })
 );
 
 exceptionTransports.push(
     new (winston.transports.Console)({
-        json: isProduction,
-        logstash: isProduction,
-        timestamp: true,
-        colorize: true,
-        stringify: function stringify(obj) {
-            return JSON.stringify(obj);
-        }
+        ...(isProduction ? productionFormat : devFormat)
     })
 );
 
-const logger = new (winston.Logger)({
+const logger = winston.createLogger({
     level: isProduction ? 'info' : 'debug',
     transports: loggingTransports,
     exceptionHandlers: exceptionTransports,
     exitOnError: true,
-    colors: colors
 });
 
 logger.info(`Logger mode: ${isProduction ? 'production' : 'development'}`);
