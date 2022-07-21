@@ -1,3 +1,3 @@
 #!/usr/bin/env bash
 
-exec node index.js
+exec node --max-http-header-size 80000 index.js
