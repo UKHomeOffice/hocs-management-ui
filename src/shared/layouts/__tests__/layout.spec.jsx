@@ -1,5 +1,8 @@
 import React from 'react';
 import Layout from '../layout.tsx';
+import { render, screen } from '@testing-library/react';
+import { ApplicationProvider } from '../../contexts/application';
+import '@testing-library/jest-dom';
 
 jest.mock('react-router-dom', () => {
     return {
@@ -22,11 +25,38 @@ describe('Page layout component', () => {
 
     it('should render the footer when provided', () => {
         const mockLayoutWithFooter = { ...mockLayout, footer: { isVisible: true } };
-        const outer = shallow(<Layout />);
-        const Children = outer.props().children;
-        const wrapper = mount(<Children dispatch={mockDispatch} layout={mockLayoutWithFooter} />);
+        const defaultProps = {
+            layout: mockLayoutWithFooter,
+            csrf: '1234567890',
+            user: {
+                roles: ['1234', '54321']
+            }
+        };
+
+        const config = {
+            csrf: '',
+            layout: {
+                body: { phaseBanner: { feedback: '', isVisible: true, phase: '' } },
+                countDownForSeconds: 5,
+                defaultTimeoutSeconds: 10,
+                footer: { isVisible: true, links: [] },
+                header: {
+                    isVisible: true,
+                    service: 'service name',
+                    serviceLink: '',
+                },
+            },
+            user: {
+                roles: []
+            }
+        };
+        const wrapper = render(
+            <ApplicationProvider config={{ ...config }}>
+                <Layout />
+            </ApplicationProvider>
+        );
         expect(wrapper).toBeDefined();
-        expect(wrapper.find('Footer')).toHaveLength(1);
+        expect(screen.getByText('© Crown copyright')).toBeInTheDocument();
     });
 
 });
