@@ -3,6 +3,11 @@ module.exports = {
         es6: true,
         node: true
     },
+    'settings': {
+        'react': {
+            'version': 'detect'
+        }
+    },
     parser: '@typescript-eslint/parser',
     parserOptions: {
         ecmaVersion: 2020,

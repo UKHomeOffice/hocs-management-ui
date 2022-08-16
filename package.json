@@ -3,11 +3,14 @@
     "version": "1.0.0",
     "description": "",
     "main": "index.js",
+    "engines" : {
+        "node" : ">=16.16.0"
+    },
     "scripts": {
         "start": "node --max-http-header-size 80000 index.js",
-        "start-dev": "webpack -w --mode=development --env.NODE_ENV=development & nodemon --max-http-header-size 80000 index.js --env.NODE_ENV=development",
-        "build-dev": "webpack --mode=development --env.NODE_ENV=development",
-        "build-prod": "webpack --mode=production --env.NODE_ENV=production",
+        "start-dev": "webpack -w --mode development --env NODE_ENV=development & nodemon --max-http-header-size 80000 index.js --env NODE_ENV=development",
+        "build-dev": "webpack --mode development --env NODE_ENV=development",
+        "build-prod": "webpack --mode production --env NODE_ENV=production",
         "test": "jest --coverage",
         "jest": "node_modules/jest/bin/jest.js .",
         "lint-staged": "node_modules/lint-staged/index.js",
