@@ -1,5 +1,6 @@
 import React from 'react';
 import Body from '../body.tsx';
+import { render } from '@testing-library/react';
 
 describe('Layout body component', () => {
     it('should render with default props', () => {
