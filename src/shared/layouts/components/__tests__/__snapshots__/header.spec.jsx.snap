@@ -1,107 +1,327 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
 exports[`Layout header component should render with default props 1`] = `
-<header
-  className="govuk-header "
-  data-module="header"
-  role="banner"
->
-  <div
-    className="govuk-header__container govuk-width-container"
-  >
-    <div
-      className="govuk-header__container govuk-width-container"
+Object {
+  "asFragment": [Function],
+  "baseElement": <body>
+    <div>
+      <header
+        class="govuk-header "
+        data-module="header"
+        role="banner"
+      >
+        <div
+          class="govuk-header__container govuk-width-container"
+        >
+          <div
+            class="govuk-header__container govuk-width-container"
+          >
+            <div
+              class="govuk-header__logo"
+            >
+              <span
+                class="govuk-header__logotype"
+              >
+                <a
+                  class="govuk-header__link govuk-header__link--homepage govuk-header__logotype-text"
+                  href="/"
+                >
+                  Correspondence Service
+                </a>
+              </span>
+            </div>
+            <div
+              class="govuk-header__content"
+            >
+              <nav>
+                <ul
+                  aria-label="Top Level Navigation"
+                  class="govuk-header__navigation "
+                  id="navigation"
+                >
+                  <li
+                    class="govuk-header__navigation--end"
+                  >
+                    <a
+                      class="govuk-header__link"
+                      href="/oauth/logout"
+                    >
+                      Log out
+                    </a>
+                  </li>
+                </ul>
+              </nav>
+            </div>
+          </div>
+        </div>
+      </header>
+    </div>
+  </body>,
+  "container": <div>
+    <header
+      class="govuk-header "
+      data-module="header"
+      role="banner"
     >
       <div
-        className="govuk-header__logo"
+        class="govuk-header__container govuk-width-container"
       >
-        <span
-          className="govuk-header__logotype"
+        <div
+          class="govuk-header__container govuk-width-container"
         >
-          <Link
-            className="govuk-header__link govuk-header__link--homepage govuk-header__logotype-text"
-            to="/"
+          <div
+            class="govuk-header__logo"
           >
-            Correspondence Service
-          </Link>
-        </span>
-      </div>
-      <div
-        className="govuk-header__content"
-      >
-        <nav>
-          <ul
-            aria-label="Top Level Navigation"
-            className="govuk-header__navigation "
-            id="navigation"
-          >
-            <li
-              className="govuk-header__navigation--end"
+            <span
+              class="govuk-header__logotype"
             >
               <a
-                className="govuk-header__link"
-                href="/oauth/logout"
+                class="govuk-header__link govuk-header__link--homepage govuk-header__logotype-text"
+                href="/"
               >
-                Log out
+                Correspondence Service
               </a>
-            </li>
-          </ul>
-        </nav>
+            </span>
+          </div>
+          <div
+            class="govuk-header__content"
+          >
+            <nav>
+              <ul
+                aria-label="Top Level Navigation"
+                class="govuk-header__navigation "
+                id="navigation"
+              >
+                <li
+                  class="govuk-header__navigation--end"
+                >
+                  <a
+                    class="govuk-header__link"
+                    href="/oauth/logout"
+                  >
+                    Log out
+                  </a>
+                </li>
+              </ul>
+            </nav>
+          </div>
+        </div>
       </div>
-    </div>
-  </div>
-</header>
+    </header>
+  </div>,
+  "debug": [Function],
+  "findAllByAltText": [Function],
+  "findAllByDisplayValue": [Function],
+  "findAllByLabelText": [Function],
+  "findAllByPlaceholderText": [Function],
+  "findAllByRole": [Function],
+  "findAllByTestId": [Function],
+  "findAllByText": [Function],
+  "findAllByTitle": [Function],
+  "findByAltText": [Function],
+  "findByDisplayValue": [Function],
+  "findByLabelText": [Function],
+  "findByPlaceholderText": [Function],
+  "findByRole": [Function],
+  "findByTestId": [Function],
+  "findByText": [Function],
+  "findByTitle": [Function],
+  "getAllByAltText": [Function],
+  "getAllByDisplayValue": [Function],
+  "getAllByLabelText": [Function],
+  "getAllByPlaceholderText": [Function],
+  "getAllByRole": [Function],
+  "getAllByTestId": [Function],
+  "getAllByText": [Function],
+  "getAllByTitle": [Function],
+  "getByAltText": [Function],
+  "getByDisplayValue": [Function],
+  "getByLabelText": [Function],
+  "getByPlaceholderText": [Function],
+  "getByRole": [Function],
+  "getByTestId": [Function],
+  "getByText": [Function],
+  "getByTitle": [Function],
+  "queryAllByAltText": [Function],
+  "queryAllByDisplayValue": [Function],
+  "queryAllByLabelText": [Function],
+  "queryAllByPlaceholderText": [Function],
+  "queryAllByRole": [Function],
+  "queryAllByTestId": [Function],
+  "queryAllByText": [Function],
+  "queryAllByTitle": [Function],
+  "queryByAltText": [Function],
+  "queryByDisplayValue": [Function],
+  "queryByLabelText": [Function],
+  "queryByPlaceholderText": [Function],
+  "queryByRole": [Function],
+  "queryByTestId": [Function],
+  "queryByText": [Function],
+  "queryByTitle": [Function],
+  "rerender": [Function],
+  "unmount": [Function],
+}
 `;
 
 exports[`Layout header component should render without crest when service is not GOV.UK 1`] = `
-<header
-  className="govuk-header "
-  data-module="header"
-  role="banner"
->
-  <div
-    className="govuk-header__container govuk-width-container"
-  >
-    <div
-      className="govuk-header__container govuk-width-container"
+Object {
+  "asFragment": [Function],
+  "baseElement": <body>
+    <div>
+      <header
+        class="govuk-header "
+        data-module="header"
+        role="banner"
+      >
+        <div
+          class="govuk-header__container govuk-width-container"
+        >
+          <div
+            class="govuk-header__container govuk-width-container"
+          >
+            <div
+              class="govuk-header__logo"
+            >
+              <span
+                class="govuk-header__logotype"
+              >
+                <a
+                  class="govuk-header__link govuk-header__link--homepage govuk-header__logotype-text"
+                  href="/"
+                >
+                  Test Service
+                </a>
+              </span>
+            </div>
+            <div
+              class="govuk-header__content"
+            >
+              <nav>
+                <ul
+                  aria-label="Top Level Navigation"
+                  class="govuk-header__navigation "
+                  id="navigation"
+                >
+                  <li
+                    class="govuk-header__navigation--end"
+                  >
+                    <a
+                      class="govuk-header__link"
+                      href="/oauth/logout"
+                    >
+                      Log out
+                    </a>
+                  </li>
+                </ul>
+              </nav>
+            </div>
+          </div>
+        </div>
+      </header>
+    </div>
+  </body>,
+  "container": <div>
+    <header
+      class="govuk-header "
+      data-module="header"
+      role="banner"
     >
       <div
-        className="govuk-header__logo"
+        class="govuk-header__container govuk-width-container"
       >
-        <span
-          className="govuk-header__logotype"
+        <div
+          class="govuk-header__container govuk-width-container"
         >
-          <Link
-            className="govuk-header__link govuk-header__link--homepage govuk-header__logotype-text"
-            to="/"
+          <div
+            class="govuk-header__logo"
           >
-            Test Service
-          </Link>
-        </span>
-      </div>
-      <div
-        className="govuk-header__content"
-      >
-        <nav>
-          <ul
-            aria-label="Top Level Navigation"
-            className="govuk-header__navigation "
-            id="navigation"
-          >
-            <li
-              className="govuk-header__navigation--end"
+            <span
+              class="govuk-header__logotype"
             >
               <a
-                className="govuk-header__link"
-                href="/oauth/logout"
+                class="govuk-header__link govuk-header__link--homepage govuk-header__logotype-text"
+                href="/"
               >
-                Log out
+                Test Service
               </a>
-            </li>
-          </ul>
-        </nav>
+            </span>
+          </div>
+          <div
+            class="govuk-header__content"
+          >
+            <nav>
+              <ul
+                aria-label="Top Level Navigation"
+                class="govuk-header__navigation "
+                id="navigation"
+              >
+                <li
+                  class="govuk-header__navigation--end"
+                >
+                  <a
+                    class="govuk-header__link"
+                    href="/oauth/logout"
+                  >
+                    Log out
+                  </a>
+                </li>
+              </ul>
+            </nav>
+          </div>
+        </div>
       </div>
-    </div>
-  </div>
-</header>
+    </header>
+  </div>,
+  "debug": [Function],
+  "findAllByAltText": [Function],
+  "findAllByDisplayValue": [Function],
+  "findAllByLabelText": [Function],
+  "findAllByPlaceholderText": [Function],
+  "findAllByRole": [Function],
+  "findAllByTestId": [Function],
+  "findAllByText": [Function],
+  "findAllByTitle": [Function],
+  "findByAltText": [Function],
+  "findByDisplayValue": [Function],
+  "findByLabelText": [Function],
+  "findByPlaceholderText": [Function],
+  "findByRole": [Function],
+  "findByTestId": [Function],
+  "findByText": [Function],
+  "findByTitle": [Function],
+  "getAllByAltText": [Function],
+  "getAllByDisplayValue": [Function],
+  "getAllByLabelText": [Function],
+  "getAllByPlaceholderText": [Function],
+  "getAllByRole": [Function],
+  "getAllByTestId": [Function],
+  "getAllByText": [Function],
+  "getAllByTitle": [Function],
+  "getByAltText": [Function],
+  "getByDisplayValue": [Function],
+  "getByLabelText": [Function],
+  "getByPlaceholderText": [Function],
+  "getByRole": [Function],
+  "getByTestId": [Function],
+  "getByText": [Function],
+  "getByTitle": [Function],
+  "queryAllByAltText": [Function],
+  "queryAllByDisplayValue": [Function],
+  "queryAllByLabelText": [Function],
+  "queryAllByPlaceholderText": [Function],
+  "queryAllByRole": [Function],
+  "queryAllByTestId": [Function],
+  "queryAllByText": [Function],
+  "queryAllByTitle": [Function],
+  "queryByAltText": [Function],
+  "queryByDisplayValue": [Function],
+  "queryByLabelText": [Function],
+  "queryByPlaceholderText": [Function],
+  "queryByRole": [Function],
+  "queryByTestId": [Function],
+  "queryByText": [Function],
+  "queryByTitle": [Function],
+  "rerender": [Function],
+  "unmount": [Function],
+}
 `;
