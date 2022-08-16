@@ -1,5 +1,7 @@
 import React from 'react';
 import Error from '../error.tsx';
+import { render } from '@testing-library/react';
+
 
 describe('Error component', () => {
     it('should render with default props', () => {
@@ -54,16 +56,5 @@ describe('Error component', () => {
         expect(
             render(<Error {...props} />)
         ).toMatchSnapshot();
-    });
-    it('should pass the error code to the static context', () => {
-        const props = {
-            error: {
-                status: 500
-            },
-            staticContext: {}
-        };
-        const wrapper = mount(<Error {...props} />);
-        expect(wrapper).toBeDefined();
-        expect(wrapper.prop('staticContext')).toEqual({ statusCode: 500 });
     });
 });
