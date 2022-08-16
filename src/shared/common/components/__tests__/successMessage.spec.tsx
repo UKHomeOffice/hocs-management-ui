@@ -1,5 +1,5 @@
 import React from 'react';
-import { render } from 'enzyme';
+import { render } from '@testing-library/react';
 
 import SuccessMessage from '../successMessage';
 import { Location } from 'history';
