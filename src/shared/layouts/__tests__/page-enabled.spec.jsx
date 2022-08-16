@@ -1,7 +1,7 @@
 import React from 'react';
-import WrappedPage from '../page-enabled.tsx';
-
-import actions from '../../contexts/actions/index.ts';
+import Page from '../page-enabled.tsx';
+import { render } from '@testing-library/react';
+import { ApplicationProvider } from '../../contexts/application';
 
 jest.mock('../error.tsx', () => () => 'MOCK_ERROR_PAGE');
 jest.mock('../../contexts/actions/index.ts', () => ({
@@ -9,7 +9,7 @@ jest.mock('../../contexts/actions/index.ts', () => ({
     clearApiStatus: jest.fn()
 }));
 
-describe('Error component', () => {
+describe('Page Enabled component', () => {
 
     const MOCK_DISPATCH = jest.fn();
     const MOCK_MATCH = { url: '/' };
@@ -28,12 +28,12 @@ describe('Error component', () => {
     });
 
     it('should render with default props', () => {
-        const OUTER = shallow(<WrappedPage location={DEFAULT_PROPS.location} />);
-        const Page = OUTER.props().children;
         const WRAPPER = render(
-            <Page {...DEFAULT_PROPS}>
-                <div>TEST</div>
-            </Page>
+            <ApplicationProvider>
+                <Page {...DEFAULT_PROPS}>
+                    <div>TEST</div>
+                </Page>
+            </ApplicationProvider>
         );
         expect(WRAPPER).toMatchSnapshot();
     });
@@ -41,48 +41,23 @@ describe('Error component', () => {
     it('should render the error page when error passed in props', () => {
         const PROPS = {
             ...DEFAULT_PROPS,
-            error: {}
+            error: {
+                title: 'Something has gone wrong',
+                location: { pathname: '' },
+                stack: '',
+                status: 500,
+                message: ''
+            }
         };
-        const OUTER = shallow(<WrappedPage />);
-        const Page = OUTER.props().children;
+
         const WRAPPER = render(
-            <Page {...PROPS}>
-                <div>TEST</div>
-            </Page>
+            <ApplicationProvider config={PROPS}>
+                <Page>
+                    <div>TEST</div>
+                </Page>
+            </ApplicationProvider>
         );
 
         expect(WRAPPER).toMatchSnapshot();
-    });
-
-    it('should dispatch event to clear the error from the application context when unmounted', () => {
-        const OUTER = shallow(<WrappedPage />);
-        const Page = OUTER.props().children;
-        const WRAPPER = shallow(
-            <Page {...DEFAULT_PROPS}>
-                <div>TEST</div>
-            </Page>
-        );
-
-        WRAPPER.unmount();
-        expect(MOCK_DISPATCH).not.toHaveBeenCalled();
-        expect(actions.unsetError).not.toHaveBeenCalled();
-    });
-
-    it('should dispatch event to clear the error from the application context when unmounted', () => {
-        const PROPS = {
-            ...DEFAULT_PROPS,
-            error: {}
-        };
-        const OUTER = shallow(<WrappedPage match={{ url: '/' }} />);
-        const Page = OUTER.props().children;
-        const WRAPPER = mount(
-            <Page {...PROPS}>
-                <div>TEST</div>
-            </Page>
-        );
-
-        WRAPPER.unmount();
-        expect(MOCK_DISPATCH).toHaveBeenCalled();
-        expect(actions.unsetError).toHaveBeenCalled();
     });
 });

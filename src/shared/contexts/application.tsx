@@ -54,6 +54,8 @@ export class ApplicationProvider extends Component<ApplicationProps, Application
         super(props);
         const { config } = props;
 
+        console.log(props)
+
         this.state = {
             ...props.config,
             apiStatus: undefined,

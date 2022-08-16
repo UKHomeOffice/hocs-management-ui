@@ -27,6 +27,7 @@ class PageWrapper extends Component<PageWrapperProps> {
 
     render() {
         const { children, error, location } = this.props;
+        console.log(this.props)
         return (
             <Fragment>
                 {error ? <Error error={error} /> : <>
