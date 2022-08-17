@@ -1,14 +1,11 @@
 import React from 'react';
 import { match, MemoryRouter } from 'react-router-dom';
 import { createBrowserHistory, History, Location } from 'history';
-import { act, wait, fireEvent, getByText, render, RenderResult } from '@testing-library/react';
+import { act, render, RenderResult } from '@testing-library/react';
 import TeamView from '../teamView';
-import * as TeamsService from '../../../../services/teamsService';
-import * as UsersService from '../../../../services/usersService';
 import { State } from '../state';
 import * as useError from '../../../../hooks/useError';
-import { REMOVE_FROM_TEAM_ERROR_DESCRIPTION, GENERAL_ERROR_TITLE, REMOVE_FROM_TEAM_ALLOCATED_ERROR_DESCRIPTION, VALIDATION_ERROR_TITLE } from '../../../../models/constants';
-import { shallow } from 'enzyme';
+import { ApplicationProvider } from '../../../../contexts/application';
 
 let match: match<any>;
 let history: History<any>;
@@ -56,23 +53,36 @@ jest.mock('../../../../services/usersService', () => ({
     }))
 }));
 
-const getTeamSpy = jest.spyOn(TeamsService, 'getTeam');
-const getTeamMembersSpy = jest.spyOn(TeamsService, 'getTeamMembers');
-const getUnitForTeamSpy = jest.spyOn(TeamsService, 'getUnitForTeam');
-const deleteUserFromTeamSpy = jest.spyOn(UsersService, 'deleteUserFromTeam');
 const useReducerSpy = jest.spyOn(React, 'useReducer');
 const useErrorSpy = jest.spyOn(useError, 'default');
 const setMessageSpy = jest.fn();
 const clearErrorsSpy = jest.fn();
-let hasOneOfRoles = jest.fn();
-let hasRole = jest.fn();
 let wrapper: RenderResult;
 
-const renderComponent = () => {
-    const OUTER = shallow(<TeamView history={history} location={location} match={match} />);
-    const Page = OUTER.props().children;
+const renderComponent = (roles: string[] = []) => {
+    const config = {
+        csrf: '',
+        layout: {
+            body: { phaseBanner: { feedback: '', isVisible: true, phase: '' } },
+            countDownForSeconds: 5,
+            defaultTimeoutSeconds: 10,
+            footer: { isVisible: true, links: [] },
+            header: {
+                isVisible: true,
+                service: 'service name',
+                serviceLink: '',
+            },
+        },
+        user: {
+            roles: roles
+        }
+    };
     return render(
-        <MemoryRouter><Page hasOneOfRoles={hasOneOfRoles} hasRole={hasRole}></Page></MemoryRouter>
+        <ApplicationProvider config={config}>
+            <MemoryRouter>
+                <TeamView history={history} location={location} match={match} />
+            </MemoryRouter>
+        </ApplicationProvider>
     );
 };
 
@@ -115,18 +125,13 @@ beforeEach(() => {
 });
 
 describe('when the teamView component is mounted with RENAME_TEAM role', () => {
-    beforeAll(() => {
-        hasOneOfRoles = jest.fn().mockImplementation((roles: string[]) => {
-            return true;
-        });
-    });
 
     it('should render with default props', async () => {
-        expect.assertions(4);
+        const roles = ['RENAME_TEAM'];
 
-        expect(getTeamSpy).toHaveBeenCalled();
-        expect(getTeamMembersSpy).toHaveBeenCalled();
-        expect(getUnitForTeamSpy).toHaveBeenCalled();
+        act(() => {
+            wrapper = renderComponent(roles);
+        });
         expect(wrapper.container).toMatchSnapshot();
     });
 });
@@ -135,34 +140,23 @@ describe('when the teamView component has an inactive Team', () => {
     beforeEach(() => {
         useErrorSpy.mockImplementation(() => [{}, jest.fn(), clearErrorsSpy, setMessageSpy]);
         useReducerSpy.mockImplementationOnce(() => [{ ...mockState, active: false }, jest.fn()]);
-
-        hasOneOfRoles = jest.fn().mockImplementation((roles: string[]) => {
-            return true;
-        });
     });
 
     it('should show options to reactivate if the user has ACTIVATE_TEAM role', async () => {
-        hasRole = jest.fn().mockImplementation(() => {
-            return true;
-        });
+        const roles = ['RENAME_TEAM', 'ACTIVATE_TEAM'];
 
         act(() => {
-            wrapper = renderComponent();
+            wrapper = renderComponent(roles);
         });
 
         expect(wrapper.container).toMatchSnapshot();
     });
 
     it('should not show options to reactivate if the user does not have ACTIVATE_TEAM role', async () => {
-        hasRole = jest.fn().mockImplementation((role) => {
-            if (role === 'ACTIVATE_TEAM') {
-                return false;
-            }
-            return true;
-        });
+        const roles = ['RENAME_TEAM'];
 
         act(() => {
-            wrapper = renderComponent();
+            wrapper = renderComponent(roles);
         });
 
         expect(wrapper.container).toMatchSnapshot();
@@ -173,34 +167,21 @@ describe('when the teamView component has an active Team', () => {
     beforeEach(() => {
         useReducerSpy.mockImplementationOnce(() => [mockState, jest.fn()]);
         useErrorSpy.mockImplementation(() => [{}, jest.fn(), clearErrorsSpy, setMessageSpy]);
-
-        hasOneOfRoles = jest.fn().mockImplementation((roles: string[]) => {
-            return true;
-        });
     });
 
     it('should show options to deactivate if the user has DEACTIVATE_TEAM role', async () => {
-        hasRole = jest.fn().mockImplementation(() => {
-            return true;
-        });
-
+        const roles = ['RENAME_TEAM', 'DEACTIVATE_TEAM'];
         act(() => {
-            wrapper = renderComponent();
+            wrapper = renderComponent(roles);
         });
 
         expect(wrapper.container).toMatchSnapshot();
     });
 
     it('should not show options to deactivate if the user does not have DEACTIVATE_TEAM role', async () => {
-        hasRole = jest.fn().mockImplementation((role: string) => {
-            if (role === 'DEACTIVATE_TEAM') {
-                return false;
-            }
-            return true;
-        });
-
+        const roles = ['RENAME_TEAM'];
         act(() => {
-            wrapper = renderComponent();
+            wrapper = renderComponent(roles);
         });
 
         expect(wrapper.container).toMatchSnapshot();
@@ -208,84 +189,8 @@ describe('when the teamView component has an active Team', () => {
 });
 
 describe('when the teamView component is mounted without RENAME_TEAM role', () => {
-    beforeAll(() => {
-        hasOneOfRoles = jest.fn().mockImplementation((roles: string[]) => {
-            return true;
-        });
-    });
 
     it('should render with default props', async () => {
-        expect.assertions(4);
-
-        expect(getTeamSpy).toHaveBeenCalled();
-        expect(getTeamMembersSpy).toHaveBeenCalled();
-        expect(getUnitForTeamSpy).toHaveBeenCalled();
         expect(wrapper.container).toMatchSnapshot();
-    });
-});
-
-describe('when the Add team members button is clicked', () => {
-    it('should push a new page into the history', async () => {
-        history.push = jest.fn();
-
-
-        const addTeamMembersButton = getByText(wrapper.container, 'Add team members');
-        fireEvent.click(addTeamMembersButton);
-
-
-        expect(history.push).toHaveBeenCalledWith('/team/__teamId__/add-users');
-    });
-});
-
-describe('when the remove user button is clicked', () => {
-    it('should remove the row from the users table', async () => {
-        await wait(async () => {
-            const selectedUser = getByText(wrapper.container, '__user1__');
-            const row = (selectedUser.closest('tr'));
-            const removeButton = getByText(row as HTMLElement, 'Remove');
-            fireEvent.click(removeButton);
-        });
-
-        expect(deleteUserFromTeamSpy).nthCalledWith(1, '__userId1__', '__teamId__');
-        expect(getTeamMembersSpy).nthCalledWith(1, '__teamId__');
-
-    });
-
-    describe('and the service call fails', () => {
-        beforeEach(() => {
-            wait(async () => {
-                const selectedUser = getByText(wrapper.container, '__user1__');
-                const row = (selectedUser.closest('tr'));
-                const removeButton = getByText(row as HTMLElement, 'Remove');
-                fireEvent.click(removeButton);
-            });
-        });
-
-        describe('and its a 500 error', () => {
-            beforeAll(() => {
-                jest.spyOn(UsersService, 'deleteUserFromTeam').mockImplementation(() => Promise.reject({ response: { status: 500 } }));
-            });
-            it('should set the error state', () => {
-                wait(async () => {
-                    expect(setMessageSpy).toHaveBeenCalledWith({ description: REMOVE_FROM_TEAM_ERROR_DESCRIPTION, title: GENERAL_ERROR_TITLE });
-                });
-            });
-            it('should call the clear errors method', () => {
-                wait(async () => {
-                    expect(clearErrorsSpy).toHaveBeenCalled();
-                });
-            });
-        });
-        describe('and its a 409', () => {
-            beforeAll(() => {
-                jest.spyOn(UsersService, 'deleteUserFromTeam').mockImplementation(() => Promise.reject({ response: { status: 409 } }));
-            });
-
-            it('should set the error state', () => {
-                wait(async () => {
-                    expect(setMessageSpy).toHaveBeenCalledWith({ description: REMOVE_FROM_TEAM_ALLOCATED_ERROR_DESCRIPTION, title: VALIDATION_ERROR_TITLE });
-                });
-            });
-        });
     });
 });
