@@ -1,4 +1,4 @@
-import {act, render, RenderResult} from '@testing-library/react';
+import { act, render, RenderResult } from '@testing-library/react';
 import React from 'react';
 import { MemoryRouter } from 'react-router-dom';
 import Dashboard from '../dashboard';
@@ -10,10 +10,10 @@ const renderComponent = (roles: string[] = []) => {
     const config = {
         csrf: '',
         layout: {
-            body: {phaseBanner: {feedback: '', isVisible: true, phase: ''}},
+            body: { phaseBanner: { feedback: '', isVisible: true, phase: '' } },
             countDownForSeconds: 5,
             defaultTimeoutSeconds: 10,
-            footer: {isVisible: true, links: []},
+            footer: { isVisible: true, links: [] },
             header: {
                 isVisible: true,
                 service: 'service name',
