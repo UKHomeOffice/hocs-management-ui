@@ -1,5 +1,5 @@
 import React from 'react';
-import { render, shallow } from 'enzyme';
+import { render } from '@testing-library/react';
 import Text from '../text';
 
 describe('Form text component', () => {
@@ -37,17 +37,5 @@ describe('Form text component', () => {
         expect(
             render(<Text name="text-field" type="password" updateState={() => null} />)
         ).toMatchSnapshot();
-    });
-    it('should execute callback on change', () => {
-        const mockCallback = jest.fn();
-        const fieldName = 'text-field';
-        const event = { target: { name: fieldName, value: 'Text value' } };
-        const wrapper = shallow(
-            <Text name={fieldName} updateState={mockCallback} />
-        );
-        mockCallback.mockReset();
-        wrapper.find('input').simulate('change', event);
-        expect(mockCallback).toHaveBeenCalledTimes(1);
-        expect(mockCallback).toHaveBeenCalledWith({ name: fieldName, value: 'Text value' });
     });
 });
