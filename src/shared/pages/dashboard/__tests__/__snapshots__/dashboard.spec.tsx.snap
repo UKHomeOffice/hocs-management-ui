@@ -1,733 +1,739 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
 exports[`dashboard component should not render dcu creation or FOI interested parties link if does not have any roles 1`] = `
-<div
-  class="govuk-grid-row"
->
+<div>
   <div
-    class="govuk-grid-column-two-thirds"
+    class="govuk-grid-row"
   >
-    <h1
-      class="govuk-heading-xl"
+    <div
+      class="govuk-grid-column-two-thirds"
     >
-      Choose an area to manage
-    </h1>
-    <ul
-      class="govuk-list"
-    >
-      <li>
-        <h2
-          class="govuk-heading-l"
-        >
-          Standard lines
-        </h2>
-        <ul
-          class="govuk-list govuk-list--bullet"
-        >
-          <li>
-            <a
-              class="govuk-link"
-              href="/manage-standard-lines"
-            >
-              Manage standard lines
-            </a>
-          </li>
-          <li>
-            <a
-              class="govuk-link"
-              href="/add-standard-line"
-            >
-              Add a standard line
-            </a>
-          </li>
-        </ul>
-      </li>
-      <li>
-        <h2
-          class="govuk-heading-l"
-        >
-          Team management
-        </h2>
-        <ul
-          class="govuk-list govuk-list--bullet"
-        >
-          <li>
-            <a
-              class="govuk-link"
-              href="/team-search"
-            >
-              Manage a team
-            </a>
-          </li>
-        </ul>
-      </li>
-      <li>
-        <h2
-          class="govuk-heading-l"
-        >
-          User management
-        </h2>
-        <ul
-          class="govuk-list govuk-list--bullet"
-        >
-          <li>
-            <a
-              class="govuk-link"
-              href="/user-search"
-            >
-              Manage a user
-            </a>
-          </li>
-          <li>
-            <a
-              class="govuk-link"
-              href="/add-user"
-            >
-              Add a user
-            </a>
-          </li>
-        </ul>
-      </li>
-      <li>
-        <h2
-          class="govuk-heading-l"
-        >
-          Template management
-        </h2>
-        <ul
-          class="govuk-list govuk-list--bullet"
-        >
-          <li>
-            <a
-              class="govuk-link"
-              href="/case-types"
-            >
-              Manage templates
-            </a>
-          </li>
-        </ul>
-      </li>
-      <li>
-        <h2
-          class="govuk-heading-l"
-        >
-          Topic management
-        </h2>
-        <ul
-          class="govuk-list govuk-list--bullet"
-        >
-          <li>
-            <a
-              class="govuk-link"
-              href="/add-parent-topic"
-            >
-              Add parent topic
-            </a>
-          </li>
-          <li>
-            <a
-              class="govuk-link"
-              href="/add-child-topic"
-            >
-              Add child topic
-            </a>
-          </li>
-          <li>
-            <a
-              class="govuk-link"
-              href="/topic-to-team"
-            >
-              Link topic to team
-            </a>
-          </li>
-        </ul>
-      </li>
-      <li>
-        <h2
-          class="govuk-heading-l"
-        >
-          Unit management
-        </h2>
-        <ul
-          class="govuk-list govuk-list--bullet"
-        >
-          <li>
-            <a
-              class="govuk-link"
-              href="/add-unit"
-            >
-              Add a unit
-            </a>
-          </li>
-          <li>
-            <a
-              class="govuk-link"
-              href="/unit-search"
-            >
-              View units and their teams
-            </a>
-          </li>
-        </ul>
-      </li>
-      <li>
-        <h2
-          class="govuk-heading-l"
-        >
-          Case management
-        </h2>
-        <ul
-          class="govuk-list govuk-list--bullet"
-        >
-          <li>
-            <a
-              class="govuk-link"
-              href="/case-withdraw"
-            >
-              Withdraw a case
-            </a>
-          </li>
-        </ul>
-      </li>
-      <li>
-        <h2
-          class="govuk-heading-l"
-        >
-          Lists management
-        </h2>
-        <ul
-          class="govuk-list govuk-list--bullet"
-        >
-          <li>
-            <a
-              class="govuk-link"
-              href="/manage-mpam-campaigns"
-            >
-              Manage MPAM campaigns
-            </a>
-          </li>
-          <li>
-            <a
-              class="govuk-link"
-              href="/manage-exgratia-reps"
-            >
-              Manage Ex-Gratia Business Area Representatives
-            </a>
-          </li>
-          <li>
-            <a
-              class="govuk-link"
-              href="/manage-mpam-business-units"
-            >
-              Manage MPAM Business Units
-            </a>
-          </li>
-          <li>
-            <a
-              class="govuk-link"
-              href="/manage-mpam-enquiry-reasons"
-            >
-              Manage MPAM Enquiry Reasons
-            </a>
-          </li>
-        </ul>
-      </li>
-    </ul>
+      <h1
+        class="govuk-heading-xl"
+      >
+        Choose an area to manage
+      </h1>
+      <ul
+        class="govuk-list"
+      >
+        <li>
+          <h2
+            class="govuk-heading-l"
+          >
+            Standard lines
+          </h2>
+          <ul
+            class="govuk-list govuk-list--bullet"
+          >
+            <li>
+              <a
+                class="govuk-link"
+                href="/manage-standard-lines"
+              >
+                Manage standard lines
+              </a>
+            </li>
+            <li>
+              <a
+                class="govuk-link"
+                href="/add-standard-line"
+              >
+                Add a standard line
+              </a>
+            </li>
+          </ul>
+        </li>
+        <li>
+          <h2
+            class="govuk-heading-l"
+          >
+            Team management
+          </h2>
+          <ul
+            class="govuk-list govuk-list--bullet"
+          >
+            <li>
+              <a
+                class="govuk-link"
+                href="/team-search"
+              >
+                Manage a team
+              </a>
+            </li>
+          </ul>
+        </li>
+        <li>
+          <h2
+            class="govuk-heading-l"
+          >
+            User management
+          </h2>
+          <ul
+            class="govuk-list govuk-list--bullet"
+          >
+            <li>
+              <a
+                class="govuk-link"
+                href="/user-search"
+              >
+                Manage a user
+              </a>
+            </li>
+            <li>
+              <a
+                class="govuk-link"
+                href="/add-user"
+              >
+                Add a user
+              </a>
+            </li>
+          </ul>
+        </li>
+        <li>
+          <h2
+            class="govuk-heading-l"
+          >
+            Template management
+          </h2>
+          <ul
+            class="govuk-list govuk-list--bullet"
+          >
+            <li>
+              <a
+                class="govuk-link"
+                href="/case-types"
+              >
+                Manage templates
+              </a>
+            </li>
+          </ul>
+        </li>
+        <li>
+          <h2
+            class="govuk-heading-l"
+          >
+            Topic management
+          </h2>
+          <ul
+            class="govuk-list govuk-list--bullet"
+          >
+            <li>
+              <a
+                class="govuk-link"
+                href="/add-parent-topic"
+              >
+                Add parent topic
+              </a>
+            </li>
+            <li>
+              <a
+                class="govuk-link"
+                href="/add-child-topic"
+              >
+                Add child topic
+              </a>
+            </li>
+            <li>
+              <a
+                class="govuk-link"
+                href="/topic-to-team"
+              >
+                Link topic to team
+              </a>
+            </li>
+          </ul>
+        </li>
+        <li>
+          <h2
+            class="govuk-heading-l"
+          >
+            Unit management
+          </h2>
+          <ul
+            class="govuk-list govuk-list--bullet"
+          >
+            <li>
+              <a
+                class="govuk-link"
+                href="/add-unit"
+              >
+                Add a unit
+              </a>
+            </li>
+            <li>
+              <a
+                class="govuk-link"
+                href="/unit-search"
+              >
+                View units and their teams
+              </a>
+            </li>
+          </ul>
+        </li>
+        <li>
+          <h2
+            class="govuk-heading-l"
+          >
+            Case management
+          </h2>
+          <ul
+            class="govuk-list govuk-list--bullet"
+          >
+            <li>
+              <a
+                class="govuk-link"
+                href="/case-withdraw"
+              >
+                Withdraw a case
+              </a>
+            </li>
+          </ul>
+        </li>
+        <li>
+          <h2
+            class="govuk-heading-l"
+          >
+            Lists management
+          </h2>
+          <ul
+            class="govuk-list govuk-list--bullet"
+          >
+            <li>
+              <a
+                class="govuk-link"
+                href="/manage-mpam-campaigns"
+              >
+                Manage MPAM campaigns
+              </a>
+            </li>
+            <li>
+              <a
+                class="govuk-link"
+                href="/manage-exgratia-reps"
+              >
+                Manage Ex-Gratia Business Area Representatives
+              </a>
+            </li>
+            <li>
+              <a
+                class="govuk-link"
+                href="/manage-mpam-business-units"
+              >
+                Manage MPAM Business Units
+              </a>
+            </li>
+            <li>
+              <a
+                class="govuk-link"
+                href="/manage-mpam-enquiry-reasons"
+              >
+                Manage MPAM Enquiry Reasons
+              </a>
+            </li>
+          </ul>
+        </li>
+      </ul>
+    </div>
   </div>
 </div>
 `;
 
 exports[`dashboard component should render DCU creation link if user has DCU role 1`] = `
-<div
-  class="govuk-grid-row"
->
+<div>
   <div
-    class="govuk-grid-column-two-thirds"
+    class="govuk-grid-row"
   >
-    <h1
-      class="govuk-heading-xl"
+    <div
+      class="govuk-grid-column-two-thirds"
     >
-      Choose an area to manage
-    </h1>
-    <ul
-      class="govuk-list"
-    >
-      <li>
-        <h2
-          class="govuk-heading-l"
-        >
-          Standard lines
-        </h2>
-        <ul
-          class="govuk-list govuk-list--bullet"
-        >
-          <li>
-            <a
-              class="govuk-link"
-              href="/manage-standard-lines"
-            >
-              Manage standard lines
-            </a>
-          </li>
-          <li>
-            <a
-              class="govuk-link"
-              href="/add-standard-line"
-            >
-              Add a standard line
-            </a>
-          </li>
-        </ul>
-      </li>
-      <li>
-        <h2
-          class="govuk-heading-l"
-        >
-          Team management
-        </h2>
-        <ul
-          class="govuk-list govuk-list--bullet"
-        >
-          <li>
-            <a
-              class="govuk-link"
-              href="/team-search"
-            >
-              Manage a team
-            </a>
-          </li>
-          <li>
-            <a
-              class="govuk-link"
-              href="/add-team"
-            >
-              Create a DCU drafting team
-            </a>
-          </li>
-        </ul>
-      </li>
-      <li>
-        <h2
-          class="govuk-heading-l"
-        >
-          User management
-        </h2>
-        <ul
-          class="govuk-list govuk-list--bullet"
-        >
-          <li>
-            <a
-              class="govuk-link"
-              href="/user-search"
-            >
-              Manage a user
-            </a>
-          </li>
-          <li>
-            <a
-              class="govuk-link"
-              href="/add-user"
-            >
-              Add a user
-            </a>
-          </li>
-        </ul>
-      </li>
-      <li>
-        <h2
-          class="govuk-heading-l"
-        >
-          Template management
-        </h2>
-        <ul
-          class="govuk-list govuk-list--bullet"
-        >
-          <li>
-            <a
-              class="govuk-link"
-              href="/case-types"
-            >
-              Manage templates
-            </a>
-          </li>
-        </ul>
-      </li>
-      <li>
-        <h2
-          class="govuk-heading-l"
-        >
-          Topic management
-        </h2>
-        <ul
-          class="govuk-list govuk-list--bullet"
-        >
-          <li>
-            <a
-              class="govuk-link"
-              href="/add-parent-topic"
-            >
-              Add parent topic
-            </a>
-          </li>
-          <li>
-            <a
-              class="govuk-link"
-              href="/add-child-topic"
-            >
-              Add child topic
-            </a>
-          </li>
-          <li>
-            <a
-              class="govuk-link"
-              href="/topic-to-team"
-            >
-              Link topic to team
-            </a>
-          </li>
-        </ul>
-      </li>
-      <li>
-        <h2
-          class="govuk-heading-l"
-        >
-          Unit management
-        </h2>
-        <ul
-          class="govuk-list govuk-list--bullet"
-        >
-          <li>
-            <a
-              class="govuk-link"
-              href="/add-unit"
-            >
-              Add a unit
-            </a>
-          </li>
-          <li>
-            <a
-              class="govuk-link"
-              href="/unit-search"
-            >
-              View units and their teams
-            </a>
-          </li>
-        </ul>
-      </li>
-      <li>
-        <h2
-          class="govuk-heading-l"
-        >
-          Case management
-        </h2>
-        <ul
-          class="govuk-list govuk-list--bullet"
-        >
-          <li>
-            <a
-              class="govuk-link"
-              href="/case-withdraw"
-            >
-              Withdraw a case
-            </a>
-          </li>
-        </ul>
-      </li>
-      <li>
-        <h2
-          class="govuk-heading-l"
-        >
-          Lists management
-        </h2>
-        <ul
-          class="govuk-list govuk-list--bullet"
-        >
-          <li>
-            <a
-              class="govuk-link"
-              href="/manage-mpam-campaigns"
-            >
-              Manage MPAM campaigns
-            </a>
-          </li>
-          <li>
-            <a
-              class="govuk-link"
-              href="/manage-exgratia-reps"
-            >
-              Manage Ex-Gratia Business Area Representatives
-            </a>
-          </li>
-          <li>
-            <a
-              class="govuk-link"
-              href="/manage-mpam-business-units"
-            >
-              Manage MPAM Business Units
-            </a>
-          </li>
-          <li>
-            <a
-              class="govuk-link"
-              href="/manage-mpam-enquiry-reasons"
-            >
-              Manage MPAM Enquiry Reasons
-            </a>
-          </li>
-        </ul>
-      </li>
-    </ul>
+      <h1
+        class="govuk-heading-xl"
+      >
+        Choose an area to manage
+      </h1>
+      <ul
+        class="govuk-list"
+      >
+        <li>
+          <h2
+            class="govuk-heading-l"
+          >
+            Standard lines
+          </h2>
+          <ul
+            class="govuk-list govuk-list--bullet"
+          >
+            <li>
+              <a
+                class="govuk-link"
+                href="/manage-standard-lines"
+              >
+                Manage standard lines
+              </a>
+            </li>
+            <li>
+              <a
+                class="govuk-link"
+                href="/add-standard-line"
+              >
+                Add a standard line
+              </a>
+            </li>
+          </ul>
+        </li>
+        <li>
+          <h2
+            class="govuk-heading-l"
+          >
+            Team management
+          </h2>
+          <ul
+            class="govuk-list govuk-list--bullet"
+          >
+            <li>
+              <a
+                class="govuk-link"
+                href="/team-search"
+              >
+                Manage a team
+              </a>
+            </li>
+            <li>
+              <a
+                class="govuk-link"
+                href="/add-team"
+              >
+                Create a DCU drafting team
+              </a>
+            </li>
+          </ul>
+        </li>
+        <li>
+          <h2
+            class="govuk-heading-l"
+          >
+            User management
+          </h2>
+          <ul
+            class="govuk-list govuk-list--bullet"
+          >
+            <li>
+              <a
+                class="govuk-link"
+                href="/user-search"
+              >
+                Manage a user
+              </a>
+            </li>
+            <li>
+              <a
+                class="govuk-link"
+                href="/add-user"
+              >
+                Add a user
+              </a>
+            </li>
+          </ul>
+        </li>
+        <li>
+          <h2
+            class="govuk-heading-l"
+          >
+            Template management
+          </h2>
+          <ul
+            class="govuk-list govuk-list--bullet"
+          >
+            <li>
+              <a
+                class="govuk-link"
+                href="/case-types"
+              >
+                Manage templates
+              </a>
+            </li>
+          </ul>
+        </li>
+        <li>
+          <h2
+            class="govuk-heading-l"
+          >
+            Topic management
+          </h2>
+          <ul
+            class="govuk-list govuk-list--bullet"
+          >
+            <li>
+              <a
+                class="govuk-link"
+                href="/add-parent-topic"
+              >
+                Add parent topic
+              </a>
+            </li>
+            <li>
+              <a
+                class="govuk-link"
+                href="/add-child-topic"
+              >
+                Add child topic
+              </a>
+            </li>
+            <li>
+              <a
+                class="govuk-link"
+                href="/topic-to-team"
+              >
+                Link topic to team
+              </a>
+            </li>
+          </ul>
+        </li>
+        <li>
+          <h2
+            class="govuk-heading-l"
+          >
+            Unit management
+          </h2>
+          <ul
+            class="govuk-list govuk-list--bullet"
+          >
+            <li>
+              <a
+                class="govuk-link"
+                href="/add-unit"
+              >
+                Add a unit
+              </a>
+            </li>
+            <li>
+              <a
+                class="govuk-link"
+                href="/unit-search"
+              >
+                View units and their teams
+              </a>
+            </li>
+          </ul>
+        </li>
+        <li>
+          <h2
+            class="govuk-heading-l"
+          >
+            Case management
+          </h2>
+          <ul
+            class="govuk-list govuk-list--bullet"
+          >
+            <li>
+              <a
+                class="govuk-link"
+                href="/case-withdraw"
+              >
+                Withdraw a case
+              </a>
+            </li>
+          </ul>
+        </li>
+        <li>
+          <h2
+            class="govuk-heading-l"
+          >
+            Lists management
+          </h2>
+          <ul
+            class="govuk-list govuk-list--bullet"
+          >
+            <li>
+              <a
+                class="govuk-link"
+                href="/manage-mpam-campaigns"
+              >
+                Manage MPAM campaigns
+              </a>
+            </li>
+            <li>
+              <a
+                class="govuk-link"
+                href="/manage-exgratia-reps"
+              >
+                Manage Ex-Gratia Business Area Representatives
+              </a>
+            </li>
+            <li>
+              <a
+                class="govuk-link"
+                href="/manage-mpam-business-units"
+              >
+                Manage MPAM Business Units
+              </a>
+            </li>
+            <li>
+              <a
+                class="govuk-link"
+                href="/manage-mpam-enquiry-reasons"
+              >
+                Manage MPAM Enquiry Reasons
+              </a>
+            </li>
+          </ul>
+        </li>
+      </ul>
+    </div>
   </div>
 </div>
 `;
 
 exports[`dashboard component should render FOI links if the user has the FOI role 1`] = `
-<div
-  class="govuk-grid-row"
->
+<div>
   <div
-    class="govuk-grid-column-two-thirds"
+    class="govuk-grid-row"
   >
-    <h1
-      class="govuk-heading-xl"
+    <div
+      class="govuk-grid-column-two-thirds"
     >
-      Choose an area to manage
-    </h1>
-    <ul
-      class="govuk-list"
-    >
-      <li>
-        <h2
-          class="govuk-heading-l"
-        >
-          Standard lines
-        </h2>
-        <ul
-          class="govuk-list govuk-list--bullet"
-        >
-          <li>
-            <a
-              class="govuk-link"
-              href="/manage-standard-lines"
-            >
-              Manage standard lines
-            </a>
-          </li>
-          <li>
-            <a
-              class="govuk-link"
-              href="/add-standard-line"
-            >
-              Add a standard line
-            </a>
-          </li>
-        </ul>
-      </li>
-      <li>
-        <h2
-          class="govuk-heading-l"
-        >
-          Team management
-        </h2>
-        <ul
-          class="govuk-list govuk-list--bullet"
-        >
-          <li>
-            <a
-              class="govuk-link"
-              href="/team-search"
-            >
-              Manage a team
-            </a>
-          </li>
-        </ul>
-      </li>
-      <li>
-        <h2
-          class="govuk-heading-l"
-        >
-          User management
-        </h2>
-        <ul
-          class="govuk-list govuk-list--bullet"
-        >
-          <li>
-            <a
-              class="govuk-link"
-              href="/user-search"
-            >
-              Manage a user
-            </a>
-          </li>
-          <li>
-            <a
-              class="govuk-link"
-              href="/add-user"
-            >
-              Add a user
-            </a>
-          </li>
-        </ul>
-      </li>
-      <li>
-        <h2
-          class="govuk-heading-l"
-        >
-          Template management
-        </h2>
-        <ul
-          class="govuk-list govuk-list--bullet"
-        >
-          <li>
-            <a
-              class="govuk-link"
-              href="/case-types"
-            >
-              Manage templates
-            </a>
-          </li>
-        </ul>
-      </li>
-      <li>
-        <h2
-          class="govuk-heading-l"
-        >
-          Topic management
-        </h2>
-        <ul
-          class="govuk-list govuk-list--bullet"
-        >
-          <li>
-            <a
-              class="govuk-link"
-              href="/add-parent-topic"
-            >
-              Add parent topic
-            </a>
-          </li>
-          <li>
-            <a
-              class="govuk-link"
-              href="/add-child-topic"
-            >
-              Add child topic
-            </a>
-          </li>
-          <li>
-            <a
-              class="govuk-link"
-              href="/topic-to-team"
-            >
-              Link topic to team
-            </a>
-          </li>
-        </ul>
-      </li>
-      <li>
-        <h2
-          class="govuk-heading-l"
-        >
-          Unit management
-        </h2>
-        <ul
-          class="govuk-list govuk-list--bullet"
-        >
-          <li>
-            <a
-              class="govuk-link"
-              href="/add-unit"
-            >
-              Add a unit
-            </a>
-          </li>
-          <li>
-            <a
-              class="govuk-link"
-              href="/unit-search"
-            >
-              View units and their teams
-            </a>
-          </li>
-        </ul>
-      </li>
-      <li>
-        <h2
-          class="govuk-heading-l"
-        >
-          Case management
-        </h2>
-        <ul
-          class="govuk-list govuk-list--bullet"
-        >
-          <li>
-            <a
-              class="govuk-link"
-              href="/case-withdraw"
-            >
-              Withdraw a case
-            </a>
-          </li>
-        </ul>
-      </li>
-      <li>
-        <h2
-          class="govuk-heading-l"
-        >
-          Lists management
-        </h2>
-        <ul
-          class="govuk-list govuk-list--bullet"
-        >
-          <li>
-            <a
-              class="govuk-link"
-              href="/manage-mpam-campaigns"
-            >
-              Manage MPAM campaigns
-            </a>
-          </li>
-          <li>
-            <a
-              class="govuk-link"
-              href="/manage-exgratia-reps"
-            >
-              Manage Ex-Gratia Business Area Representatives
-            </a>
-          </li>
-          <li>
-            <a
-              class="govuk-link"
-              href="/manage-mpam-business-units"
-            >
-              Manage MPAM Business Units
-            </a>
-          </li>
-          <li>
-            <a
-              class="govuk-link"
-              href="/manage-mpam-enquiry-reasons"
-            >
-              Manage MPAM Enquiry Reasons
-            </a>
-          </li>
-          <li>
-            <a
-              class="govuk-link"
-              href="/manage-foi-account-managers"
-            >
-              Manage FOI Account Managers
-            </a>
-          </li>
-          <li>
-            <a
-              class="govuk-link"
-              href="/manage-foi-interested-parties"
-            >
-              Manage FOI Interested Parties
-            </a>
-          </li>
-        </ul>
-      </li>
-    </ul>
+      <h1
+        class="govuk-heading-xl"
+      >
+        Choose an area to manage
+      </h1>
+      <ul
+        class="govuk-list"
+      >
+        <li>
+          <h2
+            class="govuk-heading-l"
+          >
+            Standard lines
+          </h2>
+          <ul
+            class="govuk-list govuk-list--bullet"
+          >
+            <li>
+              <a
+                class="govuk-link"
+                href="/manage-standard-lines"
+              >
+                Manage standard lines
+              </a>
+            </li>
+            <li>
+              <a
+                class="govuk-link"
+                href="/add-standard-line"
+              >
+                Add a standard line
+              </a>
+            </li>
+          </ul>
+        </li>
+        <li>
+          <h2
+            class="govuk-heading-l"
+          >
+            Team management
+          </h2>
+          <ul
+            class="govuk-list govuk-list--bullet"
+          >
+            <li>
+              <a
+                class="govuk-link"
+                href="/team-search"
+              >
+                Manage a team
+              </a>
+            </li>
+          </ul>
+        </li>
+        <li>
+          <h2
+            class="govuk-heading-l"
+          >
+            User management
+          </h2>
+          <ul
+            class="govuk-list govuk-list--bullet"
+          >
+            <li>
+              <a
+                class="govuk-link"
+                href="/user-search"
+              >
+                Manage a user
+              </a>
+            </li>
+            <li>
+              <a
+                class="govuk-link"
+                href="/add-user"
+              >
+                Add a user
+              </a>
+            </li>
+          </ul>
+        </li>
+        <li>
+          <h2
+            class="govuk-heading-l"
+          >
+            Template management
+          </h2>
+          <ul
+            class="govuk-list govuk-list--bullet"
+          >
+            <li>
+              <a
+                class="govuk-link"
+                href="/case-types"
+              >
+                Manage templates
+              </a>
+            </li>
+          </ul>
+        </li>
+        <li>
+          <h2
+            class="govuk-heading-l"
+          >
+            Topic management
+          </h2>
+          <ul
+            class="govuk-list govuk-list--bullet"
+          >
+            <li>
+              <a
+                class="govuk-link"
+                href="/add-parent-topic"
+              >
+                Add parent topic
+              </a>
+            </li>
+            <li>
+              <a
+                class="govuk-link"
+                href="/add-child-topic"
+              >
+                Add child topic
+              </a>
+            </li>
+            <li>
+              <a
+                class="govuk-link"
+                href="/topic-to-team"
+              >
+                Link topic to team
+              </a>
+            </li>
+          </ul>
+        </li>
+        <li>
+          <h2
+            class="govuk-heading-l"
+          >
+            Unit management
+          </h2>
+          <ul
+            class="govuk-list govuk-list--bullet"
+          >
+            <li>
+              <a
+                class="govuk-link"
+                href="/add-unit"
+              >
+                Add a unit
+              </a>
+            </li>
+            <li>
+              <a
+                class="govuk-link"
+                href="/unit-search"
+              >
+                View units and their teams
+              </a>
+            </li>
+          </ul>
+        </li>
+        <li>
+          <h2
+            class="govuk-heading-l"
+          >
+            Case management
+          </h2>
+          <ul
+            class="govuk-list govuk-list--bullet"
+          >
+            <li>
+              <a
+                class="govuk-link"
+                href="/case-withdraw"
+              >
+                Withdraw a case
+              </a>
+            </li>
+          </ul>
+        </li>
+        <li>
+          <h2
+            class="govuk-heading-l"
+          >
+            Lists management
+          </h2>
+          <ul
+            class="govuk-list govuk-list--bullet"
+          >
+            <li>
+              <a
+                class="govuk-link"
+                href="/manage-mpam-campaigns"
+              >
+                Manage MPAM campaigns
+              </a>
+            </li>
+            <li>
+              <a
+                class="govuk-link"
+                href="/manage-exgratia-reps"
+              >
+                Manage Ex-Gratia Business Area Representatives
+              </a>
+            </li>
+            <li>
+              <a
+                class="govuk-link"
+                href="/manage-mpam-business-units"
+              >
+                Manage MPAM Business Units
+              </a>
+            </li>
+            <li>
+              <a
+                class="govuk-link"
+                href="/manage-mpam-enquiry-reasons"
+              >
+                Manage MPAM Enquiry Reasons
+              </a>
+            </li>
+            <li>
+              <a
+                class="govuk-link"
+                href="/manage-foi-account-managers"
+              >
+                Manage FOI Account Managers
+              </a>
+            </li>
+            <li>
+              <a
+                class="govuk-link"
+                href="/manage-foi-interested-parties"
+              >
+                Manage FOI Interested Parties
+              </a>
+            </li>
+          </ul>
+        </li>
+      </ul>
+    </div>
   </div>
 </div>
 `;
