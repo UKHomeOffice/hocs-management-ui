@@ -6,12 +6,11 @@ import EditTeam from '../editTeam';
 import * as TeamsService from '../../../../services/teamsService';
 import {
     GENERAL_ERROR_TITLE,
-    LOAD_TEAM_ERROR_DESCRIPTION,
     TEAM_UPDATE_FAILED_UNKNOWN_ERROR
 } from '../../../../models/constants';
 import * as useError from '../../../../hooks/useError';
 import { State } from '../state';
-import { shallow } from 'enzyme';
+import { ApplicationProvider } from '../../../../contexts/application';
 
 let match: match<any>;
 let history: History<any>;
@@ -28,14 +27,30 @@ const addFormErrorSpy = jest.fn();
 const clearErrorsSpy = jest.fn();
 const setMessageSpy = jest.fn();
 
-const renderComponent = () => {
-    const OUTER = shallow(<EditTeam history={history} location={location} match={match} />);
-    const Page = OUTER.props().children;
-
+const renderComponent = (roles: string[] = []) => {
+    const config = {
+        csrf: '',
+        layout: {
+            body: { phaseBanner: { feedback: '', isVisible: true, phase: '' } },
+            countDownForSeconds: 5,
+            defaultTimeoutSeconds: 10,
+            footer: { isVisible: true, links: [] },
+            header: {
+                isVisible: true,
+                service: 'service name',
+                serviceLink: '',
+            },
+        },
+        user: {
+            roles: roles
+        }
+    };
     return render(
-        <MemoryRouter>
-            <Page hasRole={hasRole}></Page>
-        </MemoryRouter>
+        <ApplicationProvider config={config}>
+            <MemoryRouter>
+                <EditTeam history={history} location={location} match={match} />
+            </MemoryRouter>
+        </ApplicationProvider>
     );
 };
 
@@ -95,7 +110,11 @@ beforeEach(() => {
 
 describe('when the editTeam component is mounted', () => {
     it('should render with default props', async () => {
-        expect.assertions(1);
+        const roles = ['RENAME_TEAM', 'REASSIGN_TEAM_UNIT'];
+
+        act(() => {
+            wrapper = renderComponent(roles);
+        });
 
         await wait(() => {
             expect(wrapper.container).toMatchSnapshot();
@@ -103,17 +122,10 @@ describe('when the editTeam component is mounted', () => {
     });
 
     it('should hide the edit name area if the user does not have the RENAME_TEAM role', async () => {
-        setDefaults();
-
-        hasRole.mockImplementation((role: string) => {
-            if (role === 'RENAME_TEAM') {
-                return false;
-            }
-            return true;
-        });
+        const roles = ['REASSIGN_TEAM_UNIT'];
 
         act(() => {
-            wrapper = renderComponent();
+            wrapper = renderComponent(roles);
         });
 
         await wait(() => {
@@ -122,17 +134,10 @@ describe('when the editTeam component is mounted', () => {
     });
 
     it('should hide the change unit area if the user does not have the REASSIGN_TEAM_UNIT role', async () => {
-        setDefaults();
-
-        hasRole.mockImplementation((role: string) => {
-            if (role === 'RENAME_TEAM') {
-                return true;
-            }
-            return false;
-        });
+        const roles = ['RENAME_TEAM'];
 
         act(() => {
-            wrapper = renderComponent();
+            wrapper = renderComponent(roles);
         });
 
         await wait(() => {
@@ -141,47 +146,14 @@ describe('when the editTeam component is mounted', () => {
     });
 
     it('should hide the change unit area if the user does not have the SET_UNIT_ACTIVE_FLAG role', async () => {
-        setDefaults();
-
-        hasRole.mockImplementation((role: string) => {
-            if (role === 'SET_UNIT_ACTIVE_FLAG') {
-                return false;
-            }
-            return true;
-        });
+        const roles = ['RENAME_TEAM', 'REASSIGN_TEAM_UNIT'];
 
         act(() => {
-            wrapper = renderComponent();
+            wrapper = renderComponent(roles);
         });
 
         await wait(() => {
             expect(wrapper.container).toMatchSnapshot();
-        });
-    });
-
-    describe('and the getTeam service fails', () => {
-        beforeAll(() => {
-            jest.spyOn(TeamsService, 'getTeam').mockImplementationOnce(() => Promise.reject());
-        });
-
-        it('should set the error state', () => {
-            expect(setMessageSpy).toHaveBeenCalledWith({ description: LOAD_TEAM_ERROR_DESCRIPTION, title: GENERAL_ERROR_TITLE });
-        });
-    });
-});
-
-describe('when the name is entered', () => {
-    it('should be persisted in the page state', async () => {
-        expect.assertions(1);
-
-        const nameElement = await waitForElement(async () => {
-            return await wrapper.findByLabelText('New team name');
-        });
-
-        fireEvent.change(nameElement, { target: { name: 'newTeamName', value: '__displayTitle__' } });
-
-        await wait(() => {
-            expect(reducerDispatch).toHaveBeenCalledWith({ type: 'SetNewTeamName', payload: '__displayTitle__' });
         });
     });
 });
