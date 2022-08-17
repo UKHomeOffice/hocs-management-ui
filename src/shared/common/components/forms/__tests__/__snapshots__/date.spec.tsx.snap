@@ -1,567 +1,1475 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
 exports[`Form date component should render disabled when passed 1`] = `
-<div
-  class="govuk-form-group"
->
-  <fieldset
-    class="govuk-fieldset"
-    disabled=""
-    id="date-field"
-    role="group"
-  >
-    <legend
-      class="govuk-fieldset__legend govuk-label--s"
-    />
-    <div
-      class="govuk-date-input"
-    >
+Object {
+  "asFragment": [Function],
+  "baseElement": <body>
+    <div>
       <div
-        class="govuk-date-input__item"
+        class="govuk-form-group"
       >
-        <div
-          class="govuk-form-group"
+        <fieldset
+          class="govuk-fieldset"
+          disabled=""
+          id="date-field"
+          role="group"
         >
-          <label
-            class="govuk-label govuk-date-input__label"
-            for="date-field-day"
-          >
-            Day
-          </label>
-          <input
-            class="govuk-input govuk-date-input__input govuk-input--width-2 "
-            id="date-field-day"
-            max="31"
-            min="1"
-            name="date-field-day"
-            pattern="[0-9]*"
-            type="number"
-            value=""
+          <legend
+            class="govuk-fieldset__legend govuk-label--s"
           />
-        </div>
-      </div>
-      <div
-        class="govuk-date-input__item"
-      >
-        <div
-          class="govuk-form-group"
-        >
-          <label
-            class="govuk-label govuk-date-input__label"
-            for="date-field-month"
+          <div
+            class="govuk-date-input"
           >
-            Month
-          </label>
-          <input
-            class="govuk-input govuk-date-input__input govuk-input--width-2 "
-            id="date-field-month"
-            max="12"
-            min="1"
-            name="date-field-month"
-            pattern="[0-9]*"
-            type="number"
-            value=""
-          />
-        </div>
-      </div>
-      <div
-        class="govuk-date-input__item"
-      >
-        <div
-          class="govuk-form-group"
-        >
-          <label
-            class="govuk-label govuk-date-input__label"
-            for="date-field-year"
-          >
-            Year
-          </label>
-          <input
-            class="govuk-input govuk-date-input__input govuk-input--width-4  "
-            id="date-field-year"
-            max="2121"
-            min="1900"
-            name="date-field-year"
-            pattern="[0-9]*"
-            type="number"
-            value=""
-          />
-        </div>
+            <div
+              class="govuk-date-input__item"
+            >
+              <div
+                class="govuk-form-group"
+              >
+                <label
+                  class="govuk-label govuk-date-input__label"
+                  for="date-field-day"
+                >
+                  Day
+                </label>
+                <input
+                  class="govuk-input govuk-date-input__input govuk-input--width-2 "
+                  id="date-field-day"
+                  max="31"
+                  min="1"
+                  name="date-field-day"
+                  pattern="[0-9]*"
+                  type="number"
+                  value=""
+                />
+              </div>
+            </div>
+            <div
+              class="govuk-date-input__item"
+            >
+              <div
+                class="govuk-form-group"
+              >
+                <label
+                  class="govuk-label govuk-date-input__label"
+                  for="date-field-month"
+                >
+                  Month
+                </label>
+                <input
+                  class="govuk-input govuk-date-input__input govuk-input--width-2 "
+                  id="date-field-month"
+                  max="12"
+                  min="1"
+                  name="date-field-month"
+                  pattern="[0-9]*"
+                  type="number"
+                  value=""
+                />
+              </div>
+            </div>
+            <div
+              class="govuk-date-input__item"
+            >
+              <div
+                class="govuk-form-group"
+              >
+                <label
+                  class="govuk-label govuk-date-input__label"
+                  for="date-field-year"
+                >
+                  Year
+                </label>
+                <input
+                  class="govuk-input govuk-date-input__input govuk-input--width-4  "
+                  id="date-field-year"
+                  max="2121"
+                  min="1900"
+                  name="date-field-year"
+                  pattern="[0-9]*"
+                  type="number"
+                  value=""
+                />
+              </div>
+            </div>
+          </div>
+        </fieldset>
       </div>
     </div>
-  </fieldset>
-</div>
+  </body>,
+  "container": <div>
+    <div
+      class="govuk-form-group"
+    >
+      <fieldset
+        class="govuk-fieldset"
+        disabled=""
+        id="date-field"
+        role="group"
+      >
+        <legend
+          class="govuk-fieldset__legend govuk-label--s"
+        />
+        <div
+          class="govuk-date-input"
+        >
+          <div
+            class="govuk-date-input__item"
+          >
+            <div
+              class="govuk-form-group"
+            >
+              <label
+                class="govuk-label govuk-date-input__label"
+                for="date-field-day"
+              >
+                Day
+              </label>
+              <input
+                class="govuk-input govuk-date-input__input govuk-input--width-2 "
+                id="date-field-day"
+                max="31"
+                min="1"
+                name="date-field-day"
+                pattern="[0-9]*"
+                type="number"
+                value=""
+              />
+            </div>
+          </div>
+          <div
+            class="govuk-date-input__item"
+          >
+            <div
+              class="govuk-form-group"
+            >
+              <label
+                class="govuk-label govuk-date-input__label"
+                for="date-field-month"
+              >
+                Month
+              </label>
+              <input
+                class="govuk-input govuk-date-input__input govuk-input--width-2 "
+                id="date-field-month"
+                max="12"
+                min="1"
+                name="date-field-month"
+                pattern="[0-9]*"
+                type="number"
+                value=""
+              />
+            </div>
+          </div>
+          <div
+            class="govuk-date-input__item"
+          >
+            <div
+              class="govuk-form-group"
+            >
+              <label
+                class="govuk-label govuk-date-input__label"
+                for="date-field-year"
+              >
+                Year
+              </label>
+              <input
+                class="govuk-input govuk-date-input__input govuk-input--width-4  "
+                id="date-field-year"
+                max="2121"
+                min="1900"
+                name="date-field-year"
+                pattern="[0-9]*"
+                type="number"
+                value=""
+              />
+            </div>
+          </div>
+        </div>
+      </fieldset>
+    </div>
+  </div>,
+  "debug": [Function],
+  "findAllByAltText": [Function],
+  "findAllByDisplayValue": [Function],
+  "findAllByLabelText": [Function],
+  "findAllByPlaceholderText": [Function],
+  "findAllByRole": [Function],
+  "findAllByTestId": [Function],
+  "findAllByText": [Function],
+  "findAllByTitle": [Function],
+  "findByAltText": [Function],
+  "findByDisplayValue": [Function],
+  "findByLabelText": [Function],
+  "findByPlaceholderText": [Function],
+  "findByRole": [Function],
+  "findByTestId": [Function],
+  "findByText": [Function],
+  "findByTitle": [Function],
+  "getAllByAltText": [Function],
+  "getAllByDisplayValue": [Function],
+  "getAllByLabelText": [Function],
+  "getAllByPlaceholderText": [Function],
+  "getAllByRole": [Function],
+  "getAllByTestId": [Function],
+  "getAllByText": [Function],
+  "getAllByTitle": [Function],
+  "getByAltText": [Function],
+  "getByDisplayValue": [Function],
+  "getByLabelText": [Function],
+  "getByPlaceholderText": [Function],
+  "getByRole": [Function],
+  "getByTestId": [Function],
+  "getByText": [Function],
+  "getByTitle": [Function],
+  "queryAllByAltText": [Function],
+  "queryAllByDisplayValue": [Function],
+  "queryAllByLabelText": [Function],
+  "queryAllByPlaceholderText": [Function],
+  "queryAllByRole": [Function],
+  "queryAllByTestId": [Function],
+  "queryAllByText": [Function],
+  "queryAllByTitle": [Function],
+  "queryByAltText": [Function],
+  "queryByDisplayValue": [Function],
+  "queryByLabelText": [Function],
+  "queryByPlaceholderText": [Function],
+  "queryByRole": [Function],
+  "queryByTestId": [Function],
+  "queryByText": [Function],
+  "queryByTitle": [Function],
+  "rerender": [Function],
+  "unmount": [Function],
+}
 `;
 
 exports[`Form date component should render with default props 1`] = `
-<div
-  class="govuk-form-group"
->
-  <fieldset
-    class="govuk-fieldset"
-    id="date-field"
-    role="group"
-  >
-    <legend
-      class="govuk-fieldset__legend govuk-label--s"
-    />
-    <div
-      class="govuk-date-input"
-    >
+Object {
+  "asFragment": [Function],
+  "baseElement": <body>
+    <div>
       <div
-        class="govuk-date-input__item"
+        class="govuk-form-group"
       >
-        <div
-          class="govuk-form-group"
+        <fieldset
+          class="govuk-fieldset"
+          id="date-field"
+          role="group"
         >
-          <label
-            class="govuk-label govuk-date-input__label"
-            for="date-field-day"
-          >
-            Day
-          </label>
-          <input
-            class="govuk-input govuk-date-input__input govuk-input--width-2 "
-            id="date-field-day"
-            max="31"
-            min="1"
-            name="date-field-day"
-            pattern="[0-9]*"
-            type="number"
-            value=""
+          <legend
+            class="govuk-fieldset__legend govuk-label--s"
           />
-        </div>
-      </div>
-      <div
-        class="govuk-date-input__item"
-      >
-        <div
-          class="govuk-form-group"
-        >
-          <label
-            class="govuk-label govuk-date-input__label"
-            for="date-field-month"
+          <div
+            class="govuk-date-input"
           >
-            Month
-          </label>
-          <input
-            class="govuk-input govuk-date-input__input govuk-input--width-2 "
-            id="date-field-month"
-            max="12"
-            min="1"
-            name="date-field-month"
-            pattern="[0-9]*"
-            type="number"
-            value=""
-          />
-        </div>
-      </div>
-      <div
-        class="govuk-date-input__item"
-      >
-        <div
-          class="govuk-form-group"
-        >
-          <label
-            class="govuk-label govuk-date-input__label"
-            for="date-field-year"
-          >
-            Year
-          </label>
-          <input
-            class="govuk-input govuk-date-input__input govuk-input--width-4  "
-            id="date-field-year"
-            max="2121"
-            min="1900"
-            name="date-field-year"
-            pattern="[0-9]*"
-            type="number"
-            value=""
-          />
-        </div>
+            <div
+              class="govuk-date-input__item"
+            >
+              <div
+                class="govuk-form-group"
+              >
+                <label
+                  class="govuk-label govuk-date-input__label"
+                  for="date-field-day"
+                >
+                  Day
+                </label>
+                <input
+                  class="govuk-input govuk-date-input__input govuk-input--width-2 "
+                  id="date-field-day"
+                  max="31"
+                  min="1"
+                  name="date-field-day"
+                  pattern="[0-9]*"
+                  type="number"
+                  value=""
+                />
+              </div>
+            </div>
+            <div
+              class="govuk-date-input__item"
+            >
+              <div
+                class="govuk-form-group"
+              >
+                <label
+                  class="govuk-label govuk-date-input__label"
+                  for="date-field-month"
+                >
+                  Month
+                </label>
+                <input
+                  class="govuk-input govuk-date-input__input govuk-input--width-2 "
+                  id="date-field-month"
+                  max="12"
+                  min="1"
+                  name="date-field-month"
+                  pattern="[0-9]*"
+                  type="number"
+                  value=""
+                />
+              </div>
+            </div>
+            <div
+              class="govuk-date-input__item"
+            >
+              <div
+                class="govuk-form-group"
+              >
+                <label
+                  class="govuk-label govuk-date-input__label"
+                  for="date-field-year"
+                >
+                  Year
+                </label>
+                <input
+                  class="govuk-input govuk-date-input__input govuk-input--width-4  "
+                  id="date-field-year"
+                  max="2121"
+                  min="1900"
+                  name="date-field-year"
+                  pattern="[0-9]*"
+                  type="number"
+                  value=""
+                />
+              </div>
+            </div>
+          </div>
+        </fieldset>
       </div>
     </div>
-  </fieldset>
-</div>
+  </body>,
+  "container": <div>
+    <div
+      class="govuk-form-group"
+    >
+      <fieldset
+        class="govuk-fieldset"
+        id="date-field"
+        role="group"
+      >
+        <legend
+          class="govuk-fieldset__legend govuk-label--s"
+        />
+        <div
+          class="govuk-date-input"
+        >
+          <div
+            class="govuk-date-input__item"
+          >
+            <div
+              class="govuk-form-group"
+            >
+              <label
+                class="govuk-label govuk-date-input__label"
+                for="date-field-day"
+              >
+                Day
+              </label>
+              <input
+                class="govuk-input govuk-date-input__input govuk-input--width-2 "
+                id="date-field-day"
+                max="31"
+                min="1"
+                name="date-field-day"
+                pattern="[0-9]*"
+                type="number"
+                value=""
+              />
+            </div>
+          </div>
+          <div
+            class="govuk-date-input__item"
+          >
+            <div
+              class="govuk-form-group"
+            >
+              <label
+                class="govuk-label govuk-date-input__label"
+                for="date-field-month"
+              >
+                Month
+              </label>
+              <input
+                class="govuk-input govuk-date-input__input govuk-input--width-2 "
+                id="date-field-month"
+                max="12"
+                min="1"
+                name="date-field-month"
+                pattern="[0-9]*"
+                type="number"
+                value=""
+              />
+            </div>
+          </div>
+          <div
+            class="govuk-date-input__item"
+          >
+            <div
+              class="govuk-form-group"
+            >
+              <label
+                class="govuk-label govuk-date-input__label"
+                for="date-field-year"
+              >
+                Year
+              </label>
+              <input
+                class="govuk-input govuk-date-input__input govuk-input--width-4  "
+                id="date-field-year"
+                max="2121"
+                min="1900"
+                name="date-field-year"
+                pattern="[0-9]*"
+                type="number"
+                value=""
+              />
+            </div>
+          </div>
+        </div>
+      </fieldset>
+    </div>
+  </div>,
+  "debug": [Function],
+  "findAllByAltText": [Function],
+  "findAllByDisplayValue": [Function],
+  "findAllByLabelText": [Function],
+  "findAllByPlaceholderText": [Function],
+  "findAllByRole": [Function],
+  "findAllByTestId": [Function],
+  "findAllByText": [Function],
+  "findAllByTitle": [Function],
+  "findByAltText": [Function],
+  "findByDisplayValue": [Function],
+  "findByLabelText": [Function],
+  "findByPlaceholderText": [Function],
+  "findByRole": [Function],
+  "findByTestId": [Function],
+  "findByText": [Function],
+  "findByTitle": [Function],
+  "getAllByAltText": [Function],
+  "getAllByDisplayValue": [Function],
+  "getAllByLabelText": [Function],
+  "getAllByPlaceholderText": [Function],
+  "getAllByRole": [Function],
+  "getAllByTestId": [Function],
+  "getAllByText": [Function],
+  "getAllByTitle": [Function],
+  "getByAltText": [Function],
+  "getByDisplayValue": [Function],
+  "getByLabelText": [Function],
+  "getByPlaceholderText": [Function],
+  "getByRole": [Function],
+  "getByTestId": [Function],
+  "getByText": [Function],
+  "getByTitle": [Function],
+  "queryAllByAltText": [Function],
+  "queryAllByDisplayValue": [Function],
+  "queryAllByLabelText": [Function],
+  "queryAllByPlaceholderText": [Function],
+  "queryAllByRole": [Function],
+  "queryAllByTestId": [Function],
+  "queryAllByText": [Function],
+  "queryAllByTitle": [Function],
+  "queryByAltText": [Function],
+  "queryByDisplayValue": [Function],
+  "queryByLabelText": [Function],
+  "queryByPlaceholderText": [Function],
+  "queryByRole": [Function],
+  "queryByTestId": [Function],
+  "queryByText": [Function],
+  "queryByTitle": [Function],
+  "rerender": [Function],
+  "unmount": [Function],
+}
 `;
 
 exports[`Form date component should render with error when passed 1`] = `
-<div
-  class="govuk-form-group govuk-form-group--error"
->
-  <fieldset
-    class="govuk-fieldset"
-    id="date-field"
-    role="group"
-  >
-    <legend
-      class="govuk-fieldset__legend govuk-label--s"
-    />
-    <span
-      class="govuk-error-message"
-      id="date-field-error"
-    >
-      Some error message
-    </span>
-    <div
-      class="govuk-date-input"
-    >
+Object {
+  "asFragment": [Function],
+  "baseElement": <body>
+    <div>
       <div
-        class="govuk-date-input__item"
+        class="govuk-form-group govuk-form-group--error"
       >
-        <div
-          class="govuk-form-group"
+        <fieldset
+          class="govuk-fieldset"
+          id="date-field"
+          role="group"
         >
-          <label
-            class="govuk-label govuk-date-input__label"
-            for="date-field-day"
-          >
-            Day
-          </label>
-          <input
-            class="govuk-input govuk-date-input__input govuk-input--width-2 govuk-input--error"
-            id="date-field-day"
-            max="31"
-            min="1"
-            name="date-field-day"
-            pattern="[0-9]*"
-            type="number"
-            value=""
+          <legend
+            class="govuk-fieldset__legend govuk-label--s"
           />
-        </div>
-      </div>
-      <div
-        class="govuk-date-input__item"
-      >
-        <div
-          class="govuk-form-group"
-        >
-          <label
-            class="govuk-label govuk-date-input__label"
-            for="date-field-month"
+          <span
+            class="govuk-error-message"
+            id="date-field-error"
           >
-            Month
-          </label>
-          <input
-            class="govuk-input govuk-date-input__input govuk-input--width-2 govuk-input--error"
-            id="date-field-month"
-            max="12"
-            min="1"
-            name="date-field-month"
-            pattern="[0-9]*"
-            type="number"
-            value=""
-          />
-        </div>
-      </div>
-      <div
-        class="govuk-date-input__item"
-      >
-        <div
-          class="govuk-form-group"
-        >
-          <label
-            class="govuk-label govuk-date-input__label"
-            for="date-field-year"
+            Some error message
+          </span>
+          <div
+            class="govuk-date-input"
           >
-            Year
-          </label>
-          <input
-            class="govuk-input govuk-date-input__input govuk-input--width-4  govuk-input--error"
-            id="date-field-year"
-            max="2121"
-            min="1900"
-            name="date-field-year"
-            pattern="[0-9]*"
-            type="number"
-            value=""
-          />
-        </div>
+            <div
+              class="govuk-date-input__item"
+            >
+              <div
+                class="govuk-form-group"
+              >
+                <label
+                  class="govuk-label govuk-date-input__label"
+                  for="date-field-day"
+                >
+                  Day
+                </label>
+                <input
+                  class="govuk-input govuk-date-input__input govuk-input--width-2 govuk-input--error"
+                  id="date-field-day"
+                  max="31"
+                  min="1"
+                  name="date-field-day"
+                  pattern="[0-9]*"
+                  type="number"
+                  value=""
+                />
+              </div>
+            </div>
+            <div
+              class="govuk-date-input__item"
+            >
+              <div
+                class="govuk-form-group"
+              >
+                <label
+                  class="govuk-label govuk-date-input__label"
+                  for="date-field-month"
+                >
+                  Month
+                </label>
+                <input
+                  class="govuk-input govuk-date-input__input govuk-input--width-2 govuk-input--error"
+                  id="date-field-month"
+                  max="12"
+                  min="1"
+                  name="date-field-month"
+                  pattern="[0-9]*"
+                  type="number"
+                  value=""
+                />
+              </div>
+            </div>
+            <div
+              class="govuk-date-input__item"
+            >
+              <div
+                class="govuk-form-group"
+              >
+                <label
+                  class="govuk-label govuk-date-input__label"
+                  for="date-field-year"
+                >
+                  Year
+                </label>
+                <input
+                  class="govuk-input govuk-date-input__input govuk-input--width-4  govuk-input--error"
+                  id="date-field-year"
+                  max="2121"
+                  min="1900"
+                  name="date-field-year"
+                  pattern="[0-9]*"
+                  type="number"
+                  value=""
+                />
+              </div>
+            </div>
+          </div>
+        </fieldset>
       </div>
     </div>
-  </fieldset>
-</div>
+  </body>,
+  "container": <div>
+    <div
+      class="govuk-form-group govuk-form-group--error"
+    >
+      <fieldset
+        class="govuk-fieldset"
+        id="date-field"
+        role="group"
+      >
+        <legend
+          class="govuk-fieldset__legend govuk-label--s"
+        />
+        <span
+          class="govuk-error-message"
+          id="date-field-error"
+        >
+          Some error message
+        </span>
+        <div
+          class="govuk-date-input"
+        >
+          <div
+            class="govuk-date-input__item"
+          >
+            <div
+              class="govuk-form-group"
+            >
+              <label
+                class="govuk-label govuk-date-input__label"
+                for="date-field-day"
+              >
+                Day
+              </label>
+              <input
+                class="govuk-input govuk-date-input__input govuk-input--width-2 govuk-input--error"
+                id="date-field-day"
+                max="31"
+                min="1"
+                name="date-field-day"
+                pattern="[0-9]*"
+                type="number"
+                value=""
+              />
+            </div>
+          </div>
+          <div
+            class="govuk-date-input__item"
+          >
+            <div
+              class="govuk-form-group"
+            >
+              <label
+                class="govuk-label govuk-date-input__label"
+                for="date-field-month"
+              >
+                Month
+              </label>
+              <input
+                class="govuk-input govuk-date-input__input govuk-input--width-2 govuk-input--error"
+                id="date-field-month"
+                max="12"
+                min="1"
+                name="date-field-month"
+                pattern="[0-9]*"
+                type="number"
+                value=""
+              />
+            </div>
+          </div>
+          <div
+            class="govuk-date-input__item"
+          >
+            <div
+              class="govuk-form-group"
+            >
+              <label
+                class="govuk-label govuk-date-input__label"
+                for="date-field-year"
+              >
+                Year
+              </label>
+              <input
+                class="govuk-input govuk-date-input__input govuk-input--width-4  govuk-input--error"
+                id="date-field-year"
+                max="2121"
+                min="1900"
+                name="date-field-year"
+                pattern="[0-9]*"
+                type="number"
+                value=""
+              />
+            </div>
+          </div>
+        </div>
+      </fieldset>
+    </div>
+  </div>,
+  "debug": [Function],
+  "findAllByAltText": [Function],
+  "findAllByDisplayValue": [Function],
+  "findAllByLabelText": [Function],
+  "findAllByPlaceholderText": [Function],
+  "findAllByRole": [Function],
+  "findAllByTestId": [Function],
+  "findAllByText": [Function],
+  "findAllByTitle": [Function],
+  "findByAltText": [Function],
+  "findByDisplayValue": [Function],
+  "findByLabelText": [Function],
+  "findByPlaceholderText": [Function],
+  "findByRole": [Function],
+  "findByTestId": [Function],
+  "findByText": [Function],
+  "findByTitle": [Function],
+  "getAllByAltText": [Function],
+  "getAllByDisplayValue": [Function],
+  "getAllByLabelText": [Function],
+  "getAllByPlaceholderText": [Function],
+  "getAllByRole": [Function],
+  "getAllByTestId": [Function],
+  "getAllByText": [Function],
+  "getAllByTitle": [Function],
+  "getByAltText": [Function],
+  "getByDisplayValue": [Function],
+  "getByLabelText": [Function],
+  "getByPlaceholderText": [Function],
+  "getByRole": [Function],
+  "getByTestId": [Function],
+  "getByText": [Function],
+  "getByTitle": [Function],
+  "queryAllByAltText": [Function],
+  "queryAllByDisplayValue": [Function],
+  "queryAllByLabelText": [Function],
+  "queryAllByPlaceholderText": [Function],
+  "queryAllByRole": [Function],
+  "queryAllByTestId": [Function],
+  "queryAllByText": [Function],
+  "queryAllByTitle": [Function],
+  "queryByAltText": [Function],
+  "queryByDisplayValue": [Function],
+  "queryByLabelText": [Function],
+  "queryByPlaceholderText": [Function],
+  "queryByRole": [Function],
+  "queryByTestId": [Function],
+  "queryByText": [Function],
+  "queryByTitle": [Function],
+  "rerender": [Function],
+  "unmount": [Function],
+}
 `;
 
 exports[`Form date component should render with hint when passed 1`] = `
-<div
-  class="govuk-form-group"
->
-  <fieldset
-    class="govuk-fieldset"
-    id="date-field"
-    role="group"
-  >
-    <legend
-      class="govuk-fieldset__legend govuk-label--s"
-    />
-    <span
-      class="govuk-hint"
-    >
-      Put some text in the box below
-    </span>
-    <div
-      class="govuk-date-input"
-    >
+Object {
+  "asFragment": [Function],
+  "baseElement": <body>
+    <div>
       <div
-        class="govuk-date-input__item"
+        class="govuk-form-group"
       >
-        <div
-          class="govuk-form-group"
+        <fieldset
+          class="govuk-fieldset"
+          id="date-field"
+          role="group"
         >
-          <label
-            class="govuk-label govuk-date-input__label"
-            for="date-field-day"
-          >
-            Day
-          </label>
-          <input
-            class="govuk-input govuk-date-input__input govuk-input--width-2 "
-            id="date-field-day"
-            max="31"
-            min="1"
-            name="date-field-day"
-            pattern="[0-9]*"
-            type="number"
-            value=""
+          <legend
+            class="govuk-fieldset__legend govuk-label--s"
           />
-        </div>
-      </div>
-      <div
-        class="govuk-date-input__item"
-      >
-        <div
-          class="govuk-form-group"
-        >
-          <label
-            class="govuk-label govuk-date-input__label"
-            for="date-field-month"
+          <span
+            class="govuk-hint"
           >
-            Month
-          </label>
-          <input
-            class="govuk-input govuk-date-input__input govuk-input--width-2 "
-            id="date-field-month"
-            max="12"
-            min="1"
-            name="date-field-month"
-            pattern="[0-9]*"
-            type="number"
-            value=""
-          />
-        </div>
-      </div>
-      <div
-        class="govuk-date-input__item"
-      >
-        <div
-          class="govuk-form-group"
-        >
-          <label
-            class="govuk-label govuk-date-input__label"
-            for="date-field-year"
+            Put some text in the box below
+          </span>
+          <div
+            class="govuk-date-input"
           >
-            Year
-          </label>
-          <input
-            class="govuk-input govuk-date-input__input govuk-input--width-4  "
-            id="date-field-year"
-            max="2121"
-            min="1900"
-            name="date-field-year"
-            pattern="[0-9]*"
-            type="number"
-            value=""
-          />
-        </div>
+            <div
+              class="govuk-date-input__item"
+            >
+              <div
+                class="govuk-form-group"
+              >
+                <label
+                  class="govuk-label govuk-date-input__label"
+                  for="date-field-day"
+                >
+                  Day
+                </label>
+                <input
+                  class="govuk-input govuk-date-input__input govuk-input--width-2 "
+                  id="date-field-day"
+                  max="31"
+                  min="1"
+                  name="date-field-day"
+                  pattern="[0-9]*"
+                  type="number"
+                  value=""
+                />
+              </div>
+            </div>
+            <div
+              class="govuk-date-input__item"
+            >
+              <div
+                class="govuk-form-group"
+              >
+                <label
+                  class="govuk-label govuk-date-input__label"
+                  for="date-field-month"
+                >
+                  Month
+                </label>
+                <input
+                  class="govuk-input govuk-date-input__input govuk-input--width-2 "
+                  id="date-field-month"
+                  max="12"
+                  min="1"
+                  name="date-field-month"
+                  pattern="[0-9]*"
+                  type="number"
+                  value=""
+                />
+              </div>
+            </div>
+            <div
+              class="govuk-date-input__item"
+            >
+              <div
+                class="govuk-form-group"
+              >
+                <label
+                  class="govuk-label govuk-date-input__label"
+                  for="date-field-year"
+                >
+                  Year
+                </label>
+                <input
+                  class="govuk-input govuk-date-input__input govuk-input--width-4  "
+                  id="date-field-year"
+                  max="2121"
+                  min="1900"
+                  name="date-field-year"
+                  pattern="[0-9]*"
+                  type="number"
+                  value=""
+                />
+              </div>
+            </div>
+          </div>
+        </fieldset>
       </div>
     </div>
-  </fieldset>
-</div>
+  </body>,
+  "container": <div>
+    <div
+      class="govuk-form-group"
+    >
+      <fieldset
+        class="govuk-fieldset"
+        id="date-field"
+        role="group"
+      >
+        <legend
+          class="govuk-fieldset__legend govuk-label--s"
+        />
+        <span
+          class="govuk-hint"
+        >
+          Put some text in the box below
+        </span>
+        <div
+          class="govuk-date-input"
+        >
+          <div
+            class="govuk-date-input__item"
+          >
+            <div
+              class="govuk-form-group"
+            >
+              <label
+                class="govuk-label govuk-date-input__label"
+                for="date-field-day"
+              >
+                Day
+              </label>
+              <input
+                class="govuk-input govuk-date-input__input govuk-input--width-2 "
+                id="date-field-day"
+                max="31"
+                min="1"
+                name="date-field-day"
+                pattern="[0-9]*"
+                type="number"
+                value=""
+              />
+            </div>
+          </div>
+          <div
+            class="govuk-date-input__item"
+          >
+            <div
+              class="govuk-form-group"
+            >
+              <label
+                class="govuk-label govuk-date-input__label"
+                for="date-field-month"
+              >
+                Month
+              </label>
+              <input
+                class="govuk-input govuk-date-input__input govuk-input--width-2 "
+                id="date-field-month"
+                max="12"
+                min="1"
+                name="date-field-month"
+                pattern="[0-9]*"
+                type="number"
+                value=""
+              />
+            </div>
+          </div>
+          <div
+            class="govuk-date-input__item"
+          >
+            <div
+              class="govuk-form-group"
+            >
+              <label
+                class="govuk-label govuk-date-input__label"
+                for="date-field-year"
+              >
+                Year
+              </label>
+              <input
+                class="govuk-input govuk-date-input__input govuk-input--width-4  "
+                id="date-field-year"
+                max="2121"
+                min="1900"
+                name="date-field-year"
+                pattern="[0-9]*"
+                type="number"
+                value=""
+              />
+            </div>
+          </div>
+        </div>
+      </fieldset>
+    </div>
+  </div>,
+  "debug": [Function],
+  "findAllByAltText": [Function],
+  "findAllByDisplayValue": [Function],
+  "findAllByLabelText": [Function],
+  "findAllByPlaceholderText": [Function],
+  "findAllByRole": [Function],
+  "findAllByTestId": [Function],
+  "findAllByText": [Function],
+  "findAllByTitle": [Function],
+  "findByAltText": [Function],
+  "findByDisplayValue": [Function],
+  "findByLabelText": [Function],
+  "findByPlaceholderText": [Function],
+  "findByRole": [Function],
+  "findByTestId": [Function],
+  "findByText": [Function],
+  "findByTitle": [Function],
+  "getAllByAltText": [Function],
+  "getAllByDisplayValue": [Function],
+  "getAllByLabelText": [Function],
+  "getAllByPlaceholderText": [Function],
+  "getAllByRole": [Function],
+  "getAllByTestId": [Function],
+  "getAllByText": [Function],
+  "getAllByTitle": [Function],
+  "getByAltText": [Function],
+  "getByDisplayValue": [Function],
+  "getByLabelText": [Function],
+  "getByPlaceholderText": [Function],
+  "getByRole": [Function],
+  "getByTestId": [Function],
+  "getByText": [Function],
+  "getByTitle": [Function],
+  "queryAllByAltText": [Function],
+  "queryAllByDisplayValue": [Function],
+  "queryAllByLabelText": [Function],
+  "queryAllByPlaceholderText": [Function],
+  "queryAllByRole": [Function],
+  "queryAllByTestId": [Function],
+  "queryAllByText": [Function],
+  "queryAllByTitle": [Function],
+  "queryByAltText": [Function],
+  "queryByDisplayValue": [Function],
+  "queryByLabelText": [Function],
+  "queryByPlaceholderText": [Function],
+  "queryByRole": [Function],
+  "queryByTestId": [Function],
+  "queryByText": [Function],
+  "queryByTitle": [Function],
+  "rerender": [Function],
+  "unmount": [Function],
+}
 `;
 
 exports[`Form date component should render with label when passed 1`] = `
-<div
-  class="govuk-form-group"
->
-  <fieldset
-    class="govuk-fieldset"
-    id="date-field"
-    role="group"
-  >
-    <legend
-      class="govuk-fieldset__legend govuk-label--s"
-    >
-      My text field
-    </legend>
-    <div
-      class="govuk-date-input"
-    >
+Object {
+  "asFragment": [Function],
+  "baseElement": <body>
+    <div>
       <div
-        class="govuk-date-input__item"
+        class="govuk-form-group"
       >
-        <div
-          class="govuk-form-group"
+        <fieldset
+          class="govuk-fieldset"
+          id="date-field"
+          role="group"
         >
-          <label
-            class="govuk-label govuk-date-input__label"
-            for="date-field-day"
+          <legend
+            class="govuk-fieldset__legend govuk-label--s"
           >
-            Day
-          </label>
-          <input
-            class="govuk-input govuk-date-input__input govuk-input--width-2 "
-            id="date-field-day"
-            max="31"
-            min="1"
-            name="date-field-day"
-            pattern="[0-9]*"
-            type="number"
-            value=""
-          />
-        </div>
-      </div>
-      <div
-        class="govuk-date-input__item"
-      >
-        <div
-          class="govuk-form-group"
-        >
-          <label
-            class="govuk-label govuk-date-input__label"
-            for="date-field-month"
+            My text field
+          </legend>
+          <div
+            class="govuk-date-input"
           >
-            Month
-          </label>
-          <input
-            class="govuk-input govuk-date-input__input govuk-input--width-2 "
-            id="date-field-month"
-            max="12"
-            min="1"
-            name="date-field-month"
-            pattern="[0-9]*"
-            type="number"
-            value=""
-          />
-        </div>
-      </div>
-      <div
-        class="govuk-date-input__item"
-      >
-        <div
-          class="govuk-form-group"
-        >
-          <label
-            class="govuk-label govuk-date-input__label"
-            for="date-field-year"
-          >
-            Year
-          </label>
-          <input
-            class="govuk-input govuk-date-input__input govuk-input--width-4  "
-            id="date-field-year"
-            max="2121"
-            min="1900"
-            name="date-field-year"
-            pattern="[0-9]*"
-            type="number"
-            value=""
-          />
-        </div>
+            <div
+              class="govuk-date-input__item"
+            >
+              <div
+                class="govuk-form-group"
+              >
+                <label
+                  class="govuk-label govuk-date-input__label"
+                  for="date-field-day"
+                >
+                  Day
+                </label>
+                <input
+                  class="govuk-input govuk-date-input__input govuk-input--width-2 "
+                  id="date-field-day"
+                  max="31"
+                  min="1"
+                  name="date-field-day"
+                  pattern="[0-9]*"
+                  type="number"
+                  value=""
+                />
+              </div>
+            </div>
+            <div
+              class="govuk-date-input__item"
+            >
+              <div
+                class="govuk-form-group"
+              >
+                <label
+                  class="govuk-label govuk-date-input__label"
+                  for="date-field-month"
+                >
+                  Month
+                </label>
+                <input
+                  class="govuk-input govuk-date-input__input govuk-input--width-2 "
+                  id="date-field-month"
+                  max="12"
+                  min="1"
+                  name="date-field-month"
+                  pattern="[0-9]*"
+                  type="number"
+                  value=""
+                />
+              </div>
+            </div>
+            <div
+              class="govuk-date-input__item"
+            >
+              <div
+                class="govuk-form-group"
+              >
+                <label
+                  class="govuk-label govuk-date-input__label"
+                  for="date-field-year"
+                >
+                  Year
+                </label>
+                <input
+                  class="govuk-input govuk-date-input__input govuk-input--width-4  "
+                  id="date-field-year"
+                  max="2121"
+                  min="1900"
+                  name="date-field-year"
+                  pattern="[0-9]*"
+                  type="number"
+                  value=""
+                />
+              </div>
+            </div>
+          </div>
+        </fieldset>
       </div>
     </div>
-  </fieldset>
-</div>
+  </body>,
+  "container": <div>
+    <div
+      class="govuk-form-group"
+    >
+      <fieldset
+        class="govuk-fieldset"
+        id="date-field"
+        role="group"
+      >
+        <legend
+          class="govuk-fieldset__legend govuk-label--s"
+        >
+          My text field
+        </legend>
+        <div
+          class="govuk-date-input"
+        >
+          <div
+            class="govuk-date-input__item"
+          >
+            <div
+              class="govuk-form-group"
+            >
+              <label
+                class="govuk-label govuk-date-input__label"
+                for="date-field-day"
+              >
+                Day
+              </label>
+              <input
+                class="govuk-input govuk-date-input__input govuk-input--width-2 "
+                id="date-field-day"
+                max="31"
+                min="1"
+                name="date-field-day"
+                pattern="[0-9]*"
+                type="number"
+                value=""
+              />
+            </div>
+          </div>
+          <div
+            class="govuk-date-input__item"
+          >
+            <div
+              class="govuk-form-group"
+            >
+              <label
+                class="govuk-label govuk-date-input__label"
+                for="date-field-month"
+              >
+                Month
+              </label>
+              <input
+                class="govuk-input govuk-date-input__input govuk-input--width-2 "
+                id="date-field-month"
+                max="12"
+                min="1"
+                name="date-field-month"
+                pattern="[0-9]*"
+                type="number"
+                value=""
+              />
+            </div>
+          </div>
+          <div
+            class="govuk-date-input__item"
+          >
+            <div
+              class="govuk-form-group"
+            >
+              <label
+                class="govuk-label govuk-date-input__label"
+                for="date-field-year"
+              >
+                Year
+              </label>
+              <input
+                class="govuk-input govuk-date-input__input govuk-input--width-4  "
+                id="date-field-year"
+                max="2121"
+                min="1900"
+                name="date-field-year"
+                pattern="[0-9]*"
+                type="number"
+                value=""
+              />
+            </div>
+          </div>
+        </div>
+      </fieldset>
+    </div>
+  </div>,
+  "debug": [Function],
+  "findAllByAltText": [Function],
+  "findAllByDisplayValue": [Function],
+  "findAllByLabelText": [Function],
+  "findAllByPlaceholderText": [Function],
+  "findAllByRole": [Function],
+  "findAllByTestId": [Function],
+  "findAllByText": [Function],
+  "findAllByTitle": [Function],
+  "findByAltText": [Function],
+  "findByDisplayValue": [Function],
+  "findByLabelText": [Function],
+  "findByPlaceholderText": [Function],
+  "findByRole": [Function],
+  "findByTestId": [Function],
+  "findByText": [Function],
+  "findByTitle": [Function],
+  "getAllByAltText": [Function],
+  "getAllByDisplayValue": [Function],
+  "getAllByLabelText": [Function],
+  "getAllByPlaceholderText": [Function],
+  "getAllByRole": [Function],
+  "getAllByTestId": [Function],
+  "getAllByText": [Function],
+  "getAllByTitle": [Function],
+  "getByAltText": [Function],
+  "getByDisplayValue": [Function],
+  "getByLabelText": [Function],
+  "getByPlaceholderText": [Function],
+  "getByRole": [Function],
+  "getByTestId": [Function],
+  "getByText": [Function],
+  "getByTitle": [Function],
+  "queryAllByAltText": [Function],
+  "queryAllByDisplayValue": [Function],
+  "queryAllByLabelText": [Function],
+  "queryAllByPlaceholderText": [Function],
+  "queryAllByRole": [Function],
+  "queryAllByTestId": [Function],
+  "queryAllByText": [Function],
+  "queryAllByTitle": [Function],
+  "queryByAltText": [Function],
+  "queryByDisplayValue": [Function],
+  "queryByLabelText": [Function],
+  "queryByPlaceholderText": [Function],
+  "queryByRole": [Function],
+  "queryByTestId": [Function],
+  "queryByText": [Function],
+  "queryByTitle": [Function],
+  "rerender": [Function],
+  "unmount": [Function],
+}
 `;
 
 exports[`Form date component should render with value when passed 1`] = `
-<div
-  class="govuk-form-group"
->
-  <fieldset
-    class="govuk-fieldset"
-    id="date-field"
-    role="group"
-  >
-    <legend
-      class="govuk-fieldset__legend govuk-label--s"
-    />
-    <div
-      class="govuk-date-input"
-    >
+Object {
+  "asFragment": [Function],
+  "baseElement": <body>
+    <div>
       <div
-        class="govuk-date-input__item"
+        class="govuk-form-group"
       >
-        <div
-          class="govuk-form-group"
+        <fieldset
+          class="govuk-fieldset"
+          id="date-field"
+          role="group"
         >
-          <label
-            class="govuk-label govuk-date-input__label"
-            for="date-field-day"
-          >
-            Day
-          </label>
-          <input
-            class="govuk-input govuk-date-input__input govuk-input--width-2 "
-            id="date-field-day"
-            max="31"
-            min="1"
-            name="date-field-day"
-            pattern="[0-9]*"
-            type="number"
-            value="19"
+          <legend
+            class="govuk-fieldset__legend govuk-label--s"
           />
-        </div>
-      </div>
-      <div
-        class="govuk-date-input__item"
-      >
-        <div
-          class="govuk-form-group"
-        >
-          <label
-            class="govuk-label govuk-date-input__label"
-            for="date-field-month"
+          <div
+            class="govuk-date-input"
           >
-            Month
-          </label>
-          <input
-            class="govuk-input govuk-date-input__input govuk-input--width-2 "
-            id="date-field-month"
-            max="12"
-            min="1"
-            name="date-field-month"
-            pattern="[0-9]*"
-            type="number"
-            value="01"
-          />
-        </div>
-      </div>
-      <div
-        class="govuk-date-input__item"
-      >
-        <div
-          class="govuk-form-group"
-        >
-          <label
-            class="govuk-label govuk-date-input__label"
-            for="date-field-year"
-          >
-            Year
-          </label>
-          <input
-            class="govuk-input govuk-date-input__input govuk-input--width-4  "
-            id="date-field-year"
-            max="2121"
-            min="1900"
-            name="date-field-year"
-            pattern="[0-9]*"
-            type="number"
-            value="2018"
-          />
-        </div>
+            <div
+              class="govuk-date-input__item"
+            >
+              <div
+                class="govuk-form-group"
+              >
+                <label
+                  class="govuk-label govuk-date-input__label"
+                  for="date-field-day"
+                >
+                  Day
+                </label>
+                <input
+                  class="govuk-input govuk-date-input__input govuk-input--width-2 "
+                  id="date-field-day"
+                  max="31"
+                  min="1"
+                  name="date-field-day"
+                  pattern="[0-9]*"
+                  type="number"
+                  value="19"
+                />
+              </div>
+            </div>
+            <div
+              class="govuk-date-input__item"
+            >
+              <div
+                class="govuk-form-group"
+              >
+                <label
+                  class="govuk-label govuk-date-input__label"
+                  for="date-field-month"
+                >
+                  Month
+                </label>
+                <input
+                  class="govuk-input govuk-date-input__input govuk-input--width-2 "
+                  id="date-field-month"
+                  max="12"
+                  min="1"
+                  name="date-field-month"
+                  pattern="[0-9]*"
+                  type="number"
+                  value="01"
+                />
+              </div>
+            </div>
+            <div
+              class="govuk-date-input__item"
+            >
+              <div
+                class="govuk-form-group"
+              >
+                <label
+                  class="govuk-label govuk-date-input__label"
+                  for="date-field-year"
+                >
+                  Year
+                </label>
+                <input
+                  class="govuk-input govuk-date-input__input govuk-input--width-4  "
+                  id="date-field-year"
+                  max="2121"
+                  min="1900"
+                  name="date-field-year"
+                  pattern="[0-9]*"
+                  type="number"
+                  value="2018"
+                />
+              </div>
+            </div>
+          </div>
+        </fieldset>
       </div>
     </div>
-  </fieldset>
-</div>
+  </body>,
+  "container": <div>
+    <div
+      class="govuk-form-group"
+    >
+      <fieldset
+        class="govuk-fieldset"
+        id="date-field"
+        role="group"
+      >
+        <legend
+          class="govuk-fieldset__legend govuk-label--s"
+        />
+        <div
+          class="govuk-date-input"
+        >
+          <div
+            class="govuk-date-input__item"
+          >
+            <div
+              class="govuk-form-group"
+            >
+              <label
+                class="govuk-label govuk-date-input__label"
+                for="date-field-day"
+              >
+                Day
+              </label>
+              <input
+                class="govuk-input govuk-date-input__input govuk-input--width-2 "
+                id="date-field-day"
+                max="31"
+                min="1"
+                name="date-field-day"
+                pattern="[0-9]*"
+                type="number"
+                value="19"
+              />
+            </div>
+          </div>
+          <div
+            class="govuk-date-input__item"
+          >
+            <div
+              class="govuk-form-group"
+            >
+              <label
+                class="govuk-label govuk-date-input__label"
+                for="date-field-month"
+              >
+                Month
+              </label>
+              <input
+                class="govuk-input govuk-date-input__input govuk-input--width-2 "
+                id="date-field-month"
+                max="12"
+                min="1"
+                name="date-field-month"
+                pattern="[0-9]*"
+                type="number"
+                value="01"
+              />
+            </div>
+          </div>
+          <div
+            class="govuk-date-input__item"
+          >
+            <div
+              class="govuk-form-group"
+            >
+              <label
+                class="govuk-label govuk-date-input__label"
+                for="date-field-year"
+              >
+                Year
+              </label>
+              <input
+                class="govuk-input govuk-date-input__input govuk-input--width-4  "
+                id="date-field-year"
+                max="2121"
+                min="1900"
+                name="date-field-year"
+                pattern="[0-9]*"
+                type="number"
+                value="2018"
+              />
+            </div>
+          </div>
+        </div>
+      </fieldset>
+    </div>
+  </div>,
+  "debug": [Function],
+  "findAllByAltText": [Function],
+  "findAllByDisplayValue": [Function],
+  "findAllByLabelText": [Function],
+  "findAllByPlaceholderText": [Function],
+  "findAllByRole": [Function],
+  "findAllByTestId": [Function],
+  "findAllByText": [Function],
+  "findAllByTitle": [Function],
+  "findByAltText": [Function],
+  "findByDisplayValue": [Function],
+  "findByLabelText": [Function],
+  "findByPlaceholderText": [Function],
+  "findByRole": [Function],
+  "findByTestId": [Function],
+  "findByText": [Function],
+  "findByTitle": [Function],
+  "getAllByAltText": [Function],
+  "getAllByDisplayValue": [Function],
+  "getAllByLabelText": [Function],
+  "getAllByPlaceholderText": [Function],
+  "getAllByRole": [Function],
+  "getAllByTestId": [Function],
+  "getAllByText": [Function],
+  "getAllByTitle": [Function],
+  "getByAltText": [Function],
+  "getByDisplayValue": [Function],
+  "getByLabelText": [Function],
+  "getByPlaceholderText": [Function],
+  "getByRole": [Function],
+  "getByTestId": [Function],
+  "getByText": [Function],
+  "getByTitle": [Function],
+  "queryAllByAltText": [Function],
+  "queryAllByDisplayValue": [Function],
+  "queryAllByLabelText": [Function],
+  "queryAllByPlaceholderText": [Function],
+  "queryAllByRole": [Function],
+  "queryAllByTestId": [Function],
+  "queryAllByText": [Function],
+  "queryAllByTitle": [Function],
+  "queryByAltText": [Function],
+  "queryByDisplayValue": [Function],
+  "queryByLabelText": [Function],
+  "queryByPlaceholderText": [Function],
+  "queryByRole": [Function],
+  "queryByTestId": [Function],
+  "queryByText": [Function],
+  "queryByTitle": [Function],
+  "rerender": [Function],
+  "unmount": [Function],
+}
 `;
