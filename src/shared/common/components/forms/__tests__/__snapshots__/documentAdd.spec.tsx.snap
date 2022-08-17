@@ -1,73 +1,5 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
-exports[`Document add component should allow multiple files when passed 1`] = `
-<DocumentAdd
-  allowMultiple={true}
-  name="add-document"
-  updateState={[Function]}
->
-  <div
-    className="govuk-form-group"
-  >
-    <label
-      className="govuk-label"
-      htmlFor="add-document"
-      id="add-document-label"
-    >
-      <label
-        className="govuk-label govuk-label--s"
-        htmlFor="add-document"
-        id="add-document-label"
-      >
-        Add document
-      </label>
-    </label>
-    <input
-      className="govuk-file-upload"
-      id="add-document"
-      multiple={true}
-      name="add-document"
-      onChange={[Function]}
-      type="file"
-    />
-  </div>
-</DocumentAdd>
-`;
-
-exports[`Document add component should render disabled when passed 1`] = `
-<DocumentAdd
-  disabled={true}
-  name="add-document"
-  updateState={[Function]}
->
-  <div
-    className="govuk-form-group"
-  >
-    <label
-      className="govuk-label"
-      htmlFor="add-document"
-      id="add-document-label"
-    >
-      <label
-        className="govuk-label govuk-label--s"
-        htmlFor="add-document"
-        id="add-document-label"
-      >
-        Add document
-      </label>
-    </label>
-    <input
-      className="govuk-file-upload"
-      disabled={true}
-      id="add-document"
-      name="add-document"
-      onChange={[Function]}
-      type="file"
-    />
-  </div>
-</DocumentAdd>
-`;
-
 exports[`Document add component should render with correct label when passed 1`] = `
 <DocumentAdd
   label="MY_LABEL"
@@ -102,29 +34,112 @@ exports[`Document add component should render with correct label when passed 1`]
 `;
 
 exports[`Document add component should render with default props 1`] = `
-<div
-  class="govuk-form-group"
->
-  <label
-    class="govuk-label"
-    for="add-document"
-    id="add-document-label"
-  >
-    <label
-      class="govuk-label govuk-label--s"
-      for="add-document"
-      id="add-document-label"
+Object {
+  "asFragment": [Function],
+  "baseElement": <body>
+    <div>
+      <div
+        class="govuk-form-group"
+      >
+        <label
+          class="govuk-label"
+          for="add-document"
+          id="add-document-label"
+        >
+          <label
+            class="govuk-label govuk-label--s"
+            for="add-document"
+            id="add-document-label"
+          >
+            Add document
+          </label>
+        </label>
+        <input
+          class="govuk-file-upload"
+          id="add-document"
+          name="add-document"
+          type="file"
+        />
+      </div>
+    </div>
+  </body>,
+  "container": <div>
+    <div
+      class="govuk-form-group"
     >
-      Add document
-    </label>
-  </label>
-  <input
-    class="govuk-file-upload"
-    id="add-document"
-    name="add-document"
-    type="file"
-  />
-</div>
+      <label
+        class="govuk-label"
+        for="add-document"
+        id="add-document-label"
+      >
+        <label
+          class="govuk-label govuk-label--s"
+          for="add-document"
+          id="add-document-label"
+        >
+          Add document
+        </label>
+      </label>
+      <input
+        class="govuk-file-upload"
+        id="add-document"
+        name="add-document"
+        type="file"
+      />
+    </div>
+  </div>,
+  "debug": [Function],
+  "findAllByAltText": [Function],
+  "findAllByDisplayValue": [Function],
+  "findAllByLabelText": [Function],
+  "findAllByPlaceholderText": [Function],
+  "findAllByRole": [Function],
+  "findAllByTestId": [Function],
+  "findAllByText": [Function],
+  "findAllByTitle": [Function],
+  "findByAltText": [Function],
+  "findByDisplayValue": [Function],
+  "findByLabelText": [Function],
+  "findByPlaceholderText": [Function],
+  "findByRole": [Function],
+  "findByTestId": [Function],
+  "findByText": [Function],
+  "findByTitle": [Function],
+  "getAllByAltText": [Function],
+  "getAllByDisplayValue": [Function],
+  "getAllByLabelText": [Function],
+  "getAllByPlaceholderText": [Function],
+  "getAllByRole": [Function],
+  "getAllByTestId": [Function],
+  "getAllByText": [Function],
+  "getAllByTitle": [Function],
+  "getByAltText": [Function],
+  "getByDisplayValue": [Function],
+  "getByLabelText": [Function],
+  "getByPlaceholderText": [Function],
+  "getByRole": [Function],
+  "getByTestId": [Function],
+  "getByText": [Function],
+  "getByTitle": [Function],
+  "queryAllByAltText": [Function],
+  "queryAllByDisplayValue": [Function],
+  "queryAllByLabelText": [Function],
+  "queryAllByPlaceholderText": [Function],
+  "queryAllByRole": [Function],
+  "queryAllByTestId": [Function],
+  "queryAllByText": [Function],
+  "queryAllByTitle": [Function],
+  "queryByAltText": [Function],
+  "queryByDisplayValue": [Function],
+  "queryByLabelText": [Function],
+  "queryByPlaceholderText": [Function],
+  "queryByRole": [Function],
+  "queryByTestId": [Function],
+  "queryByText": [Function],
+  "queryByTitle": [Function],
+  "rerender": [Function],
+  "unmount": [Function],
+}
 `;
 
 exports[`Document add component should render with hint when passed 1`] = `
