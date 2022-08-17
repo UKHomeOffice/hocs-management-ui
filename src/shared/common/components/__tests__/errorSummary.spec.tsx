@@ -1,7 +1,8 @@
 import React from 'react';
 import { MemoryRouter } from 'react-router-dom';
-import { render } from 'enzyme';
+import { render, screen } from '@testing-library/react';
 import ErrorSummary from '../errorSummary';
+import '@testing-library/jest-dom';
 
 const errors = [
     { key: 'Error1', value: 'Error 1' },
@@ -16,15 +17,19 @@ describe('Form text component', () => {
         ).toMatchSnapshot();
     });
     it('should render with heading and description when passed', () => {
-        expect(
-            render(<ErrorSummary pageError={{ error: { description: 'Displaying just a heading and description', title: 'Error summary' } }} />)
-        ).toMatchSnapshot();
+        // scrollIntoView is not supported in JSDom, so we can manually add it here
+        window.HTMLElement.prototype.scrollIntoView = function() {};
+
+        render(<ErrorSummary pageError={{ error: { description: 'Displaying just a heading and description', title: 'Error summary' } }} />);
+        expect(screen.getByText('Error summary')).toBeInTheDocument();
+        expect(screen.getByText('Displaying just a heading and description')).toBeInTheDocument();
     });
     it('should render list of errors when passed', () => {
-
+        // scrollIntoView is not supported in JSDom, so we can manually add it here
+        window.HTMLElement.prototype.scrollIntoView = function() {};
         expect(
             render(
-                < MemoryRouter >
+                <MemoryRouter>
                     <ErrorSummary pageError={{ error: { description: 'Displaying a list of the errors on the page', formErrors: errors } }} />
                 </MemoryRouter >
             )
