@@ -8,6 +8,9 @@ const AutoPrefixer = require('autoprefixer');
 const browserConfig = env => {
     const mode = env.NODE_ENV;
     return {
+        stats: {
+            warnings: false
+        },
         target: 'web',
         entry: {
             main: './src/browser/index.tsx'
