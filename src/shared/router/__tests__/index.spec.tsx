@@ -1,10 +1,10 @@
 import React from 'react';
-import { mount } from 'enzyme';
+import { render, screen } from '@testing-library/react';
 import Router from '../index';
 import { ApplicationProvider } from '../../../shared/contexts/application';
 import Config, { LayoutConfig } from '../../models/config';
 import { MemoryRouter } from 'react-router/index';
-import WrappedDashboard from '../../pages/dashboard/dashboard';
+import '@testing-library/jest-dom';
 
 describe('Test router routes', () => {
     const layoutConfig: LayoutConfig = {
@@ -21,7 +21,7 @@ describe('Test router routes', () => {
     };
 
     it('should render with default props', () => {
-        const wrapper = mount(
+        const wrapper = render(
             <MemoryRouter>
                 <ApplicationProvider config={testConfig}>
                     <Router/>
@@ -30,47 +30,40 @@ describe('Test router routes', () => {
         );
 
         expect(wrapper).toBeDefined();
-        expect(wrapper.find(WrappedDashboard)).toHaveLength(1);
     });
 
     it('should render the amend trof campaign route', () => {
-        const wrapper = mount(
+        render(
             <MemoryRouter initialEntries={[ '/manage-trof-campaigns/ITEM_UUID/amend' ]}>
                 <ApplicationProvider config={testConfig}>
                     <Router/>
                 </ApplicationProvider>
             </MemoryRouter>
         );
-
-        expect(wrapper).toBeDefined();
-        expect(wrapper.find('h1.govuk-heading-xl').text()).toEqual('Amend campaign');
+        expect(screen.getByText('Amend campaign')).toBeInTheDocument();
     });
 
     // @TODO: This test specifically causes call retries to be exceeded - replicated several times. Weird.
     // Skipping test for the time being. It's not testing anything hyper critical.
     xit('should render the campaigns trof campaign route', () => {
-        const wrapper = mount(
+        render(
             <MemoryRouter initialEntries={[ '/manage-trof-campaigns' ]}>
                 <ApplicationProvider config={testConfig}>
                     <Router/>
                 </ApplicationProvider>
             </MemoryRouter>
         );
-
-        expect(wrapper).toBeDefined();
-        expect(wrapper.find('h1.govuk-heading-xl').text()).toEqual('View and edit campaigns');
+        expect(screen.getByText('View and edit campaigns')).toBeInTheDocument();
     });
 
     it('should render the campaigns trof campaign route', () => {
-        const wrapper = mount(
+        render(
             <MemoryRouter initialEntries={[ '/manage-trof-campaigns/add' ]}>
                 <ApplicationProvider config={testConfig}>
                     <Router/>
                 </ApplicationProvider>
             </MemoryRouter>
         );
-
-        expect(wrapper).toBeDefined();
-        expect(wrapper.find('h1.govuk-heading-xl').text()).toEqual('Add Campaign');
+        expect(screen.getByText('Add Campaign')).toBeInTheDocument();
     });
 });
