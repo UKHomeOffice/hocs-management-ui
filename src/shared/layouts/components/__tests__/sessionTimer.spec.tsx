@@ -1,33 +1,46 @@
 import React from 'react';
-import { shallow } from 'enzyme';
+import { render } from '@testing-library/react';
 import SessionTimer from '../sessionTimer';
 import { ApplicationProvider } from '../../../contexts/application';
+import { HelmetProvider } from 'react-helmet-async';
+import Modal from 'react-modal';
+
+jest
+    .spyOn(Modal, 'setAppElement')
+    .mockImplementation(param => console.log(param));
+describe('<Component />', () => {});
+
+const config = {
+    analytics: undefined,
+    csrf: '',
+    layout: {
+        body: { phaseBanner: { feedback: '', isVisible: true, phase: '' } },
+        countDownForSeconds: 5,
+        defaultTimeoutSeconds: 10,
+        footer: { isVisible: true, links: [] },
+        header: {
+            isVisible: true,
+            service: 'service name',
+            serviceLink: '',
+        },
+    },
+    user: {
+        roles: []
+    }
+};
 
 describe('Session timer component', () => {
 
     it('should render with default props', () => {
-        const config = {
-            analytics: undefined,
-            csrf: '',
-            layout: {
-                body: { phaseBanner: { feedback: '', isVisible: true, phase: '' } },
-                countDownForSeconds: 5,
-                defaultTimeoutSeconds: 10,
-                footer: { isVisible: true, links: [] },
-                header: {
-                    isVisible: true,
-                    service: 'service name',
-                    serviceLink: '',
-                },
-            },
-            user: {
-                roles: []
-            }
-        };
+
         expect(
-            shallow(<ApplicationProvider config={config}>
-                <SessionTimer />
-            </ApplicationProvider>)
+            render(
+                <HelmetProvider>
+                    <ApplicationProvider config={config}>
+                        <SessionTimer />
+                    </ApplicationProvider>
+                </HelmetProvider>
+            )
         ).toMatchSnapshot();
     });
 
@@ -43,7 +56,13 @@ describe('Session timer component', () => {
         });
 
         expect(
-            shallow(<SessionTimer />)
+            render(
+                <HelmetProvider>
+                    <ApplicationProvider config={config}>
+                        <SessionTimer />
+                    </ApplicationProvider>
+                </HelmetProvider>
+            )
         ).toMatchSnapshot();
     });
     it('should render the modal when timed out', () => {
@@ -58,7 +77,13 @@ describe('Session timer component', () => {
         });
 
         expect(
-            shallow(<SessionTimer />)
+            render(
+                <HelmetProvider>
+                    <ApplicationProvider config={config}>
+                        <SessionTimer />
+                    </ApplicationProvider>
+                </HelmetProvider>
+            )
         ).toMatchSnapshot();
     });
 });
