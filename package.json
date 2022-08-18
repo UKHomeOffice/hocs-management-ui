@@ -70,7 +70,7 @@
         "identity-obj-proxy": "^3.0.0",
         "jest": "^26.0.0",
         "jest-date-mock": "^1.0.8",
-        "lint-staged": "^13.0.3",
+        "lint-staged": "^7.3.0",
         "mini-css-extract-plugin": "^2.6.0",
         "nodemon": "^2.0.15",
         "postcss-loader": "^6.2.1",
@@ -90,18 +90,10 @@
         "jest"
     ],
     "lint-staged": {
-        "*.js": [
-            "eslint ./ --ext js"
-        ],
-        "*.jsx": [
-            "eslint ./ --ext jsx"
-        ],
-        "*.ts": [
-            "eslint ./ --ext ts"
-        ],
-        "*.tsx": [
-            "eslint ./ --ext tsx"
-        ]
+        "*.js": "node_modules/eslint/bin/eslint.js ./ --ignore-path .gitignore",
+        "*.jsx": "node_modules/eslint/bin/eslint.js ./ --ext .jsx --ignore-path .gitignore",
+        "*.ts": "node_modules/eslint/bin/eslint.js ./ --ext .ts --ignore-path .gitignore",
+        "*.tsx": "node_modules/eslint/bin/eslint.js ./ --ext .tsx --ignore-path .gitignore"
     },
     "husky": {
         "hooks": {
