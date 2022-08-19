@@ -67,7 +67,7 @@
         "identity-obj-proxy": "^3.0.0",
         "jest": "^26.0.0",
         "jest-date-mock": "^1.0.8",
-        "lint-staged": "^7.3.0",
+        "lint-staged": "^13.0.3",
         "mini-css-extract-plugin": "^2.6.0",
         "nodemon": "^2.0.15",
         "postcss-loader": "^6.2.1",
