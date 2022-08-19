@@ -71,7 +71,6 @@ describe('when the selectBusinessArea component is mounted', () => {
 
         await wait(() => {
             expect(wrapper.container).toMatchSnapshot();
-            console.log(wrapper.container);
         });
     });
 });
