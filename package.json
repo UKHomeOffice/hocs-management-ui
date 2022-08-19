@@ -112,7 +112,7 @@
         "csurf": "^1.10.0",
         "express": "^4.17.1",
         "govuk-frontend": "^2.13.0",
-        "history": "^4.10.1",
+        "history": "^5.3.0",
         "istanbul-reports": "^3.1.5",
         "jsonwebtoken": "^8.5.1",
         "multer": "^1.4.5-lts.1",
