@@ -6,7 +6,7 @@ $govuk-page-width: 1300px !default;
 $govuk-font-family: 'helvetica neue', Arial, Helvetica, sans-serif !default;
 $govuk-font-family-tabular: 'helvetica neue',Arial, Helvetica, sans-serif !default;
 
-@import "govuk-frontend/all.scss";
+@import "govuk-frontend/govuk/all.scss";
 
 @function tint($color, $percentage) {
   @return mix(white, $color, $percentage);
@@ -34,8 +34,8 @@ $govuk-font-family-tabular: 'helvetica neue',Arial, Helvetica, sans-serif !defau
 }
 
 .govuk-input:disabled, .govuk-textarea:disabled{
-  background-color: govuk-colour("grey-4");
-  border-color: govuk-colour("grey-4");
+  background-color: govuk-colour("light-grey");
+  border-color: govuk-colour("light-grey");
 }
 
 // Code block styling:
@@ -45,7 +45,7 @@ $govuk-font-family-tabular: 'helvetica neue',Arial, Helvetica, sans-serif !defau
   padding: 0 govuk-spacing(1);
   overflow-x: auto;
   color: govuk-colour("pink");
-  background-color: govuk-colour("grey-4");
+  background-color: govuk-colour("light-grey");
 }
 
 .notification {
@@ -63,7 +63,7 @@ $govuk-font-family-tabular: 'helvetica neue',Arial, Helvetica, sans-serif !defau
 }
 
 .document-preview {
-  background-color: govuk-colour("grey-4");
+  background-color: govuk-colour("light-grey");
   box-sizing: border-box;
   display: block;
   height: 700px;
@@ -189,7 +189,7 @@ $govuk-font-family-tabular: 'helvetica neue',Arial, Helvetica, sans-serif !defau
   -webkit-align-self: stretch;
   -ms-flex-item-align: stretch;
   align-self: stretch;
-  background-color: govuk-colour("grey-1");
+  background-color: govuk-colour("dark-grey");
   margin-bottom: 3px;
   width: 2px;
   box-sizing: border-box;
@@ -270,9 +270,9 @@ $govuk-font-family-tabular: 'helvetica neue',Arial, Helvetica, sans-serif !defau
   background-color: $govuk-focus-colour;
 }
 
-$panel-colour: govuk-colour("grey-3");
+$panel-colour: govuk-colour("light-grey");
 $text-colour: govuk-colour("blue");
-$highlight-colour: govuk-colour("grey-4");
+$highlight-colour: govuk-colour("light-grey");
 $link-colour: $govuk-link-colour;
 $link-hover-colour: $govuk-link-hover-colour;
 
@@ -488,7 +488,7 @@ td {
         height: govuk-spacing(2);
         border-radius: 50%;
         background-color: white;
-        border: 4px solid govuk-colour("grey-1");
+        border: 4px solid govuk-colour("dark-grey");
         position: absolute;
         z-index: 2;
         left: -31px;
@@ -544,7 +544,7 @@ td {
   background-color: $govuk-error-colour;
 }
 
-$border-colour: govuk-colour("grey-2");
+$border-colour: govuk-colour("mid-grey");
 
 .tabs > ol, .tabs > ul {
   @include govuk-clearfix;

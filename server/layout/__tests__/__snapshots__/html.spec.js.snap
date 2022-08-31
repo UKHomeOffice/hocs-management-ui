@@ -39,7 +39,7 @@ exports[`HTML module should include additional CSS and JS when passed 1`] = `
 
 <head>
     <meta charset=\\"utf-8\\" />
-    <title>My React Application</title>
+    <title>DECS MUI</title>
     <meta name=\\"viewport\\" content=\\"width=device-width, initial-scale=1\\">
     <meta name=\\"theme-color\\" content=\\"#0b0c0c\\" />
 
@@ -73,7 +73,7 @@ exports[`HTML module should include application props in the head when passed 1`
 
 <head>
     <meta charset=\\"utf-8\\" />
-    <title>My React Application</title>
+    <title>DECS MUI</title>
     <meta name=\\"viewport\\" content=\\"width=device-width, initial-scale=1\\">
     <meta name=\\"theme-color\\" content=\\"#0b0c0c\\" />
 
@@ -106,7 +106,7 @@ exports[`HTML module should include the appropriate react application bundle whe
 
 <head>
     <meta charset=\\"utf-8\\" />
-    <title>My React Application</title>
+    <title>DECS MUI</title>
     <meta name=\\"viewport\\" content=\\"width=device-width, initial-scale=1\\">
     <meta name=\\"theme-color\\" content=\\"#0b0c0c\\" />
 
@@ -139,7 +139,7 @@ exports[`HTML module should include the correct asset path when passed 1`] = `
 
 <head>
     <meta charset=\\"utf-8\\" />
-    <title>My React Application</title>
+    <title>DECS MUI</title>
     <meta name=\\"viewport\\" content=\\"width=device-width, initial-scale=1\\">
     <meta name=\\"theme-color\\" content=\\"#0b0c0c\\" />
 
@@ -172,7 +172,7 @@ exports[`HTML module should include the server rendered markup when passed 1`] =
 
 <head>
     <meta charset=\\"utf-8\\" />
-    <title>My React Application</title>
+    <title>DECS MUI</title>
     <meta name=\\"viewport\\" content=\\"width=device-width, initial-scale=1\\">
     <meta name=\\"theme-color\\" content=\\"#0b0c0c\\" />
 
@@ -205,7 +205,7 @@ exports[`HTML module should not contain the react bundle js when clientside is s
 
 <head>
     <meta charset=\\"utf-8\\" />
-    <title>My React Application</title>
+    <title>DECS MUI</title>
     <meta name=\\"viewport\\" content=\\"width=device-width, initial-scale=1\\">
     <meta name=\\"theme-color\\" content=\\"#0b0c0c\\" />
 
@@ -238,7 +238,7 @@ exports[`HTML module should return the default html when no additional configura
 
 <head>
     <meta charset=\\"utf-8\\" />
-    <title>My React Application</title>
+    <title>DECS MUI</title>
     <meta name=\\"viewport\\" content=\\"width=device-width, initial-scale=1\\">
     <meta name=\\"theme-color\\" content=\\"#0b0c0c\\" />
 
