@@ -500,12 +500,12 @@ Object {
           <legend
             class="govuk-fieldset__legend govuk-label--s"
           />
-          <span
+          <p
             class="govuk-error-message"
             id="date-field-error"
           >
             Some error message
-          </span>
+          </p>
           <div
             class="govuk-date-input"
           >
@@ -598,12 +598,12 @@ Object {
         <legend
           class="govuk-fieldset__legend govuk-label--s"
         />
-        <span
+        <p
           class="govuk-error-message"
           id="date-field-error"
         >
           Some error message
-        </span>
+        </p>
         <div
           class="govuk-date-input"
         >

@@ -314,12 +314,12 @@ Object {
         >
           text-field
         </label>
-        <span
+        <p
           class="govuk-error-message"
           id="text-field-error"
         >
           Some error message
-        </span>
+        </p>
         <input
           class="govuk-input govuk-input--error"
           id="text-field"
@@ -341,12 +341,12 @@ Object {
       >
         text-field
       </label>
-      <span
+      <p
         class="govuk-error-message"
         id="text-field-error"
       >
         Some error message
-      </span>
+      </p>
       <input
         class="govuk-input govuk-input--error"
         id="text-field"

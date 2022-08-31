@@ -497,12 +497,12 @@ Object {
           for="type-ahead-input"
           id="type-ahead-label"
         />
-        <span
+        <p
           class="govuk-error-message"
           id="type-ahead-error"
         >
           Some error message
-        </span>
+        </p>
         <div
           class=" css-2b097c-container"
           id="type-ahead"
@@ -595,12 +595,12 @@ Object {
         for="type-ahead-input"
         id="type-ahead-label"
       />
-      <span
+      <p
         class="govuk-error-message"
         id="type-ahead-error"
       >
         Some error message
-      </span>
+      </p>
       <div
         class=" css-2b097c-container"
         id="type-ahead"
@@ -1730,12 +1730,12 @@ Object {
           for="type-ahead-input"
           id="type-ahead-label"
         />
-        <span
+        <p
           class="govuk-error-message"
           id="type-ahead-error"
         >
           Some error message
-        </span>
+        </p>
         <div
           class=" css-2b097c-container"
           id="type-ahead"
@@ -1828,12 +1828,12 @@ Object {
         for="type-ahead-input"
         id="type-ahead-label"
       />
-      <span
+      <p
         class="govuk-error-message"
         id="type-ahead-error"
       >
         Some error message
-      </span>
+      </p>
       <div
         class=" css-2b097c-container"
         id="type-ahead"
