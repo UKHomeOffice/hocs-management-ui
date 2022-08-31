@@ -33,10 +33,12 @@ Object {
             <div
               class="govuk-header__content"
             >
-              <nav>
+              <nav
+                aria-label="Top Level Navigation"
+                class="govuk-header__navigation "
+              >
                 <ul
-                  aria-label="Top Level Navigation"
-                  class="govuk-header__navigation "
+                  class="govuk-header__navigation-list"
                   id="navigation"
                 >
                   <li
@@ -86,10 +88,12 @@ Object {
           <div
             class="govuk-header__content"
           >
-            <nav>
+            <nav
+              aria-label="Top Level Navigation"
+              class="govuk-header__navigation "
+            >
               <ul
-                aria-label="Top Level Navigation"
-                class="govuk-header__navigation "
+                class="govuk-header__navigation-list"
                 id="navigation"
               >
                 <li
@@ -196,10 +200,12 @@ Object {
             <div
               class="govuk-header__content"
             >
-              <nav>
+              <nav
+                aria-label="Top Level Navigation"
+                class="govuk-header__navigation "
+              >
                 <ul
-                  aria-label="Top Level Navigation"
-                  class="govuk-header__navigation "
+                  class="govuk-header__navigation-list"
                   id="navigation"
                 >
                   <li
@@ -249,10 +255,12 @@ Object {
           <div
             class="govuk-header__content"
           >
-            <nav>
+            <nav
+              aria-label="Top Level Navigation"
+              class="govuk-header__navigation "
+            >
               <ul
-                aria-label="Top Level Navigation"
-                class="govuk-header__navigation "
+                class="govuk-header__navigation-list"
                 id="navigation"
               >
                 <li
