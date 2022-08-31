@@ -34,7 +34,7 @@ class Footer extends Component<FooterConfig> {
                             </ul>
 
                             <svg
-                                role="presentation"
+                                aria-hidden="true"
                                 focusable="false"
                                 className="govuk-footer__licence-logo"
                                 xmlns="http://www.w3.org/2000/svg"
