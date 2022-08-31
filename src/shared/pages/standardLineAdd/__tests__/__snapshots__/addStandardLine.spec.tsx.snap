@@ -167,11 +167,11 @@ exports[`when the addStandardLine component is mounted should render with defaul
                   <input
                     class="govuk-input govuk-date-input__input govuk-input--width-2 "
                     id="expiryDate-day"
+                    inputmode="numeric"
                     max="31"
                     min="1"
                     name="expiryDate-day"
-                    pattern="[0-9]*"
-                    type="number"
+                    type="text"
                     value=""
                   />
                 </div>
