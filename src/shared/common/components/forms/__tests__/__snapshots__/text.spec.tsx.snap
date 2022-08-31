@@ -425,11 +425,11 @@ Object {
         >
           text-field
         </label>
-        <span
+        <div
           class="govuk-hint"
         >
           Put some text in the box below
-        </span>
+        </div>
         <input
           class="govuk-input"
           id="text-field"
@@ -451,11 +451,11 @@ Object {
       >
         text-field
       </label>
-      <span
+      <div
         class="govuk-hint"
       >
         Put some text in the box below
-      </span>
+      </div>
       <input
         class="govuk-input"
         id="text-field"

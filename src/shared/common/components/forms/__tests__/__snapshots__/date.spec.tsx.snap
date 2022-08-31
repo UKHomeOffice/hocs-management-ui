@@ -753,11 +753,11 @@ Object {
           <legend
             class="govuk-fieldset__legend govuk-label--s"
           />
-          <span
+          <div
             class="govuk-hint"
           >
             Put some text in the box below
-          </span>
+          </div>
           <div
             class="govuk-date-input"
           >
@@ -850,11 +850,11 @@ Object {
         <legend
           class="govuk-fieldset__legend govuk-label--s"
         />
-        <span
+        <div
           class="govuk-hint"
         >
           Put some text in the box below
-        </span>
+        </div>
         <div
           class="govuk-date-input"
         >

@@ -750,11 +750,11 @@ Object {
           for="type-ahead-input"
           id="type-ahead-label"
         />
-        <span
+        <div
           class="govuk-hint"
         >
           Select an option
-        </span>
+        </div>
         <div
           class=" css-2b097c-container"
           id="type-ahead"
@@ -847,11 +847,11 @@ Object {
         for="type-ahead-input"
         id="type-ahead-label"
       />
-      <span
+      <div
         class="govuk-hint"
       >
         Select an option
-      </span>
+      </div>
       <div
         class=" css-2b097c-container"
         id="type-ahead"
@@ -1983,11 +1983,11 @@ Object {
           for="type-ahead-input"
           id="type-ahead-label"
         />
-        <span
+        <div
           class="govuk-hint"
         >
           Select an option
-        </span>
+        </div>
         <div
           class=" css-2b097c-container"
           id="type-ahead"
@@ -2080,11 +2080,11 @@ Object {
         for="type-ahead-input"
         id="type-ahead-label"
       />
-      <span
+      <div
         class="govuk-hint"
       >
         Select an option
-      </span>
+      </div>
       <div
         class=" css-2b097c-container"
         id="type-ahead"

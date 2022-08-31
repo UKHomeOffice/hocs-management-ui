@@ -77,9 +77,9 @@ const StandardLinesView: React.FC<StandardLinesProps> = ({ history, match }) => 
                             value={state.filter}
                             autoFocus={true}
                         />
-                        <span className="govuk-hint" aria-live="polite">
+                        <div className="govuk-hint" aria-live="polite">
                             {state.activeStandardLines.length} Items
-                        </span>
+                        </div>
                     </div>
                     <div className="govuk-grid-row margin-bottom--small">
                         <div className="govuk-grid-column-two-thirds govuk-label--s padding-top--small">Exclude expired</div>
