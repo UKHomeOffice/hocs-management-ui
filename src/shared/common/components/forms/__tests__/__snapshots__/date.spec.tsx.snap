@@ -35,11 +35,11 @@ Object {
                 <input
                   class="govuk-input govuk-date-input__input govuk-input--width-2 "
                   id="date-field-day"
+                  inputmode="numeric"
                   max="31"
                   min="1"
                   name="date-field-day"
-                  pattern="[0-9]*"
-                  type="number"
+                  type="text"
                   value=""
                 />
               </div>
@@ -128,11 +128,11 @@ Object {
               <input
                 class="govuk-input govuk-date-input__input govuk-input--width-2 "
                 id="date-field-day"
+                inputmode="numeric"
                 max="31"
                 min="1"
                 name="date-field-day"
-                pattern="[0-9]*"
-                type="number"
+                type="text"
                 value=""
               />
             </div>
@@ -277,11 +277,11 @@ Object {
                 <input
                   class="govuk-input govuk-date-input__input govuk-input--width-2 "
                   id="date-field-day"
+                  inputmode="numeric"
                   max="31"
                   min="1"
                   name="date-field-day"
-                  pattern="[0-9]*"
-                  type="number"
+                  type="text"
                   value=""
                 />
               </div>
@@ -369,11 +369,11 @@ Object {
               <input
                 class="govuk-input govuk-date-input__input govuk-input--width-2 "
                 id="date-field-day"
+                inputmode="numeric"
                 max="31"
                 min="1"
                 name="date-field-day"
-                pattern="[0-9]*"
-                type="number"
+                type="text"
                 value=""
               />
             </div>
@@ -524,11 +524,11 @@ Object {
                 <input
                   class="govuk-input govuk-date-input__input govuk-input--width-2 govuk-input--error"
                   id="date-field-day"
+                  inputmode="numeric"
                   max="31"
                   min="1"
                   name="date-field-day"
-                  pattern="[0-9]*"
-                  type="number"
+                  type="text"
                   value=""
                 />
               </div>
@@ -622,11 +622,11 @@ Object {
               <input
                 class="govuk-input govuk-date-input__input govuk-input--width-2 govuk-input--error"
                 id="date-field-day"
+                inputmode="numeric"
                 max="31"
                 min="1"
                 name="date-field-day"
-                pattern="[0-9]*"
-                type="number"
+                type="text"
                 value=""
               />
             </div>
@@ -776,11 +776,11 @@ Object {
                 <input
                   class="govuk-input govuk-date-input__input govuk-input--width-2 "
                   id="date-field-day"
+                  inputmode="numeric"
                   max="31"
                   min="1"
                   name="date-field-day"
-                  pattern="[0-9]*"
-                  type="number"
+                  type="text"
                   value=""
                 />
               </div>
@@ -873,11 +873,11 @@ Object {
               <input
                 class="govuk-input govuk-date-input__input govuk-input--width-2 "
                 id="date-field-day"
+                inputmode="numeric"
                 max="31"
                 min="1"
                 name="date-field-day"
-                pattern="[0-9]*"
-                type="number"
+                type="text"
                 value=""
               />
             </div>
@@ -1024,11 +1024,11 @@ Object {
                 <input
                   class="govuk-input govuk-date-input__input govuk-input--width-2 "
                   id="date-field-day"
+                  inputmode="numeric"
                   max="31"
                   min="1"
                   name="date-field-day"
-                  pattern="[0-9]*"
-                  type="number"
+                  type="text"
                   value=""
                 />
               </div>
@@ -1118,11 +1118,11 @@ Object {
               <input
                 class="govuk-input govuk-date-input__input govuk-input--width-2 "
                 id="date-field-day"
+                inputmode="numeric"
                 max="31"
                 min="1"
                 name="date-field-day"
-                pattern="[0-9]*"
-                type="number"
+                type="text"
                 value=""
               />
             </div>
@@ -1267,11 +1267,11 @@ Object {
                 <input
                   class="govuk-input govuk-date-input__input govuk-input--width-2 "
                   id="date-field-day"
+                  inputmode="numeric"
                   max="31"
                   min="1"
                   name="date-field-day"
-                  pattern="[0-9]*"
-                  type="number"
+                  type="text"
                   value="19"
                 />
               </div>
@@ -1359,11 +1359,11 @@ Object {
               <input
                 class="govuk-input govuk-date-input__input govuk-input--width-2 "
                 id="date-field-day"
+                inputmode="numeric"
                 max="31"
                 min="1"
                 name="date-field-day"
-                pattern="[0-9]*"
-                type="number"
+                type="text"
                 value="19"
               />
             </div>

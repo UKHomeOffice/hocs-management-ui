@@ -60,8 +60,8 @@ class DateInput extends Component<DateInputProps> {
                                 className={`govuk-input govuk-date-input__input govuk-input--width-2 ${error ? 'govuk-input--error' : ''}`}
                                 id={this.datePart('day')}
                                 name={this.datePart('day')}
-                                type="number"
-                                pattern="[0-9]*"
+                                type="text"
+                                inputMode="numeric"
                                 min="1"
                                 max="31"
                                 value={this.state[this.datePart('day')]}
