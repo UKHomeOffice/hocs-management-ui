@@ -35,7 +35,7 @@ Object {
             >
               <nav
                 aria-label="Top Level Navigation"
-                class="govuk-header__navigation "
+                class="govuk-header__navigation"
               >
                 <ul
                   class="govuk-header__navigation-list"
@@ -90,7 +90,7 @@ Object {
           >
             <nav
               aria-label="Top Level Navigation"
-              class="govuk-header__navigation "
+              class="govuk-header__navigation"
             >
               <ul
                 class="govuk-header__navigation-list"
@@ -202,7 +202,7 @@ Object {
             >
               <nav
                 aria-label="Top Level Navigation"
-                class="govuk-header__navigation "
+                class="govuk-header__navigation"
               >
                 <ul
                   class="govuk-header__navigation-list"
@@ -257,7 +257,7 @@ Object {
           >
             <nav
               aria-label="Top Level Navigation"
-              class="govuk-header__navigation "
+              class="govuk-header__navigation"
             >
               <ul
                 class="govuk-header__navigation-list"
