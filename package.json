@@ -72,7 +72,7 @@
         "nodemon": "^2.0.15",
         "postcss-loader": "^6.2.1",
         "pre-commit": "^1.2.2",
-        "sass-loader": "^13.0.2",
+        "sass-loader": "^13.1.0",
         "terser-webpack-plugin": "^4.2.3",
         "ts-jest": "^26.0.0",
         "ts-loader": "^9.3.1",
