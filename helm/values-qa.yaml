@@ -1,0 +1,8 @@
+---
+hocs-generic-service:
+
+  ingress:
+    external:
+      host: qa-management.{{ .Values.clusterPrefix }}-notprod.homeoffice.gov.uk
+    internal:
+      host: qa-management.internal.{{ .Values.clusterPrefix }}-notprod.homeoffice.gov.uk
