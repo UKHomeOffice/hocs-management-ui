@@ -4,4 +4,4 @@ version: 1.0.0
 dependencies:
   - name: hocs-generic-service
     version: 1.0.0
-    repository: file:///Users/nicholasmcmahon/Desktop/hocs-helm-charts/charts/generic-service
+    repository: https://ukhomeoffice.github.io/hocs-helm-charts
