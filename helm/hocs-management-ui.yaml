@@ -16,8 +16,12 @@ hocs-generic-service:
     domain: cs-notprod.homeoffice.gov.uk
 
   ingress:
+    external:
+      enabled: true
+      host: dev-management.{{ .Values.clusterPrefix }}-notprod.homeoffice.gov.uk
     internal:
       enabled: true
+      host: dev-management.internal.{{ .Values.clusterPrefix }}-notprod.homeoffice.gov.uk
 
   app:
     resources:
