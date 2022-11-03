@@ -1,9 +1,11 @@
 jest.mock('../../clients/index');
-jest.mock('../../libs/logger');
 jest.mock('../../models/user');
 const { infoService } = require('../../clients/index');
-const { addNominatedContact, getNominatedContactsForTeam, removeNominatedContactFromTeam } = require('../nominatedContact');
-const getLogger = require('../../libs/logger');
+const {
+    addNominatedContact,
+    getNominatedContactsForTeam,
+    removeNominatedContactFromTeam
+} = require('../nominatedContact');
 const User = require('../../models/user');
 
 describe('nominatedContact middleware', () => {
@@ -26,39 +28,31 @@ describe('nominatedContact middleware', () => {
             infoService.post.mockImplementation(() => Promise.resolve(mockUuidResponse));
         });
 
-        it('should call the post method on the info service', async() => {
+        it('should call the post method on the info service', async () => {
             User.createHeaders.mockImplementation(() => headers);
 
             await addNominatedContact(req, res, next);
             expect(infoService.post).toHaveBeenCalledWith(`/team/${req.body.teamUUID}/contact`, nominatedContactEmail, { headers: headers });
         });
 
-        it('should call the user create headers method', async() => {
+        it('should call the user create headers method', async () => {
             await addNominatedContact(req, res, next);
 
             expect(User.createHeaders).toHaveBeenCalled();
         });
 
-        it('should call the json method with the new uuid', async() => {
+        it('should call the json method with the new uuid', async () => {
             await addNominatedContact(req, res, next);
 
             expect(json).toHaveBeenCalledWith({ 'uuid': '123' });
         });
 
-        it('should get the logger instance', async() => {
-            await addNominatedContact(req, res, next);
 
-            expect(getLogger).toHaveBeenCalled();
-        });
-
-        it('should log when the request fails', async() => {
+        it('should throw error when the request fails', async () => {
             infoService.post.mockImplementationOnce(() => Promise.reject('__error__'));
-            const logError = jest.fn();
 
-            getLogger.mockImplementation(() => ({ error: logError }));
             await addNominatedContact(req, res, next);
 
-            expect(logError).toHaveBeenCalled();
             expect(next).toHaveBeenCalledWith('__error__');
         });
     });
@@ -78,7 +72,7 @@ describe('nominatedContact middleware', () => {
             infoService.delete.mockImplementation(() => Promise.resolve());
         });
 
-        it('should call the post method on the info service', async() => {
+        it('should call the post method on the info service', async () => {
             User.createHeaders.mockImplementation(() => headers);
             await removeNominatedContactFromTeam(req, res, next);
 
@@ -86,26 +80,17 @@ describe('nominatedContact middleware', () => {
                 `/team/${req.params.teamUUID}/contact/${req.params.nominatedContactUUID}`, { 'headers': '__headers__' });
         });
 
-        it('should call the user create headers method', async() => {
+        it('should call the user create headers method', async () => {
             await removeNominatedContactFromTeam(req, res, next);
 
             expect(User.createHeaders).toHaveBeenCalled();
         });
 
-        it('should get the logger instance', async() => {
-            await removeNominatedContactFromTeam(req, res, next);
-
-            expect(getLogger).toHaveBeenCalled();
-        });
-
-        it('should log when the request fails', async() => {
+        it('should throw error when the request fails', async () => {
             infoService.delete.mockImplementationOnce(() => Promise.reject('__error__'));
-            const logError = jest.fn();
 
-            getLogger.mockImplementation(() => ({ error: logError }));
             await removeNominatedContactFromTeam(req, res, next);
 
-            expect(logError).toHaveBeenCalled();
             expect(next).toHaveBeenCalledWith('__error__');
         });
     });
@@ -136,30 +121,20 @@ describe('nominatedContact middleware', () => {
                 }
             ];
             req = { params: { teamId: 'team1' }, listService: { fetch: jest.fn().mockReturnValue(mockContacts) } };
-
         });
 
-        it('should return NominatedContacts from the info service', async() => {
+        it('should return NominatedContacts from the info service', async () => {
             await getNominatedContactsForTeam(req, res, next);
 
             expect(req.listService.fetch).toBeCalledWith('CONTACTS_FOR_TEAM', { 'teamId': 'team1' });
             expect(res.locals.nominatedContacts).toEqual(mockContacts);
         });
 
-        it('should get the logger instance', async() => {
-            await getNominatedContactsForTeam(req, res, next);
-
-            expect(getLogger).toHaveBeenCalled();
-        });
-
-        it('should log when the request fails', async() => {
+        it('should throw error when the request fails', async () => {
             req.listService.fetch = jest.fn((() => Promise.reject('__error__')));
-            const logError = jest.fn();
 
-            getLogger.mockImplementation(() => ({ error: logError }));
             await getNominatedContactsForTeam(req, res, next);
 
-            expect(logError).toHaveBeenCalled();
             expect(next).toHaveBeenCalledWith('__error__');
         });
     });

@@ -1,11 +1,8 @@
 const { caseworkService } = require('../clients/index');
-const getLogger = require('../libs/logger');
 const User = require('../models/user');
 const encodeCaseReference = require('../libs/encodingHelpers');
 
 async function withdrawCase(req, res, next) {
-    const logger = getLogger(req.request);
-
     try {
         const encodedReference = encodeCaseReference(req.body.caseReference.toUpperCase());
         const requestHeaders = User.createHeaders(req.user);
@@ -19,7 +16,6 @@ async function withdrawCase(req, res, next) {
             res.sendStatus(404);
         }
     } catch (error) {
-        logger.error(error);
         next(error);
     }
 }

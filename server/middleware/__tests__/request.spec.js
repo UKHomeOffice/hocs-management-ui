@@ -1,4 +1,73 @@
-import { errorMiddleware, apiErrorMiddleware } from '../request';
+import { axiosErrorMiddleware, apiErrorMiddleware, errorMiddleware } from '../request';
+import { AxiosError } from 'axios';
+import { GenericError } from '../../models/error';
+
+describe('Axios error middleware', () => {
+    const req = {};
+    const res = {};
+    const next = jest.fn();
+
+    beforeEach(() => {
+        next.mockReset();
+    });
+
+    it('should pass through response data if present', () => {
+        const err = new AxiosError('Message 400', undefined,
+            undefined,
+            undefined,
+            {
+                data: 'TEST',
+                status: 400
+            }
+        );
+
+        axiosErrorMiddleware(err, req, res, next);
+
+        expect(next).toHaveBeenCalledWith(new GenericError('TEST', 400));
+    });
+
+    it('should pass through request if response is not present', () => {
+        const err = new AxiosError('Message 400', AxiosError.ECONNABORTED,
+            {
+                url: 'http://TESTURL/'
+            },
+            {},
+            undefined
+        );
+
+        axiosErrorMiddleware(err, req, res, next);
+
+        expect(next).toHaveBeenCalledWith(new GenericError(`Failed to request following endpoint ${err.config.url} for reason ${err.code}`, 500));
+    });
+
+    it('should fallback to GenericError if response or request is not present', () => {
+        const err = new AxiosError('Message 400', AxiosError.ECONNABORTED,
+            {
+                url: 'http://TESTURL/'
+            },
+            undefined,
+            undefined
+        );
+
+        axiosErrorMiddleware(err, req, res, next);
+
+        expect(next).toHaveBeenCalledWith(new GenericError(`Axios failed to process the request for reason ${err.code}`, 500));
+    });
+
+    it('should bypass and pass error to next middleware', () => {
+        const err = {
+            message: 'MOCK_ERROR',
+            status: 418,
+            title: 'MOCK_TITLE',
+            stack: 'MOCK_STACK'
+        };
+
+        axiosErrorMiddleware(err, req, res, next);
+
+        expect(next).toHaveBeenCalledWith(err);
+    });
+})
+;
 
 describe('Error middleware', () => {
 

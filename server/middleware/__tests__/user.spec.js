@@ -1,9 +1,16 @@
 jest.mock('../../clients/index');
-jest.mock('../../libs/logger');
 jest.mock('../../models/user');
 const { infoService } = require('../../clients/index');
-const { addToTeam, getAllUsers, removeFromTeam, getUser, addUser, amendUser, returnUsersJson, returnUserJson } = require('../user');
-const getLogger = require('../../libs/logger');
+const {
+    addToTeam,
+    getAllUsers,
+    removeFromTeam,
+    getUser,
+    addUser,
+    amendUser,
+    returnUsersJson,
+    returnUserJson
+} = require('../user');
 const User = require('../../models/user');
 
 describe('User middleware addToTeam', () => {
@@ -11,7 +18,7 @@ describe('User middleware addToTeam', () => {
     const userId = '__userId__';
     const teamId = '__teamId__';
     const headers = '__headers__';
-    const req = { params: { userId: userId, teamId: teamId }, user: '__user__' } ;
+    const req = { params: { userId: userId, teamId: teamId }, user: '__user__' };
     let res = {};
     const next = jest.fn();
 
@@ -22,9 +29,9 @@ describe('User middleware addToTeam', () => {
 
     it('should call the post method on the info service', async () => {
         User.createHeaders.mockImplementation(() => headers);
-        req.body = ['__user1__', '__user2__'];
+        req.body = [ '__user1__', '__user2__' ];
         await addToTeam(req, res, next);
-        expect(infoService.post).toHaveBeenCalledWith(`/users/team/${teamId}`, ['__user1__', '__user2__'], { headers: headers });
+        expect(infoService.post).toHaveBeenCalledWith(`/users/team/${teamId}`, [ '__user1__', '__user2__' ], { headers: headers });
     });
 
     it('should call the user create headers method', async () => {
@@ -37,17 +44,11 @@ describe('User middleware addToTeam', () => {
         expect(next).toHaveBeenCalled();
     });
 
-    it('should get the logger instance', async () => {
-        await addToTeam(req, res, next);
-        expect(getLogger).toHaveBeenCalled();
-    });
-
     it('should log when the request fails', async () => {
         infoService.post.mockImplementation(() => Promise.reject('__error__'));
-        const logError = jest.fn();
-        getLogger.mockImplementation(() => ({ error: logError }) );
+
         await addToTeam(req, res, next);
-        expect(logError).toHaveBeenCalled();
+
         expect(next).toHaveBeenCalledWith('__error__');
     });
 });
@@ -57,7 +58,7 @@ describe('User middleware remove from team', () => {
     const userId = '__userId__';
     const teamId = '__teamId__';
     const headers = '__headers__';
-    const req = { params: { userId: userId, teamId: teamId }, user: '__user__' } ;
+    const req = { params: { userId: userId, teamId: teamId }, user: '__user__' };
     let res = {};
     const next = jest.fn();
 
@@ -82,17 +83,12 @@ describe('User middleware remove from team', () => {
         expect(next).toHaveBeenCalled();
     });
 
-    it('should get the logger instance', async () => {
-        await removeFromTeam(req, res, next);
-        expect(getLogger).toHaveBeenCalled();
-    });
 
-    it('should log when the request fails', async () => {
+    it('should throw error when the request fails', async () => {
         infoService.delete.mockImplementation(() => Promise.reject('__error__'));
-        const logError = jest.fn();
-        getLogger.mockImplementation(() => ({ error: logError }) );
+
         await removeFromTeam(req, res, next);
-        expect(logError).toHaveBeenCalled();
+
         expect(next).toHaveBeenCalledWith('__error__');
     });
 });
@@ -102,7 +98,7 @@ describe('getAllUsers', () => {
     let req = {};
     let res = {};
     const next = jest.fn();
-    const users = ['user1', 'user2', 'user3'];
+    const users = [ 'user1', 'user2', 'user3' ];
     const fetch = jest.fn(() => users);
 
     beforeEach(() => {
@@ -130,7 +126,7 @@ describe('getUser', () => {
         let res = { locals: {} };
         const next = jest.fn();
         await getUser(req, res, next);
-        expect(infoService.get).toHaveBeenCalledWith('/user/' + userId, { headers } );
+        expect(infoService.get).toHaveBeenCalledWith('/user/' + userId, { headers });
         expect(res.locals.user).toBeDefined();
         expect(res.locals.user).toEqual(userData);
         expect(next).toHaveBeenCalled();
@@ -153,8 +149,8 @@ describe('addUser', () => {
         let res = { send: sendFunction };
         const next = jest.fn();
         await addUser(req, res, next);
-        expect(infoService.post).toHaveBeenCalledWith('/user', reqBody, { headers } );
-        expect(sendFunction).toHaveBeenCalledWith({ userUUID: userId } );
+        expect(infoService.post).toHaveBeenCalledWith('/user', reqBody, { headers });
+        expect(sendFunction).toHaveBeenCalledWith({ userUUID: userId });
     });
 });
 
@@ -164,8 +160,6 @@ describe('addDuplicateUser', () => {
         User.createHeaders.mockImplementation(() => headers);
         const userId = 'x-x-x-x';
 
-        const logWarn = jest.fn();
-        getLogger.mockImplementation(() => ({ warn: logWarn }) );
         const reqBody = {
             email: 'email',
             firstName: 'firstName',
@@ -203,13 +197,13 @@ describe('amendUser', () => {
             lastName: 'lastName',
             enabled: false
         };
-        const req = { body: reqBody , params: { userId } };
+        const req = { body: reqBody, params: { userId } };
         const sendStatusFunction = jest.fn();
         let res = { sendStatus: sendStatusFunction };
         const next = jest.fn();
         await amendUser(req, res, next);
-        expect(infoService.put).toHaveBeenCalledWith('/user/' + userId, reqBody, { headers } );
-        expect(sendStatusFunction).toHaveBeenCalledWith(200 );
+        expect(infoService.put).toHaveBeenCalledWith('/user/' + userId, reqBody, { headers });
+        expect(sendStatusFunction).toHaveBeenCalledWith(200);
     });
 });
 
@@ -218,7 +212,7 @@ describe('returnUsersJson', () => {
     let res = {};
     const next = jest.fn();
     const json = jest.fn();
-    const users = ['user1', 'user2', 'user3'];
+    const users = [ 'user1', 'user2', 'user3' ];
 
     beforeEach(() => {
         next.mockReset();

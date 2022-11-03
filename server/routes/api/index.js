@@ -12,7 +12,7 @@ const apiCaseTypeRouter = require('./caseTypes');
 const apiNominatedContactRouter = require('./nominatedContact');
 const apiKeepaliveRouter = require('./keepalive');
 
-const { apiErrorMiddleware } = require('../../middleware/request');
+const { apiErrorMiddleware, axiosErrorMiddleware } = require('../../middleware/request');
 
 router.post('*', bodyParser.json(), bodyParser.urlencoded({ extended: true }));
 router.patch('*', bodyParser.json(), bodyParser.urlencoded({ extended: true }));
@@ -29,6 +29,6 @@ router.use('/templates', apiTemplateRouter);
 router.use('/case-types', apiCaseTypeRouter);
 router.use('/nominated-contact', apiNominatedContactRouter);
 router.use('/keepalive', apiKeepaliveRouter);
-router.use('*', apiErrorMiddleware);
+router.use('*', axiosErrorMiddleware, apiErrorMiddleware);
 
 module.exports = router;

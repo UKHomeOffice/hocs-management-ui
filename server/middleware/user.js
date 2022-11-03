@@ -1,37 +1,29 @@
 const { infoService } = require('../clients/index');
-const getLogger = require('../libs/logger');
 const User = require('../models/user');
 const { FormSubmissionError } = require('../models/error');
-const { isAxiosErrorWithCode } = require('../libs/responseHelpers');
 
 async function addUsersToTeam(req, _, next) {
-
-    const logger = getLogger(req.request);
     const { teamId } = req.params;
 
     try {
         await infoService.post(`/users/team/${teamId}`, req.body, { headers: User.createHeaders(req.user) });
         next();
     } catch (error) {
-        logger.error(error);
         next(error);
     }
 }
 
 async function getAllUsers(req, res, next) {
-    const logger = getLogger(req.request);
     try {
         const response = await req.listService.fetch('USERS', req.params);
         res.locals.users = response;
         next();
     } catch (error) {
-        logger.error(error);
         next(error);
     }
 }
 
 async function getUser(req, res, next) {
-    const logger = getLogger(req.request);
     try {
         const config = { headers: User.createHeaders(req.user) };
         const userId = req.params.userId;
@@ -39,7 +31,6 @@ async function getUser(req, res, next) {
         res.locals.user = result.data;
         next();
     } catch (error) {
-        logger.error(error);
         next(error);
     }
 }
@@ -60,7 +51,6 @@ async function addUser(req, res, next) {
 }
 
 async function amendUser(req, res, next) {
-    const logger = getLogger(req.request);
     try {
         const body = {
             firstName: req.body.firstName,
@@ -71,20 +61,17 @@ async function amendUser(req, res, next) {
         await infoService.put(`/user/${req.params.userId}`, body, config);
         res.sendStatus(200);
     } catch (error) {
-        logger.error(error);
         next(new FormSubmissionError(error.response.data, error.response.status));
     }
 }
 
 async function removeFromTeam(req, _, next) {
-    const logger = getLogger(req.request);
     try {
         const { userId, teamId } = req.params;
 
         await infoService.delete(`/users/${userId}/team/${teamId}`, { headers: User.createHeaders(req.user) });
         next();
     } catch (error) {
-        logger.error(error);
         next(error);
     }
 }

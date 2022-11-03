@@ -1,17 +1,14 @@
 jest.mock('../../clients/index');
-jest.mock('../../libs/logger');
 jest.mock('../../models/user');
 const { infoService } = require('../../clients/index');
 const { addStandardLine } = require('../standardLine');
-const getLogger = require('../../libs/logger');
 const User = require('../../models/user');
 
 describe('when the standardLine middleware is called', () => {
-
     const headers = '__headers__';
     const file = { key: '__key__', originalname: '__originalname__' };
     const body = { topic: '__topic__', expiryDate: '__expiry_date__' };
-    const req = { body: body, files: [file], user: '__user__' };
+    const req = { body: body, files: [ file ], user: '__user__' };
     const sendStatus = jest.fn();
     const res = { sendStatus };
     const next = jest.fn();
@@ -42,17 +39,11 @@ describe('when the standardLine middleware is called', () => {
         expect(sendStatus).toHaveBeenCalledWith(200);
     });
 
-    it('should get the logger instance', async () => {
-        await addStandardLine(req, res, next);
-        expect(getLogger).toHaveBeenCalled();
-    });
-
-    it('should log when the request fails', async () => {
+    it('should throw error when the request fails', async () => {
         infoService.post.mockImplementation(() => Promise.reject('__error__'));
-        const logError = jest.fn();
-        getLogger.mockImplementation(() => ({ error: logError }));
+
         await addStandardLine(req, res, next);
-        expect(logError).toHaveBeenCalled();
+
         expect(next).toHaveBeenCalledWith('__error__');
     });
 });

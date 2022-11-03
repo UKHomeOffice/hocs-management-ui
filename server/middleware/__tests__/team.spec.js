@@ -1,23 +1,17 @@
-import {
-    getTeams, getTeamMembers, returnTeamMembersJson, returnTeamsJson, addTeam, patchTeam
-} from '../team';
+import { addTeam, getTeamMembers, getTeams, patchTeam, returnTeamMembersJson, returnTeamsJson } from '../team';
 import { infoService } from '../../clients/index';
 
 jest.mock('../../clients/index');
-jest.mock('../../libs/logger');
 jest.mock('../../models/user');
 
 const User = require('../../models/user');
-const getLogger = require('../../libs/logger');
-const logError = jest.fn();
-getLogger.mockImplementation(() => ({ error: logError }));
 
 describe('getTeams', () => {
 
     let req = {};
     let res = {};
     const next = jest.fn();
-    const teams = ['team1', 'team2', 'team3'];
+    const teams = [ 'team1', 'team2', 'team3' ];
     const fetch = jest.fn(() => teams);
 
     beforeEach(() => {
@@ -72,7 +66,7 @@ describe('getTeamMembers', () => {
     let req = {};
     let res = {};
     const next = jest.fn();
-    const teamMembers = ['teamMember1', 'teamMember2', 'teamMember3'];
+    const teamMembers = [ 'teamMember1', 'teamMember2', 'teamMember3' ];
     const fetch = jest.fn(() => teamMembers);
 
     beforeEach(() => {
@@ -94,7 +88,7 @@ describe('returnTeamsJson', () => {
     let res = {};
     const next = jest.fn();
     const json = jest.fn();
-    const teams = ['team1', 'team2', 'team3'];
+    const teams = [ 'team1', 'team2', 'team3' ];
 
     beforeEach(() => {
         next.mockReset();
@@ -117,7 +111,7 @@ describe('returnTeamMembersJson', () => {
     let res = {};
     const next = jest.fn();
     const json = jest.fn();
-    const teamMembers = ['teamMember1', 'teamMember2', 'teamMember3'];
+    const teamMembers = [ 'teamMember1', 'teamMember2', 'teamMember3' ];
 
     beforeEach(() => {
         next.mockReset();
@@ -159,10 +153,9 @@ describe('addTeam', () => {
         expect(req.listService.flush).toHaveBeenCalledWith('TEAMS');
     });
 
-    it('should catch and log error if post request fails', async () => {
+    it('should catch and throw error if post request fails', async () => {
         infoService.post.mockImplementation(() => Promise.reject());
         await addTeam(req, res, next);
-        expect(logError).toHaveBeenCalled();
         expect(next).toHaveBeenCalled();
     });
 });
@@ -299,12 +292,11 @@ describe('patchTeam', () => {
             expect(infoService.patch).toHaveBeenCalledTimes(1);
         });
 
-    it('should catch and log error if patch request fails', async () => {
+    it('should throw error if patch request fails', async () => {
         infoService.patch.mockImplementation(() => Promise.reject());
         User.hasRole.mockReturnValue(true);
 
         await patchTeam(req, res, next);
-        expect(logError).toHaveBeenCalled();
         expect(next).toHaveBeenCalled();
     });
 });

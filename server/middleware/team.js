@@ -13,7 +13,6 @@ async function getTeam(req, res, next) {
         res.locals.team = response.data;
         next();
     } catch (error) {
-        logger.error(error);
         next(error);
     }
 }
@@ -29,7 +28,6 @@ async function getUnitForTeam(req, res, next) {
         res.locals.unit = response.data;
         next();
     } catch (error) {
-        logger.error(error);
         next(error);
     }
 }
@@ -87,7 +85,6 @@ async function addTeam(req, res, next) {
         req.listService.flush('TEAMS');
         res.sendStatus(200);
     } catch (error) {
-        logger.error(error);
         next(error);
     }
 }
@@ -126,7 +123,6 @@ async function patchTeam(req, res, next) {
         req.listService.flush('TEAMS');
         res.sendStatus(200);
     } catch (error) {
-        logger.error(error);
         next(error);
     }
 }

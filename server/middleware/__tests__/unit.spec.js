@@ -1,9 +1,7 @@
 jest.mock('../../clients/index');
-jest.mock('../../libs/logger');
 jest.mock('../../models/user');
 const { infoService } = require('../../clients/index');
 const { addUnit, getUnits } = require('../unit');
-const getLogger = require('../../libs/logger');
 const User = require('../../models/user');
 
 describe('Unit middleware addUnit', () => {
@@ -13,7 +11,7 @@ describe('Unit middleware addUnit', () => {
     const sendStatus = jest.fn();
     let res = {};
     const next = jest.fn();
-    const units = ['unit1', 'unit2'];
+    const units = [ 'unit1', 'unit2' ];
     const fetch = jest.fn(() => units);
 
     beforeEach(() => {
@@ -53,20 +51,12 @@ describe('Unit middleware addUnit', () => {
         expect(sendStatus).toHaveBeenCalledWith(200);
     });
 
-    it('should get the logger instance', async () => {
-        await addUnit(req, res, next);
-
-        expect(getLogger).toHaveBeenCalled();
-    });
-
-    it('should log when the request fails', async () => {
+    it('should throw error when the request fails', async () => {
         infoService.post.mockImplementation(() => Promise.reject('__error__'));
-        const logError = jest.fn();
 
-        getLogger.mockImplementation(() => ({ error: logError }));
         await addUnit(req, res, next);
 
-        expect(logError).toHaveBeenCalled();
         expect(next).toHaveBeenCalledWith('__error__');
     });
+
 });
