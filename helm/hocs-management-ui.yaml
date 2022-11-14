@@ -1,6 +1,5 @@
 ---
 hocs-generic-service:
-  version: {{ .Values.versions.hocs_management_ui }}
 
   deployment:
     annotations:
