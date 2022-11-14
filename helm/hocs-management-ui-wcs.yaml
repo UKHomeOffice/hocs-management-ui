@@ -6,3 +6,11 @@ hocs-generic-service:
   keycloak:
     realm: https://sso-dev.notprod.homeoffice.gov.uk/auth/realms/hocs-notprod
     domain: wcs-notprod.homeoffice.gov.uk
+
+  ingress:
+    external:
+      enabled: true
+      host: dev-management.wcs-notprod.homeoffice.gov.uk
+    internal:
+      enabled: true
+      host: dev-management.internal.wcs-notprod.homeoffice.gov.uk
