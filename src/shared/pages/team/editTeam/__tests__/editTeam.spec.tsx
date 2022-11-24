@@ -145,17 +145,6 @@ describe('when the editTeam component is mounted', () => {
         });
     });
 
-    it('should hide the change unit area if the user does not have the SET_UNIT_ACTIVE_FLAG role', async () => {
-        const roles = ['RENAME_TEAM', 'REASSIGN_TEAM_UNIT'];
-
-        act(() => {
-            wrapper = renderComponent(roles);
-        });
-
-        await wait(() => {
-            expect(wrapper.container).toMatchSnapshot();
-        });
-    });
 });
 
 describe('when the submit button is clicked', () => {
