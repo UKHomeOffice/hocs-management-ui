@@ -67,7 +67,7 @@
         "jest": "^26.0.0",
         "jest-date-mock": "^1.0.8",
         "lint-staged": "^13.0.3",
-        "mini-css-extract-plugin": "^2.7.0",
+        "mini-css-extract-plugin": "^2.7.1",
         "nodemon": "^2.0.20",
         "postcss-loader": "^6.2.1",
         "pre-commit": "^1.2.2",
