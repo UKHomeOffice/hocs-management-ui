@@ -13,11 +13,10 @@ const getHttpsClient = () => {
     });
 };
 
-function createClient({ baseURL, auth }) {
+function createClient({ baseURL }) {
 
     const client = axios.create({
         baseURL,
-        auth,
         httpsAgent: isProduction ? getHttpsClient() : null
     });
 

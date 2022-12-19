@@ -1,5 +1,4 @@
 const isProduction = process.env.NODE_ENV === 'production';
-const workflowAuth = (process.env.WORKFLOW_BASIC_AUTH || 'UNSET:UNSET').split(':');
 const defaultTimeoutSeconds = Number(process.env.DEFAULT_TIMEOUT_SECONDS);
 const countDownForSeconds = Number(process.env.COUNTDOWN_FOR_SECONDS);
 
@@ -35,8 +34,6 @@ const config = {
         },
         server: {
             WORKFLOW_SERVICE: process.env.WORKFLOW_SERVICE || 'http://localhost:8091',
-            WORKFLOW_BASIC_AUTH: process.env.WORKFLOW_BASIC_AUTH ?
-                { username: workflowAuth[0], password: workflowAuth[1] } : null,
             CASEWORK_SERVICE: process.env.CASEWORK_SERVICE || 'http://localhost:8082',
             DOCUMENT_SERVICE: process.env.DOCUMENT_SERVICE || 'http://localhost:8083',
             INFO_SERVICE: process.env.INFO_SERVICE || 'http://localhost:8085',
