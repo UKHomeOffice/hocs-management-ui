@@ -14,7 +14,8 @@
         "test": "jest --coverage",
         "jest": "node_modules/jest/bin/jest.js .",
         "lint-staged": "node_modules/lint-staged/bin/lint-staged.js",
-        "lint": "eslint ./ --ext js,jsx,ts,tsx"
+        "lint": "eslint ./ --ext js,jsx,ts,tsx",
+        "audit": "npm audit"
     },
     "repository": "github:UKHomeOffice/hocs-management-ui",
     "jest": {
