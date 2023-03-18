@@ -3,7 +3,7 @@ hocs-generic-service:
 
   deployment:
     annotations:
-      downscaler/downtime: "Mon-Sun 00:00-08:00 Europe/London,Mon-Sun 18:00-24:00 Europe/London"
+      downscaler/downtime: "Sat-Sun 00:00-24:00 Europe/London,Mon-Fri 00:00-08:00 Europe/London,Mon-Fri 18:00-24:00 Europe/London"
 
   clusterPrefix: cs
 
@@ -19,22 +19,11 @@ hocs-generic-service:
       enabled: true
       host: dev-management.internal.cs-notprod.homeoffice.gov.uk
 
-  truststore:
-    resources:
-      requests:
-        cpu: 50m
-
-  proxy:
-    resources:
-      requests:
-        cpu: 50m
-
   app:
     resources:
       limits:
         memory: 512Mi
       requests:
-        cpu: 50m
         memory: 512Mi
     env:
       isNotProd: '1'
