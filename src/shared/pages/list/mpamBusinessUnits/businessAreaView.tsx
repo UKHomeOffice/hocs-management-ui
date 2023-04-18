@@ -52,9 +52,9 @@ const BusinessAreaView: React.FC<CasesProps> = ({ history, match }) => {
             />
             <div>
                 <h1 className="govuk-heading-xl">View and Edit Business Units for {readableType}</h1>
-                <h2 className="govuk-heading-l">
-                    {caseType && `Business Area: ${caseType.displayName}`}
-                </h2>
+                {caseType && <h2 className="govuk-heading-l">
+                    {`Business Area: ${caseType.displayName}`}
+                </h2>}
                 {
                     businessAreas && businessAreas.length > 0 ?
                         <div>

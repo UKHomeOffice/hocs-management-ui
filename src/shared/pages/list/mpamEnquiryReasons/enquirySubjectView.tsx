@@ -47,9 +47,9 @@ const EnquirySubjectView: React.FC<CasesProps> = ({ history, match }) => {
             />
             <div>
                 <h1 className='govuk-heading-xl'>View and Edit Enquiry Reasons for {readableSubject}</h1>
-                <h2 className='govuk-heading-l'>
-                    {enquirySubject && `Enquiry Subject: ${enquirySubject.displayName}`}
-                </h2>
+                {enquirySubject && <h2 className='govuk-heading-l'>
+                    {`Enquiry Subject: ${enquirySubject.displayName}`}
+                </h2>}
                 {
                     enquirySubjects && enquirySubjects.length > 0 ?
                         <div>
