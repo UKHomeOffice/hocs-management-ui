@@ -1,6 +1,6 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
-exports[`when the trofCampaign amendEntity component is mounted should initially render blank before item title is returned 1`] = `"<div><div class=\\"govuk-grid-row\\"><div class=\\"govuk-grid-column-two-thirds-from-desktop\\"><a class=\\"govuk-back-link\\" href=\\"/manage-trof-campaigns\\">Back</a><h1 class=\\"govuk-heading-xl\\">Amend campaign</h1></div></div><div class=\\"govuk-grid-row\\"><div class=\\"govuk-grid-column-one-half-from-desktop\\"><h3 class=\\"govuk-heading-l\\">New campaign: </h3><form action=\\"/api/entity/list/update/TROF_CAMPAIGNS\\" method=\\"POST\\"><input type=\\"hidden\\" name=\\"_csrf\\" value=\\"\\"><div class=\\"govuk-form-group\\"><label for=\\"title\\" id=\\"title-label\\" class=\\"govuk-label govuk-label--s\\">New campaign name</label><input class=\\"govuk-input\\" id=\\"title\\" type=\\"text\\" name=\\"title\\" value=\\"\\"></div><div class=\\"govuk-form-group\\"><label for=\\"simpleName\\" id=\\"simpleName-label\\" class=\\"govuk-label govuk-label--s\\">campaign code</label><input class=\\"govuk-input\\" id=\\"simpleName\\" type=\\"text\\" name=\\"simpleName\\" disabled=\\"\\" value=\\"\\"></div><input class=\\"govuk-button\\" type=\\"submit\\" value=\\"Submit\\"></form></div></div></div>"`;
+exports[`when the trofCampaign amendEntity component is mounted should initially render blank before item title is returned 1`] = `"<div><div class=\\"govuk-grid-row\\"><div class=\\"govuk-grid-column-two-thirds-from-desktop\\"><a class=\\"govuk-back-link\\" href=\\"/manage-trof-campaigns\\">Back</a><h1 class=\\"govuk-heading-xl\\">Amend campaign</h1></div></div><div class=\\"govuk-grid-row\\"><div class=\\"govuk-grid-column-one-half-from-desktop\\"><h2 class=\\"govuk-heading-l\\">New campaign: </h2><form action=\\"/api/entity/list/update/TROF_CAMPAIGNS\\" method=\\"POST\\"><input type=\\"hidden\\" name=\\"_csrf\\" value=\\"\\"><div class=\\"govuk-form-group\\"><label for=\\"title\\" id=\\"title-label\\" class=\\"govuk-label govuk-label--s\\">New campaign name</label><input class=\\"govuk-input\\" id=\\"title\\" type=\\"text\\" name=\\"title\\" value=\\"\\"></div><div class=\\"govuk-form-group\\"><label for=\\"simpleName\\" id=\\"simpleName-label\\" class=\\"govuk-label govuk-label--s\\">campaign code</label><input class=\\"govuk-input\\" id=\\"simpleName\\" type=\\"text\\" name=\\"simpleName\\" disabled=\\"\\" value=\\"\\"></div><input class=\\"govuk-button\\" type=\\"submit\\" value=\\"Submit\\"></form></div></div></div>"`;
 
 exports[`when the trofCampaign amendEntity component is mounted should render with default props 1`] = `
 <div>
@@ -29,11 +29,11 @@ exports[`when the trofCampaign amendEntity component is mounted should render wi
     <div
       class="govuk-grid-column-one-half-from-desktop"
     >
-      <h3
+      <h2
         class="govuk-heading-l"
       >
         New campaign: 
-      </h3>
+      </h2>
       <form
         action="/api/entity/list/update/TROF_CAMPAIGNS"
         method="POST"

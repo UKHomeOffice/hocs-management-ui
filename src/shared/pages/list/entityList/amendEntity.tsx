@@ -85,9 +85,9 @@ const AmendEntity: React.FC<AmendEntityProps> =
                     </div>
                     <div className="govuk-grid-row">
                         <div className="govuk-grid-column-one-half-from-desktop">
-                            <h3 className="govuk-heading-l">
+                            <h2 className="govuk-heading-l">
                                 {`New ${entityDefinition.entityName}: ${state.originalTitle}`}
-                            </h3>
+                            </h2>
                             <form action={`/api/entity/list/update/${entityDefinition.entityListName}`}
                                 method="POST" onSubmit={handleSubmit}>
                                 <input type="hidden" name="_csrf" value={csrfToken} />

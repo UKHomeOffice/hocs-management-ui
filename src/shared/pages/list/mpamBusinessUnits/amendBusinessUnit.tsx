@@ -77,9 +77,9 @@ const AmendBusinessUnit: React.FC<AmendCampaignProps> = ({ csrfToken, history, m
             </div>
             <div className="govuk-grid-row">
                 <div className="govuk-grid-column-one-half-from-desktop">
-                    <h3 className="govuk-heading-l">
+                    <h2 className="govuk-heading-l">
                         {`Business Unit Name: ${state.originalTitle}`}
-                    </h3>
+                    </h2>
                     <form action="/api/entity/list/update/MPAM_CAMPAIGNS" method="POST" onSubmit={handleSubmit}>
                         <input type="hidden" name="_csrf" value={csrfToken} />
                         <Text
