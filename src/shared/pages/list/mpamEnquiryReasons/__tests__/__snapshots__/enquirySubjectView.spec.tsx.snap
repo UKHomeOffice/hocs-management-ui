@@ -17,9 +17,6 @@ exports[`when the enquirySubjectView component is mounted should render with def
       >
         View and Edit Enquiry Reasons for 
       </h1>
-      <h2
-        class="govuk-heading-l"
-      />
       <div>
         <p
           class="govuk-body"

@@ -17,9 +17,6 @@ exports[`when the businessAreaView component is mounted should render with defau
       >
         View and Edit Business Units for 
       </h1>
-      <h2
-        class="govuk-heading-l"
-      />
       <div>
         <p
           class="govuk-body"
