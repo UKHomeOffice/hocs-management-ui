@@ -101,7 +101,7 @@
         "@types/classnames": "^2.2.9",
         "@types/react": "^16.14.21",
         "@types/react-helmet": "^6.1.5",
-        "@types/react-modal": "^3.13.1",
+        "@types/react-modal": "^3.16.0",
         "@types/yup": "^0.26.24",
         "aws-sdk": "^2.1358.0",
         "axios": "^0.27.2",
