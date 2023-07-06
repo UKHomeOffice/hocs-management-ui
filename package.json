@@ -132,5 +132,9 @@
         "uuid": "^9.0.0",
         "winston": "^2.4.2",
         "yup": "^0.32.11"
+    },
+    "overrides": {
+        "semver": "^7.5.3",
+        "optionator": "0.9.3"
     }
 }
