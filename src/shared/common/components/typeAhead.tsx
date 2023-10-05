@@ -31,6 +31,7 @@ class TypeAhead extends Component<TypeAheadProps, TypeAheadState> {
 
     componentDidMount() {
         this.setState({ componentMounted: true });
+        console.log(this.state);
     }
 
     handleChange(selectedItem: Item) {
@@ -53,6 +54,7 @@ class TypeAhead extends Component<TypeAheadProps, TypeAheadState> {
                     this.setState(prevState => ({ ...prevState, cachedOptions: choices }));
                     resolve(this.filterItems(inputValue, choices));
                 });
+                console.log(this.state);
             }
         });
 

@@ -2,6 +2,18 @@ const { caseworkService } = require('../clients/index');
 const User = require('../models/user');
 const encodeCaseReference = require('../libs/encodingHelpers');
 
+async function archiveCase(req, res, next) {
+    try {
+        const encodedReference = encodeURIComponent(req.body.caseReference.toUpperCase());
+        const deleted = req.body.deleted;
+        const requestHeaders = User.createHeaders(req.user);
+        await caseworkService.delete(`/case/ref/${encodedReference}/${deleted}`, { headers: requestHeaders });
+        res.sendStatus(200);
+    } catch (error) {
+        next(error);
+    }
+}
+
 async function withdrawCase(req, res, next) {
     try {
         const encodedReference = encodeCaseReference(req.body.caseReference.toUpperCase());
@@ -21,5 +33,6 @@ async function withdrawCase(req, res, next) {
 }
 
 module.exports = {
+    archiveCase,
     withdrawCase,
 };

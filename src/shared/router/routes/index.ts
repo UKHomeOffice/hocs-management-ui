@@ -22,6 +22,8 @@ import UserView from '../../pages/user/userView/userView';
 import AddUser from '../../pages/user/userAdd/addUser';
 import AmendUser from '../../pages/user/userAmend/amendUser';
 import AddTeamToUser from '../../pages/user/addTeamToUser/addTeamToUser';
+import ArchiveCase from '../../pages/case/archiveCase';
+import UnarchiveCase from '../../pages/case/unarchiveCase';
 import WithdrawCase from '../../pages/case/withdrawCase';
 import ExGratiaView from '../../pages/list/exGratiaBusinessReps/exgratiaBusRepsView';
 import ChooseBusinessArea from '../../pages/list/mpamBusinessUnits/selectBusinessArea';
@@ -225,6 +227,18 @@ const routes = [
         exact: true,
         component: AddTemplate,
         title: 'Add Template'
+    },
+    {
+        path: '/case-archive',
+        exact: true,
+        component: ArchiveCase,
+        title: 'Archive a case'
+    },
+    {
+        path: '/case-unarchive',
+        exact: true,
+        component: UnarchiveCase,
+        title: 'Unarchive a case'
     },
     {
         path: '/case-withdraw',

@@ -24,6 +24,7 @@ class DateInput extends Component<DateInputProps> {
         this.setState({ [field]: value }, () => {
             this.props.updateState({ name: this.props.name, value: `${this.state[this.datePart('year')]}-${this.state[this.datePart('month')]}-${this.state[this.datePart('day')]}` });
         });
+        console.log(this.state);
     }
 
     datePart(field: string) { return `${this.props.name}-${field}`; }

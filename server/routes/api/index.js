@@ -22,7 +22,7 @@ router.use('/standard-lines', apiStandardLineRouter);
 router.use('/teams', apiTeamRouter);
 router.use('/topics', apiTopicsRouter);
 router.use('/units', apiUnitRouter);
-router.use('/case/withdraw', apiCaseRouter);
+router.use('/case', apiCaseRouter);
 router.use('/entity', apiEntityListRouter);
 router.use('/users', apiUserRouter);
 router.use('/templates', apiTemplateRouter);

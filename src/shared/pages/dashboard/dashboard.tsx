@@ -101,6 +101,12 @@ const Dashboard = ({ hasRole }: ApplicationState) => {
                             </h2>
                             <ul className="govuk-list govuk-list--bullet">
                                 <li>
+                                    <Link className="govuk-link" to="/case-archive">Archive a case</Link>
+                                </li>
+                                <li>
+                                    <Link className="govuk-link" to="/case-unarchive">Unarchive a case</Link>
+                                </li>
+                                <li>
                                     <Link className="govuk-link" to="/case-withdraw">Withdraw a case</Link>
                                 </li>
                             </ul>

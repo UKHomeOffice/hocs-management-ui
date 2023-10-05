@@ -182,6 +182,22 @@ exports[`dashboard component should not render dcu creation or FOI interested pa
             <li>
               <a
                 class="govuk-link"
+                href="/case-archive"
+              >
+                Archive a case
+              </a>
+            </li>
+            <li>
+              <a
+                class="govuk-link"
+                href="/case-unarchive"
+              >
+                Unarchive a case
+              </a>
+            </li>
+            <li>
+              <a
+                class="govuk-link"
                 href="/case-withdraw"
               >
                 Withdraw a case
@@ -428,6 +444,22 @@ exports[`dashboard component should render DCU creation link if user has DCU rol
             <li>
               <a
                 class="govuk-link"
+                href="/case-archive"
+              >
+                Archive a case
+              </a>
+            </li>
+            <li>
+              <a
+                class="govuk-link"
+                href="/case-unarchive"
+              >
+                Unarchive a case
+              </a>
+            </li>
+            <li>
+              <a
+                class="govuk-link"
                 href="/case-withdraw"
               >
                 Withdraw a case
@@ -663,6 +695,22 @@ exports[`dashboard component should render FOI links if the user has the FOI rol
           <ul
             class="govuk-list govuk-list--bullet"
           >
+            <li>
+              <a
+                class="govuk-link"
+                href="/case-archive"
+              >
+                Archive a case
+              </a>
+            </li>
+            <li>
+              <a
+                class="govuk-link"
+                href="/case-unarchive"
+              >
+                Unarchive a case
+              </a>
+            </li>
             <li>
               <a
                 class="govuk-link"

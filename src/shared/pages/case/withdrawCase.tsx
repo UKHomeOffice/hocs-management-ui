@@ -8,7 +8,7 @@ import TextArea from '../../common/components/forms/text-area';
 import DateInput from '../../common/components/forms/date';
 import { ApplicationConsumer } from '../../contexts/application';
 import { withdrawCase } from '../../services/caseWithdrawService';
-import { reducer } from './reducer';
+import { reducer } from './withdrawCaseReducer';
 import ErrorSummary from '../../common/components/errorSummary';
 import { GENERAL_ERROR_TITLE, VALIDATION_ERROR_TITLE, WITHDRAW_CASE_SUCCESS, WITHDRAW_CASE_ERROR_DESCRIPTION, WITHDRAW_CASE_NOT_FOUND_ERROR_DESCRIPTION, WITHDRAW_CASE_FORBIDDEN_ERROR_DESCRIPTION } from '../../models/constants';
 import useError from '../../hooks/useError';
