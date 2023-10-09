@@ -232,13 +232,15 @@ const routes = [
         path: '/case-archive',
         exact: true,
         component: ArchiveCase,
-        title: 'Archive a case'
+        title: 'Archive a case',
+        requiredRole: 'MUI_CASE_ARCHIVING'
     },
     {
         path: '/case-unarchive',
         exact: true,
         component: UnarchiveCase,
-        title: 'Unarchive a case'
+        title: 'Unarchive a case',
+        requiredRole: 'MUI_CASE_ARCHIVING'
     },
     {
         path: '/case-withdraw',
