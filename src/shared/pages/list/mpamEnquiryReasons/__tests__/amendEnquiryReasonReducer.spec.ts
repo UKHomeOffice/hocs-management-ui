@@ -4,9 +4,9 @@ import { reducer } from '../amendEnquiryReasonReducer';
 describe('when an action is dispatched', () => {
     describe('and it is a SetItemDetails action', () => {
         it('it will update the base state with simpleName, title, originalTitle and uuid', () => {
-            const inputState: State = { simpleName: 'testSimpleName', title: 'testTitle', originalTitle: 'testOriginalTitle', uuid: 'testUUID' };
+            const inputState: State = { simpleName: 'testSimpleName', title: 'testTitle', originalTitle: 'testOriginalTitle', uuid: 'testUUID',active: false };
             const state = reducer(inputState, {
-                type: 'SetItemDetails', payload: { simpleName: 'testSimpleName2', title: 'testTitle2', uuid: 'testUUID2' }
+                type: 'SetItemDetails', payload: { simpleName: 'testSimpleName2', title: 'testTitle2', uuid: 'testUUID2', active: false }
 
             });
             const { simpleName, title, originalTitle, uuid } = state;
@@ -19,7 +19,7 @@ describe('when an action is dispatched', () => {
 
     describe('and it is a SetTitle action', () => {
         it('it will update the base state with title', () => {
-            const inputState: State = { simpleName: 'testSimpleName', title: 'testTitle', originalTitle: 'testOriginalTitle', uuid: 'testUUID' };
+            const inputState: State = { simpleName: 'testSimpleName', title: 'testTitle', originalTitle: 'testOriginalTitle', uuid: 'testUUID',active: false };
             const state = reducer(inputState, {
                 type: 'SetTitle', payload: 'testTitle2'
 
@@ -34,7 +34,7 @@ describe('when an action is dispatched', () => {
 
     describe('and it is a SetSimpleName action', () => {
         it('it will update the base state with simpleName', () => {
-            const inputState: State = { simpleName: 'testSimpleName', title: 'testTitle', originalTitle: 'testOriginalTitle', uuid: 'testUUID' };
+            const inputState: State = { simpleName: 'testSimpleName', title: 'testTitle', originalTitle: 'testOriginalTitle', uuid: 'testUUID',active: false };
             const state = reducer(inputState, {
                 type: 'SetSimpleName', payload: 'testSimpleName2'
 

@@ -29,7 +29,8 @@ const AddEntity: React.FC<AddCampaignProps> = ({ csrfToken, history, entityDefin
     const [entity, dispatch] = React.useReducer<Reducer<EntityListItem, InputEventData>>(reducer, {
         uuid: '',
         title: '',
-        simpleName: ''
+        simpleName: '' ,
+        active: false
     });
 
     const validationSchema = object({

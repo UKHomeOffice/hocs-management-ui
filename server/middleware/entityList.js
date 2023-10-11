@@ -6,9 +6,9 @@ async function getEntityList(req, res, next) {
 
     try {
         const response = await infoService.get(`/entity/list/${listName}`, {}, { headers: User.createHeaders(req.user) });
-        res.locals.entityList = response.data.map(({ simpleName, uuid, data }) => ({
+        res.locals.entityList = response.data.map(({ simpleName, uuid, data, active }) => ({
             simpleName: simpleName,
-            uuid: uuid, ...data
+            uuid: uuid, ...data, active
         }));
         next();
     } catch (error) {

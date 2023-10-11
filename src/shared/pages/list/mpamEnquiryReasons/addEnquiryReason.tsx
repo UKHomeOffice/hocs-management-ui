@@ -42,7 +42,8 @@ const AddEnquiryReason: React.FC<addEnquiryReasonProps> = ({ csrfToken, history,
     const [representative, dispatch] = React.useReducer<Reducer<EntityListItem, InputEventData>>(reducer, {
         uuid: '',
         title: '',
-        simpleName: ''
+        simpleName: '' ,
+        active: false
     });
 
     const { params: { subject } } = match;

@@ -34,7 +34,8 @@ const AmendCompBusinessArea: React.FC<AmendCompBusAreaProps> = ({ csrfToken, his
         uuid: '',
         title: '',
         originalTitle: '',
-        simpleName: ''
+        simpleName: '',
+        active: false
     };
 
     const [pageError, addFormError, clearErrors, setErrorMessage] = useError('', VALIDATION_ERROR_TITLE);

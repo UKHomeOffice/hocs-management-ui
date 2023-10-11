@@ -34,7 +34,8 @@ const AmendBusinessUnit: React.FC<AmendCampaignProps> = ({ csrfToken, history, m
         uuid: '',
         title: '',
         originalTitle: '',
-        simpleName: ''
+        simpleName: '',
+        active: false
     };
 
     const [pageError, addFormError, clearErrors, setErrorMessage] = useError('', VALIDATION_ERROR_TITLE);
