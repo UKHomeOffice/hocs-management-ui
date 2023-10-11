@@ -84,7 +84,7 @@ beforeEach(() => {
             simpleName: 'testSimpleName2',
             uuid: 'testId2',
             title: 'testTitle2',
-            active: true
+            active: false
         }]
     };
     useReducerSpy.mockImplementationOnce(() => [mockState, jest.fn()]);
