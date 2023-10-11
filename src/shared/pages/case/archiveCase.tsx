@@ -14,7 +14,11 @@ import {
     ARCHIVE_CASE_NOT_FOUND_ERROR_DESCRIPTION,
     ARCHIVE_CASE_FORBIDDEN_ERROR_DESCRIPTION,
     ARCHIVE_CASE_ERROR_DESCRIPTION,
-    ARCHIVE_CASE_SUCCESS
+    ARCHIVE_CASE_SUCCESS,
+    UNARCHIVE_CASE_SUCCESS,
+    UNARCHIVE_CASE_NOT_FOUND_ERROR_DESCRIPTION,
+    UNARCHIVE_CASE_FORBIDDEN_ERROR_DESCRIPTION,
+    UNARCHIVE_CASE_ERROR_DESCRIPTION
 } from '../../models/constants';
 import useError from '../../hooks/useError';
 import ErrorMessage from '../../models/errorMessage';
@@ -24,6 +28,8 @@ import ArchiveCaseModel from '../../models/archiveCaseModel';
 
 interface ArchiveCaseProps extends RouteComponentProps {
     csrfToken?: string;
+    deleted?: boolean;
+    label?: string;
 }
 
 const validationSchema = object({
@@ -33,12 +39,12 @@ const validationSchema = object({
         .matches(/^[a-zA-Z0-9_,.!/? ()&]*$/),
 });
 
-const ArchiveCase: React.FC<ArchiveCaseProps> = ({ csrfToken, history }) => {
+const ArchiveCase: React.FC<ArchiveCaseProps> = ({ csrfToken, history, deleted, label }) => {
 
     const [pageError, addFormError, clearErrors, setErrorMessage] = useError('', VALIDATION_ERROR_TITLE);
     const [archiveCaseModel, dispatch] = React.useReducer<Reducer<ArchiveCaseModel, InputEventData>>(reducer, {
         caseReference: '',
-        deleted: true
+        deleted: deleted ?? true
     });
 
     const handleSubmit = (event: React.FormEvent) => {
@@ -46,14 +52,14 @@ const ArchiveCase: React.FC<ArchiveCaseProps> = ({ csrfToken, history }) => {
         clearErrors();
         if (validate(validationSchema, archiveCaseModel, addFormError)) {
             archiveCase(archiveCaseModel).then(() => {
-                history.push('/', { successMessage: ARCHIVE_CASE_SUCCESS });
+                history.push('/', { successMessage: deleted ? ARCHIVE_CASE_SUCCESS : UNARCHIVE_CASE_SUCCESS });
             }).catch((error) => {
                 if (error && error.response && error.response.status === 404) {
-                    setErrorMessage(new ErrorMessage(ARCHIVE_CASE_NOT_FOUND_ERROR_DESCRIPTION, GENERAL_ERROR_TITLE));
+                    setErrorMessage(new ErrorMessage(deleted ? ARCHIVE_CASE_NOT_FOUND_ERROR_DESCRIPTION : UNARCHIVE_CASE_NOT_FOUND_ERROR_DESCRIPTION, GENERAL_ERROR_TITLE));
                 } if (error && error.response && error.response.status === 403) {
-                    setErrorMessage(new ErrorMessage(ARCHIVE_CASE_FORBIDDEN_ERROR_DESCRIPTION, GENERAL_ERROR_TITLE));
+                    setErrorMessage(new ErrorMessage(deleted ? ARCHIVE_CASE_FORBIDDEN_ERROR_DESCRIPTION : UNARCHIVE_CASE_FORBIDDEN_ERROR_DESCRIPTION, GENERAL_ERROR_TITLE));
                 } else {
-                    setErrorMessage(new ErrorMessage(ARCHIVE_CASE_ERROR_DESCRIPTION, GENERAL_ERROR_TITLE));
+                    setErrorMessage(new ErrorMessage(deleted ? ARCHIVE_CASE_ERROR_DESCRIPTION : UNARCHIVE_CASE_ERROR_DESCRIPTION, GENERAL_ERROR_TITLE));
                 }
             });
         }
@@ -68,7 +74,7 @@ const ArchiveCase: React.FC<ArchiveCaseProps> = ({ csrfToken, history }) => {
                         pageError={pageError}
                     />
                     <h1 className="govuk-heading-xl">
-                        Archive a Case
+                        {label} a Case
                     </h1>
                 </div>
             </div>
@@ -83,7 +89,7 @@ const ArchiveCase: React.FC<ArchiveCaseProps> = ({ csrfToken, history }) => {
                             updateState={({ name, value }) => dispatch({ name, value })}
                             value={archiveCaseModel.caseReference}
                         />
-                        <Submit label='Archive' />
+                        <Submit label={label} />
                     </form>
                 </div>
             </div>
@@ -91,10 +97,10 @@ const ArchiveCase: React.FC<ArchiveCaseProps> = ({ csrfToken, history }) => {
     );
 };
 
-const WrappedArchiveCase = ({ history, location, match }: RouteComponentProps) => (
+const WrappedArchiveCase = ({ history, location, match, deleted, label }: ArchiveCaseProps) => (
     <ApplicationConsumer>
         {({ csrf }) => (
-            <ArchiveCase csrfToken={csrf} history={history} location={location} match={match} />
+            <ArchiveCase csrfToken={csrf} history={history} location={location} match={match} deleted={deleted} label={label} />
         )}
     </ApplicationConsumer>
 );
