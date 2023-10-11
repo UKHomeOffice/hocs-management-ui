@@ -43,7 +43,7 @@ exports[`when the trofCampaign EntityListView component is mounted should render
                 class="govuk-table__header"
                 scope="col"
               >
-                Campaign code1
+                Active
               </th>
               <th
                 class="govuk-table__header"

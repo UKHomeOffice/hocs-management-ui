@@ -55,7 +55,7 @@ const EntityListView = (entityDefinition: EntityDefinition) => {
                             <tr className="govuk-table__row">
                                 <th className="govuk-table__header" scope="col">{`${entityDefinition.entityNameCapitalised} name`}</th>
                                 <th className="govuk-table__header" scope="col">{`${entityDefinition.entityNameCapitalised} code`}</th>
-                                <th className="govuk-table__header" scope="col">{`${entityDefinition.entityNameCapitalised} code1`}</th>
+                                <th className="govuk-table__header" scope="col">Active</th>
                                 <th className="govuk-table__header" scope="col">Action</th>
                             </tr>
                         </thead>

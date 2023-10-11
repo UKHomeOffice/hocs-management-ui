@@ -43,7 +43,7 @@ exports[`when the trofRecipient EntityListView component is mounted should rende
                 class="govuk-table__header"
                 scope="col"
               >
-                Recipient code1
+                Active
               </th>
               <th
                 class="govuk-table__header"

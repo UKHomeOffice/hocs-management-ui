@@ -43,7 +43,7 @@ exports[`when the ukviEnquiryReason EntityListView component is mounted should r
                 class="govuk-table__header"
                 scope="col"
               >
-                Enquiry Reason code1
+                Active
               </th>
               <th
                 class="govuk-table__header"

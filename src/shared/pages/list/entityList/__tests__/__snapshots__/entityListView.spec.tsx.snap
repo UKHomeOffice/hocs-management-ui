@@ -43,7 +43,7 @@ exports[`when the entity list view is mounted should render with default props 1
                 class="govuk-table__header"
                 scope="col"
               >
-                Entity code1
+                Active
               </th>
               <th
                 class="govuk-table__header"

@@ -43,7 +43,7 @@ exports[`when the foiAccountManager EntityListView component is mounted should r
                 class="govuk-table__header"
                 scope="col"
               >
-                Account manager code1
+                Active
               </th>
               <th
                 class="govuk-table__header"
