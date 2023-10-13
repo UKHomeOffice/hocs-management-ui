@@ -1,7 +1,7 @@
 import React from 'react';
 import { match, MemoryRouter } from 'react-router-dom';
 import { createBrowserHistory, History, Location } from 'history';
-import { act, wait, render, RenderResult, getByText, fireEvent } from '@testing-library/react';
+import { act, fireEvent, getByText, render, RenderResult, screen, wait } from '@testing-library/react';
 import CompBusinessAreaView from '../compBusinessAreaView';
 import * as ListService from '../../../../services/entityListService';
 import * as useError from '../../../../hooks/useError';
@@ -12,17 +12,18 @@ let location: Location;
 
 jest.mock('../../../../services/entityListService', () => ({
     __esModule: true,
-    getListItems: jest.fn().mockReturnValue(Promise.resolve({
-        data: [{
+    getListItems: jest.fn().mockReturnValue(Promise.resolve([
+        {
             simpleName: 'testSimpleName1',
             uuid: 'testId1',
-            title: 'testTitle1'
+            title: 'testTitle1',
+            active: true,
         }, {
             simpleName: 'testSimpleName2',
             uuid: 'testId2',
-            title: 'testTitle2'
-        }]
-    }))
+            title: 'testTitle2',
+            active: false,
+        }]))
 }));
 
 const getListItemsSpy = jest.spyOn(ListService, 'getListItems');
@@ -40,7 +41,7 @@ beforeEach(() => {
     history = createBrowserHistory();
     match = {
         isExact: true,
-        params: {},
+        params: { type: 'COMP_ASYLUM_AND_HUMAN_RIGHTS_BUS_AREA' },
         path: '',
         url: ''
     };
@@ -59,15 +60,29 @@ beforeEach(() => {
 describe('when the businessAreaView component is mounted', () => {
     it('should render with default props', async () => {
         expect.assertions(2);
-        let wrapper: RenderResult;
-        act(() => {
-            wrapper = renderComponent();
-        });
+        const wrapper = renderComponent();
+        await wait(async () => await screen.findByText('Show inactive items'));
 
         await wait(() => {
             expect(getListItemsSpy).toHaveBeenCalled();
             expect(wrapper.container).toMatchSnapshot();
         });
+    });
+
+    it('toggling inactive items should show active column and all entities', async () => {
+        expect.assertions(2);
+
+        const wrapper = renderComponent();
+        await wait(() => expect(getListItemsSpy).toHaveBeenCalled());
+
+        await act(async () => {
+            const link = await screen.findByText('Show inactive items');
+            fireEvent.click(link);
+        });
+
+        await wait(() => screen.findByText('Hide inactive items'));
+
+        expect(wrapper.container).toMatchSnapshot();
     });
 });
 
@@ -85,6 +100,6 @@ describe('when the Add Business Area button is clicked', () => {
             fireEvent.click(addBusinessAreaButton);
         });
 
-        expect(history.push).toHaveBeenCalledWith('/add-comp-business-area/undefined');
+        expect(history.push).toHaveBeenCalledWith('/add-comp-business-area/COMP_ASYLUM_AND_HUMAN_RIGHTS_BUS_AREA');
     });
 });

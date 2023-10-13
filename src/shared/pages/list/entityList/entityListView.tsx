@@ -1,4 +1,4 @@
-import React, { Reducer, useEffect, Fragment, useCallback } from 'react';
+import React, { Fragment, Reducer, useCallback, useEffect } from 'react';
 import { RouteComponentProps } from 'react-router';
 import { History } from 'history';
 import { getListItems } from '../../../services/entityListService';
@@ -6,20 +6,20 @@ import { State } from './state';
 import { Action } from './actions';
 import { reducer } from './reducer';
 import { initialState } from './initialState';
-import {
-    GENERAL_ERROR_TITLE
-} from '../../../models/constants';
+import { GENERAL_ERROR_TITLE } from '../../../models/constants';
 import ErrorSummary from '../../../common/components/errorSummary';
 import ErrorMessage from '../../../models/errorMessage';
 import useError from '../../../hooks/useError';
 import { Link } from 'react-router-dom';
 import EntityListItem from '../../../models/entityListItem';
+import { ShowInactiveItemsToggle } from './showInactiveItemsToggle';
 
 interface MatchParams {
     teamId: string;
 }
 
 type EntityListViewProps = RouteComponentProps<MatchParams>;
+
 
 const EntityListView = (entityDefinition: EntityDefinition) => {
     const onAddClick = (history: History) => {
@@ -46,30 +46,14 @@ const EntityListView = (entityDefinition: EntityDefinition) => {
             history.push(`${entityDefinition.entityRoute}/${entityUuid}/amend`);
         }, []);
 
-        const toggleShowInactive = useCallback((showInactive: boolean, event: React.FormEvent) => {
-            event.preventDefault();
-            dispatch({ type: 'ToggleShowInactive', payload: showInactive });
-        }, [dispatch]);
+        const toggleShowInactive = useCallback(
+            (showInactive: boolean) => dispatch({ type: 'ToggleShowInactive', payload: showInactive }), [dispatch]
+        );
 
         const DisplayCampaignTable = () => (
             <Fragment>
                 {state.entitiesLoaded && (<>
-                    {state.inactiveCount > 0 && !state.showInactive &&
-                        <p className="govuk-hint">
-                            {state.inactiveCount} inactive item{state.inactiveCount === 1 ? ' is' : 's are'} not being shown.{' '}
-                            <a href="#" onClick={event => toggleShowInactive(true, event)}>
-                                Show inactive items
-                            </a>.
-                        </p>
-                    }
-                    {state.inactiveCount > 0 && state.showInactive &&
-                        <p className="govuk-hint">
-                            Showing {state.inactiveCount} inactive item{state.inactiveCount === 1 ? '' : 's'}.{' '}
-                            <a href="#" onClick={event => toggleShowInactive(false, event)}>
-                                Hide inactive items
-                            </a>.
-                        </p>
-                    }
+                    <ShowInactiveItemsToggle showInactive={state.showInactive} inactiveCount={state.inactiveCount} onToggle={toggleShowInactive}/>
                     <table className="govuk-table">
                         <thead className="govuk-table__head">
                             <tr className="govuk-table__row">

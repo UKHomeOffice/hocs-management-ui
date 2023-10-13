@@ -1,7 +1,7 @@
 import axios from 'axios';
 import EntityListItem from 'shared/models/entityListItem';
 
-export const getListItems = (listName: string) => new Promise((resolve, reject) => axios
+export const getListItems = (listName: string) => new Promise<EntityListItem[]>((resolve, reject) => axios
     .get(`/api/entity/list/${listName}`)
     .then(response => resolve(response.data))
     .catch(reason => reject(reason))

@@ -11,30 +11,206 @@ exports[`when the businessAreaView component is mounted should render with defau
     >
       Back
     </a>
-    <div>
-      <h1
-        class="govuk-heading-xl"
+    <h1
+      class="govuk-heading-xl"
+    >
+      View and Edit Business Areas for 
+      Asylum and Human Rights
+    </h1>
+    <p
+      class="govuk-hint"
+    >
+      1
+       inactive item
+       is
+       not being shown.
+       
+      <a
+        href="#"
       >
-        View and Edit Business Areas for 
-      </h1>
-      <h2
-        class="govuk-heading-l"
-      />
-      <div>
-        <p
-          class="govuk-body"
+        Show inactive items
+      </a>
+      .
+    </p>
+    <table
+      class="govuk-table"
+    >
+      <thead
+        class="govuk-table__head"
+      >
+        <tr
+          class="govuk-table__row"
         >
-          Loading...
-        </p>
-      </div>
-      <button
-        class="govuk-button govuk-!-margin-right-1 add-team-members-button"
-        data-module="govuk-button"
-        type="submit"
+          <th
+            class="govuk-table__header"
+            scope="col"
+          >
+            Business Unit
+          </th>
+          <th
+            class="govuk-table__header"
+            scope="col"
+          >
+            Action
+          </th>
+        </tr>
+      </thead>
+      <tbody
+        class="govuk-table__body"
       >
-        Add Business Area
-      </button>
-    </div>
+        <tr
+          class="govuk-table__row"
+        >
+          <td
+            class="govuk-table__cell"
+          >
+            testTitle1
+          </td>
+          <td
+            class="govuk-table__cell"
+          >
+            <a
+              href="#"
+            >
+              Amend
+            </a>
+          </td>
+        </tr>
+      </tbody>
+    </table>
+    <button
+      class="govuk-button govuk-!-margin-right-1 add-team-members-button"
+      data-module="govuk-button"
+      type="submit"
+    >
+      Add Business Area
+    </button>
+  </div>
+</div>
+`;
+
+exports[`when the businessAreaView component is mounted toggling inactive items should show active column and all entities 1`] = `
+<div>
+  <div
+    class="govuk-form-group"
+  >
+    <a
+      class="govuk-back-link"
+      href="/manage-comp-ukvi-bus-area"
+    >
+      Back
+    </a>
+    <h1
+      class="govuk-heading-xl"
+    >
+      View and Edit Business Areas for 
+      Asylum and Human Rights
+    </h1>
+    <p
+      class="govuk-hint"
+    >
+      Showing 
+      1
+       inactive item
+      
+      .
+       
+      <a
+        href="#"
+      >
+        Hide inactive items
+      </a>
+      .
+    </p>
+    <table
+      class="govuk-table"
+    >
+      <thead
+        class="govuk-table__head"
+      >
+        <tr
+          class="govuk-table__row"
+        >
+          <th
+            class="govuk-table__header"
+            scope="col"
+          >
+            Business Unit
+          </th>
+          <th
+            class="govuk-table__header"
+            scope="col"
+          >
+            Active?
+          </th>
+          <th
+            class="govuk-table__header"
+            scope="col"
+          >
+            Action
+          </th>
+        </tr>
+      </thead>
+      <tbody
+        class="govuk-table__body"
+      >
+        <tr
+          class="govuk-table__row"
+        >
+          <td
+            class="govuk-table__cell"
+          >
+            testTitle1
+          </td>
+          <td
+            class="govuk-table__cell"
+            scope="col"
+          >
+            Yes
+          </td>
+          <td
+            class="govuk-table__cell"
+          >
+            <a
+              href="#"
+            >
+              Amend
+            </a>
+          </td>
+        </tr>
+        <tr
+          class="govuk-table__row inactive-entity"
+        >
+          <td
+            class="govuk-table__cell"
+          >
+            testTitle2
+          </td>
+          <td
+            class="govuk-table__cell"
+            scope="col"
+          >
+            No
+          </td>
+          <td
+            class="govuk-table__cell"
+          >
+            <a
+              href="#"
+            >
+              Amend
+            </a>
+          </td>
+        </tr>
+      </tbody>
+    </table>
+    <button
+      class="govuk-button govuk-!-margin-right-1 add-team-members-button"
+      data-module="govuk-button"
+      type="submit"
+    >
+      Add Business Area
+    </button>
   </div>
 </div>
 `;
