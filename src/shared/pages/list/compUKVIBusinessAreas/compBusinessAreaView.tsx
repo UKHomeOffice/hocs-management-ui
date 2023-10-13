@@ -57,7 +57,7 @@ const ComplaintsBusinessAreaView: React.FC<CasesProps> = ({ history, match }) =>
             />
             <h1 className="govuk-heading-xl">View and Edit Business Areas for {readableType}</h1>
             {
-                businessAreas && businessAreas.length > 0 ?
+                state.entitiesLoaded ?
                     <>
                         <ShowInactiveItemsToggle
                             inactiveCount={state.inactiveCount}
