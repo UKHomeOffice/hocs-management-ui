@@ -20,8 +20,14 @@ export type PopulateEntities = {
     type: 'PopulateEntities';
 };
 
+export type ToggleShowInactive = {
+    payload: boolean;
+    type: 'ToggleShowInactive';
+};
+
 export type Action =
     SetEntityDetails |
     PopulateEntities |
     SetTitle |
-    SetSimpleName;
+    SetSimpleName |
+    ToggleShowInactive;

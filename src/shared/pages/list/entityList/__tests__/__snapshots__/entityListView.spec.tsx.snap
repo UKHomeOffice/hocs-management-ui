@@ -18,6 +18,21 @@ exports[`when the entity list view is mounted should render with default props 1
         View and edit entities
       </h1>
       <div>
+        <p
+          class="govuk-hint"
+        >
+          1
+           inactive item
+           is
+           not being shown.
+           
+          <a
+            href="#"
+          >
+            Show inactive items
+          </a>
+          .
+        </p>
         <table
           class="govuk-table"
         >
@@ -38,12 +53,6 @@ exports[`when the entity list view is mounted should render with default props 1
                 scope="col"
               >
                 Entity code
-              </th>
-              <th
-                class="govuk-table__header"
-                scope="col"
-              >
-                Active
               </th>
               <th
                 class="govuk-table__header"
@@ -72,6 +81,117 @@ exports[`when the entity list view is mounted should render with default props 1
               <td
                 class="govuk-table__cell"
               >
+                <a
+                  href="#"
+                >
+                  Amend
+                </a>
+              </td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+      <button
+        class="govuk-button govuk-!-margin-right-1 add-team-members-button"
+        data-module="govuk-button"
+        type="submit"
+      >
+        Add new entity
+      </button>
+    </div>
+  </div>
+</div>
+`;
+
+exports[`when the entity list view is mounted toggling inactive items should show active column and all entities 1`] = `
+<div>
+  <div
+    class="govuk-form-group"
+  >
+    <a
+      class="govuk-back-link"
+      href="/"
+    >
+      Back
+    </a>
+    <div>
+      <h1
+        class="govuk-heading-xl"
+      >
+        View and edit entities
+      </h1>
+      <div>
+        <p
+          class="govuk-hint"
+        >
+          Showing 
+          1
+           inactive item
+          
+          .
+           
+          <a
+            href="#"
+          >
+            Hide inactive items
+          </a>
+          .
+        </p>
+        <table
+          class="govuk-table"
+        >
+          <thead
+            class="govuk-table__head"
+          >
+            <tr
+              class="govuk-table__row"
+            >
+              <th
+                class="govuk-table__header"
+                scope="col"
+              >
+                Entity name
+              </th>
+              <th
+                class="govuk-table__header"
+                scope="col"
+              >
+                Entity code
+              </th>
+              <th
+                class="govuk-table__header"
+                scope="col"
+              >
+                Active?
+              </th>
+              <th
+                class="govuk-table__header"
+                scope="col"
+              >
+                Action
+              </th>
+            </tr>
+          </thead>
+          <tbody
+            class="govuk-table__body"
+          >
+            <tr
+              class="govuk-table__row"
+            >
+              <td
+                class="govuk-table__cell"
+              >
+                testTitle1
+              </td>
+              <td
+                class="govuk-table__cell"
+              >
+                testSimpleName1
+              </td>
+              <td
+                class="govuk-table__cell"
+                scope="col"
+              >
                 Yes
               </td>
               <td
@@ -85,7 +205,7 @@ exports[`when the entity list view is mounted should render with default props 1
               </td>
             </tr>
             <tr
-              class="govuk-table__row"
+              class="govuk-table__row inactive-entity"
             >
               <td
                 class="govuk-table__cell"
@@ -99,6 +219,7 @@ exports[`when the entity list view is mounted should render with default props 1
               </td>
               <td
                 class="govuk-table__cell"
+                scope="col"
               >
                 No
               </td>

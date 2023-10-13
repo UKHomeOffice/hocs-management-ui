@@ -43,7 +43,7 @@ exports[`when the ukviEnquiryReason EntityListView component is mounted should r
                 class="govuk-table__header"
                 scope="col"
               >
-                Active
+                Active?
               </th>
               <th
                 class="govuk-table__header"
@@ -71,8 +71,9 @@ exports[`when the ukviEnquiryReason EntityListView component is mounted should r
               </td>
               <td
                 class="govuk-table__cell"
+                scope="col"
               >
-                No
+                Yes
               </td>
               <td
                 class="govuk-table__cell"
@@ -99,8 +100,9 @@ exports[`when the ukviEnquiryReason EntityListView component is mounted should r
               </td>
               <td
                 class="govuk-table__cell"
+                scope="col"
               >
-                No
+                Yes
               </td>
               <td
                 class="govuk-table__cell"

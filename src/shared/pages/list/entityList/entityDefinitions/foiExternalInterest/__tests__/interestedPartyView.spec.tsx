@@ -58,19 +58,23 @@ beforeEach(() => {
         search: '',
         state: {}
     };
+    const entities = [{
+        simpleName: 'testSimpleName1',
+        uuid: 'testId1',
+        title: 'testTitle1',
+        active: true
+    }, {
+        simpleName: 'testSimpleName2',
+        uuid: 'testId2',
+        title: 'testTitle2',
+        active: true
+    }];
     mockState = {
         entitiesLoaded: true,
-        entities: [{
-            simpleName: 'testSimpleName1',
-            uuid: 'testId1',
-            title: 'testTitle1',
-            active: false
-        }, {
-            simpleName: 'testSimpleName2',
-            uuid: 'testId2',
-            title: 'testTitle2',
-            active: false
-        }]
+        entities,
+        showInactive: true,
+        inactiveCount: 0,
+        entitiesToDisplay: entities,
     };
     useReducerSpy.mockImplementationOnce(() => [mockState, jest.fn()]);
     useErrorSpy.mockImplementation(() => [{}, jest.fn(), clearErrorsSpy, setMessageSpy]);

@@ -43,7 +43,7 @@ exports[`when the trofRecipient EntityListView component is mounted should rende
                 class="govuk-table__header"
                 scope="col"
               >
-                Active
+                Active?
               </th>
               <th
                 class="govuk-table__header"
@@ -71,8 +71,9 @@ exports[`when the trofRecipient EntityListView component is mounted should rende
               </td>
               <td
                 class="govuk-table__cell"
+                scope="col"
               >
-                No
+                Yes
               </td>
               <td
                 class="govuk-table__cell"
@@ -99,8 +100,9 @@ exports[`when the trofRecipient EntityListView component is mounted should rende
               </td>
               <td
                 class="govuk-table__cell"
+                scope="col"
               >
-                No
+                Yes
               </td>
               <td
                 class="govuk-table__cell"

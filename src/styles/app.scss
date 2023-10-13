@@ -53,7 +53,7 @@ $govuk-font-family-tabular: 'helvetica neue',Arial, Helvetica, sans-serif !defau
   background-color: govuk-colour("blue");
   color: govuk-colour("white");
   padding: govuk-spacing(2);
-  top: 0px;
+  top: 0;
   right: govuk-spacing(2);
   position: absolute;
 }
@@ -152,7 +152,6 @@ $govuk-font-family-tabular: 'helvetica neue',Arial, Helvetica, sans-serif !defau
   -webkit-flex-wrap: wrap;
   -ms-flex-wrap: wrap;
   flex-wrap: wrap;
-  padding: 2px 8px;
   -webkit-overflow-scrolling: touch;
   position: relative;
   box-sizing: border-box;
@@ -297,7 +296,6 @@ $link-hover-colour: $govuk-link-hover-colour;
   display: block;
   background-color: $panel-colour;
   padding: 0.25em 1em 0.5em;
-  background-color: $panel-colour;
   color: $text-colour;
   text-decoration: none;
 
@@ -407,8 +405,8 @@ td {
   -webkit-transform-origin: 0 0;
   -o-transform-origin: 0 0;
   -moz-transform-origin: 0 0;
-  padding: 0px;
-  margin: 0px;
+  padding: 0;
+  margin: 0;
 }
 
 
@@ -464,7 +462,7 @@ td {
       overflow-wrap: break-word;
       word-wrap: break-word;
       &:last-child {
-        margin-bottom: 0px;
+        margin-bottom: 0;
       }
 
       .timeline-reference {
@@ -492,7 +490,7 @@ td {
         position: absolute;
         z-index: 2;
         left: -31px;
-        top: 0px;
+        top: 0;
       }
 
       h2 {
@@ -612,7 +610,7 @@ $border-colour: govuk-colour("mid-grey");
 }
 
 .govuk-breadcrumbs{
-  margin-top:0px;
+  margin-top:0;
 }
 
 .govuk-button-panel--link {
@@ -667,4 +665,8 @@ $border-colour: govuk-colour("mid-grey");
         right: unset;
         top: unset;
     }
+}
+
+table .inactive-entity {
+  color: #505a5f;
 }
