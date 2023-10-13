@@ -33,7 +33,8 @@ const AmendEntity: React.FC<AmendEntityProps> =
                 uuid: '',
                 title: '',
                 originalTitle: '',
-                simpleName: ''
+                simpleName: '',
+                active: false
             };
 
             const validationSchema = object({

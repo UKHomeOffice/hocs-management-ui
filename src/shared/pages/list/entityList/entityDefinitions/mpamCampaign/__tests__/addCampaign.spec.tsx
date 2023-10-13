@@ -52,7 +52,8 @@ beforeEach(() => {
     mockEntityListItem = {
         title: '',
         simpleName: '',
-        uuid: ''
+        uuid: '',
+        active: false
     };
     useReducerSpy.mockImplementation(() => [mockEntityListItem, reducerDispatch]);
     useErrorSpy.mockImplementation(() => [{}, addFormErrorSpy, clearErrorsSpy, setMessageSpy]);

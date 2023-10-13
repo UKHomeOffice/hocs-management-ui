@@ -8,8 +8,9 @@ describe('when an action is dispatched', () => {
         const campaign = reducer({
             simpleName: '',
             title: '',
-            uuid: ''
+            uuid: '' ,
+            active: true
         }, eventData);
-        expect(campaign).toStrictEqual({ simpleName: '__testValue__', title: '', uuid: '' });
+        expect(campaign).toStrictEqual({ simpleName: '__testValue__', title: '', uuid: '', active: true });
     });
 });

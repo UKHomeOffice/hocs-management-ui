@@ -62,6 +62,7 @@ const ComplaintsBusinessAreaView: React.FC<CasesProps> = ({ history, match }) =>
                                 <thead className="govuk-table__head">
                                     <tr className="govuk-table__row">
                                         <th className="govuk-table__header" scope="col">Business Unit</th>
+                                        <th className="govuk-table__header" scope="col">Active</th>
                                         <th className="govuk-table__header" scope="col">Action</th>
                                     </tr>
                                 </thead>
@@ -71,6 +72,7 @@ const ComplaintsBusinessAreaView: React.FC<CasesProps> = ({ history, match }) =>
                                             return (
                                                 <tr className="govuk-table__row" key={businessArea.simpleName}>
                                                     <td className="govuk-table__cell">{businessArea.title}</td>
+                                                    <td className="govuk-table__cell">{businessArea.active ? 'Yes': 'No'}</td>
                                                     <td className="govuk-table__cell">
                                                         <a href="#" onClick={event => onAmendBusinessAreaClick(history, businessArea.uuid, type)}>Amend</a>
                                                     </td>

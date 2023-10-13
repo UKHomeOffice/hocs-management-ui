@@ -55,6 +55,7 @@ const EntityListView = (entityDefinition: EntityDefinition) => {
                             <tr className="govuk-table__row">
                                 <th className="govuk-table__header" scope="col">{`${entityDefinition.entityNameCapitalised} name`}</th>
                                 <th className="govuk-table__header" scope="col">{`${entityDefinition.entityNameCapitalised} code`}</th>
+                                <th className="govuk-table__header" scope="col">Active</th>
                                 <th className="govuk-table__header" scope="col">Action</th>
                             </tr>
                         </thead>
@@ -65,6 +66,7 @@ const EntityListView = (entityDefinition: EntityDefinition) => {
                                         <tr className="govuk-table__row" key={entity.uuid}>
                                             <td className="govuk-table__cell">{entity.title}</td>
                                             <td className="govuk-table__cell">{entity.simpleName}</td>
+                                            <td className="govuk-table__cell">{entity.active ? 'Yes': 'No'}</td>
                                             <td className="govuk-table__cell">
                                                 <a href="#" onClick={event => amendEntity(entity.uuid, event)}>Amend</a>
                                             </td>

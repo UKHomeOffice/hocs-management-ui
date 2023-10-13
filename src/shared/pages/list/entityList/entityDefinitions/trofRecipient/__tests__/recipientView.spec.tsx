@@ -21,11 +21,13 @@ jest.mock('../../../../../../services/entityListService', () => ({
         data: [{
             simpleName: 'testSimpleName1',
             uuid: 'testId1',
-            title: 'testTitle1'
+            title: 'testTitle1',
+            active: false
         }, {
             simpleName: 'testSimpleName2',
             uuid: 'testId2',
-            title: 'testTitle2'
+            title: 'testTitle2',
+            active: false
         }]
     }))
 }));
@@ -63,11 +65,13 @@ beforeEach(() => {
         entities: [{
             simpleName: 'testSimpleName1',
             uuid: 'testId1',
-            title: 'testTitle1'
+            title: 'testTitle1',
+            active: false
         }, {
             simpleName: 'testSimpleName2',
             uuid: 'testId2',
-            title: 'testTitle2'
+            title: 'testTitle2',
+            active: false
         }]
     };
     useReducerSpy.mockImplementationOnce(() => [mockState, jest.fn()]);

@@ -43,6 +43,12 @@ exports[`when the foiAccountManager EntityListView component is mounted should r
                 class="govuk-table__header"
                 scope="col"
               >
+                Active
+              </th>
+              <th
+                class="govuk-table__header"
+                scope="col"
+              >
                 Action
               </th>
             </tr>
@@ -66,6 +72,11 @@ exports[`when the foiAccountManager EntityListView component is mounted should r
               <td
                 class="govuk-table__cell"
               >
+                Yes
+              </td>
+              <td
+                class="govuk-table__cell"
+              >
                 <a
                   href="#"
                 >
@@ -85,6 +96,11 @@ exports[`when the foiAccountManager EntityListView component is mounted should r
                 class="govuk-table__cell"
               >
                 testSimpleName2
+              </td>
+              <td
+                class="govuk-table__cell"
+              >
+                Yes
               </td>
               <td
                 class="govuk-table__cell"

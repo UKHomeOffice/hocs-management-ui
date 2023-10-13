@@ -40,10 +40,11 @@ beforeEach(() => {
         title: '',
         originalTitle: '',
         simpleName: '',
-        uuid: ''
+        uuid: '',
+        active: false
     };
 
-    getItemDetailsSpy.mockImplementation(() => Promise.resolve({ simpleName: 'testSimpleName', title: 'testTitle', uuid: 'testUUID' }));
+    getItemDetailsSpy.mockImplementation(() => Promise.resolve({ simpleName: 'testSimpleName', title: 'testTitle', uuid: 'testUUID', active: false }));
     updateListItemSpy.mockImplementation(() => Promise.resolve());
     useReducerSpy.mockImplementation(() => [mockState, reducerDispatch]);
     useErrorSpy.mockImplementation(() => [{}, addFormErrorSpy, clearErrorsSpy, setMessageSpy]);
@@ -69,7 +70,7 @@ describe('when the amendCompBusinessArea component is mounted', () => {
 
     it('should initially render blank before item title is returned', async () => {
         getItemDetailsSpy.mockReturnValueOnce(Promise.resolve(
-            { simpleName: 'testSimpleName', title: 'testTitle', uuid: 'testUUID' }
+            { simpleName: 'testSimpleName', title: 'testTitle', uuid: 'testUUID', active: false }
         ));
         mockState.originalTitle = '';
         const wrapper: RenderResult = renderComponent();
@@ -106,7 +107,7 @@ describe('when the submit button is clicked', () => {
             it('should redirect to the home page', async () => {
 
                 getItemDetailsSpy.mockReturnValueOnce(Promise.resolve(
-                    { simpleName: 'testSimpleName', title: 'testTitle', uuid: 'testUUID' }
+                    { simpleName: 'testSimpleName', title: 'testTitle', uuid: 'testUUID', active: false }
                 ));
                 await wait(() => {
                     expect(getItemDetailsSpy).toHaveBeenCalled();

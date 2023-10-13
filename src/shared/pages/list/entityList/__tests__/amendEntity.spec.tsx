@@ -68,11 +68,12 @@ beforeEach(() => {
         title: '',
         originalTitle: '',
         simpleName: '',
-        uuid: ''
+        uuid: '',
+        active: false
     };
 
     getItemDetailsSpy.mockImplementation(() => Promise.resolve(
-        { simpleName: 'testSimpleName', title: 'testTitle', uuid: 'testUUID' }));
+        { simpleName: 'testSimpleName', title: 'testTitle', uuid: 'testUUID', active: false }));
     updateListItemSpy.mockImplementation(() => Promise.resolve());
     useReducerSpy.mockImplementation(() => [mockState, reducerDispatch]);
     useErrorSpy.mockImplementation(() => [{}, addFormErrorSpy, clearErrorsSpy, setMessageSpy]);
@@ -98,7 +99,7 @@ describe('when the AmendEntity component is mounted', () => {
 
     it('should initially render blank before item title is returned', async () => {
         getItemDetailsSpy.mockReturnValueOnce(Promise.resolve(
-            { simpleName: 'testSimpleName', title: 'testTitle', uuid: 'testUUID' }
+            { simpleName: 'testSimpleName', title: 'testTitle', uuid: 'testUUID', active: false }
         ));
         mockState.originalTitle = '';
         const wrapper: RenderResult = renderComponent();
@@ -122,7 +123,7 @@ describe('when the new name is entered', () => {
     it('should be persisted in the page state', async () => {
         wrapper = renderComponent();
         getItemDetailsSpy.mockReturnValueOnce(Promise.resolve(
-            { simpleName: 'testSimpleName', title: 'testTitle', uuid: 'testUUID' }
+            { simpleName: 'testSimpleName', title: 'testTitle', uuid: 'testUUID', active: false }
         ));
         const nameElement = await waitForElement(async () => {
             return await wrapper.findByLabelText('New entity name');
@@ -154,7 +155,7 @@ describe('when the submit button is clicked', () => {
             it('should redirect to the home page', async () => {
 
                 getItemDetailsSpy.mockReturnValueOnce(Promise.resolve(
-                    { simpleName: 'testSimpleName', title: 'testTitle', uuid: 'testUUID' }
+                    { simpleName: 'testSimpleName', title: 'testTitle', uuid: 'testUUID', active: false }
                 ));
                 await wait(() => {
                     expect(getItemDetailsSpy).toHaveBeenCalled();

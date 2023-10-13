@@ -41,7 +41,8 @@ const AmendEnquiryReason: React.FC<AmendCampaignProps> = ({ csrfToken, history, 
         uuid: '',
         title: '',
         originalTitle: '',
-        simpleName: ''
+        simpleName: '',
+        active: false
     };
 
     const [pageError, addFormError, clearErrors, setErrorMessage] = useError('', VALIDATION_ERROR_TITLE);
