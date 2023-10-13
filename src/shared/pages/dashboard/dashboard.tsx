@@ -8,6 +8,7 @@ const Dashboard = ({ hasRole }: ApplicationState) => {
     const hasFoiRole = hasRole('FOI');
     const hasTrofRole = hasRole('TROF');
     const hasUkviRole = hasRole('UKVI');
+    const hasWcsRole = hasRole('WCS');
 
     return (
         <Fragment>
@@ -100,6 +101,14 @@ const Dashboard = ({ hasRole }: ApplicationState) => {
                             Case management
                             </h2>
                             <ul className="govuk-list govuk-list--bullet">
+                                {hasWcsRole && <>
+                                    <li>
+                                        <Link className="govuk-link" to="/case-archive">Archive a case</Link>
+                                    </li>
+                                    <li>
+                                        <Link className="govuk-link" to="/case-unarchive">Unarchive a case</Link>
+                                    </li>
+                                </>}
                                 <li>
                                     <Link className="govuk-link" to="/case-withdraw">Withdraw a case</Link>
                                 </li>

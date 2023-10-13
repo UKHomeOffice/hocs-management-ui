@@ -1,6 +1,7 @@
 const router = require('express').Router();
-const { withdrawCase } = require('../../middleware/case');
+const { archiveCase, withdrawCase } = require('../../middleware/case');
 
-router.post('', withdrawCase);
+router.use('/archive', archiveCase);
+router.use('/withdraw', withdrawCase);
 
 module.exports = router;
