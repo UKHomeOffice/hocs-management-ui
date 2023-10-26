@@ -8,7 +8,7 @@ const Dashboard = ({ hasRole }: ApplicationState) => {
     const hasFoiRole = hasRole('FOI');
     const hasTrofRole = hasRole('TROF');
     const hasUkviRole = hasRole('UKVI');
-    const hasWcsRole = hasRole('WCS');
+    const hasCaseArchivingRole = hasRole('MUI_CASE_ARCHIVING');
 
     return (
         <Fragment>
@@ -101,7 +101,7 @@ const Dashboard = ({ hasRole }: ApplicationState) => {
                             Case management
                             </h2>
                             <ul className="govuk-list govuk-list--bullet">
-                                {hasWcsRole && <>
+                                {hasCaseArchivingRole && <>
                                     <li>
                                         <Link className="govuk-link" to="/case-archive">Archive a case</Link>
                                     </li>
