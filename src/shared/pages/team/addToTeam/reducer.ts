@@ -4,7 +4,7 @@ import { Action } from './actions';
 export const reducer = (state: State, action: Action): State => {
     switch (action.type) {
         case 'AddToSelection':
-            return { ...state, selectedUsers: [...[], ...state.selectedUsers, action.payload] };
+            return { ...state, selectedUsers: [...[], ...state.selectedUsers.filter(x => x), action.payload] };
         case 'ClearSelectedUser':
             return { ...state, selectedUser: undefined };
         case 'RemoveFromSelection':

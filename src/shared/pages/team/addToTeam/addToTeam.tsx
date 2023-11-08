@@ -83,7 +83,7 @@ const AddToTeam: React.FC<AddToTeamProps> = ({ history, match }) => {
                     <div className="govuk-grid-row">
                         <div className="govuk-grid-column-one-half-from-desktop">
                             <TypeAhead
-                                clearable={true}
+                                clearable={false}
                                 disabled={false}
                                 getOptions={getUsersForTypeahead}
                                 label={'Select Users'}
