@@ -49,6 +49,6 @@ export const addUser = (user: FormData) => new Promise((resolve, reject) => axio
 
 export const updateUser = (updateRequest: UpdateRequest) => new Promise((resolve, reject) => axios
     .put(`/api/users/${updateRequest.uuid}`, updateRequest)
-    .then(() => resolve())
+    .then(() => resolve(null))
     .catch(reason => reject(reason))
 );
