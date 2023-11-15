@@ -27,7 +27,7 @@ const Router : React.FC<RouterParams> = ({ hasRole }) => (
                         exact={exact}
                         render={props => (
                             <PageWrapper match={props.match} location={props.location}>
-                                <Page {...props} {...rest} />
+                                <Page {...(props as any)} {...rest} />
                             </PageWrapper>
                         )}
                     />

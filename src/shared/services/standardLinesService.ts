@@ -3,13 +3,13 @@ import UpdateRequest from 'shared/pages/standardLineAmend/updateRequest';
 
 export const addStandardLine = (standardLine: FormData) => new Promise((resolve, reject) => axios
     .post('/api/standard-lines', standardLine)
-    .then(() => resolve())
+    .then(() => resolve(null))
     .catch(reason => reject(reason))
 );
 
 export const updateStandardLine = (standardLine: UpdateRequest) => new Promise((resolve, reject) => axios
     .post('/api/standard-lines/update', standardLine)
-    .then(() => resolve())
+    .then(() => resolve(null))
     .catch(reason => reject(reason))
 );
 
@@ -27,13 +27,13 @@ export const getStandardLine = (standardLineUuid: string) => new Promise((resolv
 
 export const expireStandardLine = (standardLineUuid: string) => new Promise((resolve, reject) => axios
     .post(`/api/standard-lines/expire/${standardLineUuid}`, {})
-    .then(() => resolve())
+    .then(() => resolve(null))
     .catch(reason => reject(reason))
 );
 
 export const deleteStandardLine = (standardLineUuid: string) => new Promise((resolve, reject) => axios
     .delete(`/api/standard-lines/delete/${standardLineUuid}`, {})
-    .then(() => resolve())
+    .then(() => resolve(null))
     .catch(reason => reject(reason))
 );
 

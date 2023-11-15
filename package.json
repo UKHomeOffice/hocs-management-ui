@@ -20,7 +20,8 @@
     "repository": "github:UKHomeOffice/hocs-management-ui",
     "jest": {
         "moduleNameMapper": {
-            "\\.(css|less|scss|sass)$": "identity-obj-proxy"
+            "\\.(css|less|scss|sass)$": "identity-obj-proxy",
+            "axios": "axios/dist/node/axios.cjs"
         },
         "testPathIgnorePatterns": [
             "\\.spec.utils.(js|jsx)$",
@@ -76,7 +77,7 @@
         "terser-webpack-plugin": "^4.2.3",
         "ts-jest": "^26.0.0",
         "ts-loader": "^9.4.4",
-        "typescript": "^3.9.7",
+        "typescript": "^4.9.5",
         "webpack": "^5.88.1",
         "webpack-assets-manifest": "^5.1.0",
         "webpack-cli": "^5.1.4",
@@ -104,7 +105,7 @@
         "@types/react-modal": "^3.16.0",
         "@types/yup": "^0.26.24",
         "aws-sdk": "^2.1369.0",
-        "axios": "^0.27.2",
+        "axios": "^1.6.2",
         "babel-plugin-emotion": "^11.0.0",
         "body-parser": "^1.20.2",
         "classnames": "^2.3.2",

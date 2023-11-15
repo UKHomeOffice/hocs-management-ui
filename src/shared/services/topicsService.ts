@@ -32,13 +32,13 @@ export const getTopic = (topicId: string) => new Promise<Topic>((resolve, reject
 
 export const addChildTopic = (parentTopicId: string, displayName: string) => new Promise((resolve, reject) => axios
     .post(`/api/topics/parents/${parentTopicId}`, { displayName })
-    .then(() => resolve())
+    .then(() => resolve(null))
     .catch(reason => reject(reason))
 );
 
 export const addParentTopic = (displayName:string) => new Promise((resolve, reject) => axios
     .post('/api/topics/parent', { displayName })
-    .then(() => resolve())
+    .then(() => resolve(null))
     .catch(reason => reject(reason))
 );
 
@@ -50,6 +50,6 @@ export const getParentTopics = () => new Promise((resolve, reject) => axios
 
 export const addTeamsToUnit = (topicValue: string, privateMinisterTeam: string, draftQaTeam: string) => new Promise((resolve, reject) => axios
     .post('/api/topics/dcu', { topicValue, privateMinisterTeam, draftQaTeam })
-    .then(() => resolve())
+    .then(() => resolve(null))
     .catch(reason => reject(reason))
 );

@@ -9,7 +9,7 @@ export const getListItems = (listName: string) => new Promise<EntityListItem[]>(
 
 export const createListItem = (item: EntityListItem, listName: string) => new Promise((resolve, reject) => axios
     .post(`/api/entity/list/${listName}`, item)
-    .then(() => resolve())
+    .then(() => resolve(null))
     .catch(reason => reject(reason))
 );
 
@@ -21,12 +21,12 @@ export const getItemDetails = (itemUUID: string) => new Promise<EntityListItem>(
 
 export const updateListItem = (item: EntityListItem, listName: string) => new Promise((resolve, reject) => axios
     .post(`/api/entity/list/update/${listName}`, item)
-    .then(() => resolve())
+    .then(() => resolve(null))
     .catch(reason => reject(reason))
 );
 
 export const deleteListItem = (uuid: string, listName: string) => new Promise((resolve, reject) => axios
     .delete(`/api/entity/list/${listName}`, { data: { entityUUID: uuid } })
-    .then(() => resolve())
+    .then(() => resolve(null))
     .catch(reason => reject(reason))
 );

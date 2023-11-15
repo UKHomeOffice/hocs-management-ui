@@ -7,7 +7,7 @@ import { GENERAL_ERROR_TITLE, LOAD_UNITS_ERROR_DESCRIPTION } from '../models/con
 
 export const createUnit = (unit: Unit) => new Promise((resolve, reject) => axios
     .post('/api/units', unit)
-    .then(() => resolve())
+    .then(() => resolve(null))
     .catch(reason => reject(reason))
 );
 
