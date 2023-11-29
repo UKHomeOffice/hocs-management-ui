@@ -14,41 +14,20 @@ exports[`when the unitSearch component is mounted component should render 1`] = 
     <h1
       class="govuk-heading-xl"
     >
-      Unit List
+      Units
     </h1>
-    <table
-      class="govuk-table"
-    >
-      <caption
-        class="govuk-table__caption"
+    <ul>
+      <li
+        class="govuk-list govuk-list--bullet govuk-list margin-bottom--small"
       >
-        Units
-      </caption>
-      <tbody
-        class="govuk-table__body"
+        Home Office General Property
+      </li>
+      <li
+        class="govuk-list govuk-list--bullet govuk-list margin-bottom--small"
       >
-        <tr
-          class="govuk-table__row"
-        >
-          <th
-            class="govuk-table__header"
-            scope="row"
-          >
-            Home Office General Property
-          </th>
-        </tr>
-        <tr
-          class="govuk-table__row"
-        >
-          <th
-            class="govuk-table__header"
-            scope="row"
-          >
-            Home Office General Property
-          </th>
-        </tr>
-      </tbody>
-    </table>
+        Home Office General Property
+      </li>
+    </ul>
   </div>
 </div>
 `;

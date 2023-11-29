@@ -24,19 +24,14 @@ const UnitSearch: React.FC<UnitSearchProps> = ({ history }) => {
         <div className="govuk-form-group">
             <Link className="govuk-back-link" to="/">Back</Link>
             <ErrorSummary pageError={pageError} />
-            <h1 className="govuk-heading-xl">Unit List</h1>
-            <table className="govuk-table">
-                <caption className="govuk-table__caption">Units</caption>
-                <tbody className="govuk-table__body">
-                    {units && units.map(unit => (
-                        <tr key={unit.shortCode} className="govuk-table__row">
-                            <th scope="row" className="govuk-table__header">
-                                {unit.displayName}
-                            </th>
-                        </tr>
-                    ))}
-                </tbody>
-            </table>
+            <h1 className="govuk-heading-xl">Units</h1>
+            <ul>
+                {units && units.map(unit => (
+                    <li className="govuk-list govuk-list--bullet govuk-list margin-bottom--small" key={unit.shortCode}>
+                        {unit.displayName}
+                    </li>
+                ))}
+            </ul>
         </div>
     );
 };
