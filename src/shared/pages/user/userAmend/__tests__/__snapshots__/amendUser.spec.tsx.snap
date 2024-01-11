@@ -28,7 +28,7 @@ exports[`when the AmendUser component is mounted should render with default prop
       class="govuk-grid-column-one-half-from-desktop"
     >
       <form
-        method="PUT"
+        method="POST"
       >
         <input
           name="_csrf"
