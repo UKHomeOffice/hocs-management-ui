@@ -165,7 +165,7 @@ const TeamView: React.FC<TeamMembersProps> =
                     </p>}
 
                     <h2 className="govuk-heading-m govuk">
-                        <div>{`Unit: ${state.unitName}`}</div>
+                        {`Unit: ${state.unitName}`}
                     </h2>
                     <h3 className="govuk-heading-l">View and remove team members</h3>
 
