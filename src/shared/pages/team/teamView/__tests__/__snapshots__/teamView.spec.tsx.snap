@@ -30,9 +30,7 @@ exports[`when the teamView component has an active Team should not show options 
       <h2
         class="govuk-heading-m govuk"
       >
-        <div>
-          Unit: __unit1__
-        </div>
+        Unit: __unit1__
       </h2>
       <h3
         class="govuk-heading-l"
@@ -161,9 +159,7 @@ exports[`when the teamView component has an active Team should show options to d
       <h2
         class="govuk-heading-m govuk"
       >
-        <div>
-          Unit: __unit1__
-        </div>
+        Unit: __unit1__
       </h2>
       <h3
         class="govuk-heading-l"
@@ -319,9 +315,7 @@ exports[`when the teamView component has an inactive Team should not show option
       <h2
         class="govuk-heading-m govuk"
       >
-        <div>
-          Unit: __unit1__
-        </div>
+        Unit: __unit1__
       </h2>
       <h3
         class="govuk-heading-l"
@@ -479,9 +473,7 @@ exports[`when the teamView component has an inactive Team should show options to
       <h2
         class="govuk-heading-m govuk"
       >
-        <div>
-          Unit: __unit1__
-        </div>
+        Unit: __unit1__
       </h2>
       <h3
         class="govuk-heading-l"
@@ -637,9 +629,7 @@ exports[`when the teamView component is mounted with RENAME_TEAM role should ren
       <h2
         class="govuk-heading-m govuk"
       >
-        <div>
-          Unit: undefined
-        </div>
+        Unit: undefined
       </h2>
       <h3
         class="govuk-heading-l"
@@ -709,9 +699,7 @@ exports[`when the teamView component is mounted without RENAME_TEAM role should 
       <h2
         class="govuk-heading-m govuk"
       >
-        <div>
-          Unit: __unit1__
-        </div>
+        Unit: __unit1__
       </h2>
       <h3
         class="govuk-heading-l"
