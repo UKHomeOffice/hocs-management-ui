@@ -9,7 +9,12 @@ import ApiStatus from '../models/apiStatus';
 
 interface LayoutProps {
     apiStatus: ApiStatus;
+    children: React.ReactNode;
     layout: LayoutConfig;
+}
+
+interface Props {
+    children: React.ReactNode;
 }
 
 class Layout extends Component<LayoutProps> {
@@ -37,7 +42,7 @@ class Layout extends Component<LayoutProps> {
     }
 }
 
-const WrappedLayout: React.FC = ({ children }) => (
+const WrappedLayout: React.FC<Props> = ({ children }) => (
     <ApplicationConsumer>
         {
             ({ apiStatus, layout }) => <Layout children={children} layout={layout!} apiStatus={apiStatus!} />

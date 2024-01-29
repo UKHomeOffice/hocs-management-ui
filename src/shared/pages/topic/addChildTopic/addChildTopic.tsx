@@ -19,6 +19,7 @@ import TypeAhead from '../../../common/components/typeAhead';
 import Text from '../../../common/components/forms/text';
 import { validate } from '../../../validation';
 import { Link } from 'react-router-dom';
+import InputEventData from '../../../models/inputEventData';
 
 interface AddChildTopicProps extends RouteComponentProps {
     csrfToken?: string;
@@ -61,7 +62,7 @@ const AddChildTopic: React.FC<AddChildTopicProps> = ({ csrfToken, contextDispatc
         dispatch({ type: 'SetSelectedParentTopic', payload: selectedParentTopic });
     }, []);
 
-    const onDisplayNameChange = useCallback(({ value }) => dispatch({ type: 'SetDisplayName', payload: value }), []);
+    const onDisplayNameChange = useCallback((e: InputEventData) => dispatch({ type: 'SetDisplayName', payload: e.value as string }), []);
 
     const onSubmit = (event: React.FormEvent) => {
         event.preventDefault();

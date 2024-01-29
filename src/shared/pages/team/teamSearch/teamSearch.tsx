@@ -41,7 +41,7 @@ const TeamSearch: React.FC<TeamSearchProps> = ({ history }) => {
     }, [showInactive]);
 
 
-    const getTeamsForTypeahead = useCallback((teamsProvider) => () => new Promise<Item[]>(
+    const getTeamsForTypeahead = useCallback((teamsProvider: () => Promise<Item[]>) => () => new Promise<Item[]>(
         resolve => teamsProvider()
             .then((teams: Item[]) => resolve(teams))
             .catch(() => {

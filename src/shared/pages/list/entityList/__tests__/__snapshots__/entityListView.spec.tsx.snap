@@ -127,7 +127,6 @@ exports[`when the entity list view is mounted toggling inactive items should sho
           Showing 
           1
            inactive item
-          
           .
            
           <a
