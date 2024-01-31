@@ -12,17 +12,18 @@ let location: Location;
 
 jest.mock('../../../../services/entityListService', () => ({
     __esModule: true,
-    getListItems: jest.fn().mockReturnValue(Promise.resolve({
-        data: [{
-            simpleName: 'testSimpleName1',
-            uuid: 'testId1',
-            title: 'testTitle1'
-        }, {
-            simpleName: 'testSimpleName2',
-            uuid: 'testId2',
-            title: 'testTitle2'
-        }]
-    }))
+    getListItems: jest.fn().mockReturnValue(Promise.resolve([{
+        simpleName: 'testSimpleName1',
+        uuid: 'testId1',
+        title: 'testTitle1',
+        active: true
+    }, {
+        simpleName: 'testSimpleName2',
+        uuid: 'testId2',
+        title: 'testTitle2',
+        active: true
+    }]
+    ))
 }));
 
 const getListItemsSpy = jest.spyOn(ListService, 'getListItems');
