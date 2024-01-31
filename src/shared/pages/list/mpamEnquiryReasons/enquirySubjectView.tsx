@@ -1,7 +1,6 @@
-import React, { useEffect } from 'react';
+import React, { Reducer, useCallback, useEffect } from 'react';
 import useError from '../../../hooks/useError';
 import CaseType from '../../../models/caseType';
-import EntityListItem from '../../../models/entityListItem';
 import { subjects } from '../mpamEnquiryReasons/subjects';
 import { getListItems } from '../../../services/entityListService';
 import ErrorMessage from '../../../models/errorMessage';
@@ -10,6 +9,11 @@ import { Link } from 'react-router-dom';
 import ErrorSummary from '../../../common/components/errorSummary';
 import { RouteComponentProps } from 'react-router';
 import { History } from 'history';
+import { State } from '../entityList/state';
+import { Action } from '../entityList/actions';
+import { reducer } from '../entityList/reducer';
+import { initialState } from '../entityList/initialState';
+import { ShowInactiveItemsToggle } from '../entityList/showInactiveItemsToggle';
 
 interface MatchParams {
     subject: string;
@@ -26,18 +30,23 @@ const EnquirySubjectView: React.FC<CasesProps> = ({ history, match }) => {
     const [pageError, , , setErrorMessage] = useError();
     const [enquirySubject] = React.useState<CaseType>();
 
-    const [enquirySubjects, setEnquirySubjects] = React.useState<EntityListItem[]>();
+    const [state, dispatch] = React.useReducer<Reducer<State, Action>>(reducer, initialState);
+    const enquirySubjects = state.entitiesToDisplay;
 
     const { params: { subject } } = match;
     const readableSubject = subjects[subject];
 
     useEffect(() => {
         getListItems(subject)
-            .then(setEnquirySubjects)
+            .then(payload => dispatch({ type: 'PopulateEntities', payload }))
             .catch(() => {
                 setErrorMessage(new ErrorMessage(constants.LOAD_ENQ_SUB_ERROR_DESCRIPTION, constants.GENERAL_ERROR_TITLE));
             });
     }, []);
+
+    const toggleShowInactive = useCallback(
+        (showInactive: boolean) => dispatch({ type: 'ToggleShowInactive', payload: showInactive }), [dispatch]
+    );
 
     return (
         <div className='govuk-form-group'>
@@ -53,10 +62,16 @@ const EnquirySubjectView: React.FC<CasesProps> = ({ history, match }) => {
                 {
                     enquirySubjects && enquirySubjects.length > 0 ?
                         <div>
+                            <ShowInactiveItemsToggle
+                                inactiveCount={state.inactiveCount}
+                                showInactive={state.showInactive}
+                                onToggle={toggleShowInactive}
+                            />
                             <table className='govuk-table'>
                                 <thead className='govuk-table__head'>
                                     <tr className='govuk-table__row'>
                                         <th className='govuk-table__header' scope='col'>Enquiry Reason</th>
+                                        {state.showInactive && <th className="govuk-table__header" scope="col">Active?</th>}
                                         <th className="govuk-table__header" scope="col">Action</th>
                                     </tr>
                                 </thead>
@@ -66,6 +81,7 @@ const EnquirySubjectView: React.FC<CasesProps> = ({ history, match }) => {
                                             return (
                                                 <tr className='govuk-table__row' key={enquirySubject.simpleName}>
                                                     <td className='govuk-table__cell'>{enquirySubject.title}</td>
+                                                    {state.showInactive && <td className="govuk-table__cell" scope="col">{enquirySubject.active ? 'Yes' : 'No'}</td>}
                                                     <td className="govuk-table__cell">
                                                         <Link to={`/amend-enquiry-reason/${subject}/${enquirySubject.uuid}`}>Amend</Link>
                                                     </td>
