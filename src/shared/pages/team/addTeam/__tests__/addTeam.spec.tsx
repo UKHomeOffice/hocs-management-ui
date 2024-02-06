@@ -1,4 +1,4 @@
-import { act, fireEvent, getByText, render, RenderResult, wait } from '@testing-library/react';
+import { act, fireEvent, getByText, render, RenderResult, waitFor } from '@testing-library/react';
 import { match, MemoryRouter } from 'react-router-dom';
 import React from 'react';
 import WrappedAddTeam from '../addTeam';
@@ -101,7 +101,7 @@ describe('when the AddTeam component is mounted', () => {
             wrapper = renderComponent();
         });
 
-        await wait(() => {
+        await waitFor(() => {
             expect(mockState).toEqual(expectedInitialState);
             expect(getUnitsSpy).toHaveBeenCalledTimes(1);
             expect(wrapper.container).toMatchSnapshot();
@@ -109,11 +109,11 @@ describe('when the AddTeam component is mounted', () => {
     });
 
     it('should return an error if the call to retrieve the units fail', async () => {
-        expect.assertions(1);
+        expect.assertions(2);
         getUnitsSpy.mockImplementation(() => Promise.reject('error'));
 
         renderComponent();
-        await wait(() => {
+        await waitFor(() => {
             expect(setMessageSpy).toBeCalledWith(
                 { title: GENERAL_ERROR_TITLE, description: LOAD_UNITS_ERROR_DESCRIPTION }
             );
@@ -132,11 +132,11 @@ describe('when the AddTeam component is mounted', () => {
             wrapper = renderComponent();
         });
 
-        await wait(async () => {
+        await waitFor(async () => {
             const submitButton = getByText(wrapper.container, 'Add');
             fireEvent.click(submitButton);
         });
-        await wait(() => {
+        await waitFor(() => {
             expect(history.location.state).toEqual({ successMessage: 'The team was created successfully.' });
         });
 
@@ -153,11 +153,11 @@ describe('when the AddTeam component is mounted', () => {
             wrapper = renderComponent();
         });
 
-        await wait(async () => {
+        await waitFor(async () => {
             const submitButton = getByText(wrapper.container, 'Add');
             fireEvent.click(submitButton);
         });
-        await wait(() => {
+        await waitFor(() => {
             expect(setMessageSpy).toBeCalledWith(
                 { title: VALIDATION_ERROR_TITLE, description: TEAM_CREATION_FAILURE_NAME_ALREADY_EXISTS }
             );
@@ -175,11 +175,11 @@ describe('when the AddTeam component is mounted', () => {
             wrapper = renderComponent();
         });
 
-        await wait(async () => {
+        await waitFor(async () => {
             const submitButton = getByText(wrapper.container, 'Add');
             fireEvent.click(submitButton);
         });
-        await wait(() => {
+        await waitFor(() => {
             expect(setMessageSpy).toBeCalledWith(
                 { title: GENERAL_ERROR_TITLE, description: TEAM_CREATION_FAILURE_UNKNOWN_ERROR }
             );

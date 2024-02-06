@@ -1,7 +1,7 @@
 import React from 'react';
 import { match, MemoryRouter } from 'react-router-dom';
 import { createBrowserHistory, History, Location } from 'history';
-import { act, wait, render, RenderResult, getByText, fireEvent } from '@testing-library/react';
+import { act, waitFor, render, RenderResult, getByText, fireEvent } from '@testing-library/react';
 import BusinessAreaView from '../businessAreaView';
 import * as ListService from '../../../../services/entityListService';
 import * as useError from '../../../../hooks/useError';
@@ -64,7 +64,7 @@ describe('when the businessAreaView component is mounted', () => {
             wrapper = renderComponent();
         });
 
-        await wait(() => {
+        await waitFor(() => {
             expect(getListItemsSpy).toHaveBeenCalled();
             expect(wrapper.container).toMatchSnapshot();
         });
@@ -79,7 +79,7 @@ describe('when the Add Business Unit button is clicked', () => {
             wrapper = renderComponent();
         });
 
-        await wait(async () => {
+        await waitFor(async () => {
             const addBusinessUnitButton = getByText(wrapper.container, 'Add Business Unit');
 
             fireEvent.click(addBusinessUnitButton);

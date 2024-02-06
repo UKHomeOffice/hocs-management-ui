@@ -1,7 +1,7 @@
 import React from 'react';
 import { match, MemoryRouter } from 'react-router-dom';
 import { createBrowserHistory, History, Location } from 'history';
-import { act, render, RenderResult, wait, fireEvent, waitForElement } from '@testing-library/react';
+import { act, render, RenderResult, fireEvent, waitFor } from '@testing-library/react';
 import EditTeam from '../editTeam';
 import * as TeamsService from '../../../../services/teamsService';
 import {
@@ -116,7 +116,7 @@ describe('when the editTeam component is mounted', () => {
             wrapper = renderComponent(roles);
         });
 
-        await wait(() => {
+        await waitFor(() => {
             expect(wrapper.container).toMatchSnapshot();
         });
     });
@@ -128,7 +128,7 @@ describe('when the editTeam component is mounted', () => {
             wrapper = renderComponent(roles);
         });
 
-        await wait(() => {
+        await waitFor(() => {
             expect(wrapper.container).toMatchSnapshot();
         });
     });
@@ -140,7 +140,7 @@ describe('when the editTeam component is mounted', () => {
             wrapper = renderComponent(roles);
         });
 
-        await wait(() => {
+        await waitFor(() => {
             expect(wrapper.container).toMatchSnapshot();
         });
     });
@@ -157,7 +157,7 @@ describe('when the submit button is clicked', () => {
             mockState.unit = { label: '__unit2__', value: '__unit2_uuid__' };
             updateTeamMock.mockClear();
 
-            const submitButton = await waitForElement(async () => {
+            const submitButton = await waitFor(async () => {
                 return await wrapper.findByText('Update');
             });
 
@@ -182,7 +182,7 @@ describe('when the submit button is clicked', () => {
         it('should redirect to the team view page', async () => {
             expect.assertions(1);
 
-            await wait(() => {
+            await waitFor(() => {
                 expect(history.push).toHaveBeenCalledWith('/team-view/__teamId__', { successMessage: 'Team unit changed from __unit1__ to __unit2__.' });
             });
         });
@@ -196,7 +196,7 @@ describe('when the submit button is clicked', () => {
         it('should call the begin update action', async () => {
             expect.assertions(1);
 
-            await wait(() => {
+            await waitFor(() => {
                 expect(clearErrorsSpy).toHaveBeenCalled();
             });
         });
@@ -208,7 +208,7 @@ describe('when the submit button is clicked', () => {
             mockState.currentDisplayName = '__currentDisplayName__';
             mockState.newDisplayName = '__newDisplayName__';
 
-            const submitButton = await waitForElement(async () => {
+            const submitButton = await waitFor(async () => {
                 return await wrapper.findByText('Update');
             });
 
@@ -219,7 +219,7 @@ describe('when the submit button is clicked', () => {
             it('should redirect to the team view page', async () => {
                 expect.assertions(1);
 
-                await wait(() => {
+                await waitFor(() => {
                     expect(history.push).toHaveBeenCalledWith('/team-view/__teamId__', { successMessage: 'Team name changed from __currentDisplayName__ to __newDisplayName__.' });
                 });
             });
@@ -227,7 +227,7 @@ describe('when the submit button is clicked', () => {
             it('should call the begin update action', async () => {
                 expect.assertions(1);
 
-                await wait(() => {
+                await waitFor(() => {
                     expect(clearErrorsSpy).toHaveBeenCalled();
                 });
             });
@@ -264,7 +264,7 @@ describe('when the submit button is clicked', () => {
             mockState.newDisplayName = '__currentDisplayName__';
             updateTeamMock.mockReset();
 
-            const submitButton = await waitForElement(async () => {
+            const submitButton = await waitFor(async () => {
                 return await wrapper.findByText('Update');
             });
 
@@ -278,7 +278,7 @@ describe('when the submit button is clicked', () => {
 
     describe('and the name is not filled in', () => {
         beforeEach(async () => {
-            const submitButton = await waitForElement(async () => {
+            const submitButton = await waitFor(async () => {
                 return await wrapper.findByText('Update');
             });
 

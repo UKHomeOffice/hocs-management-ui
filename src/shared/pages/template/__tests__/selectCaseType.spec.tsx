@@ -1,7 +1,7 @@
 import React from 'react';
 import { match, MemoryRouter } from 'react-router-dom';
 import { createBrowserHistory, History, Location } from 'history';
-import { act, render, RenderResult, wait, fireEvent, waitForElement } from '@testing-library/react';
+import { act, render, RenderResult, fireEvent, waitFor } from '@testing-library/react';
 import SelectCaseType from '../selectCaseType';
 import { GENERAL_ERROR_TITLE, LOAD_CASE_TYPES_DESCRIPTION } from '../../../models/constants';
 import Item from '../../../models/item';
@@ -73,20 +73,20 @@ describe('when the selectCaseType component is mounted', () => {
     it('should render with default props', async () => {
         expect.assertions(1);
 
-        await wait(() => {
+        await waitFor(() => {
             expect(wrapper.container).toMatchSnapshot();
         });
     });
 
     it('should display an error if the call to retrieve the case types fail', async () => {
-        expect.assertions(1);
+        expect.assertions(2);
         getCaseTypesSpy.mockImplementation(() => Promise.reject('error'));
 
         act(() => {
             wrapper = renderComponent();
         });
 
-        await wait(() => {
+        await waitFor(() => {
             expect(setMessageMock).toBeCalledWith({ title: GENERAL_ERROR_TITLE, description: LOAD_CASE_TYPES_DESCRIPTION });
         });
 
@@ -104,7 +104,7 @@ describe('when the submit button is clicked', () => {
         });
 
         beforeEach(async () => {
-            const submitButton = await waitForElement(async () => {
+            const submitButton = await waitFor(async () => {
                 return await wrapper.findByText('Submit');
             });
 
@@ -114,14 +114,14 @@ describe('when the submit button is clicked', () => {
         it('should redirect to the home page', async () => {
             expect.assertions(1);
 
-            await wait(() => {
+            await waitFor(() => {
                 expect(history.push).toHaveBeenCalledWith('/case-type/__caseTypeValue__');
             });
         });
         it('should clear any previous errors', async () => {
             expect.assertions(1);
 
-            await wait(() => {
+            await waitFor(() => {
                 expect(clearErrorsMock).toHaveBeenCalled();
             });
         });
@@ -132,7 +132,7 @@ describe('when the submit button is clicked', () => {
             mockSelectedCaseType = undefined;
         });
         beforeEach(async () => {
-            const submitButton = await waitForElement(async () => {
+            const submitButton = await waitFor(async () => {
                 return await wrapper.findByText('Submit');
             });
 

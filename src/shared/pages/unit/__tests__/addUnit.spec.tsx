@@ -2,7 +2,7 @@
 import React from 'react';
 import { match, MemoryRouter } from 'react-router-dom';
 import { createBrowserHistory, History, Location } from 'history';
-import { act, render, RenderResult, wait, fireEvent, waitForElement } from '@testing-library/react';
+import { act, render, RenderResult, fireEvent, waitFor } from '@testing-library/react';
 import AddUnit from '../addUnit';
 import * as UnitsService from '../../../services/unitsService';
 import { ADD_UNIT_ERROR_DESCRIPTION, GENERAL_ERROR_TITLE, DUPLICATE_UNIT_DESCRIPTION, VALIDATION_ERROR_TITLE } from '../../../models/constants';
@@ -68,7 +68,7 @@ describe('when the addUnit component is mounted', () => {
     it('should render with default props', async () => {
         expect.assertions(1);
 
-        await wait(() => {
+        await waitFor(() => {
             expect(wrapper.container).toMatchSnapshot();
         });
     });
@@ -78,13 +78,13 @@ describe('when the display name is entered', () => {
     it('should be persisted in the page state', async () => {
         expect.assertions(1);
 
-        const displayNameElement = await waitForElement(async () => {
+        const displayNameElement = await waitFor(async () => {
             return await wrapper.findByLabelText('Display Name');
         });
 
         fireEvent.change(displayNameElement, { target: { name: 'displayName', value: '__displayName__' } });
 
-        await wait(() => {
+        await waitFor(() => {
             expect(reducerDispatch).toHaveBeenCalledWith({ name: 'displayName', value: '__displayName__' });
         });
     });
@@ -94,13 +94,13 @@ describe('when the short code is entered', () => {
     it('should be persisted in the page state', async () => {
         expect.assertions(1);
 
-        const shortCodeElement = await waitForElement(async () => {
+        const shortCodeElement = await waitFor(async () => {
             return await wrapper.findByLabelText('Short Code');
         });
 
         fireEvent.change(shortCodeElement, { target: { name: 'shortCode', value: '__shortCode__' } });
 
-        await wait(() => {
+        await waitFor(() => {
             expect(reducerDispatch).toHaveBeenCalledWith({ name: 'shortCode', value: '__shortCode__' });
         });
     });
@@ -112,7 +112,7 @@ describe('when the submit button is clicked', () => {
         beforeEach(async () => {
             mockUnit.displayName = '__displayName__';
             mockUnit.shortCode = '__shortCode__';
-            const submitButton = await waitForElement(async () => {
+            const submitButton = await waitFor(async () => {
                 return await wrapper.findByText('Submit');
             });
 
@@ -123,14 +123,14 @@ describe('when the submit button is clicked', () => {
             it('should redirect to the home page', async () => {
                 expect.assertions(1);
 
-                await wait(() => {
+                await waitFor(() => {
                     expect(history.push).toHaveBeenCalledWith('/', { successMessage: 'The unit was added successfully' });
                 });
             });
             it('should call the begin submit action', async () => {
                 expect.assertions(1);
 
-                await wait(() => {
+                await waitFor(() => {
                     expect(clearErrorsSpy).toHaveBeenCalled();
                 });
             });
@@ -160,7 +160,7 @@ describe('when the submit button is clicked', () => {
     });
     describe('and the data is not filled in', () => {
         beforeEach(async () => {
-            const submitButton = await waitForElement(async () => {
+            const submitButton = await waitFor(async () => {
                 return await wrapper.findByText('Submit');
             });
 

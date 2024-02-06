@@ -1,4 +1,4 @@
-import { act, fireEvent, render, RenderResult, wait, waitForElement } from '@testing-library/react';
+import { act, fireEvent, render, RenderResult, waitFor } from '@testing-library/react';
 
 import { MemoryRouter } from 'react-router-dom';
 import React from 'react';
@@ -67,14 +67,14 @@ describe('when the reactivateTeam component is mounted', () => {
 
 describe('when the Reactivate Team button is clicked', () => {
     it('should send a request to deactivate the team and redirect to the team view', async () => {
-        const reactivateButton = await waitForElement(async () => {
+        const reactivateButton = await waitFor(async () => {
             return await result.findByText('Reactivate Team');
         });
 
         fireEvent.click(reactivateButton);
 
         expect(updateTeamMock).toHaveBeenCalledWith('__teamId__', { active: true });
-        await wait(() => {
+        await waitFor(() => {
             expect(history.push).toHaveBeenCalledWith('/team-view/__teamId__', { successMessage: '__TeamId__ has been reactivated successfully' });
         });
     });
@@ -82,14 +82,14 @@ describe('when the Reactivate Team button is clicked', () => {
     it('should set an error when call to reactivate fails', async () => {
         updateTeamMock.mockImplementationOnce(() => Promise.reject({ response: { status: 500, data: { body: 'update failed' } } } ));
 
-        const reactivateButton = await waitForElement(async () => {
+        const reactivateButton = await waitFor(async () => {
             return await result.findByText('Reactivate Team');
         });
 
         fireEvent.click(reactivateButton);
 
         expect(updateTeamMock).toHaveBeenCalledWith('__teamId__', { active: true });
-        await wait(() => {
+        await waitFor(() => {
             expect(setErrorMessageSpy).toHaveBeenCalled();
         });
     });

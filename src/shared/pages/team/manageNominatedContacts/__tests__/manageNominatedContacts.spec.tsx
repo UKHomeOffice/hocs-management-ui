@@ -3,7 +3,7 @@ import React from 'react';
 import * as useError from '../../../../hooks/useError';
 import { match, MemoryRouter } from 'react-router';
 import ManageNominatedContacts from '../manageNominatedContacts';
-import { render, RenderResult, wait } from '@testing-library/react';
+import { render, RenderResult, waitFor } from '@testing-library/react';
 import { createBrowserHistory, History, Location } from 'history';
 import Team from '../../../../models/team';
 import { act } from 'react-dom/test-utils';
@@ -77,7 +77,7 @@ describe('manage nominated contacts', () => {
         });
         expect.assertions(1);
 
-        await wait(() => {
+        await waitFor(() => {
             expect(wrapper.container).toMatchSnapshot();
         });
     });
@@ -90,7 +90,7 @@ describe('manage nominated contacts', () => {
         });
         expect.assertions(2);
 
-        await wait(() => {
+        await waitFor(() => {
             expect(getTeamSpy).toBeCalledTimes(1);
             expect(mockSetState).toBeCalledWith(mockState);
         });
@@ -107,7 +107,7 @@ describe('manage nominated contacts', () => {
             renderComponent();
         });
 
-        await wait(() => {
+        await waitFor(() => {
             expect(getTeamSpy).toBeCalledTimes(1);
             expect(setErrorMessageSpy).toBeCalledWith({
                 'description': 'There was an error retrieving the team.  Please try refreshing the page.',

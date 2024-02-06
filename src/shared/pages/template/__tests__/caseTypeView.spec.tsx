@@ -1,7 +1,7 @@
 import React from 'react';
 import { match, MemoryRouter } from 'react-router-dom';
 import { createBrowserHistory, History, Location } from 'history';
-import { act, wait, fireEvent, getByText, render, RenderResult } from '@testing-library/react';
+import { act, waitFor, fireEvent, getByText, render, RenderResult } from '@testing-library/react';
 import CaseTypeView from '../caseTypeView';
 import * as CaseTypesService from '../../../services/caseTypesService';
 import * as TemplatesService from '../../../services/templatesService';
@@ -77,7 +77,7 @@ describe('when the CaseTypeView component is mounted', () => {
             wrapper = renderComponent();
         });
 
-        await wait(() => {
+        await waitFor(() => {
             expect(getCaseTypeSpy).toHaveBeenCalled();
             expect(getTemplatesForCaseTypeSpy).toHaveBeenCalled();
             expect(wrapper.container).toMatchSnapshot();
@@ -93,7 +93,7 @@ describe('when the Add template button is clicked', () => {
             wrapper = renderComponent();
         });
 
-        await wait(async () => {
+        await waitFor(async () => {
             const addTemplateButton = getByText(wrapper.container, 'Add template');
             fireEvent.click(addTemplateButton);
         });
@@ -109,7 +109,7 @@ describe('when the remove template button is clicked', () => {
             wrapper = renderComponent();
         });
 
-        await wait(async () => {
+        await waitFor(async () => {
             const selectedTemplate = getByText(wrapper.container, '__template1__');
             const row = (selectedTemplate.closest('tr'));
             const removeButton = getByText(row as HTMLElement, 'Remove');
@@ -128,7 +128,7 @@ describe('when the remove template button is clicked', () => {
                 wrapper = renderComponent();
             });
 
-            wait(async () => {
+            waitFor(async () => {
                 const selectedTemplate = getByText(wrapper.container, '__template1__');
                 const row = (selectedTemplate.closest('tr'));
                 const removeButton = getByText(row as HTMLElement, 'Remove');
@@ -141,12 +141,12 @@ describe('when the remove template button is clicked', () => {
                 jest.spyOn(TemplatesService, 'deleteTemplate').mockImplementation(() => Promise.reject({ response: { status: 500 } }));
             });
             it('should set the error state', () => {
-                wait(async () => {
+                waitFor(async () => {
                     expect(setMessageSpy).toHaveBeenCalledWith({ description: constants.REMOVE_TEMPLATE_ERROR_DESCRIPTION, title: constants.GENERAL_ERROR_TITLE });
                 });
             });
             it('should call the clear errors method', () => {
-                wait(async () => {
+                waitFor(async () => {
                     expect(clearErrorsSpy).toHaveBeenCalled();
                 });
             });

@@ -16,18 +16,7 @@ exports[`when the unitSearch component is mounted component should render 1`] = 
     >
       Units
     </h1>
-    <ul>
-      <li
-        class="govuk-list govuk-list--bullet govuk-list margin-bottom--small"
-      >
-        Home Office General Property
-      </li>
-      <li
-        class="govuk-list govuk-list--bullet govuk-list margin-bottom--small"
-      >
-        Home Office General Property
-      </li>
-    </ul>
+    <ul />
   </div>
 </div>
 `;

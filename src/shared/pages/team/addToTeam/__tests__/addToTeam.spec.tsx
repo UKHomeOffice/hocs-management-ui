@@ -1,7 +1,7 @@
 import React from 'react';
 import { match, MemoryRouter } from 'react-router-dom';
 import { createBrowserHistory, History, Location } from 'history';
-import { act, render, RenderResult, wait, fireEvent, getByText } from '@testing-library/react';
+import { act, render, RenderResult, waitFor, fireEvent, getByText } from '@testing-library/react';
 import AddToTeam from '../addToTeam';
 import * as TeamsService from '../../../../services/teamsService';
 import * as UsersService from '../../../../services/usersService';
@@ -99,7 +99,7 @@ describe('when the addToTeam component is mounted', () => {
             wrapper = renderComponent();
         });
 
-        await wait(() => {
+        await waitFor(() => {
             expect(getTeamSpy).toHaveBeenCalled();
             expect(getUsersSpy).toHaveBeenCalled();
             expect(wrapper.container).toMatchSnapshot();
@@ -107,23 +107,23 @@ describe('when the addToTeam component is mounted', () => {
     });
 
     it('should display an error if the call to retrieve the team fails', async () => {
-        expect.assertions(1);
+        expect.assertions(2);
         getTeamSpy.mockImplementation(() => Promise.reject('error'));
 
         renderComponent();
 
-        await wait(() => {
+        await waitFor(() => {
             expect(setMessageSpy).toBeCalledWith({ title: GENERAL_ERROR_TITLE, description: LOAD_TEAM_ERROR_DESCRIPTION });
         });
 
     });
     it('should display an error if the call to retrieve the users fails', async () => {
-        expect.assertions(1);
+        expect.assertions(2);
         getUsersSpy.mockImplementation(() => Promise.reject('error'));
 
         renderComponent();
 
-        await wait(() => {
+        await waitFor(() => {
             expect(setMessageSpy).toBeCalledWith({ title: GENERAL_ERROR_TITLE, description: LOAD_USERS_ERROR_DESCRIPTION });
         });
 
@@ -140,12 +140,12 @@ describe('when the submit button is clicked', () => {
     });
 
     it('should call the service and dispatch actions for the selected options', async () => {
-        await wait(async () => {
+        await waitFor(async () => {
             const submitButton = getByText(wrapper.container, 'Add selected users');
             fireEvent.click(submitButton);
         });
 
-        await wait(async () => {
+        await waitFor(async () => {
             expect(addUsersToTeamSpy).nthCalledWith(1, [
                 { 'label': '__user1__', 'value': '__userId1__' },
                 { 'label': '__user2__', 'value': '__userId2__' }],
@@ -166,7 +166,7 @@ describe('when the submit button is clicked', () => {
             }]
         }));
 
-        await wait(() => {
+        await waitFor(() => {
             const submitButton = getByText(wrapper.container, 'Add selected users');
             fireEvent.click(submitButton);
         });
@@ -176,12 +176,12 @@ describe('when the submit button is clicked', () => {
 
     it('should set an error when no users are selected', async () => {
         mockState.selectedUsers = [];
-        await wait(async () => {
+        await waitFor(async () => {
             const submitButton = getByText(wrapper.container, 'Add selected users');
             fireEvent.click(submitButton);
         });
 
-        await wait(async () => {
+        await waitFor(async () => {
             expect(setMessageSpy).toBeCalledWith({
                 description: 'Please select some users before submitting.',
                 title: 'No users selected'
@@ -197,7 +197,7 @@ describe('when the remove button is clicked', () => {
             wrapper = renderComponent();
         });
 
-        await wait(async () => {
+        await waitFor(async () => {
             const selectedUser = getByText(wrapper.container, '__user1__');
             // dispatch.mockReset();
             const row = (selectedUser.closest('tr'));

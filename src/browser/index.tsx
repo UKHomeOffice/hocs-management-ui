@@ -7,7 +7,7 @@ import '../styles/app.scss';
 
 document.body.className = 'govuk-template__body js-enabled';
 hydrateRoot(
-    document.getElementById('app'),
+    document.getElementById('app')!,
     <BrowserRouter>
         <HelmetProvider>
             <App config={(window as any).__INITIAL_DATA__} />

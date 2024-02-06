@@ -1,5 +1,5 @@
 import React from 'react';
-import { act, fireEvent, getByText, render, RenderResult, wait, getByLabelText } from '@testing-library/react';
+import { act, fireEvent, getByText, render, RenderResult, waitFor, getByLabelText } from '@testing-library/react';
 import AddNominatedContact from '../addNominatedContacts';
 import * as NominatedContactsService from '../../../../services/nominatedContactsService';
 
@@ -26,7 +26,7 @@ describe('when the AddNominatedContact component is mounted', () => {
         });
         expect.assertions(1);
 
-        await wait(() => {
+        await waitFor(() => {
             expect(wrapper.container).toMatchSnapshot();
         });
     });
@@ -66,7 +66,7 @@ describe('when the submit button is clicked', () => {
         updateEmailAddressInputText('');
         fireSubmit();
 
-        await wait(async () => {
+        await waitFor(async () => {
             expect(mockClearErrors).toBeCalledTimes(1);
             expect(addNominatedContactSpy).toBeCalledTimes(0);
             expect(mockDispatch).toBeCalledTimes(0);
@@ -94,7 +94,7 @@ describe('when the submit button is clicked', () => {
         updateEmailAddressInputText('a@a.example.org');
         fireSubmit();
 
-        await wait(async () => {
+        await waitFor(async () => {
             expect(mockClearErrors).toBeCalledTimes(1);
             expect(addNominatedContactSpy).toBeCalledTimes(1);
             expect(mockDispatch).toBeCalledTimes(0);
@@ -116,7 +116,7 @@ describe('when the submit button is clicked', () => {
         updateEmailAddressInputText('a@a.example.org');
         fireSubmit();
 
-        await wait(async () => {
+        await waitFor(async () => {
             expect(mockClearErrors).toBeCalledTimes(1);
             expect(addNominatedContactSpy).toBeCalledTimes(1);
             expect(mockDispatch).toBeCalledTimes(0);
@@ -135,7 +135,7 @@ describe('when the submit button is clicked', () => {
         updateEmailAddressInputText('abc@example.org');
         fireSubmit();
 
-        await wait(async () => {
+        await waitFor(async () => {
             expect(mockClearErrors).toBeCalledTimes(1);
 
             expect(addNominatedContactSpy).toBeCalledWith({

@@ -1,7 +1,7 @@
 import React from 'react';
 import { match, MemoryRouter } from 'react-router-dom';
 import { createBrowserHistory, History, Location } from 'history';
-import { act, render, RenderResult, wait, fireEvent, waitForElement } from '@testing-library/react';
+import { act, render, RenderResult, fireEvent, waitFor } from '@testing-library/react';
 import {
     GENERAL_ERROR_TITLE
 } from '../../../../models/constants';
@@ -91,7 +91,7 @@ describe('when the AmendEntity component is mounted', () => {
     it('should render with default props', async () => {
         expect.assertions(2);
         wrapper = renderComponent();
-        await wait(() => {
+        await waitFor(() => {
             expect(getItemDetailsSpy).toHaveBeenCalled();
             expect(wrapper.container).toMatchSnapshot();
         });
@@ -107,12 +107,12 @@ describe('when the AmendEntity component is mounted', () => {
     });
 
     it('should display an error if the call to retrieve item details fails', async () => {
-        expect.assertions(1);
+        expect.assertions(2);
         getItemDetailsSpy.mockImplementation(() => Promise.reject('error'));
 
         wrapper = renderComponent();
 
-        await wait(() => {
+        await waitFor(() => {
             expect(setMessageSpy).toBeCalledWith({ title: GENERAL_ERROR_TITLE, description: 'There was an error retrieving the entities. Please try refreshing the page.' });
         });
 
@@ -125,13 +125,13 @@ describe('when the new name is entered', () => {
         getItemDetailsSpy.mockReturnValueOnce(Promise.resolve(
             { simpleName: 'testSimpleName', title: 'testTitle', uuid: 'testUUID', active: false }
         ));
-        const nameElement = await waitForElement(async () => {
+        const nameElement = await waitFor(async () => {
             return await wrapper.findByLabelText('New entity name');
         });
 
         fireEvent.change(nameElement, { target: { name: 'title', value: 'newTestEntityTitle' } });
 
-        await wait(() => {
+        await waitFor(() => {
 
             expect(reducerDispatch).toHaveBeenCalledWith({ type: 'SetTitle', payload: 'newTestEntityTitle' });
         });
@@ -144,7 +144,7 @@ describe('when the submit button is clicked', () => {
         beforeEach(async () => {
             mockState.title = '__displayName__';
             mockState.simpleName = '__shortCode__';
-            const submitButton = await waitForElement(async () => {
+            const submitButton = await waitFor(async () => {
                 return await wrapper.findByText('Submit');
             });
 
@@ -157,7 +157,7 @@ describe('when the submit button is clicked', () => {
                 getItemDetailsSpy.mockReturnValueOnce(Promise.resolve(
                     { simpleName: 'testSimpleName', title: 'testTitle', uuid: 'testUUID', active: false }
                 ));
-                await wait(() => {
+                await waitFor(() => {
                     expect(getItemDetailsSpy).toHaveBeenCalled();
                     expect(updateListItemSpy).toHaveBeenCalled();
                     expect(history.push).toHaveBeenCalledWith('/', { successMessage: 'The entity was amended successfully' });
@@ -165,7 +165,7 @@ describe('when the submit button is clicked', () => {
             });
             it('should call the begin submit action', async () => {
 
-                await wait(() => {
+                await waitFor(() => {
                     expect(clearErrorsSpy).toHaveBeenCalled();
                 });
             });
@@ -176,7 +176,7 @@ describe('when the submit button is clicked', () => {
             updateListItemSpy.mockReturnValueOnce(Promise.resolve(
                 { simpleName: 'testSimpleName', title: 'testTitle', uuid: 'testUUID' }
             ));
-            const submitButton = await waitForElement(async () => {
+            const submitButton = await waitFor(async () => {
                 return await wrapper.findByText('Submit');
             });
 
@@ -202,7 +202,7 @@ describe('when the submit button is clicked', () => {
             updateListItemSpy.mockImplementation(() => Promise.reject({ response: { status: 500 } }));
             mockState.title = '__displayName__';
             mockState.simpleName = '__shortCode__';
-            const submitButton = await waitForElement(async () => {
+            const submitButton = await waitFor(async () => {
                 return await wrapper.findByText('Submit');
             });
 

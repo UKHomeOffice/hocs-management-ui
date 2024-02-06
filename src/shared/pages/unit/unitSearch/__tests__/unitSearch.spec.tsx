@@ -1,6 +1,6 @@
 import React from 'react';
 import { createBrowserHistory, History } from 'history';
-import { act, wait, render, RenderResult } from '@testing-library/react';
+import { act, waitFor, render, RenderResult } from '@testing-library/react';
 import UnitSearch from '../unitSearch';
 import * as UnitsService from '../../../../services/unitsService';
 import { MemoryRouter } from 'react-router-dom';
@@ -44,7 +44,7 @@ describe('when the unitSearch component is mounted', () => {
             wrapper = renderComponent();
         });
 
-        await wait(() => {
+        await waitFor(() => {
             expect(getUnitsSpy).toHaveBeenCalled();
             expect(wrapper.container).toMatchSnapshot();
         });

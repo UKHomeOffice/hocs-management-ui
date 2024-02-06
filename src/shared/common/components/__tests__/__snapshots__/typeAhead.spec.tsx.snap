@@ -14,10 +14,22 @@ Object {
           id="type-ahead-label"
         />
         <div
-          class="govuk-typeahead--is-disabled css-14jk2my-container"
+          class="govuk-typeahead--is-disabled css-3iigni-container"
           id="type-ahead"
         >
+          <span
+            class="css-1f43avz-a11yText-A11yText"
+            id="react-select-6-live-region"
+          />
+          <span
+            aria-atomic="false"
+            aria-live="polite"
+            aria-relevant="additions text"
+            class="css-1f43avz-a11yText-A11yText"
+            role="log"
+          />
           <div
+            aria-disabled="true"
             class="govuk-typeahead__control govuk-typeahead__control--is-disabled css-1g8ily9-Control"
           >
             <div
@@ -25,33 +37,33 @@ Object {
             >
               <div
                 class="govuk-typeahead__placeholder css-ovmm9z-Placeholder"
+                id="react-select-6-placeholder"
               >
                 Search
               </div>
               <div
-                class="css-b8ldur-Input"
+                class="govuk-typeahead__input-container css-1h01tm3-Input"
+                data-value=""
               >
-                <div
+                <input
+                  aria-activedescendant=""
+                  aria-autocomplete="list"
+                  aria-describedby="react-select-6-placeholder"
+                  aria-expanded="false"
+                  aria-haspopup="true"
+                  autocapitalize="none"
+                  autocomplete="off"
+                  autocorrect="off"
                   class="govuk-typeahead__input"
-                  style="display: inline-block;"
-                >
-                  <input
-                    aria-autocomplete="list"
-                    autocapitalize="none"
-                    autocomplete="off"
-                    autocorrect="off"
-                    disabled=""
-                    id="type-ahead-input"
-                    spellcheck="false"
-                    style="box-sizing: content-box; width: 2px; border: 0px; opacity: 1; outline: 0; padding: 0px;"
-                    tabindex="0"
-                    type="text"
-                    value=""
-                  />
-                  <div
-                    style="position: absolute; top: 0px; left: 0px; visibility: hidden; height: 0px; overflow: scroll; white-space: pre; font-family: -webkit-small-control; letter-spacing: normal; text-transform: none;"
-                  />
-                </div>
+                  disabled=""
+                  id="type-ahead-input"
+                  role="combobox"
+                  spellcheck="false"
+                  style="opacity: 1; width: 100%; grid-area: 1 / 2; min-width: 2px; border: 0px; margin: 0px; outline: 0; padding: 0px;"
+                  tabindex="0"
+                  type="text"
+                  value=""
+                />
               </div>
             </div>
             <div
@@ -59,10 +71,10 @@ Object {
             >
               <div
                 aria-hidden="true"
-                class="govuk-typeahead__indicator govuk-typeahead__loading-indicator css-at12u2-loadingIndicator"
+                class="govuk-typeahead__indicator govuk-typeahead__loading-indicator css-pogzpp-loadingIndicator"
               >
                 <span
-                  class="css-1yvy2vo-LoadingDot"
+                  class="css-1xtdfmb-LoadingDot"
                 />
                 <span
                   class="css-zoievk-LoadingDot"
@@ -80,7 +92,7 @@ Object {
               >
                 <svg
                   aria-hidden="true"
-                  class="css-6q0nyr-Svg"
+                  class="css-tj5bde-Svg"
                   focusable="false"
                   height="20"
                   viewBox="0 0 20 20"
@@ -107,10 +119,22 @@ Object {
         id="type-ahead-label"
       />
       <div
-        class="govuk-typeahead--is-disabled css-14jk2my-container"
+        class="govuk-typeahead--is-disabled css-3iigni-container"
         id="type-ahead"
       >
+        <span
+          class="css-1f43avz-a11yText-A11yText"
+          id="react-select-6-live-region"
+        />
+        <span
+          aria-atomic="false"
+          aria-live="polite"
+          aria-relevant="additions text"
+          class="css-1f43avz-a11yText-A11yText"
+          role="log"
+        />
         <div
+          aria-disabled="true"
           class="govuk-typeahead__control govuk-typeahead__control--is-disabled css-1g8ily9-Control"
         >
           <div
@@ -118,33 +142,33 @@ Object {
           >
             <div
               class="govuk-typeahead__placeholder css-ovmm9z-Placeholder"
+              id="react-select-6-placeholder"
             >
               Search
             </div>
             <div
-              class="css-b8ldur-Input"
+              class="govuk-typeahead__input-container css-1h01tm3-Input"
+              data-value=""
             >
-              <div
+              <input
+                aria-activedescendant=""
+                aria-autocomplete="list"
+                aria-describedby="react-select-6-placeholder"
+                aria-expanded="false"
+                aria-haspopup="true"
+                autocapitalize="none"
+                autocomplete="off"
+                autocorrect="off"
                 class="govuk-typeahead__input"
-                style="display: inline-block;"
-              >
-                <input
-                  aria-autocomplete="list"
-                  autocapitalize="none"
-                  autocomplete="off"
-                  autocorrect="off"
-                  disabled=""
-                  id="type-ahead-input"
-                  spellcheck="false"
-                  style="box-sizing: content-box; width: 2px; border: 0px; opacity: 1; outline: 0; padding: 0px;"
-                  tabindex="0"
-                  type="text"
-                  value=""
-                />
-                <div
-                  style="position: absolute; top: 0px; left: 0px; visibility: hidden; height: 0px; overflow: scroll; white-space: pre; font-family: -webkit-small-control; letter-spacing: normal; text-transform: none;"
-                />
-              </div>
+                disabled=""
+                id="type-ahead-input"
+                role="combobox"
+                spellcheck="false"
+                style="opacity: 1; width: 100%; grid-area: 1 / 2; min-width: 2px; border: 0px; margin: 0px; outline: 0; padding: 0px;"
+                tabindex="0"
+                type="text"
+                value=""
+              />
             </div>
           </div>
           <div
@@ -152,10 +176,10 @@ Object {
           >
             <div
               aria-hidden="true"
-              class="govuk-typeahead__indicator govuk-typeahead__loading-indicator css-at12u2-loadingIndicator"
+              class="govuk-typeahead__indicator govuk-typeahead__loading-indicator css-pogzpp-loadingIndicator"
             >
               <span
-                class="css-1yvy2vo-LoadingDot"
+                class="css-1xtdfmb-LoadingDot"
               />
               <span
                 class="css-zoievk-LoadingDot"
@@ -173,7 +197,7 @@ Object {
             >
               <svg
                 aria-hidden="true"
-                class="css-6q0nyr-Svg"
+                class="css-tj5bde-Svg"
                 focusable="false"
                 height="20"
                 viewBox="0 0 20 20"
@@ -257,9 +281,20 @@ Object {
           id="type-ahead-label"
         />
         <div
-          class=" css-2b097c-container"
+          class=" css-b62m3t-container"
           id="type-ahead"
         >
+          <span
+            class="css-1f43avz-a11yText-A11yText"
+            id="react-select-2-live-region"
+          />
+          <span
+            aria-atomic="false"
+            aria-live="polite"
+            aria-relevant="additions text"
+            class="css-1f43avz-a11yText-A11yText"
+            role="log"
+          />
           <div
             class="govuk-typeahead__control css-1g8ily9-Control"
           >
@@ -268,32 +303,32 @@ Object {
             >
               <div
                 class="govuk-typeahead__placeholder css-ovmm9z-Placeholder"
+                id="react-select-2-placeholder"
               >
                 Search
               </div>
               <div
-                class="css-b8ldur-Input"
+                class="govuk-typeahead__input-container css-qbdosj-Input"
+                data-value=""
               >
-                <div
+                <input
+                  aria-activedescendant=""
+                  aria-autocomplete="list"
+                  aria-describedby="react-select-2-placeholder"
+                  aria-expanded="false"
+                  aria-haspopup="true"
+                  autocapitalize="none"
+                  autocomplete="off"
+                  autocorrect="off"
                   class="govuk-typeahead__input"
-                  style="display: inline-block;"
-                >
-                  <input
-                    aria-autocomplete="list"
-                    autocapitalize="none"
-                    autocomplete="off"
-                    autocorrect="off"
-                    id="type-ahead-input"
-                    spellcheck="false"
-                    style="box-sizing: content-box; width: 2px; border: 0px; opacity: 1; outline: 0; padding: 0px;"
-                    tabindex="0"
-                    type="text"
-                    value=""
-                  />
-                  <div
-                    style="position: absolute; top: 0px; left: 0px; visibility: hidden; height: 0px; overflow: scroll; white-space: pre; font-family: -webkit-small-control; letter-spacing: normal; text-transform: none;"
-                  />
-                </div>
+                  id="type-ahead-input"
+                  role="combobox"
+                  spellcheck="false"
+                  style="opacity: 1; width: 100%; grid-area: 1 / 2; min-width: 2px; border: 0px; margin: 0px; outline: 0; padding: 0px;"
+                  tabindex="0"
+                  type="text"
+                  value=""
+                />
               </div>
             </div>
             <div
@@ -301,10 +336,10 @@ Object {
             >
               <div
                 aria-hidden="true"
-                class="govuk-typeahead__indicator govuk-typeahead__loading-indicator css-at12u2-loadingIndicator"
+                class="govuk-typeahead__indicator govuk-typeahead__loading-indicator css-pogzpp-loadingIndicator"
               >
                 <span
-                  class="css-1yvy2vo-LoadingDot"
+                  class="css-1xtdfmb-LoadingDot"
                 />
                 <span
                   class="css-zoievk-LoadingDot"
@@ -322,7 +357,7 @@ Object {
               >
                 <svg
                   aria-hidden="true"
-                  class="css-6q0nyr-Svg"
+                  class="css-tj5bde-Svg"
                   focusable="false"
                   height="20"
                   viewBox="0 0 20 20"
@@ -349,9 +384,20 @@ Object {
         id="type-ahead-label"
       />
       <div
-        class=" css-2b097c-container"
+        class=" css-b62m3t-container"
         id="type-ahead"
       >
+        <span
+          class="css-1f43avz-a11yText-A11yText"
+          id="react-select-2-live-region"
+        />
+        <span
+          aria-atomic="false"
+          aria-live="polite"
+          aria-relevant="additions text"
+          class="css-1f43avz-a11yText-A11yText"
+          role="log"
+        />
         <div
           class="govuk-typeahead__control css-1g8ily9-Control"
         >
@@ -360,32 +406,32 @@ Object {
           >
             <div
               class="govuk-typeahead__placeholder css-ovmm9z-Placeholder"
+              id="react-select-2-placeholder"
             >
               Search
             </div>
             <div
-              class="css-b8ldur-Input"
+              class="govuk-typeahead__input-container css-qbdosj-Input"
+              data-value=""
             >
-              <div
+              <input
+                aria-activedescendant=""
+                aria-autocomplete="list"
+                aria-describedby="react-select-2-placeholder"
+                aria-expanded="false"
+                aria-haspopup="true"
+                autocapitalize="none"
+                autocomplete="off"
+                autocorrect="off"
                 class="govuk-typeahead__input"
-                style="display: inline-block;"
-              >
-                <input
-                  aria-autocomplete="list"
-                  autocapitalize="none"
-                  autocomplete="off"
-                  autocorrect="off"
-                  id="type-ahead-input"
-                  spellcheck="false"
-                  style="box-sizing: content-box; width: 2px; border: 0px; opacity: 1; outline: 0; padding: 0px;"
-                  tabindex="0"
-                  type="text"
-                  value=""
-                />
-                <div
-                  style="position: absolute; top: 0px; left: 0px; visibility: hidden; height: 0px; overflow: scroll; white-space: pre; font-family: -webkit-small-control; letter-spacing: normal; text-transform: none;"
-                />
-              </div>
+                id="type-ahead-input"
+                role="combobox"
+                spellcheck="false"
+                style="opacity: 1; width: 100%; grid-area: 1 / 2; min-width: 2px; border: 0px; margin: 0px; outline: 0; padding: 0px;"
+                tabindex="0"
+                type="text"
+                value=""
+              />
             </div>
           </div>
           <div
@@ -393,10 +439,10 @@ Object {
           >
             <div
               aria-hidden="true"
-              class="govuk-typeahead__indicator govuk-typeahead__loading-indicator css-at12u2-loadingIndicator"
+              class="govuk-typeahead__indicator govuk-typeahead__loading-indicator css-pogzpp-loadingIndicator"
             >
               <span
-                class="css-1yvy2vo-LoadingDot"
+                class="css-1xtdfmb-LoadingDot"
               />
               <span
                 class="css-zoievk-LoadingDot"
@@ -414,7 +460,7 @@ Object {
             >
               <svg
                 aria-hidden="true"
-                class="css-6q0nyr-Svg"
+                class="css-tj5bde-Svg"
                 focusable="false"
                 height="20"
                 viewBox="0 0 20 20"
@@ -504,9 +550,20 @@ Object {
           Some error message
         </p>
         <div
-          class=" css-2b097c-container"
+          class=" css-b62m3t-container"
           id="type-ahead"
         >
+          <span
+            class="css-1f43avz-a11yText-A11yText"
+            id="react-select-5-live-region"
+          />
+          <span
+            aria-atomic="false"
+            aria-live="polite"
+            aria-relevant="additions text"
+            class="css-1f43avz-a11yText-A11yText"
+            role="log"
+          />
           <div
             class="govuk-typeahead__control--error govuk-typeahead__control css-1g8ily9-Control"
           >
@@ -515,32 +572,32 @@ Object {
             >
               <div
                 class="govuk-typeahead__placeholder css-ovmm9z-Placeholder"
+                id="react-select-5-placeholder"
               >
                 Search
               </div>
               <div
-                class="css-b8ldur-Input"
+                class="govuk-typeahead__input-container css-qbdosj-Input"
+                data-value=""
               >
-                <div
+                <input
+                  aria-activedescendant=""
+                  aria-autocomplete="list"
+                  aria-describedby="react-select-5-placeholder"
+                  aria-expanded="false"
+                  aria-haspopup="true"
+                  autocapitalize="none"
+                  autocomplete="off"
+                  autocorrect="off"
                   class="govuk-typeahead__input"
-                  style="display: inline-block;"
-                >
-                  <input
-                    aria-autocomplete="list"
-                    autocapitalize="none"
-                    autocomplete="off"
-                    autocorrect="off"
-                    id="type-ahead-input"
-                    spellcheck="false"
-                    style="box-sizing: content-box; width: 2px; border: 0px; opacity: 1; outline: 0; padding: 0px;"
-                    tabindex="0"
-                    type="text"
-                    value=""
-                  />
-                  <div
-                    style="position: absolute; top: 0px; left: 0px; visibility: hidden; height: 0px; overflow: scroll; white-space: pre; font-family: -webkit-small-control; letter-spacing: normal; text-transform: none;"
-                  />
-                </div>
+                  id="type-ahead-input"
+                  role="combobox"
+                  spellcheck="false"
+                  style="opacity: 1; width: 100%; grid-area: 1 / 2; min-width: 2px; border: 0px; margin: 0px; outline: 0; padding: 0px;"
+                  tabindex="0"
+                  type="text"
+                  value=""
+                />
               </div>
             </div>
             <div
@@ -548,10 +605,10 @@ Object {
             >
               <div
                 aria-hidden="true"
-                class="govuk-typeahead__indicator govuk-typeahead__loading-indicator css-at12u2-loadingIndicator"
+                class="govuk-typeahead__indicator govuk-typeahead__loading-indicator css-pogzpp-loadingIndicator"
               >
                 <span
-                  class="css-1yvy2vo-LoadingDot"
+                  class="css-1xtdfmb-LoadingDot"
                 />
                 <span
                   class="css-zoievk-LoadingDot"
@@ -569,7 +626,7 @@ Object {
               >
                 <svg
                   aria-hidden="true"
-                  class="css-6q0nyr-Svg"
+                  class="css-tj5bde-Svg"
                   focusable="false"
                   height="20"
                   viewBox="0 0 20 20"
@@ -602,9 +659,20 @@ Object {
         Some error message
       </p>
       <div
-        class=" css-2b097c-container"
+        class=" css-b62m3t-container"
         id="type-ahead"
       >
+        <span
+          class="css-1f43avz-a11yText-A11yText"
+          id="react-select-5-live-region"
+        />
+        <span
+          aria-atomic="false"
+          aria-live="polite"
+          aria-relevant="additions text"
+          class="css-1f43avz-a11yText-A11yText"
+          role="log"
+        />
         <div
           class="govuk-typeahead__control--error govuk-typeahead__control css-1g8ily9-Control"
         >
@@ -613,32 +681,32 @@ Object {
           >
             <div
               class="govuk-typeahead__placeholder css-ovmm9z-Placeholder"
+              id="react-select-5-placeholder"
             >
               Search
             </div>
             <div
-              class="css-b8ldur-Input"
+              class="govuk-typeahead__input-container css-qbdosj-Input"
+              data-value=""
             >
-              <div
+              <input
+                aria-activedescendant=""
+                aria-autocomplete="list"
+                aria-describedby="react-select-5-placeholder"
+                aria-expanded="false"
+                aria-haspopup="true"
+                autocapitalize="none"
+                autocomplete="off"
+                autocorrect="off"
                 class="govuk-typeahead__input"
-                style="display: inline-block;"
-              >
-                <input
-                  aria-autocomplete="list"
-                  autocapitalize="none"
-                  autocomplete="off"
-                  autocorrect="off"
-                  id="type-ahead-input"
-                  spellcheck="false"
-                  style="box-sizing: content-box; width: 2px; border: 0px; opacity: 1; outline: 0; padding: 0px;"
-                  tabindex="0"
-                  type="text"
-                  value=""
-                />
-                <div
-                  style="position: absolute; top: 0px; left: 0px; visibility: hidden; height: 0px; overflow: scroll; white-space: pre; font-family: -webkit-small-control; letter-spacing: normal; text-transform: none;"
-                />
-              </div>
+                id="type-ahead-input"
+                role="combobox"
+                spellcheck="false"
+                style="opacity: 1; width: 100%; grid-area: 1 / 2; min-width: 2px; border: 0px; margin: 0px; outline: 0; padding: 0px;"
+                tabindex="0"
+                type="text"
+                value=""
+              />
             </div>
           </div>
           <div
@@ -646,10 +714,10 @@ Object {
           >
             <div
               aria-hidden="true"
-              class="govuk-typeahead__indicator govuk-typeahead__loading-indicator css-at12u2-loadingIndicator"
+              class="govuk-typeahead__indicator govuk-typeahead__loading-indicator css-pogzpp-loadingIndicator"
             >
               <span
-                class="css-1yvy2vo-LoadingDot"
+                class="css-1xtdfmb-LoadingDot"
               />
               <span
                 class="css-zoievk-LoadingDot"
@@ -667,7 +735,7 @@ Object {
             >
               <svg
                 aria-hidden="true"
-                class="css-6q0nyr-Svg"
+                class="css-tj5bde-Svg"
                 focusable="false"
                 height="20"
                 viewBox="0 0 20 20"
@@ -756,9 +824,20 @@ Object {
           Select an option
         </div>
         <div
-          class=" css-2b097c-container"
+          class=" css-b62m3t-container"
           id="type-ahead"
         >
+          <span
+            class="css-1f43avz-a11yText-A11yText"
+            id="react-select-4-live-region"
+          />
+          <span
+            aria-atomic="false"
+            aria-live="polite"
+            aria-relevant="additions text"
+            class="css-1f43avz-a11yText-A11yText"
+            role="log"
+          />
           <div
             class="govuk-typeahead__control css-1g8ily9-Control"
           >
@@ -767,32 +846,32 @@ Object {
             >
               <div
                 class="govuk-typeahead__placeholder css-ovmm9z-Placeholder"
+                id="react-select-4-placeholder"
               >
                 Search
               </div>
               <div
-                class="css-b8ldur-Input"
+                class="govuk-typeahead__input-container css-qbdosj-Input"
+                data-value=""
               >
-                <div
+                <input
+                  aria-activedescendant=""
+                  aria-autocomplete="list"
+                  aria-describedby="react-select-4-placeholder"
+                  aria-expanded="false"
+                  aria-haspopup="true"
+                  autocapitalize="none"
+                  autocomplete="off"
+                  autocorrect="off"
                   class="govuk-typeahead__input"
-                  style="display: inline-block;"
-                >
-                  <input
-                    aria-autocomplete="list"
-                    autocapitalize="none"
-                    autocomplete="off"
-                    autocorrect="off"
-                    id="type-ahead-input"
-                    spellcheck="false"
-                    style="box-sizing: content-box; width: 2px; border: 0px; opacity: 1; outline: 0; padding: 0px;"
-                    tabindex="0"
-                    type="text"
-                    value=""
-                  />
-                  <div
-                    style="position: absolute; top: 0px; left: 0px; visibility: hidden; height: 0px; overflow: scroll; white-space: pre; font-family: -webkit-small-control; letter-spacing: normal; text-transform: none;"
-                  />
-                </div>
+                  id="type-ahead-input"
+                  role="combobox"
+                  spellcheck="false"
+                  style="opacity: 1; width: 100%; grid-area: 1 / 2; min-width: 2px; border: 0px; margin: 0px; outline: 0; padding: 0px;"
+                  tabindex="0"
+                  type="text"
+                  value=""
+                />
               </div>
             </div>
             <div
@@ -800,10 +879,10 @@ Object {
             >
               <div
                 aria-hidden="true"
-                class="govuk-typeahead__indicator govuk-typeahead__loading-indicator css-at12u2-loadingIndicator"
+                class="govuk-typeahead__indicator govuk-typeahead__loading-indicator css-pogzpp-loadingIndicator"
               >
                 <span
-                  class="css-1yvy2vo-LoadingDot"
+                  class="css-1xtdfmb-LoadingDot"
                 />
                 <span
                   class="css-zoievk-LoadingDot"
@@ -821,7 +900,7 @@ Object {
               >
                 <svg
                   aria-hidden="true"
-                  class="css-6q0nyr-Svg"
+                  class="css-tj5bde-Svg"
                   focusable="false"
                   height="20"
                   viewBox="0 0 20 20"
@@ -853,9 +932,20 @@ Object {
         Select an option
       </div>
       <div
-        class=" css-2b097c-container"
+        class=" css-b62m3t-container"
         id="type-ahead"
       >
+        <span
+          class="css-1f43avz-a11yText-A11yText"
+          id="react-select-4-live-region"
+        />
+        <span
+          aria-atomic="false"
+          aria-live="polite"
+          aria-relevant="additions text"
+          class="css-1f43avz-a11yText-A11yText"
+          role="log"
+        />
         <div
           class="govuk-typeahead__control css-1g8ily9-Control"
         >
@@ -864,32 +954,32 @@ Object {
           >
             <div
               class="govuk-typeahead__placeholder css-ovmm9z-Placeholder"
+              id="react-select-4-placeholder"
             >
               Search
             </div>
             <div
-              class="css-b8ldur-Input"
+              class="govuk-typeahead__input-container css-qbdosj-Input"
+              data-value=""
             >
-              <div
+              <input
+                aria-activedescendant=""
+                aria-autocomplete="list"
+                aria-describedby="react-select-4-placeholder"
+                aria-expanded="false"
+                aria-haspopup="true"
+                autocapitalize="none"
+                autocomplete="off"
+                autocorrect="off"
                 class="govuk-typeahead__input"
-                style="display: inline-block;"
-              >
-                <input
-                  aria-autocomplete="list"
-                  autocapitalize="none"
-                  autocomplete="off"
-                  autocorrect="off"
-                  id="type-ahead-input"
-                  spellcheck="false"
-                  style="box-sizing: content-box; width: 2px; border: 0px; opacity: 1; outline: 0; padding: 0px;"
-                  tabindex="0"
-                  type="text"
-                  value=""
-                />
-                <div
-                  style="position: absolute; top: 0px; left: 0px; visibility: hidden; height: 0px; overflow: scroll; white-space: pre; font-family: -webkit-small-control; letter-spacing: normal; text-transform: none;"
-                />
-              </div>
+                id="type-ahead-input"
+                role="combobox"
+                spellcheck="false"
+                style="opacity: 1; width: 100%; grid-area: 1 / 2; min-width: 2px; border: 0px; margin: 0px; outline: 0; padding: 0px;"
+                tabindex="0"
+                type="text"
+                value=""
+              />
             </div>
           </div>
           <div
@@ -897,10 +987,10 @@ Object {
           >
             <div
               aria-hidden="true"
-              class="govuk-typeahead__indicator govuk-typeahead__loading-indicator css-at12u2-loadingIndicator"
+              class="govuk-typeahead__indicator govuk-typeahead__loading-indicator css-pogzpp-loadingIndicator"
             >
               <span
-                class="css-1yvy2vo-LoadingDot"
+                class="css-1xtdfmb-LoadingDot"
               />
               <span
                 class="css-zoievk-LoadingDot"
@@ -918,7 +1008,7 @@ Object {
             >
               <svg
                 aria-hidden="true"
-                class="css-6q0nyr-Svg"
+                class="css-tj5bde-Svg"
                 focusable="false"
                 height="20"
                 viewBox="0 0 20 20"
@@ -1004,9 +1094,20 @@ Object {
           Type-ahead
         </label>
         <div
-          class=" css-2b097c-container"
+          class=" css-b62m3t-container"
           id="type-ahead"
         >
+          <span
+            class="css-1f43avz-a11yText-A11yText"
+            id="react-select-3-live-region"
+          />
+          <span
+            aria-atomic="false"
+            aria-live="polite"
+            aria-relevant="additions text"
+            class="css-1f43avz-a11yText-A11yText"
+            role="log"
+          />
           <div
             class="govuk-typeahead__control css-1g8ily9-Control"
           >
@@ -1015,32 +1116,32 @@ Object {
             >
               <div
                 class="govuk-typeahead__placeholder css-ovmm9z-Placeholder"
+                id="react-select-3-placeholder"
               >
                 Search
               </div>
               <div
-                class="css-b8ldur-Input"
+                class="govuk-typeahead__input-container css-qbdosj-Input"
+                data-value=""
               >
-                <div
+                <input
+                  aria-activedescendant=""
+                  aria-autocomplete="list"
+                  aria-describedby="react-select-3-placeholder"
+                  aria-expanded="false"
+                  aria-haspopup="true"
+                  autocapitalize="none"
+                  autocomplete="off"
+                  autocorrect="off"
                   class="govuk-typeahead__input"
-                  style="display: inline-block;"
-                >
-                  <input
-                    aria-autocomplete="list"
-                    autocapitalize="none"
-                    autocomplete="off"
-                    autocorrect="off"
-                    id="type-ahead-input"
-                    spellcheck="false"
-                    style="box-sizing: content-box; width: 2px; border: 0px; opacity: 1; outline: 0; padding: 0px;"
-                    tabindex="0"
-                    type="text"
-                    value=""
-                  />
-                  <div
-                    style="position: absolute; top: 0px; left: 0px; visibility: hidden; height: 0px; overflow: scroll; white-space: pre; font-family: -webkit-small-control; letter-spacing: normal; text-transform: none;"
-                  />
-                </div>
+                  id="type-ahead-input"
+                  role="combobox"
+                  spellcheck="false"
+                  style="opacity: 1; width: 100%; grid-area: 1 / 2; min-width: 2px; border: 0px; margin: 0px; outline: 0; padding: 0px;"
+                  tabindex="0"
+                  type="text"
+                  value=""
+                />
               </div>
             </div>
             <div
@@ -1048,10 +1149,10 @@ Object {
             >
               <div
                 aria-hidden="true"
-                class="govuk-typeahead__indicator govuk-typeahead__loading-indicator css-at12u2-loadingIndicator"
+                class="govuk-typeahead__indicator govuk-typeahead__loading-indicator css-pogzpp-loadingIndicator"
               >
                 <span
-                  class="css-1yvy2vo-LoadingDot"
+                  class="css-1xtdfmb-LoadingDot"
                 />
                 <span
                   class="css-zoievk-LoadingDot"
@@ -1069,7 +1170,7 @@ Object {
               >
                 <svg
                   aria-hidden="true"
-                  class="css-6q0nyr-Svg"
+                  class="css-tj5bde-Svg"
                   focusable="false"
                   height="20"
                   viewBox="0 0 20 20"
@@ -1098,9 +1199,20 @@ Object {
         Type-ahead
       </label>
       <div
-        class=" css-2b097c-container"
+        class=" css-b62m3t-container"
         id="type-ahead"
       >
+        <span
+          class="css-1f43avz-a11yText-A11yText"
+          id="react-select-3-live-region"
+        />
+        <span
+          aria-atomic="false"
+          aria-live="polite"
+          aria-relevant="additions text"
+          class="css-1f43avz-a11yText-A11yText"
+          role="log"
+        />
         <div
           class="govuk-typeahead__control css-1g8ily9-Control"
         >
@@ -1109,32 +1221,32 @@ Object {
           >
             <div
               class="govuk-typeahead__placeholder css-ovmm9z-Placeholder"
+              id="react-select-3-placeholder"
             >
               Search
             </div>
             <div
-              class="css-b8ldur-Input"
+              class="govuk-typeahead__input-container css-qbdosj-Input"
+              data-value=""
             >
-              <div
+              <input
+                aria-activedescendant=""
+                aria-autocomplete="list"
+                aria-describedby="react-select-3-placeholder"
+                aria-expanded="false"
+                aria-haspopup="true"
+                autocapitalize="none"
+                autocomplete="off"
+                autocorrect="off"
                 class="govuk-typeahead__input"
-                style="display: inline-block;"
-              >
-                <input
-                  aria-autocomplete="list"
-                  autocapitalize="none"
-                  autocomplete="off"
-                  autocorrect="off"
-                  id="type-ahead-input"
-                  spellcheck="false"
-                  style="box-sizing: content-box; width: 2px; border: 0px; opacity: 1; outline: 0; padding: 0px;"
-                  tabindex="0"
-                  type="text"
-                  value=""
-                />
-                <div
-                  style="position: absolute; top: 0px; left: 0px; visibility: hidden; height: 0px; overflow: scroll; white-space: pre; font-family: -webkit-small-control; letter-spacing: normal; text-transform: none;"
-                />
-              </div>
+                id="type-ahead-input"
+                role="combobox"
+                spellcheck="false"
+                style="opacity: 1; width: 100%; grid-area: 1 / 2; min-width: 2px; border: 0px; margin: 0px; outline: 0; padding: 0px;"
+                tabindex="0"
+                type="text"
+                value=""
+              />
             </div>
           </div>
           <div
@@ -1142,10 +1254,10 @@ Object {
           >
             <div
               aria-hidden="true"
-              class="govuk-typeahead__indicator govuk-typeahead__loading-indicator css-at12u2-loadingIndicator"
+              class="govuk-typeahead__indicator govuk-typeahead__loading-indicator css-pogzpp-loadingIndicator"
             >
               <span
-                class="css-1yvy2vo-LoadingDot"
+                class="css-1xtdfmb-LoadingDot"
               />
               <span
                 class="css-zoievk-LoadingDot"
@@ -1163,7 +1275,7 @@ Object {
             >
               <svg
                 aria-hidden="true"
-                class="css-6q0nyr-Svg"
+                class="css-tj5bde-Svg"
                 focusable="false"
                 height="20"
                 viewBox="0 0 20 20"
@@ -1247,10 +1359,22 @@ Object {
           id="type-ahead-label"
         />
         <div
-          class="govuk-typeahead--is-disabled css-14jk2my-container"
+          class="govuk-typeahead--is-disabled css-3iigni-container"
           id="type-ahead"
         >
+          <span
+            class="css-1f43avz-a11yText-A11yText"
+            id="react-select-11-live-region"
+          />
+          <span
+            aria-atomic="false"
+            aria-live="polite"
+            aria-relevant="additions text"
+            class="css-1f43avz-a11yText-A11yText"
+            role="log"
+          />
           <div
+            aria-disabled="true"
             class="govuk-typeahead__control govuk-typeahead__control--is-disabled css-1g8ily9-Control"
           >
             <div
@@ -1258,33 +1382,33 @@ Object {
             >
               <div
                 class="govuk-typeahead__placeholder css-ovmm9z-Placeholder"
+                id="react-select-11-placeholder"
               >
                 Search
               </div>
               <div
-                class="css-b8ldur-Input"
+                class="govuk-typeahead__input-container css-1h01tm3-Input"
+                data-value=""
               >
-                <div
+                <input
+                  aria-activedescendant=""
+                  aria-autocomplete="list"
+                  aria-describedby="react-select-11-placeholder"
+                  aria-expanded="false"
+                  aria-haspopup="true"
+                  autocapitalize="none"
+                  autocomplete="off"
+                  autocorrect="off"
                   class="govuk-typeahead__input"
-                  style="display: inline-block;"
-                >
-                  <input
-                    aria-autocomplete="list"
-                    autocapitalize="none"
-                    autocomplete="off"
-                    autocorrect="off"
-                    disabled=""
-                    id="type-ahead-input"
-                    spellcheck="false"
-                    style="box-sizing: content-box; width: 2px; border: 0px; opacity: 1; outline: 0; padding: 0px;"
-                    tabindex="0"
-                    type="text"
-                    value=""
-                  />
-                  <div
-                    style="position: absolute; top: 0px; left: 0px; visibility: hidden; height: 0px; overflow: scroll; white-space: pre; font-family: -webkit-small-control; letter-spacing: normal; text-transform: none;"
-                  />
-                </div>
+                  disabled=""
+                  id="type-ahead-input"
+                  role="combobox"
+                  spellcheck="false"
+                  style="opacity: 1; width: 100%; grid-area: 1 / 2; min-width: 2px; border: 0px; margin: 0px; outline: 0; padding: 0px;"
+                  tabindex="0"
+                  type="text"
+                  value=""
+                />
               </div>
             </div>
             <div
@@ -1292,10 +1416,10 @@ Object {
             >
               <div
                 aria-hidden="true"
-                class="govuk-typeahead__indicator govuk-typeahead__loading-indicator css-at12u2-loadingIndicator"
+                class="govuk-typeahead__indicator govuk-typeahead__loading-indicator css-pogzpp-loadingIndicator"
               >
                 <span
-                  class="css-1yvy2vo-LoadingDot"
+                  class="css-1xtdfmb-LoadingDot"
                 />
                 <span
                   class="css-zoievk-LoadingDot"
@@ -1313,7 +1437,7 @@ Object {
               >
                 <svg
                   aria-hidden="true"
-                  class="css-6q0nyr-Svg"
+                  class="css-tj5bde-Svg"
                   focusable="false"
                   height="20"
                   viewBox="0 0 20 20"
@@ -1340,10 +1464,22 @@ Object {
         id="type-ahead-label"
       />
       <div
-        class="govuk-typeahead--is-disabled css-14jk2my-container"
+        class="govuk-typeahead--is-disabled css-3iigni-container"
         id="type-ahead"
       >
+        <span
+          class="css-1f43avz-a11yText-A11yText"
+          id="react-select-11-live-region"
+        />
+        <span
+          aria-atomic="false"
+          aria-live="polite"
+          aria-relevant="additions text"
+          class="css-1f43avz-a11yText-A11yText"
+          role="log"
+        />
         <div
+          aria-disabled="true"
           class="govuk-typeahead__control govuk-typeahead__control--is-disabled css-1g8ily9-Control"
         >
           <div
@@ -1351,33 +1487,33 @@ Object {
           >
             <div
               class="govuk-typeahead__placeholder css-ovmm9z-Placeholder"
+              id="react-select-11-placeholder"
             >
               Search
             </div>
             <div
-              class="css-b8ldur-Input"
+              class="govuk-typeahead__input-container css-1h01tm3-Input"
+              data-value=""
             >
-              <div
+              <input
+                aria-activedescendant=""
+                aria-autocomplete="list"
+                aria-describedby="react-select-11-placeholder"
+                aria-expanded="false"
+                aria-haspopup="true"
+                autocapitalize="none"
+                autocomplete="off"
+                autocorrect="off"
                 class="govuk-typeahead__input"
-                style="display: inline-block;"
-              >
-                <input
-                  aria-autocomplete="list"
-                  autocapitalize="none"
-                  autocomplete="off"
-                  autocorrect="off"
-                  disabled=""
-                  id="type-ahead-input"
-                  spellcheck="false"
-                  style="box-sizing: content-box; width: 2px; border: 0px; opacity: 1; outline: 0; padding: 0px;"
-                  tabindex="0"
-                  type="text"
-                  value=""
-                />
-                <div
-                  style="position: absolute; top: 0px; left: 0px; visibility: hidden; height: 0px; overflow: scroll; white-space: pre; font-family: -webkit-small-control; letter-spacing: normal; text-transform: none;"
-                />
-              </div>
+                disabled=""
+                id="type-ahead-input"
+                role="combobox"
+                spellcheck="false"
+                style="opacity: 1; width: 100%; grid-area: 1 / 2; min-width: 2px; border: 0px; margin: 0px; outline: 0; padding: 0px;"
+                tabindex="0"
+                type="text"
+                value=""
+              />
             </div>
           </div>
           <div
@@ -1385,10 +1521,10 @@ Object {
           >
             <div
               aria-hidden="true"
-              class="govuk-typeahead__indicator govuk-typeahead__loading-indicator css-at12u2-loadingIndicator"
+              class="govuk-typeahead__indicator govuk-typeahead__loading-indicator css-pogzpp-loadingIndicator"
             >
               <span
-                class="css-1yvy2vo-LoadingDot"
+                class="css-1xtdfmb-LoadingDot"
               />
               <span
                 class="css-zoievk-LoadingDot"
@@ -1406,7 +1542,7 @@ Object {
             >
               <svg
                 aria-hidden="true"
-                class="css-6q0nyr-Svg"
+                class="css-tj5bde-Svg"
                 focusable="false"
                 height="20"
                 viewBox="0 0 20 20"
@@ -1490,9 +1626,20 @@ Object {
           id="type-ahead-label"
         />
         <div
-          class=" css-2b097c-container"
+          class=" css-b62m3t-container"
           id="type-ahead"
         >
+          <span
+            class="css-1f43avz-a11yText-A11yText"
+            id="react-select-7-live-region"
+          />
+          <span
+            aria-atomic="false"
+            aria-live="polite"
+            aria-relevant="additions text"
+            class="css-1f43avz-a11yText-A11yText"
+            role="log"
+          />
           <div
             class="govuk-typeahead__control css-1g8ily9-Control"
           >
@@ -1501,32 +1648,32 @@ Object {
             >
               <div
                 class="govuk-typeahead__placeholder css-ovmm9z-Placeholder"
+                id="react-select-7-placeholder"
               >
                 Search
               </div>
               <div
-                class="css-b8ldur-Input"
+                class="govuk-typeahead__input-container css-qbdosj-Input"
+                data-value=""
               >
-                <div
+                <input
+                  aria-activedescendant=""
+                  aria-autocomplete="list"
+                  aria-describedby="react-select-7-placeholder"
+                  aria-expanded="false"
+                  aria-haspopup="true"
+                  autocapitalize="none"
+                  autocomplete="off"
+                  autocorrect="off"
                   class="govuk-typeahead__input"
-                  style="display: inline-block;"
-                >
-                  <input
-                    aria-autocomplete="list"
-                    autocapitalize="none"
-                    autocomplete="off"
-                    autocorrect="off"
-                    id="type-ahead-input"
-                    spellcheck="false"
-                    style="box-sizing: content-box; width: 2px; border: 0px; opacity: 1; outline: 0; padding: 0px;"
-                    tabindex="0"
-                    type="text"
-                    value=""
-                  />
-                  <div
-                    style="position: absolute; top: 0px; left: 0px; visibility: hidden; height: 0px; overflow: scroll; white-space: pre; font-family: -webkit-small-control; letter-spacing: normal; text-transform: none;"
-                  />
-                </div>
+                  id="type-ahead-input"
+                  role="combobox"
+                  spellcheck="false"
+                  style="opacity: 1; width: 100%; grid-area: 1 / 2; min-width: 2px; border: 0px; margin: 0px; outline: 0; padding: 0px;"
+                  tabindex="0"
+                  type="text"
+                  value=""
+                />
               </div>
             </div>
             <div
@@ -1534,10 +1681,10 @@ Object {
             >
               <div
                 aria-hidden="true"
-                class="govuk-typeahead__indicator govuk-typeahead__loading-indicator css-at12u2-loadingIndicator"
+                class="govuk-typeahead__indicator govuk-typeahead__loading-indicator css-pogzpp-loadingIndicator"
               >
                 <span
-                  class="css-1yvy2vo-LoadingDot"
+                  class="css-1xtdfmb-LoadingDot"
                 />
                 <span
                   class="css-zoievk-LoadingDot"
@@ -1555,7 +1702,7 @@ Object {
               >
                 <svg
                   aria-hidden="true"
-                  class="css-6q0nyr-Svg"
+                  class="css-tj5bde-Svg"
                   focusable="false"
                   height="20"
                   viewBox="0 0 20 20"
@@ -1582,9 +1729,20 @@ Object {
         id="type-ahead-label"
       />
       <div
-        class=" css-2b097c-container"
+        class=" css-b62m3t-container"
         id="type-ahead"
       >
+        <span
+          class="css-1f43avz-a11yText-A11yText"
+          id="react-select-7-live-region"
+        />
+        <span
+          aria-atomic="false"
+          aria-live="polite"
+          aria-relevant="additions text"
+          class="css-1f43avz-a11yText-A11yText"
+          role="log"
+        />
         <div
           class="govuk-typeahead__control css-1g8ily9-Control"
         >
@@ -1593,32 +1751,32 @@ Object {
           >
             <div
               class="govuk-typeahead__placeholder css-ovmm9z-Placeholder"
+              id="react-select-7-placeholder"
             >
               Search
             </div>
             <div
-              class="css-b8ldur-Input"
+              class="govuk-typeahead__input-container css-qbdosj-Input"
+              data-value=""
             >
-              <div
+              <input
+                aria-activedescendant=""
+                aria-autocomplete="list"
+                aria-describedby="react-select-7-placeholder"
+                aria-expanded="false"
+                aria-haspopup="true"
+                autocapitalize="none"
+                autocomplete="off"
+                autocorrect="off"
                 class="govuk-typeahead__input"
-                style="display: inline-block;"
-              >
-                <input
-                  aria-autocomplete="list"
-                  autocapitalize="none"
-                  autocomplete="off"
-                  autocorrect="off"
-                  id="type-ahead-input"
-                  spellcheck="false"
-                  style="box-sizing: content-box; width: 2px; border: 0px; opacity: 1; outline: 0; padding: 0px;"
-                  tabindex="0"
-                  type="text"
-                  value=""
-                />
-                <div
-                  style="position: absolute; top: 0px; left: 0px; visibility: hidden; height: 0px; overflow: scroll; white-space: pre; font-family: -webkit-small-control; letter-spacing: normal; text-transform: none;"
-                />
-              </div>
+                id="type-ahead-input"
+                role="combobox"
+                spellcheck="false"
+                style="opacity: 1; width: 100%; grid-area: 1 / 2; min-width: 2px; border: 0px; margin: 0px; outline: 0; padding: 0px;"
+                tabindex="0"
+                type="text"
+                value=""
+              />
             </div>
           </div>
           <div
@@ -1626,10 +1784,10 @@ Object {
           >
             <div
               aria-hidden="true"
-              class="govuk-typeahead__indicator govuk-typeahead__loading-indicator css-at12u2-loadingIndicator"
+              class="govuk-typeahead__indicator govuk-typeahead__loading-indicator css-pogzpp-loadingIndicator"
             >
               <span
-                class="css-1yvy2vo-LoadingDot"
+                class="css-1xtdfmb-LoadingDot"
               />
               <span
                 class="css-zoievk-LoadingDot"
@@ -1647,7 +1805,7 @@ Object {
             >
               <svg
                 aria-hidden="true"
-                class="css-6q0nyr-Svg"
+                class="css-tj5bde-Svg"
                 focusable="false"
                 height="20"
                 viewBox="0 0 20 20"
@@ -1737,9 +1895,20 @@ Object {
           Some error message
         </p>
         <div
-          class=" css-2b097c-container"
+          class=" css-b62m3t-container"
           id="type-ahead"
         >
+          <span
+            class="css-1f43avz-a11yText-A11yText"
+            id="react-select-10-live-region"
+          />
+          <span
+            aria-atomic="false"
+            aria-live="polite"
+            aria-relevant="additions text"
+            class="css-1f43avz-a11yText-A11yText"
+            role="log"
+          />
           <div
             class="govuk-typeahead__control--error govuk-typeahead__control css-1g8ily9-Control"
           >
@@ -1748,32 +1917,32 @@ Object {
             >
               <div
                 class="govuk-typeahead__placeholder css-ovmm9z-Placeholder"
+                id="react-select-10-placeholder"
               >
                 Search
               </div>
               <div
-                class="css-b8ldur-Input"
+                class="govuk-typeahead__input-container css-qbdosj-Input"
+                data-value=""
               >
-                <div
+                <input
+                  aria-activedescendant=""
+                  aria-autocomplete="list"
+                  aria-describedby="react-select-10-placeholder"
+                  aria-expanded="false"
+                  aria-haspopup="true"
+                  autocapitalize="none"
+                  autocomplete="off"
+                  autocorrect="off"
                   class="govuk-typeahead__input"
-                  style="display: inline-block;"
-                >
-                  <input
-                    aria-autocomplete="list"
-                    autocapitalize="none"
-                    autocomplete="off"
-                    autocorrect="off"
-                    id="type-ahead-input"
-                    spellcheck="false"
-                    style="box-sizing: content-box; width: 2px; border: 0px; opacity: 1; outline: 0; padding: 0px;"
-                    tabindex="0"
-                    type="text"
-                    value=""
-                  />
-                  <div
-                    style="position: absolute; top: 0px; left: 0px; visibility: hidden; height: 0px; overflow: scroll; white-space: pre; font-family: -webkit-small-control; letter-spacing: normal; text-transform: none;"
-                  />
-                </div>
+                  id="type-ahead-input"
+                  role="combobox"
+                  spellcheck="false"
+                  style="opacity: 1; width: 100%; grid-area: 1 / 2; min-width: 2px; border: 0px; margin: 0px; outline: 0; padding: 0px;"
+                  tabindex="0"
+                  type="text"
+                  value=""
+                />
               </div>
             </div>
             <div
@@ -1781,10 +1950,10 @@ Object {
             >
               <div
                 aria-hidden="true"
-                class="govuk-typeahead__indicator govuk-typeahead__loading-indicator css-at12u2-loadingIndicator"
+                class="govuk-typeahead__indicator govuk-typeahead__loading-indicator css-pogzpp-loadingIndicator"
               >
                 <span
-                  class="css-1yvy2vo-LoadingDot"
+                  class="css-1xtdfmb-LoadingDot"
                 />
                 <span
                   class="css-zoievk-LoadingDot"
@@ -1802,7 +1971,7 @@ Object {
               >
                 <svg
                   aria-hidden="true"
-                  class="css-6q0nyr-Svg"
+                  class="css-tj5bde-Svg"
                   focusable="false"
                   height="20"
                   viewBox="0 0 20 20"
@@ -1835,9 +2004,20 @@ Object {
         Some error message
       </p>
       <div
-        class=" css-2b097c-container"
+        class=" css-b62m3t-container"
         id="type-ahead"
       >
+        <span
+          class="css-1f43avz-a11yText-A11yText"
+          id="react-select-10-live-region"
+        />
+        <span
+          aria-atomic="false"
+          aria-live="polite"
+          aria-relevant="additions text"
+          class="css-1f43avz-a11yText-A11yText"
+          role="log"
+        />
         <div
           class="govuk-typeahead__control--error govuk-typeahead__control css-1g8ily9-Control"
         >
@@ -1846,32 +2026,32 @@ Object {
           >
             <div
               class="govuk-typeahead__placeholder css-ovmm9z-Placeholder"
+              id="react-select-10-placeholder"
             >
               Search
             </div>
             <div
-              class="css-b8ldur-Input"
+              class="govuk-typeahead__input-container css-qbdosj-Input"
+              data-value=""
             >
-              <div
+              <input
+                aria-activedescendant=""
+                aria-autocomplete="list"
+                aria-describedby="react-select-10-placeholder"
+                aria-expanded="false"
+                aria-haspopup="true"
+                autocapitalize="none"
+                autocomplete="off"
+                autocorrect="off"
                 class="govuk-typeahead__input"
-                style="display: inline-block;"
-              >
-                <input
-                  aria-autocomplete="list"
-                  autocapitalize="none"
-                  autocomplete="off"
-                  autocorrect="off"
-                  id="type-ahead-input"
-                  spellcheck="false"
-                  style="box-sizing: content-box; width: 2px; border: 0px; opacity: 1; outline: 0; padding: 0px;"
-                  tabindex="0"
-                  type="text"
-                  value=""
-                />
-                <div
-                  style="position: absolute; top: 0px; left: 0px; visibility: hidden; height: 0px; overflow: scroll; white-space: pre; font-family: -webkit-small-control; letter-spacing: normal; text-transform: none;"
-                />
-              </div>
+                id="type-ahead-input"
+                role="combobox"
+                spellcheck="false"
+                style="opacity: 1; width: 100%; grid-area: 1 / 2; min-width: 2px; border: 0px; margin: 0px; outline: 0; padding: 0px;"
+                tabindex="0"
+                type="text"
+                value=""
+              />
             </div>
           </div>
           <div
@@ -1879,10 +2059,10 @@ Object {
           >
             <div
               aria-hidden="true"
-              class="govuk-typeahead__indicator govuk-typeahead__loading-indicator css-at12u2-loadingIndicator"
+              class="govuk-typeahead__indicator govuk-typeahead__loading-indicator css-pogzpp-loadingIndicator"
             >
               <span
-                class="css-1yvy2vo-LoadingDot"
+                class="css-1xtdfmb-LoadingDot"
               />
               <span
                 class="css-zoievk-LoadingDot"
@@ -1900,7 +2080,7 @@ Object {
             >
               <svg
                 aria-hidden="true"
-                class="css-6q0nyr-Svg"
+                class="css-tj5bde-Svg"
                 focusable="false"
                 height="20"
                 viewBox="0 0 20 20"
@@ -1989,9 +2169,20 @@ Object {
           Select an option
         </div>
         <div
-          class=" css-2b097c-container"
+          class=" css-b62m3t-container"
           id="type-ahead"
         >
+          <span
+            class="css-1f43avz-a11yText-A11yText"
+            id="react-select-9-live-region"
+          />
+          <span
+            aria-atomic="false"
+            aria-live="polite"
+            aria-relevant="additions text"
+            class="css-1f43avz-a11yText-A11yText"
+            role="log"
+          />
           <div
             class="govuk-typeahead__control css-1g8ily9-Control"
           >
@@ -2000,32 +2191,32 @@ Object {
             >
               <div
                 class="govuk-typeahead__placeholder css-ovmm9z-Placeholder"
+                id="react-select-9-placeholder"
               >
                 Search
               </div>
               <div
-                class="css-b8ldur-Input"
+                class="govuk-typeahead__input-container css-qbdosj-Input"
+                data-value=""
               >
-                <div
+                <input
+                  aria-activedescendant=""
+                  aria-autocomplete="list"
+                  aria-describedby="react-select-9-placeholder"
+                  aria-expanded="false"
+                  aria-haspopup="true"
+                  autocapitalize="none"
+                  autocomplete="off"
+                  autocorrect="off"
                   class="govuk-typeahead__input"
-                  style="display: inline-block;"
-                >
-                  <input
-                    aria-autocomplete="list"
-                    autocapitalize="none"
-                    autocomplete="off"
-                    autocorrect="off"
-                    id="type-ahead-input"
-                    spellcheck="false"
-                    style="box-sizing: content-box; width: 2px; border: 0px; opacity: 1; outline: 0; padding: 0px;"
-                    tabindex="0"
-                    type="text"
-                    value=""
-                  />
-                  <div
-                    style="position: absolute; top: 0px; left: 0px; visibility: hidden; height: 0px; overflow: scroll; white-space: pre; font-family: -webkit-small-control; letter-spacing: normal; text-transform: none;"
-                  />
-                </div>
+                  id="type-ahead-input"
+                  role="combobox"
+                  spellcheck="false"
+                  style="opacity: 1; width: 100%; grid-area: 1 / 2; min-width: 2px; border: 0px; margin: 0px; outline: 0; padding: 0px;"
+                  tabindex="0"
+                  type="text"
+                  value=""
+                />
               </div>
             </div>
             <div
@@ -2033,10 +2224,10 @@ Object {
             >
               <div
                 aria-hidden="true"
-                class="govuk-typeahead__indicator govuk-typeahead__loading-indicator css-at12u2-loadingIndicator"
+                class="govuk-typeahead__indicator govuk-typeahead__loading-indicator css-pogzpp-loadingIndicator"
               >
                 <span
-                  class="css-1yvy2vo-LoadingDot"
+                  class="css-1xtdfmb-LoadingDot"
                 />
                 <span
                   class="css-zoievk-LoadingDot"
@@ -2054,7 +2245,7 @@ Object {
               >
                 <svg
                   aria-hidden="true"
-                  class="css-6q0nyr-Svg"
+                  class="css-tj5bde-Svg"
                   focusable="false"
                   height="20"
                   viewBox="0 0 20 20"
@@ -2086,9 +2277,20 @@ Object {
         Select an option
       </div>
       <div
-        class=" css-2b097c-container"
+        class=" css-b62m3t-container"
         id="type-ahead"
       >
+        <span
+          class="css-1f43avz-a11yText-A11yText"
+          id="react-select-9-live-region"
+        />
+        <span
+          aria-atomic="false"
+          aria-live="polite"
+          aria-relevant="additions text"
+          class="css-1f43avz-a11yText-A11yText"
+          role="log"
+        />
         <div
           class="govuk-typeahead__control css-1g8ily9-Control"
         >
@@ -2097,32 +2299,32 @@ Object {
           >
             <div
               class="govuk-typeahead__placeholder css-ovmm9z-Placeholder"
+              id="react-select-9-placeholder"
             >
               Search
             </div>
             <div
-              class="css-b8ldur-Input"
+              class="govuk-typeahead__input-container css-qbdosj-Input"
+              data-value=""
             >
-              <div
+              <input
+                aria-activedescendant=""
+                aria-autocomplete="list"
+                aria-describedby="react-select-9-placeholder"
+                aria-expanded="false"
+                aria-haspopup="true"
+                autocapitalize="none"
+                autocomplete="off"
+                autocorrect="off"
                 class="govuk-typeahead__input"
-                style="display: inline-block;"
-              >
-                <input
-                  aria-autocomplete="list"
-                  autocapitalize="none"
-                  autocomplete="off"
-                  autocorrect="off"
-                  id="type-ahead-input"
-                  spellcheck="false"
-                  style="box-sizing: content-box; width: 2px; border: 0px; opacity: 1; outline: 0; padding: 0px;"
-                  tabindex="0"
-                  type="text"
-                  value=""
-                />
-                <div
-                  style="position: absolute; top: 0px; left: 0px; visibility: hidden; height: 0px; overflow: scroll; white-space: pre; font-family: -webkit-small-control; letter-spacing: normal; text-transform: none;"
-                />
-              </div>
+                id="type-ahead-input"
+                role="combobox"
+                spellcheck="false"
+                style="opacity: 1; width: 100%; grid-area: 1 / 2; min-width: 2px; border: 0px; margin: 0px; outline: 0; padding: 0px;"
+                tabindex="0"
+                type="text"
+                value=""
+              />
             </div>
           </div>
           <div
@@ -2130,10 +2332,10 @@ Object {
           >
             <div
               aria-hidden="true"
-              class="govuk-typeahead__indicator govuk-typeahead__loading-indicator css-at12u2-loadingIndicator"
+              class="govuk-typeahead__indicator govuk-typeahead__loading-indicator css-pogzpp-loadingIndicator"
             >
               <span
-                class="css-1yvy2vo-LoadingDot"
+                class="css-1xtdfmb-LoadingDot"
               />
               <span
                 class="css-zoievk-LoadingDot"
@@ -2151,7 +2353,7 @@ Object {
             >
               <svg
                 aria-hidden="true"
-                class="css-6q0nyr-Svg"
+                class="css-tj5bde-Svg"
                 focusable="false"
                 height="20"
                 viewBox="0 0 20 20"
@@ -2237,9 +2439,20 @@ Object {
           Type-ahead
         </label>
         <div
-          class=" css-2b097c-container"
+          class=" css-b62m3t-container"
           id="type-ahead"
         >
+          <span
+            class="css-1f43avz-a11yText-A11yText"
+            id="react-select-8-live-region"
+          />
+          <span
+            aria-atomic="false"
+            aria-live="polite"
+            aria-relevant="additions text"
+            class="css-1f43avz-a11yText-A11yText"
+            role="log"
+          />
           <div
             class="govuk-typeahead__control css-1g8ily9-Control"
           >
@@ -2248,32 +2461,32 @@ Object {
             >
               <div
                 class="govuk-typeahead__placeholder css-ovmm9z-Placeholder"
+                id="react-select-8-placeholder"
               >
                 Search
               </div>
               <div
-                class="css-b8ldur-Input"
+                class="govuk-typeahead__input-container css-qbdosj-Input"
+                data-value=""
               >
-                <div
+                <input
+                  aria-activedescendant=""
+                  aria-autocomplete="list"
+                  aria-describedby="react-select-8-placeholder"
+                  aria-expanded="false"
+                  aria-haspopup="true"
+                  autocapitalize="none"
+                  autocomplete="off"
+                  autocorrect="off"
                   class="govuk-typeahead__input"
-                  style="display: inline-block;"
-                >
-                  <input
-                    aria-autocomplete="list"
-                    autocapitalize="none"
-                    autocomplete="off"
-                    autocorrect="off"
-                    id="type-ahead-input"
-                    spellcheck="false"
-                    style="box-sizing: content-box; width: 2px; border: 0px; opacity: 1; outline: 0; padding: 0px;"
-                    tabindex="0"
-                    type="text"
-                    value=""
-                  />
-                  <div
-                    style="position: absolute; top: 0px; left: 0px; visibility: hidden; height: 0px; overflow: scroll; white-space: pre; font-family: -webkit-small-control; letter-spacing: normal; text-transform: none;"
-                  />
-                </div>
+                  id="type-ahead-input"
+                  role="combobox"
+                  spellcheck="false"
+                  style="opacity: 1; width: 100%; grid-area: 1 / 2; min-width: 2px; border: 0px; margin: 0px; outline: 0; padding: 0px;"
+                  tabindex="0"
+                  type="text"
+                  value=""
+                />
               </div>
             </div>
             <div
@@ -2281,10 +2494,10 @@ Object {
             >
               <div
                 aria-hidden="true"
-                class="govuk-typeahead__indicator govuk-typeahead__loading-indicator css-at12u2-loadingIndicator"
+                class="govuk-typeahead__indicator govuk-typeahead__loading-indicator css-pogzpp-loadingIndicator"
               >
                 <span
-                  class="css-1yvy2vo-LoadingDot"
+                  class="css-1xtdfmb-LoadingDot"
                 />
                 <span
                   class="css-zoievk-LoadingDot"
@@ -2302,7 +2515,7 @@ Object {
               >
                 <svg
                   aria-hidden="true"
-                  class="css-6q0nyr-Svg"
+                  class="css-tj5bde-Svg"
                   focusable="false"
                   height="20"
                   viewBox="0 0 20 20"
@@ -2331,9 +2544,20 @@ Object {
         Type-ahead
       </label>
       <div
-        class=" css-2b097c-container"
+        class=" css-b62m3t-container"
         id="type-ahead"
       >
+        <span
+          class="css-1f43avz-a11yText-A11yText"
+          id="react-select-8-live-region"
+        />
+        <span
+          aria-atomic="false"
+          aria-live="polite"
+          aria-relevant="additions text"
+          class="css-1f43avz-a11yText-A11yText"
+          role="log"
+        />
         <div
           class="govuk-typeahead__control css-1g8ily9-Control"
         >
@@ -2342,32 +2566,32 @@ Object {
           >
             <div
               class="govuk-typeahead__placeholder css-ovmm9z-Placeholder"
+              id="react-select-8-placeholder"
             >
               Search
             </div>
             <div
-              class="css-b8ldur-Input"
+              class="govuk-typeahead__input-container css-qbdosj-Input"
+              data-value=""
             >
-              <div
+              <input
+                aria-activedescendant=""
+                aria-autocomplete="list"
+                aria-describedby="react-select-8-placeholder"
+                aria-expanded="false"
+                aria-haspopup="true"
+                autocapitalize="none"
+                autocomplete="off"
+                autocorrect="off"
                 class="govuk-typeahead__input"
-                style="display: inline-block;"
-              >
-                <input
-                  aria-autocomplete="list"
-                  autocapitalize="none"
-                  autocomplete="off"
-                  autocorrect="off"
-                  id="type-ahead-input"
-                  spellcheck="false"
-                  style="box-sizing: content-box; width: 2px; border: 0px; opacity: 1; outline: 0; padding: 0px;"
-                  tabindex="0"
-                  type="text"
-                  value=""
-                />
-                <div
-                  style="position: absolute; top: 0px; left: 0px; visibility: hidden; height: 0px; overflow: scroll; white-space: pre; font-family: -webkit-small-control; letter-spacing: normal; text-transform: none;"
-                />
-              </div>
+                id="type-ahead-input"
+                role="combobox"
+                spellcheck="false"
+                style="opacity: 1; width: 100%; grid-area: 1 / 2; min-width: 2px; border: 0px; margin: 0px; outline: 0; padding: 0px;"
+                tabindex="0"
+                type="text"
+                value=""
+              />
             </div>
           </div>
           <div
@@ -2375,10 +2599,10 @@ Object {
           >
             <div
               aria-hidden="true"
-              class="govuk-typeahead__indicator govuk-typeahead__loading-indicator css-at12u2-loadingIndicator"
+              class="govuk-typeahead__indicator govuk-typeahead__loading-indicator css-pogzpp-loadingIndicator"
             >
               <span
-                class="css-1yvy2vo-LoadingDot"
+                class="css-1xtdfmb-LoadingDot"
               />
               <span
                 class="css-zoievk-LoadingDot"
@@ -2396,7 +2620,7 @@ Object {
             >
               <svg
                 aria-hidden="true"
-                class="css-6q0nyr-Svg"
+                class="css-tj5bde-Svg"
                 focusable="false"
                 height="20"
                 viewBox="0 0 20 20"
