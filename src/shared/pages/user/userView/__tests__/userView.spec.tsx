@@ -77,7 +77,7 @@ beforeEach(() => {
 
 describe('when the teamView component is mounted', () => {
     it('should render with default props', async () => {
-        expect.assertions(3);
+        expect.assertions(7);
         let wrapper: RenderResult;
         act(() => {
             wrapper = renderComponent();
@@ -86,6 +86,7 @@ describe('when the teamView component is mounted', () => {
         await waitFor(() => {
             expect(getUserSpy).toHaveBeenCalled();
             expect(getTeamsForUserSpy).toHaveBeenCalled();
+            expect(wrapper.container.getElementsByClassName('govuk-form-group').length).toBe(5);
             expect(wrapper.container).toMatchSnapshot();
         });
     });
