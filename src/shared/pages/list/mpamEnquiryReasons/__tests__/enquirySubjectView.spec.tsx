@@ -59,7 +59,7 @@ beforeEach(() => {
 
 describe('when the enquirySubjectView component is mounted', () => {
     it('should render with default props', async () => {
-        expect.assertions(2);
+        expect.assertions(5);
         let wrapper: RenderResult;
         act(() => {
             wrapper = renderComponent();
@@ -67,6 +67,7 @@ describe('when the enquirySubjectView component is mounted', () => {
 
         await waitFor(() => {
             expect(getListItemsSpy).toHaveBeenCalled();
+            expect(wrapper.container.getElementsByClassName('govuk-table__row').length).toBe(3);
             expect(wrapper.container).toMatchSnapshot();
         });
     });

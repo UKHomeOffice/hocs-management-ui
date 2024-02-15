@@ -18,11 +18,70 @@ exports[`when the enquirySubjectView component is mounted should render with def
         View and Edit Enquiry Reasons for 
       </h1>
       <div>
-        <p
-          class="govuk-body"
+        <table
+          class="govuk-table"
         >
-          Loading...
-        </p>
+          <thead
+            class="govuk-table__head"
+          >
+            <tr
+              class="govuk-table__row"
+            >
+              <th
+                class="govuk-table__header"
+                scope="col"
+              >
+                Enquiry Reason
+              </th>
+              <th
+                class="govuk-table__header"
+                scope="col"
+              >
+                Action
+              </th>
+            </tr>
+          </thead>
+          <tbody
+            class="govuk-table__body"
+          >
+            <tr
+              class="govuk-table__row"
+            >
+              <td
+                class="govuk-table__cell"
+              >
+                testTitle1
+              </td>
+              <td
+                class="govuk-table__cell"
+              >
+                <a
+                  href="/amend-enquiry-reason/undefined/testId1"
+                >
+                  Amend
+                </a>
+              </td>
+            </tr>
+            <tr
+              class="govuk-table__row"
+            >
+              <td
+                class="govuk-table__cell"
+              >
+                testTitle2
+              </td>
+              <td
+                class="govuk-table__cell"
+              >
+                <a
+                  href="/amend-enquiry-reason/undefined/testId2"
+                >
+                  Amend
+                </a>
+              </td>
+            </tr>
+          </tbody>
+        </table>
       </div>
       <button
         class="govuk-button govuk-!-margin-right-1 add-team-members-button"

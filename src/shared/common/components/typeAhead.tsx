@@ -51,8 +51,6 @@ class TypeAhead extends Component<TypeAheadProps, TypeAheadState> {
                 // todo: remove !
                 this.props.getOptions!().then((choices: Item[]) => {
                     this.setState(prevState => ({ ...prevState, cachedOptions: choices }));
-                    console.log(inputValue);
-                    console.log(choices);
                     resolve(this.filterItems(inputValue, choices));
                 });
             }

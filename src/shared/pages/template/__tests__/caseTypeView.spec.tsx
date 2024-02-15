@@ -71,7 +71,7 @@ beforeEach(() => {
 
 describe('when the CaseTypeView component is mounted', () => {
     it('should render with default props', async () => {
-        expect.assertions(3);
+        expect.assertions(7);
         let wrapper: RenderResult;
         act(() => {
             wrapper = renderComponent();
@@ -80,6 +80,7 @@ describe('when the CaseTypeView component is mounted', () => {
         await waitFor(() => {
             expect(getCaseTypeSpy).toHaveBeenCalled();
             expect(getTemplatesForCaseTypeSpy).toHaveBeenCalled();
+            expect(wrapper.container.getElementsByClassName('govuk-table__row').length).toBe(3);
             expect(wrapper.container).toMatchSnapshot();
         });
     });
