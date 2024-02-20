@@ -158,10 +158,28 @@ const UserView: React.FC<UserMembersProps> = ({ history, match }) => {
                 <h1 className="govuk-heading-xl">Manage User</h1>
                 <UserDetails user={user} />
                 <div className="govuk-!-padding-top-5">
-                    <button type="submit" className="govuk-button govuk-!-margin-right-1" data-module="govuk-button" onClick={event => runAmendUser(userId, event)}>Amend Details</button>
+                    <button
+                        type="submit"
+                        className="govuk-button govuk-!-margin-right-1"
+                        data-module="govuk-button"
+                        name="amend-details-button"
+                        role="link"
+                        onClick={event => runAmendUser(userId, event)}
+                    >
+                        Amend Details
+                    </button>
                 </div>
                 <UserTeams teams={teams}/>
-                <button type="submit" className="govuk-button govuk-!-margin-right-1 add-user-members-button" data-module="govuk-button" onClick={() => onAddUsersAddClick(history, userId)}>Add teams</button>
+                <button
+                    type="submit"
+                    className="govuk-button govuk-!-margin-right-1 add-user-members-button"
+                    data-module="govuk-button"
+                    name="add-teams-button"
+                    role="link"
+                    onClick={() => onAddUsersAddClick(history, userId)}
+                >
+                    Add teams
+                </button>
             </div>
         </div>
     );

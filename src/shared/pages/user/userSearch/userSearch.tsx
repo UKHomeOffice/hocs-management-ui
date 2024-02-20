@@ -50,7 +50,15 @@ const UserSearch: React.FC<UserSearchProps> = ({ history }) => {
                 name={'Users'}
                 onSelectedItemChange={setSelectedUser}
             />
-            <button type="submit" className="govuk-button view-user-button" onClick={handleOnSubmit}>View user</button>
+            <button
+                type="submit"
+                className="govuk-button view-user-button"
+                name="view-user-button"
+                role="link"
+                onClick={handleOnSubmit}
+            >
+                View user
+            </button>
         </div>
     );
 };

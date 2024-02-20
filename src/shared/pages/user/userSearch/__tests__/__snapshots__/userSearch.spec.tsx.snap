@@ -95,6 +95,8 @@ exports[`when the userView component is mounted should render with default props
     </div>
     <button
       class="govuk-button view-user-button"
+      name="view-user-button"
+      role="link"
       type="submit"
     >
       View user

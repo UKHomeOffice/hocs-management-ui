@@ -120,6 +120,8 @@ exports[`when the trofRecipient EntityListView component is mounted should rende
       <button
         class="govuk-button govuk-!-margin-right-1 add-team-members-button"
         data-module="govuk-button"
+        name="add-new-recipient-button"
+        role="link"
         type="submit"
       >
         Add new recipient

@@ -101,7 +101,16 @@ const EntityListView = (entityDefinition: EntityDefinition) => {
                                 <p className="govuk-body">Loading...</p>
                             </div>
                     }
-                    <button type="submit" className="govuk-button govuk-!-margin-right-1 add-team-members-button" data-module="govuk-button" onClick={() => onAddClick(history)}>{`Add new ${entityDefinition.entityName}`}</button>
+                    <button
+                        type="submit"
+                        className="govuk-button govuk-!-margin-right-1 add-team-members-button"
+                        data-module="govuk-button"
+                        name={`add-new-${entityDefinition.entityName}-button`}
+                        role="link"
+                        onClick={() => onAddClick(history)}
+                    >
+                        {`Add new ${entityDefinition.entityName}`}
+                    </button>
                 </div>
             </div>
         );

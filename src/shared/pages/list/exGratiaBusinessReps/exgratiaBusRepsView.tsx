@@ -92,7 +92,16 @@ const ExGratiaView: React.FC<TeamMembersProps> = ({ history, match }) => {
                             <p className="govuk-body">Loading...</p>
                         </div>
                 }
-                <button type="submit" className="govuk-button govuk-!-margin-right-1 add-team-members-button" data-module="govuk-button" onClick={() => onAddClick(history)}>Add new representative</button>
+                <button
+                    type="submit"
+                    className="govuk-button govuk-!-margin-right-1 add-team-members-button"
+                    data-module="govuk-button"
+                    name="add-new-representitive-button"
+                    role="link"
+                    onClick={() => onAddClick(history)}
+                >
+                    Add new representative
+                </button>
             </div>
         </div>
     );

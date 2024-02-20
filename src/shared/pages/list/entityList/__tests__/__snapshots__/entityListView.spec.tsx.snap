@@ -94,6 +94,8 @@ exports[`when the entity list view is mounted should render with default props 1
       <button
         class="govuk-button govuk-!-margin-right-1 add-team-members-button"
         data-module="govuk-button"
+        name="add-new-entity-button"
+        role="link"
         type="submit"
       >
         Add new entity
@@ -239,6 +241,8 @@ exports[`when the entity list view is mounted toggling inactive items should sho
       <button
         class="govuk-button govuk-!-margin-right-1 add-team-members-button"
         data-module="govuk-button"
+        name="add-new-entity-button"
+        role="link"
         type="submit"
       >
         Add new entity

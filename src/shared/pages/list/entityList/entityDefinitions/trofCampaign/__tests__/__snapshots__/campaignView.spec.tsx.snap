@@ -120,6 +120,8 @@ exports[`when the trofCampaign EntityListView component is mounted should render
       <button
         class="govuk-button govuk-!-margin-right-1 add-team-members-button"
         data-module="govuk-button"
+        name="add-new-campaign-button"
+        role="link"
         type="submit"
       >
         Add new campaign

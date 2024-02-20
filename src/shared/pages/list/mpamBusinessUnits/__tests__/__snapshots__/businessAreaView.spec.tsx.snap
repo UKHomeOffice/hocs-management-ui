@@ -27,6 +27,8 @@ exports[`when the businessAreaView component is mounted should render with defau
       <button
         class="govuk-button govuk-!-margin-right-1 add-team-members-button"
         data-module="govuk-button"
+        name="add-business-unit-button"
+        role="link"
         type="submit"
       >
         Add Business Unit

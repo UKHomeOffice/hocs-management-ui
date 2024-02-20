@@ -102,6 +102,8 @@ const CaseTypeView: React.FC<CasesProps> = ({ history, match }) => {
                     type="submit"
                     className="govuk-button govuk-!-margin-right-1 add-team-members-button"
                     data-module="govuk-button"
+                    name="add-template-button"
+                    role="link"
                     onClick={() => onAddTemplateClick(history, type)}
                 >
                     Add template

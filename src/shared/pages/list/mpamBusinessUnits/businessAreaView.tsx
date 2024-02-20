@@ -89,6 +89,8 @@ const BusinessAreaView: React.FC<CasesProps> = ({ history, match }) => {
                     type="submit"
                     className="govuk-button govuk-!-margin-right-1 add-team-members-button"
                     data-module="govuk-button"
+                    name="add-business-unit-button"
+                    role="link"
                     onClick={() => onAddBusinessUnitClick(history, type)}
                 >
                     Add Business Unit

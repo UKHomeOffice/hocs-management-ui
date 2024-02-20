@@ -84,6 +84,8 @@ const EnquirySubjectView: React.FC<CasesProps> = ({ history, match }) => {
                     type='submit'
                     className='govuk-button govuk-!-margin-right-1 add-team-members-button'
                     data-module='govuk-button'
+                    name="add-enquiry-reason-button"
+                    role="link"
                     onClick={() => onAddEnquiryReasonClick(history, subject)}
                 >
                     Add Enquiry Reason

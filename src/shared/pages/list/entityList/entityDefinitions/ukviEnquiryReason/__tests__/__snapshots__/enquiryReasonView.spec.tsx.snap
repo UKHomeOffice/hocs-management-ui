@@ -120,6 +120,8 @@ exports[`when the ukviEnquiryReason EntityListView component is mounted should r
       <button
         class="govuk-button govuk-!-margin-right-1 add-team-members-button"
         data-module="govuk-button"
+        name="add-new-enquiry reason-button"
+        role="link"
         type="submit"
       >
         Add new enquiry reason

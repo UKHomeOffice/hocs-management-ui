@@ -120,6 +120,8 @@ exports[`when the foiAccountManager EntityListView component is mounted should r
       <button
         class="govuk-button govuk-!-margin-right-1 add-team-members-button"
         data-module="govuk-button"
+        name="add-new-account manager-button"
+        role="link"
         type="submit"
       >
         Add new account manager

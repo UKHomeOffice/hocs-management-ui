@@ -27,6 +27,8 @@ exports[`when the enquirySubjectView component is mounted should render with def
       <button
         class="govuk-button govuk-!-margin-right-1 add-team-members-button"
         data-module="govuk-button"
+        name="add-enquiry-reason-button"
+        role="link"
         type="submit"
       >
         Add Enquiry Reason

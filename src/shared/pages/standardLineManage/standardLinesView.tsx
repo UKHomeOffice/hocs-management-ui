@@ -167,7 +167,16 @@ const StandardLinesView: React.FC<StandardLinesProps> = ({ history, match }) => 
                         </div>
                 }
                 <br />
-                <button type="submit" className="govuk-button govuk-!-margin-right-1 " data-module="govuk-button" onClick={() => onAddClick(history)}>Add new standard line</button>
+                <button
+                    type="submit"
+                    className="govuk-button govuk-!-margin-right-1 "
+                    data-module="govuk-button"
+                    name="add-standard-line-button"
+                    role="link"
+                    onClick={() => onAddClick(history)}
+                >
+                    Add new standard line
+                </button>
             </div>
         </div>
     );

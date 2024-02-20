@@ -86,6 +86,8 @@ exports[`when the ExGratiaView component is mounted should render with default p
       <button
         class="govuk-button govuk-!-margin-right-1 add-team-members-button"
         data-module="govuk-button"
+        name="add-new-representitive-button"
+        role="link"
         type="submit"
       >
         Add new representative
