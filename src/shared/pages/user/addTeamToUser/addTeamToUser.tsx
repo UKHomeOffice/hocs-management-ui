@@ -88,7 +88,7 @@ const AddTeamToUser: React.FC<AddToTeamProps> = ({ history, match }) => {
                     disabled={false}
                     getOptions={getTeamsForTypeahead}
                     label={'Select teams'}
-                    name={'Select teams'}
+                    name={'select-teams'}
                     onSelectedItemChange={onSelectedTeamChange}
                     value = {state.selectedTeam}
                 />

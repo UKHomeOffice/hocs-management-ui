@@ -95,7 +95,7 @@ const AmendUser: React.FC<AmendUserProps> = ({ csrfToken, history, match }) => {
             </div>
             <div className="govuk-grid-row">
                 <div className="govuk-grid-column-one-half-from-desktop">
-                    <form method="PUT" onSubmit={handleSubmit}>
+                    <form method="POST" onSubmit={handleSubmit}>
                         { state.enabled == 'false' && <p><strong className="govuk-tag govuk-tag--grey">Disabled</strong></p> }
                         <input type="hidden" name="_csrf" value={csrfToken} />
                         <Text
