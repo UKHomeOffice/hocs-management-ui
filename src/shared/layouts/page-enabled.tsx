@@ -6,6 +6,7 @@ import Error, { ErrorContent } from './error';
 import SuccessMessage from '../common/components/successMessage';
 
 interface PageWrapperProps {
+    children: React.ReactNode;
     dispatch(action: ContextAction<any>): Promise<any>;
     error?: ErrorContent;
     match: any;

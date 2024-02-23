@@ -1,7 +1,7 @@
 import React from 'react';
 import { match, MemoryRouter } from 'react-router-dom';
 import { createBrowserHistory, History, Location } from 'history';
-import { act, fireEvent, getByText, render, RenderResult, screen, wait } from '@testing-library/react';
+import { act, fireEvent, getByText, render, RenderResult, screen, waitFor } from '@testing-library/react';
 import CompBusinessAreaView from '../compBusinessAreaView';
 import * as ListService from '../../../../services/entityListService';
 import * as useError from '../../../../hooks/useError';
@@ -61,9 +61,9 @@ describe('when the businessAreaView component is mounted', () => {
     it('should render with default props', async () => {
         expect.assertions(2);
         const wrapper = renderComponent();
-        await wait(async () => await screen.findByText('Show inactive items'));
+        await waitFor(async () => await screen.findByText('Show inactive items'));
 
-        await wait(() => {
+        await waitFor(() => {
             expect(getListItemsSpy).toHaveBeenCalled();
             expect(wrapper.container).toMatchSnapshot();
         });
@@ -73,14 +73,14 @@ describe('when the businessAreaView component is mounted', () => {
         expect.assertions(2);
 
         const wrapper = renderComponent();
-        await wait(() => expect(getListItemsSpy).toHaveBeenCalled());
+        await waitFor(() => expect(getListItemsSpy).toHaveBeenCalled());
 
         await act(async () => {
             const link = await screen.findByText('Show inactive items');
             fireEvent.click(link);
         });
 
-        await wait(() => screen.findByText('Hide inactive items'));
+        await waitFor(() => screen.findByText('Hide inactive items'));
 
         expect(wrapper.container).toMatchSnapshot();
     });
@@ -94,7 +94,7 @@ describe('when the Add Business Area button is clicked', () => {
             wrapper = renderComponent();
         });
 
-        await wait(async () => {
+        await waitFor(async () => {
             const addBusinessAreaButton = getByText(wrapper.container, 'Add Business Area');
 
             fireEvent.click(addBusinessAreaButton);

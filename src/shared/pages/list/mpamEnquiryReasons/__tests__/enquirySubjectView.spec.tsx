@@ -1,7 +1,7 @@
 import React from 'react';
 import { match, MemoryRouter } from 'react-router-dom';
 import { createBrowserHistory, History, Location } from 'history';
-import { act, wait, render, RenderResult, getByText, fireEvent } from '@testing-library/react';
+import { act, waitFor, render, RenderResult, getByText, fireEvent } from '@testing-library/react';
 import * as ListService from '../../../../services/entityListService';
 import * as useError from '../../../../hooks/useError';
 import EnquirySubjectView from '../enquirySubjectView';
@@ -59,14 +59,15 @@ beforeEach(() => {
 
 describe('when the enquirySubjectView component is mounted', () => {
     it('should render with default props', async () => {
-        expect.assertions(2);
+        expect.assertions(5);
         let wrapper: RenderResult;
         act(() => {
             wrapper = renderComponent();
         });
 
-        await wait(() => {
+        await waitFor(() => {
             expect(getListItemsSpy).toHaveBeenCalled();
+            expect(wrapper.container.getElementsByClassName('govuk-table__row').length).toBe(3);
             expect(wrapper.container).toMatchSnapshot();
         });
     });
@@ -80,7 +81,7 @@ describe('when the Add Enquiry Reason button is clicked', () => {
             wrapper = renderComponent();
         });
 
-        await wait(async () => {
+        await waitFor(async () => {
             const addEnquiryReasonButton = getByText(wrapper.container, 'Add Enquiry Reason');
 
             fireEvent.click(addEnquiryReasonButton);

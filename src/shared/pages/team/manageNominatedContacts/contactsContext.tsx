@@ -6,7 +6,11 @@ import { initialState } from './initialState';
 
 const ContactsContext = React.createContext<{state: State, dispatch: Dispatch<Action>; }>({ state: initialState, dispatch: () => {} });
 
-const ContactsProvider: React.FC = ({ children }) => {
+interface Props {
+    children: React.ReactNode;
+}
+
+const ContactsProvider: React.FC<Props> = ({ children }) => {
     const [ state, dispatch ] = React.useReducer<Reducer<State, Action>>(reducer, initialState);
 
     return (

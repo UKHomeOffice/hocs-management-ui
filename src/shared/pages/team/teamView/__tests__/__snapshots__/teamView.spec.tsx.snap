@@ -621,7 +621,6 @@ exports[`when the teamView component is mounted with RENAME_TEAM role should ren
         </p>
         <p>
           New cases cannot be assigned to 
-          
           . You can still assign members to this team to view and process existing cases.
         </p>
         <p />

@@ -1,7 +1,7 @@
 import React from 'react';
 import { match, MemoryRouter } from 'react-router-dom';
 import { createBrowserHistory, History, Location } from 'history';
-import { act, wait, render, screen, fireEvent } from '@testing-library/react';
+import { act, waitFor, render, screen, fireEvent } from '@testing-library/react';
 import EntityListView from '../entityListView';
 import * as ListService from '../../../../services/entityListService';
 
@@ -82,9 +82,9 @@ describe('when the entity list view is mounted', () => {
     it('should render with default props', async () => {
         expect.assertions(3);
         const wrapper = renderComponent();
-        await wait(async () => await screen.findByText('Show inactive items'));
+        await waitFor(async () => await screen.findByText('Show inactive items'));
 
-        await wait(() => {
+        await waitFor(() => {
             expect(getListItemsSpy).toHaveBeenCalled();
             expect(useReducerSpy).toHaveBeenCalled();
             expect(wrapper.container).toMatchSnapshot();
@@ -96,14 +96,14 @@ describe('when the entity list view is mounted', () => {
 
         const wrapper = renderComponent();
 
-        await wait(() => expect(getListItemsSpy).toHaveBeenCalled());
+        await waitFor(() => expect(getListItemsSpy).toHaveBeenCalled());
 
         await act(async () => {
             const link = await screen.findByText('Show inactive items');
             fireEvent.click(link);
         });
 
-        await wait(() => screen.findByText('Hide inactive items'));
+        await waitFor(() => screen.findByText('Hide inactive items'));
 
         expect(wrapper.container).toMatchSnapshot();
     });

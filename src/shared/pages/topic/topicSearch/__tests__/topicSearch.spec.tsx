@@ -1,7 +1,7 @@
 import React from 'react';
 import { match, MemoryRouter } from 'react-router-dom';
 import { createBrowserHistory, History, Location } from 'history';
-import { act, wait, fireEvent, getByText, render, RenderResult } from '@testing-library/react';
+import { act, waitFor, fireEvent, getByText, render, RenderResult } from '@testing-library/react';
 import TopicSearch from '../topicSearch';
 import * as TopicsService from '../../../../services/topicsService';
 import * as useError from '../../../../hooks/useError';
@@ -64,7 +64,7 @@ describe('when the topicSearch component is mounted', () => {
             wrapper = renderComponent();
         });
 
-        await wait(() => {
+        await waitFor(() => {
             expect(getTopicsSpy).toHaveBeenCalled();
             expect(wrapper.container).toMatchSnapshot();
         });
@@ -79,7 +79,7 @@ describe('when the submit button is clicked', () => {
             wrapper = renderComponent();
         });
 
-        await wait(async () => {
+        await waitFor(async () => {
             const submitButton = getByText(wrapper.container, 'Submit');
             fireEvent.click(submitButton);
         });

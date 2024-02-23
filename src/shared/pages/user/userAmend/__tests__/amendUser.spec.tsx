@@ -2,7 +2,7 @@
 import React from 'react';
 import { match, MemoryRouter } from 'react-router-dom';
 import { createBrowserHistory, History, Location } from 'history';
-import { act, render, RenderResult, wait, fireEvent, waitForElement } from '@testing-library/react';
+import { act, render, RenderResult, waitFor, fireEvent } from '@testing-library/react';
 import { GENERAL_ERROR_TITLE, LOAD_USER_ERROR_DESCRIPTION, AMEND_USER_ERROR_DESCRIPTION, AMEND_USER_ERROR_TITLE, AMEND_USER_BAD_REQUEST_TITLE } from '../../../../models/constants';
 import AmendUser from '../amendUser';
 import * as useError from '../../../../hooks/useError';
@@ -72,7 +72,7 @@ describe('when the AmendUser component is mounted', () => {
     it('should render with default props', async () => {
         expect.assertions(7);
         wrapper = renderComponent();
-        await wait(() => {
+        await waitFor(() => {
             expect(getUserSpy).toHaveBeenCalled();
             expect(reducerDispatch).toHaveBeenNthCalledWith(1, { name: 'username', value: 'un' });
             expect(reducerDispatch).toHaveBeenNthCalledWith(2, { name: 'email', value: 'email' });
@@ -84,10 +84,10 @@ describe('when the AmendUser component is mounted', () => {
     });
 
     it('should display an error if the call to retrieve item details fails', async () => {
-        expect.assertions(1);
+        expect.assertions(2);
         getUserSpy.mockImplementation(() => Promise.reject('error'));
         wrapper = renderComponent();
-        await wait(() => {
+        await waitFor(() => {
             expect(setMessageSpy).toBeCalledWith({ title: GENERAL_ERROR_TITLE, description: LOAD_USER_ERROR_DESCRIPTION });
         });
 
@@ -100,12 +100,12 @@ describe('when the new first name is entered', () => {
         getUserSpy.mockReturnValueOnce(Promise.resolve(
             { id: 'id', username: 'un', email: 'email', firstName: 'testSimpleName', lastName: 'testTitle', uuid: 'testUUID', enabled: true }
         ));
-        const nameElement = await waitForElement(async () => {
+        const nameElement = await waitFor(async () => {
             return await wrapper.findByLabelText('First Name');
         });
         const newFirstName = 'Xyz';
         fireEvent.change(nameElement, { target: { name: 'firstName', value: newFirstName } });
-        await wait(() => {
+        await waitFor(() => {
             expect(reducerDispatch).toHaveBeenCalledWith({ name: 'firstName', value: newFirstName });
         });
     });
@@ -117,7 +117,7 @@ describe('when the submit button is clicked', () => {
         beforeEach(async () => {
             mockState.firstName = 'firstname';
             mockState.lastName = 'lastname';
-            const submitButton = await waitForElement(async () => {
+            const submitButton = await waitFor(async () => {
                 return await wrapper.findByText('Submit');
             });
 
@@ -130,7 +130,7 @@ describe('when the submit button is clicked', () => {
                 getUserSpy.mockReturnValueOnce(Promise.resolve(
                     { id: 'id', username: 'un', email: 'email', firstName: 'testSimpleName', lastName: 'testTitle', uuid: 'testUUID', enabled: true }
                 ));
-                await wait(() => {
+                await waitFor(() => {
                     expect(getUserSpy).toHaveBeenCalled();
                     expect(updateUserSpy).toHaveBeenCalled();
                     expect(history.push).toHaveBeenCalledWith(`/user-view/${userId}`, { successMessage: 'The user was amended successfully' });
@@ -138,7 +138,7 @@ describe('when the submit button is clicked', () => {
             });
             it('should call the begin submit action', async () => {
 
-                await wait(() => {
+                await waitFor(() => {
                     expect(clearErrorsSpy).toHaveBeenCalled();
                 });
             });
@@ -149,7 +149,7 @@ describe('when the submit button is clicked', () => {
             updateUserSpy.mockReturnValueOnce(Promise.resolve(
                 { id: 'id', username: 'un', email: 'email', firstName: '', lastName: 'testTitle', uuid: 'testUUID', enabled: true }
             ));
-            const submitButton = await waitForElement(async () => {
+            const submitButton = await waitFor(async () => {
                 return await wrapper.findByText('Submit');
             });
 
@@ -172,7 +172,7 @@ describe('when the submit button is clicked', () => {
             updateUserSpy.mockImplementation(() => Promise.reject({ response: { status: 500 } }));
             mockState.firstName = 'firstname';
             mockState.lastName = 'lastname';
-            const submitButton = await waitForElement(async () => {
+            const submitButton = await waitFor(async () => {
                 return await wrapper.findByText('Submit');
             });
 
@@ -200,7 +200,7 @@ describe('when the submit button is clicked', () => {
             updateUserSpy.mockImplementation(() => Promise.reject({ response: { status: 400, data: { message: errorMessage } } }));
             mockState.firstName = 'firstname';
             mockState.lastName = 'lastname';
-            const submitButton = await waitForElement(async () => {
+            const submitButton = await waitFor(async () => {
                 return await wrapper.findByText('Submit');
             });
 

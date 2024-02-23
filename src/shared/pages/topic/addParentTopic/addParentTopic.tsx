@@ -12,6 +12,7 @@ import Text from '../../../common/components/forms/text';
 
 import { addParentTopic } from '../../../services/topicsService';
 import Submit from '../../../common/components/forms/submit';
+import InputEventData from '../../../models/inputEventData';
 
 interface AddParentTopicProps extends RouteComponentProps {
     csrfToken?: string;
@@ -29,7 +30,7 @@ const AddParentTopic: React.FC<AddParentTopicProps> = ({ csrfToken, contextDispa
     const [pageError, addFormError, clearErrors, setErrorMessage] = useError('', VALIDATION_ERROR_TITLE);
     const [displayName, setDisplayName] = React.useState<string>();
 
-    const onDisplayNameChange = React.useCallback(({ value }) => setDisplayName(value), []);
+    const onDisplayNameChange = React.useCallback((e: InputEventData) => setDisplayName(e.value as string), []);
 
     const onSubmit = (event: React.FormEvent) => {
         event.preventDefault();

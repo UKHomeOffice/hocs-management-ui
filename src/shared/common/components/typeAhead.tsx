@@ -41,7 +41,7 @@ class TypeAhead extends Component<TypeAheadProps, TypeAheadState> {
         .filter(item => item
             .label
             .toLocaleLowerCase()
-            .indexOf(inputValue.toLocaleLowerCase().trim()) !== -1);
+            .indexOf(inputValue?.toLocaleLowerCase().trim()) !== -1);
 
     promiseOptions = (inputValue: string) =>
         new Promise<Item[]>((resolve) => {
@@ -83,7 +83,6 @@ class TypeAhead extends Component<TypeAheadProps, TypeAheadState> {
                         )
                     }}
                     defaultOptions
-                    error={error}
                     id={name}
                     inputId={`${name}-input`}
                     isDisabled={disabled}

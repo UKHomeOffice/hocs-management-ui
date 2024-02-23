@@ -1,3 +1,5 @@
+import React from 'react';
+
 export interface HeaderConfig {
     isVisible: boolean;
     service: string;
@@ -5,6 +7,7 @@ export interface HeaderConfig {
 }
 
 export interface BodyConfig {
+    children?: React.ReactNode;
     phaseBanner: PhaseBannerConfig;
 }
 

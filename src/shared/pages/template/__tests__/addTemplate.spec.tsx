@@ -1,7 +1,7 @@
 import React from 'react';
 import { match, MemoryRouter } from 'react-router-dom';
 import { createBrowserHistory, History, Location } from 'history';
-import { act, render, RenderResult, wait, fireEvent, waitForElement } from '@testing-library/react';
+import { act, render, RenderResult, fireEvent, waitFor } from '@testing-library/react';
 import AddTemplate from '../addTemplate';
 import * as TemplatesService from '../../../services/templatesService';
 import { GENERAL_ERROR_TITLE, ADD_TEMPLATE_ERROR_DESCRIPTION, LOAD_CASE_TYPE_ERROR_DESCRIPTION } from '../../../models/constants';
@@ -82,13 +82,13 @@ describe('when the addTemplate component is mounted', () => {
     it('should render with default props', async () => {
         expect.assertions(1);
 
-        await wait(() => {
+        await waitFor(() => {
             expect(wrapper.container).toMatchSnapshot();
         });
     });
 
     it('should display an error if the call to retrieve the case type fail', async () => {
-        expect.assertions(1);
+        expect.assertions(2);
 
         getCaseTypeSpy.mockImplementation(() => Promise.reject('error'));
 
@@ -96,7 +96,7 @@ describe('when the addTemplate component is mounted', () => {
             wrapper = renderComponent();
         });
 
-        await wait(() => {
+        await waitFor(() => {
             expect(setMessageSpy).toBeCalledWith({ title: GENERAL_ERROR_TITLE, description: LOAD_CASE_TYPE_ERROR_DESCRIPTION });
         });
 
@@ -118,7 +118,7 @@ describe('when the submit button is clicked', () => {
 
         beforeEach(async () => {
             mockTemplate.files = [createMockFile('mock.docx', 1024, 'application/vnd.openxmlformats-officedocument.wordprocessingml.document')];
-            const submitButton = await waitForElement(async () => {
+            const submitButton = await waitFor(async () => {
                 return await wrapper.findByText('Submit');
             });
 
@@ -129,14 +129,14 @@ describe('when the submit button is clicked', () => {
             it('should redirect to the home page', async () => {
                 expect.assertions(1);
 
-                await wait(() => {
+                await waitFor(() => {
                     expect(history.push).toHaveBeenCalledWith('/case-type/__type__', { successMessage: 'The template was created successfully' });
                 });
             });
             it('should clear any previous errors', async () => {
                 expect.assertions(1);
 
-                await wait(() => {
+                await waitFor(() => {
                     expect(clearErrorsSpy).toHaveBeenCalled();
                 });
             });
@@ -159,7 +159,7 @@ describe('when the submit button is clicked', () => {
 
     describe('and the data is not filled in', () => {
         beforeEach(async () => {
-            const submitButton = await waitForElement(async () => {
+            const submitButton = await waitFor(async () => {
                 return await wrapper.findByText('Submit');
             });
 
@@ -179,7 +179,7 @@ describe('when the submit button is clicked', () => {
         beforeEach(async () => {
             mockTemplate.files = [createMockFile('mock.txt', 1024, 'text/plain')];
 
-            const submitButton = await waitForElement(async () => {
+            const submitButton = await waitFor(async () => {
                 return await wrapper.findByText('Submit');
             });
 

@@ -1,7 +1,7 @@
 import React from 'react';
 import { match, MemoryRouter } from 'react-router-dom';
 import { createBrowserHistory, History, Location } from 'history';
-import { act, render, RenderResult, wait, fireEvent, waitForElement } from '@testing-library/react';
+import { act, render, RenderResult, fireEvent, waitFor } from '@testing-library/react';
 import AddChildTopic from '../addChildTopic';
 import * as TopicsService from '../../../../services/topicsService';
 import { GENERAL_ERROR_TITLE, VALIDATION_ERROR_TITLE, DUPLICATE_CHILD_TOPIC_DESCRIPTION, ADD_CHILD_TOPIC_ERROR_DESCRIPTION, LOAD_PARENT_TOPICS_ERROR_DESCRIPTION } from '../../../../models/constants';
@@ -76,21 +76,21 @@ describe('when the addChildTopic component is mounted', () => {
     it('should render with default props', async () => {
         expect.assertions(2);
 
-        await wait(() => {
+        await waitFor(() => {
             expect(getParentTopicsSpy).toHaveBeenCalled();
             expect(wrapper.container).toMatchSnapshot();
         });
     });
 
     it('should display an error if the call to retrieve the parent topics fails', async () => {
-        expect.assertions(1);
+        expect.assertions(2);
         getParentTopicsSpy.mockImplementation(() => Promise.reject('error'));
 
         act(() => {
             wrapper = renderComponent();
         });
 
-        await wait(() => {
+        await waitFor(() => {
             expect(setMessageSpy).toBeCalledWith({ title: GENERAL_ERROR_TITLE, description: LOAD_PARENT_TOPICS_ERROR_DESCRIPTION });
         });
 
@@ -101,13 +101,13 @@ describe('when the display name is entered', () => {
     it('should be persisted in the page state', async () => {
         expect.assertions(1);
 
-        const displayNameElement = await waitForElement(async () => {
+        const displayNameElement = await waitFor(async () => {
             return await wrapper.findByLabelText('Display Name');
         });
 
         fireEvent.change(displayNameElement, { target: { name: 'displayName', value: '__displayName__' } });
 
-        await wait(() => {
+        await waitFor(() => {
             expect(reducerDispatch).toHaveBeenCalledWith({ payload: '__displayName__', type: 'SetDisplayName' });
         });
     });
@@ -119,7 +119,7 @@ describe('when the submit button is clicked', () => {
         beforeEach(async () => {
             mockState.displayName = '__displayName__';
             mockState.selectedParentTopic = { label: '__label__', value: '__value__' };
-            const submitButton = await waitForElement(async () => {
+            const submitButton = await waitFor(async () => {
                 return await wrapper.findByText('Submit');
             });
 
@@ -130,14 +130,14 @@ describe('when the submit button is clicked', () => {
             it('should redirect to the home page', async () => {
                 expect.assertions(1);
 
-                await wait(() => {
+                await waitFor(() => {
                     expect(history.push).toHaveBeenCalledWith('/', { successMessage: 'The child topic was created successfully' });
                 });
             });
             it('should call the begin submit action', async () => {
                 expect.assertions(1);
 
-                await wait(() => {
+                await waitFor(() => {
                     expect(clearErrorsSpy).toHaveBeenCalled();
                 });
             });
@@ -167,7 +167,7 @@ describe('when the submit button is clicked', () => {
     });
     describe('and the data is not filled in', () => {
         beforeEach(async () => {
-            const submitButton = await waitForElement(async () => {
+            const submitButton = await waitFor(async () => {
                 return await wrapper.findByText('Submit');
             });
 
@@ -188,7 +188,7 @@ describe('when the submit button is clicked', () => {
         beforeEach(async () => {
             mockState.displayName = 'Invalid@Topic';
             mockState.selectedParentTopic = { label: '__label__', value: '__value__' };
-            const submitButton = await waitForElement(async () => {
+            const submitButton = await waitFor(async () => {
                 return await wrapper.findByText('Submit');
             });
 
@@ -204,7 +204,7 @@ describe('when the submit button is clicked', () => {
         it('should set the error state', async () => {
             expect.assertions(1);
 
-            await wait(() => {
+            await waitFor(() => {
                 expect(addFormErrorSpy).toHaveBeenCalledWith({ key: 'displayName', value: 'The Display Name contains invalid characters' });
             });
         });
@@ -214,7 +214,7 @@ describe('when the submit button is clicked', () => {
         beforeEach(async () => {
             mockState.displayName = 'Valid-Topic';
             mockState.selectedParentTopic = { label: '__label__', value: '__value__' };
-            const submitButton = await waitForElement(async () => {
+            const submitButton = await waitFor(async () => {
                 return await wrapper.findByText('Submit');
             });
 
@@ -230,7 +230,7 @@ describe('when the submit button is clicked', () => {
         it('should set the error state', async () => {
             expect.assertions(1);
 
-            await wait(() => {
+            await waitFor(() => {
                 expect(addFormErrorSpy).toBeCalledTimes(0);
             });
         });

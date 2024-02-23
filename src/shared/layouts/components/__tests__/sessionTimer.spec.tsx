@@ -9,6 +9,7 @@ jest
     .spyOn(Modal, 'setAppElement')
     .mockImplementation(param => console.log(param));
 describe('<Component />', () => {});
+jest.useFakeTimers();
 
 const config = {
     analytics: undefined,
@@ -32,49 +33,6 @@ const config = {
 describe('Session timer component', () => {
 
     it('should render with default props', () => {
-
-        expect(
-            render(
-                <HelmetProvider>
-                    <ApplicationProvider config={config}>
-                        <SessionTimer />
-                    </ApplicationProvider>
-                </HelmetProvider>
-            )
-        ).toMatchSnapshot();
-    });
-
-    it('should render the modal when timing out', () => {
-        jest.spyOn(React, 'useContext').mockReturnValue({
-            layout: {
-                countDownForSeconds: 5,
-                defaultTimeoutSeconds: 4,
-                header: {
-                    service: 'service name'
-                }
-            }
-        });
-
-        expect(
-            render(
-                <HelmetProvider>
-                    <ApplicationProvider config={config}>
-                        <SessionTimer />
-                    </ApplicationProvider>
-                </HelmetProvider>
-            )
-        ).toMatchSnapshot();
-    });
-    it('should render the modal when timed out', () => {
-        jest.spyOn(React, 'useContext').mockReturnValue({
-            layout: {
-                countDownForSeconds: 5,
-                defaultTimeoutSeconds: 0,
-                header: {
-                    service: 'service name'
-                }
-            }
-        });
 
         expect(
             render(

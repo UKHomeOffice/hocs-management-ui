@@ -1,7 +1,7 @@
 import React from 'react';
 import { MemoryRouter } from 'react-router-dom';
 import { createBrowserHistory, History } from 'history';
-import { act, wait, fireEvent, getByText, render, RenderResult } from '@testing-library/react';
+import { act, waitFor, fireEvent, getByText, render, RenderResult } from '@testing-library/react';
 import TeamSearch from '../teamSearch';
 import * as TeamsService from '../../../../services/teamsService';
 import * as useError from '../../../../hooks/useError';
@@ -49,7 +49,7 @@ describe('when the teamView component is mounted', () => {
             wrapper = renderComponent();
         });
 
-        await wait(() => {
+        await waitFor(() => {
             expect(getTeamsSpy).toHaveBeenCalled();
             expect(wrapper.container).toMatchSnapshot();
         });
@@ -64,7 +64,7 @@ describe('when the view team button is clicked', () => {
             wrapper = renderComponent();
         });
 
-        await wait(async () => {
+        await waitFor(async () => {
             const addTeamMembersButton = getByText(wrapper.container, 'View team');
             fireEvent.click(addTeamMembersButton);
         });

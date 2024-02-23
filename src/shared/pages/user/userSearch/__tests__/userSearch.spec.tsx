@@ -1,7 +1,7 @@
 import React from 'react';
 import { MemoryRouter } from 'react-router-dom';
 import { createBrowserHistory, History } from 'history';
-import { act, fireEvent, getByText, render, RenderResult, wait } from '@testing-library/react';
+import { act, fireEvent, getByText, render, RenderResult, waitFor } from '@testing-library/react';
 import UserSearch from '../userSearch';
 import * as UsersService from '../../../../services/usersService';
 import * as useError from '../../../../hooks/useError';
@@ -53,7 +53,7 @@ describe('when the userView component is mounted', () => {
         let wrapper: RenderResult;
         act(() => { wrapper = renderComponent(); });
 
-        await wait(() => {
+        await waitFor(() => {
             expect(getUsersSpy).toHaveBeenCalled();
             expect(wrapper.container).toMatchSnapshot();
         });
@@ -66,7 +66,7 @@ describe('when the view user button is clicked', () => {
         let wrapper: RenderResult;
         act(() => { wrapper = renderComponent(); });
 
-        await wait(async () => {
+        await waitFor(async () => {
             const viewUserButton = getByText(wrapper.container, 'View user');
             fireEvent.click(viewUserButton);
         });
@@ -83,7 +83,7 @@ describe('when no users are retrieved for the typeahead', () => {
             renderComponent();
         });
 
-        await wait(async () => {
+        await waitFor(async () => {
             expect(setMessageSpy).toHaveBeenCalledWith(new ErrorMessage(LOAD_USERS_ERROR_DESCRIPTION, GENERAL_ERROR_TITLE));
         });
 
@@ -98,7 +98,7 @@ describe('when a user is not selected', () => {
         let wrapper: RenderResult;
         act(() => { wrapper = renderComponent(); });
 
-        await wait(async () => {
+        await waitFor(async () => {
             const viewUserButton = getByText(wrapper.container, 'View user');
             fireEvent.click(viewUserButton);
         });

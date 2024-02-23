@@ -1,7 +1,7 @@
 import React from 'react';
 import { match, MemoryRouter } from 'react-router-dom';
 import { createBrowserHistory, History, Location } from 'history';
-import { act, render, RenderResult, wait, fireEvent, waitForElement } from '@testing-library/react';
+import { act, render, RenderResult, fireEvent, waitFor } from '@testing-library/react';
 import {
     AMEND_ENQ_REASON_ERROR_DESCRIPTION,
     DUPLICATE_ENQ_REASON_DESCRIPTION,
@@ -68,7 +68,7 @@ describe('when the amendEnquiryReason component is mounted', () => {
     it('should render with default props', async () => {
         expect.assertions(2);
         wrapper = renderComponent();
-        await wait(() => {
+        await waitFor(() => {
             expect(getItemDetailsSpy).toHaveBeenCalled();
             expect(wrapper.container).toMatchSnapshot();
         });
@@ -84,12 +84,12 @@ describe('when the amendEnquiryReason component is mounted', () => {
     });
 
     it('should display an error if the call to retrieve item details fails', async () => {
-        expect.assertions(1);
+        expect.assertions(2);
         getItemDetailsSpy.mockImplementation(() => Promise.reject('error'));
 
         wrapper = renderComponent();
 
-        await wait(() => {
+        await waitFor(() => {
             expect(setMessageSpy).toBeCalledWith({ title: GENERAL_ERROR_TITLE, description: LOAD_ENQ_SUB_ERROR_DESCRIPTION });
         });
 
@@ -102,7 +102,7 @@ describe('when the submit button is clicked', () => {
         beforeEach(async () => {
             mockState.title = '__displayName__';
             mockState.simpleName = '__shortCode__';
-            const submitButton = await waitForElement(async () => {
+            const submitButton = await waitFor(async () => {
                 return await wrapper.findByText('Amend');
             });
 
@@ -115,7 +115,7 @@ describe('when the submit button is clicked', () => {
                 getItemDetailsSpy.mockReturnValueOnce(Promise.resolve(
                     { simpleName: 'testSimpleName', title: 'testTitle', uuid: 'testUUID', active: false }
                 ));
-                await wait(() => {
+                await waitFor(() => {
                     expect(getItemDetailsSpy).toHaveBeenCalled();
                     expect(updateListItemSpy).toHaveBeenCalled();
                     expect(history.push).toHaveBeenCalledWith('/', { successMessage: 'The enquiry reason was amended successfully' });
@@ -123,7 +123,7 @@ describe('when the submit button is clicked', () => {
             });
             it('should call the begin submit action', async () => {
 
-                await wait(() => {
+                await waitFor(() => {
                     expect(clearErrorsSpy).toHaveBeenCalled();
                 });
             });
@@ -131,7 +131,7 @@ describe('when the submit button is clicked', () => {
     });
     describe('and the data is not filled in', () => {
         beforeEach(async () => {
-            const submitButton = await waitForElement(async () => {
+            const submitButton = await waitFor(async () => {
                 return await wrapper.findByText('Amend');
             });
             mockState.title = '';
@@ -158,7 +158,7 @@ describe('when the submit button is clicked', () => {
             updateListItemSpy.mockImplementation(() => Promise.reject({ response: { status: 500 } }));
             mockState.title = '__displayName__';
             mockState.simpleName = '__shortCode__';
-            const submitButton = await waitForElement(async () => {
+            const submitButton = await waitFor(async () => {
                 return await wrapper.findByText('Amend');
             });
 
@@ -182,7 +182,7 @@ describe('when the submit button is clicked', () => {
             updateListItemSpy.mockImplementationOnce(() => Promise.reject({ response: { status: 409 } }));
             mockState.title = '__displayName__';
             mockState.simpleName = '__shortCode__';
-            const submitButton = await waitForElement(async () => {
+            const submitButton = await waitFor(async () => {
                 return await wrapper.findByText('Amend');
             });
 

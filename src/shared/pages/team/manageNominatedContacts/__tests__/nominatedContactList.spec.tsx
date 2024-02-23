@@ -1,4 +1,4 @@
-import { act, fireEvent, getByText, render, RenderResult, wait } from '@testing-library/react';
+import { act, fireEvent, getByText, render, RenderResult, waitFor } from '@testing-library/react';
 import React from 'react';
 import NominatedContactList from '../nominatedContactList';
 import Contact from '../../../../models/contact';
@@ -61,9 +61,9 @@ describe('NominatedContactList', () => {
             act(() => {
                 wrapper = renderComponent();
             });
-            expect.assertions(2);
+            expect.assertions(3);
 
-            await wait(() => {
+            await waitFor(() => {
                 expect(mockDispatch).toBeCalledWith({ 'type': 'SetContacts', payload: mockContactItems });
                 expect(wrapper.container).toMatchSnapshot();
             });
@@ -80,9 +80,9 @@ describe('NominatedContactList', () => {
             act(() => {
                 wrapper = renderComponent();
             });
-            expect.assertions(3);
+            expect.assertions(5);
 
-            await wait(() => {
+            await waitFor(() => {
                 expect(mockDispatch).toBeCalledTimes(0);
                 expect(mockSetErrorMessage).toBeCalledWith({
                     'description': 'There was an error retrieving the list of nominated contacts.  Please try refreshing the page.',
@@ -120,7 +120,7 @@ describe('NominatedContactList', () => {
                 fireEvent.click(removeButton);
             });
 
-            await wait(() => {
+            await waitFor(() => {
                 expect(mockDispatch).toBeCalledTimes(2);
                 expect(mockDispatch).toBeCalledWith({
                     'type': 'RemoveContact',
@@ -143,7 +143,7 @@ describe('NominatedContactList', () => {
                 fireEvent.click(removeButton);
             });
 
-            await wait(() => {
+            await waitFor(() => {
                 expect(mockDispatch).toBeCalledTimes(1);
                 expect(mockSetErrorMessage).toBeCalledWith({
                     'description': 'There was an error deleting the nominated contact. Please try refreshing the page.',
@@ -154,7 +154,9 @@ describe('NominatedContactList', () => {
     });
 
     describe('Remove contact messaging', () => {
+        let wrapper: RenderResult;
         beforeEach(() => {
+            getNominatedContactsForTeamSpy.mockImplementationOnce(() => Promise.resolve(mockContacts));
             jest.spyOn(React, 'useContext').mockImplementation(() => ({
                 dispatch: mockDispatch,
                 state: {
@@ -162,24 +164,22 @@ describe('NominatedContactList', () => {
                 }
             }));
 
-            mockClearErrors.mockReset();
-            mockSetErrorMessage.mockReset();
-            mockDispatch.mockReset();
+            act(() => {
+                wrapper = renderComponent();
+            });
         });
 
         it('should set an error if there is only one contact', async () => {
             getNominatedContactsForTeamSpy.mockImplementationOnce(() => Promise.resolve(mockContactShortList));
 
-            let wrapper: RenderResult;
             act(() => {
-                wrapper = renderComponent();
                 const selectedContact = getByText(wrapper.container, 'one@example.org');
                 const row = (selectedContact.closest('tr'));
                 const removeButton = getByText(row as HTMLElement, 'Remove');
                 fireEvent.click(removeButton);
             });
 
-            await wait(() => {
+            await waitFor(() => {
                 expect(mockDispatch).toBeCalledTimes(1);
                 expect(mockSetErrorMessage).toBeCalledWith({
                     'description': 'Unable to delete nominated contact - teams must have at least one contact.',

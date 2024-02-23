@@ -1,7 +1,7 @@
 import React from 'react';
 import { match, MemoryRouter } from 'react-router-dom';
 import { createBrowserHistory, History, Location } from 'history';
-import { act, fireEvent, getByText, render, RenderResult, wait } from '@testing-library/react';
+import { act, fireEvent, getByText, render, RenderResult, waitFor } from '@testing-library/react';
 import UserView from '../userView';
 import * as TeamsService from '../../../../services/teamsService';
 import * as UsersService from '../../../../services/usersService';
@@ -77,15 +77,16 @@ beforeEach(() => {
 
 describe('when the teamView component is mounted', () => {
     it('should render with default props', async () => {
-        expect.assertions(3);
+        expect.assertions(7);
         let wrapper: RenderResult;
         act(() => {
             wrapper = renderComponent();
         });
 
-        await wait(() => {
+        await waitFor(() => {
             expect(getUserSpy).toHaveBeenCalled();
             expect(getTeamsForUserSpy).toHaveBeenCalled();
+            expect(wrapper.container.getElementsByClassName('govuk-form-group').length).toBe(5);
             expect(wrapper.container).toMatchSnapshot();
         });
     });
@@ -99,7 +100,7 @@ describe('when the Add team members button is clicked', () => {
             wrapper = renderComponent();
         });
 
-        await wait(async () => {
+        await waitFor(async () => {
             const addTeamMembersButton = getByText(wrapper.container, 'Add teams');
             fireEvent.click(addTeamMembersButton);
         });
@@ -115,7 +116,7 @@ describe('when the remove user button is clicked', () => {
             wrapper = renderComponent();
         });
 
-        await wait(async () => {
+        await waitFor(async () => {
             const selectedUser = getByText(wrapper.container, '__team1__');
             const row = (selectedUser.closest('tr'));
             const removeButton = getByText(row as HTMLElement, 'Remove');
@@ -134,7 +135,7 @@ describe('when the remove user button is clicked', () => {
                 wrapper = renderComponent();
             });
 
-            wait(async () => {
+            waitFor(async () => {
                 const selectedUser = getByText(wrapper.container, '__user1__');
                 const row = (selectedUser.closest('tr'));
                 const removeButton = getByText(row as HTMLElement, 'Remove');
@@ -147,12 +148,12 @@ describe('when the remove user button is clicked', () => {
                 jest.spyOn(UsersService, 'deleteUserFromTeam').mockImplementation(() => Promise.reject({ response: { status: 500 } }));
             });
             it('should set the error state', () => {
-                wait(async () => {
+                waitFor(async () => {
                     expect(setMessageSpy).toHaveBeenCalledWith({ description: REMOVE_FROM_TEAM_ERROR_DESCRIPTION, title: GENERAL_ERROR_TITLE });
                 });
             });
             it('should call the clear errors method', () => {
-                wait(async () => {
+                waitFor(async () => {
                     expect(clearErrorsSpy).toHaveBeenCalled();
                 });
             });
@@ -163,7 +164,7 @@ describe('when the remove user button is clicked', () => {
             });
 
             it('should set the error state', () => {
-                wait(async () => {
+                waitFor(async () => {
                     expect(setMessageSpy).toHaveBeenCalledWith({ description: REMOVE_FROM_TEAM_ALLOCATED_ERROR_DESCRIPTION, title: VALIDATION_ERROR_TITLE });
                 });
             });
@@ -179,7 +180,7 @@ describe('when the Amend Details button is clicked', () => {
             wrapper = renderComponent();
         });
 
-        await wait(async () => {
+        await waitFor(async () => {
             const addTeamMembersButton = getByText(wrapper.container, 'Amend Details');
             fireEvent.click(addTeamMembersButton);
         });

@@ -160,14 +160,12 @@ Object {
             class="govuk-heading-xl"
           >
             Something has gone wrong
-            
           </h1>
           <p
             class="govuk-body"
           >
             Please try again
           </p>
-          
         </div>
       </div>
     </div>
@@ -183,14 +181,12 @@ Object {
           class="govuk-heading-xl"
         >
           Something has gone wrong
-          
         </h1>
         <p
           class="govuk-body"
         >
           Please try again
         </p>
-        
       </div>
     </div>
   </div>,

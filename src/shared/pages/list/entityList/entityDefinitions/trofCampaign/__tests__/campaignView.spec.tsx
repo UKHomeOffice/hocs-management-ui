@@ -1,7 +1,7 @@
 import React from 'react';
 import { match, MemoryRouter } from 'react-router-dom';
 import { createBrowserHistory, History, Location } from 'history';
-import { act, wait, render, RenderResult } from '@testing-library/react';
+import { act, waitFor, render, RenderResult } from '@testing-library/react';
 import EntityListView from '../../../entityListView';
 import * as ListService from '../../../../../../services/entityListService';
 import { State } from '../../../state';
@@ -90,7 +90,7 @@ describe('when the trofCampaign EntityListView component is mounted', () => {
             wrapper = renderComponent();
         });
 
-        await wait(() => {
+        await waitFor(() => {
             expect(getListItemsSpy).toHaveBeenCalled();
             expect(wrapper.container).toMatchSnapshot();
         });

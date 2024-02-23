@@ -6,7 +6,7 @@ import { createBrowserHistory, History, Location } from 'history';
 import * as TeamsService from '../../../../services/teamsService';
 import * as UsersService from '../../../../services/usersService';
 import AddTeamToUser from '../addTeamToUser';
-import { act, fireEvent, getByText, render, RenderResult, wait } from '@testing-library/react';
+import { act, fireEvent, getByText, render, RenderResult, waitFor } from '@testing-library/react';
 import ErrorMessage from '../../../../models/errorMessage';
 import { EMPTY_TEAMS_SUBMIT_ERROR_DESCRIPTION, EMPTY_TEAMS_SUBMIT_ERROR_TITLE, GENERAL_ERROR_TITLE, LOAD_TEAMS_ERROR_DESCRIPTION, LOAD_USER_ERROR_DESCRIPTION } from '../../../../models/constants';
 
@@ -113,7 +113,7 @@ describe('when the addTeamToUser component is mounted', () => {
             wrapper = renderComponent();
         });
 
-        await wait(() => {
+        await waitFor(() => {
             expect(getUserSpy).toHaveBeenCalled();
             expect(getTeamsSpy).toHaveBeenCalled();
             expect(wrapper.container).toMatchSnapshot();
@@ -136,33 +136,33 @@ describe('when the addTeamToUser component is mounted', () => {
             wrapper = renderComponent();
         });
 
-        await wait(() => {
+        await waitFor(() => {
             expect(wrapper.container.outerHTML).toMatchSnapshot();
         });
     });
 
     it('should display an error if the call to retrieve the user fails', async () => {
-        expect.assertions(1);
+        expect.assertions(2);
         getUserSpy.mockImplementation(() => Promise.reject('error'));
 
         act(() => {
             renderComponent();
         });
 
-        await wait(() => {
+        await waitFor(() => {
             expect(setMessageSpy).toBeCalledWith(new ErrorMessage(LOAD_USER_ERROR_DESCRIPTION, GENERAL_ERROR_TITLE));
         });
     });
 
     it('should display an error if the call to retrieve the teams fails', async () => {
-        expect.assertions(1);
+        expect.assertions(2);
         getTeamsSpy.mockImplementation(() => Promise.reject('error'));
 
         act(() => {
             renderComponent();
         });
 
-        await wait(() => {
+        await waitFor(() => {
             expect(setMessageSpy).toBeCalledWith(new ErrorMessage(LOAD_TEAMS_ERROR_DESCRIPTION, GENERAL_ERROR_TITLE));
         });
 
@@ -186,7 +186,7 @@ describe('when the submit button is clicked', () => {
             fireEvent.click(submitButton);
         });
 
-        await wait(async () => {
+        await waitFor(async () => {
             expect(addUserToTeamSpy).nthCalledWith(1, [{
                 label: 'd',
                 value: '__user__'
@@ -207,7 +207,7 @@ describe('when the submit button is clicked', () => {
             fireEvent.click(submitButton);
         });
 
-        await wait(() => {
+        await waitFor(() => {
             expect(setMessageSpy).toHaveBeenCalled();
         });
     });
@@ -219,7 +219,7 @@ describe('when the submit button is clicked', () => {
             fireEvent.click(submitButton);
         });
 
-        await wait(async () => {
+        await waitFor(async () => {
             expect(setMessageSpy).toBeCalledWith(new ErrorMessage(EMPTY_TEAMS_SUBMIT_ERROR_DESCRIPTION, EMPTY_TEAMS_SUBMIT_ERROR_TITLE));
         });
     });
@@ -233,7 +233,7 @@ describe('when the remove button is clicked', () => {
             wrapper = renderComponent();
         });
 
-        await wait(async () => {
+        await waitFor(async () => {
             const selectedTeam = getByText(wrapper.container, '__team2__');
             const row = (selectedTeam.closest('tr'));
             const removeButton = getByText(row as HTMLElement, 'Remove');

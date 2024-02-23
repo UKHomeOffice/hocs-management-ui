@@ -1,6 +1,6 @@
 import React from 'react';
 import { createBrowserHistory, History, Location } from 'history';
-import { act, wait, fireEvent, getByText, render, RenderResult } from '@testing-library/react';
+import { act, waitFor, fireEvent, getByText, render, RenderResult } from '@testing-library/react';
 import * as TeamsService from '../../../../services/teamsService';
 import * as TopicsService from '../../../../services/topicsService';
 import { State } from '../state';
@@ -85,7 +85,7 @@ describe('when the topicView component is mounted', () => {
             wrapper = renderComponent();
         });
 
-        await wait(() => {
+        await waitFor(() => {
             expect(getTeamsSpy).toHaveBeenCalled();
             expect(getTopicSpy).toHaveBeenCalled();
             expect(wrapper.container).toMatchSnapshot();
@@ -101,7 +101,7 @@ describe('when the submit button is clicked', () => {
             wrapper = renderComponent();
         });
 
-        await wait(async () => {
+        await waitFor(async () => {
             const submitButton = getByText(wrapper.container, 'Submit');
             fireEvent.click(submitButton);
         });
