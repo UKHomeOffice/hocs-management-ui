@@ -73,61 +73,61 @@ const routes = [
         path: '/user-search',
         exact: true,
         component: UserSearch,
-        title: 'UserSearch'
+        title: 'User search'
     },
     {
         path: '/user-view/:userId',
         exact: true,
         component: UserView,
-        title: 'UserView'
+        title: 'Manage User'
     },
     {
         path: '/add-user',
         exact: true,
         component: AddUser,
-        title: 'Add User'
+        title: 'Add a User'
     },
     {
         path: '/user/:userUUID/amend',
         exact: true,
         component: AmendUser,
-        title: 'Amend User'
+        title: 'Amend User Details'
     },
     {
         path: '/user/:userId/add-teams',
         exact: true,
         component: AddTeamToUser,
-        title: 'AddTeamToUser'
+        title: 'Add Teams'
     },
     {
         path: '/team-search',
         exact: true,
         component: TeamSearch,
-        title: 'TeamSearch'
+        title: 'Team search'
     },
     {
         path: '/add-team',
         exact: true,
         component: AddTeam,
-        title: 'AddTeam'
+        title: 'Create a DCU drafting team'
     },
     {
         path: '/team-view/:teamId',
         exact: true,
         component: TeamView,
-        title: 'TeamView'
+        title: 'Manage Team'
     },
     {
         path: '/team/:teamId/add-users',
         exact: true,
         component: AddUsersToTeam,
-        title: 'AddUsersToTeam'
+        title: 'Add users to team'
     },
     {
         path: '/team/:teamId/edit',
         exact: true,
         component: EditTeam,
-        title: 'EditTeam'
+        title: 'Edit team'
     },
     {
         path: '/team/:teamId/reactivate',
@@ -153,19 +153,19 @@ const routes = [
         path: '/topic-to-team',
         exact: true,
         component: TopicSearch,
-        title: 'TopicSearch'
+        title: 'Topic search'
     },
     {
         path: '/topic/:topicId',
         exact: true,
         component: TopicView,
-        title: 'TopicView'
+        title: 'Topic View'
     },
     {
         path: '/topic/:topicValue/private-minister/:privateMinisterValue/draft-qa/:draftQaValue',
         exact: true,
         component: AddTeamsToTopic,
-        title: 'AddTeamsToTopic'
+        title: 'Add Teams To Topic'
     },
     {
         path: '/add-child-topic',
@@ -201,7 +201,7 @@ const routes = [
         path: '/unit-search',
         exact: true,
         component: UnitSearch,
-        title: 'UnitSearch'
+        title: 'Units'
     },
     {
         path: '/team/:teamId/manage-nominated-contacts',
@@ -360,7 +360,7 @@ const routes = [
         path: '/manage-trof-recipient',
         exact: true,
         component: EntityListView(trofRecipient),
-        title: 'Manage Treat Official Receipients'
+        title: 'Manage Treat Official Recipient'
     },
     {
         path: '/manage-trof-recipient/add',
@@ -384,7 +384,7 @@ const routes = [
         path: '/manage-comp-ukvi-bus-area',
         exact: true,
         component: ChooseCompUKVIBusinessArea,
-        title: 'Manage Compaints UKVI Business Areas',
+        title: 'Manage Complaints UKVI Business Areas',
         requiredRole: 'UKVI'
     },
     {

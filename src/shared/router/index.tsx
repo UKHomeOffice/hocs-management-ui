@@ -13,7 +13,7 @@ interface RouterParams {
 const Router : React.FC<RouterParams> = ({ hasRole }) => (
     <Layout>
         <Switch>
-            {routes.map(({ path, exact, component: Page, requiredRole, ...rest }, i) => {
+            {routes.map(({ path, exact, component: Page, requiredRole, title, ...rest }, i) => {
                 if (requiredRole && !hasRole(requiredRole)) {
                     return (<Route key={i} path={path} exact={exact} render={() => (
                         <Redirect push to='/' />
@@ -26,7 +26,7 @@ const Router : React.FC<RouterParams> = ({ hasRole }) => (
                         path={path}
                         exact={exact}
                         render={props => (
-                            <PageWrapper match={props.match} location={props.location}>
+                            <PageWrapper match={props.match} location={props.location} title={title as string}>
                                 <Page {...(props as any)} {...rest} />
                             </PageWrapper>
                         )}

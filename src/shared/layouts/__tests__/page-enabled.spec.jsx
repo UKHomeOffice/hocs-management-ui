@@ -2,6 +2,7 @@ import React from 'react';
 import Page from '../page-enabled.tsx';
 import { render } from '@testing-library/react';
 import { ApplicationProvider } from '../../contexts/application';
+import { HelmetProvider } from 'react-helmet-async';
 
 jest.mock('../error.tsx', () => () => 'MOCK_ERROR_PAGE');
 jest.mock('../../contexts/actions/index.ts', () => ({
@@ -29,11 +30,13 @@ describe('Page Enabled component', () => {
 
     it('should render with default props', () => {
         const WRAPPER = render(
-            <ApplicationProvider>
-                <Page {...DEFAULT_PROPS}>
-                    <div>TEST</div>
-                </Page>
-            </ApplicationProvider>
+            <HelmetProvider>
+                <ApplicationProvider>
+                    <Page {...DEFAULT_PROPS}>
+                        <div>TEST</div>
+                    </Page>
+                </ApplicationProvider>
+            </HelmetProvider>
         );
         expect(WRAPPER).toMatchSnapshot();
     });
@@ -51,11 +54,13 @@ describe('Page Enabled component', () => {
         };
 
         const WRAPPER = render(
-            <ApplicationProvider config={PROPS}>
-                <Page>
-                    <div>TEST</div>
-                </Page>
-            </ApplicationProvider>
+            <HelmetProvider>
+                <ApplicationProvider config={PROPS}>
+                    <Page>
+                        <div>TEST</div>
+                    </Page>
+                </ApplicationProvider>
+            </HelmetProvider>
         );
 
         expect(WRAPPER).toMatchSnapshot();

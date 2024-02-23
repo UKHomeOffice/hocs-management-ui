@@ -3,6 +3,7 @@ import Layout from '../layout.tsx';
 import { render, screen } from '@testing-library/react';
 import { ApplicationProvider } from '../../contexts/application';
 import '@testing-library/jest-dom';
+import { HelmetProvider } from 'react-helmet-async';
 
 jest.mock('react-router-dom', () => {
     return {
@@ -51,9 +52,11 @@ describe('Page layout component', () => {
             }
         };
         const wrapper = render(
-            <ApplicationProvider config={{ ...config }}>
-                <Layout />
-            </ApplicationProvider>
+            <HelmetProvider>
+                <ApplicationProvider config={{ ...config }}>
+                    <Layout />
+                </ApplicationProvider>
+            </HelmetProvider>
         );
         expect(wrapper).toBeDefined();
         expect(screen.getByText('© Crown copyright')).toBeInTheDocument();

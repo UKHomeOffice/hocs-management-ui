@@ -1,6 +1,7 @@
 import React, { Component } from 'react';
 import { Link } from 'react-router-dom';
 import { HeaderConfig } from 'shared/models/config';
+import { Helmet } from 'react-helmet-async';
 
 class Header extends Component<HeaderConfig> {
 
@@ -29,6 +30,8 @@ class Header extends Component<HeaderConfig> {
         const { service = 'Correspondence Service', serviceLink = '/' } = this.props;
         return (
             <header className="govuk-header " role="banner" data-module="header">
+                {typeof window !== 'undefined' && <Helmet defaultTitle={service}
+                    titleTemplate={`%s - ${service}`}/>}
                 <div className="govuk-header__container govuk-width-container">
                     {this.createLogotype(service, serviceLink)}
                 </div>
