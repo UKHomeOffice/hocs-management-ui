@@ -79,25 +79,25 @@ const routes = [
         path: '/user-view/:userId',
         exact: true,
         component: UserView,
-        title: 'Manage User'
+        title: 'Manage user'
     },
     {
         path: '/add-user',
         exact: true,
         component: AddUser,
-        title: 'Add a User'
+        title: 'Add a user'
     },
     {
         path: '/user/:userUUID/amend',
         exact: true,
         component: AmendUser,
-        title: 'Amend User Details'
+        title: 'Amend user details'
     },
     {
         path: '/user/:userId/add-teams',
         exact: true,
         component: AddTeamToUser,
-        title: 'Add Teams'
+        title: 'Add teams'
     },
     {
         path: '/team-search',
@@ -115,7 +115,7 @@ const routes = [
         path: '/team-view/:teamId',
         exact: true,
         component: TeamView,
-        title: 'Manage Team'
+        title: 'Manage team'
     },
     {
         path: '/team/:teamId/add-users',
@@ -140,14 +140,14 @@ const routes = [
         path: '/team/:teamId/deactivate',
         exact: true,
         component: DeactivateTeam,
-        title: 'Deactivate Team',
+        title: 'Deactivate team',
         requiredRole: 'DEACTIVATE_TEAM'
     },
     {
         path: '/add-unit',
         exact: true,
         component: AddUnit,
-        title: 'Add Unit'
+        title: 'Add unit'
     },
     {
         path: '/topic-to-team',
@@ -159,43 +159,43 @@ const routes = [
         path: '/topic/:topicId',
         exact: true,
         component: TopicView,
-        title: 'Topic View'
+        title: 'Topic view'
     },
     {
         path: '/topic/:topicValue/private-minister/:privateMinisterValue/draft-qa/:draftQaValue',
         exact: true,
         component: AddTeamsToTopic,
-        title: 'Add Teams To Topic'
+        title: 'Add teams to topic'
     },
     {
         path: '/add-child-topic',
         exact: true,
         component: AddChildTopic,
-        title: 'Add Child Topic'
+        title: 'Add child topic'
     },
     {
         path: '/add-parent-topic',
         exact: true,
         component: AddParentTopic,
-        title: 'Add Parent Topic'
+        title: 'Add parent topic'
     },
     {
         path: '/manage-standard-lines',
         exact: true,
         component: StandardLinesView,
-        title: 'Manage Standard Lines'
+        title: 'Manage standard lines'
     },
     {
         path: '/add-standard-line',
         exact: true,
         component: AddStandardLine,
-        title: 'Add Standard Line'
+        title: 'Add standard line'
     },
     {
         path: '/manage-standard-lines/:standardLineUUID/amend',
         exact: true,
         component: AmendStandardLine,
-        title: 'Amend Standard Line'
+        title: 'Amend standard line'
     },
     {
         path: '/unit-search',
@@ -207,25 +207,25 @@ const routes = [
         path: '/team/:teamId/manage-nominated-contacts',
         exact: true,
         component: ManageNominatedContacts,
-        title: 'Manage Nominated Contacts'
+        title: 'Manage nominated contacts'
     },
     {
         path: '/case-types',
         exact: true,
         component: SelectCaseType,
-        title: 'Select a Case Type'
+        title: 'Select a case type'
     },
     {
         path: '/case-type/:type',
         exact: true,
         component: CaseTypeView,
-        title: 'View Case Type'
+        title: 'View case type'
     },
     {
         path: '/case-type/:type/add-template',
         exact: true,
         component: AddTemplate,
-        title: 'Add Template'
+        title: 'Add template'
     },
     {
         path: '/case-archive',
@@ -255,37 +255,37 @@ const routes = [
         path: '/manage-foi-account-managers',
         exact: true,
         component: EntityListView(foiAccountManager),
-        title: 'Manage FOI Account managers'
+        title: 'Manage FOI account managers'
     },
     {
         path: '/manage-foi-account-managers/add',
         exact: true,
         component: AddEntity(foiAccountManager),
-        title: 'Add Account Manager'
+        title: 'Add account manager'
     },
     {
         path: '/manage-foi-account-managers/:itemUUID/amend',
         exact: true,
         component: AmendEntity(foiAccountManager),
-        title: 'Add Account Manager'
+        title: 'Amend account manager'
     },
     {
         path: '/manage-foi-interested-parties',
         exact: true,
         component: EntityListView(foiInterestedParty),
-        title: 'Manage FOI Account managers'
+        title: 'Manage FOI interested parties'
     },
     {
         path: '/manage-foi-interested-parties/add',
         exact: true,
         component: AddEntity(foiInterestedParty),
-        title: 'Add Account Manager'
+        title: 'Add interested party'
     },
     {
         path: '/manage-foi-interested-parties/:itemUUID/amend',
         exact: true,
         component: AmendEntity(foiInterestedParty),
-        title: 'Add Account Manager'
+        title: 'Amend interested party'
     },
     {
         path: '/manage-mpam-campaigns',
@@ -297,27 +297,27 @@ const routes = [
         path: '/manage-mpam-campaigns/add',
         exact: true,
         component: AddEntity(mpamCampaign),
-        title: 'Add Campaign'
+        title: 'Add campaign'
     },
     {
         path: '/manage-ukvi-enquiry-reasons',
         exact: true,
         component: EntityListView(ukviEnquiryReason),
-        title: 'Manage UKVI Enquiry Reasons',
+        title: 'Manage UKVI enquiry reasons',
         requiredRole: 'UKVI'
     },
     {
         path: '/manage-ukvi-enquiry-reasons/add',
         exact: true,
         component: AddEntity(ukviEnquiryReason),
-        title: 'Add UKVI Enquiry Reason',
+        title: 'Add UKVI enquiry reason',
         requiredRole: 'UKVI'
     },
     {
         path: '/manage-ukvi-enquiry-reasons/:itemUUID/amend',
         exact: true,
         component: AmendEntity(ukviEnquiryReason),
-        title: 'Amend UKVI Enquiry Reason',
+        title: 'Amend UKVI enquiry reason',
         requiredRole: 'UKVI'
     },
     {
@@ -330,131 +330,131 @@ const routes = [
         path: '/manage-trof-campaigns/add',
         exact: true,
         component: AddEntity(trofCampaign),
-        title: 'Add Campaign'
+        title: 'Add campaign'
     },
     {
         path: '/manage-exgratia-reps',
         exact: true,
         component: ExGratiaView,
-        title: 'Manage Ex-Gratia Business Representatives'
+        title: 'Manage ex-gratia business representatives'
     },
     {
         path: '/manage-exgratia-reps/add',
         exact: true,
         component: AddBusinessRep,
-        title: 'Manage Ex-Gratia Business Representatives'
+        title: 'Add ex-gratia business representatives'
     },
     {
         path: '/manage-mpam-campaigns/:itemUUID/amend',
         exact: true,
         component: AmendEntity(mpamCampaign),
-        title: 'Amend Campaign'
+        title: 'Amend campaign'
     },
     {
         path: '/manage-trof-campaigns/:itemUUID/amend',
         exact: true,
         component: AmendEntity(trofCampaign),
-        title: 'Amend Campaign'
+        title: 'Amend campaign'
     },
     {
         path: '/manage-trof-recipient',
         exact: true,
         component: EntityListView(trofRecipient),
-        title: 'Manage Treat Official Recipient'
+        title: 'Manage Treat Official recipient'
     },
     {
         path: '/manage-trof-recipient/add',
         exact: true,
         component: AddEntity(trofRecipient),
-        title: 'Add Recipient'
+        title: 'Add recipient'
     },
     {
         path: '/manage-trof-recipient/:itemUUID/amend',
         exact: true,
         component: AmendEntity(trofRecipient),
-        title: 'Amend Recipient'
+        title: 'Amend recipient'
     },
     {
         path: '/manage-mpam-business-units',
         exact: true,
         component: ChooseBusinessArea,
-        title: 'Manage MPAM Business Units'
+        title: 'Manage MPAM business units'
     },
     {
         path: '/manage-comp-ukvi-bus-area',
         exact: true,
         component: ChooseCompUKVIBusinessArea,
-        title: 'Manage Complaints UKVI Business Areas',
+        title: 'Manage complaints UKVI business areas',
         requiredRole: 'UKVI'
     },
     {
         path: '/comp-business-area/:type',
         exact: true,
         component: ComplaintsBusinessAreaView,
-        title: 'View Complaints Business Area',
+        title: 'View complaints business area',
         requiredRole: 'UKVI'
     },
     {
         path: '/add-comp-business-area/:type',
         exact: true,
         component: AddCompBusinessArea,
-        title: 'Add Complaint Business Area',
+        title: 'Add complaint business area',
         requiredRole: 'UKVI'
     },
     {
         path: '/amend-comp-business-area/:type/:itemUUID/',
         exact: true,
         component: AmendCompBusinessArea,
-        title: 'Amend Complaint Business Area',
+        title: 'Amend complaint business area',
         requiredRole: 'UKVI'
     },
     {
         path: '/business-area/:type',
         exact: true,
         component: BusinessAreaView,
-        title: 'View Business Area'
+        title: 'View business area'
     },
     {
         path: '/add-business-unit/:type',
         exact: true,
         component: AddBusinessUnit,
-        title: 'Add Business Unit'
+        title: 'Add business unit'
     },
     {
         path: '/select-business-area',
         exact: true,
         component: SelectBusinessArea,
-        title: 'Select Business Area'
+        title: 'Select business area'
     },
     {
         path: '/amend-business-unit/:type/:itemUUID/',
         exact: true,
         component: AmendBusinessUnit,
-        title: 'Amend Business Unit'
+        title: 'Amend business unit'
     },
     {
         path: '/manage-mpam-enquiry-reasons',
         exact: true,
         component: SelectEnquirySubject,
-        title: 'Select Enquiry Subject'
+        title: 'Select enquiry subject'
     },
     {
         path: '/enquiry-subject/:subject',
         exact: true,
         component: EnquirySubjectView,
-        title: 'View Enquiry Subject'
+        title: 'View enquiry subject'
     },
     {
         path: '/add-enquiry-reason/:subject',
         exact: true,
         component: AddEnquiryReason,
-        title: 'Add Enquiry Reason'
+        title: 'Add enquiry reason'
     },
     {
         path: '/amend-enquiry-reason/:subject/:itemUUID/',
         exact: true,
         component: AmendEnquiryReason,
-        title: 'Amend Enquiry Reason'
+        title: 'Amend enquiry reason'
     },
     {
         component: Error,
