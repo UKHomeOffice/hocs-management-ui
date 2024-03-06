@@ -27,7 +27,7 @@ const validationSchema = object({
     title: string()
         .required()
         .label('Business Unit')
-        .matches(/^[a-zA-Z0-9_,.!? ()&]*$/)
+        .matches(/^[a-zA-Z0-9_,.!? ()&\/]*$/)
 });
 
 const AddBusinessUnit: React.FC<addBusinessUnitProps> = ({ csrfToken, history, match }) => {
