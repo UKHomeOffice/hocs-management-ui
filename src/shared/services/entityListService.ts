@@ -7,8 +7,8 @@ export const getListItems = (listName: string) => new Promise<EntityListItem[]>(
     .catch(reason => reject(reason))
 );
 
-export const createListItem = (item: EntityListItem, listName: string) => new Promise((resolve, reject) => axios
-    .post(`/api/entity/list/${listName}`, item)
+export const createListItem = (item: EntityListItem, listName: string, resort: boolean = false) => new Promise((resolve, reject) => axios
+    .post(`/api/entity/list/${listName}${resort ? '?resort=true' : ''}`, item)
     .then(() => resolve(null))
     .catch(reason => reject(reason))
 );

@@ -132,5 +132,17 @@ exports[`when the selectBusinessArea component is mounted should render with def
       </form>
     </div>
   </div>
+  <p
+    class="govuk-body"
+  >
+    Or
+     
+    <a
+      class="govuk-link"
+      href="/comp-business-area/COMP_CCT_BUS_AREA"
+    >
+      Edit Ex-Gracia business areas
+    </a>
+  </p>
 </div>
 `;

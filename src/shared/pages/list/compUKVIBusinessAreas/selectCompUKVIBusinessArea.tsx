@@ -78,7 +78,18 @@ const ChooseCompUKVIBusinessArea: React.FC<ChooseCompUKVIBusinessAreaProps> = ({
 const WrappedChooseCompUKVIBusinessArea = ({ history, location, match }: RouteComponentProps) => (
     <ApplicationConsumer>
         {({ csrf }) => (
-            <ChooseCompUKVIBusinessArea csrfToken={csrf} history={history} location={location} match={match} />
+            <>
+                <ChooseCompUKVIBusinessArea csrfToken={csrf} history={history} location={location} match={match} />
+                <p className='govuk-body'>
+                  Or{' '}
+                    <Link
+                        className='govuk-link'
+                        to="/comp-business-area/COMP_CCT_BUS_AREA"
+                    >
+                      Edit Ex-Gracia business areas
+                    </Link>
+                </p>
+            </>
         )}
     </ApplicationConsumer>
 );

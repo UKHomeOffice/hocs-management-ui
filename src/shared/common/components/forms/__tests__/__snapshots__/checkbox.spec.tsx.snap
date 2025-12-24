@@ -8,18 +8,27 @@ Object {
       <div
         class="govuk-form-group"
       >
-        <label
-          class="govuk-label govuk-label--s"
-          for="Name2"
-          id="Name2-label"
+        <div
+          class="govuk-checkboxes govuk-checkboxes--small"
         >
-          Label2-not-ticked
-        </label>
-        <input
-          id="Name2"
-          name="Name2"
-          type="checkbox"
-        />
+          <div
+            class="govuk-checkboxes__item"
+          >
+            <input
+              class="govuk-checkboxes__input"
+              id="Name2"
+              name="Name2"
+              type="checkbox"
+            />
+            <label
+              class="govuk-label govuk-label--s govuk-checkboxes__label"
+              for="Name2"
+              id="Name2-label"
+            >
+              Label2-not-ticked
+            </label>
+          </div>
+        </div>
       </div>
     </div>
   </body>,
@@ -27,18 +36,27 @@ Object {
     <div
       class="govuk-form-group"
     >
-      <label
-        class="govuk-label govuk-label--s"
-        for="Name2"
-        id="Name2-label"
+      <div
+        class="govuk-checkboxes govuk-checkboxes--small"
       >
-        Label2-not-ticked
-      </label>
-      <input
-        id="Name2"
-        name="Name2"
-        type="checkbox"
-      />
+        <div
+          class="govuk-checkboxes__item"
+        >
+          <input
+            class="govuk-checkboxes__input"
+            id="Name2"
+            name="Name2"
+            type="checkbox"
+          />
+          <label
+            class="govuk-label govuk-label--s govuk-checkboxes__label"
+            for="Name2"
+            id="Name2-label"
+          >
+            Label2-not-ticked
+          </label>
+        </div>
+      </div>
     </div>
   </div>,
   "debug": [Function],
@@ -103,19 +121,28 @@ Object {
       <div
         class="govuk-form-group"
       >
-        <label
-          class="govuk-label govuk-label--s"
-          for="Name1"
-          id="Name1-label"
+        <div
+          class="govuk-checkboxes govuk-checkboxes--small"
         >
-          Label1-ticked
-        </label>
-        <input
-          checked=""
-          id="Name1"
-          name="Name1"
-          type="checkbox"
-        />
+          <div
+            class="govuk-checkboxes__item"
+          >
+            <input
+              checked=""
+              class="govuk-checkboxes__input"
+              id="Name1"
+              name="Name1"
+              type="checkbox"
+            />
+            <label
+              class="govuk-label govuk-label--s govuk-checkboxes__label"
+              for="Name1"
+              id="Name1-label"
+            >
+              Label1-ticked
+            </label>
+          </div>
+        </div>
       </div>
     </div>
   </body>,
@@ -123,19 +150,28 @@ Object {
     <div
       class="govuk-form-group"
     >
-      <label
-        class="govuk-label govuk-label--s"
-        for="Name1"
-        id="Name1-label"
+      <div
+        class="govuk-checkboxes govuk-checkboxes--small"
       >
-        Label1-ticked
-      </label>
-      <input
-        checked=""
-        id="Name1"
-        name="Name1"
-        type="checkbox"
-      />
+        <div
+          class="govuk-checkboxes__item"
+        >
+          <input
+            checked=""
+            class="govuk-checkboxes__input"
+            id="Name1"
+            name="Name1"
+            type="checkbox"
+          />
+          <label
+            class="govuk-label govuk-label--s govuk-checkboxes__label"
+            for="Name1"
+            id="Name1-label"
+          >
+            Label1-ticked
+          </label>
+        </div>
+      </div>
     </div>
   </div>,
   "debug": [Function],

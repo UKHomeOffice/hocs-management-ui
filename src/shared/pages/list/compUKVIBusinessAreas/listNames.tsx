@@ -1,6 +1,7 @@
 export const listNames = {
     COMP_ASYLUM_AND_HUMAN_RIGHTS_BUS_AREA: 'Asylum and Human Rights',
     COMP_ASYLUM_AND_SUPPORT_BUS_AREA: 'Asylum Support',
+    COMP_CCT_BUS_AREA: 'Ex-Gracia',
     COMP_COSS_BUS_AREA:  'COSS',
     COMP_IMMIGRATION_ENFORCEMENT_BUS_AREA:  'Immigration Enforcement',
     COMP_OTHER_BUS_AREA: 'Other',

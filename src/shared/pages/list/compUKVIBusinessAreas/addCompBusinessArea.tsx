@@ -7,7 +7,13 @@ import Text from '../../../common/components/forms/text';
 import { createListItem } from '../../../services/entityListService';
 import { reducer } from '../exGratiaBusinessReps/addBusinessRepReducer';
 import ErrorSummary from '../../../common/components/errorSummary';
-import { GENERAL_ERROR_TITLE, ADD_BUS_UNIT_ERROR_DESCRIPTION, ADD_BUS_UNIT_SUCCESS, VALIDATION_ERROR_TITLE, DUPLICATE_BUS_UNIT_DESCRIPTION } from '../../../models/constants';
+import {
+    GENERAL_ERROR_TITLE,
+    ADD_BUS_UNIT_ERROR_DESCRIPTION,
+    ADD_BUS_UNIT_SUCCESS,
+    VALIDATION_ERROR_TITLE,
+    DUPLICATE_BUS_UNIT_DESCRIPTION
+} from '../../../models/constants';
 import useError from '../../../hooks/useError';
 import ErrorMessage from '../../../models/errorMessage';
 import EntityListItem from '../../../models/entityListItem';
@@ -47,8 +53,10 @@ const AddCompBusinessArea: React.FC<addBusinessAreaProps> = ({ csrfToken, histor
         event.preventDefault();
         clearErrors();
         if (validate(validationSchema, representative, addFormError)) {
-            createListItem(representative, type).then(() => {
-                history.push('/', { successMessage: ADD_BUS_UNIT_SUCCESS });
+            createListItem(representative, type, true).then(() => {history.push(
+                `/comp-business-area/${type}`,
+                { successMessage: ADD_BUS_UNIT_SUCCESS }
+            );
             }).catch((error) => {
                 if (error && error.response && error.response.status === 409) {
                     setErrorMessage(new ErrorMessage(DUPLICATE_BUS_UNIT_DESCRIPTION, VALIDATION_ERROR_TITLE));

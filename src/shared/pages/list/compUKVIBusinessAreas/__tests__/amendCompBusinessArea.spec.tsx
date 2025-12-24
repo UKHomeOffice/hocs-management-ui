@@ -32,7 +32,7 @@ beforeEach(() => {
     history = createBrowserHistory();
     match = {
         isExact: true,
-        params: { itemUUID: '__itemId__' },
+        params: { itemUUID: '__itemId__', type: '__list_short_name__' },
         path: '',
         url: ''
     };
@@ -104,7 +104,7 @@ describe('when the submit button is clicked', () => {
         });
 
         describe('and the service call is successful', () => {
-            it('should redirect to the home page', async () => {
+            it('should redirect to the business area list page', async () => {
 
                 getItemDetailsSpy.mockReturnValueOnce(Promise.resolve(
                     { simpleName: 'testSimpleName', title: 'testTitle', uuid: 'testUUID', active: false }
@@ -112,7 +112,10 @@ describe('when the submit button is clicked', () => {
                 await waitFor(() => {
                     expect(getItemDetailsSpy).toHaveBeenCalled();
                     expect(updateListItemSpy).toHaveBeenCalled();
-                    expect(history.push).toHaveBeenCalledWith('/', { successMessage: 'The business unit was amended successfully' });
+                    expect(history.push).toHaveBeenCalledWith(
+                        '/comp-business-area/__list_short_name__',
+                        { successMessage: 'The business unit was amended successfully' }
+                    );
                 });
             });
             it('should call the begin submit action', async () => {

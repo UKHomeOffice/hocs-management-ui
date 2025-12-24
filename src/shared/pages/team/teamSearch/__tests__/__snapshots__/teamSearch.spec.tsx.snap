@@ -131,18 +131,27 @@ exports[`when the teamView component is mounted should render with default props
         <div
           class="govuk-form-group"
         >
-          <label
-            class="govuk-label govuk-label--s"
-            for="showDeactivated"
-            id="showDeactivated-label"
+          <div
+            class="govuk-checkboxes govuk-checkboxes--small"
           >
-            Show Deactivated Teams
-          </label>
-          <input
-            id="showDeactivated"
-            name="showDeactivated"
-            type="checkbox"
-          />
+            <div
+              class="govuk-checkboxes__item"
+            >
+              <input
+                class="govuk-checkboxes__input"
+                id="showDeactivated"
+                name="showDeactivated"
+                type="checkbox"
+              />
+              <label
+                class="govuk-label govuk-label--s govuk-checkboxes__label"
+                for="showDeactivated"
+                id="showDeactivated-label"
+              >
+                Show Deactivated Teams
+              </label>
+            </div>
+          </div>
         </div>
       </div>
     </div>

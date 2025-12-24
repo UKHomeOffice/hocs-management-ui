@@ -33,7 +33,7 @@ beforeEach(() => {
     history = createBrowserHistory();
     match = {
         isExact: true,
-        params: {},
+        params: { type: '__list_short_name__' },
         path: '',
         url: ''
     };
@@ -103,11 +103,14 @@ describe('when the submit button is clicked', () => {
         });
 
         describe('and the service call is successful', () => {
-            it('should redirect to the home page', async () => {
+            it('should redirect to the business area list page', async () => {
                 expect.assertions(1);
 
                 await waitFor(() => {
-                    expect(history.push).toHaveBeenCalledWith('/', { successMessage: 'The business unit was added successfully' });
+                    expect(history.push).toHaveBeenCalledWith(
+                        '/comp-business-area/__list_short_name__',
+                        { successMessage: 'The business unit was added successfully' }
+                    );
                 });
             });
             it('should call the begin submit action', async () => {

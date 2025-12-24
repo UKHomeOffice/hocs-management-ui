@@ -27,22 +27,25 @@ const Checkbox: React.FC<CheckboxProps> = ({ disabled = false,
 
     return (
         <div className={classNames('govuk-form-group', { 'govuk-form-group--error': error })}>
-
-            <label htmlFor={name} id={`${name}-label`} className="govuk-label govuk-label--s">{label}</label>
-            {hint && <div className="govuk-hint">{hint}</div>}
-            {error && <p id={`${name}-error`} className="govuk-error-message">{error}</p>}
-
-            <input
-                id={name}
-                type='checkbox'
-                name={name}
-                disabled={disabled}
-                autoFocus={autoFocus}
-                checked={ bChecked }
-                onChange={({ target: { name, checked } }) => {
-                    updateState({ name, value: (!bChecked).toString() });
-                }}
-            />
+            <div className="govuk-checkboxes govuk-checkboxes--small">
+                <div className="govuk-checkboxes__item">
+                    <input
+                        id={name}
+                        className="govuk-checkboxes__input"
+                        type='checkbox'
+                        name={name}
+                        disabled={disabled}
+                        autoFocus={autoFocus}
+                        checked={bChecked}
+                        onChange={({ target: { name } }) => {
+                            updateState({ name, value: (!bChecked).toString() });
+                        }}
+                    />
+                    <label htmlFor={name} id={`${name}-label`} className="govuk-label govuk-label--s govuk-checkboxes__label">{label}</label>
+                    {hint && <div className="govuk-hint">{hint}</div>}
+                    {error && <p id={`${name}-error`} className="govuk-error-message">{error}</p>}
+                </div>
+            </div>
         </div>
     );
 };
