@@ -3,10 +3,9 @@ import React from 'react';
 import * as useError from '../../../../hooks/useError';
 import { match, MemoryRouter } from 'react-router';
 import ManageNominatedContacts from '../manageNominatedContacts';
-import { render, RenderResult, waitFor } from '@testing-library/react';
+import { render, RenderResult, waitFor, act } from '@testing-library/react';
 import { createBrowserHistory, History, Location } from 'history';
 import Team from '../../../../models/team';
-import { act } from 'react-dom/test-utils';
 import * as TeamsService from '../../../../services/teamsService';
 
 const useErrorSpy = jest.spyOn(useError, 'default');
@@ -72,7 +71,7 @@ describe('manage nominated contacts', () => {
         getTeamSpy.mockImplementationOnce(() => Promise.resolve(mockState));
 
         let wrapper: RenderResult;
-        act(() => {
+        await act(async () => {
             wrapper = renderComponent();
         });
         expect.assertions(1);
@@ -85,14 +84,14 @@ describe('manage nominated contacts', () => {
     it('should get the team name from the TeamService and set the state', async () => {
         getTeamSpy.mockImplementationOnce(() => Promise.resolve(mockState));
 
-        act(() => {
+        await act(async () => {
             renderComponent();
         });
         expect.assertions(2);
 
         await waitFor(() => {
-            expect(getTeamSpy).toBeCalledTimes(1);
-            expect(mockSetState).toBeCalledWith(mockState);
+            expect(getTeamSpy).toHaveBeenCalledTimes(1);
+            expect(mockSetState).toHaveBeenCalledWith(mockState);
         });
     });
 
@@ -103,13 +102,13 @@ describe('manage nominated contacts', () => {
             }
         }));
 
-        act(() => {
+        await act(async () => {
             renderComponent();
         });
 
         await waitFor(() => {
-            expect(getTeamSpy).toBeCalledTimes(1);
-            expect(setErrorMessageSpy).toBeCalledWith({
+            expect(getTeamSpy).toHaveBeenCalledTimes(1);
+            expect(setErrorMessageSpy).toHaveBeenCalledWith({
                 'description': 'There was an error retrieving the team.  Please try refreshing the page.',
                 'title': 'Something went wrong'
             });

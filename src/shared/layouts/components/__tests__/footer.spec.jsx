@@ -11,8 +11,8 @@ describe('Layout footer component', () => {
     it('should render with links when passed', () => {
         const props = {
             links: [
-                { label: 'first', target: '/' },
-                { label: 'second', target: '/' }
+                { label: 'first', target: '/first' },
+                { label: 'second', target: '/second' }
             ]
         };
         expect(

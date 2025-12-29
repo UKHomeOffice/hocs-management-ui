@@ -90,7 +90,7 @@ describe('when the Add Business Area button is clicked', () => {
     it('should push a new page into the history', async () => {
         history.push = jest.fn();
         let wrapper: RenderResult;
-        act(() => {
+        await act(async () => {
             wrapper = renderComponent();
         });
 

@@ -32,7 +32,7 @@ const renderComponent = () => render(
 );
 const getItemDetailsSpy = jest.spyOn(EntityListService, 'getItemDetails');
 const updateListItemSpy = jest.spyOn(EntityListService, 'updateListItem');
-beforeEach(() => {
+beforeEach(async () => {
     history = createBrowserHistory();
     match = {
         isExact: true,
@@ -65,7 +65,7 @@ beforeEach(() => {
     addFormErrorSpy.mockReset();
     clearErrorsSpy.mockReset();
     setMessageSpy.mockReset();
-    act(() => {
+    await act(async () => {
         wrapper = renderComponent();
     });
 });
@@ -96,7 +96,7 @@ describe('when the foiAccountManager amendEntity component is mounted', () => {
         wrapper = renderComponent();
 
         await waitFor(() => {
-            expect(setMessageSpy).toBeCalledWith({
+            expect(setMessageSpy).toHaveBeenCalledWith({
                 description: 'There was an error retrieving account managers. Please try refreshing the page.',
                 title: GENERAL_ERROR_TITLE,
             });

@@ -86,7 +86,7 @@ const renderComponent = (roles: string[] = []) => {
     );
 };
 
-beforeEach(() => {
+beforeEach(async () => {
     history = createBrowserHistory();
     match = {
         isExact: true,
@@ -104,22 +104,19 @@ beforeEach(() => {
     };
     mockState = {
         teamMembersLoaded: true,
-        teamMembers: [{
-            label: '__user1__',
-            value: '__userId1__'
-        }, {
-            label: '__user2__',
-            value: '__userId2__'
-        }],
+        teamMembers: [
+            { label: '__user1__', value: '__userId1__' },
+            { label: '__user2__', value: '__userId2__' }
+        ],
         teamName: '__teamName__',
         unitName: '__unit1__',
         active: true
     };
-    useReducerSpy.mockImplementationOnce(() => [mockState, jest.fn()]);
+    useReducerSpy.mockImplementation(() => [mockState, jest.fn()]);
     useErrorSpy.mockImplementation(() => [{}, jest.fn(), clearErrorsSpy, setMessageSpy]);
     clearErrorsSpy.mockReset();
     setMessageSpy.mockReset();
-    act(() => {
+    await act(async () => {
         wrapper = renderComponent();
     });
 });
@@ -129,7 +126,7 @@ describe('when the teamView component is mounted with RENAME_TEAM role', () => {
     it('should render with default props', async () => {
         const roles = ['RENAME_TEAM'];
 
-        act(() => {
+        await act(async () => {
             wrapper = renderComponent(roles);
         });
         expect(wrapper.container).toMatchSnapshot();
@@ -145,7 +142,7 @@ describe('when the teamView component has an inactive Team', () => {
     it('should show options to reactivate if the user has ACTIVATE_TEAM role', async () => {
         const roles = ['RENAME_TEAM', 'ACTIVATE_TEAM'];
 
-        act(() => {
+        await act(async () => {
             wrapper = renderComponent(roles);
         });
 
@@ -155,7 +152,7 @@ describe('when the teamView component has an inactive Team', () => {
     it('should not show options to reactivate if the user does not have ACTIVATE_TEAM role', async () => {
         const roles = ['RENAME_TEAM'];
 
-        act(() => {
+        await act(async () => {
             wrapper = renderComponent(roles);
         });
 
@@ -171,7 +168,7 @@ describe('when the teamView component has an active Team', () => {
 
     it('should show options to deactivate if the user has DEACTIVATE_TEAM role', async () => {
         const roles = ['RENAME_TEAM', 'DEACTIVATE_TEAM'];
-        act(() => {
+        await act(async () => {
             wrapper = renderComponent(roles);
         });
 
@@ -180,7 +177,7 @@ describe('when the teamView component has an active Team', () => {
 
     it('should not show options to deactivate if the user does not have DEACTIVATE_TEAM role', async () => {
         const roles = ['RENAME_TEAM'];
-        act(() => {
+        await act(async () => {
             wrapper = renderComponent(roles);
         });
 

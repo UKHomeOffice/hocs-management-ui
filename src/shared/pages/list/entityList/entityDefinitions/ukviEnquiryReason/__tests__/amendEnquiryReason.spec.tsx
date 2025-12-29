@@ -32,7 +32,7 @@ const renderComponent = () => render(
 );
 const getItemDetailsSpy = jest.spyOn(EntityListService, 'getItemDetails');
 const updateListItemSpy = jest.spyOn(EntityListService, 'updateListItem');
-beforeEach(() => {
+beforeEach(async () => {
     history = createBrowserHistory();
     match = {
         isExact: true,
@@ -65,7 +65,7 @@ beforeEach(() => {
     addFormErrorSpy.mockReset();
     clearErrorsSpy.mockReset();
     setMessageSpy.mockReset();
-    act(() => {
+    await act(async () => {
         wrapper = renderComponent();
     });
 });
@@ -96,7 +96,7 @@ describe('when the ukviEnquiryReason amendEntity component is mounted', () => {
         wrapper = renderComponent();
 
         await waitFor(() => {
-            expect(setMessageSpy).toBeCalledWith({ title: GENERAL_ERROR_TITLE,
+            expect(setMessageSpy).toHaveBeenCalledWith({ title: GENERAL_ERROR_TITLE,
                 description: 'There was an error retrieving enquiry reasons. Please try refreshing the page.' });
         });
 

@@ -11,13 +11,13 @@ jest.mock('../../../../services/unitsService', () => ({
     __esModule: true,
     getUnits: function () {
         return Promise.resolve([{
-            displayName: 'Home Office General Property',
-            shortCode: 'shortCode',
+            displayName: 'Home Office General Property 1',
+            shortCode: 'shortCode1',
             value: '1aa9055d-0572-436b-a69d-4a97588f4ce4'
         }, {
-            displayName: 'Home Office General Property',
-            shortCode: 'shortCode',
-            value: '1aa9055d-0572-436b-a69d-4a97588f4ce4'
+            displayName: 'Home Office General Property 2',
+            shortCode: 'shortCode2',
+            value: '8c469f49-8985-4d6e-88b6-70cf9a2cb41a'
         }]);
     }
 }));
@@ -40,7 +40,7 @@ describe('when the unitSearch component is mounted', () => {
     it('component should render', async () => {
 
         let wrapper: RenderResult;
-        act(() => {
+        await act(async () => {
             wrapper = renderComponent();
         });
 

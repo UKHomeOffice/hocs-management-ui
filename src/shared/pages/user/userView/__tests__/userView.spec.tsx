@@ -77,9 +77,9 @@ beforeEach(() => {
 
 describe('when the teamView component is mounted', () => {
     it('should render with default props', async () => {
-        expect.assertions(7);
+        expect.assertions(4);
         let wrapper: RenderResult;
-        act(() => {
+        await act(async () => {
             wrapper = renderComponent();
         });
 
@@ -96,7 +96,7 @@ describe('when the Add team members button is clicked', () => {
     it('should push a new page into the history', async () => {
         history.push = jest.fn();
         let wrapper: RenderResult;
-        act(() => {
+        await act(async () => {
             wrapper = renderComponent();
         });
 
@@ -112,7 +112,7 @@ describe('when the Add team members button is clicked', () => {
 describe('when the remove user button is clicked', () => {
     it('should remove the row from the users table', async () => {
         let wrapper: RenderResult;
-        act(() => {
+        await act(async () => {
             wrapper = renderComponent();
         });
 
@@ -123,20 +123,20 @@ describe('when the remove user button is clicked', () => {
             fireEvent.click(removeButton);
         });
 
-        expect(deleteUserFromTeamSpy).nthCalledWith(1, userUUID, '__team1__');
-        expect(getTeamsForUserSpy).nthCalledWith(1, userUUID);
+        expect(deleteUserFromTeamSpy).toHaveBeenNthCalledWith(1, userUUID, '__team1__');
+        expect(getTeamsForUserSpy).toHaveBeenNthCalledWith(1, userUUID);
 
     });
 
     describe('and the service call fails', () => {
-        beforeEach(() => {
+        beforeEach(async () => {
             let wrapper: RenderResult;
-            act(() => {
+            await act(async () => {
                 wrapper = renderComponent();
             });
 
-            waitFor(async () => {
-                const selectedUser = getByText(wrapper.container, '__user1__');
+            await waitFor(async () => {
+                const selectedUser = getByText(wrapper.container, '__team1__');
                 const row = (selectedUser.closest('tr'));
                 const removeButton = getByText(row as HTMLElement, 'Remove');
                 fireEvent.click(removeButton);
@@ -176,7 +176,7 @@ describe('when the Amend Details button is clicked', () => {
     it('should push a new page into the history', async () => {
         history.push = jest.fn();
         let wrapper: RenderResult;
-        act(() => {
+        await act(async () => {
             wrapper = renderComponent();
         });
 

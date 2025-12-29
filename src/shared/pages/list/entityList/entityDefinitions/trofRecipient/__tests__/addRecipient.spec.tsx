@@ -33,7 +33,7 @@ const renderComponent = () => render(
 
 jest.spyOn(EntityListService, 'createListItem').mockImplementation(() => Promise.resolve());
 
-beforeEach(() => {
+beforeEach(async () => {
     history = createBrowserHistory();
     match = {
         isExact: true,
@@ -62,7 +62,7 @@ beforeEach(() => {
     addFormErrorSpy.mockReset();
     clearErrorsSpy.mockReset();
     setMessageSpy.mockReset();
-    act(() => {
+    await act(async () => {
         wrapper = renderComponent();
     });
 });
@@ -82,10 +82,10 @@ describe('when the name is entered', () => {
         expect.assertions(1);
 
         const nameElement = await waitFor(async () => {
-            return await wrapper.findByLabelText('Recipient name');
+            return wrapper.findByLabelText('Recipient name');
         });
 
-        fireEvent.change(nameElement, { target: { name: 'title', value: '__displayTitle__' } });
+        await act(async () => fireEvent.change(nameElement, { target: { name: 'title', value: '__displayTitle__' } }));
 
         await waitFor(() => {
             expect(reducerDispatch).toHaveBeenCalledWith({ name: 'title', value: '__displayTitle__' });

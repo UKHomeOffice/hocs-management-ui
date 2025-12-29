@@ -87,7 +87,7 @@ describe('when the ukviEnquiryReason EntityListView component is mounted', () =>
     it('should render with default props', async () => {
         expect.assertions(2);
         let wrapper: RenderResult;
-        act(() => {
+        await act(async () => {
             wrapper = renderComponent();
         });
 

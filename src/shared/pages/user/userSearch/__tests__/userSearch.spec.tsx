@@ -50,8 +50,7 @@ beforeEach(() => {
 describe('when the userView component is mounted', () => {
     it('should render with default props', async () => {
         expect.assertions(2);
-        let wrapper: RenderResult;
-        act(() => { wrapper = renderComponent(); });
+        const wrapper = await act(async () => renderComponent());
 
         await waitFor(() => {
             expect(getUsersSpy).toHaveBeenCalled();
@@ -63,8 +62,7 @@ describe('when the userView component is mounted', () => {
 describe('when the view user button is clicked', () => {
     it('should push a new page into the history', async () => {
         history.push = jest.fn();
-        let wrapper: RenderResult;
-        act(() => { wrapper = renderComponent(); });
+        const wrapper: RenderResult = await act(async () => renderComponent());
 
         await waitFor(async () => {
             const viewUserButton = getByText(wrapper.container, 'View user');
@@ -79,9 +77,7 @@ describe('when no users are retrieved for the typeahead', () => {
     it('should throw error', async () => {
         getUsersSpy.mockImplementation(() => Promise.reject('ERROR'));
 
-        act(() => {
-            renderComponent();
-        });
+        await act(async () => renderComponent());
 
         await waitFor(async () => {
             expect(setMessageSpy).toHaveBeenCalledWith(new ErrorMessage(LOAD_USERS_ERROR_DESCRIPTION, GENERAL_ERROR_TITLE));
@@ -95,8 +91,7 @@ describe('when a user is not selected', () => {
         history.push = jest.fn();
         mockState = undefined;
         useStateSpy.mockImplementationOnce(() => [mockState, jest.fn()]);
-        let wrapper: RenderResult;
-        act(() => { wrapper = renderComponent(); });
+        const wrapper = await act(() => renderComponent());
 
         await waitFor(async () => {
             const viewUserButton = getByText(wrapper.container, 'View user');

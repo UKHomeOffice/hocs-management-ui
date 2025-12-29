@@ -1,7 +1,7 @@
-// Jest Snapshot v1, https://goo.gl/fbAQLP
+// Jest Snapshot v1, https://jestjs.io/docs/snapshot-testing
 
 exports[`Form date component should render disabled when passed 1`] = `
-Object {
+{
   "asFragment": [Function],
   "baseElement": <body>
     <div>
@@ -244,7 +244,7 @@ Object {
 `;
 
 exports[`Form date component should render with default props 1`] = `
-Object {
+{
   "asFragment": [Function],
   "baseElement": <body>
     <div>
@@ -485,7 +485,7 @@ Object {
 `;
 
 exports[`Form date component should render with error when passed 1`] = `
-Object {
+{
   "asFragment": [Function],
   "baseElement": <body>
     <div>
@@ -738,7 +738,7 @@ Object {
 `;
 
 exports[`Form date component should render with hint when passed 1`] = `
-Object {
+{
   "asFragment": [Function],
   "baseElement": <body>
     <div>
@@ -989,7 +989,7 @@ Object {
 `;
 
 exports[`Form date component should render with label when passed 1`] = `
-Object {
+{
   "asFragment": [Function],
   "baseElement": <body>
     <div>
@@ -1234,7 +1234,7 @@ Object {
 `;
 
 exports[`Form date component should render with value when passed 1`] = `
-Object {
+{
   "asFragment": [Function],
   "baseElement": <body>
     <div>

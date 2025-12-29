@@ -50,7 +50,7 @@ const renderComponent = () => render(
 
 jest.spyOn(EntityListService, 'createListItem').mockImplementation(() => Promise.resolve());
 
-beforeEach(() => {
+beforeEach(async () => {
     history = createBrowserHistory();
     match = {
         isExact: true,
@@ -79,7 +79,7 @@ beforeEach(() => {
     addFormErrorSpy.mockReset();
     clearErrorsSpy.mockReset();
     setMessageSpy.mockReset();
-    act(() => {
+    await act(async () => {
         wrapper = renderComponent();
     });
 });
@@ -99,10 +99,10 @@ describe('when the name is entered', () => {
         expect.assertions(1);
 
         const nameElement = await waitFor(async () => {
-            return await wrapper.findByLabelText('Entity name');
+            return wrapper.findByLabelText('Entity name');
         });
 
-        fireEvent.change(nameElement, { target: { name: 'title', value: '__displayTitle__' } });
+        await act(async () => fireEvent.change(nameElement, { target: { name: 'title', value: '__displayTitle__' } }));
 
         await waitFor(() => {
             expect(reducerDispatch).toHaveBeenCalledWith({ name: 'title', value: '__displayTitle__' });
@@ -115,10 +115,10 @@ describe('when the code is entered', () => {
         expect.assertions(1);
 
         const codeElement = await waitFor(async () => {
-            return await wrapper.findByLabelText('Entity code');
+            return wrapper.findByLabelText('Entity code');
         });
 
-        fireEvent.change(codeElement, { target: { name: 'simpleName', value: '__Code__' } });
+        await act(async () => fireEvent.change(codeElement, { target: { name: 'simpleName', value: '__Code__' } }));
 
         await waitFor(() => {
             expect(reducerDispatch).toHaveBeenCalledWith({ name: 'simpleName', value: '__Code__' });
@@ -133,10 +133,10 @@ describe('when the submit button is clicked', () => {
             mockEntityListItem.title = '__displayName__';
             mockEntityListItem.simpleName = '__shortCode__';
             const submitButton = await waitFor(async () => {
-                return await wrapper.findByText('Submit');
+                return wrapper.findByText('Submit');
             });
 
-            fireEvent.click(submitButton);
+            await act(async () => fireEvent.click(submitButton));
         });
 
         describe('and the service call is successful', () => {
@@ -193,7 +193,7 @@ describe('when the submit button is clicked', () => {
                 return await wrapper.findByText('Submit');
             });
 
-            fireEvent.click(submitButton);
+            await act(async () => fireEvent.click(submitButton));
         });
 
         it('should call the begin submit action', () => {

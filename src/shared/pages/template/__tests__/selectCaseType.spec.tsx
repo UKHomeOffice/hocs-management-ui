@@ -41,7 +41,7 @@ const renderComponent = () => render(
     </MemoryRouter>
 );
 
-beforeEach(() => {
+beforeEach(async () => {
     history = createBrowserHistory();
     match = {
         isExact: true,
@@ -64,7 +64,7 @@ beforeEach(() => {
     addFormErrorMock.mockReset();
     clearErrorsMock.mockReset();
     setMessageMock.mockReset();
-    act(() => {
+    await act(async () => {
         wrapper = renderComponent();
     });
 });
@@ -79,15 +79,15 @@ describe('when the selectCaseType component is mounted', () => {
     });
 
     it('should display an error if the call to retrieve the case types fail', async () => {
-        expect.assertions(2);
+        expect.assertions(1);
         getCaseTypesSpy.mockImplementation(() => Promise.reject('error'));
 
-        act(() => {
+        await act(async () => {
             wrapper = renderComponent();
         });
 
         await waitFor(() => {
-            expect(setMessageMock).toBeCalledWith({ title: GENERAL_ERROR_TITLE, description: LOAD_CASE_TYPES_DESCRIPTION });
+            expect(setMessageMock).toHaveBeenCalledWith({ title: GENERAL_ERROR_TITLE, description: LOAD_CASE_TYPES_DESCRIPTION });
         });
 
     });

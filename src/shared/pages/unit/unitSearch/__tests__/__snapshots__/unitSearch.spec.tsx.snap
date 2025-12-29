@@ -1,4 +1,4 @@
-// Jest Snapshot v1, https://goo.gl/fbAQLP
+// Jest Snapshot v1, https://jestjs.io/docs/snapshot-testing
 
 exports[`when the unitSearch component is mounted component should render 1`] = `
 <div>
@@ -20,12 +20,12 @@ exports[`when the unitSearch component is mounted component should render 1`] = 
       <li
         class="govuk-list govuk-list--bullet govuk-list margin-bottom--small"
       >
-        Home Office General Property
+        Home Office General Property 1
       </li>
       <li
         class="govuk-list govuk-list--bullet govuk-list margin-bottom--small"
       >
-        Home Office General Property
+        Home Office General Property 2
       </li>
     </ul>
   </div>

@@ -146,7 +146,7 @@ describe('when the addUser method is called', () => {
             jest.spyOn(axios, 'post').mockReturnValue(Promise.resolve({ data: { userUUID: userId } } ));
             const userFormData = new FormData();
             await addUser(userFormData).then((userUUID: string) => {
-                expect(axios.post).toBeCalledWith('/api/users', userFormData);
+                expect(axios.post).toHaveBeenCalledWith('/api/users', userFormData);
                 expect(userUUID).toStrictEqual(userId);
             });
         });
@@ -170,8 +170,8 @@ describe('when the updateUser method is called', () => {
             const userId = 'x-x-x-x';
             jest.spyOn(axios, 'put').mockReturnValue(Promise.resolve());
             const updateRequest = { uuid: userId, firstName: 'a', lastName: 'b', enabled: true };
-            await updateUser(updateRequest).then((userUUID: string) => {
-                expect(axios.put).toBeCalledWith('/api/users/' + userId, updateRequest);
+            await updateUser(updateRequest).then((_userUUID: string) => {
+                expect(axios.put).toHaveBeenCalledWith('/api/users/' + userId, updateRequest);
             });
         });
     });

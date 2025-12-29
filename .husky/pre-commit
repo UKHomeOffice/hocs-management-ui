@@ -1,0 +1,2 @@
+npm run jest
+npm run lint-staged

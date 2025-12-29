@@ -97,7 +97,7 @@ describe('when the AddTeam component is mounted', () => {
             }
         };
 
-        act(() => {
+        await act(async () => {
             wrapper = renderComponent();
         });
 
@@ -114,7 +114,7 @@ describe('when the AddTeam component is mounted', () => {
 
         renderComponent();
         await waitFor(() => {
-            expect(setMessageSpy).toBeCalledWith(
+            expect(setMessageSpy).toHaveBeenCalledWith(
                 { title: GENERAL_ERROR_TITLE, description: LOAD_UNITS_ERROR_DESCRIPTION }
             );
         });
@@ -128,7 +128,7 @@ describe('when the AddTeam component is mounted', () => {
         getAddTeamSpy.mockImplementationOnce(() => Promise.resolve({ response: { status: 200 } }));
         validateSpy.mockReturnValue(true);
 
-        act(() => {
+        await act(async () => {
             wrapper = renderComponent();
         });
 
@@ -149,7 +149,7 @@ describe('when the AddTeam component is mounted', () => {
         getAddTeamSpy.mockImplementationOnce(() => Promise.reject({ response: { status: 409 } }));
         validateSpy.mockReturnValue(true);
 
-        act(() => {
+        await act(async () => {
             wrapper = renderComponent();
         });
 
@@ -158,7 +158,7 @@ describe('when the AddTeam component is mounted', () => {
             fireEvent.click(submitButton);
         });
         await waitFor(() => {
-            expect(setMessageSpy).toBeCalledWith(
+            expect(setMessageSpy).toHaveBeenCalledWith(
                 { title: VALIDATION_ERROR_TITLE, description: TEAM_CREATION_FAILURE_NAME_ALREADY_EXISTS }
             );
         });
@@ -171,7 +171,7 @@ describe('when the AddTeam component is mounted', () => {
         getAddTeamSpy.mockImplementationOnce(() => Promise.reject({ response: { status: 500 } }));
         validateSpy.mockReturnValue(true);
 
-        act(() => {
+        await act(async () => {
             wrapper = renderComponent();
         });
 
@@ -180,7 +180,7 @@ describe('when the AddTeam component is mounted', () => {
             fireEvent.click(submitButton);
         });
         await waitFor(() => {
-            expect(setMessageSpy).toBeCalledWith(
+            expect(setMessageSpy).toHaveBeenCalledWith(
                 { title: GENERAL_ERROR_TITLE, description: TEAM_CREATION_FAILURE_UNKNOWN_ERROR }
             );
         });

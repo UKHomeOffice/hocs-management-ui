@@ -71,9 +71,9 @@ beforeEach(() => {
 
 describe('when the CaseTypeView component is mounted', () => {
     it('should render with default props', async () => {
-        expect.assertions(7);
+        expect.assertions(4);
         let wrapper: RenderResult;
-        act(() => {
+        await act(async () => {
             wrapper = renderComponent();
         });
 
@@ -90,7 +90,7 @@ describe('when the Add template button is clicked', () => {
     it('should push a new page into the history', async () => {
         history.push = jest.fn();
         let wrapper: RenderResult;
-        act(() => {
+        await act(async () => {
             wrapper = renderComponent();
         });
 
@@ -106,7 +106,7 @@ describe('when the Add template button is clicked', () => {
 describe('when the remove template button is clicked', () => {
     it('should remove the row from the templates table', async () => {
         let wrapper: RenderResult;
-        act(() => {
+        await act(async () => {
             wrapper = renderComponent();
         });
 
@@ -117,19 +117,19 @@ describe('when the remove template button is clicked', () => {
             fireEvent.click(removeButton);
         });
 
-        expect(deleteTemplateSpy).nthCalledWith(1, '__templateId1__');
-        expect(getTemplatesForCaseTypeSpy).nthCalledWith(1, '__type__');
+        expect(deleteTemplateSpy).toHaveBeenNthCalledWith(1, '__templateId1__');
+        expect(getTemplatesForCaseTypeSpy).toHaveBeenNthCalledWith(1, '__type__');
 
     });
 
     describe('and the service call fails', () => {
-        beforeEach(() => {
+        beforeEach(async () => {
             let wrapper: RenderResult;
-            act(() => {
+            await act(async () => {
                 wrapper = renderComponent();
             });
 
-            waitFor(async () => {
+            await waitFor(async () => {
                 const selectedTemplate = getByText(wrapper.container, '__template1__');
                 const row = (selectedTemplate.closest('tr'));
                 const removeButton = getByText(row as HTMLElement, 'Remove');

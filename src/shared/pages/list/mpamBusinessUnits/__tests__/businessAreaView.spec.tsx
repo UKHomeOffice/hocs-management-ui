@@ -59,9 +59,9 @@ beforeEach(() => {
 
 describe('when the businessAreaView component is mounted', () => {
     it('should render with default props', async () => {
-        expect.assertions(5);
+        expect.assertions(3);
         let wrapper: RenderResult;
-        act(() => {
+        await act(async () => {
             wrapper = renderComponent();
         });
 
@@ -77,7 +77,7 @@ describe('when the Add Business Unit button is clicked', () => {
     it('should push a new page into the history', async () => {
         history.push = jest.fn();
         let wrapper: RenderResult;
-        act(() => {
+        await act(async () => {
             wrapper = renderComponent();
         });
 

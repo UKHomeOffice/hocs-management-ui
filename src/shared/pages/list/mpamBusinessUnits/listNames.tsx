@@ -1,4 +1,4 @@
-export const listNames = {
+export const listNames: {[key: string]: string} = {
     MPAM_BUS_UNITS_1: 'UKVI',
     MPAM_BUS_UNITS_2: 'BF',
     MPAM_BUS_UNITS_3: 'IE',

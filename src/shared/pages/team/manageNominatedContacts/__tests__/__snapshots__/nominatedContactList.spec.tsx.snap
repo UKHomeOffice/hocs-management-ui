@@ -1,4 +1,4 @@
-// Jest Snapshot v1, https://goo.gl/fbAQLP
+// Jest Snapshot v1, https://jestjs.io/docs/snapshot-testing
 
 exports[`NominatedContactList when the NominatedContactList component is mounted should render with default props and populate state 1`] = `
 <div>

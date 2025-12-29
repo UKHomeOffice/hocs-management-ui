@@ -44,7 +44,7 @@ const renderComponent = () => render(
 
 jest.spyOn(TemplatesService, 'addTemplate').mockImplementation(() => Promise.resolve());
 
-beforeEach(() => {
+beforeEach(async () => {
     history = createBrowserHistory();
     match = {
         isExact: true,
@@ -73,7 +73,7 @@ beforeEach(() => {
     addFormErrorSpy.mockReset();
     clearErrorsSpy.mockReset();
     setMessageSpy.mockReset();
-    act(() => {
+    await act(async () => {
         wrapper = renderComponent();
     });
 });
@@ -88,16 +88,16 @@ describe('when the addTemplate component is mounted', () => {
     });
 
     it('should display an error if the call to retrieve the case type fail', async () => {
-        expect.assertions(2);
+        expect.assertions(1);
 
         getCaseTypeSpy.mockImplementation(() => Promise.reject('error'));
 
-        act(() => {
+        await act(async () => {
             wrapper = renderComponent();
         });
 
         await waitFor(() => {
-            expect(setMessageSpy).toBeCalledWith({ title: GENERAL_ERROR_TITLE, description: LOAD_CASE_TYPE_ERROR_DESCRIPTION });
+            expect(setMessageSpy).toHaveBeenCalledWith({ title: GENERAL_ERROR_TITLE, description: LOAD_CASE_TYPE_ERROR_DESCRIPTION });
         });
 
     });

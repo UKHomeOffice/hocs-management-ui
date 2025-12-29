@@ -3,34 +3,38 @@ const { csrfMiddleware } = require('../csrf.js');
 describe('CSRF middleware', () => {
     let req = {};
     let res = {};
-    const getHeader = jest.fn();
-    const setHeader = jest.fn();
+    const cookie = jest.fn();
     const next = jest.fn();
     beforeEach(() => {
         req = {
             cookies: {},
-            headers: []
+            headers: [],
+            user: { id: 'user_id' }
         };
         res = {
-            getHeader,
-            setHeader
+            cookie,
         };
         next.mockReset();
-        setHeader.mockReset();
+        cookie.mockReset();
     });
 
     it('should add the csrfToken method', async () => {
-        await csrfMiddleware(req, res, next);
-        expect(req.csrfToken()).toBeDefined();
+        csrfMiddleware(req, res, next);
+        expect(req.csrfToken).toBeDefined();
     });
 
     it('should add the csrf cookie', async () => {
-        await csrfMiddleware(req, res, next);
-        expect(res.setHeader).toBeCalledWith('set-cookie', expect.any(Array));
+        csrfMiddleware(req, res, next);
+        req.csrfToken();
+        expect(res.cookie).toHaveBeenCalledWith(
+            'management-ui.x-csrf-token',
+            expect.any(String),
+            expect.objectContaining({ httpOnly: true, path: '/', sameSite: 'strict' })
+        );
     });
 
     it('should call the next handler', async () => {
-        await csrfMiddleware(req, res, next);
+        csrfMiddleware(req, res, next);
         expect(next).toHaveBeenCalled();
     });
 });

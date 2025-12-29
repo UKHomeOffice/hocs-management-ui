@@ -41,7 +41,7 @@ jest.mock('../../../../services/topicsService', () => ({
 
 const getParentTopicsSpy = jest.spyOn(TopicsService, 'getParentTopics');
 
-beforeEach(() => {
+beforeEach(async () => {
     history = createBrowserHistory();
     match = {
         isExact: true,
@@ -67,7 +67,7 @@ beforeEach(() => {
     addFormErrorSpy.mockReset();
     clearErrorsSpy.mockReset();
     setMessageSpy.mockReset();
-    act(() => {
+    await act(async () => {
         wrapper = renderComponent();
     });
 });
@@ -83,15 +83,15 @@ describe('when the addChildTopic component is mounted', () => {
     });
 
     it('should display an error if the call to retrieve the parent topics fails', async () => {
-        expect.assertions(2);
+        expect.assertions(1);
         getParentTopicsSpy.mockImplementation(() => Promise.reject('error'));
 
-        act(() => {
+        await act(async () => {
             wrapper = renderComponent();
         });
 
         await waitFor(() => {
-            expect(setMessageSpy).toBeCalledWith({ title: GENERAL_ERROR_TITLE, description: LOAD_PARENT_TOPICS_ERROR_DESCRIPTION });
+            expect(setMessageSpy).toHaveBeenCalledWith({ title: GENERAL_ERROR_TITLE, description: LOAD_PARENT_TOPICS_ERROR_DESCRIPTION });
         });
 
     });
@@ -231,7 +231,7 @@ describe('when the submit button is clicked', () => {
             expect.assertions(1);
 
             await waitFor(() => {
-                expect(addFormErrorSpy).toBeCalledTimes(0);
+                expect(addFormErrorSpy).toHaveBeenCalledTimes(0);
             });
         });
     });

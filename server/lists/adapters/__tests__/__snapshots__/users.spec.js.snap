@@ -1,36 +1,36 @@
-// Jest Snapshot v1, https://goo.gl/fbAQLP
+// Jest Snapshot v1, https://jestjs.io/docs/snapshot-testing
 
 exports[`User Adapter should correctly transform null values 1`] = `
-Array [
-  Object {
+[
+  {
     "label": "A (user.a@example.com)",
     "value": 1,
   },
-  Object {
+  {
     "label": "User (user.b@example.com)",
     "value": 2,
   },
-  Object {
+  {
     "label": "User C (userC)",
     "value": 3,
   },
-  Object {
+  {
     "label": "D (userD)",
     "value": 4,
   },
-  Object {
+  {
     "label": "User (userE)",
     "value": 5,
   },
-  Object {
+  {
     "label": "user.F@example.com",
     "value": 6,
   },
-  Object {
+  {
     "label": "userG",
     "value": 7,
   },
-  Object {
+  {
     "label": "null Null (null.Null@example.com)",
     "value": 8,
   },
@@ -38,12 +38,12 @@ Array [
 `;
 
 exports[`User Adapter should transform and sort user data 1`] = `
-Array [
-  Object {
+[
+  {
     "label": "User B (user.b@example.com)",
     "value": 2,
   },
-  Object {
+  {
     "label": "User C (user.c@example.com)",
     "value": 3,
   },

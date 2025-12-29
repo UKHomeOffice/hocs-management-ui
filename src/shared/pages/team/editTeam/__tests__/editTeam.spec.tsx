@@ -93,28 +93,22 @@ const setDefaults = () => {
 
 };
 
-beforeEach(() => {
+beforeEach(async () => {
     setDefaults();
 
-    hasRole.mockImplementation((role: string) => {
-        if ((role === 'RENAME_TEAM') || (role === 'REASSIGN_TEAM_UNIT')) {
-            return true;
-        }
-        return false;
-    });
+    hasRole.mockImplementation(
+        (role: string) =>
+            (role === 'RENAME_TEAM') || (role === 'REASSIGN_TEAM_UNIT')
+    );
 
-    act(() => {
-        wrapper = renderComponent();
-    });
+    wrapper = await act(async () => renderComponent());
 });
 
 describe('when the editTeam component is mounted', () => {
     it('should render with default props', async () => {
         const roles = ['RENAME_TEAM', 'REASSIGN_TEAM_UNIT'];
 
-        act(() => {
-            wrapper = renderComponent(roles);
-        });
+        wrapper = await act(async () => renderComponent(roles));
 
         await waitFor(() => {
             expect(wrapper.container).toMatchSnapshot();
@@ -124,9 +118,7 @@ describe('when the editTeam component is mounted', () => {
     it('should hide the edit name area if the user does not have the RENAME_TEAM role', async () => {
         const roles = ['REASSIGN_TEAM_UNIT'];
 
-        act(() => {
-            wrapper = renderComponent(roles);
-        });
+        wrapper = await act(() => renderComponent(roles));
 
         await waitFor(() => {
             expect(wrapper.container).toMatchSnapshot();
@@ -158,10 +150,10 @@ describe('when the submit button is clicked', () => {
             updateTeamMock.mockClear();
 
             const submitButton = await waitFor(async () => {
-                return await wrapper.findByText('Update');
+                return wrapper.findByText('Update');
             });
 
-            fireEvent.click(submitButton);
+            await act(async () => fireEvent.click(submitButton));
         });
 
         describe( 'and the updateTeamUnit service call fails', () => {
@@ -209,10 +201,10 @@ describe('when the submit button is clicked', () => {
             mockState.newDisplayName = '__newDisplayName__';
 
             const submitButton = await waitFor(async () => {
-                return await wrapper.findByText('Update');
+                return wrapper.findByText('Update');
             });
 
-            fireEvent.click(submitButton);
+            await act(async () => fireEvent.click(submitButton));
         });
 
         describe('and the updateTeamName service call is successful', () => {
@@ -265,10 +257,10 @@ describe('when the submit button is clicked', () => {
             updateTeamMock.mockReset();
 
             const submitButton = await waitFor(async () => {
-                return await wrapper.findByText('Update');
+                return wrapper.findByText('Update');
             });
 
-            fireEvent.click(submitButton);
+            await act(async () => fireEvent.click(submitButton));
         });
 
         it('should not make an update name call', () => {
@@ -279,10 +271,10 @@ describe('when the submit button is clicked', () => {
     describe('and the name is not filled in', () => {
         beforeEach(async () => {
             const submitButton = await waitFor(async () => {
-                return await wrapper.findByText('Update');
+                return wrapper.findByText('Update');
             });
 
-            fireEvent.click(submitButton);
+            await act(async () => fireEvent.click(submitButton));
         });
 
         it('should call the begin submit action', () => {

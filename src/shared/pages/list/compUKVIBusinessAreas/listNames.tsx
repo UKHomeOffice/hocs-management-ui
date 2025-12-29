@@ -1,4 +1,4 @@
-export const listNames = {
+export const listNames: {[key: string]: string} = {
     COMP_ASYLUM_AND_HUMAN_RIGHTS_BUS_AREA: 'Asylum and Human Rights',
     COMP_ASYLUM_AND_SUPPORT_BUS_AREA: 'Asylum Support',
     COMP_CCT_BUS_AREA: 'Ex-Gracia',

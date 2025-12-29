@@ -1,7 +1,7 @@
-// Jest Snapshot v1, https://goo.gl/fbAQLP
+// Jest Snapshot v1, https://jestjs.io/docs/snapshot-testing
 
 exports[`Form type ahead component (dropdown) should render disabled when passed 1`] = `
-Object {
+{
   "asFragment": [Function],
   "baseElement": <body>
     <div>
@@ -59,7 +59,7 @@ Object {
                   id="type-ahead-input"
                   role="combobox"
                   spellcheck="false"
-                  style="opacity: 1; width: 100%; grid-area: 1 / 2; min-width: 2px; border: 0px; margin: 0px; outline: 0; padding: 0px;"
+                  style="color: inherit; background: 0px; opacity: 1; width: 100%; grid-area: 1 / 2; min-width: 2px; border: 0px; margin: 0px; outline: 0; padding: 0px;"
                   tabindex="0"
                   type="text"
                   value=""
@@ -69,20 +69,6 @@ Object {
             <div
               class="govuk-typeahead__indicators css-1hb7zxy-IndicatorsContainer"
             >
-              <div
-                aria-hidden="true"
-                class="govuk-typeahead__indicator govuk-typeahead__loading-indicator css-pogzpp-loadingIndicator"
-              >
-                <span
-                  class="css-1xtdfmb-LoadingDot"
-                />
-                <span
-                  class="css-zoievk-LoadingDot"
-                />
-                <span
-                  class="css-x748d8-LoadingDot"
-                />
-              </div>
               <span
                 class="govuk-typeahead__indicator-separator css-62wm9a-IndicatorSeparator"
               />
@@ -164,7 +150,7 @@ Object {
                 id="type-ahead-input"
                 role="combobox"
                 spellcheck="false"
-                style="opacity: 1; width: 100%; grid-area: 1 / 2; min-width: 2px; border: 0px; margin: 0px; outline: 0; padding: 0px;"
+                style="color: inherit; background: 0px; opacity: 1; width: 100%; grid-area: 1 / 2; min-width: 2px; border: 0px; margin: 0px; outline: 0; padding: 0px;"
                 tabindex="0"
                 type="text"
                 value=""
@@ -174,20 +160,6 @@ Object {
           <div
             class="govuk-typeahead__indicators css-1hb7zxy-IndicatorsContainer"
           >
-            <div
-              aria-hidden="true"
-              class="govuk-typeahead__indicator govuk-typeahead__loading-indicator css-pogzpp-loadingIndicator"
-            >
-              <span
-                class="css-1xtdfmb-LoadingDot"
-              />
-              <span
-                class="css-zoievk-LoadingDot"
-              />
-              <span
-                class="css-x748d8-LoadingDot"
-              />
-            </div>
             <span
               class="govuk-typeahead__indicator-separator css-62wm9a-IndicatorSeparator"
             />
@@ -268,7 +240,7 @@ Object {
 `;
 
 exports[`Form type ahead component (dropdown) should render with default props 1`] = `
-Object {
+{
   "asFragment": [Function],
   "baseElement": <body>
     <div>
@@ -324,7 +296,7 @@ Object {
                   id="type-ahead-input"
                   role="combobox"
                   spellcheck="false"
-                  style="opacity: 1; width: 100%; grid-area: 1 / 2; min-width: 2px; border: 0px; margin: 0px; outline: 0; padding: 0px;"
+                  style="color: inherit; background: 0px; opacity: 1; width: 100%; grid-area: 1 / 2; min-width: 2px; border: 0px; margin: 0px; outline: 0; padding: 0px;"
                   tabindex="0"
                   type="text"
                   value=""
@@ -334,20 +306,6 @@ Object {
             <div
               class="govuk-typeahead__indicators css-1hb7zxy-IndicatorsContainer"
             >
-              <div
-                aria-hidden="true"
-                class="govuk-typeahead__indicator govuk-typeahead__loading-indicator css-pogzpp-loadingIndicator"
-              >
-                <span
-                  class="css-1xtdfmb-LoadingDot"
-                />
-                <span
-                  class="css-zoievk-LoadingDot"
-                />
-                <span
-                  class="css-x748d8-LoadingDot"
-                />
-              </div>
               <span
                 class="govuk-typeahead__indicator-separator css-62wm9a-IndicatorSeparator"
               />
@@ -427,7 +385,7 @@ Object {
                 id="type-ahead-input"
                 role="combobox"
                 spellcheck="false"
-                style="opacity: 1; width: 100%; grid-area: 1 / 2; min-width: 2px; border: 0px; margin: 0px; outline: 0; padding: 0px;"
+                style="color: inherit; background: 0px; opacity: 1; width: 100%; grid-area: 1 / 2; min-width: 2px; border: 0px; margin: 0px; outline: 0; padding: 0px;"
                 tabindex="0"
                 type="text"
                 value=""
@@ -437,20 +395,6 @@ Object {
           <div
             class="govuk-typeahead__indicators css-1hb7zxy-IndicatorsContainer"
           >
-            <div
-              aria-hidden="true"
-              class="govuk-typeahead__indicator govuk-typeahead__loading-indicator css-pogzpp-loadingIndicator"
-            >
-              <span
-                class="css-1xtdfmb-LoadingDot"
-              />
-              <span
-                class="css-zoievk-LoadingDot"
-              />
-              <span
-                class="css-x748d8-LoadingDot"
-              />
-            </div>
             <span
               class="govuk-typeahead__indicator-separator css-62wm9a-IndicatorSeparator"
             />
@@ -531,7 +475,7 @@ Object {
 `;
 
 exports[`Form type ahead component (dropdown) should render with error when passed 1`] = `
-Object {
+{
   "asFragment": [Function],
   "baseElement": <body>
     <div>
@@ -593,7 +537,7 @@ Object {
                   id="type-ahead-input"
                   role="combobox"
                   spellcheck="false"
-                  style="opacity: 1; width: 100%; grid-area: 1 / 2; min-width: 2px; border: 0px; margin: 0px; outline: 0; padding: 0px;"
+                  style="color: inherit; background: 0px; opacity: 1; width: 100%; grid-area: 1 / 2; min-width: 2px; border: 0px; margin: 0px; outline: 0; padding: 0px;"
                   tabindex="0"
                   type="text"
                   value=""
@@ -603,20 +547,6 @@ Object {
             <div
               class="govuk-typeahead__indicators css-1hb7zxy-IndicatorsContainer"
             >
-              <div
-                aria-hidden="true"
-                class="govuk-typeahead__indicator govuk-typeahead__loading-indicator css-pogzpp-loadingIndicator"
-              >
-                <span
-                  class="css-1xtdfmb-LoadingDot"
-                />
-                <span
-                  class="css-zoievk-LoadingDot"
-                />
-                <span
-                  class="css-x748d8-LoadingDot"
-                />
-              </div>
               <span
                 class="govuk-typeahead__indicator-separator css-62wm9a-IndicatorSeparator"
               />
@@ -702,7 +632,7 @@ Object {
                 id="type-ahead-input"
                 role="combobox"
                 spellcheck="false"
-                style="opacity: 1; width: 100%; grid-area: 1 / 2; min-width: 2px; border: 0px; margin: 0px; outline: 0; padding: 0px;"
+                style="color: inherit; background: 0px; opacity: 1; width: 100%; grid-area: 1 / 2; min-width: 2px; border: 0px; margin: 0px; outline: 0; padding: 0px;"
                 tabindex="0"
                 type="text"
                 value=""
@@ -712,20 +642,6 @@ Object {
           <div
             class="govuk-typeahead__indicators css-1hb7zxy-IndicatorsContainer"
           >
-            <div
-              aria-hidden="true"
-              class="govuk-typeahead__indicator govuk-typeahead__loading-indicator css-pogzpp-loadingIndicator"
-            >
-              <span
-                class="css-1xtdfmb-LoadingDot"
-              />
-              <span
-                class="css-zoievk-LoadingDot"
-              />
-              <span
-                class="css-x748d8-LoadingDot"
-              />
-            </div>
             <span
               class="govuk-typeahead__indicator-separator css-62wm9a-IndicatorSeparator"
             />
@@ -806,7 +722,7 @@ Object {
 `;
 
 exports[`Form type ahead component (dropdown) should render with hint when passed 1`] = `
-Object {
+{
   "asFragment": [Function],
   "baseElement": <body>
     <div>
@@ -867,7 +783,7 @@ Object {
                   id="type-ahead-input"
                   role="combobox"
                   spellcheck="false"
-                  style="opacity: 1; width: 100%; grid-area: 1 / 2; min-width: 2px; border: 0px; margin: 0px; outline: 0; padding: 0px;"
+                  style="color: inherit; background: 0px; opacity: 1; width: 100%; grid-area: 1 / 2; min-width: 2px; border: 0px; margin: 0px; outline: 0; padding: 0px;"
                   tabindex="0"
                   type="text"
                   value=""
@@ -877,20 +793,6 @@ Object {
             <div
               class="govuk-typeahead__indicators css-1hb7zxy-IndicatorsContainer"
             >
-              <div
-                aria-hidden="true"
-                class="govuk-typeahead__indicator govuk-typeahead__loading-indicator css-pogzpp-loadingIndicator"
-              >
-                <span
-                  class="css-1xtdfmb-LoadingDot"
-                />
-                <span
-                  class="css-zoievk-LoadingDot"
-                />
-                <span
-                  class="css-x748d8-LoadingDot"
-                />
-              </div>
               <span
                 class="govuk-typeahead__indicator-separator css-62wm9a-IndicatorSeparator"
               />
@@ -975,7 +877,7 @@ Object {
                 id="type-ahead-input"
                 role="combobox"
                 spellcheck="false"
-                style="opacity: 1; width: 100%; grid-area: 1 / 2; min-width: 2px; border: 0px; margin: 0px; outline: 0; padding: 0px;"
+                style="color: inherit; background: 0px; opacity: 1; width: 100%; grid-area: 1 / 2; min-width: 2px; border: 0px; margin: 0px; outline: 0; padding: 0px;"
                 tabindex="0"
                 type="text"
                 value=""
@@ -985,20 +887,6 @@ Object {
           <div
             class="govuk-typeahead__indicators css-1hb7zxy-IndicatorsContainer"
           >
-            <div
-              aria-hidden="true"
-              class="govuk-typeahead__indicator govuk-typeahead__loading-indicator css-pogzpp-loadingIndicator"
-            >
-              <span
-                class="css-1xtdfmb-LoadingDot"
-              />
-              <span
-                class="css-zoievk-LoadingDot"
-              />
-              <span
-                class="css-x748d8-LoadingDot"
-              />
-            </div>
             <span
               class="govuk-typeahead__indicator-separator css-62wm9a-IndicatorSeparator"
             />
@@ -1079,7 +967,7 @@ Object {
 `;
 
 exports[`Form type ahead component (dropdown) should render with label when passed 1`] = `
-Object {
+{
   "asFragment": [Function],
   "baseElement": <body>
     <div>
@@ -1137,7 +1025,7 @@ Object {
                   id="type-ahead-input"
                   role="combobox"
                   spellcheck="false"
-                  style="opacity: 1; width: 100%; grid-area: 1 / 2; min-width: 2px; border: 0px; margin: 0px; outline: 0; padding: 0px;"
+                  style="color: inherit; background: 0px; opacity: 1; width: 100%; grid-area: 1 / 2; min-width: 2px; border: 0px; margin: 0px; outline: 0; padding: 0px;"
                   tabindex="0"
                   type="text"
                   value=""
@@ -1147,20 +1035,6 @@ Object {
             <div
               class="govuk-typeahead__indicators css-1hb7zxy-IndicatorsContainer"
             >
-              <div
-                aria-hidden="true"
-                class="govuk-typeahead__indicator govuk-typeahead__loading-indicator css-pogzpp-loadingIndicator"
-              >
-                <span
-                  class="css-1xtdfmb-LoadingDot"
-                />
-                <span
-                  class="css-zoievk-LoadingDot"
-                />
-                <span
-                  class="css-x748d8-LoadingDot"
-                />
-              </div>
               <span
                 class="govuk-typeahead__indicator-separator css-62wm9a-IndicatorSeparator"
               />
@@ -1242,7 +1116,7 @@ Object {
                 id="type-ahead-input"
                 role="combobox"
                 spellcheck="false"
-                style="opacity: 1; width: 100%; grid-area: 1 / 2; min-width: 2px; border: 0px; margin: 0px; outline: 0; padding: 0px;"
+                style="color: inherit; background: 0px; opacity: 1; width: 100%; grid-area: 1 / 2; min-width: 2px; border: 0px; margin: 0px; outline: 0; padding: 0px;"
                 tabindex="0"
                 type="text"
                 value=""
@@ -1252,20 +1126,6 @@ Object {
           <div
             class="govuk-typeahead__indicators css-1hb7zxy-IndicatorsContainer"
           >
-            <div
-              aria-hidden="true"
-              class="govuk-typeahead__indicator govuk-typeahead__loading-indicator css-pogzpp-loadingIndicator"
-            >
-              <span
-                class="css-1xtdfmb-LoadingDot"
-              />
-              <span
-                class="css-zoievk-LoadingDot"
-              />
-              <span
-                class="css-x748d8-LoadingDot"
-              />
-            </div>
             <span
               class="govuk-typeahead__indicator-separator css-62wm9a-IndicatorSeparator"
             />
@@ -1346,7 +1206,7 @@ Object {
 `;
 
 exports[`Form type ahead component (select) should render disabled when passed 1`] = `
-Object {
+{
   "asFragment": [Function],
   "baseElement": <body>
     <div>
@@ -1404,7 +1264,7 @@ Object {
                   id="type-ahead-input"
                   role="combobox"
                   spellcheck="false"
-                  style="opacity: 1; width: 100%; grid-area: 1 / 2; min-width: 2px; border: 0px; margin: 0px; outline: 0; padding: 0px;"
+                  style="color: inherit; background: 0px; opacity: 1; width: 100%; grid-area: 1 / 2; min-width: 2px; border: 0px; margin: 0px; outline: 0; padding: 0px;"
                   tabindex="0"
                   type="text"
                   value=""
@@ -1414,20 +1274,6 @@ Object {
             <div
               class="govuk-typeahead__indicators css-1hb7zxy-IndicatorsContainer"
             >
-              <div
-                aria-hidden="true"
-                class="govuk-typeahead__indicator govuk-typeahead__loading-indicator css-pogzpp-loadingIndicator"
-              >
-                <span
-                  class="css-1xtdfmb-LoadingDot"
-                />
-                <span
-                  class="css-zoievk-LoadingDot"
-                />
-                <span
-                  class="css-x748d8-LoadingDot"
-                />
-              </div>
               <span
                 class="govuk-typeahead__indicator-separator css-62wm9a-IndicatorSeparator"
               />
@@ -1509,7 +1355,7 @@ Object {
                 id="type-ahead-input"
                 role="combobox"
                 spellcheck="false"
-                style="opacity: 1; width: 100%; grid-area: 1 / 2; min-width: 2px; border: 0px; margin: 0px; outline: 0; padding: 0px;"
+                style="color: inherit; background: 0px; opacity: 1; width: 100%; grid-area: 1 / 2; min-width: 2px; border: 0px; margin: 0px; outline: 0; padding: 0px;"
                 tabindex="0"
                 type="text"
                 value=""
@@ -1519,20 +1365,6 @@ Object {
           <div
             class="govuk-typeahead__indicators css-1hb7zxy-IndicatorsContainer"
           >
-            <div
-              aria-hidden="true"
-              class="govuk-typeahead__indicator govuk-typeahead__loading-indicator css-pogzpp-loadingIndicator"
-            >
-              <span
-                class="css-1xtdfmb-LoadingDot"
-              />
-              <span
-                class="css-zoievk-LoadingDot"
-              />
-              <span
-                class="css-x748d8-LoadingDot"
-              />
-            </div>
             <span
               class="govuk-typeahead__indicator-separator css-62wm9a-IndicatorSeparator"
             />
@@ -1613,7 +1445,7 @@ Object {
 `;
 
 exports[`Form type ahead component (select) should render with default props 1`] = `
-Object {
+{
   "asFragment": [Function],
   "baseElement": <body>
     <div>
@@ -1669,7 +1501,7 @@ Object {
                   id="type-ahead-input"
                   role="combobox"
                   spellcheck="false"
-                  style="opacity: 1; width: 100%; grid-area: 1 / 2; min-width: 2px; border: 0px; margin: 0px; outline: 0; padding: 0px;"
+                  style="color: inherit; background: 0px; opacity: 1; width: 100%; grid-area: 1 / 2; min-width: 2px; border: 0px; margin: 0px; outline: 0; padding: 0px;"
                   tabindex="0"
                   type="text"
                   value=""
@@ -1679,20 +1511,6 @@ Object {
             <div
               class="govuk-typeahead__indicators css-1hb7zxy-IndicatorsContainer"
             >
-              <div
-                aria-hidden="true"
-                class="govuk-typeahead__indicator govuk-typeahead__loading-indicator css-pogzpp-loadingIndicator"
-              >
-                <span
-                  class="css-1xtdfmb-LoadingDot"
-                />
-                <span
-                  class="css-zoievk-LoadingDot"
-                />
-                <span
-                  class="css-x748d8-LoadingDot"
-                />
-              </div>
               <span
                 class="govuk-typeahead__indicator-separator css-62wm9a-IndicatorSeparator"
               />
@@ -1772,7 +1590,7 @@ Object {
                 id="type-ahead-input"
                 role="combobox"
                 spellcheck="false"
-                style="opacity: 1; width: 100%; grid-area: 1 / 2; min-width: 2px; border: 0px; margin: 0px; outline: 0; padding: 0px;"
+                style="color: inherit; background: 0px; opacity: 1; width: 100%; grid-area: 1 / 2; min-width: 2px; border: 0px; margin: 0px; outline: 0; padding: 0px;"
                 tabindex="0"
                 type="text"
                 value=""
@@ -1782,20 +1600,6 @@ Object {
           <div
             class="govuk-typeahead__indicators css-1hb7zxy-IndicatorsContainer"
           >
-            <div
-              aria-hidden="true"
-              class="govuk-typeahead__indicator govuk-typeahead__loading-indicator css-pogzpp-loadingIndicator"
-            >
-              <span
-                class="css-1xtdfmb-LoadingDot"
-              />
-              <span
-                class="css-zoievk-LoadingDot"
-              />
-              <span
-                class="css-x748d8-LoadingDot"
-              />
-            </div>
             <span
               class="govuk-typeahead__indicator-separator css-62wm9a-IndicatorSeparator"
             />
@@ -1876,7 +1680,7 @@ Object {
 `;
 
 exports[`Form type ahead component (select) should render with error when passed 1`] = `
-Object {
+{
   "asFragment": [Function],
   "baseElement": <body>
     <div>
@@ -1938,7 +1742,7 @@ Object {
                   id="type-ahead-input"
                   role="combobox"
                   spellcheck="false"
-                  style="opacity: 1; width: 100%; grid-area: 1 / 2; min-width: 2px; border: 0px; margin: 0px; outline: 0; padding: 0px;"
+                  style="color: inherit; background: 0px; opacity: 1; width: 100%; grid-area: 1 / 2; min-width: 2px; border: 0px; margin: 0px; outline: 0; padding: 0px;"
                   tabindex="0"
                   type="text"
                   value=""
@@ -1948,20 +1752,6 @@ Object {
             <div
               class="govuk-typeahead__indicators css-1hb7zxy-IndicatorsContainer"
             >
-              <div
-                aria-hidden="true"
-                class="govuk-typeahead__indicator govuk-typeahead__loading-indicator css-pogzpp-loadingIndicator"
-              >
-                <span
-                  class="css-1xtdfmb-LoadingDot"
-                />
-                <span
-                  class="css-zoievk-LoadingDot"
-                />
-                <span
-                  class="css-x748d8-LoadingDot"
-                />
-              </div>
               <span
                 class="govuk-typeahead__indicator-separator css-62wm9a-IndicatorSeparator"
               />
@@ -2047,7 +1837,7 @@ Object {
                 id="type-ahead-input"
                 role="combobox"
                 spellcheck="false"
-                style="opacity: 1; width: 100%; grid-area: 1 / 2; min-width: 2px; border: 0px; margin: 0px; outline: 0; padding: 0px;"
+                style="color: inherit; background: 0px; opacity: 1; width: 100%; grid-area: 1 / 2; min-width: 2px; border: 0px; margin: 0px; outline: 0; padding: 0px;"
                 tabindex="0"
                 type="text"
                 value=""
@@ -2057,20 +1847,6 @@ Object {
           <div
             class="govuk-typeahead__indicators css-1hb7zxy-IndicatorsContainer"
           >
-            <div
-              aria-hidden="true"
-              class="govuk-typeahead__indicator govuk-typeahead__loading-indicator css-pogzpp-loadingIndicator"
-            >
-              <span
-                class="css-1xtdfmb-LoadingDot"
-              />
-              <span
-                class="css-zoievk-LoadingDot"
-              />
-              <span
-                class="css-x748d8-LoadingDot"
-              />
-            </div>
             <span
               class="govuk-typeahead__indicator-separator css-62wm9a-IndicatorSeparator"
             />
@@ -2151,7 +1927,7 @@ Object {
 `;
 
 exports[`Form type ahead component (select) should render with hint when passed 1`] = `
-Object {
+{
   "asFragment": [Function],
   "baseElement": <body>
     <div>
@@ -2212,7 +1988,7 @@ Object {
                   id="type-ahead-input"
                   role="combobox"
                   spellcheck="false"
-                  style="opacity: 1; width: 100%; grid-area: 1 / 2; min-width: 2px; border: 0px; margin: 0px; outline: 0; padding: 0px;"
+                  style="color: inherit; background: 0px; opacity: 1; width: 100%; grid-area: 1 / 2; min-width: 2px; border: 0px; margin: 0px; outline: 0; padding: 0px;"
                   tabindex="0"
                   type="text"
                   value=""
@@ -2222,20 +1998,6 @@ Object {
             <div
               class="govuk-typeahead__indicators css-1hb7zxy-IndicatorsContainer"
             >
-              <div
-                aria-hidden="true"
-                class="govuk-typeahead__indicator govuk-typeahead__loading-indicator css-pogzpp-loadingIndicator"
-              >
-                <span
-                  class="css-1xtdfmb-LoadingDot"
-                />
-                <span
-                  class="css-zoievk-LoadingDot"
-                />
-                <span
-                  class="css-x748d8-LoadingDot"
-                />
-              </div>
               <span
                 class="govuk-typeahead__indicator-separator css-62wm9a-IndicatorSeparator"
               />
@@ -2320,7 +2082,7 @@ Object {
                 id="type-ahead-input"
                 role="combobox"
                 spellcheck="false"
-                style="opacity: 1; width: 100%; grid-area: 1 / 2; min-width: 2px; border: 0px; margin: 0px; outline: 0; padding: 0px;"
+                style="color: inherit; background: 0px; opacity: 1; width: 100%; grid-area: 1 / 2; min-width: 2px; border: 0px; margin: 0px; outline: 0; padding: 0px;"
                 tabindex="0"
                 type="text"
                 value=""
@@ -2330,20 +2092,6 @@ Object {
           <div
             class="govuk-typeahead__indicators css-1hb7zxy-IndicatorsContainer"
           >
-            <div
-              aria-hidden="true"
-              class="govuk-typeahead__indicator govuk-typeahead__loading-indicator css-pogzpp-loadingIndicator"
-            >
-              <span
-                class="css-1xtdfmb-LoadingDot"
-              />
-              <span
-                class="css-zoievk-LoadingDot"
-              />
-              <span
-                class="css-x748d8-LoadingDot"
-              />
-            </div>
             <span
               class="govuk-typeahead__indicator-separator css-62wm9a-IndicatorSeparator"
             />
@@ -2424,7 +2172,7 @@ Object {
 `;
 
 exports[`Form type ahead component (select) should render with label when passed 1`] = `
-Object {
+{
   "asFragment": [Function],
   "baseElement": <body>
     <div>
@@ -2482,7 +2230,7 @@ Object {
                   id="type-ahead-input"
                   role="combobox"
                   spellcheck="false"
-                  style="opacity: 1; width: 100%; grid-area: 1 / 2; min-width: 2px; border: 0px; margin: 0px; outline: 0; padding: 0px;"
+                  style="color: inherit; background: 0px; opacity: 1; width: 100%; grid-area: 1 / 2; min-width: 2px; border: 0px; margin: 0px; outline: 0; padding: 0px;"
                   tabindex="0"
                   type="text"
                   value=""
@@ -2492,20 +2240,6 @@ Object {
             <div
               class="govuk-typeahead__indicators css-1hb7zxy-IndicatorsContainer"
             >
-              <div
-                aria-hidden="true"
-                class="govuk-typeahead__indicator govuk-typeahead__loading-indicator css-pogzpp-loadingIndicator"
-              >
-                <span
-                  class="css-1xtdfmb-LoadingDot"
-                />
-                <span
-                  class="css-zoievk-LoadingDot"
-                />
-                <span
-                  class="css-x748d8-LoadingDot"
-                />
-              </div>
               <span
                 class="govuk-typeahead__indicator-separator css-62wm9a-IndicatorSeparator"
               />
@@ -2587,7 +2321,7 @@ Object {
                 id="type-ahead-input"
                 role="combobox"
                 spellcheck="false"
-                style="opacity: 1; width: 100%; grid-area: 1 / 2; min-width: 2px; border: 0px; margin: 0px; outline: 0; padding: 0px;"
+                style="color: inherit; background: 0px; opacity: 1; width: 100%; grid-area: 1 / 2; min-width: 2px; border: 0px; margin: 0px; outline: 0; padding: 0px;"
                 tabindex="0"
                 type="text"
                 value=""
@@ -2597,20 +2331,6 @@ Object {
           <div
             class="govuk-typeahead__indicators css-1hb7zxy-IndicatorsContainer"
           >
-            <div
-              aria-hidden="true"
-              class="govuk-typeahead__indicator govuk-typeahead__loading-indicator css-pogzpp-loadingIndicator"
-            >
-              <span
-                class="css-1xtdfmb-LoadingDot"
-              />
-              <span
-                class="css-zoievk-LoadingDot"
-              />
-              <span
-                class="css-x748d8-LoadingDot"
-              />
-            </div>
             <span
               class="govuk-typeahead__indicator-separator css-62wm9a-IndicatorSeparator"
             />

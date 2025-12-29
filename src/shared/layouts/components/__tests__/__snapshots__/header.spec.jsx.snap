@@ -1,7 +1,7 @@
-// Jest Snapshot v1, https://goo.gl/fbAQLP
+// Jest Snapshot v1, https://jestjs.io/docs/snapshot-testing
 
 exports[`Layout header component should render with default props 1`] = `
-Object {
+{
   "asFragment": [Function],
   "baseElement": <body>
     <div>
@@ -168,7 +168,7 @@ Object {
 `;
 
 exports[`Layout header component should render without crest when service is not GOV.UK 1`] = `
-Object {
+{
   "asFragment": [Function],
   "baseElement": <body>
     <div>

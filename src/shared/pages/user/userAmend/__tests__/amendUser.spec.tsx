@@ -30,7 +30,7 @@ const renderComponent = () => render(
 );
 const getUserSpy = jest.spyOn(UsersService, 'getUser');
 const updateUserSpy = jest.spyOn(UsersService, 'updateUser');
-beforeEach(() => {
+beforeEach(async () => {
     history = createBrowserHistory();
     match = {
         isExact: true,
@@ -63,7 +63,7 @@ beforeEach(() => {
     addFormErrorSpy.mockReset();
     clearErrorsSpy.mockReset();
     setMessageSpy.mockReset();
-    act(() => {
+    await act(async () => {
         wrapper = renderComponent();
     });
 });
@@ -88,7 +88,7 @@ describe('when the AmendUser component is mounted', () => {
         getUserSpy.mockImplementation(() => Promise.reject('error'));
         wrapper = renderComponent();
         await waitFor(() => {
-            expect(setMessageSpy).toBeCalledWith({ title: GENERAL_ERROR_TITLE, description: LOAD_USER_ERROR_DESCRIPTION });
+            expect(setMessageSpy).toHaveBeenCalledWith({ title: GENERAL_ERROR_TITLE, description: LOAD_USER_ERROR_DESCRIPTION });
         });
 
     });

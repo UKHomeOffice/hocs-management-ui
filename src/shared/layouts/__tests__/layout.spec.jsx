@@ -7,33 +7,19 @@ import { HelmetProvider } from 'react-helmet-async';
 
 jest.mock('react-router-dom', () => {
     return {
-        Link: () => jest.fn()
+        Link: ({ to, className, children }) => <a href={to} className={className}>{children}</a>,
     };
 });
 
 describe('Page layout component', () => {
 
     const mockDispatch = jest.fn();
-    const mockLayout = {
-        header: {},
-        body: {},
-        footer: {}
-    };
 
     beforeEach(() => {
         mockDispatch.mockReset();
     });
 
     it('should render the footer when provided', () => {
-        const mockLayoutWithFooter = { ...mockLayout, footer: { isVisible: true } };
-        const defaultProps = {
-            layout: mockLayoutWithFooter,
-            csrf: '1234567890',
-            user: {
-                roles: ['1234', '54321']
-            }
-        };
-
         const config = {
             csrf: '',
             layout: {

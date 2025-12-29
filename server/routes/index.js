@@ -20,9 +20,8 @@ html.use(assets);
 
 router.use(bodyParser.urlencoded({ extended: true }));
 router.use(cookieParser());
-router.use(csrfMiddleware);
 router.use('/health', healthRouter);
-router.use('*', authMiddleware, sessionExpiryMiddleware, initRequest, setCacheControl);
+router.use(authMiddleware, sessionExpiryMiddleware, csrfMiddleware, initRequest, setCacheControl);
 router.use(protect('MANAGEMENT_UI'));
 router.use('/api', apiRouter);
 router.use('/', dashboard);
@@ -53,7 +52,7 @@ router.get('/admin/list/flush',
     }
 );
 
-router.use('*',
+router.use(
     errorMiddleware,
     renderMiddleware,
     renderResponseMiddleware
