@@ -13,7 +13,6 @@
     "build-dev": "webpack --mode development --env NODE_ENV=development",
     "build-prod": "webpack --mode production --env NODE_ENV=production",
     "test": "jest --coverage",
-    "jest": "node_modules/jest/bin/jest.js .",
     "lint-staged": "node_modules/lint-staged/bin/lint-staged.js",
     "lint": "eslint ./ --ext js,jsx,ts,tsx",
     "audit": "npm audit",
