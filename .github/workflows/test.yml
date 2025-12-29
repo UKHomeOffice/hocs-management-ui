@@ -9,4 +9,4 @@ jobs:
     with:
       installCommand: 'ci --include=dev --omit=optional'
       buildCommand: 'build-prod'
-      nodeVersionMatrix: '[ "18.x", "24.x" ]'
+      nodeVersionMatrix: '[ "24.x" ]'
