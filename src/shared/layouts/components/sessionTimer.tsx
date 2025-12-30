@@ -8,9 +8,9 @@ import { hasClientError } from '../../helpers/status-helpers';
 const getDefaultExpiryDate = (defaultTimeoutSeconds: number) => new Date().getTime() + defaultTimeoutSeconds * 1000;
 const getRemainingSeconds = (targetDate: number) => Math.floor((targetDate - new Date().getTime()) / 1000);
 
-const keepAlive = () => axios.get('/api/keepalive')
-    // eslint-disable-next-line no-undef
-    .catch(() => window.location.reload());
+const keepAlive = () =>
+    axios.get('/api/keepalive')
+        .catch(() => window.location.reload());
 
 const isTimingOut = (countDownForSeconds: number, remainingSeconds: number) => remainingSeconds < countDownForSeconds && remainingSeconds > 0;
 const isTimedOut = (remainingSeconds: number) => remainingSeconds <= 0;
@@ -40,6 +40,7 @@ const SessionTimer = () => {
 
         // make sure we start with an up-to date expiry value;
         if(!hasClientError(error)) {
+            // noinspection JSIgnoredPromiseFromCall
             keepAlive();
         }
     }, []);
@@ -62,7 +63,7 @@ const SessionTimer = () => {
             // need to call twice so that we can parse the updated refresh token
             keepAlive().then(() => keepAlive());
         } else {
-            // eslint-disable-next-line no-undef
+
             window.location.reload();
         }
     }, [remainingSeconds]);
@@ -71,7 +72,7 @@ const SessionTimer = () => {
 
     return <>
         {typeof window !== 'undefined' && <Helmet defer={false} titleTemplate={`${timingOut ? `${remainingSeconds}s remaining | ` : ''}%s`}>
-            {true && <title>{service.toString()}</title>}
+            {<title>{service.toString()}</title>}
         </Helmet>}
         <Modal
             isOpen={timingOut || isTimedOut(remainingSeconds)}

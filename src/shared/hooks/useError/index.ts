@@ -15,7 +15,9 @@ const useError = (formErrorDescription?: string, formErrorTitle?: string)
     const [pageError, dispatch] = React.useReducer<Reducer<PageError, Action>>(reducer, {});
 
     const addFormError = (formError: FormError) => {
-        (formErrorDescription || formErrorTitle) && setMessage({ title: formErrorTitle || '', description: formErrorDescription || '' });
+        if (formErrorDescription || formErrorTitle) {
+            setMessage({ title: formErrorTitle || '', description: formErrorDescription || '' });
+        }
         dispatch({ type: 'AddFormError', payload: formError });
     };
     const clearErrors = () => dispatch({ type: 'ClearError' });

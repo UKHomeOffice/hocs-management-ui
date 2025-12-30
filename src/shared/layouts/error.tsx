@@ -34,11 +34,9 @@ class Error extends Component<ErrorProps> {
 
         // A 401 with empty response will be a keycloak auth error, redirect to home/login
         if (error && error.status === 401 && !error.message) {
-            /* eslint-disable no-undef*/
             if (window) {
                 window.location.replace('/');
             }
-            /* eslint-enable no-undef*/
         }
     }
 
@@ -85,7 +83,6 @@ class Error extends Component<ErrorProps> {
     buildParagraphs(body?: string[]) {
         if (!body) return null;
         return body.map((paragraph, index) => {
-            // eslint-disable-next-line react/no-array-index-key
             return <p key={index} className="govuk-body">{paragraph}</p>;
         });
     }

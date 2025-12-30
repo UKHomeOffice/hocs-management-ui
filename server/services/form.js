@@ -25,9 +25,7 @@ async function getFormSchemaFromWorkflowService(requestId, options, user) {
                 }
             case 403:
             // handle not allocated
-            /* eslint-disable-next-line no-case-declarations */
                 let usersInTeam;
-                /* eslint-disable-next-line no-case-declarations */
                 let caseView;
                 try {
                     const { data: owningTeam } = await caseworkService.get(`/case/${caseId}/stage/${stageId}/team`, { headers });
@@ -40,7 +38,6 @@ async function getFormSchemaFromWorkflowService(requestId, options, user) {
                 } catch (error) {
                     caseView = null;
                 }
-                /* eslint-disable-next-line no-case-declarations */
                 const response = FormBuilder(caseView)
                     .withField(Component('heading', 'allocate-header')
                         .withProp('label', 'Allocate')
@@ -57,7 +54,7 @@ async function getFormSchemaFromWorkflowService(requestId, options, user) {
                         .build())
                     .withPrimaryAction('Allocate')
                     .withSecondaryAction(
-                        Component('backlink')
+                        Component('backlink', undefined)
                             .withProp('label', 'Cancel')
                             .build()
                     )
@@ -74,13 +71,11 @@ async function getFormSchemaFromWorkflowService(requestId, options, user) {
 }
 
 async function getFormSchemaForCase(options) {
-    const form = await formRepository.getFormForCase(options);
-    return form;
+    return formRepository.getFormForCase(options);
 }
 
 async function getFormSchema(options) {
-    const form = await formRepository.getForm(options);
-    return form;
+    return formRepository.getForm(options);
 }
 
 const hydrateFields = async (req, res, next) => {
@@ -139,8 +134,7 @@ const getFormForAction = async (req, res, next) => {
 
     try {
         const { workflow, context, action } = req.params;
-        const form = await getFormSchema({ context: 'ACTION', workflow, entity: context, action, user: req.user });
-        req.form = form;
+        req.form = await getFormSchema({ context: 'ACTION', workflow, entity: context, action, user: req.user });
         next();
     } catch (error) {
         logger.error('ACTION_FORM_FAILURE', { message: error.message, stack: error.stack });
@@ -154,8 +148,7 @@ const getFormForCase = async (req, res, next) => {
     logger.info('GET_FORM', { ...req.params });
 
     try {
-        const form = await getFormSchemaForCase({ ...req.params, user: req.user });
-        req.form = form;
+        req.form = await getFormSchemaForCase({ ...req.params, user: req.user });
         next();
     } catch (error) {
         logger.error('CASE_FORM_FAILURE', { message: error.message, stack: error.stack });
