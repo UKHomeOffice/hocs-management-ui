@@ -101,7 +101,7 @@
     "aws-sdk": "^2.1369.0",
     "axios": "^1.6.2",
     "babel-plugin-emotion": "^11.0.0",
-    "body-parser": "^1.20.2",
+    "body-parser": "^2.2.1",
     "classnames": "^2.3.2",
     "cookie-parser": "^1.4.6",
     "csrf-csrf": "^4.0.3",
