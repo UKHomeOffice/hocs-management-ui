@@ -47,7 +47,7 @@ exports[`when the selectBusinessArea component is mounted should render with def
             Directorate
           </label>
           <div
-            class=" css-b62m3t-container"
+            class="css-b62m3t-container"
             id="comp-business-area"
           >
             <span
@@ -62,19 +62,19 @@ exports[`when the selectBusinessArea component is mounted should render with def
               role="log"
             />
             <div
-              class="govuk-typeahead__control css-1g8ily9-Control"
+              class="govuk-typeahead__control css-0"
             >
               <div
-                class="govuk-typeahead__value-container css-pilx6v-ValueContainer"
+                class="govuk-typeahead__value-container css-0"
               >
                 <div
-                  class="govuk-typeahead__placeholder css-ovmm9z-Placeholder"
+                  class="govuk-typeahead__placeholder css-0"
                   id="react-select-2-placeholder"
                 >
                   Search
                 </div>
                 <div
-                  class="govuk-typeahead__input-container css-qbdosj-Input"
+                  class="govuk-typeahead__input-container css-19bb58m"
                   data-value=""
                 >
                   <input
@@ -98,14 +98,14 @@ exports[`when the selectBusinessArea component is mounted should render with def
                 </div>
               </div>
               <div
-                class="govuk-typeahead__indicators css-1hb7zxy-IndicatorsContainer"
+                class="govuk-typeahead__indicators css-1wy0on6"
               >
                 <span
-                  class="govuk-typeahead__indicator-separator css-62wm9a-IndicatorSeparator"
+                  class="govuk-typeahead__indicator-separator css-0"
                 />
                 <div
                   aria-hidden="true"
-                  class="govuk-typeahead__indicator govuk-typeahead__dropdown-indicator css-hbt8bd-DropdownIndicator"
+                  class="govuk-typeahead__indicator govuk-typeahead__dropdown-indicator css-0"
                 >
                   <svg
                     aria-hidden="true"

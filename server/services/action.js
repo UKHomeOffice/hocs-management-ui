@@ -91,7 +91,6 @@ const actions = {
                         clientResponse = { summary: `Created ${response.data.count} new case${response.data.count > 1 ? 's' : ''}` };
                         return handleActionSuccess(clientResponse, workflow, form);
                     case actionTypes.ADD_STANDARD_LINE:
-                    /* eslint-disable no-case-declarations */
                         const document = form.data.document[0];
                         const request = {
                             s3UntrustedUrl: document.key,
@@ -103,7 +102,6 @@ const actions = {
                         clientResponse = { summary: 'Created a new standard line' };
                         return handleActionSuccess(clientResponse, workflow, form);
                     case actionTypes.ADD_TEMPLATE:
-                    /* eslint-disable no-case-declarations */
                         const document1 = form.data.document[0];
                         const request1 = {
                             s3UntrustedUrl: document1.key,
@@ -113,7 +111,7 @@ const actions = {
                         response = await infoService.post('/template', request1, headers);
                         clientResponse = { summary: 'Created a new template' };
                         return handleActionSuccess(clientResponse, workflow, form);
-                    /* eslint-enable no-case-declarations */
+
                 }
             } else {
                 return handleActionSuccess(null, workflow, form);

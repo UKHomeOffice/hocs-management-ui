@@ -6,7 +6,7 @@ describe('Encoding helper', () => {
             const singleEncoded = '01/1000002/aaa';
             const doubleEncoded = encodeCaseReference(singleEncoded);
 
-            expect(doubleEncoded).toBeDefined;
+            expect(doubleEncoded).toBeDefined();
             expect(doubleEncoded).toEqual('01%252F1000002%252Faaa');
         });
 

@@ -30,19 +30,19 @@ exports[`Form type ahead component (dropdown) should render disabled when passed
           />
           <div
             aria-disabled="true"
-            class="govuk-typeahead__control govuk-typeahead__control--is-disabled css-1g8ily9-Control"
+            class="govuk-typeahead__control govuk-typeahead__control--is-disabled css-0"
           >
             <div
-              class="govuk-typeahead__value-container css-pilx6v-ValueContainer"
+              class="govuk-typeahead__value-container css-0"
             >
               <div
-                class="govuk-typeahead__placeholder css-ovmm9z-Placeholder"
+                class="govuk-typeahead__placeholder css-0"
                 id="react-select-6-placeholder"
               >
                 Search
               </div>
               <div
-                class="govuk-typeahead__input-container css-1h01tm3-Input"
+                class="govuk-typeahead__input-container css-1mkvw8y"
                 data-value=""
               >
                 <input
@@ -67,14 +67,14 @@ exports[`Form type ahead component (dropdown) should render disabled when passed
               </div>
             </div>
             <div
-              class="govuk-typeahead__indicators css-1hb7zxy-IndicatorsContainer"
+              class="govuk-typeahead__indicators css-1wy0on6"
             >
               <span
-                class="govuk-typeahead__indicator-separator css-62wm9a-IndicatorSeparator"
+                class="govuk-typeahead__indicator-separator css-0"
               />
               <div
                 aria-hidden="true"
-                class="govuk-typeahead__indicator govuk-typeahead__dropdown-indicator css-hbt8bd-DropdownIndicator"
+                class="govuk-typeahead__indicator govuk-typeahead__dropdown-indicator css-0"
               >
                 <svg
                   aria-hidden="true"
@@ -121,19 +121,19 @@ exports[`Form type ahead component (dropdown) should render disabled when passed
         />
         <div
           aria-disabled="true"
-          class="govuk-typeahead__control govuk-typeahead__control--is-disabled css-1g8ily9-Control"
+          class="govuk-typeahead__control govuk-typeahead__control--is-disabled css-0"
         >
           <div
-            class="govuk-typeahead__value-container css-pilx6v-ValueContainer"
+            class="govuk-typeahead__value-container css-0"
           >
             <div
-              class="govuk-typeahead__placeholder css-ovmm9z-Placeholder"
+              class="govuk-typeahead__placeholder css-0"
               id="react-select-6-placeholder"
             >
               Search
             </div>
             <div
-              class="govuk-typeahead__input-container css-1h01tm3-Input"
+              class="govuk-typeahead__input-container css-1mkvw8y"
               data-value=""
             >
               <input
@@ -158,14 +158,14 @@ exports[`Form type ahead component (dropdown) should render disabled when passed
             </div>
           </div>
           <div
-            class="govuk-typeahead__indicators css-1hb7zxy-IndicatorsContainer"
+            class="govuk-typeahead__indicators css-1wy0on6"
           >
             <span
-              class="govuk-typeahead__indicator-separator css-62wm9a-IndicatorSeparator"
+              class="govuk-typeahead__indicator-separator css-0"
             />
             <div
               aria-hidden="true"
-              class="govuk-typeahead__indicator govuk-typeahead__dropdown-indicator css-hbt8bd-DropdownIndicator"
+              class="govuk-typeahead__indicator govuk-typeahead__dropdown-indicator css-0"
             >
               <svg
                 aria-hidden="true"
@@ -253,7 +253,7 @@ exports[`Form type ahead component (dropdown) should render with default props 1
           id="type-ahead-label"
         />
         <div
-          class=" css-b62m3t-container"
+          class="css-b62m3t-container"
           id="type-ahead"
         >
           <span
@@ -268,19 +268,19 @@ exports[`Form type ahead component (dropdown) should render with default props 1
             role="log"
           />
           <div
-            class="govuk-typeahead__control css-1g8ily9-Control"
+            class="govuk-typeahead__control css-0"
           >
             <div
-              class="govuk-typeahead__value-container css-pilx6v-ValueContainer"
+              class="govuk-typeahead__value-container css-0"
             >
               <div
-                class="govuk-typeahead__placeholder css-ovmm9z-Placeholder"
+                class="govuk-typeahead__placeholder css-0"
                 id="react-select-2-placeholder"
               >
                 Search
               </div>
               <div
-                class="govuk-typeahead__input-container css-qbdosj-Input"
+                class="govuk-typeahead__input-container css-19bb58m"
                 data-value=""
               >
                 <input
@@ -304,14 +304,14 @@ exports[`Form type ahead component (dropdown) should render with default props 1
               </div>
             </div>
             <div
-              class="govuk-typeahead__indicators css-1hb7zxy-IndicatorsContainer"
+              class="govuk-typeahead__indicators css-1wy0on6"
             >
               <span
-                class="govuk-typeahead__indicator-separator css-62wm9a-IndicatorSeparator"
+                class="govuk-typeahead__indicator-separator css-0"
               />
               <div
                 aria-hidden="true"
-                class="govuk-typeahead__indicator govuk-typeahead__dropdown-indicator css-hbt8bd-DropdownIndicator"
+                class="govuk-typeahead__indicator govuk-typeahead__dropdown-indicator css-0"
               >
                 <svg
                   aria-hidden="true"
@@ -342,7 +342,7 @@ exports[`Form type ahead component (dropdown) should render with default props 1
         id="type-ahead-label"
       />
       <div
-        class=" css-b62m3t-container"
+        class="css-b62m3t-container"
         id="type-ahead"
       >
         <span
@@ -357,19 +357,19 @@ exports[`Form type ahead component (dropdown) should render with default props 1
           role="log"
         />
         <div
-          class="govuk-typeahead__control css-1g8ily9-Control"
+          class="govuk-typeahead__control css-0"
         >
           <div
-            class="govuk-typeahead__value-container css-pilx6v-ValueContainer"
+            class="govuk-typeahead__value-container css-0"
           >
             <div
-              class="govuk-typeahead__placeholder css-ovmm9z-Placeholder"
+              class="govuk-typeahead__placeholder css-0"
               id="react-select-2-placeholder"
             >
               Search
             </div>
             <div
-              class="govuk-typeahead__input-container css-qbdosj-Input"
+              class="govuk-typeahead__input-container css-19bb58m"
               data-value=""
             >
               <input
@@ -393,14 +393,14 @@ exports[`Form type ahead component (dropdown) should render with default props 1
             </div>
           </div>
           <div
-            class="govuk-typeahead__indicators css-1hb7zxy-IndicatorsContainer"
+            class="govuk-typeahead__indicators css-1wy0on6"
           >
             <span
-              class="govuk-typeahead__indicator-separator css-62wm9a-IndicatorSeparator"
+              class="govuk-typeahead__indicator-separator css-0"
             />
             <div
               aria-hidden="true"
-              class="govuk-typeahead__indicator govuk-typeahead__dropdown-indicator css-hbt8bd-DropdownIndicator"
+              class="govuk-typeahead__indicator govuk-typeahead__dropdown-indicator css-0"
             >
               <svg
                 aria-hidden="true"
@@ -494,7 +494,7 @@ exports[`Form type ahead component (dropdown) should render with error when pass
           Some error message
         </p>
         <div
-          class=" css-b62m3t-container"
+          class="css-b62m3t-container"
           id="type-ahead"
         >
           <span
@@ -509,19 +509,19 @@ exports[`Form type ahead component (dropdown) should render with error when pass
             role="log"
           />
           <div
-            class="govuk-typeahead__control--error govuk-typeahead__control css-1g8ily9-Control"
+            class="govuk-typeahead__control--error govuk-typeahead__control css-0"
           >
             <div
-              class="govuk-typeahead__value-container css-pilx6v-ValueContainer"
+              class="govuk-typeahead__value-container css-0"
             >
               <div
-                class="govuk-typeahead__placeholder css-ovmm9z-Placeholder"
+                class="govuk-typeahead__placeholder css-0"
                 id="react-select-5-placeholder"
               >
                 Search
               </div>
               <div
-                class="govuk-typeahead__input-container css-qbdosj-Input"
+                class="govuk-typeahead__input-container css-19bb58m"
                 data-value=""
               >
                 <input
@@ -545,14 +545,14 @@ exports[`Form type ahead component (dropdown) should render with error when pass
               </div>
             </div>
             <div
-              class="govuk-typeahead__indicators css-1hb7zxy-IndicatorsContainer"
+              class="govuk-typeahead__indicators css-1wy0on6"
             >
               <span
-                class="govuk-typeahead__indicator-separator css-62wm9a-IndicatorSeparator"
+                class="govuk-typeahead__indicator-separator css-0"
               />
               <div
                 aria-hidden="true"
-                class="govuk-typeahead__indicator govuk-typeahead__dropdown-indicator css-hbt8bd-DropdownIndicator"
+                class="govuk-typeahead__indicator govuk-typeahead__dropdown-indicator css-0"
               >
                 <svg
                   aria-hidden="true"
@@ -589,7 +589,7 @@ exports[`Form type ahead component (dropdown) should render with error when pass
         Some error message
       </p>
       <div
-        class=" css-b62m3t-container"
+        class="css-b62m3t-container"
         id="type-ahead"
       >
         <span
@@ -604,19 +604,19 @@ exports[`Form type ahead component (dropdown) should render with error when pass
           role="log"
         />
         <div
-          class="govuk-typeahead__control--error govuk-typeahead__control css-1g8ily9-Control"
+          class="govuk-typeahead__control--error govuk-typeahead__control css-0"
         >
           <div
-            class="govuk-typeahead__value-container css-pilx6v-ValueContainer"
+            class="govuk-typeahead__value-container css-0"
           >
             <div
-              class="govuk-typeahead__placeholder css-ovmm9z-Placeholder"
+              class="govuk-typeahead__placeholder css-0"
               id="react-select-5-placeholder"
             >
               Search
             </div>
             <div
-              class="govuk-typeahead__input-container css-qbdosj-Input"
+              class="govuk-typeahead__input-container css-19bb58m"
               data-value=""
             >
               <input
@@ -640,14 +640,14 @@ exports[`Form type ahead component (dropdown) should render with error when pass
             </div>
           </div>
           <div
-            class="govuk-typeahead__indicators css-1hb7zxy-IndicatorsContainer"
+            class="govuk-typeahead__indicators css-1wy0on6"
           >
             <span
-              class="govuk-typeahead__indicator-separator css-62wm9a-IndicatorSeparator"
+              class="govuk-typeahead__indicator-separator css-0"
             />
             <div
               aria-hidden="true"
-              class="govuk-typeahead__indicator govuk-typeahead__dropdown-indicator css-hbt8bd-DropdownIndicator"
+              class="govuk-typeahead__indicator govuk-typeahead__dropdown-indicator css-0"
             >
               <svg
                 aria-hidden="true"
@@ -740,7 +740,7 @@ exports[`Form type ahead component (dropdown) should render with hint when passe
           Select an option
         </div>
         <div
-          class=" css-b62m3t-container"
+          class="css-b62m3t-container"
           id="type-ahead"
         >
           <span
@@ -755,19 +755,19 @@ exports[`Form type ahead component (dropdown) should render with hint when passe
             role="log"
           />
           <div
-            class="govuk-typeahead__control css-1g8ily9-Control"
+            class="govuk-typeahead__control css-0"
           >
             <div
-              class="govuk-typeahead__value-container css-pilx6v-ValueContainer"
+              class="govuk-typeahead__value-container css-0"
             >
               <div
-                class="govuk-typeahead__placeholder css-ovmm9z-Placeholder"
+                class="govuk-typeahead__placeholder css-0"
                 id="react-select-4-placeholder"
               >
                 Search
               </div>
               <div
-                class="govuk-typeahead__input-container css-qbdosj-Input"
+                class="govuk-typeahead__input-container css-19bb58m"
                 data-value=""
               >
                 <input
@@ -791,14 +791,14 @@ exports[`Form type ahead component (dropdown) should render with hint when passe
               </div>
             </div>
             <div
-              class="govuk-typeahead__indicators css-1hb7zxy-IndicatorsContainer"
+              class="govuk-typeahead__indicators css-1wy0on6"
             >
               <span
-                class="govuk-typeahead__indicator-separator css-62wm9a-IndicatorSeparator"
+                class="govuk-typeahead__indicator-separator css-0"
               />
               <div
                 aria-hidden="true"
-                class="govuk-typeahead__indicator govuk-typeahead__dropdown-indicator css-hbt8bd-DropdownIndicator"
+                class="govuk-typeahead__indicator govuk-typeahead__dropdown-indicator css-0"
               >
                 <svg
                   aria-hidden="true"
@@ -834,7 +834,7 @@ exports[`Form type ahead component (dropdown) should render with hint when passe
         Select an option
       </div>
       <div
-        class=" css-b62m3t-container"
+        class="css-b62m3t-container"
         id="type-ahead"
       >
         <span
@@ -849,19 +849,19 @@ exports[`Form type ahead component (dropdown) should render with hint when passe
           role="log"
         />
         <div
-          class="govuk-typeahead__control css-1g8ily9-Control"
+          class="govuk-typeahead__control css-0"
         >
           <div
-            class="govuk-typeahead__value-container css-pilx6v-ValueContainer"
+            class="govuk-typeahead__value-container css-0"
           >
             <div
-              class="govuk-typeahead__placeholder css-ovmm9z-Placeholder"
+              class="govuk-typeahead__placeholder css-0"
               id="react-select-4-placeholder"
             >
               Search
             </div>
             <div
-              class="govuk-typeahead__input-container css-qbdosj-Input"
+              class="govuk-typeahead__input-container css-19bb58m"
               data-value=""
             >
               <input
@@ -885,14 +885,14 @@ exports[`Form type ahead component (dropdown) should render with hint when passe
             </div>
           </div>
           <div
-            class="govuk-typeahead__indicators css-1hb7zxy-IndicatorsContainer"
+            class="govuk-typeahead__indicators css-1wy0on6"
           >
             <span
-              class="govuk-typeahead__indicator-separator css-62wm9a-IndicatorSeparator"
+              class="govuk-typeahead__indicator-separator css-0"
             />
             <div
               aria-hidden="true"
-              class="govuk-typeahead__indicator govuk-typeahead__dropdown-indicator css-hbt8bd-DropdownIndicator"
+              class="govuk-typeahead__indicator govuk-typeahead__dropdown-indicator css-0"
             >
               <svg
                 aria-hidden="true"
@@ -982,7 +982,7 @@ exports[`Form type ahead component (dropdown) should render with label when pass
           Type-ahead
         </label>
         <div
-          class=" css-b62m3t-container"
+          class="css-b62m3t-container"
           id="type-ahead"
         >
           <span
@@ -997,19 +997,19 @@ exports[`Form type ahead component (dropdown) should render with label when pass
             role="log"
           />
           <div
-            class="govuk-typeahead__control css-1g8ily9-Control"
+            class="govuk-typeahead__control css-0"
           >
             <div
-              class="govuk-typeahead__value-container css-pilx6v-ValueContainer"
+              class="govuk-typeahead__value-container css-0"
             >
               <div
-                class="govuk-typeahead__placeholder css-ovmm9z-Placeholder"
+                class="govuk-typeahead__placeholder css-0"
                 id="react-select-3-placeholder"
               >
                 Search
               </div>
               <div
-                class="govuk-typeahead__input-container css-qbdosj-Input"
+                class="govuk-typeahead__input-container css-19bb58m"
                 data-value=""
               >
                 <input
@@ -1033,14 +1033,14 @@ exports[`Form type ahead component (dropdown) should render with label when pass
               </div>
             </div>
             <div
-              class="govuk-typeahead__indicators css-1hb7zxy-IndicatorsContainer"
+              class="govuk-typeahead__indicators css-1wy0on6"
             >
               <span
-                class="govuk-typeahead__indicator-separator css-62wm9a-IndicatorSeparator"
+                class="govuk-typeahead__indicator-separator css-0"
               />
               <div
                 aria-hidden="true"
-                class="govuk-typeahead__indicator govuk-typeahead__dropdown-indicator css-hbt8bd-DropdownIndicator"
+                class="govuk-typeahead__indicator govuk-typeahead__dropdown-indicator css-0"
               >
                 <svg
                   aria-hidden="true"
@@ -1073,7 +1073,7 @@ exports[`Form type ahead component (dropdown) should render with label when pass
         Type-ahead
       </label>
       <div
-        class=" css-b62m3t-container"
+        class="css-b62m3t-container"
         id="type-ahead"
       >
         <span
@@ -1088,19 +1088,19 @@ exports[`Form type ahead component (dropdown) should render with label when pass
           role="log"
         />
         <div
-          class="govuk-typeahead__control css-1g8ily9-Control"
+          class="govuk-typeahead__control css-0"
         >
           <div
-            class="govuk-typeahead__value-container css-pilx6v-ValueContainer"
+            class="govuk-typeahead__value-container css-0"
           >
             <div
-              class="govuk-typeahead__placeholder css-ovmm9z-Placeholder"
+              class="govuk-typeahead__placeholder css-0"
               id="react-select-3-placeholder"
             >
               Search
             </div>
             <div
-              class="govuk-typeahead__input-container css-qbdosj-Input"
+              class="govuk-typeahead__input-container css-19bb58m"
               data-value=""
             >
               <input
@@ -1124,14 +1124,14 @@ exports[`Form type ahead component (dropdown) should render with label when pass
             </div>
           </div>
           <div
-            class="govuk-typeahead__indicators css-1hb7zxy-IndicatorsContainer"
+            class="govuk-typeahead__indicators css-1wy0on6"
           >
             <span
-              class="govuk-typeahead__indicator-separator css-62wm9a-IndicatorSeparator"
+              class="govuk-typeahead__indicator-separator css-0"
             />
             <div
               aria-hidden="true"
-              class="govuk-typeahead__indicator govuk-typeahead__dropdown-indicator css-hbt8bd-DropdownIndicator"
+              class="govuk-typeahead__indicator govuk-typeahead__dropdown-indicator css-0"
             >
               <svg
                 aria-hidden="true"
@@ -1235,19 +1235,19 @@ exports[`Form type ahead component (select) should render disabled when passed 1
           />
           <div
             aria-disabled="true"
-            class="govuk-typeahead__control govuk-typeahead__control--is-disabled css-1g8ily9-Control"
+            class="govuk-typeahead__control govuk-typeahead__control--is-disabled css-0"
           >
             <div
-              class="govuk-typeahead__value-container css-pilx6v-ValueContainer"
+              class="govuk-typeahead__value-container css-0"
             >
               <div
-                class="govuk-typeahead__placeholder css-ovmm9z-Placeholder"
+                class="govuk-typeahead__placeholder css-0"
                 id="react-select-11-placeholder"
               >
                 Search
               </div>
               <div
-                class="govuk-typeahead__input-container css-1h01tm3-Input"
+                class="govuk-typeahead__input-container css-1mkvw8y"
                 data-value=""
               >
                 <input
@@ -1272,14 +1272,14 @@ exports[`Form type ahead component (select) should render disabled when passed 1
               </div>
             </div>
             <div
-              class="govuk-typeahead__indicators css-1hb7zxy-IndicatorsContainer"
+              class="govuk-typeahead__indicators css-1wy0on6"
             >
               <span
-                class="govuk-typeahead__indicator-separator css-62wm9a-IndicatorSeparator"
+                class="govuk-typeahead__indicator-separator css-0"
               />
               <div
                 aria-hidden="true"
-                class="govuk-typeahead__indicator govuk-typeahead__dropdown-indicator css-hbt8bd-DropdownIndicator"
+                class="govuk-typeahead__indicator govuk-typeahead__dropdown-indicator css-0"
               >
                 <svg
                   aria-hidden="true"
@@ -1326,19 +1326,19 @@ exports[`Form type ahead component (select) should render disabled when passed 1
         />
         <div
           aria-disabled="true"
-          class="govuk-typeahead__control govuk-typeahead__control--is-disabled css-1g8ily9-Control"
+          class="govuk-typeahead__control govuk-typeahead__control--is-disabled css-0"
         >
           <div
-            class="govuk-typeahead__value-container css-pilx6v-ValueContainer"
+            class="govuk-typeahead__value-container css-0"
           >
             <div
-              class="govuk-typeahead__placeholder css-ovmm9z-Placeholder"
+              class="govuk-typeahead__placeholder css-0"
               id="react-select-11-placeholder"
             >
               Search
             </div>
             <div
-              class="govuk-typeahead__input-container css-1h01tm3-Input"
+              class="govuk-typeahead__input-container css-1mkvw8y"
               data-value=""
             >
               <input
@@ -1363,14 +1363,14 @@ exports[`Form type ahead component (select) should render disabled when passed 1
             </div>
           </div>
           <div
-            class="govuk-typeahead__indicators css-1hb7zxy-IndicatorsContainer"
+            class="govuk-typeahead__indicators css-1wy0on6"
           >
             <span
-              class="govuk-typeahead__indicator-separator css-62wm9a-IndicatorSeparator"
+              class="govuk-typeahead__indicator-separator css-0"
             />
             <div
               aria-hidden="true"
-              class="govuk-typeahead__indicator govuk-typeahead__dropdown-indicator css-hbt8bd-DropdownIndicator"
+              class="govuk-typeahead__indicator govuk-typeahead__dropdown-indicator css-0"
             >
               <svg
                 aria-hidden="true"
@@ -1458,7 +1458,7 @@ exports[`Form type ahead component (select) should render with default props 1`]
           id="type-ahead-label"
         />
         <div
-          class=" css-b62m3t-container"
+          class="css-b62m3t-container"
           id="type-ahead"
         >
           <span
@@ -1473,19 +1473,19 @@ exports[`Form type ahead component (select) should render with default props 1`]
             role="log"
           />
           <div
-            class="govuk-typeahead__control css-1g8ily9-Control"
+            class="govuk-typeahead__control css-0"
           >
             <div
-              class="govuk-typeahead__value-container css-pilx6v-ValueContainer"
+              class="govuk-typeahead__value-container css-0"
             >
               <div
-                class="govuk-typeahead__placeholder css-ovmm9z-Placeholder"
+                class="govuk-typeahead__placeholder css-0"
                 id="react-select-7-placeholder"
               >
                 Search
               </div>
               <div
-                class="govuk-typeahead__input-container css-qbdosj-Input"
+                class="govuk-typeahead__input-container css-19bb58m"
                 data-value=""
               >
                 <input
@@ -1509,14 +1509,14 @@ exports[`Form type ahead component (select) should render with default props 1`]
               </div>
             </div>
             <div
-              class="govuk-typeahead__indicators css-1hb7zxy-IndicatorsContainer"
+              class="govuk-typeahead__indicators css-1wy0on6"
             >
               <span
-                class="govuk-typeahead__indicator-separator css-62wm9a-IndicatorSeparator"
+                class="govuk-typeahead__indicator-separator css-0"
               />
               <div
                 aria-hidden="true"
-                class="govuk-typeahead__indicator govuk-typeahead__dropdown-indicator css-hbt8bd-DropdownIndicator"
+                class="govuk-typeahead__indicator govuk-typeahead__dropdown-indicator css-0"
               >
                 <svg
                   aria-hidden="true"
@@ -1547,7 +1547,7 @@ exports[`Form type ahead component (select) should render with default props 1`]
         id="type-ahead-label"
       />
       <div
-        class=" css-b62m3t-container"
+        class="css-b62m3t-container"
         id="type-ahead"
       >
         <span
@@ -1562,19 +1562,19 @@ exports[`Form type ahead component (select) should render with default props 1`]
           role="log"
         />
         <div
-          class="govuk-typeahead__control css-1g8ily9-Control"
+          class="govuk-typeahead__control css-0"
         >
           <div
-            class="govuk-typeahead__value-container css-pilx6v-ValueContainer"
+            class="govuk-typeahead__value-container css-0"
           >
             <div
-              class="govuk-typeahead__placeholder css-ovmm9z-Placeholder"
+              class="govuk-typeahead__placeholder css-0"
               id="react-select-7-placeholder"
             >
               Search
             </div>
             <div
-              class="govuk-typeahead__input-container css-qbdosj-Input"
+              class="govuk-typeahead__input-container css-19bb58m"
               data-value=""
             >
               <input
@@ -1598,14 +1598,14 @@ exports[`Form type ahead component (select) should render with default props 1`]
             </div>
           </div>
           <div
-            class="govuk-typeahead__indicators css-1hb7zxy-IndicatorsContainer"
+            class="govuk-typeahead__indicators css-1wy0on6"
           >
             <span
-              class="govuk-typeahead__indicator-separator css-62wm9a-IndicatorSeparator"
+              class="govuk-typeahead__indicator-separator css-0"
             />
             <div
               aria-hidden="true"
-              class="govuk-typeahead__indicator govuk-typeahead__dropdown-indicator css-hbt8bd-DropdownIndicator"
+              class="govuk-typeahead__indicator govuk-typeahead__dropdown-indicator css-0"
             >
               <svg
                 aria-hidden="true"
@@ -1699,7 +1699,7 @@ exports[`Form type ahead component (select) should render with error when passed
           Some error message
         </p>
         <div
-          class=" css-b62m3t-container"
+          class="css-b62m3t-container"
           id="type-ahead"
         >
           <span
@@ -1714,19 +1714,19 @@ exports[`Form type ahead component (select) should render with error when passed
             role="log"
           />
           <div
-            class="govuk-typeahead__control--error govuk-typeahead__control css-1g8ily9-Control"
+            class="govuk-typeahead__control--error govuk-typeahead__control css-0"
           >
             <div
-              class="govuk-typeahead__value-container css-pilx6v-ValueContainer"
+              class="govuk-typeahead__value-container css-0"
             >
               <div
-                class="govuk-typeahead__placeholder css-ovmm9z-Placeholder"
+                class="govuk-typeahead__placeholder css-0"
                 id="react-select-10-placeholder"
               >
                 Search
               </div>
               <div
-                class="govuk-typeahead__input-container css-qbdosj-Input"
+                class="govuk-typeahead__input-container css-19bb58m"
                 data-value=""
               >
                 <input
@@ -1750,14 +1750,14 @@ exports[`Form type ahead component (select) should render with error when passed
               </div>
             </div>
             <div
-              class="govuk-typeahead__indicators css-1hb7zxy-IndicatorsContainer"
+              class="govuk-typeahead__indicators css-1wy0on6"
             >
               <span
-                class="govuk-typeahead__indicator-separator css-62wm9a-IndicatorSeparator"
+                class="govuk-typeahead__indicator-separator css-0"
               />
               <div
                 aria-hidden="true"
-                class="govuk-typeahead__indicator govuk-typeahead__dropdown-indicator css-hbt8bd-DropdownIndicator"
+                class="govuk-typeahead__indicator govuk-typeahead__dropdown-indicator css-0"
               >
                 <svg
                   aria-hidden="true"
@@ -1794,7 +1794,7 @@ exports[`Form type ahead component (select) should render with error when passed
         Some error message
       </p>
       <div
-        class=" css-b62m3t-container"
+        class="css-b62m3t-container"
         id="type-ahead"
       >
         <span
@@ -1809,19 +1809,19 @@ exports[`Form type ahead component (select) should render with error when passed
           role="log"
         />
         <div
-          class="govuk-typeahead__control--error govuk-typeahead__control css-1g8ily9-Control"
+          class="govuk-typeahead__control--error govuk-typeahead__control css-0"
         >
           <div
-            class="govuk-typeahead__value-container css-pilx6v-ValueContainer"
+            class="govuk-typeahead__value-container css-0"
           >
             <div
-              class="govuk-typeahead__placeholder css-ovmm9z-Placeholder"
+              class="govuk-typeahead__placeholder css-0"
               id="react-select-10-placeholder"
             >
               Search
             </div>
             <div
-              class="govuk-typeahead__input-container css-qbdosj-Input"
+              class="govuk-typeahead__input-container css-19bb58m"
               data-value=""
             >
               <input
@@ -1845,14 +1845,14 @@ exports[`Form type ahead component (select) should render with error when passed
             </div>
           </div>
           <div
-            class="govuk-typeahead__indicators css-1hb7zxy-IndicatorsContainer"
+            class="govuk-typeahead__indicators css-1wy0on6"
           >
             <span
-              class="govuk-typeahead__indicator-separator css-62wm9a-IndicatorSeparator"
+              class="govuk-typeahead__indicator-separator css-0"
             />
             <div
               aria-hidden="true"
-              class="govuk-typeahead__indicator govuk-typeahead__dropdown-indicator css-hbt8bd-DropdownIndicator"
+              class="govuk-typeahead__indicator govuk-typeahead__dropdown-indicator css-0"
             >
               <svg
                 aria-hidden="true"
@@ -1945,7 +1945,7 @@ exports[`Form type ahead component (select) should render with hint when passed 
           Select an option
         </div>
         <div
-          class=" css-b62m3t-container"
+          class="css-b62m3t-container"
           id="type-ahead"
         >
           <span
@@ -1960,19 +1960,19 @@ exports[`Form type ahead component (select) should render with hint when passed 
             role="log"
           />
           <div
-            class="govuk-typeahead__control css-1g8ily9-Control"
+            class="govuk-typeahead__control css-0"
           >
             <div
-              class="govuk-typeahead__value-container css-pilx6v-ValueContainer"
+              class="govuk-typeahead__value-container css-0"
             >
               <div
-                class="govuk-typeahead__placeholder css-ovmm9z-Placeholder"
+                class="govuk-typeahead__placeholder css-0"
                 id="react-select-9-placeholder"
               >
                 Search
               </div>
               <div
-                class="govuk-typeahead__input-container css-qbdosj-Input"
+                class="govuk-typeahead__input-container css-19bb58m"
                 data-value=""
               >
                 <input
@@ -1996,14 +1996,14 @@ exports[`Form type ahead component (select) should render with hint when passed 
               </div>
             </div>
             <div
-              class="govuk-typeahead__indicators css-1hb7zxy-IndicatorsContainer"
+              class="govuk-typeahead__indicators css-1wy0on6"
             >
               <span
-                class="govuk-typeahead__indicator-separator css-62wm9a-IndicatorSeparator"
+                class="govuk-typeahead__indicator-separator css-0"
               />
               <div
                 aria-hidden="true"
-                class="govuk-typeahead__indicator govuk-typeahead__dropdown-indicator css-hbt8bd-DropdownIndicator"
+                class="govuk-typeahead__indicator govuk-typeahead__dropdown-indicator css-0"
               >
                 <svg
                   aria-hidden="true"
@@ -2039,7 +2039,7 @@ exports[`Form type ahead component (select) should render with hint when passed 
         Select an option
       </div>
       <div
-        class=" css-b62m3t-container"
+        class="css-b62m3t-container"
         id="type-ahead"
       >
         <span
@@ -2054,19 +2054,19 @@ exports[`Form type ahead component (select) should render with hint when passed 
           role="log"
         />
         <div
-          class="govuk-typeahead__control css-1g8ily9-Control"
+          class="govuk-typeahead__control css-0"
         >
           <div
-            class="govuk-typeahead__value-container css-pilx6v-ValueContainer"
+            class="govuk-typeahead__value-container css-0"
           >
             <div
-              class="govuk-typeahead__placeholder css-ovmm9z-Placeholder"
+              class="govuk-typeahead__placeholder css-0"
               id="react-select-9-placeholder"
             >
               Search
             </div>
             <div
-              class="govuk-typeahead__input-container css-qbdosj-Input"
+              class="govuk-typeahead__input-container css-19bb58m"
               data-value=""
             >
               <input
@@ -2090,14 +2090,14 @@ exports[`Form type ahead component (select) should render with hint when passed 
             </div>
           </div>
           <div
-            class="govuk-typeahead__indicators css-1hb7zxy-IndicatorsContainer"
+            class="govuk-typeahead__indicators css-1wy0on6"
           >
             <span
-              class="govuk-typeahead__indicator-separator css-62wm9a-IndicatorSeparator"
+              class="govuk-typeahead__indicator-separator css-0"
             />
             <div
               aria-hidden="true"
-              class="govuk-typeahead__indicator govuk-typeahead__dropdown-indicator css-hbt8bd-DropdownIndicator"
+              class="govuk-typeahead__indicator govuk-typeahead__dropdown-indicator css-0"
             >
               <svg
                 aria-hidden="true"
@@ -2187,7 +2187,7 @@ exports[`Form type ahead component (select) should render with label when passed
           Type-ahead
         </label>
         <div
-          class=" css-b62m3t-container"
+          class="css-b62m3t-container"
           id="type-ahead"
         >
           <span
@@ -2202,19 +2202,19 @@ exports[`Form type ahead component (select) should render with label when passed
             role="log"
           />
           <div
-            class="govuk-typeahead__control css-1g8ily9-Control"
+            class="govuk-typeahead__control css-0"
           >
             <div
-              class="govuk-typeahead__value-container css-pilx6v-ValueContainer"
+              class="govuk-typeahead__value-container css-0"
             >
               <div
-                class="govuk-typeahead__placeholder css-ovmm9z-Placeholder"
+                class="govuk-typeahead__placeholder css-0"
                 id="react-select-8-placeholder"
               >
                 Search
               </div>
               <div
-                class="govuk-typeahead__input-container css-qbdosj-Input"
+                class="govuk-typeahead__input-container css-19bb58m"
                 data-value=""
               >
                 <input
@@ -2238,14 +2238,14 @@ exports[`Form type ahead component (select) should render with label when passed
               </div>
             </div>
             <div
-              class="govuk-typeahead__indicators css-1hb7zxy-IndicatorsContainer"
+              class="govuk-typeahead__indicators css-1wy0on6"
             >
               <span
-                class="govuk-typeahead__indicator-separator css-62wm9a-IndicatorSeparator"
+                class="govuk-typeahead__indicator-separator css-0"
               />
               <div
                 aria-hidden="true"
-                class="govuk-typeahead__indicator govuk-typeahead__dropdown-indicator css-hbt8bd-DropdownIndicator"
+                class="govuk-typeahead__indicator govuk-typeahead__dropdown-indicator css-0"
               >
                 <svg
                   aria-hidden="true"
@@ -2278,7 +2278,7 @@ exports[`Form type ahead component (select) should render with label when passed
         Type-ahead
       </label>
       <div
-        class=" css-b62m3t-container"
+        class="css-b62m3t-container"
         id="type-ahead"
       >
         <span
@@ -2293,19 +2293,19 @@ exports[`Form type ahead component (select) should render with label when passed
           role="log"
         />
         <div
-          class="govuk-typeahead__control css-1g8ily9-Control"
+          class="govuk-typeahead__control css-0"
         >
           <div
-            class="govuk-typeahead__value-container css-pilx6v-ValueContainer"
+            class="govuk-typeahead__value-container css-0"
           >
             <div
-              class="govuk-typeahead__placeholder css-ovmm9z-Placeholder"
+              class="govuk-typeahead__placeholder css-0"
               id="react-select-8-placeholder"
             >
               Search
             </div>
             <div
-              class="govuk-typeahead__input-container css-qbdosj-Input"
+              class="govuk-typeahead__input-container css-19bb58m"
               data-value=""
             >
               <input
@@ -2329,14 +2329,14 @@ exports[`Form type ahead component (select) should render with label when passed
             </div>
           </div>
           <div
-            class="govuk-typeahead__indicators css-1hb7zxy-IndicatorsContainer"
+            class="govuk-typeahead__indicators css-1wy0on6"
           >
             <span
-              class="govuk-typeahead__indicator-separator css-62wm9a-IndicatorSeparator"
+              class="govuk-typeahead__indicator-separator css-0"
             />
             <div
               aria-hidden="true"
-              class="govuk-typeahead__indicator govuk-typeahead__dropdown-indicator css-hbt8bd-DropdownIndicator"
+              class="govuk-typeahead__indicator govuk-typeahead__dropdown-indicator css-0"
             >
               <svg
                 aria-hidden="true"

@@ -9,7 +9,9 @@ const ErrorSummary: React.FC<ErrorSummaryProps> = ({ pageError: { error } }) => 
     const componentRef = React.createRef<HTMLDivElement>();
 
     useEffect(() => {
-        componentRef && componentRef.current && componentRef.current.scrollIntoView();
+        if(componentRef && componentRef.current) {
+            componentRef.current.scrollIntoView();
+        }
     }, [error]);
 
     if (error) {

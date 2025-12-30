@@ -17,7 +17,6 @@ function axiosErrorMiddleware(err, _req, _res, next) {
     return next(err);
 }
 
-// eslint-disable-next-line no-unused-vars
 function apiErrorMiddleware(err, req, res, _) {
 
     if (err instanceof ValidationError) {

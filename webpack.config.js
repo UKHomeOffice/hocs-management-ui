@@ -102,7 +102,6 @@ const browserConfig = env => {
                 output: 'assets.json',
                 writeToDisk: true,
                 customize: (entry) => {
-                    /* eslint-disable-next-line no-console */
                     console.log(entry);
                     entry.type = entry.key.slice(entry.key.lastIndexOf('.') + 1);
                     entry.key = entry.key.slice(0, entry.key.lastIndexOf('.'));
