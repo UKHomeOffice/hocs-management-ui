@@ -115,7 +115,7 @@ exports[`when the editTeam component is mounted should hide the edit name area i
             Unit
           </label>
           <div
-            class=" css-b62m3t-container"
+            class="css-b62m3t-container"
             id="unit"
           >
             <span
@@ -130,16 +130,16 @@ exports[`when the editTeam component is mounted should hide the edit name area i
               role="log"
             />
             <div
-              class="govuk-typeahead__control css-1g8ily9-Control"
+              class="govuk-typeahead__control css-0"
             >
               <div
-                class="govuk-typeahead__value-container govuk-typeahead__value-container--has-value css-pilx6v-ValueContainer"
+                class="govuk-typeahead__value-container govuk-typeahead__value-container--has-value css-0"
               >
                 <div
                   class="govuk-typeahead__single-value css-1dimb5e-singleValue"
                 />
                 <div
-                  class="govuk-typeahead__input-container css-qbdosj-Input"
+                  class="govuk-typeahead__input-container css-19bb58m"
                   data-value=""
                 >
                   <input
@@ -162,28 +162,28 @@ exports[`when the editTeam component is mounted should hide the edit name area i
                 </div>
               </div>
               <div
-                class="govuk-typeahead__indicators css-1hb7zxy-IndicatorsContainer"
+                class="govuk-typeahead__indicators css-1wy0on6"
               >
                 <div
                   aria-hidden="true"
                   class="govuk-typeahead__indicator govuk-typeahead__loading-indicator css-pogzpp-loadingIndicator"
                 >
                   <span
-                    class="css-1xtdfmb-LoadingDot"
+                    class="css-1icxkl9-LoadingDot"
                   />
                   <span
-                    class="css-zoievk-LoadingDot"
+                    class="css-1oazjx7-LoadingDot"
                   />
                   <span
-                    class="css-x748d8-LoadingDot"
+                    class="css-1wonz24-LoadingDot"
                   />
                 </div>
                 <span
-                  class="govuk-typeahead__indicator-separator css-62wm9a-IndicatorSeparator"
+                  class="govuk-typeahead__indicator-separator css-0"
                 />
                 <div
                   aria-hidden="true"
-                  class="govuk-typeahead__indicator govuk-typeahead__dropdown-indicator css-hbt8bd-DropdownIndicator"
+                  class="govuk-typeahead__indicator govuk-typeahead__dropdown-indicator css-0"
                 >
                   <svg
                     aria-hidden="true"
@@ -282,7 +282,7 @@ exports[`when the editTeam component is mounted should render with default props
             Unit
           </label>
           <div
-            class=" css-b62m3t-container"
+            class="css-b62m3t-container"
             id="unit"
           >
             <span
@@ -297,16 +297,16 @@ exports[`when the editTeam component is mounted should render with default props
               role="log"
             />
             <div
-              class="govuk-typeahead__control css-1g8ily9-Control"
+              class="govuk-typeahead__control css-0"
             >
               <div
-                class="govuk-typeahead__value-container govuk-typeahead__value-container--has-value css-pilx6v-ValueContainer"
+                class="govuk-typeahead__value-container govuk-typeahead__value-container--has-value css-0"
               >
                 <div
                   class="govuk-typeahead__single-value css-1dimb5e-singleValue"
                 />
                 <div
-                  class="govuk-typeahead__input-container css-qbdosj-Input"
+                  class="govuk-typeahead__input-container css-19bb58m"
                   data-value=""
                 >
                   <input
@@ -329,28 +329,28 @@ exports[`when the editTeam component is mounted should render with default props
                 </div>
               </div>
               <div
-                class="govuk-typeahead__indicators css-1hb7zxy-IndicatorsContainer"
+                class="govuk-typeahead__indicators css-1wy0on6"
               >
                 <div
                   aria-hidden="true"
                   class="govuk-typeahead__indicator govuk-typeahead__loading-indicator css-pogzpp-loadingIndicator"
                 >
                   <span
-                    class="css-1xtdfmb-LoadingDot"
+                    class="css-1icxkl9-LoadingDot"
                   />
                   <span
-                    class="css-zoievk-LoadingDot"
+                    class="css-1oazjx7-LoadingDot"
                   />
                   <span
-                    class="css-x748d8-LoadingDot"
+                    class="css-1wonz24-LoadingDot"
                   />
                 </div>
                 <span
-                  class="govuk-typeahead__indicator-separator css-62wm9a-IndicatorSeparator"
+                  class="govuk-typeahead__indicator-separator css-0"
                 />
                 <div
                   aria-hidden="true"
-                  class="govuk-typeahead__indicator govuk-typeahead__dropdown-indicator css-hbt8bd-DropdownIndicator"
+                  class="govuk-typeahead__indicator govuk-typeahead__dropdown-indicator css-0"
                 >
                   <svg
                     aria-hidden="true"
