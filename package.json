@@ -91,7 +91,7 @@
   "lint-staged": {
     "*.js": "eslint ./",
     "*.jsx": "eslint ./ --ext .jsx",
-    "*.ts": "eslint --ext .ts",
+    "*.ts": "eslint ./ --ext .ts",
     "*.tsx": "eslint ./ --ext .tsx"
   },
   "dependencies": {
