@@ -31,7 +31,7 @@ jest.mock('../../../../services/topicsService', () => ({
     addParentTopic: () => Promise.resolve()
 }));
 
-beforeEach(() => {
+beforeEach(async () => {
     history = createBrowserHistory();
     match = {
         isExact: true,
@@ -54,7 +54,7 @@ beforeEach(() => {
     addFormErrorSpy.mockReset();
     clearErrorsSpy.mockReset();
     setMessageSpy.mockReset();
-    act(() => {
+    await act(async () => {
         wrapper = renderComponent();
     });
 });
@@ -74,10 +74,12 @@ describe('when the topic name is entered', () => {
         expect.assertions(1);
 
         const displayNameElement = await waitFor(async () => {
-            return await wrapper.findByLabelText('Topic Name');
+            return wrapper.findByLabelText('Topic Name');
         });
 
-        fireEvent.change(displayNameElement, { target: { name: 'displayName', value: 'Topic' } });
+        await act(async () => {
+            fireEvent.change(displayNameElement, { target: { name: 'displayName', value: 'Topic' } });
+        });
 
         await waitFor(() => {
             expect(setDisplayNameSpy).toHaveBeenCalledWith('Topic');
@@ -240,7 +242,7 @@ describe('when the submit button is clicked', () => {
             expect.assertions(1);
 
             await waitFor(() => {
-                expect(addFormErrorSpy).toBeCalledTimes(0);
+                expect(addFormErrorSpy).toHaveBeenCalledTimes(0);
             });
         });
     });

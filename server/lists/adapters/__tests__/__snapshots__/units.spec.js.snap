@@ -1,18 +1,18 @@
-// Jest Snapshot v1, https://goo.gl/fbAQLP
+// Jest Snapshot v1, https://jestjs.io/docs/snapshot-testing
 
 exports[`Units Adapter should transform unit data 1`] = `
-Array [
-  Object {
+[
+  {
     "displayName": "displayName1",
     "shortCode": "1",
     "type": "type1",
   },
-  Object {
+  {
     "displayName": "displayName2",
     "shortCode": "2",
     "type": "type2",
   },
-  Object {
+  {
     "displayName": "displayName2",
     "shortCode": "3",
     "type": "type3",

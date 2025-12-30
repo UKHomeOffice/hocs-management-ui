@@ -1,12 +1,18 @@
-const csurf = require('csurf');
-const { isProduction } = require('../config');
+const { doubleCsrf } = require('csrf-csrf');
+const { isProduction, forContext } = require('../config');
+const csrfSecret = forContext('csrfSecret');
 
-const csrfMiddleware = csurf({
-    cookie: {
+const { doubleCsrfProtection } = doubleCsrf({
+    getSecret: (_req) => csrfSecret,
+    getSessionIdentifier: (req) => req.user?.id ?? 'unauthorized',
+    getCsrfTokenFromRequest: (req) => req.body?._csrf ?? req.headers['x-csrf-token'],
+    cookieName: `${isProduction ? '__Host-' : ''}management-ui.x-csrf-token`,
+    cookieOptions: {
+        sameSite: 'strict',
         path: '/',
         httpOnly: true,
         secure: isProduction
-    }
+    },
 });
 
-module.exports = { csrfMiddleware };
+module.exports = { csrfMiddleware: doubleCsrfProtection };

@@ -15,6 +15,11 @@ export type SetTitle = {
     payload: string;
 };
 
+export type SetActive = {
+    type: 'SetActive';
+    payload: boolean;
+};
+
 export type PopulateEntities = {
     payload: EntityListItem[];
     type: 'PopulateEntities';
@@ -29,5 +34,6 @@ export type Action =
     SetEntityDetails |
     PopulateEntities |
     SetTitle |
+    SetActive |
     SetSimpleName |
     ToggleShowInactive;

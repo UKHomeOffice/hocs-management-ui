@@ -33,7 +33,7 @@ const renderComponent = () => render(
 
 jest.spyOn(EntityListService, 'createListItem').mockImplementation(() => Promise.resolve());
 
-beforeEach(() => {
+beforeEach(async () => {
     history = createBrowserHistory();
     match = {
         isExact: true,
@@ -62,7 +62,7 @@ beforeEach(() => {
     addFormErrorSpy.mockReset();
     clearErrorsSpy.mockReset();
     setMessageSpy.mockReset();
-    act(() => {
+    await act(async () => {
         wrapper = renderComponent();
     });
 });
@@ -82,10 +82,10 @@ describe('when the enquiry reason is entered', () => {
         expect.assertions(1);
 
         const nameElement = await waitFor(async () => {
-            return await wrapper.findByLabelText('Enquiry Reason');
+            return wrapper.findByLabelText('Enquiry Reason');
         });
 
-        fireEvent.change(nameElement, { target: { name: 'title', value: '__displayTitle__' } });
+        await act(async () => fireEvent.change(nameElement, { target: { name: 'title', value: '__displayTitle__' } }));
 
         await waitFor(() => {
             expect(reducerDispatch).toHaveBeenCalledWith({ name: 'title', value: '__displayTitle__' });
@@ -100,10 +100,10 @@ describe('when the submit button is clicked', () => {
             mockEntityListItem.title = '__displayName__';
             mockEntityListItem.simpleName = '__shortCode__';
             const submitButton = await waitFor(async () => {
-                return await wrapper.findByText('Add');
+                return wrapper.findByText('Add');
             });
 
-            fireEvent.click(submitButton);
+            await act(async () => fireEvent.click(submitButton));
         });
 
         describe('and the service call is successful', () => {
@@ -148,10 +148,10 @@ describe('when the submit button is clicked', () => {
     describe('and the data is not filled in', () => {
         beforeEach(async () => {
             const submitButton = await waitFor(async () => {
-                return await wrapper.findByText('Add');
+                return wrapper.findByText('Add');
             });
 
-            fireEvent.click(submitButton);
+            await act(async () => fireEvent.click(submitButton));
         });
 
         it('should call the begin submit action', () => {

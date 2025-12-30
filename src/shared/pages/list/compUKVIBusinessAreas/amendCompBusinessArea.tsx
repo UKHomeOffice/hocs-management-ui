@@ -13,6 +13,7 @@ import ErrorMessage from '../../../models/errorMessage';
 import { validate } from '../../../validation';
 import { Action } from '../entityList/actions';
 import { State } from '../entityList/amendEntityState';
+import Checkbox from '../../../common/components/forms/checkbox';
 
 interface MatchParams {
     type: string,
@@ -56,8 +57,11 @@ const AmendCompBusinessArea: React.FC<AmendCompBusAreaProps> = ({ csrfToken, his
         clearErrors();
         if (validate(validationSchema, state, addFormError)) {
             updateListItem(state, type).then(() => {
-                history.push('/', { successMessage: AMEND_BUS_UNIT_SUCCESS });
-            }).catch((error) => {
+                history.push(
+                    `/comp-business-area/${type}`,
+                    { successMessage: AMEND_BUS_UNIT_SUCCESS }
+                );
+            }).catch(() => {
                 setErrorMessage(new ErrorMessage(AMEND_BUS_UNIT_ERROR_DESCRIPTION, GENERAL_ERROR_TITLE));
             });
         }
@@ -89,6 +93,12 @@ const AmendCompBusinessArea: React.FC<AmendCompBusAreaProps> = ({ csrfToken, his
                             type="text"
                             updateState={({ value }) => dispatch({ type: 'SetTitle', payload: value as string })}
                             value={state.title}
+                        />
+                        <Checkbox
+                            label='Active'
+                            name='active'
+                            updateState={({ value }) => dispatch({ type: 'SetActive', payload: value === 'true' })}
+                            value={state.active ? 'true' : 'false'}
                         />
                         <Submit />
                     </form>

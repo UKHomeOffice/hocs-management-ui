@@ -14,7 +14,7 @@ const App: React.FC<AppProps> = ({ config }) => {
     const { csrf } = config;
 
     Axios.defaults.headers.common = {
-        'CSRF-Token': csrf
+        'x-csrf-token': csrf
     };
 
     return (

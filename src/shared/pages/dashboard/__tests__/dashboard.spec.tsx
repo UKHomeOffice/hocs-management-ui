@@ -34,26 +34,26 @@ const renderComponent = (roles: string[] = []) => {
 };
 
 describe('dashboard component', () => {
-    it('should not render dcu creation or FOI interested parties link if does not have any roles', () => {
+    it('should not render dcu creation or FOI interested parties link if does not have any roles', async () => {
 
-        act(() => {
+        await act(async () => {
             wrapper = renderComponent();
         });
 
         expect(wrapper.container).toMatchSnapshot();
     });
-    it('should render DCU creation link if user has DCU role', () => {
+    it('should render DCU creation link if user has DCU role', async () => {
         const roles = ['DCU'];
-        act(() => {
+        await act(async () => {
             wrapper = renderComponent(roles);
         });
 
         expect(wrapper.container).toMatchSnapshot();
     });
 
-    it('should render FOI links if the user has the FOI role', () => {
+    it('should render FOI links if the user has the FOI role', async () => {
         const roles = ['FOI'];
-        act(() => {
+        await act(async () => {
             wrapper = renderComponent(roles);
         });
 

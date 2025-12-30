@@ -1,4 +1,4 @@
-// Jest Snapshot v1, https://goo.gl/fbAQLP
+// Jest Snapshot v1, https://jestjs.io/docs/snapshot-testing
 
 exports[`when the teamView component is mounted should render with default props 1`] = `
 <div>
@@ -76,7 +76,7 @@ exports[`when the teamView component is mounted should render with default props
                     id="Teams-input"
                     role="combobox"
                     spellcheck="false"
-                    style="opacity: 1; width: 100%; grid-area: 1 / 2; min-width: 2px; border: 0px; margin: 0px; outline: 0; padding: 0px;"
+                    style="color: inherit; background: 0px; opacity: 1; width: 100%; grid-area: 1 / 2; min-width: 2px; border: 0px; margin: 0px; outline: 0; padding: 0px;"
                     tabindex="0"
                     type="text"
                     value=""
@@ -131,18 +131,27 @@ exports[`when the teamView component is mounted should render with default props
         <div
           class="govuk-form-group"
         >
-          <label
-            class="govuk-label govuk-label--s"
-            for="showDeactivated"
-            id="showDeactivated-label"
+          <div
+            class="govuk-checkboxes govuk-checkboxes--small"
           >
-            Show Deactivated Teams
-          </label>
-          <input
-            id="showDeactivated"
-            name="showDeactivated"
-            type="checkbox"
-          />
+            <div
+              class="govuk-checkboxes__item"
+            >
+              <input
+                class="govuk-checkboxes__input"
+                id="showDeactivated"
+                name="showDeactivated"
+                type="checkbox"
+              />
+              <label
+                class="govuk-label govuk-label--s govuk-checkboxes__label"
+                for="showDeactivated"
+                id="showDeactivated-label"
+              >
+                Show Deactivated Teams
+              </label>
+            </div>
+          </div>
         </div>
       </div>
     </div>

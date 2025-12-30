@@ -1,6 +1,6 @@
 import React from 'react';
 import { match, MemoryRouter } from 'react-router-dom';
-import { createBrowserHistory, History, Location } from 'history';
+import { createBrowserHistory, createLocation, History, Location } from 'history';
 import { act, render, RenderResult, fireEvent, waitFor } from '@testing-library/react';
 import { AMEND_BUS_UNIT_ERROR_DESCRIPTION, GENERAL_ERROR_TITLE, LOAD_BUS_AREA_ERROR_DESCRIPTION } from '../../../../models/constants';
 import AmendBusinessUnit from '../amendBusinessUnit';
@@ -28,8 +28,9 @@ const renderComponent = () => render(
 );
 const getItemDetailsSpy = jest.spyOn(EntityListService, 'getItemDetails');
 const updateListItemSpy = jest.spyOn(EntityListService, 'updateListItem');
-beforeEach(() => {
+beforeEach(async () => {
     history = createBrowserHistory();
+    location = createLocation('/');
     match = {
         isExact: true,
         params: { itemUUID: '__itemId__' },
@@ -53,7 +54,7 @@ beforeEach(() => {
     addFormErrorSpy.mockReset();
     clearErrorsSpy.mockReset();
     setMessageSpy.mockReset();
-    act(() => {
+    await act(async () => {
         wrapper = renderComponent();
     });
 });
@@ -84,7 +85,7 @@ describe('when the amendBusinessUnit component is mounted', () => {
         wrapper = renderComponent();
 
         await waitFor(() => {
-            expect(setMessageSpy).toBeCalledWith({ title: GENERAL_ERROR_TITLE, description: LOAD_BUS_AREA_ERROR_DESCRIPTION });
+            expect(setMessageSpy).toHaveBeenCalledWith({ title: GENERAL_ERROR_TITLE, description: LOAD_BUS_AREA_ERROR_DESCRIPTION });
         });
 
     });

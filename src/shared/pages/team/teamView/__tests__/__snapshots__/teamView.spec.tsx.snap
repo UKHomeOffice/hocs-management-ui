@@ -1,4 +1,4 @@
-// Jest Snapshot v1, https://goo.gl/fbAQLP
+// Jest Snapshot v1, https://jestjs.io/docs/snapshot-testing
 
 exports[`when the teamView component has an active Team should not show options to deactivate if the user does not have DEACTIVATE_TEAM role 1`] = `
 <div>
@@ -297,7 +297,7 @@ exports[`when the teamView component has an inactive Team should not show option
           </strong>
         </span>
       </h2>
-      <p
+      <div
         class="govuk-inset-text"
       >
         <p
@@ -311,7 +311,7 @@ exports[`when the teamView component has an inactive Team should not show option
           . You can still assign members to this team to view and process existing cases.
         </p>
         <p />
-      </p>
+      </div>
       <h2
         class="govuk-heading-m govuk"
       >
@@ -447,7 +447,7 @@ exports[`when the teamView component has an inactive Team should show options to
           </strong>
         </span>
       </h2>
-      <p
+      <div
         class="govuk-inset-text"
       >
         <p
@@ -469,7 +469,7 @@ exports[`when the teamView component has an inactive Team should show options to
             Reactivate team
           </a>
         </p>
-      </p>
+      </div>
       <h2
         class="govuk-heading-m govuk"
       >
@@ -599,36 +599,16 @@ exports[`when the teamView component is mounted with RENAME_TEAM role should ren
         class="govuk-heading-l"
       >
         <span
-          class="govuk-grid-column-three-quarters"
+          class=""
         >
-          Team: 
+          Team: __teamName__
         </span>
-        <span>
-          <strong
-            class="govuk-tag govuk-tag--grey"
-          >
-            Inactive
-          </strong>
-        </span>
+        <span />
       </h2>
-      <p
-        class="govuk-inset-text"
-      >
-        <p
-          class="govuk-heading-s"
-        >
-          This team is inactive
-        </p>
-        <p>
-          New cases cannot be assigned to 
-          . You can still assign members to this team to view and process existing cases.
-        </p>
-        <p />
-      </p>
       <h2
         class="govuk-heading-m govuk"
       >
-        Unit: undefined
+        Unit: __unit1__
       </h2>
       <h3
         class="govuk-heading-l"
@@ -636,11 +616,70 @@ exports[`when the teamView component is mounted with RENAME_TEAM role should ren
         View and remove team members
       </h3>
       <div>
-        <p
-          class="govuk-body"
+        <table
+          class="govuk-table"
         >
-          Loading...
-        </p>
+          <thead
+            class="govuk-table__head"
+          >
+            <tr
+              class="govuk-table__row"
+            >
+              <th
+                class="govuk-table__header"
+                scope="col"
+              >
+                Team members
+              </th>
+              <th
+                class="govuk-table__header"
+                scope="col"
+              >
+                Action
+              </th>
+            </tr>
+          </thead>
+          <tbody
+            class="govuk-table__body"
+          >
+            <tr
+              class="govuk-table__row"
+            >
+              <td
+                class="govuk-table__cell"
+              >
+                __user1__
+              </td>
+              <td
+                class="govuk-table__cell"
+              >
+                <a
+                  href="#"
+                >
+                  Remove
+                </a>
+              </td>
+            </tr>
+            <tr
+              class="govuk-table__row"
+            >
+              <td
+                class="govuk-table__cell"
+              >
+                __user2__
+              </td>
+              <td
+                class="govuk-table__cell"
+              >
+                <a
+                  href="#"
+                >
+                  Remove
+                </a>
+              </td>
+            </tr>
+          </tbody>
+        </table>
       </div>
       <button
         class="govuk-button govuk-!-margin-right-1 add-team-members-button"

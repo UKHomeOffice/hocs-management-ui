@@ -1,4 +1,4 @@
-// Jest Snapshot v1, https://goo.gl/fbAQLP
+// Jest Snapshot v1, https://jestjs.io/docs/snapshot-testing
 
 exports[`when the add comp business area component is mounted should render with default props 1`] = `
 <div>
@@ -10,7 +10,7 @@ exports[`when the add comp business area component is mounted should render with
     >
       <a
         class="govuk-back-link"
-        href="/comp-business-area/undefined"
+        href="/comp-business-area/__list_short_name__"
       >
         Back
       </a>
@@ -28,7 +28,7 @@ exports[`when the add comp business area component is mounted should render with
       class="govuk-grid-column-one-half-from-desktop"
     >
       <form
-        action="/api/entity/list/undefined"
+        action="/api/entity/list/__list_short_name__"
         method="POST"
       >
         <input

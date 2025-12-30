@@ -45,7 +45,7 @@ const renderComponent = () => render(
 
 jest.spyOn(StandardLinesService, 'addStandardLine').mockImplementation(() => Promise.resolve());
 
-beforeEach(() => {
+beforeEach(async () => {
     history = createBrowserHistory();
     match = {
         isExact: true,
@@ -74,7 +74,7 @@ beforeEach(() => {
     clearErrorsSpy.mockReset();
     setMessageSpy.mockReset();
     advanceTo(new Date(1640995200000)); // reset to date time.
-    act(() => {
+    await act(async () => {
         wrapper = renderComponent();
     });
 });
@@ -89,15 +89,15 @@ describe('when the addStandardLine component is mounted', () => {
     });
 
     it('should display an error if the call to retrieve the parent topics fails', async () => {
-        expect.assertions(2);
+        expect.assertions(1);
         getTopicsSpy.mockImplementation(() => Promise.reject('error'));
 
-        act(() => {
+        await act(async () => {
             wrapper = renderComponent();
         });
 
         await waitFor(() => {
-            expect(setMessageSpy).toBeCalledWith({ title: GENERAL_ERROR_TITLE, description: LOAD_TOPICS_ERROR_DESCRIPTION });
+            expect(setMessageSpy).toHaveBeenCalledWith({ title: GENERAL_ERROR_TITLE, description: LOAD_TOPICS_ERROR_DESCRIPTION });
         });
 
     });

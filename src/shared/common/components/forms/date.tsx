@@ -13,7 +13,11 @@ interface DateInputProps {
     minYear?: number;
 }
 
-class DateInput extends Component<DateInputProps> {
+interface DateInputState {
+    [key: string]: string;
+}
+
+class DateInput extends Component<DateInputProps, DateInputState> {
 
     constructor(props: DateInputProps) {
         super(props);
@@ -22,7 +26,16 @@ class DateInput extends Component<DateInputProps> {
 
     onChange(field: string, value: string) {
         this.setState({ [field]: value }, () => {
-            this.props.updateState({ name: this.props.name, value: `${this.state[this.datePart('year')]}-${this.state[this.datePart('month')]}-${this.state[this.datePart('day')]}` });
+            const year = this.state[this.datePart('year')];
+            const month = this.state[this.datePart('month')];
+            const day = this.state[this.datePart('day')];
+
+            this.props.updateState(
+                {
+                    name: this.props.name,
+                    value: `${year}-${month}-${day}`
+                }
+            );
         });
     }
 

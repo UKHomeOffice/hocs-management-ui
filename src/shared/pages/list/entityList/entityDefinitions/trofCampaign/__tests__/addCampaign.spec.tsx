@@ -33,7 +33,7 @@ const renderComponent = () => render(
 
 jest.spyOn(EntityListService, 'createListItem').mockImplementation(() => Promise.resolve());
 
-beforeEach(() => {
+beforeEach(async () => {
     history = createBrowserHistory();
     match = {
         isExact: true,
@@ -62,7 +62,7 @@ beforeEach(() => {
     addFormErrorSpy.mockReset();
     clearErrorsSpy.mockReset();
     setMessageSpy.mockReset();
-    act(() => {
+    await act(async () => {
         wrapper = renderComponent();
     });
 });
@@ -82,10 +82,10 @@ describe('when the name is entered', () => {
         expect.assertions(1);
 
         const nameElement = await waitFor(async () => {
-            return await wrapper.findByLabelText('Campaign name');
+            return wrapper.findByLabelText('Campaign name');
         });
 
-        fireEvent.change(nameElement, { target: { name: 'title', value: '__displayTitle__' } });
+        await act(async () => fireEvent.change(nameElement, { target: { name: 'title', value: '__displayTitle__' } }));
 
         await waitFor(() => {
             expect(reducerDispatch).toHaveBeenCalledWith({ name: 'title', value: '__displayTitle__' });
@@ -98,10 +98,10 @@ describe('when the code is entered', () => {
         expect.assertions(1);
 
         const codeElement = await waitFor(async () => {
-            return await wrapper.findByLabelText('Campaign code');
+            return wrapper.findByLabelText('Campaign code');
         });
 
-        fireEvent.change(codeElement, { target: { name: 'simpleName', value: '__Code__' } });
+        await act(async () => fireEvent.change(codeElement, { target: { name: 'simpleName', value: '__Code__' } }));
 
         await waitFor(() => {
             expect(reducerDispatch).toHaveBeenCalledWith({ name: 'simpleName', value: '__Code__' });

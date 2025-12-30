@@ -8,7 +8,9 @@ async function getEntityList(req, res, next) {
         const response = await infoService.get(`/entity/list/${listName}`, {}, { headers: User.createHeaders(req.user) });
         res.locals.entityList = response.data.map(({ simpleName, uuid, data, active }) => ({
             simpleName: simpleName,
-            uuid: uuid, ...data, active
+            uuid: uuid,
+            ...data,
+            active
         }));
         next();
     } catch (error) {
@@ -23,9 +25,10 @@ async function returnEntityListJson(_, res) {
 
 async function addEntityListItem(req, res, next) {
     const { listName } = req.params;
+    const { resort } = req.query;
 
     try {
-        await infoService.post(`/entity/list/${listName}`, {
+        await infoService.post(`/entity/list/${listName}${resort === 'true' ? '?resort=true' : ''}`, {
             ...req.body,
             data: JSON.stringify({ title: req.body.title })
         }, { headers: User.createHeaders(req.user) });
@@ -43,7 +46,8 @@ async function getEntity(req, res, next) {
         res.locals.entity = {
             simpleName: response.data.simpleName,
             uuid: response.data.uuid,
-            title: response.data.data.title
+            title: response.data.data.title,
+            active: response.data.active
         };
         next();
     } catch (error) {

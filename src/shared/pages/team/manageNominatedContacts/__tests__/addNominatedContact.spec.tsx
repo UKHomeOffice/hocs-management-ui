@@ -21,7 +21,7 @@ const addNominatedContactSpy = jest.spyOn(NominatedContactsService, 'addNominate
 describe('when the AddNominatedContact component is mounted', () => {
     it('should render with default props', async () => {
         let wrapper: RenderResult;
-        act(() => {
+        await act(async () => {
             wrapper = renderComponent();
         });
         expect.assertions(1);
@@ -35,27 +35,27 @@ describe('when the AddNominatedContact component is mounted', () => {
 describe('when the submit button is clicked', () => {
     let wrapper: RenderResult;
 
-    beforeEach(() => {
+    beforeEach(async () => {
         mockAddFormError.mockReset();
         mockClearErrors.mockReset();
         mockSetErrorMessage.mockReset();
         mockDispatch.mockReset();
         addNominatedContactSpy.mockReset();
 
-        act(() => {
+        await act(async () => {
             wrapper = renderComponent();
         });
     });
 
     const updateEmailAddressInputText = async (email: string) => {
-        act(() => {
+        await act(async () => {
             const emailAddressInput = getByLabelText(wrapper.container, 'Email Address');
             fireEvent.change(emailAddressInput, { target: { value: email } });
         });
     };
 
     const fireSubmit = async () => {
-        act(() => {
+        await act(async () => {
             const submitButton = getByText(wrapper.container, 'Add nominated contact');
             fireEvent.click(submitButton);
         });
@@ -63,20 +63,20 @@ describe('when the submit button is clicked', () => {
 
 
     it('should show errors and not attempt to submit address which fail validation', async () => {
-        updateEmailAddressInputText('');
-        fireSubmit();
+        await updateEmailAddressInputText('');
+        await fireSubmit();
 
         await waitFor(async () => {
-            expect(mockClearErrors).toBeCalledTimes(1);
-            expect(addNominatedContactSpy).toBeCalledTimes(0);
-            expect(mockDispatch).toBeCalledTimes(0);
+            expect(mockClearErrors).toHaveBeenCalledTimes(1);
+            expect(addNominatedContactSpy).toHaveBeenCalledTimes(0);
+            expect(mockDispatch).toHaveBeenCalledTimes(0);
 
-            expect(mockAddFormError).nthCalledWith(1, {
+            expect(mockAddFormError).toHaveBeenNthCalledWith(1, {
                 'key': 'inputValue',
                 'value': 'The email address is required',
             });
 
-            expect(mockAddFormError).nthCalledWith(2, {
+            expect(mockAddFormError).toHaveBeenNthCalledWith(2, {
                 'key': 'inputValue',
                 'value': 'The email address contains invalid characters'
             });
@@ -91,15 +91,15 @@ describe('when the submit button is clicked', () => {
             }
         }));
 
-        updateEmailAddressInputText('a@a.example.org');
-        fireSubmit();
+        await updateEmailAddressInputText('a@a.example.org');
+        await fireSubmit();
 
         await waitFor(async () => {
-            expect(mockClearErrors).toBeCalledTimes(1);
-            expect(addNominatedContactSpy).toBeCalledTimes(1);
-            expect(mockDispatch).toBeCalledTimes(0);
+            expect(mockClearErrors).toHaveBeenCalledTimes(1);
+            expect(addNominatedContactSpy).toHaveBeenCalledTimes(1);
+            expect(mockDispatch).toHaveBeenCalledTimes(0);
 
-            expect(mockSetErrorMessage).toBeCalledWith({
+            expect(mockSetErrorMessage).toHaveBeenCalledWith({
                 'description': 'A nominated contact with those email details already exists',
                 'title': 'There was a error validating the response'
             });
@@ -113,15 +113,15 @@ describe('when the submit button is clicked', () => {
             }
         }));
 
-        updateEmailAddressInputText('a@a.example.org');
-        fireSubmit();
+        await updateEmailAddressInputText('a@a.example.org');
+        await fireSubmit();
 
         await waitFor(async () => {
-            expect(mockClearErrors).toBeCalledTimes(1);
-            expect(addNominatedContactSpy).toBeCalledTimes(1);
-            expect(mockDispatch).toBeCalledTimes(0);
+            expect(mockClearErrors).toHaveBeenCalledTimes(1);
+            expect(addNominatedContactSpy).toHaveBeenCalledTimes(1);
+            expect(mockDispatch).toHaveBeenCalledTimes(0);
 
-            expect(mockSetErrorMessage).toBeCalledWith({
+            expect(mockSetErrorMessage).toHaveBeenCalledWith({
                 'description': 'Something went wrong while adding the nominated contact. Please try again.',
                 'title': 'Something went wrong'
             });
@@ -132,18 +132,18 @@ describe('when the submit button is clicked', () => {
 
         addNominatedContactSpy.mockImplementationOnce(() => Promise.resolve({ uuid: 'new-uuid' }));
 
-        updateEmailAddressInputText('abc@example.org');
-        fireSubmit();
+        await updateEmailAddressInputText('abc@example.org');
+        await fireSubmit();
 
         await waitFor(async () => {
-            expect(mockClearErrors).toBeCalledTimes(1);
+            expect(mockClearErrors).toHaveBeenCalledTimes(1);
 
-            expect(addNominatedContactSpy).toBeCalledWith({
+            expect(addNominatedContactSpy).toHaveBeenCalledWith({
                 emailAddress: 'abc@example.org',
                 teamUUID: 'testTeam'
             });
 
-            expect(mockDispatch).toBeCalledWith({
+            expect(mockDispatch).toHaveBeenCalledWith({
                 'payload': {
                     'label': 'abc@example.org',
                     'value': 'new-uuid',

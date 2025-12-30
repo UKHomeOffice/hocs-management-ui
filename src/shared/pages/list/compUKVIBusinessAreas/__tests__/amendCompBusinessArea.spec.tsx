@@ -1,6 +1,6 @@
 import React from 'react';
 import { match, MemoryRouter } from 'react-router-dom';
-import { createBrowserHistory, History, Location } from 'history';
+import { createBrowserHistory, History, Location, createLocation } from 'history';
 import { act, render, RenderResult, fireEvent, waitFor } from '@testing-library/react';
 import { AMEND_BUS_UNIT_ERROR_DESCRIPTION, GENERAL_ERROR_TITLE, LOAD_BUS_AREA_ERROR_DESCRIPTION } from '../../../../models/constants';
 import AmendCompBusinessArea from '../amendCompBusinessArea';
@@ -28,11 +28,12 @@ const renderComponent = () => render(
 );
 const getItemDetailsSpy = jest.spyOn(EntityListService, 'getItemDetails');
 const updateListItemSpy = jest.spyOn(EntityListService, 'updateListItem');
-beforeEach(() => {
+beforeEach(async () => {
     history = createBrowserHistory();
+    location = createLocation('/');
     match = {
         isExact: true,
-        params: { itemUUID: '__itemId__' },
+        params: { itemUUID: '__itemId__', type: '__list_short_name__' },
         path: '',
         url: ''
     };
@@ -53,7 +54,7 @@ beforeEach(() => {
     addFormErrorSpy.mockReset();
     clearErrorsSpy.mockReset();
     setMessageSpy.mockReset();
-    act(() => {
+    await act(async () => {
         wrapper = renderComponent();
     });
 });
@@ -84,7 +85,7 @@ describe('when the amendCompBusinessArea component is mounted', () => {
         wrapper = renderComponent();
 
         await waitFor(() => {
-            expect(setMessageSpy).toBeCalledWith({ title: GENERAL_ERROR_TITLE, description: LOAD_BUS_AREA_ERROR_DESCRIPTION });
+            expect(setMessageSpy).toHaveBeenCalledWith({ title: GENERAL_ERROR_TITLE, description: LOAD_BUS_AREA_ERROR_DESCRIPTION });
         });
 
     });
@@ -104,7 +105,7 @@ describe('when the submit button is clicked', () => {
         });
 
         describe('and the service call is successful', () => {
-            it('should redirect to the home page', async () => {
+            it('should redirect to the business area list page', async () => {
 
                 getItemDetailsSpy.mockReturnValueOnce(Promise.resolve(
                     { simpleName: 'testSimpleName', title: 'testTitle', uuid: 'testUUID', active: false }
@@ -112,7 +113,10 @@ describe('when the submit button is clicked', () => {
                 await waitFor(() => {
                     expect(getItemDetailsSpy).toHaveBeenCalled();
                     expect(updateListItemSpy).toHaveBeenCalled();
-                    expect(history.push).toHaveBeenCalledWith('/', { successMessage: 'The business unit was amended successfully' });
+                    expect(history.push).toHaveBeenCalledWith(
+                        '/comp-business-area/__list_short_name__',
+                        { successMessage: 'The business unit was amended successfully' }
+                    );
                 });
             });
             it('should call the begin submit action', async () => {

@@ -39,7 +39,7 @@ const renderComponent = async () => {
     history = createBrowserHistory();
     history.push = jest.fn();
 
-    act(() => {
+    await act(async () => {
         result = render(
             <MemoryRouter>
                 <DeactivateTeam history={history} match={match} location={location}/>
@@ -52,7 +52,7 @@ const renderComponent = async () => {
 let result: RenderResult;
 
 beforeEach(async () => {
-    renderComponent();
+    await renderComponent();
 });
 
 describe('when the deactivateTeam component is mounted', () => {
@@ -68,10 +68,10 @@ describe('when the deactivateTeam component is mounted', () => {
 describe('when the Deactivate Team button is clicked', () => {
     it('should send a request to deactivate the team and redirect to the team view', async () => {
         const deactivateButton = await waitFor(async () => {
-            return await result.findByText('Deactivate Team');
+            return result.findByText('Deactivate Team');
         });
 
-        fireEvent.click(deactivateButton);
+        await act(async () => fireEvent.click(deactivateButton));
 
         expect(updateTeamMock).toHaveBeenCalledWith('__teamId__', { active: false });
         await waitFor(() => {
@@ -83,11 +83,10 @@ describe('when the Deactivate Team button is clicked', () => {
         updateTeamMock.mockImplementationOnce(() => Promise.reject({ response: { status: 500, data: { body: 'update failed' } } } ));
 
         const deactivateButton = await waitFor(async () => {
-            return await result.findByText('Deactivate Team');
+            return result.findByText('Deactivate Team');
         });
 
-        fireEvent.click(deactivateButton);
-
+        await act(async () => fireEvent.click(deactivateButton));
         expect(updateTeamMock).toHaveBeenCalledWith('__teamId__', { active: false });
         await waitFor(() => {
             expect(setErrorMessageSpy).toHaveBeenCalled();

@@ -126,7 +126,7 @@ describe('nominatedContact middleware', () => {
         it('should return NominatedContacts from the info service', async () => {
             await getNominatedContactsForTeam(req, res, next);
 
-            expect(req.listService.fetch).toBeCalledWith('CONTACTS_FOR_TEAM', { 'teamId': 'team1' });
+            expect(req.listService.fetch).toHaveBeenCalledWith('CONTACTS_FOR_TEAM', { 'teamId': 'team1' });
             expect(res.locals.nominatedContacts).toEqual(mockContacts);
         });
 

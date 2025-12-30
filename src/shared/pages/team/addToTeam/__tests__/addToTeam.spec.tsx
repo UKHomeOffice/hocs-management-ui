@@ -1,6 +1,6 @@
 import React from 'react';
 import { match, MemoryRouter } from 'react-router-dom';
-import { createBrowserHistory, History, Location } from 'history';
+import { createBrowserHistory, createLocation, History, Location } from 'history';
 import { act, render, RenderResult, waitFor, fireEvent, getByText } from '@testing-library/react';
 import AddToTeam from '../addToTeam';
 import * as TeamsService from '../../../../services/teamsService';
@@ -64,13 +64,8 @@ beforeEach(() => {
         url: ''
     };
 
-    location = {
-        hash: '',
-        key: '',
-        pathname: '',
-        search: '',
-        state: {}
-    };
+    location = createLocation('/');
+
     mockState = {
         inputValue: '',
         selectedUser: undefined,
@@ -95,7 +90,7 @@ describe('when the addToTeam component is mounted', () => {
     it('should render with default props', async () => {
         expect.assertions(3);
         let wrapper: RenderResult;
-        act(() => {
+        await act(async () => {
             wrapper = renderComponent();
         });
 
@@ -113,7 +108,7 @@ describe('when the addToTeam component is mounted', () => {
         renderComponent();
 
         await waitFor(() => {
-            expect(setMessageSpy).toBeCalledWith({ title: GENERAL_ERROR_TITLE, description: LOAD_TEAM_ERROR_DESCRIPTION });
+            expect(setMessageSpy).toHaveBeenCalledWith({ title: GENERAL_ERROR_TITLE, description: LOAD_TEAM_ERROR_DESCRIPTION });
         });
 
     });
@@ -124,7 +119,7 @@ describe('when the addToTeam component is mounted', () => {
         renderComponent();
 
         await waitFor(() => {
-            expect(setMessageSpy).toBeCalledWith({ title: GENERAL_ERROR_TITLE, description: LOAD_USERS_ERROR_DESCRIPTION });
+            expect(setMessageSpy).toHaveBeenCalledWith({ title: GENERAL_ERROR_TITLE, description: LOAD_USERS_ERROR_DESCRIPTION });
         });
 
     });
@@ -133,8 +128,8 @@ describe('when the addToTeam component is mounted', () => {
 describe('when the submit button is clicked', () => {
     let wrapper: RenderResult;
 
-    beforeEach(() => {
-        act(() => {
+    beforeEach(async () => {
+        await act(async () => {
             wrapper = renderComponent();
         });
     });
@@ -146,12 +141,12 @@ describe('when the submit button is clicked', () => {
         });
 
         await waitFor(async () => {
-            expect(addUsersToTeamSpy).nthCalledWith(1, [
+            expect(addUsersToTeamSpy).toHaveBeenNthCalledWith(1, [
                 { 'label': '__user1__', 'value': '__userId1__' },
                 { 'label': '__user2__', 'value': '__userId2__' }],
             '__teamId__');
-            expect(clearErrorsSpy).toBeCalled();
-            expect(reducerDispatch).nthCalledWith(1, {
+            expect(clearErrorsSpy).toHaveBeenCalled();
+            expect(reducerDispatch).toHaveBeenNthCalledWith(1, {
                 type: 'RemoveAllFromSelection'
             });
         });
@@ -171,7 +166,7 @@ describe('when the submit button is clicked', () => {
             fireEvent.click(submitButton);
         });
 
-        expect(addFormErrorSpy).nthCalledWith(1, { key: '__value__', value: '__label__' });
+        expect(addFormErrorSpy).toHaveBeenNthCalledWith(1, { key: '__value__', value: '__label__' });
     });
 
     it('should set an error when no users are selected', async () => {
@@ -182,7 +177,7 @@ describe('when the submit button is clicked', () => {
         });
 
         await waitFor(async () => {
-            expect(setMessageSpy).toBeCalledWith({
+            expect(setMessageSpy).toHaveBeenCalledWith({
                 description: 'Please select some users before submitting.',
                 title: 'No users selected'
             });
@@ -193,7 +188,7 @@ describe('when the submit button is clicked', () => {
 describe('when the remove button is clicked', () => {
     it('should remove the row from the selected users collection', async () => {
         let wrapper: RenderResult;
-        act(() => {
+        await act(async () => {
             wrapper = renderComponent();
         });
 
@@ -205,6 +200,6 @@ describe('when the remove button is clicked', () => {
             fireEvent.click(removeButton);
         });
 
-        expect(reducerDispatch).nthCalledWith(1, { type: 'RemoveFromSelection', payload: { label: '__user1__', value: '__userId1__' } });
+        expect(reducerDispatch).toHaveBeenNthCalledWith(1, { type: 'RemoveFromSelection', payload: { label: '__user1__', value: '__userId1__' } });
     });
 });

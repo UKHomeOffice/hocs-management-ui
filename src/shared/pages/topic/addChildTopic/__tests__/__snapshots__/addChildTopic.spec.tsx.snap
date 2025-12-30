@@ -1,4 +1,4 @@
-// Jest Snapshot v1, https://goo.gl/fbAQLP
+// Jest Snapshot v1, https://jestjs.io/docs/snapshot-testing
 
 exports[`when the addChildTopic component is mounted should render with default props 1`] = `
 <div>
@@ -89,7 +89,7 @@ exports[`when the addChildTopic component is mounted should render with default 
                     id="parent-topics-input"
                     role="combobox"
                     spellcheck="false"
-                    style="opacity: 1; width: 100%; grid-area: 1 / 2; min-width: 2px; border: 0px; margin: 0px; outline: 0; padding: 0px;"
+                    style="color: inherit; background: 0px; opacity: 1; width: 100%; grid-area: 1 / 2; min-width: 2px; border: 0px; margin: 0px; outline: 0; padding: 0px;"
                     tabindex="0"
                     type="text"
                     value=""
@@ -99,20 +99,6 @@ exports[`when the addChildTopic component is mounted should render with default 
               <div
                 class="govuk-typeahead__indicators css-1hb7zxy-IndicatorsContainer"
               >
-                <div
-                  aria-hidden="true"
-                  class="govuk-typeahead__indicator govuk-typeahead__loading-indicator css-pogzpp-loadingIndicator"
-                >
-                  <span
-                    class="css-1xtdfmb-LoadingDot"
-                  />
-                  <span
-                    class="css-zoievk-LoadingDot"
-                  />
-                  <span
-                    class="css-x748d8-LoadingDot"
-                  />
-                </div>
                 <span
                   class="govuk-typeahead__indicator-separator css-62wm9a-IndicatorSeparator"
                 />

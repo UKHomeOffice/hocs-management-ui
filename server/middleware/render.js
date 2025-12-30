@@ -15,9 +15,9 @@ function renderMiddleware(req, res, next) {
         form,
         layout: require('../config').forContext('case'),
         page: { url: req.baseUrl, params: req.params },
-        csrf: req.csrfToken(),
+        csrf: req.csrfToken?.(),
         user: {
-            roles: req.user.roles
+            roles: req.user?.roles ?? []
         }
     };
 

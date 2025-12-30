@@ -3,5 +3,5 @@ export interface State {
     title: string;
     originalTitle: string;
     uuid: string;
-    active: false
+    active: boolean
 }

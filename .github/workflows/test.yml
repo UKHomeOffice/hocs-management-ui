@@ -7,5 +7,6 @@ jobs:
   test:
     uses: UKHomeOffice/sas-github-workflows/.github/workflows/test-npm.yml@v1
     with:
-      installCommand: 'ci --production=false --no-optional'
+      installCommand: 'ci --include=dev --omit=optional'
       buildCommand: 'build-prod'
+      nodeVersionMatrix: '[ "24.x" ]'

@@ -1,9 +1,11 @@
 const isProduction = process.env.NODE_ENV === 'production';
 const defaultTimeoutSeconds = Number(process.env.DEFAULT_TIMEOUT_SECONDS);
 const countDownForSeconds = Number(process.env.COUNTDOWN_FOR_SECONDS);
+const csrfSecret = process.env.CSRF_SECRET || 'development';
 
 const config = {
     applications: {
+        csrfSecret,
         render: {
             clientSide: process.env.USE_CLIENTSIDE || true,
             js: ['runtime', 'vendor'],

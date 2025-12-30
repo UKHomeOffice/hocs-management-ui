@@ -35,7 +35,7 @@ const renderComponent = () => render(
     </MemoryRouter>
 );
 
-beforeEach(() => {
+beforeEach(async () => {
     history = createBrowserHistory();
     match = {
         isExact: true,
@@ -58,7 +58,7 @@ beforeEach(() => {
     addFormErrorMock.mockReset();
     clearErrorsMock.mockReset();
     setMessageMock.mockReset();
-    act(() => {
+    await act(async () => {
         wrapper = renderComponent();
     });
 });
@@ -69,7 +69,6 @@ describe('when the selectBusinessArea component is mounted', () => {
 
         await waitFor(() => {
             expect(wrapper.container).toMatchSnapshot();
-            console.log(wrapper.container);
         });
     });
 });

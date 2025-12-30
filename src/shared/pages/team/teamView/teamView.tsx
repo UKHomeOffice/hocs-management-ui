@@ -146,29 +146,25 @@ const TeamView: React.FC<TeamMembersProps> =
                         <span>{!state.active && <strong className="govuk-tag govuk-tag--grey">Inactive</strong>}</span>
 
                     </h2>
-                    {!state.active && <p className={'govuk-inset-text'}>
+                    {!state.active && <div className={'govuk-inset-text'}>
                         <p className={'govuk-heading-s'}>
                             This team is inactive
                         </p>
                         <p>
                             New cases cannot be assigned to {state.teamName}. You can still assign members to this team
-                            to
-                            view and process existing cases.
-
-
+                            to view and process existing cases.
                         </p>
                         <p>
                             {hasRole('ACTIVATE_TEAM') &&
                             <Link to={`/team/${teamId}/reactivate`} type="submit"
                                 className="govuk-link">Reactivate team</Link>}
                         </p>
-                    </p>}
+                    </div>}
 
                     <h2 className="govuk-heading-m govuk">
                         {`Unit: ${state.unitName}`}
                     </h2>
                     <h3 className="govuk-heading-l">View and remove team members</h3>
-
                     {
                         state.teamMembersLoaded ?
                             <div>

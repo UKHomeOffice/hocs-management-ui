@@ -15,8 +15,8 @@ jest.mock('../../../../clients', () => ({
     }
 }));
 
-describe('Form schema definitions', async () => {
-    await Object.entries(formRepository).map(async ([label, form]) => {
+describe('Form schema definitions', () => {
+    Object.entries(formRepository).map(([label, form]) => {
         it(`${label} should be a valid schema definition `, async () => {
             const result = await form.call(this, { user: { id: 1234, roles: [], groups: [] } });
             expect(result).toBeDefined();
