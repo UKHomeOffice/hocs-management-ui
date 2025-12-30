@@ -14,10 +14,10 @@ const apiKeepaliveRouter = require('./keepalive');
 
 const { apiErrorMiddleware, axiosErrorMiddleware } = require('../../middleware/request');
 
-router.post('*', bodyParser.json(), bodyParser.urlencoded({ extended: true }));
-router.patch('*', bodyParser.json(), bodyParser.urlencoded({ extended: true }));
-router.put('*', bodyParser.json(), bodyParser.urlencoded({ extended: true }));
-router.delete('*', bodyParser.json(), bodyParser.urlencoded({ extended: true }));
+router.post('*path', bodyParser.json(), bodyParser.urlencoded({ extended: true }));
+router.patch('*path', bodyParser.json(), bodyParser.urlencoded({ extended: true }));
+router.put('*path', bodyParser.json(), bodyParser.urlencoded({ extended: true }));
+router.delete('*path', bodyParser.json(), bodyParser.urlencoded({ extended: true }));
 router.use('/standard-lines', apiStandardLineRouter);
 router.use('/teams', apiTeamRouter);
 router.use('/topics', apiTopicsRouter);
@@ -29,6 +29,6 @@ router.use('/templates', apiTemplateRouter);
 router.use('/case-types', apiCaseTypeRouter);
 router.use('/nominated-contact', apiNominatedContactRouter);
 router.use('/keepalive', apiKeepaliveRouter);
-router.use('*', axiosErrorMiddleware, apiErrorMiddleware);
+router.use(axiosErrorMiddleware, apiErrorMiddleware);
 
 module.exports = router;
