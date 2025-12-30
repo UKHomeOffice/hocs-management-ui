@@ -10,4 +10,5 @@ jobs:
       installCommand: 'ci --production=false --no-optional'
       buildCommand: 'build-prod'
       image: 'quay.io/ukhomeofficedigital/hocs-management-ui'
+      nodeVersion: '24.x'
     secrets: inherit

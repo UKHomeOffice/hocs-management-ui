@@ -31,7 +31,7 @@ const validationSchema = object({
         .test(
             'Template',
             'Only docx templates supported',
-            checkIfFilesAreDocx
+            (files: [File]) => checkIfFilesAreDocx(files),
         )
 });
 
@@ -61,7 +61,7 @@ const AddTemplate: React.FC<AddTemplateProps> = ({ csrfToken, history, match }) 
 
             addTemplate(data).then(() => {
                 history.push(`/case-type/${type}`, { successMessage: constants.ADD_TEMPLATE_SUCCESS });
-            }).catch((error: any) => {
+            }).catch((_error: any) => {
                 setErrorMessage(new ErrorMessage(constants.ADD_TEMPLATE_ERROR_DESCRIPTION, constants.GENERAL_ERROR_TITLE));
             });
         }
