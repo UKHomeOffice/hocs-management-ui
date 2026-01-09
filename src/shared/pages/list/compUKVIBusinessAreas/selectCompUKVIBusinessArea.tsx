@@ -50,6 +50,7 @@ const ChooseCompUKVIBusinessArea: React.FC<ChooseCompUKVIBusinessAreaProps> = ({
                     <Link to="/" className="govuk-back-link">Back</Link>
                     <ErrorSummary pageError={pageError} />
                     <h1 className="govuk-heading-xl">
+                        <span className="govuk-caption-xl">Manage UKVI Complaints Business Areas</span>
                         Select a Directorate
                     </h1>
                 </div>
@@ -86,7 +87,7 @@ const WrappedChooseCompUKVIBusinessArea = ({ history, location, match }: RouteCo
                         className='govuk-link'
                         to="/comp-business-area/COMP_CCT_BUS_AREA"
                     >
-                      Edit Ex-Gracia business areas
+                      Manage Ex-Gracia business areas
                     </Link>
                 </p>
             </>

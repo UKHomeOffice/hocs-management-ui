@@ -9,4 +9,5 @@ jobs:
     with:
       installCommand: 'ci --include=dev --omit=optional'
       buildCommand: 'build-prod'
+      auditCommand: 'audit --audit-level=moderate'
       nodeVersionMatrix: '[ "24.x" ]'
