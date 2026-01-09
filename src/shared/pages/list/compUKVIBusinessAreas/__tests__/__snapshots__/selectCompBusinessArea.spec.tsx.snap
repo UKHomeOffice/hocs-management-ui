@@ -17,6 +17,11 @@ exports[`when the selectBusinessArea component is mounted should render with def
       <h1
         class="govuk-heading-xl"
       >
+        <span
+          class="govuk-caption-xl"
+        >
+          Manage UKVI Complaints Business Areas
+        </span>
         Select a Directorate
       </h1>
     </div>
@@ -141,7 +146,7 @@ exports[`when the selectBusinessArea component is mounted should render with def
       class="govuk-link"
       href="/comp-business-area/COMP_CCT_BUS_AREA"
     >
-      Edit Ex-Gracia business areas
+      Manage Ex-Gracia business areas
     </a>
   </p>
 </div>
