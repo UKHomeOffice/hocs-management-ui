@@ -40,7 +40,7 @@ const AddBusinessRep: React.FC<AddRepresentativeProps> = ({ csrfToken, history }
         event.preventDefault();
         clearErrors();
         if (validate(validationSchema, representative, addFormError)) {
-            createListItem(representative, 'EXGRATIA_BUS_REPS').then(() => {
+            createListItem(representative, 'EXGRATIA_BUS_REPS', true).then(() => {
                 history.push('/', { successMessage: ADD_EXGRATIA_BUS_REP_SUCCESS });
             }).catch((error) => {
                 if (error && error.response && error.response.status === 409) {
