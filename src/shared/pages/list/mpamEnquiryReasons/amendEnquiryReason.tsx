@@ -20,6 +20,7 @@ import ErrorMessage from '../../../models/errorMessage';
 import { validate } from '../../../validation';
 import { Action } from './actions';
 import { State } from './amendEnquiryReasonState';
+import Checkbox from '../../../common/components/forms/checkbox';
 
 interface MatchParams {
     subject: string,
@@ -100,6 +101,12 @@ const AmendEnquiryReason: React.FC<AmendCampaignProps> = ({ csrfToken, history, 
                             type="text"
                             updateState={({ value }) => dispatch({ type: 'SetTitle', payload: value as string })}
                             value={state.title}
+                        />
+                        <Checkbox
+                            label='Active'
+                            name='active'
+                            updateState={({ value }) => dispatch({ type: 'SetActive', payload: value === 'true' })}
+                            value={state.active ? 'true' : 'false'}
                         />
                         <Submit
                             label={'Amend'}

@@ -17,6 +17,7 @@ import ErrorMessage from '../../../models/errorMessage';
 import { validate } from '../../../validation';
 import { Action } from './actions';
 import { State } from './amendEntityState';
+import Checkbox from '../../../common/components/forms/checkbox';
 
 interface MatchParams {
     itemUUID: string;
@@ -106,6 +107,12 @@ const AmendEntity: React.FC<AmendEntityProps> =
                                     disabled={true}
                                     updateState={({ value }) => dispatch({ type: 'SetSimpleName', payload: value as string })}
                                     value={state.simpleName}
+                                />
+                                <Checkbox
+                                    label='Active'
+                                    name='active'
+                                    updateState={({ value }) => dispatch({ type: 'SetActive', payload: value === 'true' })}
+                                    value={state.active ? 'true' : 'false'}
                                 />
                                 <Submit />
                             </form>

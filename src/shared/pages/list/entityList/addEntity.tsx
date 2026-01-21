@@ -48,7 +48,7 @@ const AddEntity: React.FC<AddCampaignProps> = ({ csrfToken, history, entityDefin
         event.preventDefault();
         clearErrors();
         if (validate(validationSchema, entity, addFormError)) {
-            createListItem(entity, entityDefinition.entityListName).then(() => {
+            createListItem(entity, entityDefinition.entityListName, true).then(() => {
                 history.push('/', { successMessage: entityDefinition.messages.ADD_ENTITY_SUCCESS });
             }).catch((error) => {
                 if (error && error.response && error.response.status === 409) {

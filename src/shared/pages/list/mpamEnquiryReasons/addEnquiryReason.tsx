@@ -53,7 +53,7 @@ const AddEnquiryReason: React.FC<addEnquiryReasonProps> = ({ csrfToken, history,
         event.preventDefault();
         clearErrors();
         if (validate(validationSchema, representative, addFormError)) {
-            createListItem(representative, subject).then(() => {
+            createListItem(representative, subject, true).then(() => {
                 history.push('/', { successMessage: ADD_ENQ_REASON_SUCCESS });
             }).catch((error) => {
                 if (error && error.response && error.response.status === 409) {
