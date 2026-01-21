@@ -15,7 +15,13 @@ export type SetTitle = {
     payload: string;
 };
 
+export type SetActive = {
+    type: 'SetActive';
+    payload: boolean;
+};
+
 export type Action =
     SetEntityDetails |
     SetTitle |
+    SetActive |
     SetSimpleName;

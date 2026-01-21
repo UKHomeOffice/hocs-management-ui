@@ -13,6 +13,7 @@ import ErrorMessage from '../../../models/errorMessage';
 import { validate } from '../../../validation';
 import { Action } from '../entityList/actions';
 import { State } from '../entityList/amendEntityState';
+import Checkbox from '../../../common/components/forms/checkbox';
 
 interface MatchParams {
     type: string,
@@ -89,6 +90,12 @@ const AmendBusinessUnit: React.FC<AmendCampaignProps> = ({ csrfToken, history, m
                             type="text"
                             updateState={({ value }) => dispatch({ type: 'SetTitle', payload: value as string })}
                             value={state.title}
+                        />
+                        <Checkbox
+                            label='Active'
+                            name='active'
+                            updateState={({ value }) => dispatch({ type: 'SetActive', payload: value === 'true' })}
+                            value={state.active ? 'true' : 'false'}
                         />
                         <Submit />
                     </form>
