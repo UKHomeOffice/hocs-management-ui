@@ -127,7 +127,7 @@ describe('when the submit button is clicked', () => {
                 expect.assertions(1);
 
                 await waitFor(() => {
-                    expect(history.push).toHaveBeenCalledWith('/', { successMessage: 'The account manager was added successfully' });
+                    expect(history.push).toHaveBeenCalledWith('/manage-mpam-campaigns', { successMessage: 'The account manager was added successfully' });
                 });
             });
             it('should call the begin submit action', async () => {

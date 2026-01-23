@@ -37,7 +37,7 @@ beforeEach(async () => {
     history = createBrowserHistory();
     match = {
         isExact: true,
-        params: {},
+        params: { subject: '__subject__' },
         path: '',
         url: ''
     };
@@ -111,7 +111,7 @@ describe('when the submit button is clicked', () => {
                 expect.assertions(1);
 
                 await waitFor(() => {
-                    expect(history.push).toHaveBeenCalledWith('/', { successMessage: 'The enquiry reason was added successfully' });
+                    expect(history.push).toHaveBeenCalledWith(`/enquiry-subject/${match.params.subject}`, { successMessage: 'The enquiry reason was added successfully' });
                 });
             });
             it('should call the begin submit action', async () => {

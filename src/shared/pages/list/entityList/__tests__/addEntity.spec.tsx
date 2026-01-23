@@ -144,7 +144,7 @@ describe('when the submit button is clicked', () => {
                 expect.assertions(1);
 
                 await waitFor(() => {
-                    expect(history.push).toHaveBeenCalledWith('/',
+                    expect(history.push).toHaveBeenCalledWith('/manage-mpam-campaigns',
                         { successMessage: 'The entity was added successfully' });
                 });
             });

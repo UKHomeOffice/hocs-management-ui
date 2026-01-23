@@ -10,7 +10,7 @@ exports[`when the add business unit component is mounted should render with defa
     >
       <a
         class="govuk-back-link"
-        href="/business-area/undefined"
+        href="/business-area/__type__"
       >
         Back
       </a>
@@ -28,7 +28,7 @@ exports[`when the add business unit component is mounted should render with defa
       class="govuk-grid-column-one-half-from-desktop"
     >
       <form
-        action="/api/entity/list/undefined"
+        action="/api/entity/list/__type__"
         method="POST"
       >
         <input

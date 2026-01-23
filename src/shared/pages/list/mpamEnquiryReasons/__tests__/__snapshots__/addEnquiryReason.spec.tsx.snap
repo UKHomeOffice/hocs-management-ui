@@ -10,7 +10,7 @@ exports[`when the add enquiry reason component is mounted should render with def
     >
       <a
         class="govuk-back-link"
-        href="/enquiry-subject/undefined"
+        href="/enquiry-subject/__subject__"
       >
         Back
       </a>
@@ -28,7 +28,7 @@ exports[`when the add enquiry reason component is mounted should render with def
       class="govuk-grid-column-one-half-from-desktop"
     >
       <form
-        action="/api/entity/list/undefined"
+        action="/api/entity/list/__subject__"
         method="POST"
       >
         <input
