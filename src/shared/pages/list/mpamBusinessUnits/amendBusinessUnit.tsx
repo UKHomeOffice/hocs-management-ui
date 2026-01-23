@@ -57,7 +57,7 @@ const AmendBusinessUnit: React.FC<AmendCampaignProps> = ({ csrfToken, history, m
         clearErrors();
         if (validate(validationSchema, state, addFormError)) {
             updateListItem(state, type).then(() => {
-                history.push('/', { successMessage: AMEND_BUS_UNIT_SUCCESS });
+                history.push(`/business-area/${type}`, { successMessage: AMEND_BUS_UNIT_SUCCESS });
             }).catch((error) => {
                 setErrorMessage(new ErrorMessage(AMEND_BUS_UNIT_ERROR_DESCRIPTION, GENERAL_ERROR_TITLE));
             });

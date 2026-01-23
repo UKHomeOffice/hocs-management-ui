@@ -146,7 +146,7 @@ describe('when the submit button is clicked', () => {
                 await waitFor(() => {
                     expect(getItemDetailsSpy).toHaveBeenCalled();
                     expect(updateListItemSpy).toHaveBeenCalled();
-                    expect(history.push).toHaveBeenCalledWith('/',
+                    expect(history.push).toHaveBeenCalledWith('/manage-mpam-campaigns',
                         { successMessage: 'The interested party was amended successfully' });
                 });
             });

@@ -39,7 +39,10 @@ beforeEach(async () => {
     location = createLocation('/');
     match = {
         isExact: true,
-        params: { itemUUID: '__itemId__' },
+        params: {
+            itemUUID: '__itemId__',
+            subject: '__subjectId__'
+        },
         path: '',
         url: ''
     };
@@ -119,7 +122,7 @@ describe('when the submit button is clicked', () => {
                 await waitFor(() => {
                     expect(getItemDetailsSpy).toHaveBeenCalled();
                     expect(updateListItemSpy).toHaveBeenCalled();
-                    expect(history.push).toHaveBeenCalledWith('/', { successMessage: 'The enquiry reason was amended successfully' });
+                    expect(history.push).toHaveBeenCalledWith(`/enquiry-subject/${match.params.subject}`, { successMessage: 'The enquiry reason was amended successfully' });
                 });
             });
             it('should call the begin submit action', async () => {

@@ -65,7 +65,7 @@ const AmendEntity: React.FC<AmendEntityProps> =
                 clearErrors();
                 if (validate(validationSchema, state, addFormError)) {
                     updateListItem(state, entityDefinition.entityListName).then(() => {
-                        history.push('/', { successMessage: entityDefinition.messages.AMEND_ENTITY_SUCCESS });
+                        history.push('/manage-mpam-campaigns', { successMessage: entityDefinition.messages.AMEND_ENTITY_SUCCESS });
                     }).catch((error) => {
                         setErrorMessage(new ErrorMessage(entityDefinition.messages.AMEND_ENTITY_ERROR_DESCRIPTION, GENERAL_ERROR_TITLE));
                     });

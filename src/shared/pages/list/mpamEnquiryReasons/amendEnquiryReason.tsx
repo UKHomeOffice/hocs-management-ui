@@ -64,7 +64,7 @@ const AmendEnquiryReason: React.FC<AmendCampaignProps> = ({ csrfToken, history, 
         clearErrors();
         if (validate(validationSchema, state, addFormError)) {
             updateListItem(state, subject).then(() => {
-                history.push('/', { successMessage: AMEND_ENQ_REASON_SUCCESS });
+                history.push(`/enquiry-subject/${subject}`, { successMessage: AMEND_ENQ_REASON_SUCCESS });
             }).catch((error) => {
                 if (error && error.response && error.response.status === 409) {
                     setErrorMessage(new ErrorMessage(DUPLICATE_ENQ_REASON_DESCRIPTION, VALIDATION_ERROR_TITLE));
