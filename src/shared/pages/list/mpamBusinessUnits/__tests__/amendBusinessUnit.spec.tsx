@@ -33,7 +33,10 @@ beforeEach(async () => {
     location = createLocation('/');
     match = {
         isExact: true,
-        params: { itemUUID: '__itemId__' },
+        params: {
+            itemUUID: '__itemId__',
+            type: 'testType'
+        },
         path: '',
         url: ''
     };
@@ -113,7 +116,7 @@ describe('when the submit button is clicked', () => {
                 await waitFor(() => {
                     expect(getItemDetailsSpy).toHaveBeenCalled();
                     expect(updateListItemSpy).toHaveBeenCalled();
-                    expect(history.push).toHaveBeenCalledWith('/', { successMessage: 'The business unit was amended successfully' });
+                    expect(history.push).toHaveBeenCalledWith(`/business-area/${match.params.type}`, { successMessage: 'The business unit was amended successfully' });
                 });
             });
             it('should call the begin submit action', async () => {

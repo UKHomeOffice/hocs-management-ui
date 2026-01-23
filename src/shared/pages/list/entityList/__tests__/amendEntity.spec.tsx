@@ -160,7 +160,7 @@ describe('when the submit button is clicked', () => {
                 await waitFor(() => {
                     expect(getItemDetailsSpy).toHaveBeenCalled();
                     expect(updateListItemSpy).toHaveBeenCalled();
-                    expect(history.push).toHaveBeenCalledWith('/', { successMessage: 'The entity was amended successfully' });
+                    expect(history.push).toHaveBeenCalledWith('/manage-mpam-campaigns', { successMessage: 'The entity was amended successfully' });
                 });
             });
             it('should call the begin submit action', async () => {
