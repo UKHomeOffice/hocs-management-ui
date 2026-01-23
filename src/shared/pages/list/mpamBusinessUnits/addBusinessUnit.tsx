@@ -48,7 +48,7 @@ const AddBusinessUnit: React.FC<addBusinessUnitProps> = ({ csrfToken, history, m
         clearErrors();
         if (validate(validationSchema, representative, addFormError)) {
             createListItem(representative, type, true).then(() => {
-                history.push('/', { successMessage: ADD_BUS_UNIT_SUCCESS });
+                history.push(`/business-area/${type}`, { successMessage: ADD_BUS_UNIT_SUCCESS });
             }).catch((error) => {
                 if (error && error.response && error.response.status === 409) {
                     setErrorMessage(new ErrorMessage(DUPLICATE_BUS_UNIT_DESCRIPTION, VALIDATION_ERROR_TITLE));

@@ -49,7 +49,7 @@ const AddEntity: React.FC<AddCampaignProps> = ({ csrfToken, history, entityDefin
         clearErrors();
         if (validate(validationSchema, entity, addFormError)) {
             createListItem(entity, entityDefinition.entityListName, true).then(() => {
-                history.push('/', { successMessage: entityDefinition.messages.ADD_ENTITY_SUCCESS });
+                history.push('/manage-mpam-campaigns', { successMessage: entityDefinition.messages.ADD_ENTITY_SUCCESS });
             }).catch((error) => {
                 if (error && error.response && error.response.status === 409) {
                     setErrorMessage(new ErrorMessage(entityDefinition.messages.DUPLICATE_ENTITY_ERROR_DESCRIPTION, VALIDATION_ERROR_TITLE));
